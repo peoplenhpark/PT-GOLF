@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0d0f14"/>
+  <rect width="512" height="512" rx="112" fill="url(#g)" opacity="0.18"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="512" y2="512">
+      <stop offset="0" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <!-- dumbbell -->
+  <g stroke="#4ade80" stroke-width="26" stroke-linecap="round">
+    <line x1="150" y1="200" x2="362" y2="200"/>
+    <line x1="150" y1="160" x2="150" y2="240"/>
+    <line x1="110" y1="175" x2="110" y2="225"/>
+    <line x1="362" y1="160" x2="362" y2="240"/>
+    <line x1="402" y1="175" x2="402" y2="225"/>
+  </g>
+  <!-- golf flag -->
+  <g stroke="#38bdf8" stroke-width="26" stroke-linecap="round" fill="none">
+    <line x1="200" y1="350" x2="200" y2="300"/>
+  </g>
+  <path d="M200 300 L300 320 L200 340 Z" fill="#38bdf8"/>
+  <ellipse cx="230" cy="356" rx="80" ry="16" fill="#38bdf8" opacity="0.35"/>
+</svg>

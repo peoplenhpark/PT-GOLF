@@ -1,0 +1,15 @@
+{
+  "name": "헬스 노트 — PT & 골프",
+  "short_name": "헬스 노트",
+  "description": "나만의 PT·골프 자세 큐 카드 & 셀프 체크리스트",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0f14",
+  "theme_color": "#0d0f14",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

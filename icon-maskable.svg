@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0d0f14"/>
+  <!-- safe zone centered, dumbbell + flag scaled in -->
+  <g stroke="#4ade80" stroke-width="24" stroke-linecap="round">
+    <line x1="180" y1="230" x2="332" y2="230"/>
+    <line x1="180" y1="198" x2="180" y2="262"/>
+    <line x1="148" y1="210" x2="148" y2="250"/>
+    <line x1="332" y1="198" x2="332" y2="262"/>
+    <line x1="364" y1="210" x2="364" y2="250"/>
+  </g>
+  <line x1="216" y1="332" x2="216" y2="288" stroke="#38bdf8" stroke-width="24" stroke-linecap="round"/>
+  <path d="M216 290 L296 306 L216 322 Z" fill="#38bdf8"/>
+</svg>

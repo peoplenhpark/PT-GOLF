@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0d0f14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="헬스 노트">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<title>헬스 노트</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- 동작 추가/수정 모달 -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <span id="modal-title">동작 추가</span>
+        <button class="x" data-act="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>파트</label>
+        <div class="seg" id="f-part">
+          <button type="button" data-val="pt">🏋️ PT</button>
+          <button type="button" data-val="golf">⛳ 골프</button>
+        </div>
+
+        <label>부위 / 카테고리</label>
+        <input id="f-category" list="cat-list" placeholder="예: 등, 가슴, 드라이버, 아이언">
+        <datalist id="cat-list"></datalist>
+
+        <label>동작 이름</label>
+        <input id="f-name" placeholder="예: 풀업 · 턱걸이">
+
+        <label>스펙 / 한 줄 핵심 <span class="hint">(무게·그립·목표 등)</span></label>
+        <input id="f-spec" placeholder="예: 60kg · 언더그립 위주">
+
+        <label>자세 체크리스트 <span class="hint">(한 줄에 하나씩)</span></label>
+        <textarea id="f-cues" rows="5" placeholder="가슴이 먼저 출발&#10;어깨 으쓱 X&#10;..."></textarea>
+
+        <label>잊지 말 것 <span class="hint">(한 줄에 하나씩, 선택)</span></label>
+        <textarea id="f-reminders" rows="2" placeholder="자세 흐트러지면 멈춘다"></textarea>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-act="modal-close">취소</button>
+        <button class="btn primary" data-act="modal-save">저장</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 확인 다이얼로그 -->
+  <div id="confirm" class="modal hidden">
+    <div class="modal-card sm">
+      <div class="modal-body"><p id="confirm-msg"></p></div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-act="confirm-no">취소</button>
+        <button class="btn danger" data-act="confirm-yes">삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/store.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
