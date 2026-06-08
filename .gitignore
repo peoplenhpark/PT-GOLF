@@ -2,3 +2,9 @@
 Thumbs.db
 *.log
 .vscode/
+
+# STT 임시 (전사 도구/모델/원본 오디오 — 저장소에 불필요)
+.venv_stt/
+transcribe.py
+*.m4a
+transcript*.txt
