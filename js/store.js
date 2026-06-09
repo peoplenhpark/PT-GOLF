@@ -155,6 +155,27 @@ const Store = (() => {
     return Object.keys(overlay.overrides).length > 0 || overlay.deleted.length > 0;
   }
 
+  // ---- 캘린더 ----
+  const CAL_KEY = 'ptgolf_calendar_v1';
+
+  function getCalendar() {
+    try { return JSON.parse(localStorage.getItem(CAL_KEY) || '{}'); } catch { return {}; }
+  }
+
+  function setCalEntry(dateStr, data) {
+    const cal = getCalendar();
+    if (data && (data.scheduled || data.completed)) {
+      cal[dateStr] = { scheduled: !!data.scheduled, completed: !!data.completed };
+    } else {
+      delete cal[dateStr];
+    }
+    localStorage.setItem(CAL_KEY, JSON.stringify(cal));
+  }
+
+  function getCalEntry(dateStr) {
+    return getCalendar()[dateStr] || null;
+  }
+
   function todayStr() {
     // Date 사용(런타임 브라우저). 빌드 환경 제약과 무관.
     const d = new Date();
@@ -165,6 +186,7 @@ const Store = (() => {
   return {
     init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites,
     getCategories, search, upsert, remove, patch, setMemo, toggleFavorite,
-    exportData, importData, resetOverlay, hasLocalChanges, todayStr
+    exportData, importData, resetOverlay, hasLocalChanges, todayStr,
+    getCalendar, setCalEntry, getCalEntry
   };
 })();

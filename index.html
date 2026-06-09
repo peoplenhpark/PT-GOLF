@@ -68,6 +68,30 @@
     </div>
   </div>
 
+  <!-- 캘린더 날짜 모달 -->
+  <div id="cal-modal" class="modal hidden">
+    <div class="modal-card sm">
+      <div class="modal-head">
+        <span id="cal-modal-date"></span>
+        <button class="x" data-act="cal-modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="cal-toggles">
+          <button type="button" id="cal-sched-btn" class="cal-toggle-btn" data-act="cal-toggle-sched">
+            <span class="cal-btn-ic">📅</span>예약일
+          </button>
+          <button type="button" id="cal-done-btn" class="cal-toggle-btn" data-act="cal-toggle-done">
+            <span class="cal-btn-ic">✅</span>실시일
+          </button>
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn ghost" data-act="cal-modal-close">닫기</button>
+        <button class="btn primary" data-act="cal-modal-save">저장</button>
+      </div>
+    </div>
+  </div>
+
   <div id="toast" class="toast hidden"></div>
 
   <script src="js/store.js"></script>

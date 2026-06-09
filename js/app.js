@@ -56,6 +56,7 @@ const Theme = (() => {
     if (view.name === 'detail') return renderDetail(view.id);
     if (view.name === 'favorites') return renderFavorites();
     if (view.name === 'search') return renderSearch();
+    if (view.name === 'calendar') return renderCalendar();
   }
 
   function tabbar(active) {
@@ -66,6 +67,7 @@ const Theme = (() => {
       ${t('pt', '🏋️', 'PT')}
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
+      ${t('calendar', '📅', '캘린더')}
     </nav>
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
   }
@@ -156,6 +158,54 @@ const Theme = (() => {
         ${rows}
       </div>
       ${tabbar('favorites')}`;
+  }
+
+  function renderCalendar() {
+    const now = new Date();
+    const year  = view.calYear  ?? now.getFullYear();
+    const month = view.calMonth ?? now.getMonth();
+    view.calYear = year; view.calMonth = month;
+
+    const cal   = Store.getCalendar();
+    const today = Store.todayStr();
+    const p2    = n => String(n).padStart(2, '0');
+
+    const firstDow = new Date(year, month, 1).getDay();   // 0=일
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    let cells = '';
+    for (let i = 0; i < firstDow; i++) cells += '<div class="cal-cell empty"></div>';
+    for (let d = 1; d <= lastDate; d++) {
+      const ds    = `${year}-${p2(month + 1)}-${p2(d)}`;
+      const entry = cal[ds] || {};
+      const dow   = new Date(year, month, d).getDay();
+      const dots  = (entry.scheduled ? '<span class="dot sched"></span>' : '') +
+                    (entry.completed ? '<span class="dot done"></span>'  : '');
+      cells += `<div class="cal-cell${ds === today ? ' today' : ''}${dow === 0 ? ' sun' : ''}${dow === 6 ? ' sat' : ''}" data-cal-date="${ds}">
+        <span class="cal-dn">${d}</span>
+        <div class="cal-dots">${dots}</div>
+      </div>`;
+    }
+
+    app.innerHTML = `
+      <div class="scr">
+        <div class="hd"><h1>📅 캘린더</h1></div>
+        <div class="cal-nav">
+          <button class="cal-nav-btn" data-cal-nav="-1">‹</button>
+          <span class="cal-month-lbl">${year}년 ${month + 1}월</span>
+          <button class="cal-nav-btn" data-cal-nav="1">›</button>
+        </div>
+        <div class="cal-dow">
+          <span class="sun">일</span><span>월</span><span>화</span>
+          <span>수</span><span>목</span><span>금</span><span class="sat">토</span>
+        </div>
+        <div class="cal-grid">${cells}</div>
+        <div class="cal-legend">
+          <span><span class="dot sched"></span> 예약일</span>
+          <span><span class="dot done"></span> 실시일</span>
+        </div>
+      </div>
+      ${tabbar('calendar')}`;
   }
 
   function renderSearch() {
@@ -254,14 +304,15 @@ const Theme = (() => {
   function go(name, opts = {}) {
     view = { ...view, name, ...opts };
     if (name === 'home' || name === 'favorites') { view.part = null; view.id = null; }
-    if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null }; }
+    if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null, calYear: view.calYear, calMonth: view.calMonth }; }
+    if (name === 'calendar') { view.part = null; view.id = null; }
     window.scrollTo(0, 0);
     render();
   }
 
   // ============ 이벤트 (위임) ============
   document.body.addEventListener('click', (ev) => {
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back]');
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date]');
     if (!t) return;
 
     if (t.dataset.nav) { go(t.dataset.nav); return; }
@@ -270,6 +321,15 @@ const Theme = (() => {
     if (t.dataset.open) { const ex = Store.getById(t.dataset.open); go('detail', { id: t.dataset.open, part: ex ? ex.part : null }); return; }
     if (t.dataset.cat) { view.cat = t.dataset.cat; render(); return; }
     if (t.hasAttribute('data-cue')) { toggleCue(view.id, +t.dataset.cue); return; }
+    if (t.dataset.calNav) {
+      const now = new Date();
+      let cy = view.calYear ?? now.getFullYear();
+      let cm = (view.calMonth ?? now.getMonth()) + parseInt(t.dataset.calNav);
+      if (cm < 0) { cm = 11; cy--; } else if (cm > 11) { cm = 0; cy++; }
+      view.calYear = cy; view.calMonth = cm;
+      renderCalendar(); return;
+    }
+    if (t.dataset.calDate) { openCalModal(t.dataset.calDate); return; }
 
     const act = t.dataset.act;
     if (!act) return;
@@ -281,6 +341,41 @@ const Theme = (() => {
     c.has(i) ? c.delete(i) : c.add(i);
     renderDetail(id);
   }
+
+  // ============ 캘린더 날짜 모달 ============
+  const calModalEl = document.getElementById('cal-modal');
+  let calModalDate  = null;
+  let calModalState = { scheduled: false, completed: false };
+
+  function openCalModal(dateStr) {
+    calModalDate = dateStr;
+    const entry = Store.getCalEntry(dateStr) || {};
+    calModalState = { scheduled: !!entry.scheduled, completed: !!entry.completed };
+    const [y, m, d] = dateStr.split('-');
+    document.getElementById('cal-modal-date').textContent =
+      `${y}년 ${parseInt(m)}월 ${parseInt(d)}일`;
+    updateCalModalBtns();
+    calModalEl.classList.remove('hidden');
+  }
+
+  function updateCalModalBtns() {
+    document.getElementById('cal-sched-btn').classList.toggle('sched-on', calModalState.scheduled);
+    document.getElementById('cal-done-btn').classList.toggle('done-on',  calModalState.completed);
+  }
+
+  function closeCalModal() {
+    calModalEl.classList.add('hidden');
+    calModalDate = null;
+  }
+
+  function saveCalModal() {
+    if (calModalDate) Store.setCalEntry(calModalDate, calModalState);
+    closeCalModal();
+    renderCalendar();
+    toast('저장됨');
+  }
+
+  calModalEl.addEventListener('click', e => { if (e.target === calModalEl) closeCalModal(); });
 
   function handleAct(act) {
     switch (act) {
@@ -301,6 +396,10 @@ const Theme = (() => {
       case 'theme-toggle': Theme.toggle(); toast(Theme.get() === 'light' ? '☀️ 라이트 모드' : '🌙 다크 모드'); break;
       case 'export': doExport(); break;
       case 'import': document.getElementById('import-file').click(); break;
+      case 'cal-modal-close': closeCalModal(); break;
+      case 'cal-modal-save':  saveCalModal(); break;
+      case 'cal-toggle-sched': calModalState.scheduled = !calModalState.scheduled; updateCalModalBtns(); break;
+      case 'cal-toggle-done':  calModalState.completed = !calModalState.completed;  updateCalModalBtns(); break;
       case 'modal-close': closeModal(); break;
       case 'modal-save': saveEditor(); break;
       case 'confirm-yes': closeConfirm(true); break;
