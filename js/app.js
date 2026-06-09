@@ -67,7 +67,7 @@ const Theme = (() => {
       ${t('pt', '🏋️', 'PT')}
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
-      ${t('calendar', '📅', '캘린더')}
+      ${t('calendar', '🗓️', '캘린더')}
     </nav>
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
   }
@@ -193,7 +193,7 @@ const Theme = (() => {
 
     app.innerHTML = `
       <div class="scr">
-        <div class="hd"><h1>📅 캘린더</h1></div>
+        <div class="hd"><h1>🗓️ 캘린더</h1></div>
         <div class="cal-nav">
           <button class="cal-nav-btn" data-cal-nav="-1">‹</button>
           <span class="cal-month-lbl">${year}년 ${month + 1}월</span>
