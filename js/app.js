@@ -265,9 +265,9 @@ const Theme = (() => {
     if (!t) return;
 
     if (t.dataset.nav) { go(t.dataset.nav); return; }
-    if (t.hasAttribute('data-back')) { history.length > 1 ? go(view.part ? view.part : 'home') : go('home'); return; }
+    if (t.hasAttribute('data-back')) { go(view.part || 'home'); return; }
     if (t.dataset.partOpen) { go(t.dataset.partOpen); return; }
-    if (t.dataset.open) { go('detail', { id: t.dataset.open, part: null }); return; }
+    if (t.dataset.open) { const ex = Store.getById(t.dataset.open); go('detail', { id: t.dataset.open, part: ex ? ex.part : null }); return; }
     if (t.dataset.cat) { view.cat = t.dataset.cat; render(); return; }
     if (t.hasAttribute('data-cue')) { toggleCue(view.id, +t.dataset.cue); return; }
 
