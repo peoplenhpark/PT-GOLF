@@ -72,7 +72,7 @@
       "id": "pt_pullup",
       "part": "pt",
       "category": "등",
-      "name": "풀업 · 턱걸이",
+      "name": "풀업",
       "spec": "60kg · 언더그립 위주",
       "favorite": true,
       "cues": [
@@ -89,7 +89,7 @@
       "id": "pt_seatedrow",
       "part": "pt",
       "category": "등",
-      "name": "시티드 로우",
+      "name": "시티드로우",
       "spec": "20kg · 오버그립 위주",
       "favorite": false,
       "cues": [
