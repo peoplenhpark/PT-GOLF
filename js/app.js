@@ -105,7 +105,7 @@ const Theme = (() => {
 
     app.innerHTML = `
       <div class="scr">
-        <div class="hd"><h1>헬스 노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
+        <div class="hd"><h1>PT노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
         <input class="search" data-act="search-focus" placeholder="🔍 동작 검색…" readonly>
         <div class="parts">${partCards}</div>
         ${favSection}

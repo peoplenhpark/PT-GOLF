@@ -1,6 +1,6 @@
 {
-  "name": "헬스 노트 — PT & 골프",
-  "short_name": "헬스 노트",
+  "name": "PT노트 — PT & 골프",
+  "short_name": "PT노트",
   "description": "나만의 PT·골프 자세 큐 카드 & 셀프 체크리스트",
   "start_url": "./index.html",
   "scope": "./",
