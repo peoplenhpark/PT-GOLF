@@ -179,10 +179,14 @@ const Theme = (() => {
       const ds    = `${year}-${p2(month + 1)}-${p2(d)}`;
       const entry = cal[ds] || {};
       const dow   = new Date(year, month, d).getDay();
-      const dots  = (entry.scheduled ? '<span class="dot sched"></span>' : '') +
-                    (entry.completed ? '<span class="dot done"></span>'  : '');
+      const timeLabel = entry.scheduled && entry.schedTime
+        ? `<span class="cal-time">${entry.schedTime}시</span>` : '';
+      const dots = (entry.scheduled ? '<span class="dot sched"></span>' : '') +
+                   (entry.completed ? '<span class="dot done"></span>'  : '') +
+                   (entry.rest      ? '<span class="dot rest"></span>'  : '');
       cells += `<div class="cal-cell${ds === today ? ' today' : ''}${dow === 0 ? ' sun' : ''}${dow === 6 ? ' sat' : ''}" data-cal-date="${ds}">
         <span class="cal-dn">${d}</span>
+        ${timeLabel}
         <div class="cal-dots">${dots}</div>
       </div>`;
     }
@@ -203,6 +207,7 @@ const Theme = (() => {
         <div class="cal-legend">
           <span><span class="dot sched"></span> 예약일</span>
           <span><span class="dot done"></span> 실시일</span>
+          <span><span class="dot rest"></span> 휴무일</span>
         </div>
       </div>
       ${tabbar('calendar')}`;
@@ -345,15 +350,21 @@ const Theme = (() => {
   // ============ 캘린더 날짜 모달 ============
   const calModalEl = document.getElementById('cal-modal');
   let calModalDate  = null;
-  let calModalState = { scheduled: false, completed: false };
+  let calModalState = { scheduled: false, completed: false, schedTime: '', rest: false };
 
   function openCalModal(dateStr) {
     calModalDate = dateStr;
     const entry = Store.getCalEntry(dateStr) || {};
-    calModalState = { scheduled: !!entry.scheduled, completed: !!entry.completed };
+    calModalState = {
+      scheduled: !!entry.scheduled,
+      completed: !!entry.completed,
+      schedTime: entry.schedTime || '',
+      rest:      !!entry.rest
+    };
     const [y, m, d] = dateStr.split('-');
     document.getElementById('cal-modal-date').textContent =
       `${y}년 ${parseInt(m)}월 ${parseInt(d)}일`;
+    document.getElementById('cal-time-sel').value = calModalState.schedTime;
     updateCalModalBtns();
     calModalEl.classList.remove('hidden');
   }
@@ -361,6 +372,8 @@ const Theme = (() => {
   function updateCalModalBtns() {
     document.getElementById('cal-sched-btn').classList.toggle('sched-on', calModalState.scheduled);
     document.getElementById('cal-done-btn').classList.toggle('done-on',  calModalState.completed);
+    document.getElementById('cal-rest-btn').classList.toggle('rest-on',  calModalState.rest);
+    document.getElementById('cal-time-row').classList.toggle('hidden', !calModalState.scheduled);
   }
 
   function closeCalModal() {
@@ -369,7 +382,12 @@ const Theme = (() => {
   }
 
   function saveCalModal() {
-    if (calModalDate) Store.setCalEntry(calModalDate, calModalState);
+    if (calModalDate) {
+      const schedTime = calModalState.scheduled
+        ? document.getElementById('cal-time-sel').value
+        : '';
+      Store.setCalEntry(calModalDate, { ...calModalState, schedTime });
+    }
     closeCalModal();
     renderCalendar();
     toast('저장됨');
@@ -399,7 +417,8 @@ const Theme = (() => {
       case 'cal-modal-close': closeCalModal(); break;
       case 'cal-modal-save':  saveCalModal(); break;
       case 'cal-toggle-sched': calModalState.scheduled = !calModalState.scheduled; updateCalModalBtns(); break;
-      case 'cal-toggle-done':  calModalState.completed = !calModalState.completed;  updateCalModalBtns(); break;
+      case 'cal-toggle-done':  calModalState.completed = !calModalState.completed; updateCalModalBtns(); break;
+      case 'cal-toggle-rest':  calModalState.rest      = !calModalState.rest;      updateCalModalBtns(); break;
       case 'modal-close': closeModal(); break;
       case 'modal-save': saveEditor(); break;
       case 'confirm-yes': closeConfirm(true); break;

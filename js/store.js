@@ -164,8 +164,13 @@ const Store = (() => {
 
   function setCalEntry(dateStr, data) {
     const cal = getCalendar();
-    if (data && (data.scheduled || data.completed)) {
-      cal[dateStr] = { scheduled: !!data.scheduled, completed: !!data.completed };
+    if (data && (data.scheduled || data.completed || data.rest)) {
+      cal[dateStr] = {
+        scheduled: !!data.scheduled,
+        completed: !!data.completed,
+        rest:      !!data.rest,
+        schedTime: data.schedTime || ''
+      };
     } else {
       delete cal[dateStr];
     }
