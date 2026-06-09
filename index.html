@@ -12,8 +12,12 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 <title>헬스 노트</title>
+<!-- 저장된 테마를 CSS 로드 직후 즉시 적용 — 다크↔라이트 깜빡임 방지 -->
+<script>(function(){var t=localStorage.getItem('ptgolf_theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})()</script>
 </head>
 <body>
+  <!-- 테마 토글 버튼 — 모든 화면에서 항상 표시 -->
+  <button id="theme-btn" class="theme-btn" data-act="theme-toggle" aria-label="테마 변경">🌙</button>
   <div id="app"></div>
 
   <!-- 동작 추가/수정 모달 -->

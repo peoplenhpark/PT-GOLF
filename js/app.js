@@ -1,4 +1,30 @@
 /* app.js — 라우팅 + 렌더 + CRUD UI (vanilla, 빌드 없음) */
+
+/* ── 테마 관리 ── */
+const Theme = (() => {
+  const KEY = 'ptgolf_theme';
+  const DARK_META  = '#0d0f14';
+  const LIGHT_META = '#f5f7fa';
+
+  function get() { return localStorage.getItem(KEY) || 'dark'; }
+
+  function apply(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    // 상태바 색상
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = t === 'light' ? LIGHT_META : DARK_META;
+    // 버튼 아이콘
+    const btn = document.getElementById('theme-btn');
+    if (btn) btn.textContent = t === 'light' ? '☀️' : '🌙';
+  }
+
+  function set(t) { localStorage.setItem(KEY, t); apply(t); }
+  function toggle() { set(get() === 'dark' ? 'light' : 'dark'); }
+  function init() { apply(get()); }
+
+  return { get, set, toggle, init };
+})();
+
 (() => {
   const app = document.getElementById('app');
   const modal = document.getElementById('modal');
@@ -272,6 +298,7 @@
           const part = Store.getById(view.id).part;
           Store.remove(view.id); toast('삭제됨'); go(part);
         }); break;
+      case 'theme-toggle': Theme.toggle(); toast(Theme.get() === 'light' ? '☀️ 라이트 모드' : '🌙 다크 모드'); break;
       case 'export': doExport(); break;
       case 'import': document.getElementById('import-file').click(); break;
       case 'modal-close': closeModal(); break;
@@ -393,6 +420,7 @@
 
   // ============ 부트 ============
   Store.init().then(() => {
+    Theme.init();   // 버튼 아이콘 동기화 (인라인 스크립트가 html 속성은 설정했지만 버튼 아이콘은 여기서)
     render();
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       navigator.serviceWorker.register('sw.js').catch(() => {});
