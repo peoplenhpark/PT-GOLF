@@ -298,7 +298,7 @@
       "category": "하체 재활 · 일일수행2",
       "name": "쿼드 셋 (Quad Set)",
       "spec": "10초 × 10회 (좌우)",
-      "image": "docs/images/01_quadset.png",
+      "image": "docs/images/01_quadset.svg",
       "favorite": false,
       "cues": [
         "무릎 아래 접힌 부위 살짝 아래에 수건 받치기",
@@ -319,7 +319,7 @@
       "category": "하체 재활 · 일일수행2",
       "name": "SLR (스트레이트 레그 레이즈)",
       "spec": "15회 (좌우)",
-      "image": "docs/images/02_slr.png",
+      "image": "docs/images/02_slr.svg",
       "favorite": false,
       "cues": [
         "골반 바닥 고정, 엉덩이 뜨지 않게",
@@ -340,7 +340,7 @@
       "category": "하체 재활 · 일일수행2",
       "name": "클램쉘 (Clamshell)",
       "spec": "15~20회 (좌우)",
-      "image": "docs/images/03_clamshell.png",
+      "image": "docs/images/03_clamshell.svg",
       "favorite": false,
       "cues": [
         "옆으로 누워 두 발 붙이고 무릎 세우기",
@@ -360,7 +360,7 @@
       "category": "하체 재활 · 일일수행2",
       "name": "SSLR (사이드 스트레이트 레그 레이즈)",
       "spec": "20회 (좌우)",
-      "image": "docs/images/04_sslr.png",
+      "image": "docs/images/04_sslr.svg",
       "favorite": false,
       "cues": [
         "옆으로 누워 몸을 완전히 일자로 펴기",

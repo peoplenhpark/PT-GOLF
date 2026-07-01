@@ -268,7 +268,7 @@ const Theme = (() => {
         <button class="back" data-back>‹ ${esc(e.category || partLabel(e.part))}</button>
         <div class="d-title">${esc(e.name)}</div>
         <div class="d-tags">
-          <span class="tag cat ${isGolf ? 'golf' : ''}">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')}</span>
+          <span class="tag cat link ${isGolf ? 'golf' : ''}" data-catnav="${esc(e.part)}::${esc(e.category || '')}" role="link" tabindex="0">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')} ›</span>
           ${e.updated ? `<span class="tag">갱신 ${esc(e.updated.slice(5).replace('-', '/'))}</span>` : ''}
           <div class="d-actions">
             <button class="icon-btn fav ${e.favorite ? 'on' : ''}" data-act="fav" title="즐겨찾기">${e.favorite ? '★' : '☆'}</button>
@@ -321,7 +321,7 @@ const Theme = (() => {
 
   // ============ 이벤트 (위임) ============
   document.body.addEventListener('click', (ev) => {
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date]');
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav]');
     if (!t) return;
 
     if (t.dataset.nav) { go(t.dataset.nav); return; }
@@ -339,6 +339,13 @@ const Theme = (() => {
       renderCalendar(); return;
     }
     if (t.dataset.calDate) { openCalModal(t.dataset.calDate); return; }
+    if (t.dataset.catnav) {
+      const [p, cat] = t.dataset.catnav.split('::');
+      view = { name: 'part', part: p, cat: cat || null };
+      window.scrollTo(0, 0);
+      render();
+      return;
+    }
 
     const act = t.dataset.act;
     if (!act) return;

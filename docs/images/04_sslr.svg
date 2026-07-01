@@ -1,6 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 300" font-family="Noto Sans CJK KR, sans-serif">
-<rect x="1" y="1" width="468" height="298" rx="16" fill="#FFFFFF" stroke="#E4E8EA" stroke-width="2"/>
-<text x="26" y="40" font-size="21" font-weight="700" fill="#243B36">④ SSLR · 사이드 레그 레이즈</text>
-<line x1="26" y1="52" x2="444" y2="52" stroke="#EEF1F2" stroke-width="2"/>
-<line x1="40" y1="240" x2="430" y2="240" stroke="#D3D8DD" stroke-width="7" stroke-linecap="round"/><line x1="96" y1="196" x2="66" y2="238" stroke="#14776A" stroke-width="9" stroke-linecap="round"/><circle cx="78" cy="148" r="15" fill="#14776A"/><line x1="94" y1="158" x2="238" y2="172" stroke="#14776A" stroke-width="12" stroke-linecap="round"/><line x1="238" y1="172" x2="332" y2="206" stroke="#14776A" stroke-width="13" stroke-linecap="round"/><line x1="332" y1="206" x2="332" y2="228" stroke="#14776A" stroke-width="10" stroke-linecap="round"/><line x1="238" y1="166" x2="340" y2="120" stroke="#14776A" stroke-width="13" stroke-linecap="round"/><line x1="340" y1="120" x2="326" y2="104" stroke="#14776A" stroke-width="10" stroke-linecap="round"/><line x1="300" y1="150" x2="332" y2="118" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/><polygon points="332,118 328.1,129.3 320.7,121.9" fill="#C0392B"/><text x="222" y="92" font-size="14" fill="#243B36" text-anchor="start" font-weight="400">위 다리 곧게 펴 옆으로 들기</text><text x="222" y="112" font-size="14" fill="#5A6B66" text-anchor="start" font-weight="400">(엉덩이·골반 힘)</text><text x="300" y="224" font-size="13" fill="#5A6B66" text-anchor="start" font-weight="400">아래 다리 살짝 앞으로</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">SSLR · 사이드 레그 레이즈</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="44" y="252" width="392" height="12" rx="6" fill="#CBD8D3"/>
+<ellipse cx="256" cy="168" rx="54" ry="34" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="96" y1="200" x2="66" y2="242" stroke="#6A8781" stroke-width="13"/>
+  <line x1="96" y1="160" x2="96" y2="200" stroke="#6A8781" stroke-width="13"/>
+  <line x1="96" y1="158" x2="240" y2="172" stroke="#516C66" stroke-width="30"/>
+  <line x1="240" y1="176" x2="338" y2="212" stroke="#607D77" stroke-width="24"/>
+  <line x1="338" y1="212" x2="338" y2="234" stroke="#607D77" stroke-width="14"/>
+  <line x1="240" y1="164" x2="350" y2="116" stroke="#5EA093" stroke-width="26"/>
+  <line x1="350" y1="116" x2="336" y2="100" stroke="#5EA093" stroke-width="14"/>
+  <circle cx="240" cy="170" r="16" fill="#516C66"/>
+  <circle cx="80" cy="146" r="19" fill="#516C66"/>
+</g>
+<line x1="300" y1="152" x2="336" y2="116" stroke="#E4572E" stroke-width="6" stroke-linecap="round"/>
+<polygon points="339,113 324,117 331,129" fill="#E4572E"/>
+<text x="230" y="90" font-size="14" font-weight="600" fill="#2B3A36">위 다리 곧게 펴 옆으로 들기</text>
+<text x="230" y="110" font-size="13" fill="#6E807B">(엉덩이·골반 힘)</text>
+<text x="298" y="232" font-size="12.5" fill="#6E807B">아래 다리 살짝 앞으로</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각각</text>
 </svg>

@@ -1,6 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 300" font-family="Noto Sans CJK KR, sans-serif">
-<rect x="1" y="1" width="468" height="298" rx="16" fill="#FFFFFF" stroke="#E4E8EA" stroke-width="2"/>
-<text x="26" y="40" font-size="21" font-weight="700" fill="#243B36">② SLR · 스트레이트 레그 레이즈</text>
-<line x1="26" y1="52" x2="444" y2="52" stroke="#EEF1F2" stroke-width="2"/>
-<line x1="40" y1="240" x2="430" y2="240" stroke="#D3D8DD" stroke-width="7" stroke-linecap="round"/><circle cx="74" cy="220" r="15" fill="#14776A"/><line x1="90" y1="228" x2="214" y2="236" stroke="#14776A" stroke-width="12" stroke-linecap="round"/><line x1="96" y1="228" x2="150" y2="236" stroke="#14776A" stroke-width="8" stroke-linecap="round"/><line x1="214" y1="236" x2="330" y2="236" stroke="#14776A" stroke-width="13" stroke-linecap="round"/><line x1="330" y1="236" x2="330" y2="214" stroke="#14776A" stroke-width="10" stroke-linecap="round"/><line x1="214" y1="236" x2="352" y2="158" stroke="#14776A" stroke-width="13" stroke-linecap="round"/><line x1="352" y1="158" x2="336" y2="142" stroke="#14776A" stroke-width="10" stroke-linecap="round"/><line x1="300" y1="214" x2="336" y2="176" stroke="#C0392B" stroke-width="5" stroke-linecap="round"/><polygon points="336,176 332.4,187.4 324.8,180.3" fill="#C0392B"/><text x="250" y="120" font-size="16" fill="#243B36" text-anchor="start" font-weight="400">다리 쭉 펴서 들기</text><text x="250" y="142" font-size="14" fill="#5A6B66" text-anchor="start" font-weight="400">(무릎 굽히지 않기)</text><text x="150" y="205" font-size="14" fill="#5A6B66" text-anchor="start" font-weight="400">엉덩이 뜨지 않게</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.40"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">SLR · 스트레이트 레그 레이즈</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="44" y="252" width="392" height="12" rx="6" fill="#CBD8D3"/>
+<ellipse cx="286" cy="204" rx="60" ry="34" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="214" y1="242" x2="336" y2="244" stroke="#607D77" stroke-width="24"/>
+  <line x1="336" y1="244" x2="336" y2="220" stroke="#607D77" stroke-width="14"/>
+  <line x1="214" y1="240" x2="354" y2="166" stroke="#5EA093" stroke-width="26"/>
+  <line x1="354" y1="166" x2="340" y2="149" stroke="#5EA093" stroke-width="14"/>
+  <line x1="92" y1="240" x2="214" y2="242" stroke="#516C66" stroke-width="30"/>
+  <line x1="112" y1="242" x2="150" y2="246" stroke="#6A8781" stroke-width="14"/>
+  <circle cx="214" cy="241" r="16" fill="#516C66"/>
+  <circle cx="336" cy="244" r="12" fill="#607D77"/>
+  <circle cx="72" cy="230" r="19" fill="#516C66"/>
+</g>
+<line x1="300" y1="216" x2="340" y2="180" stroke="#E4572E" stroke-width="6" stroke-linecap="round"/>
+<polygon points="343,177 328,181 335,193" fill="#E4572E"/>
+<text x="256" y="118" font-size="14.5" font-weight="600" fill="#2B3A36">다리 쭉 펴서 들기</text>
+<text x="256" y="138" font-size="13" fill="#6E807B">(무릎 굽히지 않기)</text>
+<text x="150" y="214" font-size="12.5" fill="#6E807B">엉덩이 뜨지 않게</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각각</text>
 </svg>
