@@ -62,8 +62,10 @@ body{
   overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;-ms-overflow-style:none}
 .chips::-webkit-scrollbar{display:none}
-.chip{flex:0 0 auto;white-space:nowrap;background:var(--card);border:1px solid var(--line);border-radius:999px;
-  padding:8px 15px;font-size:13px;font-weight:600;color:var(--sub);cursor:pointer;
+.chip{flex:0 0 auto;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;
+  text-align:center;line-height:1.18;min-height:44px;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:5px 15px;font-size:13px;font-weight:600;color:var(--sub);cursor:pointer;
   transition:background .12s,color .12s,border-color .12s}
 .chip.on{background:var(--pt-bg);border-color:var(--pt-line);color:var(--pt);box-shadow:0 0 0 1px var(--pt-line)}
 [data-part="golf"] .chip.on{background:var(--golf-bg);border-color:var(--golf-line);color:var(--golf)}

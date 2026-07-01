@@ -130,7 +130,7 @@ const Theme = (() => {
     view.cat = activeCat;
 
     const chips = cats.map(c =>
-      `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+      `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c).split(' · ').join('<br>')}</button>`).join('');
 
     const inCat = list.filter(e => e.category === activeCat);
     const rows = inCat.length
