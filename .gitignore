@@ -8,3 +8,6 @@ Thumbs.db
 transcribe.py
 *.m4a
 transcript*.txt
+
+# 새 콘텐츠 스테이징 폴더(리포 루트로 이미 복사됨 — 커밋 대상 아님)
+새 폴더/

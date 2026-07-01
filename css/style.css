@@ -102,6 +102,9 @@ body{
 .spec-box .v{font-size:20px;font-weight:800;color:var(--pt)}
 .spec-box.golf .v{color:var(--golf)}
 
+.ex-figure{margin-bottom:20px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+.ex-figure img{display:block;width:100%;height:auto}
+
 .block{margin-bottom:22px}
 .block-h{font-size:13px;font-weight:800;color:var(--pt);margin-bottom:11px;
   display:flex;align-items:center;gap:7px;letter-spacing:.3px}

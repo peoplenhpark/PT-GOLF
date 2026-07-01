@@ -280,6 +280,10 @@ const Theme = (() => {
           <div><div class="k">핵심</div><div class="v">${esc(e.spec)}</div></div>
         </div>` : ''}
 
+        ${e.image ? `<div class="ex-figure">
+          <img src="${esc(e.image)}" alt="${esc(e.name)} 참고 그림" loading="lazy">
+        </div>` : ''}
+
         ${cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ 자세 체크리스트
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
