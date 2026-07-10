@@ -47,9 +47,9 @@ const Store = (() => {
   function getParts() { return seed.parts || []; }
 
   function getPrinciple(part, category) {
-    return (seed.principles || []).find(p =>
-      p.part === part && (p.scope === '*' || p.scope === category)
-    ) || null;
+    // 카테고리 전용 원칙을 '*'(범용)보다 우선 — 배열 순서와 무관하게 특정 원칙이 이긴다
+    const list = (seed.principles || []).filter(p => p.part === part);
+    return list.find(p => p.scope === category) || list.find(p => p.scope === '*') || null;
   }
 
   /** seed + overlay 병합된 전체 동작 목록 */
