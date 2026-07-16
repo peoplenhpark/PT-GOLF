@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">암컬 · 준비자세 (상완골 고정)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="160" y="258" width="180" height="10" rx="5" fill="#CBD8D3"/>
+<ellipse cx="242" cy="128" rx="34" ry="30" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="208" y1="257" x2="252" y2="257" stroke="#607D77" stroke-width="12"/>
+  <line x1="226" y1="254" x2="230" y2="200" stroke="#607D77" stroke-width="20"/>
+  <line x1="230" y1="200" x2="226" y2="148" stroke="#607D77" stroke-width="24"/>
+  <line x1="226" y1="148" x2="232" y2="90" stroke="#516C66" stroke-width="28"/>
+  <circle cx="238" cy="72" r="17" fill="#516C66"/>
+  <line x1="234" y1="100" x2="238" y2="152" stroke="#5EA093" stroke-width="15"/>
+  <line x1="238" y1="152" x2="250" y2="194" stroke="#5EA093" stroke-width="14"/>
+  <circle cx="238" cy="152" r="9" fill="#4E8D80"/>
+</g>
+<line x1="236" y1="200" x2="276" y2="200" stroke="#3A4038" stroke-width="6" stroke-linecap="round"/>
+<circle cx="268" cy="200" r="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<path d="M 292 194 A 44 44 0 0 1 282 146" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="280,141 275,154 288,152" fill="#E4572E"/>
+<text x="44" y="140" font-size="13.5" font-weight="600" fill="#2B3A36">위 팔뚝(상완골)</text>
+<text x="44" y="158" font-size="13.5" font-weight="600" fill="#2B3A36">움직이지 않게 고정</text>
+<text x="300" y="214" font-size="13" font-weight="600" fill="#2B3A36">손목은 일자로</text>
+<text x="300" y="232" font-size="12" fill="#6E807B">(꺾어서 들지 말 것)</text>
+<text x="44" y="285" font-size="12" fill="#6E807B">손은 조금 넓게 · 내릴 때 팔은 다 펴주기</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">준비자세</text>
+</svg>
