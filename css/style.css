@@ -58,14 +58,12 @@ body{
   letter-spacing:.5px;text-transform:uppercase}
 
 /* ---------- category chips ---------- */
-.chips{display:flex;gap:8px;flex-wrap:nowrap;margin-bottom:16px;
-  overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;-ms-overflow-style:none}
-.chips::-webkit-scrollbar{display:none}
+/* 카테고리 수가 늘어 한 줄로는 모바일 화면을 넘어감 → 여러 행으로 줄바꿈해 한 화면에 모두 노출 */
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
 .chip{flex:0 0 auto;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;
-  text-align:center;line-height:1.18;min-height:44px;
-  background:var(--card);border:1px solid var(--line);border-radius:16px;
-  padding:5px 15px;font-size:13px;font-weight:600;color:var(--sub);cursor:pointer;
+  text-align:center;line-height:1.15;min-height:40px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:5px 12px;font-size:12.5px;font-weight:600;color:var(--sub);cursor:pointer;
   transition:background .12s,color .12s,border-color .12s}
 .chip.on{background:var(--pt-bg);border-color:var(--pt-line);color:var(--pt);box-shadow:0 0 0 1px var(--pt-line)}
 [data-part="golf"] .chip.on{background:var(--golf-bg);border-color:var(--golf-line);color:var(--golf)}
