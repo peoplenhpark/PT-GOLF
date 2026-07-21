@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">풀업 · 시작 자세</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="176" y="76" width="150" height="9" rx="4" fill="#3A4038"/>
+<ellipse cx="250" cy="150" rx="40" ry="30" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="240" y1="82" x2="236" y2="128" stroke="#6A8781" stroke-width="13"/>
+  <line x1="236" y1="128" x2="228" y2="202" stroke="#516C66" stroke-width="27"/>
+  <line x1="228" y1="202" x2="240" y2="256" stroke="#607D77" stroke-width="23"/>
+  <line x1="240" y1="256" x2="226" y2="262" stroke="#607D77" stroke-width="13"/>
+  <circle cx="236" cy="82" r="9" fill="#6A8781"/>
+  <circle cx="228" cy="202" r="13" fill="#516C66"/>
+  <circle cx="252" cy="106" r="16" fill="#516C66"/>
+</g>
+<text x="44" y="150" font-size="13.5" font-weight="600" fill="#2B3A36">언더그립 · 가슴 먼저 출발</text>
+<text x="44" y="168" font-size="13.5" font-weight="600" fill="#2B3A36">팔꿈치 바닥으로 눌러 당김</text>
+<text x="44" y="186" font-size="12" fill="#6E807B">엉덩이 세트 내내 쪼기(과신전 방지)</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">시작 자세</text>
+</svg>

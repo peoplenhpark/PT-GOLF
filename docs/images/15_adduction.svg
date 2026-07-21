@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">이너타이(어덕션·모으기) · 핵심 자세</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="200" y="196" width="80" height="12" rx="6" fill="#CBD8D3"/>
+<ellipse cx="240" cy="222" rx="52" ry="26" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="240" y1="196" x2="240" y2="120" stroke="#516C66" stroke-width="32"/>
+  <line x1="228" y1="198" x2="182" y2="248" stroke="#607D77" stroke-width="24"/>
+  <line x1="252" y1="198" x2="298" y2="248" stroke="#607D77" stroke-width="24"/>
+  <circle cx="240" cy="98" r="18" fill="#516C66"/>
+</g>
+<rect x="196" y="214" width="14" height="40" rx="6" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<rect x="270" y="214" width="14" height="40" rx="6" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<line x1="176" y1="228" x2="206" y2="232" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="210,233 198,227 199,239" fill="#E4572E"/>
+<line x1="304" y1="228" x2="274" y2="232" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="270,233 282,227 281,239" fill="#E4572E"/>
+<text x="300" y="120" font-size="13.5" font-weight="600" fill="#2B3A36">무릎 힘으로 모으기</text>
+<text x="300" y="138" font-size="12" fill="#6E807B">(발 힘 X) · 모은 지점 2초 꾹</text>
+<rect x="360" y="60" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="77" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">핵심 자세</text>
+</svg>

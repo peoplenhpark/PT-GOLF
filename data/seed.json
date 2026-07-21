@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "updated": "2026-07-21",
   "parts": [
     {
@@ -154,7 +154,8 @@
         "풀업 = 견갑 거상·하강 운동"
       ],
       "memo": "",
-      "updated": "2026-07-16"
+      "updated": "2026-07-21",
+      "image": "docs/images/08_pullup.svg"
     },
     {
       "id": "pt_seatedrow",
@@ -178,7 +179,8 @@
         "스트랩(보조 장갑)은 일부러 안 씀 — 주먹·전완 등 보조근도 같이 성장해야"
       ],
       "memo": "",
-      "updated": "2026-07-16"
+      "updated": "2026-07-21",
+      "image": "docs/images/09_seatedrow.svg"
     },
     {
       "id": "pt_latpulldown",
@@ -200,7 +202,8 @@
         "날개뼈 충분히 열어준 뒤(전인) 당기기 — 늘어난 느낌에서 시작"
       ],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/10_latpulldown.svg"
     },
     {
       "id": "pt_armpulldown",
@@ -217,7 +220,8 @@
       ],
       "reminders": [],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/11_armpulldown.svg"
     },
     {
       "id": "pt_armcurl",
@@ -258,7 +262,8 @@
         "엉덩이가 늘어나는 느낌 → 하체가 좋아지는 신호 (처음엔 잘 안 느껴져도 정상)"
       ],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/12_vsquat.svg"
     },
     {
       "id": "pt_squat",
@@ -280,7 +285,8 @@
         "거울 앞에서 좌우 균형 확인하며 연습"
       ],
       "memo": "",
-      "updated": "2026-07-21"
+      "updated": "2026-07-21",
+      "image": "docs/images/13_squat.svg"
     },
     {
       "id": "pt_halfsquat",
@@ -366,7 +372,8 @@
         "15~16개를 완벽히 수행 가능하면 그때 무게를 조금씩만 올리기 (무분별하게 X)"
       ],
       "memo": "",
-      "updated": "2026-07-10"
+      "updated": "2026-07-21",
+      "image": "docs/images/14_legcurl.svg"
     },
     {
       "id": "pt_adduction",
@@ -387,7 +394,8 @@
         "정상 진행은 20→25→30kg이나, 좌골 회복기엔 5kg 낮춰(예: 25→20) 무리하지 않기 / 내전근 유연성·무릎 안정성에 중요"
       ],
       "memo": "",
-      "updated": "2026-07-21"
+      "updated": "2026-07-21",
+      "image": "docs/images/15_adduction.svg"
     },
     {
       "id": "pt_legextension",
@@ -408,7 +416,8 @@
         "좌골 회복기엔 5kg 낮춰 15회 × 4세트"
       ],
       "memo": "",
-      "updated": "2026-07-21"
+      "updated": "2026-07-21",
+      "image": "docs/images/16_legextension.svg"
     },
     {
       "id": "pt_daily_hamstring",
@@ -423,7 +432,8 @@
       ],
       "reminders": [],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/19_hamstring.svg"
     },
     {
       "id": "pt_daily_piriformis",
@@ -439,7 +449,8 @@
       ],
       "reminders": [],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/20_piriformis.svg"
     },
     {
       "id": "pt_deadbug",
@@ -461,7 +472,8 @@
         "복부 긴장을 운동 내내 유지 — 풀렸다 싶으면 다시 잡아낸다. 제대로 하면 20개가 엄청 힘든 운동"
       ],
       "memo": "",
-      "updated": "2026-07-16"
+      "updated": "2026-07-21",
+      "image": "docs/images/17_deadbug.svg"
     },
     {
       "id": "pt_plank",
@@ -482,7 +494,8 @@
         "어지러우면 혈압이 오를 수 있음 — 오래 버티기보다 다음 세트에 / 허리 아프면 바로 내려오기"
       ],
       "memo": "",
-      "updated": "2026-07-16"
+      "updated": "2026-07-21",
+      "image": "docs/images/18_plank.svg"
     },
     {
       "id": "pt_daily_foam",
@@ -499,7 +512,8 @@
       ],
       "reminders": [],
       "memo": "",
-      "updated": "2026-06-09"
+      "updated": "2026-07-21",
+      "image": "docs/images/21_foam.svg"
     },
     {
       "id": "pt_rehab_quadset",

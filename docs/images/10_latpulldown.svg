@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">랫풀다운 · 시작 자세</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="206" y="74" width="130" height="9" rx="4" fill="#3A4038"/>
+<line x1="270" y1="66" x2="270" y2="78" stroke="#8894A0" stroke-width="4"/>
+<rect x="224" y="222" width="66" height="10" rx="4" fill="#CBD8D3"/>
+<ellipse cx="252" cy="172" rx="38" ry="30" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="254" y1="150" x2="238" y2="84" stroke="#6A8781" stroke-width="13"/>
+  <line x1="254" y1="150" x2="270" y2="84" stroke="#6A8781" stroke-width="13"/>
+  <line x1="254" y1="150" x2="252" y2="218" stroke="#516C66" stroke-width="28"/>
+  <line x1="252" y1="218" x2="300" y2="232" stroke="#607D77" stroke-width="22"/>
+  <line x1="300" y1="232" x2="300" y2="256" stroke="#607D77" stroke-width="13"/>
+  <circle cx="238" cy="84" r="8" fill="#6A8781"/>
+  <circle cx="270" cy="84" r="8" fill="#6A8781"/>
+  <circle cx="252" cy="132" r="16" fill="#516C66"/>
+</g>
+<line x1="286" y1="196" x2="286" y2="176" stroke="#E4572E" stroke-width="5.5" stroke-linecap="round"/>
+<polygon points="286,201 281,189 291,189" fill="#E4572E"/>
+<text x="44" y="150" font-size="13.5" font-weight="600" fill="#2B3A36">팔꿈치를 바닥으로 찍기</text>
+<text x="44" y="168" font-size="12" fill="#6E807B">명치 들고 등 늘려서 시작</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">시작 자세</text>
+</svg>

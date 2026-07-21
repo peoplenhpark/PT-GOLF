@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.42"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">V-스쿼트 · 핵심 자세</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<line x1="150" y1="118" x2="196" y2="228" stroke="#C3CEC9" stroke-width="14" stroke-linecap="round"/>
+<rect x="250" y="256" width="70" height="10" rx="5" fill="#CBD8D3"/>
+<ellipse cx="196" cy="212" rx="40" ry="28" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="188" y1="220" x2="168" y2="132" stroke="#516C66" stroke-width="27"/>
+  <line x1="188" y1="220" x2="262" y2="214" stroke="#607D77" stroke-width="26"/>
+  <line x1="262" y1="214" x2="270" y2="256" stroke="#607D77" stroke-width="22"/>
+  <line x1="270" y1="256" x2="296" y2="256" stroke="#607D77" stroke-width="13"/>
+  <circle cx="188" cy="220" r="15" fill="#516C66"/>
+  <circle cx="262" cy="214" r="15" fill="#607D77"/>
+  <circle cx="160" cy="116" r="16" fill="#516C66"/>
+</g>
+<text x="150" y="150" font-size="13.5" font-weight="600" fill="#2B3A36">뒤로 기대 · 뒤꿈치로 밀어 올리기</text>
+<text x="150" y="168" font-size="12" fill="#6E807B">엉덩이(고관절 바깥)가 늘어나는 느낌</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">핵심 자세</text>
+</svg>
