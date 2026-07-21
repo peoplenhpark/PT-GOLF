@@ -18,8 +18,8 @@
 </g>
 <ellipse cx="196" cy="240" rx="26" ry="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
 <line x1="150" y1="240" x2="240" y2="240" stroke="#C9871F" stroke-width="1.5" stroke-dasharray="4 4"/>
-<text x="150" y="120" font-size="20.2" font-weight="600" fill="#2B3A36">겨드랑이 아래 광배·대원근 라인</text>
-<text x="150" y="138" font-size="18" fill="#6E807B">운동 전후 10회씩 비비기</text>
+<text x="150" y="120" font-size="17.5" font-weight="600" fill="#2B3A36">겨드랑이 아래 광배·대원근 라인</text>
+<text x="150" y="138" font-size="15.6" fill="#6E807B">운동 전후 10회씩 비비기</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">이완</text>
 </svg>

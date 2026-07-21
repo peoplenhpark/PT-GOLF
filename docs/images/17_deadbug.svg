@@ -19,8 +19,8 @@
   <circle cx="80" cy="230" r="18" fill="#516C66"/>
   <circle cx="214" cy="239" r="14" fill="#516C66"/>
 </g>
-<text x="150" y="118" font-size="20.2" font-weight="600" fill="#2B3A36">반대쪽 팔·다리 크로스</text>
-<text x="106.9" y="136" font-size="18" fill="#6E807B">복부 수축 유지 · 골반 후방경사 · 천천히</text>
+<text x="150" y="118" font-size="17.5" font-weight="600" fill="#2B3A36">반대쪽 팔·다리 크로스</text>
+<text x="106.9" y="136" font-size="15.6" fill="#6E807B">복부 수축 유지 · 골반 후방경사 · 천천히</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">핵심 자세</text>
 </svg>

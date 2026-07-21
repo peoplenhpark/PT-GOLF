@@ -21,8 +21,8 @@
 <polygon points="210,233 198,227 199,239" fill="#E4572E"/>
 <line x1="304" y1="228" x2="274" y2="232" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
 <polygon points="270,233 282,227 281,239" fill="#E4572E"/>
-<text x="282.2" y="120" font-size="20.2" font-weight="600" fill="#2B3A36">무릎 힘으로 모으기</text>
-<text x="203.2" y="138" font-size="18" fill="#6E807B">(발 힘 X) · 모은 지점 2초 꾹</text>
+<text x="282.2" y="120" font-size="17.5" font-weight="600" fill="#2B3A36">무릎 힘으로 모으기</text>
+<text x="203.2" y="138" font-size="15.6" fill="#6E807B">(발 힘 X) · 모은 지점 2초 꾹</text>
 <rect x="360" y="60" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="77" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">핵심 자세</text>
 </svg>

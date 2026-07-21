@@ -22,9 +22,9 @@
 </g>
 <line x1="300" y1="152" x2="336" y2="116" stroke="#E4572E" stroke-width="6" stroke-linecap="round"/>
 <polygon points="339,113 324,117 331,129" fill="#E4572E"/>
-<text x="177.2" y="90" font-size="21" font-weight="600" fill="#2B3A36">위 다리 곧게 펴 옆으로 들기</text>
-<text x="230" y="110" font-size="19.5" fill="#6E807B">(엉덩이·골반 힘)</text>
-<text x="265.8" y="232" font-size="18.8" fill="#6E807B">아래 다리 살짝 앞으로</text>
+<text x="177.2" y="90" font-size="18.2" font-weight="600" fill="#2B3A36">위 다리 곧게 펴 옆으로 들기</text>
+<text x="230" y="110" font-size="16.9" fill="#6E807B">(엉덩이·골반 힘)</text>
+<text x="265.8" y="232" font-size="16.3" fill="#6E807B">아래 다리 살짝 앞으로</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각각</text>
 </svg>

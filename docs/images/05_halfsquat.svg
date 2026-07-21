@@ -24,10 +24,10 @@
 <line x1="222" y1="176" x2="188" y2="164" stroke="#E4572E" stroke-width="5.5" stroke-linecap="round"/>
 <polygon points="184,163 197,158 195,170" fill="#E4572E"/>
 <circle cx="230" cy="255" r="5" fill="#E4572E"/>
-<text x="40" y="150" font-size="20.2" font-weight="600" fill="#2B3A36">엉덩이 뒤로</text>
-<text x="40" y="168" font-size="18.8" fill="#6E807B">(고관절 접기)</text>
-<text x="250" y="80" font-size="20.2" font-weight="600" fill="#2B3A36">가슴 들고 팔 앞으로</text>
-<text x="40" y="285" font-size="18" fill="#6E807B">무게중심 발볼(미드풋) · 뒤꿈치는 떨어지지 않게</text>
+<text x="40" y="150" font-size="17.5" font-weight="600" fill="#2B3A36">엉덩이 뒤로</text>
+<text x="40" y="168" font-size="16.3" fill="#6E807B">(고관절 접기)</text>
+<text x="250" y="80" font-size="17.5" font-weight="600" fill="#2B3A36">가슴 들고 팔 앞으로</text>
+<text x="40" y="285" font-size="15.6" fill="#6E807B">무게중심 발볼(미드풋) · 뒤꿈치는 떨어지지 않게</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">준비자세</text>
 </svg>

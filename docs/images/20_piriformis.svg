@@ -18,9 +18,9 @@
   <circle cx="80" cy="230" r="18" fill="#516C66"/>
   <circle cx="206" cy="239" r="14" fill="#516C66"/>
 </g>
-<text x="150" y="118" font-size="20.2" font-weight="600" fill="#2B3A36">발을 반대쪽 무릎에 교차</text>
-<text x="150" y="136" font-size="18" fill="#6E807B">뒤 허벅지 잡고 가슴 쪽으로 당기기</text>
-<text x="146.5" y="152" font-size="18" fill="#6E807B">엉덩이 바깥(이상근)이 늘어나는 느낌</text>
+<text x="150" y="118" font-size="17.5" font-weight="600" fill="#2B3A36">발을 반대쪽 무릎에 교차</text>
+<text x="150" y="136" font-size="15.6" fill="#6E807B">뒤 허벅지 잡고 가슴 쪽으로 당기기</text>
+<text x="146.5" y="152" font-size="15.6" fill="#6E807B">엉덩이 바깥(이상근)이 늘어나는 느낌</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각 30초</text>
 </svg>

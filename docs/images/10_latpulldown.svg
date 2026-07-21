@@ -23,8 +23,8 @@
 </g>
 <line x1="286" y1="196" x2="286" y2="176" stroke="#E4572E" stroke-width="5.5" stroke-linecap="round"/>
 <polygon points="286,201 281,189 291,189" fill="#E4572E"/>
-<text x="44" y="150" font-size="20.2" font-weight="600" fill="#2B3A36">팔꿈치를 바닥으로 찍기</text>
-<text x="44" y="168" font-size="18" fill="#6E807B">명치 들고 등 늘려서 시작</text>
+<text x="44" y="150" font-size="17.5" font-weight="600" fill="#2B3A36">팔꿈치를 바닥으로 찍기</text>
+<text x="44" y="168" font-size="15.6" fill="#6E807B">명치 들고 등 늘려서 시작</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">시작 자세</text>
 </svg>
