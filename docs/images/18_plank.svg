@@ -18,9 +18,9 @@
   <circle cx="138" cy="198" r="16" fill="#516C66"/>
   <circle cx="150" cy="248" r="10" fill="#6A8781"/>
 </g>
-<text x="150" y="118" font-size="13.5" font-weight="600" fill="#2B3A36">어깨-팔꿈치 사각형 · 몸 일직선</text>
-<text x="150" y="136" font-size="12" fill="#6E807B">숨 뱉으며 배를 등에 붙이기(복부 수축)</text>
-<text x="150" y="152" font-size="12" fill="#6E807B">엉덩이 빠지거나 허리 꺾이지 않게</text>
+<text x="150" y="118" font-size="20.2" font-weight="600" fill="#2B3A36">어깨-팔꿈치 사각형 · 몸 일직선</text>
+<text x="126.7" y="136" font-size="18" fill="#6E807B">숨 뱉으며 배를 등에 붙이기(복부 수축)</text>
+<text x="150" y="152" font-size="18" fill="#6E807B">엉덩이 빠지거나 허리 꺾이지 않게</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">핵심 자세</text>
 </svg>

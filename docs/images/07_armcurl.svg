@@ -23,11 +23,11 @@
 <circle cx="268" cy="200" r="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
 <path d="M 292 194 A 44 44 0 0 1 282 146" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
 <polygon points="280,141 275,154 288,152" fill="#E4572E"/>
-<text x="44" y="140" font-size="13.5" font-weight="600" fill="#2B3A36">위 팔뚝(상완골)</text>
-<text x="44" y="158" font-size="13.5" font-weight="600" fill="#2B3A36">움직이지 않게 고정</text>
-<text x="300" y="214" font-size="13" font-weight="600" fill="#2B3A36">손목은 일자로</text>
-<text x="300" y="232" font-size="12" fill="#6E807B">(꺾어서 들지 말 것)</text>
-<text x="44" y="285" font-size="12" fill="#6E807B">손은 조금 넓게 · 내릴 때 팔은 다 펴주기</text>
+<text x="44" y="140" font-size="20.2" font-weight="600" fill="#2B3A36">위 팔뚝(상완골)</text>
+<text x="44" y="158" font-size="20.2" font-weight="600" fill="#2B3A36">움직이지 않게 고정</text>
+<text x="300" y="214" font-size="19.5" font-weight="600" fill="#2B3A36">손목은 일자로</text>
+<text x="290.5" y="232" font-size="18" fill="#6E807B">(꺾어서 들지 말 것)</text>
+<text x="44" y="285" font-size="18" fill="#6E807B">손은 조금 넓게 · 내릴 때 팔은 다 펴주기</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">준비자세</text>
 </svg>

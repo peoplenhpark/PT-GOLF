@@ -18,8 +18,8 @@
   <circle cx="204" cy="240" r="14" fill="#516C66"/>
 </g>
 <line x1="286" y1="150" x2="240" y2="178" stroke="#E6A23C" stroke-width="4" stroke-dasharray="6 4"/>
-<text x="150" y="118" font-size="13.5" font-weight="600" fill="#2B3A36">수건 걸어 다리 펴 당기기</text>
-<text x="150" y="136" font-size="12" fill="#6E807B">앞꿈치를 너무 몸쪽으로 당기지 말기</text>
+<text x="150" y="118" font-size="20.2" font-weight="600" fill="#2B3A36">수건 걸어 다리 펴 당기기</text>
+<text x="150" y="136" font-size="18" fill="#6E807B">앞꿈치를 너무 몸쪽으로 당기지 말기</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각 30초</text>
 </svg>

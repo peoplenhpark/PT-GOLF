@@ -20,9 +20,9 @@
 <circle cx="324" cy="180" r="11" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
 <line x1="300" y1="204" x2="322" y2="184" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
 <polygon points="325,181 311,184 318,195" fill="#E4572E"/>
-<text x="230" y="120" font-size="13" font-weight="600" fill="#2B3A36">무릎 누르듯 끝까지(쿼드셋 느낌)</text>
-<text x="230" y="138" font-size="12" fill="#6E807B">위에서 1~2초 버티고 천천히</text>
-<text x="44" y="285" font-size="12" fill="#6E807B">의자 뒤로 밀어 밀착 · 날개뼈 벤치에 기대</text>
+<text x="158.9" y="120" font-size="19.5" font-weight="600" fill="#2B3A36">무릎 누르듯 끝까지(쿼드셋 느낌)</text>
+<text x="226.6" y="138" font-size="18" fill="#6E807B">위에서 1~2초 버티고 천천히</text>
+<text x="44" y="285" font-size="18" fill="#6E807B">의자 뒤로 밀어 밀착 · 날개뼈 벤치에 기대</text>
 <rect x="360" y="60" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="77" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">한 발씩</text>
 </svg>

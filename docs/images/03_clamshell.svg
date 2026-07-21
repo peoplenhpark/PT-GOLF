@@ -23,9 +23,9 @@
 <ellipse cx="296" cy="202" rx="22" ry="11" fill="none" stroke="#E6A23C" stroke-width="5"/>
 <path d="M 300 216 A 30 30 0 0 0 314 188" fill="none" stroke="#E4572E" stroke-width="5.5" stroke-linecap="round"/>
 <polygon points="316,184 305,193 318,197" fill="#E4572E"/>
-<text x="256" y="116" font-size="14.5" font-weight="600" fill="#2B3A36">무릎 벌리기</text>
-<text x="256" y="136" font-size="13" fill="#6E807B">(뒤꿈치는 붙인 채)</text>
-<text x="150" y="238" font-size="12.5" font-weight="600" fill="#C9871F">밴드 걸면 자극 ↑</text>
+<text x="256" y="116" font-size="21.8" font-weight="600" fill="#2B3A36">무릎 벌리기</text>
+<text x="256" y="136" font-size="19.5" fill="#6E807B">(뒤꿈치는 붙인 채)</text>
+<text x="150" y="238" font-size="18.8" font-weight="600" fill="#C9871F">밴드 걸면 자극 ↑</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 각각</text>
 </svg>
