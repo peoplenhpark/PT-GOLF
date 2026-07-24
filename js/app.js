@@ -430,6 +430,7 @@ const Theme = (() => {
       case 'cal-toggle-sched': calModalState.scheduled = !calModalState.scheduled; updateCalModalBtns(); break;
       case 'cal-toggle-done':  calModalState.completed = !calModalState.completed; updateCalModalBtns(); break;
       case 'cal-toggle-rest':  calModalState.rest      = !calModalState.rest;      updateCalModalBtns(); break;
+      case 'img-close': closeImgViewer(); break;
       case 'modal-close': closeModal(); break;
       case 'modal-save': saveEditor(); break;
       case 'confirm-yes': closeConfirm(true); break;
@@ -546,6 +547,66 @@ const Theme = (() => {
   function linesOf(id) { return val(id).split('\n').map(s => s.trim()).filter(Boolean); }
   function setSeg(id, v) { [...document.getElementById(id).children].forEach(b => b.classList.toggle('on', b.dataset.val === v)); }
   function getSeg(id) { const on = document.getElementById(id).querySelector('.on'); return on ? on.dataset.val : 'pt'; }
+
+  // ============ 그림 확대 뷰어 (핀치줌·팬·더블탭) ============
+  const imgViewer = document.getElementById('img-viewer');
+  const imgViewerImg = document.getElementById('img-viewer-img');
+  let iv = { scale: 1, tx: 0, ty: 0 };
+  function ivApply() { imgViewerImg.style.transform = `translate(${iv.tx}px,${iv.ty}px) scale(${iv.scale})`; }
+  function openImgViewer(src) {
+    if (!src) return;
+    imgViewerImg.src = src;
+    iv = { scale: 1, tx: 0, ty: 0 }; ivApply();
+    imgViewer.classList.remove('hidden');
+  }
+  function closeImgViewer() { imgViewer.classList.add('hidden'); imgViewerImg.removeAttribute('src'); }
+
+  // 상세 그림 탭 → 뷰어 열기
+  document.body.addEventListener('click', (e) => {
+    const fig = e.target.closest('.ex-figure');
+    if (fig) { const im = fig.querySelector('img'); if (im) openImgViewer(im.getAttribute('src')); }
+  });
+  // 배경(이미지 바깥) 탭 → 닫기
+  imgViewer.addEventListener('click', (e) => { if (e.target === imgViewer) closeImgViewer(); });
+
+  (function () {
+    let sDist = 0, sScale = 1, sMid = null, sTx = 0, sTy = 0, pan = null, lastTap = 0;
+    const dist = (a, b) => Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const mid  = (a, b) => ({ x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 });
+    const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+    imgViewerImg.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        sDist = dist(e.touches[0], e.touches[1]); sScale = iv.scale;
+        sMid = mid(e.touches[0], e.touches[1]); sTx = iv.tx; sTy = iv.ty;
+      } else if (e.touches.length === 1) {
+        const now = Date.now();
+        if (now - lastTap < 300) {   // 더블탭 토글
+          iv = iv.scale > 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: 2.5, tx: 0, ty: 0 };
+          ivApply(); lastTap = 0; e.preventDefault(); return;
+        }
+        lastTap = now;
+        if (iv.scale > 1) pan = { x: e.touches[0].clientX - iv.tx, y: e.touches[0].clientY - iv.ty };
+      }
+    }, { passive: false });
+    imgViewerImg.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const d = dist(e.touches[0], e.touches[1]);
+        iv.scale = clamp(sScale * d / sDist, 1, 5);
+        const m = mid(e.touches[0], e.touches[1]);
+        iv.tx = sTx + (m.x - sMid.x); iv.ty = sTy + (m.y - sMid.y); ivApply();
+      } else if (e.touches.length === 1 && pan && iv.scale > 1) {
+        e.preventDefault();
+        iv.tx = e.touches[0].clientX - pan.x; iv.ty = e.touches[0].clientY - pan.y; ivApply();
+      }
+    }, { passive: false });
+    imgViewerImg.addEventListener('touchend', (e) => {
+      if (e.touches.length === 0) { pan = null; if (iv.scale <= 1.02) { iv = { scale: 1, tx: 0, ty: 0 }; ivApply(); } }
+    });
+    // 데스크톱: 더블클릭 토글 · 휠 줌
+    imgViewerImg.addEventListener('dblclick', (e) => { e.preventDefault(); iv = iv.scale > 1 ? { scale: 1, tx: 0, ty: 0 } : { scale: 2.2, tx: 0, ty: 0 }; ivApply(); });
+    imgViewer.addEventListener('wheel', (e) => { e.preventDefault(); iv.scale = clamp(iv.scale * (e.deltaY < 0 ? 1.12 : 0.89), 1, 5); if (iv.scale <= 1) { iv.tx = 0; iv.ty = 0; } ivApply(); }, { passive: false });
+  })();
 
   // ============ 부트 ============
   Store.init().then(() => {

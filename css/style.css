@@ -109,8 +109,24 @@ body{
 .spec-box .v{font-size:20px;font-weight:800;color:var(--pt)}
 .spec-box.golf .v{color:var(--golf)}
 
-.ex-figure{margin-bottom:20px}
+.ex-figure{margin-bottom:20px;position:relative;cursor:zoom-in}
 .ex-figure img{display:block;width:100%;height:auto;border-radius:18px}
+.ex-figure::after{content:"🔍";position:absolute;right:10px;bottom:10px;font-size:13px;
+  background:rgba(6,8,10,.55);color:#fff;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;pointer-events:none}
+
+/* 그림 전체화면 확대 뷰어 */
+.img-viewer{position:fixed;inset:0;z-index:200;background:rgba(6,8,10,.93);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  touch-action:none;overscroll-behavior:none}
+.img-viewer.hidden{display:none}
+.img-viewer img{max-width:100%;max-height:100%;transform-origin:center center;
+  will-change:transform;user-select:none;-webkit-user-drag:none;touch-action:none}
+.img-viewer-close{position:fixed;top:calc(var(--safe-top) + 10px);right:14px;z-index:202;
+  width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);
+  color:#fff;border:1px solid rgba(255,255,255,.28);font-size:19px;cursor:pointer}
+.img-viewer-hint{position:fixed;left:0;right:0;bottom:calc(var(--safe-bot) + 16px);z-index:201;
+  text-align:center;color:rgba(255,255,255,.7);font-size:12px;pointer-events:none}
 
 .block{margin-bottom:22px}
 .block-h{font-size:13px;font-weight:800;color:var(--pt);margin-bottom:11px;

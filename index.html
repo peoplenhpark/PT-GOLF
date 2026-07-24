@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0d0f14">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -112,6 +112,13 @@
   </div>
 
   <div id="toast" class="toast hidden"></div>
+
+  <!-- 그림 확대 뷰어 (핀치줌·팬·더블탭) -->
+  <div id="img-viewer" class="img-viewer hidden">
+    <button class="img-viewer-close" data-act="img-close" aria-label="닫기">✕</button>
+    <div class="img-viewer-hint">두 손가락으로 확대 · 더블탭 · 바깥 탭하면 닫힘</div>
+    <img id="img-viewer-img" alt="동작 그림 확대">
+  </div>
 
   <script src="js/store.js"></script>
   <script src="js/app.js"></script>
