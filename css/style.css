@@ -17,6 +17,8 @@ body{
   background:var(--bg);color:var(--txt);
   font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
   font-size:17px;font-weight:700;line-height:1.5;overscroll-behavior-y:none;
+  /* 크롬 등에서 글자가 작게 보이는 문제 보정 — 전체 텍스트 크기를 균일 확대(카톡 웹뷰 크기에 맞춤) */
+  -webkit-text-size-adjust:118%;text-size-adjust:118%;
 }
 #app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
 

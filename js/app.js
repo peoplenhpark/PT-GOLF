@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '28';
+  const ASSET_VER = '29';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -112,16 +112,7 @@ const Theme = (() => {
         <input class="search" data-act="search-focus" placeholder="🔍 동작 검색…" readonly>
         <div class="parts">${partCards}</div>
         ${favSection}
-        <div class="settings">
-          <button data-act="export">⬇︎ 내보내기(백업)</button>
-          <button data-act="import">⬆︎ 가져오기(복원)</button>
-        </div>
-        <div class="local-note">
-          ${Store.hasLocalChanges()
-            ? '이 기기에 내 편집 내용이 저장돼 있어요. 영구 보존하려면 내보내기 후 seed.json 에 반영하세요.'
-            : '추가·수정·메모는 이 기기에 자동 저장됩니다.'}
-        </div>
-        <input type="file" id="import-file" accept="application/json" class="hidden">
+        <div class="local-note">추가·수정·메모는 이 기기에 자동 저장됩니다.</div>
       </div>
       ${tabbar('home')}`;
   }
@@ -426,8 +417,6 @@ const Theme = (() => {
           Store.remove(view.id); toast('삭제됨'); go(part);
         }); break;
       case 'theme-toggle': Theme.toggle(); toast(Theme.get() === 'light' ? '☀️ 라이트 모드' : '🌙 다크 모드'); break;
-      case 'export': doExport(); break;
-      case 'import': document.getElementById('import-file').click(); break;
       case 'cal-modal-close': closeCalModal(); break;
       case 'cal-modal-save':  saveCalModal(); break;
       case 'cal-toggle-sched': calModalState.scheduled = !calModalState.scheduled; updateCalModalBtns(); break;
@@ -513,32 +502,6 @@ const Theme = (() => {
     if (yes && confirmCb) confirmCb();
     confirmCb = null;
   }
-
-  // ============ export / import ============
-  function doExport() {
-    const data = Store.exportData();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url; a.download = `health-note-${Store.todayStr()}.json`;
-    a.click(); URL.revokeObjectURL(url);
-    toast('백업 파일을 내려받았어요');
-  }
-  document.body.addEventListener('change', (ev) => {
-    if (ev.target.id !== 'import-file') return;
-    const file = ev.target.files[0]; if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        const data = JSON.parse(reader.result);
-        askConfirm('가져온 파일로 현재 데이터를 덮어쓸까요? (이 기기 한정)', () => {
-          Store.importData(data); toast('복원 완료'); go('home');
-        });
-      } catch (e) { toast('JSON 파일을 읽을 수 없어요'); }
-      ev.target.value = '';
-    };
-    reader.readAsText(file);
-  });
 
   // 모달 바깥 클릭 닫기
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
