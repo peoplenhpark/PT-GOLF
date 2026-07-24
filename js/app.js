@@ -552,7 +552,17 @@ const Theme = (() => {
     Theme.init();   // 버튼 아이콘 동기화 (인라인 스크립트가 html 속성은 설정했지만 버튼 아이콘은 여기서)
     render();
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-      navigator.serviceWorker.register('sw.js').catch(() => {});
+      // 이전에 이미 SW가 있던 경우에만, 새 SW가 제어권을 잡으면 1회 자동 새로고침 → 최신본 즉시 반영
+      const hadController = !!navigator.serviceWorker.controller;
+      let reloaded = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (reloaded || !hadController) return;
+        reloaded = true; location.reload();
+      });
+      // updateViaCache:'none' — 브라우저 HTTP 캐시를 무시하고 sw.js를 항상 새로 받아 갱신 감지
+      navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+        .then(reg => { reg.update(); })
+        .catch(() => {});
     }
   });
 })();
