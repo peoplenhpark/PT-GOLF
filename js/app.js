@@ -31,6 +31,9 @@ const Theme = (() => {
   const confirmEl = document.getElementById('confirm');
   const toastEl = document.getElementById('toast');
 
+  // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
+  const ASSET_VER = '28';
+
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
   // 운동 1회용 체크 상태(저장 안 함): { exId: Set(cueIndex) }
@@ -281,7 +284,7 @@ const Theme = (() => {
         </div>` : ''}
 
         ${e.image ? `<div class="ex-figure">
-          <img src="${esc(e.image)}" alt="${esc(e.name)} 참고 그림" loading="lazy">
+          <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 참고 그림" loading="lazy">
         </div>` : ''}
 
         ${cues ? `<div class="block">
