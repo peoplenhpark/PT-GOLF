@@ -1,7 +1,7 @@
 # PT-GOLF — 에이전트 인수인계 (Agent Handoff)
 
 > **목적:** 다른 AI 코딩 에이전트가 **이 문서 하나만 읽고** 곧바로 작업을 이어받을 수 있도록 정리한 자기완결형 핸드오프.
-> **최종 갱신:** 2026-07-25 · **현재 상태:** seed `v14` · SW `ptgolf-v26` · `main` = `origin/main` 동기화됨.
+> **최종 갱신:** 2026-07-25 · **현재 상태:** seed `v14` · SW `ptgolf-v30` · 자산 `?v=30`/`ASSET_VER='30'` · `main` = `origin/main` 동기화됨.
 
 ---
 
@@ -83,23 +83,35 @@ C:\APARK\PT_GOLF\            ← git 루트 = 앱
 ### 하이브리드 저장 로직 (`store.js`)
 - `getAll()` = seed + `localStorage` 오버레이(overrides/deleted) 병합.
 - seed 항목 삭제 = deleted 마스크, 로컬 추가분 = overrides. **seed.json 편집이 "영구", 앱 내 편집은 기기 로컬.**
-- `exportData()`(백업 JSON) → 그 내용을 seed.json에 반영하면 영구화.
+- ⚠️ **홈 화면 내보내기/가져오기(export/import) UI는 제거됨**(2026-07-25, 불필요). `Store.exportData/importData`는 코드에 남아 있으나 미사용 — 되살리지 말 것.
+
+### 글자 크기
+- `css` `body`에 `text-size-adjust:125%` — 크롬 등에서 작게 보이던 글자를 전체 균일 확대(카톡 웹뷰 크기 기준). 크기 조정은 이 값만 바꾸면 됨.
 
 ---
 
 ## 3. 배포 & 검증 워크플로 (그대로 따를 것)
 
+🚨 **버전 번호는 5곳을 항상 함께 올린다**(자산 캐시버스팅). 하나라도 빠지면 일부 기기(특히 카톡 웹뷰)가 옛 파일을 물어온다:
+1. `sw.js` — `const CACHE = 'ptgolf-vN'`
+2. `index.html` — `css/style.css?v=N`
+3. `index.html` — `js/store.js?v=N`
+4. `index.html` — `js/app.js?v=N`
+5. `js/app.js` — `const ASSET_VER = 'N'` (동작 그림 SVG src에 붙음)
+
+한 번에 올리는 예:
 ```bash
-# 루트에서
 cd "C:/APARK/PT_GOLF"
-# 1) 파일 수정
-# 2) 자산(css/js/seed.json/이미지)을 바꿨으면 sw.js의 CACHE 값을 올린다: 'ptgolf-vN' → 'ptgolf-v(N+1)'
-# 3) 커밋 (git identity가 없으면 아래처럼 로컬 지정)
-git config user.name "apark"; git config user.email "peoplenhpark@github.com"
-git add <files>
-git commit -m "메시지 ... (SW vN)"   # 메시지·본문은 한국어, 커밋 끝에 Co-Authored-By 유지
+N=31   # 다음 번호
+sed -i "s/ptgolf-v[0-9]*/ptgolf-v$N/" sw.js
+sed -i "s/\(style\.css\|store\.js\|app\.js\)?v=[0-9]*/\1?v=$N/g" index.html
+sed -i "s/const ASSET_VER = '[0-9]*'/const ASSET_VER = '$N'/" js/app.js
+git config user.name "apark"; git config user.email "peoplenhpark@github.com"  # identity 없을 때만
+git add -A && git commit -m "…내용… (SW v$N)"   # 한국어, 끝에 Co-Authored-By
 git push origin main
 ```
+- **왜 필요?** GitHub Pages는 정적이라 헤더 제어 불가 + 카톡/삼성인터넷 웹뷰가 하위 파일(css/js/그림)을 끈질기게 캐시함. URL에 `?v=N`을 박아 강제 재다운로드시킨다. (`data/seed.json`은 `store.js`가 `?v=Date.now()`로 이미 매번 새로 받음.)
+- **자동 갱신**: `app.js` 부트에서 SW를 `{updateViaCache:'none'}`로 등록 + `controllerchange` 시 1회 자동 새로고침 → 실브라우저는 다음 열 때 자동 최신. **단 카톡 인앱 브라우저는 SW 미지원 → 외부 브라우저(Chrome) 권장.**
 
 ### 라이브 검증 (샌드박스에서 로컬 서버가 안 되므로 배포본으로 검증)
 push 후 PowerShell로 30~60초 폴링:
@@ -123,6 +135,7 @@ for($i=1;$i -le 12;$i++){ Start-Sleep 12
 - **Windows Store python 셔임** — Bash의 `python`이 스토어 셔임일 수 있음. JSON 처리엔 `PYTHONIOENCODING=utf-8 python - <<'PY'` 형태가 안전.
 - **콘솔 인코딩(cp949)** — 한글/이모지 print가 깨질 수 있어 `PYTHONIOENCODING=utf-8` 권장.
 - **파괴적 작업 차단** — 사용자가 만든/명시 안 한 파일 `rm`은 자동 거부된다. 삭제가 꼭 필요하면 사용자에게 물을 것. (이번에 루트 `HANDOFF.md`·중복 PDF·옛 PNG를 지우려다 막혀서 그대로 둠 → 무해한 중복이 일부 남아 있음.)
+- **기기별 구버전 표시(캐시)** — Pages 빌드가 수 분 지연되기도 하고, **카톡 인앱 브라우저/삼성인터넷은 하위 파일을 끈질기게 캐시**한다. 대응 = ①§3의 5곳 버전 동시 bump(자산 캐시버스팅) ②사용자에겐 "카톡 ⋮ → 다른 브라우저로 열기(Chrome)" 안내. 카톡 웹뷰는 서비스워커 미지원이라 자동 갱신이 안 됨.
 
 ---
 
@@ -156,6 +169,9 @@ for($i=1;$i -le 12;$i++){ Start-Sleep 12
 | `993ed71` | **7/24 세션**: 신규 카테고리 **`추천운동`** 파생 + **버드독·티밸런스·스텝업**(일러스트 22~24) + 원칙 `pr_pt_recommended`. 코어 원칙에 "얕고 긴 호흡" 보완. 골프 파트(타 회원 레슨)는 제외. seed v13, SW v23. |
 | `c531545` | 티밸런스 그림 지지다리 수직 교정 + **데드버그→추천운동** 이동 + 핀치줌(user-scalable=yes) 1차. seed v14, SW v24. |
 | `6276d2c`→`b838788` | 탭-투-확대 라이트박스 추가 후 **사용자 요청으로 revert** — 화면 전체 핀치줌 유지. SW v26. |
+| `97d9a00` | **SW 자동 갱신 강화** — `register(sw.js,{updateViaCache:'none'})` + `controllerchange` 시 1회 자동 새로고침. SW v27. |
+| `eacab41` | **자산 캐시버스팅** — css/js/그림 URL에 `?v=N`(카톡 등 웹뷰 하위파일 캐시 대응). SW v28. |
+| `bfd524c`→`f9e74aa` | **내보내기/가져오기 제거** + **글자 크기 확대**(`text-size-adjust` 118%→**125%**). SW v29→v30. |
 
 ### 기능적으로 추가된 것 (코드 위치)
 - **참고 이미지:** `app.js` `renderDetail` 내 `e.image` 블록 + `css` `.ex-figure`. 현재 이미지 6종(재활 4 + 스쿼트 준비자세 2), 모두 손으로 작성한 플랫 벡터 SVG.
@@ -234,7 +250,7 @@ PY
 [ ] 수정할 대상: data/seed.json(콘텐츠) / js·css(동작) 판단
 [ ] ★녹취록 반영이면: 해당 동작의 기존 cues·reminders 먼저 정독 → 중복/상충 대조
     (§8-0) — append 금지, 상충 시 나중(최신) 내용 우선, 병합 후 유사쌍 스캔 0 확인
-[ ] 자산 바꿨으면 sw.js CACHE 버전 +1
+[ ] 자산(css/js/그림) 바꿨으면 버전 5곳 동시 bump: sw.js CACHE + index.html(css·store·app ?v=N) + app.js ASSET_VER (§3 sed 스니펫)
 [ ] JSON이면 PYTHONIOENCODING=utf-8 python 으로 유효성 검사
 [ ] git config user.* 없으면 지정 → commit(한국어) → push origin main
 [ ] push 거부되면 fetch→merge origin/main→push
