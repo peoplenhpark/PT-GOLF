@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">플랫 벤치프레스 · 핵심 자세</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="120" y="212" width="220" height="14" rx="7" fill="#C3CEC9"/>
+<rect x="60" y="262" width="360" height="8" rx="4" fill="#CBD8D3"/>
+<ellipse cx="222" cy="176" rx="52" ry="28" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="152" y1="204" x2="262" y2="206" stroke="#516C66" stroke-width="28"/>
+  <line x1="262" y1="206" x2="320" y2="234" stroke="#607D77" stroke-width="24"/>
+  <line x1="320" y1="234" x2="326" y2="262" stroke="#607D77" stroke-width="16"/>
+  <line x1="196" y1="196" x2="204" y2="150" stroke="#5EA093" stroke-width="15"/>
+  <line x1="204" y1="150" x2="238" y2="150" stroke="#5EA093" stroke-width="14"/>
+  <circle cx="204" cy="150" r="9" fill="#4E8D80"/>
+  <circle cx="132" cy="198" r="17" fill="#516C66"/>
+</g>
+<line x1="168" y1="146" x2="286" y2="146" stroke="#3A4038" stroke-width="7" stroke-linecap="round"/>
+<circle cx="182" cy="146" r="16" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<circle cx="272" cy="146" r="16" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<line x1="228" y1="188" x2="228" y2="168" stroke="#E4572E" stroke-width="5.5" stroke-linecap="round"/>
+<polygon points="228,163 222,175 234,175" fill="#E4572E"/>
+<text x="150" y="102" font-size="17.5" font-weight="600" fill="#2B3A36">내려갈 때 가슴을 마중 나오듯</text>
+<text x="150" y="120" font-size="15.6" fill="#6E807B">어깨가 앞으로 빠지지 않게</text>
+<text x="44" y="286" font-size="15.6" fill="#6E807B">날개뼈 벤치에 박아 흉추 열기 · 매회 같은 지점</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">70% 힘</text>
+</svg>
