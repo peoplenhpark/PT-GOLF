@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '32';
+  const ASSET_VER = '33';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -269,6 +269,10 @@ const Theme = (() => {
             <button class="icon-btn" data-act="edit" title="수정">✏️</button>
           </div>
         </div>
+
+        ${(e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
+          ${e.steps.map(s => `<span class="step">${esc(s)}</span>`).join('<span class="sep">›</span>')}
+        </div>` : ''}
 
         ${e.spec ? `<div class="spec-box ${isGolf ? 'golf' : ''}">
           <div><div class="k">핵심</div><div class="v">${esc(e.spec)}</div></div>

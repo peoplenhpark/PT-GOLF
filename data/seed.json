@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "updated": "2026-07-30",
   "parts": [
     {
@@ -801,7 +801,13 @@
       ],
       "memo": "",
       "updated": "2026-07-30",
-      "image": "docs/images/28_golf_steps_driver.svg"
+      "steps": [
+        "준비 골반접기",
+        "①백스윙",
+        "②체중이동",
+        "③못 박듯",
+        "④임팩트"
+      ]
     },
     {
       "id": "golf_iron7",
@@ -827,7 +833,13 @@
       ],
       "memo": "",
       "updated": "2026-07-30",
-      "image": "docs/images/29_golf_steps_iron.svg"
+      "steps": [
+        "준비 골반접기",
+        "①백스윙",
+        "②체중이동",
+        "③면 타격",
+        "④임팩트"
+      ]
     },
     {
       "id": "golf_iron5",
@@ -851,7 +863,13 @@
       "reminders": [],
       "memo": "",
       "updated": "2026-07-30",
-      "image": "docs/images/29_golf_steps_iron.svg"
+      "steps": [
+        "준비 골반접기",
+        "①백스윙",
+        "②체중이동",
+        "③면 타격",
+        "④임팩트"
+      ]
     },
     {
       "id": "golf_ironp",
@@ -875,7 +893,13 @@
       ],
       "memo": "",
       "updated": "2026-07-30",
-      "image": "docs/images/29_golf_steps_iron.svg"
+      "steps": [
+        "준비 골반접기",
+        "①백스윙",
+        "②체중이동",
+        "③면 타격",
+        "④임팩트"
+      ]
     }
   ]
 }
