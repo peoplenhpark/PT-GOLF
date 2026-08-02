@@ -111,13 +111,12 @@ body{
 .spec-box .v{font-size:20px;font-weight:800;color:var(--pt)}
 .spec-box.golf .v{color:var(--golf)}
 
-/* 핵심 키워드 가로 흐름 (상세 최상단) */
-.steps-flow{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;overflow-x:auto;
+/* 핵심 키워드 흐름 (상세 최상단) — 스크롤 없이 줄바꿈으로 전부 노출 */
+.steps-flow{display:flex;align-items:center;gap:5px 7px;flex-wrap:wrap;
   margin-bottom:16px;padding:11px 12px;background:var(--card);border:1px solid var(--pt-line);
-  border-radius:14px;scrollbar-width:none;-ms-overflow-style:none}
-.steps-flow::-webkit-scrollbar{display:none}
+  border-radius:14px;line-height:1.5}
 .steps-flow.golf{border-color:var(--golf-line)}
-.steps-flow .step{flex:0 0 auto;white-space:nowrap;font-size:13px;font-weight:700;color:var(--pt)}
+.steps-flow .step{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--pt)}
 .steps-flow.golf .step{color:var(--golf)}
 .steps-flow .sep{flex:0 0 auto;color:var(--faint);font-size:13px}
 
