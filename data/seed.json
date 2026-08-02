@@ -1,5 +1,5 @@
 {
-  "version": 17,
+  "version": 18,
   "updated": "2026-07-30",
   "parts": [
     {
@@ -800,7 +800,8 @@
         "왼쪽 어깨 들리지 않게 — 위치 사수 (가장 자주 틀리는 곳)"
       ],
       "memo": "",
-      "updated": "2026-07-30"
+      "updated": "2026-07-30",
+      "image": "docs/images/28_golf_steps_driver.svg"
     },
     {
       "id": "golf_iron7",
@@ -825,7 +826,8 @@
         "체중이동 - 지지 - 채만 (한 줄 요약)"
       ],
       "memo": "",
-      "updated": "2026-07-30"
+      "updated": "2026-07-30",
+      "image": "docs/images/29_golf_steps_iron.svg"
     },
     {
       "id": "golf_iron5",
@@ -848,7 +850,8 @@
       ],
       "reminders": [],
       "memo": "",
-      "updated": "2026-07-30"
+      "updated": "2026-07-30",
+      "image": "docs/images/29_golf_steps_iron.svg"
     },
     {
       "id": "golf_ironp",
@@ -871,7 +874,8 @@
         "오른쪽 어깨 늦게까지 유지"
       ],
       "memo": "",
-      "updated": "2026-07-30"
+      "updated": "2026-07-30",
+      "image": "docs/images/29_golf_steps_iron.svg"
     }
   ]
 }
