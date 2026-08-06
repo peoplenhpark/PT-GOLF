@@ -87,7 +87,8 @@ const Store = (() => {
     const terms = (q || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) return [];
     return getAll().filter(e => {
-      const hay = [e.name, e.spec, e.category,
+      const f = e.focus || {};
+      const hay = [e.name, e.spec, e.category, f.muscle || '', f.move || '', f.feel || '',
         ...(e.cues || []), ...(e.reminders || []), ...(e.steps || []), e.memo || '']
         .join(' ').toLowerCase();
       return terms.every(t => hay.includes(t));
