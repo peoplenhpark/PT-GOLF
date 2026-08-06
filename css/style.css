@@ -38,6 +38,13 @@ body{
   border-radius:10px;transition:color .15s}
 .back:active{color:var(--txt)}
 
+/* 헤더 검색 버튼 (PT·골프·즐겨찾기 화면에서 검색 진입) */
+.hd-search{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  width:42px;height:38px;font-size:17px;cursor:pointer;flex-shrink:0;
+  display:inline-flex;align-items:center;justify-content:center;transition:border-color .12s,transform .08s}
+.hd-search:active{transform:scale(.94);border-color:var(--pt-line)}
+.hint2{color:var(--faint);font-size:12px}
+
 .search{width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;
   padding:13px 15px;color:var(--txt);font-size:15px;margin-bottom:18px;
   box-shadow:var(--shadow-sm);transition:border-color .15s}

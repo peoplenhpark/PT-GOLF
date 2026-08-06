@@ -81,13 +81,17 @@ const Store = (() => {
     return cats;
   }
 
+  /** 동작 검색 — 이름·스펙·카테고리·큐·잊지말것·스텝·메모 전체에서 찾는다.
+   *  공백으로 여러 단어를 넣으면 모두 포함(AND)하는 동작만 반환. */
   function search(q) {
-    q = (q || '').trim().toLowerCase();
-    if (!q) return [];
-    return getAll().filter(e =>
-      [e.name, e.spec, e.category, ...(e.cues || []), e.memo || '']
-        .join(' ').toLowerCase().includes(q)
-    );
+    const terms = (q || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return [];
+    return getAll().filter(e => {
+      const hay = [e.name, e.spec, e.category,
+        ...(e.cues || []), ...(e.reminders || []), ...(e.steps || []), e.memo || '']
+        .join(' ').toLowerCase();
+      return terms.every(t => hay.includes(t));
+    });
   }
 
   // ---- 쓰기 (CRUD) ----

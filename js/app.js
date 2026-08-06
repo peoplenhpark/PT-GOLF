@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '34';
+  const ASSET_VER = '35';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -75,15 +75,18 @@ const Theme = (() => {
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
   }
 
-  function exRow(e, idx) {
+  function exRow(e, idx, showCat) {
     const star = e.favorite ? `<span class="star">★</span>` : `<span class="chev">›</span>`;
-    const memoMeta = (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : '';
+    const metas = [
+      showCat ? `<span>${partIcon(e.part)} ${esc(e.category || '')}</span>` : '',
+      (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : ''
+    ].filter(Boolean).join('');
     return `<div class="ex ${e.part}" data-open="${e.id}">
-      <div class="num">${idx != null ? idx + 1 : '★'}</div>
+      <div class="num">${idx != null ? idx + 1 : (showCat ? '🔍' : '★')}</div>
       <div class="body">
         <div class="t">${esc(e.name)}</div>
         <div class="spec">${esc(e.spec || '')}</div>
-        ${memoMeta ? `<div class="meta">${memoMeta}</div>` : ''}
+        ${metas ? `<div class="meta">${metas}</div>` : ''}
       </div>
       ${star}
     </div>`;
@@ -134,7 +137,8 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr" data-part="${part}">
         <button class="back" data-nav="home">‹ 홈</button>
-        <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1></div>
+        <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
+          <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
@@ -148,7 +152,8 @@ const Theme = (() => {
       : `<div class="empty">즐겨찾기한 동작이 없어요.<br>동작 상세에서 ☆ 를 눌러 추가하세요.</div>`;
     app.innerHTML = `
       <div class="scr">
-        <div class="hd"><h1>⭐ 즐겨찾기</h1></div>
+        <div class="hd"><h1>⭐ 즐겨찾기</h1>
+          <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${rows}
       </div>
       ${tabbar('favorites')}`;
@@ -207,29 +212,35 @@ const Theme = (() => {
       ${tabbar('calendar')}`;
   }
 
+  /** 검색 결과 영역 HTML — 입력이 없으면 안내, 있으면 결과 수 + 목록(카테고리 표시) */
+  function searchResultsHtml(q) {
+    if (!(q || '').trim()) {
+      return `<div class="empty">동작 이름·체크리스트·잊지 말 것·메모까지 한 번에 검색해요.<br>
+        예: <b>엉덩이</b> · <b>견갑</b> · <b>호흡</b> · <b>힙힌지</b><br>
+        <span class="hint2">여러 단어를 띄어 쓰면 모두 포함된 동작만 나와요</span></div>`;
+    }
+    const res = Store.search(q);
+    if (!res.length) return `<div class="empty">「${esc(q)}」 검색 결과가 없어요.<br>다른 단어로 찾아보세요.</div>`;
+    return `<div class="sec-t">검색 결과 ${res.length}개</div>` +
+      res.map(e => exRow(e, null, true)).join('');
+  }
+
   function renderSearch() {
     const q = view.q || '';
-    const res = Store.search(q);
-    const rows = q
-      ? (res.length ? res.map(e => exRow(e, null)).join('') : `<div class="empty">「${esc(q)}」 검색 결과가 없어요.</div>`)
-      : `<div class="empty">동작 이름·큐·메모를 검색하세요.</div>`;
     app.innerHTML = `
       <div class="scr">
         <button class="back" data-nav="home">‹ 홈</button>
-        <input class="search" id="search-input" placeholder="🔍 동작 검색…" value="${esc(q)}">
-        ${rows}
+        <input class="search" id="search-input" placeholder="🔍 동작 검색…" value="${esc(q)}"
+               autocomplete="off" autocapitalize="off" spellcheck="false">
+        <div id="search-results">${searchResultsHtml(q)}</div>
       </div>
       ${tabbar(null)}`;
     const inp = document.getElementById('search-input');
     inp.focus();
-    inp.oninput = () => { view.q = inp.value; const sc = app.querySelector('.scr').scrollTop;
-      const res2 = Store.search(inp.value);
-      const html = inp.value
-        ? (res2.length ? res2.map(e => exRow(e, null)).join('') : `<div class="empty">「${esc(inp.value)}」 검색 결과가 없어요.</div>`)
-        : `<div class="empty">동작 이름·큐·메모를 검색하세요.</div>`;
-      // 입력 박스 다음 노드들만 교체
-      [...app.querySelectorAll('.scr > .ex, .scr > .empty')].forEach(n => n.remove());
-      inp.insertAdjacentHTML('afterend', html);
+    inp.setSelectionRange(inp.value.length, inp.value.length);
+    inp.oninput = () => {
+      view.q = inp.value;
+      document.getElementById('search-results').innerHTML = searchResultsHtml(inp.value);
     };
   }
 
