@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">덤벨 풀오버 (겨드랑이 늘리기)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="96" y="240" width="284" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
+<rect x="110" y="256" width="12" height="28" rx="4" fill="#A5B8B2"/>
+<rect x="354" y="256" width="12" height="28" rx="4" fill="#A5B8B2"/>
+<ellipse cx="196" cy="212" rx="42" ry="30" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="176" y1="228" x2="298" y2="234" stroke="#516C66" stroke-width="28"/>
+  <line x1="298" y1="234" x2="330" y2="188" stroke="#607D77" stroke-width="24"/>
+  <line x1="330" y1="188" x2="352" y2="234" stroke="#607D77" stroke-width="21"/>
+  <line x1="186" y1="222" x2="140" y2="196" stroke="#6A8781" stroke-width="14"/>
+  <line x1="140" y1="196" x2="112" y2="168" stroke="#6A8781" stroke-width="13"/>
+  <circle cx="298" cy="234" r="14" fill="#516C66"/>
+  <circle cx="330" cy="188" r="12" fill="#607D77"/>
+  <circle cx="158" cy="224" r="17" fill="#516C66"/>
+</g>
+<line x1="96" y1="146" x2="96" y2="176" stroke="#3A4038" stroke-width="6" stroke-linecap="round"/>
+<circle cx="96" cy="161" r="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<path d="M 176 128 A 78 78 0 0 0 106 142" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="102,144 115,138 114,151" fill="#E4572E"/>
+<ellipse cx="341" cy="212" rx="13" ry="17" fill="#EAF3F1" stroke="#A5B8B2" stroke-width="2"/>
+<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">코어 고정 후 만세로 천천히 뒤로</text>
+<text x="188" y="114" font-size="15.6" fill="#6E807B">어깨를 「뽑아」 겨드랑이 늘리기</text>
+<text x="188" y="132" font-size="15.6" fill="#6E807B">어깨 불편하지 않은 범위까지만</text>
+<text x="188" y="150" font-size="15.6" fill="#6E807B">올라올 때 「후」 내쉬기 (호흡 반대)</text>
+<text x="222" y="278" font-size="14.3" font-weight="700" fill="#3D8A7C">무릎 당겨 고정 · 다리 떨어지면 허리 아픔</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">4kg · 12~15</text>
+</svg>

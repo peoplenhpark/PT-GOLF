@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">꼬리뼈 컨트롤 레그레이즈</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<rect x="70" y="244" width="290" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
+<rect x="84" y="260" width="12" height="26" rx="4" fill="#A5B8B2"/>
+<rect x="334" y="260" width="12" height="26" rx="4" fill="#A5B8B2"/>
+<ellipse cx="286" cy="234" rx="42" ry="28" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="130" y1="232" x2="286" y2="238" stroke="#516C66" stroke-width="28"/>
+  <line x1="286" y1="238" x2="298" y2="176" stroke="#607D77" stroke-width="24"/>
+  <line x1="298" y1="176" x2="366" y2="170" stroke="#607D77" stroke-width="21"/>
+  <line x1="366" y1="170" x2="380" y2="182" stroke="#607D77" stroke-width="12"/>
+  <line x1="152" y1="226" x2="228" y2="196" stroke="#6A8781" stroke-width="13"/>
+  <line x1="228" y1="196" x2="292" y2="188" stroke="#6A8781" stroke-width="12"/>
+  <circle cx="286" cy="238" r="14" fill="#516C66"/>
+  <circle cx="298" cy="176" r="12" fill="#607D77"/>
+  <circle cx="112" cy="226" r="17" fill="#516C66"/>
+</g>
+<path d="M 302 258 A 34 34 0 0 1 268 268" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="264,269 277,263 276,275" fill="#E4572E"/>
+<text x="242" y="288" font-size="14.3" font-weight="700" fill="#E4572E">꼬리뼈 눌렀다 ↔ 말아 올리기</text>
+<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">다리 직각 · 팔은 앞으로 나란히</text>
+<text x="40" y="114" font-size="15.6" fill="#6E807B">턱 당기고 몸을 응축 → 척추 정렬 만들기</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">허벅지 안쪽으로 살짝 열면 엉덩이 힘 쉬움</text>
+<text x="40" y="150" font-size="15.6" fill="#6E807B">많이 안 움직여도 됨 · 허리가 뜨면 안 됨</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">10회 × 3~4</text>
+</svg>
