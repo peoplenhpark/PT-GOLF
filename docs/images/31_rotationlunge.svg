@@ -7,31 +7,31 @@
 <rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
 <text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">로테이션 런지 (로봇 런지)</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
-<rect x="40" y="268" width="410" height="9" rx="4.5" fill="#CBD8D3"/>
-<ellipse cx="338" cy="190" rx="40" ry="30" fill="url(#glow)"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">① 돌리고 → ② 앉고 → ③ 일어나기</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">엉덩이를 「철컥」 장전하듯 뒤로 빼며 앉기</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">무릎이 아니라 골반을 쓴다 (프로포즈)</text>
+<rect x="40" y="280" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<ellipse cx="306" cy="228" rx="40" ry="28" fill="url(#glow)"/>
 <g filter="url(#soft)" stroke-linecap="round">
-  <line x1="338" y1="190" x2="406" y2="216" stroke="#607D77" stroke-width="25"/>
-  <line x1="406" y1="216" x2="412" y2="260" stroke="#607D77" stroke-width="21"/>
-  <line x1="412" y1="260" x2="438" y2="262" stroke="#607D77" stroke-width="13"/>
-  <line x1="338" y1="190" x2="276" y2="226" stroke="#5EA093" stroke-width="24"/>
-  <line x1="276" y1="226" x2="248" y2="256" stroke="#5EA093" stroke-width="20"/>
-  <line x1="248" y1="256" x2="230" y2="248" stroke="#5EA093" stroke-width="11"/>
-  <line x1="338" y1="190" x2="328" y2="122" stroke="#516C66" stroke-width="28"/>
-  <line x1="330" y1="132" x2="404" y2="142" stroke="#6A8781" stroke-width="13"/>
-  <line x1="404" y1="142" x2="452" y2="150" stroke="#6A8781" stroke-width="12"/>
-  <circle cx="338" cy="190" r="15" fill="#516C66"/>
-  <circle cx="406" cy="216" r="13" fill="#607D77"/>
-  <circle cx="276" cy="226" r="12" fill="#4E8D80"/>
-  <circle cx="324" cy="104" r="17" fill="#516C66"/>
+  <line x1="306" y1="228" x2="368" y2="246" stroke="#607D77" stroke-width="25"/>
+  <line x1="368" y1="246" x2="372" y2="272" stroke="#607D77" stroke-width="21"/>
+  <line x1="372" y1="272" x2="396" y2="274" stroke="#607D77" stroke-width="13"/>
+  <line x1="306" y1="228" x2="256" y2="250" stroke="#5EA093" stroke-width="24"/>
+  <line x1="256" y1="250" x2="234" y2="272" stroke="#5EA093" stroke-width="20"/>
+  <line x1="234" y1="272" x2="218" y2="264" stroke="#5EA093" stroke-width="11"/>
+  <line x1="300" y1="178" x2="306" y2="228" stroke="#516C66" stroke-width="28"/>
+  <line x1="302" y1="188" x2="368" y2="196" stroke="#6A8781" stroke-width="13"/>
+  <line x1="368" y1="196" x2="412" y2="202" stroke="#6A8781" stroke-width="12"/>
+  <circle cx="306" cy="228" r="15" fill="#516C66"/>
+  <circle cx="368" cy="246" r="13" fill="#607D77"/>
+  <circle cx="256" cy="250" r="12" fill="#4E8D80"/>
+  <circle cx="300" cy="164" r="15" fill="#516C66"/>
 </g>
-<path d="M 298 130 A 46 30 0 0 0 382 120" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
-<polygon points="386,118 373,115 375,128" fill="#E4572E"/>
-<text x="150" y="182" font-size="14.3" font-weight="700" fill="#E4572E">앞발 쪽으로 흉추만 회전</text>
-<text x="120" y="248" font-size="14.3" font-weight="700" fill="#3D8A7C">뒷발 까치발</text>
-<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">① 돌리고 → ② 앉고 → ③ 일어나기</text>
-<text x="40" y="114" font-size="15.6" fill="#6E807B">엉덩이를 「철컥」 장전하듯 뒤로 빼며 앉기</text>
-<text x="40" y="132" font-size="15.6" fill="#6E807B">무릎이 아니라 골반을 쓴다 (프로포즈 자세)</text>
-<text x="40" y="150" font-size="15.6" fill="#6E807B">체중은 앞다리 · 상체는 인사하듯 앞으로</text>
+<line x1="196" y1="192" x2="252" y2="196" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="256,197 243,192 244,204" fill="#E4572E"/>
+<text x="96" y="192" font-size="14.3" font-weight="700" fill="#E4572E">흉추만 회전</text>
+<text x="96" y="268" font-size="14.3" font-weight="700" fill="#3D8A7C">뒷발 까치발</text>
+<text x="392" y="232" font-size="14.3" font-weight="700" fill="#3D8A7C">체중 앞으로</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 10회</text>
 </svg>

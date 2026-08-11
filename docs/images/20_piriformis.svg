@@ -5,7 +5,7 @@
 <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
 </defs>
 <rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
-<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">이상근 스트레칭 (벤치에 걸고 눕기)</text>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">이상근 스트레칭 (벤치 버전)</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
 <rect x="40" y="272" width="410" height="9" rx="4.5" fill="#CBD8D3"/>
 <rect x="118" y="208" width="232" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
@@ -31,5 +31,5 @@
 <text x="40" y="114" font-size="15.6" fill="#6E807B">뒷다리는 뒤로 충분히 빼기 (멀수록 자극 ↑)</text>
 <text x="40" y="132" font-size="15.6" fill="#6E807B">그대로 상체 눕히고 팔꿈치를 앞으로 쭉</text>
 <rect x="336" y="28" width="116" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
-<text x="394" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 20~30초 · 2세트</text>
+<text x="394" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">좌우 20~30초 ×2</text>
 </svg>
