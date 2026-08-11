@@ -7,28 +7,28 @@
 <rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
 <text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">로테이션 런지 (로봇 런지)</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
-<rect x="40" y="268" width="400" height="9" rx="4.5" fill="#CBD8D3"/>
-<ellipse cx="248" cy="190" rx="40" ry="30" fill="url(#glow)"/>
+<rect x="40" y="268" width="410" height="9" rx="4.5" fill="#CBD8D3"/>
+<ellipse cx="338" cy="190" rx="40" ry="30" fill="url(#glow)"/>
 <g filter="url(#soft)" stroke-linecap="round">
-  <line x1="248" y1="190" x2="316" y2="216" stroke="#607D77" stroke-width="25"/>
-  <line x1="316" y1="216" x2="322" y2="262" stroke="#607D77" stroke-width="21"/>
-  <line x1="322" y1="262" x2="348" y2="264" stroke="#607D77" stroke-width="13"/>
-  <line x1="248" y1="190" x2="186" y2="226" stroke="#5EA093" stroke-width="24"/>
-  <line x1="186" y1="226" x2="158" y2="256" stroke="#5EA093" stroke-width="20"/>
-  <line x1="158" y1="256" x2="140" y2="248" stroke="#5EA093" stroke-width="11"/>
-  <line x1="248" y1="190" x2="238" y2="120" stroke="#516C66" stroke-width="28"/>
-  <line x1="240" y1="130" x2="316" y2="140" stroke="#6A8781" stroke-width="13"/>
-  <line x1="316" y1="140" x2="366" y2="148" stroke="#6A8781" stroke-width="12"/>
-  <circle cx="248" cy="190" r="15" fill="#516C66"/>
-  <circle cx="316" cy="216" r="13" fill="#607D77"/>
-  <circle cx="186" cy="226" r="12" fill="#4E8D80"/>
-  <circle cx="234" cy="102" r="17" fill="#516C66"/>
+  <line x1="338" y1="190" x2="406" y2="216" stroke="#607D77" stroke-width="25"/>
+  <line x1="406" y1="216" x2="412" y2="260" stroke="#607D77" stroke-width="21"/>
+  <line x1="412" y1="260" x2="438" y2="262" stroke="#607D77" stroke-width="13"/>
+  <line x1="338" y1="190" x2="276" y2="226" stroke="#5EA093" stroke-width="24"/>
+  <line x1="276" y1="226" x2="248" y2="256" stroke="#5EA093" stroke-width="20"/>
+  <line x1="248" y1="256" x2="230" y2="248" stroke="#5EA093" stroke-width="11"/>
+  <line x1="338" y1="190" x2="328" y2="122" stroke="#516C66" stroke-width="28"/>
+  <line x1="330" y1="132" x2="404" y2="142" stroke="#6A8781" stroke-width="13"/>
+  <line x1="404" y1="142" x2="452" y2="150" stroke="#6A8781" stroke-width="12"/>
+  <circle cx="338" cy="190" r="15" fill="#516C66"/>
+  <circle cx="406" cy="216" r="13" fill="#607D77"/>
+  <circle cx="276" cy="226" r="12" fill="#4E8D80"/>
+  <circle cx="324" cy="104" r="17" fill="#516C66"/>
 </g>
-<path d="M 208 128 A 46 30 0 0 0 292 118" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
-<polygon points="296,116 283,113 285,126" fill="#E4572E"/>
-<text x="286" y="182" font-size="14.3" font-weight="700" fill="#E4572E">앞발 쪽으로 흉추 회전</text>
-<text x="118" y="236" font-size="14.3" font-weight="700" fill="#3D8A7C">뒷발 까치발</text>
-<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">① 돌리고 → ② 앉고 → ③ 일어나 제자리</text>
+<path d="M 298 130 A 46 30 0 0 0 382 120" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="386,118 373,115 375,128" fill="#E4572E"/>
+<text x="150" y="182" font-size="14.3" font-weight="700" fill="#E4572E">앞발 쪽으로 흉추만 회전</text>
+<text x="120" y="248" font-size="14.3" font-weight="700" fill="#3D8A7C">뒷발 까치발</text>
+<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">① 돌리고 → ② 앉고 → ③ 일어나기</text>
 <text x="40" y="114" font-size="15.6" fill="#6E807B">엉덩이를 「철컥」 장전하듯 뒤로 빼며 앉기</text>
 <text x="40" y="132" font-size="15.6" fill="#6E807B">무릎이 아니라 골반을 쓴다 (프로포즈 자세)</text>
 <text x="40" y="150" font-size="15.6" fill="#6E807B">체중은 앞다리 · 상체는 인사하듯 앞으로</text>

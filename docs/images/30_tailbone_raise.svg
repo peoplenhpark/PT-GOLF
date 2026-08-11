@@ -8,8 +8,8 @@
 <text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">꼬리뼈 컨트롤 레그레이즈</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
 <rect x="70" y="244" width="290" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
-<rect x="84" y="260" width="12" height="26" rx="4" fill="#A5B8B2"/>
-<rect x="334" y="260" width="12" height="26" rx="4" fill="#A5B8B2"/>
+<rect x="84" y="260" width="12" height="14" rx="4" fill="#A5B8B2"/>
+<rect x="334" y="260" width="12" height="14" rx="4" fill="#A5B8B2"/>
 <ellipse cx="286" cy="234" rx="42" ry="28" fill="url(#glow)"/>
 <g filter="url(#soft)" stroke-linecap="round">
   <line x1="130" y1="232" x2="286" y2="238" stroke="#516C66" stroke-width="28"/>
@@ -24,7 +24,7 @@
 </g>
 <path d="M 302 258 A 34 34 0 0 1 268 268" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
 <polygon points="264,269 277,263 276,275" fill="#E4572E"/>
-<text x="242" y="288" font-size="14.3" font-weight="700" fill="#E4572E">꼬리뼈 눌렀다 ↔ 말아 올리기</text>
+<text x="150" y="292" font-size="14.3" font-weight="700" fill="#E4572E">꼬리뼈 눌렀다 ↔ 말아 올리기</text>
 <text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">다리 직각 · 팔은 앞으로 나란히</text>
 <text x="40" y="114" font-size="15.6" fill="#6E807B">턱 당기고 몸을 응축 → 척추 정렬 만들기</text>
 <text x="40" y="132" font-size="15.6" fill="#6E807B">허벅지 안쪽으로 살짝 열면 엉덩이 힘 쉬움</text>
