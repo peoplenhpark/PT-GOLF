@@ -5,7 +5,7 @@
 <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
 </defs>
 <rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
-<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">꼬리뼈 컨트롤 레그레이즈</text>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">레그레이즈 (꼬리뼈 컨트롤)</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
 <rect x="70" y="244" width="290" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
 <rect x="84" y="260" width="12" height="14" rx="4" fill="#A5B8B2"/>
@@ -29,6 +29,9 @@
 <text x="40" y="114" font-size="15.6" fill="#6E807B">턱 당기고 몸을 응축 → 척추 정렬 만들기</text>
 <text x="40" y="132" font-size="15.6" fill="#6E807B">허벅지 안쪽으로 살짝 열면 엉덩이 힘 쉬움</text>
 <text x="40" y="150" font-size="15.6" fill="#6E807B">많이 안 움직여도 됨 · 허리가 뜨면 안 됨</text>
+<line x1="394" y1="182" x2="402" y2="216" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="403,221 394,211 406,209" fill="#E4572E"/>
+<text x="386" y="240" font-size="14.3" font-weight="700" fill="#E4572E">천천히 ↓↑</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">10회 × 3~4</text>
 </svg>

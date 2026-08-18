@@ -5,29 +5,30 @@
 <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
 </defs>
 <rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
-<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">암컬 · 준비자세 (상완골 고정)</text>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">바벨 컬 · 원판이 「일자」로</text>
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
-<rect x="160" y="258" width="180" height="10" rx="5" fill="#CBD8D3"/>
-<ellipse cx="242" cy="128" rx="34" ry="30" fill="url(#glow)"/>
+<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">팔꿈치를 뒤로 당겨 몸에 붙인 채</text>
+<text x="40" y="114" font-size="15.6" fill="#6E807B">안으로 넣어 끌어올리고 → 턱 앞까지</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">내릴 땐 앞으로 밀었다 뒤로 빼며 내리기</text>
+<text x="40" y="150" font-size="15.6" fill="#6E807B">위 팔뚝 고정 · 손목 일자 · 내릴 때 다 펴기</text>
+<rect x="150" y="280" width="220" height="9" rx="4.5" fill="#CBD8D3"/>
+<ellipse cx="262" cy="222" rx="34" ry="28" fill="url(#glow)"/>
 <g filter="url(#soft)" stroke-linecap="round">
-  <line x1="208" y1="257" x2="252" y2="257" stroke="#607D77" stroke-width="12"/>
-  <line x1="226" y1="254" x2="230" y2="200" stroke="#607D77" stroke-width="20"/>
-  <line x1="230" y1="200" x2="226" y2="148" stroke="#607D77" stroke-width="24"/>
-  <line x1="226" y1="148" x2="232" y2="90" stroke="#516C66" stroke-width="28"/>
-  <circle cx="238" cy="72" r="17" fill="#516C66"/>
-  <line x1="234" y1="100" x2="238" y2="152" stroke="#5EA093" stroke-width="15"/>
-  <line x1="238" y1="152" x2="250" y2="194" stroke="#5EA093" stroke-width="14"/>
-  <circle cx="238" cy="152" r="9" fill="#4E8D80"/>
+  <line x1="250" y1="194" x2="256" y2="240" stroke="#516C66" stroke-width="28"/>
+  <line x1="256" y1="240" x2="252" y2="276" stroke="#607D77" stroke-width="20"/>
+  <line x1="252" y1="276" x2="272" y2="279" stroke="#607D77" stroke-width="11"/>
+  <line x1="250" y1="198" x2="256" y2="224" stroke="#5EA093" stroke-width="14"/>
+  <line x1="256" y1="224" x2="272" y2="250" stroke="#5EA093" stroke-width="13"/>
+  <circle cx="256" cy="224" r="9" fill="#4E8D80"/>
+  <circle cx="248" cy="178" r="16" fill="#516C66"/>
 </g>
-<line x1="236" y1="200" x2="276" y2="200" stroke="#3A4038" stroke-width="6" stroke-linecap="round"/>
-<circle cx="268" cy="200" r="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
-<path d="M 292 194 A 44 44 0 0 1 282 146" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
-<polygon points="280,141 275,154 288,152" fill="#E4572E"/>
-<text x="44" y="140" font-size="17.5" font-weight="600" fill="#2B3A36">위 팔뚝(상완골)</text>
-<text x="44" y="158" font-size="17.5" font-weight="600" fill="#2B3A36">움직이지 않게 고정</text>
-<text x="300" y="214" font-size="16.9" font-weight="600" fill="#2B3A36">손목은 일자로</text>
-<text x="290.5" y="232" font-size="15.6" fill="#6E807B">(꺾어서 들지 말 것)</text>
-<text x="44" y="285" font-size="15.6" fill="#6E807B">손은 조금 넓게 · 내릴 때 팔은 다 펴주기</text>
+<path d="M 278 254 A 36 36 0 0 1 278 190" fill="none" stroke="#9AACA7" stroke-width="3.5" stroke-dasharray="6 5"/>
+<circle cx="278" cy="254" r="13" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<circle cx="278" cy="190" r="13" fill="none" stroke="#C9871F" stroke-width="2" stroke-dasharray="4 3"/>
+<line x1="278" y1="240" x2="278" y2="206" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="278,200 272,213 284,213" fill="#E4572E"/>
+<text x="330" y="200" font-size="14.3" font-weight="700" fill="#E4572E">✓ 원판이 일자로</text>
+<text x="330" y="236" font-size="14.3" font-weight="700" fill="#8894A0">✗ 반원 궤적</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
-<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">준비자세</text>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">궤적 핵심</text>
 </svg>
