@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">케이블 푸시다운 (삼두)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">팔꿈치를 몸에 고정 — 끝까지</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">그 자세 그대로 팔만 아래로</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">가슴이 돌지 않게 · 배에 힘</text>
+<rect x="40" y="286" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<rect x="400" y="150" width="14" height="136" rx="4" fill="#B9C9C4"/>
+<circle cx="407" cy="158" r="9" fill="#A5B8B2"/>
+<line x1="405" y1="164" x2="302" y2="242" stroke="#8894A0" stroke-width="3"/>
+<ellipse cx="262" cy="222" rx="34" ry="26" fill="url(#glow)"/>
+<line x1="266" y1="222" x2="306" y2="206" stroke="#B8C4C1" stroke-width="3" stroke-dasharray="6 5"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="252" y1="190" x2="258" y2="246" stroke="#516C66" stroke-width="28"/>
+  <line x1="258" y1="246" x2="254" y2="282" stroke="#607D77" stroke-width="20"/>
+  <line x1="254" y1="282" x2="278" y2="284" stroke="#607D77" stroke-width="11"/>
+  <line x1="252" y1="194" x2="264" y2="222" stroke="#5EA093" stroke-width="15"/>
+  <line x1="264" y1="222" x2="300" y2="242" stroke="#5EA093" stroke-width="13"/>
+  <circle cx="264" cy="222" r="9" fill="#4E8D80"/>
+  <circle cx="246" cy="172" r="16" fill="#516C66"/>
+</g>
+<line x1="288" y1="244" x2="316" y2="240" stroke="#3A4038" stroke-width="6" stroke-linecap="round"/>
+<circle cx="264" cy="222" r="18" fill="none" stroke="#E4572E" stroke-width="3" stroke-dasharray="5 4"/>
+<path d="M 320 208 A 34 34 0 0 1 322 240" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="322,246 315,233 328,233" fill="#E4572E"/>
+<text x="150" y="228" font-size="15.6" font-weight="700" fill="#E4572E">여기 고정</text>
+<text x="290" y="276" font-size="14.3" font-weight="700" fill="#E4572E">팔만 내린다</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">마무리 세트</text>
+</svg>
