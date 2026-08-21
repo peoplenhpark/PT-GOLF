@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">레그 프레스 (와이드 스탠스)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">앞 허벅지로 내려오지 말 것</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">「안쪽 허벅지가 벌어진다」는 느낌으로</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">발은 넓게 · 발끝은 바깥 · 뒤꿈치 붙여</text>
+<rect x="150" y="150" width="180" height="126" rx="10" fill="#E3EBE9" stroke="#B9C9C4" stroke-width="2"/>
+<line x1="240" y1="158" x2="240" y2="268" stroke="#CBD8D3" stroke-width="1.5" stroke-dasharray="5 4"/>
+<g filter="url(#soft)">
+  <ellipse cx="192" cy="192" rx="17" ry="30" fill="#516C66" transform="rotate(-22 192 192)"/>
+  <ellipse cx="288" cy="192" rx="17" ry="30" fill="#516C66" transform="rotate(22 288 192)"/>
+  <circle cx="205" cy="167" r="6" fill="#E6A23C"/>
+  <circle cx="275" cy="167" r="6" fill="#E6A23C"/>
+</g>
+<line x1="222" y1="236" x2="188" y2="248" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="184,249 197,244 196,256" fill="#E4572E"/>
+<line x1="258" y1="236" x2="292" y2="248" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="296,249 283,244 284,256" fill="#E4572E"/>
+<text x="342" y="196" font-size="14.3" font-weight="700" fill="#E4572E">다리 찢기 느낌</text>
+<text x="342" y="252" font-size="14.3" font-weight="700" fill="#3D8A7C">엄지발가락 힘</text>
+<text x="18" y="252" font-size="14.3" font-weight="700" fill="#3D8A7C">뒤꿈치 붙여</text>
+<rect x="330" y="28" width="122" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="391" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">가벼운 무게 · 20회</text>
+</svg>

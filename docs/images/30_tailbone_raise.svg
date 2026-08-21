@@ -24,14 +24,14 @@
 </g>
 <path d="M 302 258 A 34 34 0 0 1 268 268" fill="none" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
 <polygon points="264,269 277,263 276,275" fill="#E4572E"/>
-<text x="150" y="292" font-size="14.3" font-weight="700" fill="#E4572E">꼬리뼈 눌렀다 ↔ 말아 올리기</text>
-<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">다리 직각 · 팔은 앞으로 나란히</text>
-<text x="40" y="114" font-size="15.6" fill="#6E807B">턱 당기고 몸을 응축 → 척추 정렬 만들기</text>
-<text x="40" y="132" font-size="15.6" fill="#6E807B">허벅지 안쪽으로 살짝 열면 엉덩이 힘 쉬움</text>
+<text x="150" y="292" font-size="14.3" font-weight="700" fill="#E4572E">바닥을 누른다 ↓</text>
+<text x="40" y="92" font-size="17.5" font-weight="600" fill="#2B3A36">누르면 뜬다 (시소 원리)</text>
+<text x="40" y="114" font-size="15.6" fill="#6E807B">손바닥·척추로 바닥을 강하게 누르면</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">다리가 저절로 떠오른다 (말아 올리지 X)</text>
 <text x="40" y="150" font-size="15.6" fill="#6E807B">많이 안 움직여도 됨 · 허리가 뜨면 안 됨</text>
 <line x1="394" y1="182" x2="402" y2="216" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
-<polygon points="403,221 394,211 406,209" fill="#E4572E"/>
-<text x="386" y="240" font-size="14.3" font-weight="700" fill="#E4572E">천천히 ↓↑</text>
+<polygon points="393,177 391,190 403,186" fill="#E4572E"/>
+<text x="376" y="240" font-size="14.3" font-weight="700" fill="#E4572E">다리 뜬다 ↑</text>
 <rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
 <text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">10회 × 3~4</text>
 </svg>
