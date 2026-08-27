@@ -9,7 +9,7 @@
 <line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
 <text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">뒷벅지로 엉덩이를 들어 올린다</text>
 <text x="40" y="110" font-size="15.6" fill="#6E807B">상체를 앞으로 — 뒷발을 뗄 수 있을 만큼</text>
-<text x="40" y="132" font-size="15.6" fill="#6E807B">밟은 발을 꽉 밟은 채 흉추만 회전</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">회전은 무한대(8자) 모양 · 수평 회전 X</text>
 <rect x="40" y="288" width="410" height="8" rx="4" fill="#CBD8D3"/>
 <ellipse cx="250" cy="276" rx="52" ry="13" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
 <ellipse cx="272" cy="200" rx="42" ry="28" fill="url(#glow)"/>

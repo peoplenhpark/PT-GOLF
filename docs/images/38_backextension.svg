@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">백 익스텐션 + 덤벨 로우</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">허리만 들지 말고 힙과 같이</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">엉덩이를 쪼는 힘으로 허리를 든다</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">팔꿈치를 옆구리에 붙여 수직으로 당김</text>
+<rect x="40" y="290" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<rect x="238" y="212" width="46" height="16" rx="6" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
+<rect x="252" y="228" width="14" height="62" rx="4" fill="#A5B8B2"/>
+<rect x="322" y="264" width="52" height="14" rx="5" fill="#B9C9C4" stroke="#A5B8B2" stroke-width="2"/>
+<ellipse cx="272" cy="212" rx="42" ry="26" fill="url(#glow)"/>
+<line x1="168" y1="214" x2="192" y2="242" stroke="#B8C4C1" stroke-width="3" stroke-dasharray="6 5"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="164" y1="196" x2="272" y2="210" stroke="#516C66" stroke-width="28"/>
+  <line x1="272" y1="210" x2="330" y2="244" stroke="#607D77" stroke-width="24"/>
+  <line x1="330" y1="244" x2="352" y2="266" stroke="#607D77" stroke-width="20"/>
+  <line x1="170" y1="206" x2="164" y2="246" stroke="#6A8781" stroke-width="13"/>
+  <circle cx="272" cy="210" r="14" fill="#516C66"/>
+  <circle cx="146" cy="190" r="16" fill="#516C66"/>
+</g>
+<circle cx="162" cy="256" r="11" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<line x1="190" y1="252" x2="196" y2="226" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="197,220 190,234 202,233" fill="#E4572E"/>
+<text x="48" y="248" font-size="14.3" font-weight="700" fill="#E4572E">수직으로 당김</text>
+<text x="300" y="180" font-size="15.6" font-weight="700" fill="#E4572E">힙으로 든다</text>
+<text x="40" y="174" font-size="14.3" font-weight="700" fill="#3D8A7C">머리도 같이</text>
+<text x="336" y="294" font-size="14.3" font-weight="700" fill="#3D8A7C">뒤꿈치 대고 팔자</text>
+<rect x="336" y="28" width="116" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="394" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">저중량 · 10~15회</text>
+</svg>
