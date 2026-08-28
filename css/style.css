@@ -77,6 +77,16 @@ body{
 .chip.on{background:var(--pt-bg);border-color:var(--pt-line);color:var(--pt);box-shadow:0 0 0 1px var(--pt-line)}
 [data-part="golf"] .chip.on{background:var(--golf-bg);border-color:var(--golf-line);color:var(--golf)}
 
+/* ---------- 최근 일주일 세션 (홈) ---------- */
+.recent-chips{margin-bottom:12px}
+.recent-chips .chip{gap:6px;padding:5px 10px 5px 12px}
+.recent-chips .cnt-b{display:inline-flex;align-items:center;justify-content:center;
+  min-width:18px;height:18px;padding:0 5px;border-radius:9px;
+  background:var(--line);color:var(--sub);font-size:10.5px;font-weight:800}
+.recent-chips .chip.on .cnt-b{background:var(--pt);color:#0d0f14}
+.dot-today{width:5px;height:5px;border-radius:50%;background:var(--pt);flex:0 0 auto}
+#recent-list{margin-bottom:22px}
+
 /* ---------- exercise list row ---------- */
 .ex{background:var(--card);border:1px solid var(--line);border-left-width:3px;border-radius:18px;
   padding:15px 16px;margin-bottom:11px;display:flex;align-items:center;gap:13px;cursor:pointer;

@@ -186,6 +186,25 @@ const Store = (() => {
     return getCalendar()[dateStr] || null;
   }
 
+  /* 최근 N일(오늘 포함) 안에 갱신된 동작을 날짜별로 묶어 최신순 반환.
+     해당 기간에 갱신 이력이 없으면 빈 배열 → 홈에서 섹션 자체를 감춘다. */
+  function getRecentSessions(days = 7) {
+    const today = todayStr();
+    const from = new Date(today + 'T00:00:00');
+    from.setDate(from.getDate() - (days - 1));
+    const p = n => String(n).padStart(2, '0');
+    const fromStr = `${from.getFullYear()}-${p(from.getMonth() + 1)}-${p(from.getDate())}`;
+
+    const byDate = {};
+    getAll().forEach(e => {
+      const d = e.updated;
+      if (!d || d < fromStr || d > today) return;
+      (byDate[d] = byDate[d] || []).push(e);
+    });
+    return Object.keys(byDate).sort().reverse()
+      .map(date => ({ date, exercises: byDate[date] }));
+  }
+
   function todayStr() {
     // Date 사용(런타임 브라우저). 빌드 환경 제약과 무관.
     const d = new Date();
@@ -196,7 +215,7 @@ const Store = (() => {
   return {
     init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites,
     getCategories, search, upsert, remove, patch, setMemo, toggleFavorite,
-    exportData, importData, resetOverlay, hasLocalChanges, todayStr,
+    exportData, importData, resetOverlay, hasLocalChanges, todayStr, getRecentSessions,
     getCalendar, setCalEntry, getCalEntry
   };
 })();

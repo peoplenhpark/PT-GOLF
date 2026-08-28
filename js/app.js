@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '42';
+  const ASSET_VER = '43';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -75,14 +75,14 @@ const Theme = (() => {
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
   }
 
-  function exRow(e, idx, showCat) {
+  function exRow(e, idx, showCat, mark) {
     const star = e.favorite ? `<span class="star">★</span>` : `<span class="chev">›</span>`;
     const metas = [
       showCat ? `<span>${partIcon(e.part)} ${esc(e.category || '')}</span>` : '',
       (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : ''
     ].filter(Boolean).join('');
     return `<div class="ex ${e.part}" data-open="${e.id}">
-      <div class="num">${idx != null ? idx + 1 : (showCat ? '🔍' : '★')}</div>
+      <div class="num">${idx != null ? idx + 1 : (mark || (showCat ? '🔍' : '★'))}</div>
       <div class="body">
         <div class="t">${esc(e.name)}</div>
         <div class="spec">${esc(e.spec || '')}</div>
@@ -90,6 +90,35 @@ const Theme = (() => {
       </div>
       ${star}
     </div>`;
+  }
+
+  const DOW = ['일', '월', '화', '수', '목', '금', '토'];
+  function dateChipLabel(d) {
+    const [y, m, dd] = d.split('-').map(Number);
+    const w = DOW[new Date(y, m - 1, dd).getDay()];
+    return `${m}/${dd} (${w})`;
+  }
+
+  /* 최근 일주일 세션 — 변동이 없으면 빈 문자열을 반환해 섹션 자체를 숨긴다 */
+  function recentSectionHtml() {
+    const sessions = Store.getRecentSessions(7);
+    if (!sessions.length) return '';
+
+    const dates = sessions.map(s => s.date);
+    if (!dates.includes(view.recentDate)) view.recentDate = dates[0];
+    const sel = sessions.find(s => s.date === view.recentDate);
+
+    const chips = sessions.map(s => {
+      const on = s.date === view.recentDate ? ' on' : '';
+      const today = s.date === Store.todayStr() ? '<span class="dot-today"></span>' : '';
+      return `<button class="chip${on}" data-recent="${s.date}">${today}${dateChipLabel(s.date)}
+        <span class="cnt-b">${s.exercises.length}</span></button>`;
+    }).join('');
+
+    return `
+      <div class="sec-t">🗓️ 최근 일주일 세션</div>
+      <div class="chips recent-chips">${chips}</div>
+      <div id="recent-list">${sel.exercises.map(e => exRow(e, null, true, '🗓️')).join('')}</div>`;
   }
 
   function renderHome() {
@@ -114,6 +143,7 @@ const Theme = (() => {
         <div class="hd"><h1>PT노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
         <input class="search" data-act="search-focus" placeholder="🔍 동작 검색…" readonly>
         <div class="parts">${partCards}</div>
+        ${recentSectionHtml()}
         ${favSection}
         <div class="local-note">추가·수정·메모는 이 기기에 자동 저장됩니다.</div>
       </div>
@@ -336,13 +366,22 @@ const Theme = (() => {
 
   // ============ 이벤트 (위임) ============
   document.body.addEventListener('click', (ev) => {
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav]');
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent]');
     if (!t) return;
 
     if (t.dataset.nav) { go(t.dataset.nav); return; }
     if (t.hasAttribute('data-back')) { go(view.part || 'home'); return; }
     if (t.dataset.partOpen) { go(t.dataset.partOpen); return; }
     if (t.dataset.open) { const ex = Store.getById(t.dataset.open); go('detail', { id: t.dataset.open, part: ex ? ex.part : null }); return; }
+    if (t.dataset.recent) {
+      view.recentDate = t.dataset.recent;
+      const box = document.getElementById('recent-list');
+      const ses = Store.getRecentSessions(7).find(x => x.date === view.recentDate);
+      if (box && ses) box.innerHTML = ses.exercises.map(e => exRow(e, null, true, '🗓️')).join('');
+      document.querySelectorAll('.recent-chips .chip').forEach(c =>
+        c.classList.toggle('on', c.dataset.recent === view.recentDate));
+      return;
+    }
     if (t.dataset.cat) { view.cat = t.dataset.cat; render(); return; }
     if (t.hasAttribute('data-cue')) { toggleCue(view.id, +t.dataset.cue); return; }
     if (t.dataset.calNav) {
