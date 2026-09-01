@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">페이스 풀 (후면 어깨)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">팔만 말고 등 전체를 같이 든다</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">팔꿈치를 바깥으로 밀며 얼굴 쪽으로</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">몸은 살짝 뒤로 매달린 자세로</text>
+<rect x="40" y="290" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<rect x="416" y="150" width="14" height="140" rx="4" fill="#B9C9C4"/>
+<circle cx="423" cy="158" r="9" fill="#A5B8B2"/>
+<line x1="420" y1="164" x2="322" y2="184" stroke="#8894A0" stroke-width="3"/>
+<ellipse cx="258" cy="200" rx="44" ry="30" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="252" y1="200" x2="238" y2="256" stroke="#516C66" stroke-width="28"/>
+  <line x1="238" y1="256" x2="258" y2="288" stroke="#607D77" stroke-width="20"/>
+  <line x1="258" y1="288" x2="282" y2="290" stroke="#607D77" stroke-width="11"/>
+  <line x1="252" y1="204" x2="292" y2="192" stroke="#6A8781" stroke-width="14"/>
+  <line x1="292" y1="192" x2="316" y2="180" stroke="#6A8781" stroke-width="12"/>
+  <circle cx="248" cy="180" r="16" fill="#516C66"/>
+</g>
+<circle cx="322" cy="180" r="8" fill="#3A4038"/>
+<line x1="288" y1="172" x2="292" y2="148" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="293,142 286,156 298,155" fill="#E4572E"/>
+<text x="300" y="140" font-size="14.3" font-weight="700" fill="#E4572E">팔꿈치 바깥</text>
+<line x1="200" y1="180" x2="228" y2="180" stroke="#E4572E" stroke-width="4" stroke-dasharray="6 4"/>
+<text x="90" y="185" font-size="15.6" font-weight="700" fill="#E4572E">얼굴 높이로</text>
+<text x="52" y="264" font-size="14.3" font-weight="700" fill="#3D8A7C">몸 전체가 뜬 느낌</text>
+<rect x="336" y="28" width="116" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="394" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">15kg · 10~15회</text>
+</svg>

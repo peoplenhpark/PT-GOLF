@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">사이드 레터럴 레이즈</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">손끝으로 날아가듯 · 어깨 높이까지</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">엉덩이만 살짝 빼 중심을 앞으로</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">1kg도 힘들다 · 반동 금지</text>
+<rect x="40" y="290" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<line x1="120" y1="204" x2="360" y2="204" stroke="#C9871F" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="252" y1="196" x2="300" y2="164" stroke="#B8C4C1" stroke-width="3" stroke-dasharray="6 5"/>
+<ellipse cx="240" cy="204" rx="46" ry="26" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="240" y1="192" x2="240" y2="246" stroke="#516C66" stroke-width="30"/>
+  <line x1="240" y1="246" x2="226" y2="286" stroke="#607D77" stroke-width="20"/>
+  <line x1="240" y1="246" x2="256" y2="286" stroke="#607D77" stroke-width="20"/>
+  <line x1="228" y1="198" x2="166" y2="204" stroke="#6A8781" stroke-width="13"/>
+  <line x1="252" y1="198" x2="314" y2="204" stroke="#6A8781" stroke-width="13"/>
+  <circle cx="240" cy="176" r="16" fill="#516C66"/>
+</g>
+<circle cx="154" cy="206" r="11" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<circle cx="326" cy="206" r="11" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<text x="308" y="152" font-size="14.3" font-weight="700" fill="#98A6A2">✗ 더 위는 등·승모</text>
+<text x="40" y="232" font-size="15.6" font-weight="700" fill="#E4572E">여기까지만</text>
+<text x="336" y="232" font-size="14.3" font-weight="700" fill="#3D8A7C">손끝이 멀어지듯</text>
+<text x="40" y="278" font-size="14.3" font-weight="700" fill="#3D8A7C">엉덩이 살짝 빼기</text>
+<rect x="360" y="28" width="92" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="406" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">1kg · 20회</text>
+</svg>

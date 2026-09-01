@@ -1,6 +1,6 @@
 /* sw.js — 오프라인 캐시 (앱 셸 + 데이터)
    콘텐츠 수정 시 CACHE 버전을 올리면 갱신됩니다. */
-const CACHE = 'ptgolf-v43';
+const CACHE = 'ptgolf-v44';
 const ASSETS = [
   './',
   './index.html',
@@ -46,7 +46,9 @@ const ASSETS = [
   './docs/images/35_bosurotation.svg',
   './docs/images/36_legpress.svg',
   './docs/images/37_pushdown.svg',
-  './docs/images/38_backextension.svg'
+  './docs/images/38_backextension.svg',
+  './docs/images/39_facepull.svg',
+  './docs/images/40_lateralraise.svg'
 ];
 
 self.addEventListener('install', (e) => {
