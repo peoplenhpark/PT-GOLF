@@ -89,7 +89,7 @@ const Store = (() => {
     return getAll().filter(e => {
       const f = e.focus || {};
       const hay = [e.name, e.spec, e.category, f.muscle || '', f.move || '', f.feel || '',
-        ...(e.cues || []), ...(e.reminders || []), ...(e.steps || []), e.memo || '']
+        ...(e.prep || []), ...(e.cues || []), ...(e.reminders || []), ...(e.steps || []), e.memo || '']
         .join(' ').toLowerCase();
       return terms.every(t => hay.includes(t));
     });

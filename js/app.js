@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '44';
+  const ASSET_VER = '45';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -325,12 +325,17 @@ const Theme = (() => {
           <div><div class="k">핵심</div><div class="v">${esc(e.spec)}</div></div>
         </div>` : ''}
 
+        ${(e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
+          <div class="prep-h">🧩 준비 자세</div>
+          ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
+        </div>` : ''}
+
         ${e.image ? `<div class="ex-figure">
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 참고 그림" loading="lazy">
         </div>` : ''}
 
         ${cues ? `<div class="block">
-          <div class="block-h ${isGolf ? 'golf' : ''}">✅ 자세 체크리스트
+          <div class="block-h ${isGolf ? 'golf' : ''}">✅ 운동 중 핵심
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
           ${cues}
           ${c.size ? `<button class="reset-cues" data-act="reset-cues">체크 초기화</button>` : ''}

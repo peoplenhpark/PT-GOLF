@@ -77,6 +77,15 @@ body{
 .chip.on{background:var(--pt-bg);border-color:var(--pt-line);color:var(--pt);box-shadow:0 0 0 1px var(--pt-line)}
 [data-part="golf"] .chip.on{background:var(--golf-bg);border-color:var(--golf-line);color:var(--golf)}
 
+/* ---------- 준비 자세 블록 (상세) ---------- */
+.prep-box{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--pt);
+  border-radius:12px;padding:11px 13px 12px;margin-bottom:14px}
+.prep-box.golf{border-left-color:var(--golf)}
+.prep-h{font-size:12px;font-weight:800;color:var(--pt);letter-spacing:.02em;margin-bottom:7px}
+.prep-box.golf .prep-h{color:var(--golf)}
+.prep-line{display:flex;gap:7px;font-size:14px;line-height:1.55;color:var(--txt);margin-top:5px}
+.prep-line .pb{color:var(--sub);flex:0 0 auto}
+
 /* ---------- 최근 일주일 세션 (홈) ---------- */
 .recent-chips{margin-bottom:12px}
 .recent-chips .chip{gap:6px;padding:5px 10px 5px 12px}

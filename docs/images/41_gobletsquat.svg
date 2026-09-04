@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBFDFC"/><stop offset="1" stop-color="#E9F1EF"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E0982A" stop-opacity="0.45"/><stop offset="1" stop-color="#E0982A" stop-opacity="0"/></radialGradient>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#22332F" flood-opacity="0.20"/></filter>
+</defs>
+<rect x="2" y="2" width="476" height="296" rx="20" fill="url(#bg)" stroke="#DBE5E2" stroke-width="2"/>
+<text x="28" y="42" font-size="19" font-weight="700" fill="#2B3A36">고블릿 스쿼트 (중량 앞으로)</text>
+<line x1="28" y1="54" x2="452" y2="54" stroke="#E4EBE9" stroke-width="2"/>
+<text x="40" y="88" font-size="17.5" font-weight="600" fill="#2B3A36">중심은 앞 · 엉덩이만 뒤로</text>
+<text x="40" y="110" font-size="15.6" fill="#6E807B">앞으로 쏠리는 힘을 「등」으로 버틴다</text>
+<text x="40" y="132" font-size="15.6" fill="#6E807B">나머지는 전부 고관절에 맡긴다</text>
+<rect x="40" y="288" width="410" height="8" rx="4" fill="#CBD8D3"/>
+<ellipse cx="266" cy="222" rx="44" ry="28" fill="url(#glow)"/>
+<g filter="url(#soft)" stroke-linecap="round">
+  <line x1="252" y1="178" x2="266" y2="228" stroke="#516C66" stroke-width="28"/>
+  <line x1="266" y1="228" x2="238" y2="258" stroke="#607D77" stroke-width="26"/>
+  <line x1="238" y1="258" x2="256" y2="284" stroke="#607D77" stroke-width="21"/>
+  <line x1="256" y1="284" x2="284" y2="288" stroke="#607D77" stroke-width="12"/>
+  <line x1="250" y1="188" x2="222" y2="204" stroke="#6A8781" stroke-width="13"/>
+  <circle cx="266" cy="228" r="15" fill="#516C66"/>
+  <circle cx="238" cy="258" r="13" fill="#607D77"/>
+  <circle cx="244" cy="162" r="16" fill="#516C66"/>
+</g>
+<rect x="196" y="188" width="26" height="34" rx="7" fill="#E6A23C" stroke="#C9871F" stroke-width="2"/>
+<line x1="300" y1="230" x2="336" y2="242" stroke="#E4572E" stroke-width="5" stroke-linecap="round"/>
+<polygon points="341,244 328,238 329,250" fill="#E4572E"/>
+<text x="332" y="222" font-size="15.6" font-weight="700" fill="#E4572E">엉덩이만 뒤로</text>
+<text x="40" y="196" font-size="14.3" font-weight="700" fill="#3D8A7C">등으로 버티기</text>
+<text x="40" y="252" font-size="14.3" font-weight="700" fill="#3D8A7C">발바닥에서 밀어 올린다</text>
+<rect x="336" y="28" width="116" height="24" rx="12" fill="#EAF3F1" stroke="#CBDCD7"/>
+<text x="394" y="45" font-size="12.5" font-weight="700" fill="#14776A" text-anchor="middle">7kg · 10~15×3</text>
+</svg>
