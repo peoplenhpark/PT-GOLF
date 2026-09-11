@@ -1,6 +1,6 @@
 # 케이블 푸시다운 완성본
 
-모바일 주소: https://peoplenhpark.github.io/PT-GOLF/?v=47#exercise/pt_pushdown
+모바일 주소: https://peoplenhpark.github.io/PT-GOLF/?v=48#exercise/pt_pushdown
 
 기존 samples/pushdown-3d/ 주소도 위 실제 운동 상세로 연결됩니다.
 
@@ -16,3 +16,6 @@ viewer.html: 클릭 후에만 불러오는 3D 전용 iframe. 접거나 상세를
 
 릴리스: seed v33 유지, 앱/SW 자산 v47. 3D 전용 페이지와 이미지/스크립트를 SW 프리캐시에 포함했습니다.
 검증: 390px 모바일 화면, 원문 전체 대조, 과거 전체 객체 형태의 메모·즐겨찾기·추가 큐 보존, 메모 저장/새로고침, HTML 문자열 안전 표시, 3D 로드/회전/접기, iframe 높이, 이전 주소 연결, 다른 운동 상세 유지.
+
+
+2026-09-12: 이 표준을 전체47개 운동으로 확장했다. 공통 구현·생성 자산·검증 방법은 [전체 운동 미디어 문서](../../docs/visuals/README.md)를 참고한다. 푸시다운의 전용 뷰어와 원문은 유지한다.

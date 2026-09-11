@@ -423,10 +423,10 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 .ex-figure { touch-action: pan-x pan-y pinch-zoom; }
 
 /* 케이블 푸시다운: 2컷 → 3D → 기존 focus/체크/원칙/메모 */
-.pushdown-guide{margin:16px 0}
+.pushdown-guide,.exercise-guide{margin:16px 0}
 .guide-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .guide-shot{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--card)}
-.guide-shot img{display:block;width:100%;height:auto;aspect-ratio:.75;object-fit:cover;touch-action:pan-x pan-y pinch-zoom}
+.guide-shot img{display:block;width:100%;height:auto;aspect-ratio:.75;object-fit:contain;background:#101114;touch-action:pan-x pan-y pinch-zoom}
 .guide-shot figcaption{padding:12px;font-size:15px;line-height:1.7}
 .guide-shot .guide-shot-title{padding:12px;font-size:13px;font-weight:600;line-height:1.55}
 .guide-shot-title b{color:var(--pt);display:block}
@@ -437,3 +437,8 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 .exercise-3d-frame{display:block;width:100%;height:760px;border:0;background:#101114}
 
 .exercise-3d summary::-webkit-details-marker{display:none}
+
+/* Text stays native-sized and selectable; no text is baked into images. */
+.exercise-guide .guide-shot-title{min-height:82px}
+.exercise-guide .guide-shot figcaption{font-size:14px;overflow-wrap:anywhere}
+[data-part="golf"] .guide-shot-title b{color:var(--golf)}

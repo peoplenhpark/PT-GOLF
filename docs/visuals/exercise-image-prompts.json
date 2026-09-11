@@ -1,0 +1,692 @@
+[
+  {
+    "id": "pt_pullup",
+    "name": "풀업",
+    "kind": "pullup",
+    "captions": [
+      "매달려 등 늘리기",
+      "가슴부터 당겨 올라가기"
+    ],
+    "focus": {
+      "muscle": "광배근·대원근 (등 전체) + 견갑 거상·하강",
+      "move": "팔꿈치를 바닥으로 눌러 내리며 가슴이 먼저 올라간다 (팔이 아니라 등으로 끌기)",
+      "feel": "내려갈 때 뒤 겨드랑이가 길게 늘어나는 느낌 — 이걸 먼저 느끼는 게 핵심"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 풀업. Assisted or bodyweight underhand (supinated) pull-up. Left hang with arms extended overhead gripping fixed bar, right chin reaches bar by bending elbows down. Palms toward face, glutes braced, legs stable. Front three-quarter camera shows grip.\nHighlight only relevant target musculature: 광배근·대원근 (등 전체) + 견갑 거상·하강. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"언더 그립 위주 — 등/어깨 안정 + 등이 더 길게 늘어나 느끼기 쉽다(오버가 더 어렵다). 새끼·약지에 힘이 걸리도록 약간 감아 잡기\",\"매달려 충분히 늘리기 / 살짝 뒤로 눕듯이\",\"⭐엉덩이를 세트 내내 강하게 쪼아 놓기 — 가슴 먼저 출발하면 허리가 과신전(꺾임)되기 쉬운데 이걸로 막는다 (한 번 쪼고 푸는 게 아니라 계속)\",\"「가슴이 먼저」 출발 — 어깨보다 가슴이 더 빠르게 치고 올라간다(신경 안 쓰면 어깨 으쓱이 먼저), 턱·가슴이 하늘을 보게\",\"승모근 올리지 말고 광배에 걸어놓고, 팔꿈치를 강하게 바닥으로 눌러 내리며 당겨 올라가기\",\"내려온 늘어난 느낌을 그대로 당겨 올라간다 / 몸 앞으로 굽히지 말 것\",\"내려올 때 쭉 내려오다 「딱 걸리는」 지점에서 올라가기 — 너무 많이 내려오지 않기\",\"처음엔 당길 때 등 힘보다, 내려갈 때 등(뒤 겨드랑이)이 늘어나는 것만 먼저 느끼기\",\"매달리기 전 척추 중립부터 세팅 — 골반·척추 정렬, 흉추 내밀고 경추 커브 유지(고개 꺾지 말 것), 그 모양 잡고 엉덩이 힘 준 뒤 올라가기\",\"시선 한 곳에 고정 — 고개가 숙여졌다 들렸다 하지 않게\"],\"focus\":{\"muscle\":\"광배근·대원근 (등 전체) + 견갑 거상·하강\",\"move\":\"팔꿈치를 바닥으로 눌러 내리며 가슴이 먼저 올라간다 (팔이 아니라 등으로 끌기)\",\"feel\":\"내려갈 때 뒤 겨드랑이가 길게 늘어나는 느낌 — 이걸 먼저 느끼는 게 핵심\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_seatedrow",
+    "name": "시티드로우",
+    "kind": "row",
+    "captions": [
+      "날개뼈를 앞으로",
+      "명치 들며 뒤로 당기기"
+    ],
+    "focus": {
+      "muscle": "등 상부(오버)~하부(언더) + 견갑 전인·후인",
+      "move": "날개뼈를 앞으로 뽑았다가(전인) 명치 들며 접어 당긴다(후인)",
+      "feel": "등이 달려 나갔다 접히는 느낌 / 오버는 승모근 개입도 정상"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 시티드로우. Seated cable row machine, feet on supports, torso upright. Left arms reaching forward and scapula protracted; right handles at lower ribs, elbows beside torso, scapula retracted. Do not lean far back.\nHighlight only relevant target musculature: 등 상부(오버)~하부(언더) + 견갑 전인·후인. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"그립 3종: 오버(윗등·바깥쪽) / 뉴트럴(중간) / 언더(아래·옆구리 붙게) — 오버 위주(상부가 살면 하부는 따라온다), 팔꿈치는 그립 결 방향 그대로 빠져나오게\",\"의자 높이: 팔 뻗었을 때 위아래로 치우치지 않고 직선으로 잡히게\",\"손을 갈고리처럼 걸어 잡기 — 두 번째 손가락을 은색에 걸고 너무 넓게 잡지 말 것, 새끼·약지 쪽 힘 많이\",\"감을 때 바깥쪽으로 감아 들어가기 — 그냥 감으면 팔꿈치가 열리고, 이렇게 감으면 팔꿈치가 닫혀서 온다\",\"전인을 충분히 — 팔로만 빼지 말고 날개뼈를 앞으로 뽑아낸 뒤(전인), 어깨 들리지 않게 명치 살짝 들며 접어 당기기(후인)\",\"구부정하게 달려가지 말 것 — 등이 달려가야지 어깨가 딸려가면 안 된다 / 고개 숙이지 말고 전방 유지\",\"명치 들린 상태에서 팔꿈치가 아래가 아니라 바깥쪽으로 나가 일자로 빠지기\",\"언더는 「팔만 뽑히는 느낌」 — 등이 굽지 않게 명치 든 채로\",\"고개를 숙이거나 들지 말고 시선 고정 — 경추가 틀어지면 몸 중립이 다 무너진다\",\"⭐[8/11] 척추 셋업 순서 = 골반 → 흉추 → 경추. 꼬리뼈를 과하게 세우지 말고 엉덩이에 힘 들어갈 정도만\",\"⭐[8/11] 윗등(흉추)을 계속 앞으로 내밀기 — 골반은 가만히, 등만 내밀면 목이 자연스럽게 당겨진다\",\"⭐[8/11] 당길 때 오히려 가슴을 내민다 — 몸이 뒤로 눕지 않게\",\"⭐[8/11] 뒤통수를 뒤로 미는 힘 유지 (누가 뒤통수에 손을 대고 있는 느낌) → 목 힘을 안 쓰게 된다\"],\"focus\":{\"muscle\":\"등 상부(오버)~하부(언더) + 견갑 전인·후인\",\"move\":\"날개뼈를 앞으로 뽑았다가(전인) 명치 들며 접어 당긴다(후인)\",\"feel\":\"등이 달려 나갔다 접히는 느낌 / 오버는 승모근 개입도 정상\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_latpulldown",
+    "name": "랫풀다운",
+    "kind": "latpull",
+    "captions": [
+      "가슴 들고 위로 뻗기",
+      "턱 아래까지만 당기기"
+    ],
+    "focus": {
+      "muscle": "광배근 + 척추 기준선 (트레이너는 「척추 운동」이라 부른다)",
+      "move": "까치발 → 가슴 내밀기 → 뒤로 살짝 제끼기로 기준선을 만든 뒤, 팔꿈치를 안으로 넣어 턱 밑까지",
+      "feel": "턱걸이하듯 몸이 올라가는 느낌 · 손끝부터 옆구리까지 조여진다. 어깨가 뜨면 너무 내린 것"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 랫풀다운. Seated lat pulldown, thighs anchored under pad. Left long wide overhand arms to overhead bar, right bar IN FRONT just below chin. Never behind neck. Slight fixed backward trunk lean.\nHighlight only relevant target musculature: 광배근 + 척추 기준선 (트레이너는 「척추 운동」이라 부른다). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⭐세팅 「3층 공사」 ① 까치발을 든다 — 발가락으로 골반을 잡아 흔들리지 않게 (1층 = 골반)\",\"⭐② 그 상태로 가슴(윗등)을 앞으로 쭉 내민다 — 빳빳해지는 느낌 (2층)\",\"⭐③ 상체를 뒤로 살짝 제껴 목부터 일자가 되게 (3층) → 여기까지가 척추 기준선. 끝까지 흔들리면 안 된다\",\"손은 너무 좁지 않게 · 세 손가락 힘으로 걸어 잡는다 · 오리궁뎅이 유지\",\"가슴을 들면서 내려온다 — 고개는 가만히, 턱은 당긴 채\",\"⭐팔꿈치를 안으로 집어넣는다 — 사선으로 당기지 말고 일자로. 팔꿈치가 옆구리에 붙는다는 느낌\",\"⭐턱 바로 밑까지만 — 많이 내리면 어깨가 뜬다. 내리고 스톱\",\"바가 머리에 가까워지면 안 된다 — 손바닥에 가시가 가득하다 생각하고 「피하는」 느낌\",\"뒤통수를 뒤로 미는 힘과 가슴 내미는 힘은 한 쌍 — 뒤로 밀어야 가슴을 더 넣을 수 있다 (머리 뒤 물체에 기대는 느낌)\",\"까치발로 배와 머리를 들어주며 · 단전에서부터 위로 밀어 올리는 힘\",\"숨을 뱉으면서 턱걸이 하듯 당긴다\",\"내릴 때 흘러내리지 말 것 — 잡아둔 게 풀리며 어깨가 뜬다\",\"윗배를 집어넣어 팽팽하게 늘어난 느낌을 유지\"],\"focus\":{\"muscle\":\"광배근 + 척추 기준선 (트레이너는 「척추 운동」이라 부른다)\",\"move\":\"까치발 → 가슴 내밀기 → 뒤로 살짝 제끼기로 기준선을 만든 뒤, 팔꿈치를 안으로 넣어 턱 밑까지\",\"feel\":\"턱걸이하듯 몸이 올라가는 느낌 · 손끝부터 옆구리까지 조여진다. 어깨가 뜨면 너무 내린 것\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_armpulldown",
+    "name": "암풀다운 (스트레이트 암 랫풀다운)",
+    "kind": "armpull",
+    "captions": [
+      "팔 살짝 굽혀 준비",
+      "겨드랑이 조이며 내리기"
+    ],
+    "focus": {
+      "muscle": "광배근·대원근 (등 아래·겨드랑이)",
+      "move": "팔을 살짝 구부린 채 큰 원을 그리며 아래로, 어깨도 같이 낮아진다",
+      "feel": "막판에 겨드랑이가 강하게 조여지며 마찰되는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 암풀다운 (스트레이트 암 랫풀다운). Standing straight-arm cable pulldown, slight hip hinge, elbows softly bent at same angle. Left arms reaching up and forward to high cable, right bar at thighs following shoulder arc. Do not turn into elbow pushdown.\nHighlight only relevant target musculature: 광배근·대원근 (등 아래·겨드랑이). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"그립 넓이 30~50cm / 척골(새끼·약지) 쪽으로 살짝 감아 잡되, 손목이 위아래로 꺾이지 않는 정도까지만(내리면 일자가 되게)\",\"힙힌지는 살짝만 툭 — 과하면 허벅지에 힘이 들어가 오래 못 한다 / 무게중심은 미드풋(앞쪽)\",\"⭐팔은 곧게 펴지 말고 살짝 구부린 상태 — 팔꿈치 힘이 빠져야 상완삼두에 무리가 안 간다\",\"등 충분히 달려가(늘려) 준 상태에서 시작 — 처음엔 이마까지 말고 바가 하프 정도까지만\",\"당길 때 어깨를 남기지 말고 어깨도 같이 낮아지게, 막판에 겨드랑이가 강하게 마찰된다는 느낌\",\"⭐힘을 준 채로 끌지 말고 힘을 뺐다가 임팩트를 딱 — 골프 스윙처럼(몸에 힘이 가득 들어가 있으면 안 맞는다)\"],\"focus\":{\"muscle\":\"광배근·대원근 (등 아래·겨드랑이)\",\"move\":\"팔을 살짝 구부린 채 큰 원을 그리며 아래로, 어깨도 같이 낮아진다\",\"feel\":\"막판에 겨드랑이가 강하게 조여지며 마찰되는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_dbpullover",
+    "name": "덤벨 풀오버",
+    "kind": "pullover",
+    "captions": [
+      "무릎을 몸쪽에 고정",
+      "겨드랑이 늘리며 넘기기"
+    ],
+    "focus": {
+      "muscle": "겨드랑이 라인(광배·대원근·전거근) + 어깨 가동",
+      "move": "어깨를 천장으로 편 상태를 유지한 채, 미는 느낌으로 뒤로 넘겼다 명치까지",
+      "feel": "겨드랑이가 쭉 늘어나고 어깨가 부드럽게 돌아가는 느낌 — 허리가 꺾이면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 덤벨 풀오버. Supine lengthwise on flat bench, both knees drawn toward body and held bent, feet off floor. Both hands hold ONE dumbbell by one end above chest; second panel arms slightly bent overhead lowering dumbbell behind head within shoulder comfort, lumbar not arched. Knees must remain tucked in both panels.\nHighlight only relevant target musculature: 겨드랑이 라인(광배·대원근·전거근) + 어깨 가동. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⭐천장 보고 누워 손은 「세모」로 (양손으로 덤벨 한쪽을 감싸듯) — 이 그립이 밀고 있는 느낌을 만들어 준다\",\"턱을 당기고 어깨를 천장 쪽으로 최대한 편다 — ⭐그 「편 상태를 유지한 채」 천천히 뒤로 넘긴다\",\"⭐당기는 게 아니라 「미는 느낌」으로 넘어간다\",\"돌아올 때는 팔만 명치까지 — 그 이상 당기지 않는다\",\"덤벨을 꽉 쥐지 말고 자연스럽게 — 중력을 그대로 느끼며\",\"호흡: 넘어갈 때 잡아두고, 올라올 때 「후」 내쉬기\",\"먼저 코어 셋업 — 무릎을 몸쪽으로 당겨 고정하고 꼬리뼈를 눌러 하복부를 잡는다\",\"어깨가 불편하지 않은 범위까지만\",\"골반은 고정, 팔은 반대 방향으로 — 양궁 시위를 당기듯 서로 밀어내야 근육이 늘어난다\"],\"focus\":{\"muscle\":\"겨드랑이 라인(광배·대원근·전거근) + 어깨 가동\",\"move\":\"어깨를 천장으로 편 상태를 유지한 채, 미는 느낌으로 뒤로 넘겼다 명치까지\",\"feel\":\"겨드랑이가 쭉 늘어나고 어깨가 부드럽게 돌아가는 느낌 — 허리가 꺾이면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_machinerow",
+    "name": "머신 로우 (해머 스트렝스)",
+    "kind": "machinerow",
+    "captions": [
+      "가슴을 패드에 지지",
+      "팔꿈치를 옆구리로"
+    ],
+    "focus": {
+      "muscle": "등 (광배·능형근·상부 등) + 겨드랑이 밑",
+      "move": "골반·허리를 고정한 채 팔꿈치를 옆구리로 당긴다",
+      "feel": "등에 무게가 얹히며 빨래 짜듯 쫀쫀한 느낌 — 어깨가 들리면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 머신 로우 (해머 스트렝스). Chest-supported plate-loaded hammer row machine, seat, front chest pad. Start reach handles forward, end pull elbows back beside torso, chest keeps pad contact, shoulders low.\nHighlight only relevant target musculature: 등 (광배·능형근·상부 등) + 겨드랑이 밑. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"세팅: 손잡이가 심장 높이쯤 오도록 의자 높이 조절(3~4번) — 앞뒤 조절은 안 되니 높이만 맞춘다\",\"발판을 밟고 다리를 올려 아랫배가 붙을 때까지 — 발·다리가 지렛대가 되어 골반이 고정되고 가슴 펴기가 쉬워진다\",\"손잡이는 가운데를 잡고, 팔을 편 상태에서 허리부터 먼저 세워 등을 빳빳하게 고정 → 그 고정을 유지한 채 팔만 당긴다\",\"팔꿈치가 옆구리에 붙는 느낌으로 뒤로 · 가슴을 들면서 당긴다\",\"어깨가 들리지 않게 · 확 당기지 말고 부드럽게, 근육을 「빨래 짜듯이」\",\"많이 당긴다고 좋은 게 아니라 등에 느낌이 올 때까지만 · 겨드랑이 밑까지 느낌이 와야 한다\",\"너무 뒤로 눕지 말 것 — 누우면 허리가 꺾이므로 배에 힘을 준다\",\"손잡이 위치와 높이는 매 세트 똑같이\"],\"focus\":{\"muscle\":\"등 (광배·능형근·상부 등) + 겨드랑이 밑\",\"move\":\"골반·허리를 고정한 채 팔꿈치를 옆구리로 당긴다\",\"feel\":\"등에 무게가 얹히며 빨래 짜듯 쫀쫀한 느낌 — 어깨가 들리면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_backextension",
+    "name": "백 익스텐션 (+ 덤벨 로우)",
+    "kind": "backextension",
+    "captions": [
+      "힙을 패드에 지지",
+      "몸 펴고 덤벨 당기기"
+    ],
+    "focus": {
+      "muscle": "척추기립근 + 둔근·햄스트링(뒷근육 전부) + 날개뼈",
+      "move": "힙을 쪼는 힘으로 허리를 들고, 팔꿈치를 옆구리에 붙여 덤벨을 수직으로 당긴다",
+      "feel": "기립근·엉덩이·뒷벅지가 동시에 · 등 가운데가 접히는 느낌 — 허리만 아프면 힙을 안 쓰거나 머리가 들린 것"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 백 익스텐션 (+ 덤벨 로우). 45-degree Roman chair back extension WITH dumbbell row. Hip/thigh on pad, ankles anchored, two dumbbells. Start trunk folded at hips and dumbbells hang; end trunk aligned with legs, neck neutral looking down, dumbbells rowed vertically toward ribs, elbows slightly apart. No lumbar hyperextension.\nHighlight only relevant target musculature: 척추기립근 + 둔근·햄스트링(뒷근육 전부) + 날개뼈. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"기구에 뒤꿈치를 대고 발은 팔자로 · 몸은 일자\",\"가슴·등·엉덩이·뒷벅지 힘을 모두 준 상태(= 이미 「펴진」 상태)를 먼저 만든다\",\"덤벨을 잡기 전에 자세부터 — 엉덩이 힘 → 허리 잡기 → 고개까지 일자로 만든 뒤, 팔을 편 상태에서 그대로 당긴다\",\"⭐허리만 들지 말 것 — 힙과 같이 든다. 엉덩이를 쪼는 힘으로 허리를 들어 올린다 (허리만 들면 허리가 아프다)\",\"앞벅지를 밀어주면서 힙 힘으로 · 어깨 힘은 뺀다\",\"⭐[9/1 갱신] 시선은 아래 — 눈동자만이 아니라 머리까지 같이 내린다. 그래야 등에 힘이 제대로 들어간다 (8/27의 「머리를 든다」에서 교정됨)\",\"덤벨은 수직으로 내렸다가 그대로 당긴다 · 팔꿈치를 옆구리에 최대한 붙여서\",\"턱은 당기고, 몸을 너무 흔들지 않게\",\"무게는 과할 필요 없다 — 등이 접히는 느낌에 저항할 정도만\",\"팔꿈치를 너무 11자로 붙이지 말고 살짝 벌려 — 그게 더 편하고 잘 걸린다\"],\"focus\":{\"muscle\":\"척추기립근 + 둔근·햄스트링(뒷근육 전부) + 날개뼈\",\"move\":\"힙을 쪼는 힘으로 허리를 들고, 팔꿈치를 옆구리에 붙여 덤벨을 수직으로 당긴다\",\"feel\":\"기립근·엉덩이·뒷벅지가 동시에 · 등 가운데가 접히는 느낌 — 허리만 아프면 힙을 안 쓰거나 머리가 들린 것\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_armcurl",
+    "name": "암컬 (바벨 컬)",
+    "kind": "curl",
+    "captions": [
+      "가슴 들고 팔꿈치 붙이기",
+      "이두로 끌어올리기"
+    ],
+    "focus": {
+      "muscle": "이두 전체 (바깥쪽뿐 아니라 안쪽까지)",
+      "move": "팔꿈치를 몸에 붙인 채 안으로 넣어 끌어올려 원판을 「일자」로 올린다",
+      "feel": "원판이 수직으로 오르는 궤적 · 팔꿈치가 몸에서 떨어지면 반원이 된다"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 암컬 (바벨 컬). Standing barbell curl with slight drag-curl path. Start bar in front of thighs palms forward, wrists straight. End bar toward upper chest, elbows close to ribs and drawn slightly back so bar stays close, not huge forward arc. No torso rocking.\nHighlight only relevant target musculature: 이두 전체 (바깥쪽뿐 아니라 안쪽까지). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"상완골(위 팔뚝)은 절대 움직이지 않게 고정 — 팔꿈치 위치 그대로\",\"손은 조금 넓게 잡기\",\"손목을 꺾어서 들지 말고 일자로 유지한 채 들어올리기\",\"접어 올려 이두를 쪼아주고, 내릴 때는 다 펴주기\",\"⭐[8/18] 핵심 = 원판(동그라미)이 「일자」로 올라가야 한다 — 그냥 들면 원판이 반원을 그린다\",\"⭐[8/18] 순서: 팔꿈치를 뒤로 당겨 몸에 붙이고 → 팔꿈치를 안으로 집어넣으며 끌어올려 → 턱 앞까지\",\"⭐[8/18] 내릴 때는 앞으로 밀어내면서 올라왔다가, 팔꿈치를 접은 채 뒤로 당겼다가 내린다 (둥글게 굴려주는 느낌)\",\"⭐[8/18] 이두가 강하게 수축하려면 팔꿈치가 몸에 딱 붙어 있어야 — 붙인 상태로 올리고, 붙인 상태로 뒤로 빼고 내린다\",\"⭐[8/18] 상체만 살짝 앞으로 · 가슴 들고 · 손목에 힘\"],\"focus\":{\"muscle\":\"이두 전체 (바깥쪽뿐 아니라 안쪽까지)\",\"move\":\"팔꿈치를 몸에 붙인 채 안으로 넣어 끌어올려 원판을 「일자」로 올린다\",\"feel\":\"원판이 수직으로 오르는 궤적 · 팔꿈치가 몸에서 떨어지면 반원이 된다\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_benchpress",
+    "name": "플랫 벤치프레스",
+    "kind": "benchpress",
+    "captions": [
+      "날개뼈를 벤치에",
+      "가슴으로 밀어내기"
+    ],
+    "focus": {
+      "muscle": "대흉근 (가슴) + 흉추 신전",
+      "move": "날개뼈를 벤치에 박은 채 가슴이 마중 나오듯 내렸다가 밀어낸다",
+      "feel": "가슴이 늘어나며 어깨가 낮아지는 느낌 (어깨가 앞으로 빠지면 잘못된 것)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 플랫 벤치프레스. Flat barbell bench press side-three-quarter. Both feet planted. Left bar just above mid chest, elbows bent under wrists, right arms extended above chest not neck. Scapula anchored, modest natural spine curve.\nHighlight only relevant target musculature: 대흉근 (가슴) + 흉추 신전. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"세팅: 날개뼈를 벤치에 제대로 박아 넣어 흉추를 열고, 엉덩이에 힘을 넣어 허리 뜨는 정도를 감지\",\"바를 랙에서 빼 와 명치 들고 센터를 맞춘 뒤 시작 (엄지손가락 걸어 잡기)\",\"⭐내려갈 때 가슴이 마중 나오듯 더 내밀기 — 어깨가 앞으로 빠지면 안 된다\",\"가슴 근육(대흉근)이 늘어나며 어깨가 낮아지는 느낌으로\",\"매 회 바가 찍히는 지점이 동일해야 — 흔들림 = 좌우 균형 차이\"],\"focus\":{\"muscle\":\"대흉근 (가슴) + 흉추 신전\",\"move\":\"날개뼈를 벤치에 박은 채 가슴이 마중 나오듯 내렸다가 밀어낸다\",\"feel\":\"가슴이 늘어나며 어깨가 낮아지는 느낌 (어깨가 앞으로 빠지면 잘못된 것)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_chestpress",
+    "name": "체스트 프레스 (머신)",
+    "kind": "chestpress",
+    "captions": [
+      "가슴 들고 손잡이 받기",
+      "가슴을 유지하며 밀기"
+    ],
+    "focus": {
+      "muscle": "대흉근 + 전면 어깨 · (전제) 흉추 신전",
+      "move": "흉추로 가슴을 먼저 밀어낸 상태를 유지한 채, 큰 벽을 넓게 받아 밀어낸다",
+      "feel": "가슴이 계속 들려 있고 사각형으로 버틴 느낌 — 손목만 아프면 견착 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 체스트 프레스 (머신). Seated chest press machine. Back supported, handles at mid chest left elbows bent; right press handles forward at chest height, not overhead. Feet planted and wrists neutral.\nHighlight only relevant target musculature: 대흉근 + 전면 어깨 · (전제) 흉추 신전. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"다리를 한 칸 위에 올려 걸고 고관절·허벅지를 살짝 눌러 ⭐흔들림이 없게 고정\",\"⭐견착 — 손잡이를 꽉 잡아 척골·요골 두 파트가 함께 밀리게 (총 개머리판이 어깨에 딱 박혀야 통으로 쏜다)\",\"손목만 힘이 들어가면 잘못 잡은 것 · 기구에 조금 더 가깝게 앉는다\",\"⭐동서남북이 사각형(스퀘어)으로 잡힌 느낌 · 등 뒤 허리에 손 하나 들어갈 정도만 걸리게\"],\"cues\":[\"⭐「큰 벽이 온다」 생각하고 가슴을 들어 넓게 받아준다\",\"⭐흉추가 먼저 가슴을 밀어내고 있어야 한다 — 미는 순서 = ① 흉추(가슴 내밀기) ② 등 가운데 ③ 어깨·가슴·팔\",\"밀 때도 가슴이 계속 들려 있어야 한다 (허리를 눌러 젖히는 게 아니라 흉곽을 들어 올리는 것)\",\"팔꿈치 들고 · 가슴 들고 · 손잡이를 꽉 잡아야 어깨 힘까지 들어간다\",\"다리는 더 벌리고 고관절을 연다\",\"⭐너무 빠르면 급하게 멈추게 되어 관절에 무리 — 천천히 들어오고, 멈추는 위치를 정확히 알고 있어야 한다\",\"너무 많이 내리지 않는다\"],\"focus\":{\"muscle\":\"대흉근 + 전면 어깨 · (전제) 흉추 신전\",\"move\":\"흉추로 가슴을 먼저 밀어낸 상태를 유지한 채, 큰 벽을 넓게 받아 밀어낸다\",\"feel\":\"가슴이 계속 들려 있고 사각형으로 버틴 느낌 — 손목만 아프면 견착 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_pecdeck",
+    "name": "펙덱 플라이 (가슴 모으기)",
+    "kind": "pecdeck",
+    "captions": [
+      "팔을 옆으로 열기",
+      "가슴부터 모아오기"
+    ],
+    "focus": {
+      "muscle": "대흉근 (+ 전면 어깨로 팔을 밀어놓은 상태)",
+      "move": "팔을 밀어놓은 채, 가슴이 먼저 움직여 양팔을 앞으로 모아온다",
+      "feel": "가슴 바깥쪽이 조이며 모이는 느낌 — 손으로 채면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 펙덱 플라이 (가슴 모으기). Seated pec deck chest fly machine. Left upper arms open to sides shoulder level with soft bent elbows, right hands/handles meet in front of chest, same elbow angle. Back support and feet planted.\nHighlight only relevant target musculature: 대흉근 (+ 전면 어깨로 팔을 밀어놓은 상태). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"손잡이를 잡고 ⭐손목을 살짝 닫아준다\",\"등을 기대고 가슴을 내민다\",\"⭐전면 어깨에 같이 힘을 주면서 팔을 「밀어놓은」 상태를 먼저 만든다 — 그래야 가슴에 힘이 정확히 들어간다\",\"팔꿈치와 몸 사이에 ⭐손 하나 들어갈 공간을 만들어 둔다\",\"가슴을 내밀기 힘들면 엉덩이를 살짝 앞으로 빼고 연다\"],\"cues\":[\"⭐해부학적 움직임 = 양팔을 나란히 벌린 상태에서 「앞으로 모아오는」 것\",\"⭐팔로 시작하지 말 것 — 가슴이 먼저 움직이고 팔이 따라온다 (손으로 채는 느낌이 있으면 잘못)\",\"확 당기지 말고, 가슴과 전면 어깨에 같이 힘을 주며 앞으로 모은다\",\"⭐돌아갈 때(열 때)도 계속 내밀면서 잡고 있어야 한다 — 너무 빨리 열지 말 것\",\"열었을 때 바로 당기지 말고 늘어난 것을 한 번 느끼고 나서 모은다\",\"날개뼈가 살짝 바깥으로 밀린 느낌 — 가슴이 딸려오면 안 된다\",\"정확하게 딱 멈춰준다 · 빨리 수축한다고 좋은 게 아니다\"],\"focus\":{\"muscle\":\"대흉근 (+ 전면 어깨로 팔을 밀어놓은 상태)\",\"move\":\"팔을 밀어놓은 채, 가슴이 먼저 움직여 양팔을 앞으로 모아온다\",\"feel\":\"가슴 바깥쪽이 조이며 모이는 느낌 — 손으로 채면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_facepull",
+    "name": "페이스 풀 (Face Pull)",
+    "kind": "facepull",
+    "captions": [
+      "몸을 안정시키고 팔 뻗기",
+      "얼굴로 당기며 외회전"
+    ],
+    "focus": {
+      "muscle": "후면 어깨 + 외회전 근육(회전근개) · 등 상부",
+      "move": "몸을 뒤로 매단 채 팔·등을 같이 들고, 팔꿈치를 바깥으로 밀며 얼굴로 당긴다",
+      "feel": "어깨 뒤가 「아몬드 모양」으로 잡히는 느낌 — 어깨만 쓰면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 페이스 풀 (Face Pull). Standing rope cable face pull, pulley at face level. Left both arms reach forward; right split rope ends toward sides of face, elbows wide at shoulder level, hands near temples, forearms external rotated. Torso stable slightly leant backward.\nHighlight only relevant target musculature: 후면 어깨 + 외회전 근육(회전근개) · 등 상부. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"이름 그대로 「얼굴 쪽으로」 당긴다 — 높게, 얼굴로, 과감하게\",\"손잡이를 잡고 팔을 편 채 뒤로 — 몸이 살짝 뒤로 매달린 자세\",\"⭐팔만 들지 말 것 — 팔과 등 전체를 같이 들어 올린다 (보통 등과 어깨가 앞으로 말려 있다)\",\"⭐팔꿈치를 바깥쪽으로 밀어내는 느낌으로 당긴다 → 어깨가 「아몬드 모양」으로 잡힌다\",\"어깨를 눌러 놓지 말고 전체를 띄운 채로 · 발바닥·엉덩이부터 몸 전체가 뜬 느낌으로 들어온다\",\"등 근육으로 당긴다 — 어깨만 쓰려고 하면 안 된다\",\"손을 꽉 쥐지 말고 자연스럽게 · 목이 앞으로 나가지 않게\"],\"focus\":{\"muscle\":\"후면 어깨 + 외회전 근육(회전근개) · 등 상부\",\"move\":\"몸을 뒤로 매단 채 팔·등을 같이 들고, 팔꿈치를 바깥으로 밀며 얼굴로 당긴다\",\"feel\":\"어깨 뒤가 「아몬드 모양」으로 잡히는 느낌 — 어깨만 쓰면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_lateralraise",
+    "name": "사이드 레터럴 레이즈",
+    "kind": "lateral",
+    "captions": [
+      "가볍게 들고 중심 잡기",
+      "어깨 높이까지 펼치기"
+    ],
+    "focus": {
+      "muscle": "측면 어깨(삼각근 중간) + 날개뼈 동반 움직임",
+      "move": "엉덩이만 살짝 뺀 자세에서 손끝이 멀어지듯 어깨 높이까지 올린다",
+      "feel": "손끝으로 날아가는 느낌 · 1kg인데도 타는 느낌 — 반동이 들어가면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 사이드 레터럴 레이즈. Standing dumbbell lateral raise, tiny hip hinge, light two dumbbells. Left arms at sides, right arms raised to sides only shoulder height, elbows soft, neutral wrists, no shrug.\nHighlight only relevant target musculature: 측면 어깨(삼각근 중간) + 날개뼈 동반 움직임. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"다리를 모으고(주먹 하나 간격) 엉덩이만 살짝 빼 중심을 앞으로 — 숙이는 게 아니라 「살짝 앉은」 느낌\",\"⭐손끝으로 쭉 날아가는 느낌 — 어깨와 손끝이 멀어지면서 올라간다\",\"⭐어깨 높이까지만 — 그 위 구간은 등·승모근이 담당해 팔을 붙여 준다\",\"날개뼈와 같이 멀어지며 올라가야 한다 — 어깨뼈만 움직이면 충돌이 생긴다\",\"호흡: 들어 올렸을 때 「후」\",\"시선은 계속 유지 · 반동 쓰지 말고 팔이 가는 방향으로 자연스럽게\",\"자세가 끊기지 않게 이어서 — 끊기면 어깨가 불편해진다\"],\"focus\":{\"muscle\":\"측면 어깨(삼각근 중간) + 날개뼈 동반 움직임\",\"move\":\"엉덩이만 살짝 뺀 자세에서 손끝이 멀어지듯 어깨 높이까지 올린다\",\"feel\":\"손끝으로 날아가는 느낌 · 1kg인데도 타는 느낌 — 반동이 들어가면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_vsquat",
+    "name": "V-스쿼트",
+    "kind": "vsquat",
+    "captions": [
+      "어깨 패드에 기대기",
+      "고관절 접어 앉기"
+    ],
+    "focus": {
+      "muscle": "대퇴사두 + 둔근 (엉덩이)",
+      "move": "엉덩이를 뒤로 밀며 고관절을 접고, 뒤꿈치로 받아 밀어 올린다",
+      "feel": "엉덩이(고관절 바깥)가 늘어나는 느낌 — 무릎이 아니라 고관절이 접히는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: V-스쿼트. V-squat machine with visible shoulder pads, inclined rear back pad and large footplate. Start standing supported under pads, end hip/knee flexion in controlled squat, feet remain planted. No ordinary barbell instead.\nHighlight only relevant target musculature: 대퇴사두 + 둔근 (엉덩이). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"뒤로 기댄 상태에서 시작 (몸이 뒤로 기울어진 게 정상) / 명치 살짝 들고 발 어깨 넓이\",\"엉덩이를 뒤로 밀며 앉기 — 고관절이 접히는(굴곡) 느낌을 강하게, 무릎을 구부린다는 느낌이 아니라\",\"무릎은 편안히 바깥으로 / 방향 = 둘째·셋째 발가락이 향하는 곳\",\"내려갈 때 뒤꿈치로 받아내다가, 힘이 앞(발가락)으로 넘어갈 것 같으면 올라온다 — 올라올 때도 「엉덩이를 뒤로 제낀다」는 느낌\",\"집중: 엉덩이(고관절 바깥)가 늘어나는 느낌 — 지금은 가동 거리가 가장 중요\"],\"focus\":{\"muscle\":\"대퇴사두 + 둔근 (엉덩이)\",\"move\":\"엉덩이를 뒤로 밀며 고관절을 접고, 뒤꿈치로 받아 밀어 올린다\",\"feel\":\"엉덩이(고관절 바깥)가 늘어나는 느낌 — 무릎이 아니라 고관절이 접히는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_squat",
+    "name": "스쿼트",
+    "kind": "squat",
+    "captions": [
+      "힙힌지로 중심 잡기",
+      "엉덩이로 앉기"
+    ],
+    "focus": {
+      "muscle": "대퇴사두 + 둔근 · 발바닥 밸런스",
+      "move": "힙힌지로 엉덩이를 살짝 빼고 무릎은 발가락 방향으로 앉는다",
+      "feel": "발볼에 무게가 실린 채 엉덩이로 앉았다 일어서는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 스쿼트. Bodyweight squat, feet shoulder-width toes slightly out. Left upright ready with arms forward, right squat around thigh parallel, hips back, knees tracking toes, heels planted, neutral spine.\nHighlight only relevant target musculature: 대퇴사두 + 둔근 · 발바닥 밸런스. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"발 어깨 넓이, 앞꿈치 15도 외회전 / 무릎 방향 = 발가락 방향 일치\",\"팔을 앞으로 뻗되 정면 일자보다 약간 더 올려 — 손끝이 이마에 닿는 느낌 (웅크리지 말고, 라운드숄더 보정)\",\"힙힌지: 엉덩이를 살짝만 뒤로 (과도하게 빼면 허리가 당긴다)\",\"무게중심 발볼(앞)로 약간 보내되 뒤꿈치 100% 붙어 있어야\",\"발가락(엄지 쪽) 힘으로 내려가기 / 무릎 벌리면서 앉기 — 발목·무릎·고관절 3관절 연동, 무릎이 안으로 모이지 않게\",\"발가락 힘이 좌우로 다르면(한쪽 덜 들어감) 무게중심을 그쪽으로 0.5cm 살짝 밀어 균형\"],\"focus\":{\"muscle\":\"대퇴사두 + 둔근 · 발바닥 밸런스\",\"move\":\"힙힌지로 엉덩이를 살짝 빼고 무릎은 발가락 방향으로 앉는다\",\"feel\":\"발볼에 무게가 실린 채 엉덩이로 앉았다 일어서는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_halfsquat",
+    "name": "하프 스쿼트",
+    "kind": "halfsquat",
+    "captions": [
+      "중립 자세로 준비",
+      "절반 범위만 앉기"
+    ],
+    "focus": {
+      "muscle": "대퇴사두 + 둔근 (가동범위 절반)",
+      "move": "힙힌지 셋업 후 무릎 수직 정도까지만 앉았다 일어난다",
+      "feel": "고관절이 접히며 엉덩이가 늘어나는 느낌 (무릎·허리 부담은 적게)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 하프 스쿼트. Bodyweight HALF squat. Start standing feet shoulder width; end only shallow partial hip/knee flexion approximately 45 degrees knee bend, thighs clearly ABOVE parallel. Arms forward. Not full squat.\nHighlight only relevant target musculature: 대퇴사두 + 둔근 (가동범위 절반). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"발 어깨 넓이, 발끝 살짝 바깥 / 발 폭은 뒤꿈치가 고관절을 살짝 넘어가는 정도(골반보다 조금 넓게)\",\"힙힌지로 시작 — 허리만 굽히지 말고 고관절을 접어(대퇴골 뒤로) 인사하듯, 흉추 살짝 들기\",\"팔은 앞으로 올려 유지(떨어지지 않게), 약간 숙이는 느낌 → 고관절 깊이\",\"천천히 반만 앉았다 일어나기 — 스피드 빨라지지 않게\",\"무릎 방향 = 발가락(엄지·검지) 방향 그대로\"],\"focus\":{\"muscle\":\"대퇴사두 + 둔근 (가동범위 절반)\",\"move\":\"힙힌지 셋업 후 무릎 수직 정도까지만 앉았다 일어난다\",\"feel\":\"고관절이 접히며 엉덩이가 늘어나는 느낌 (무릎·허리 부담은 적게)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_frontsquat",
+    "name": "프론트 스쿼트",
+    "kind": "frontsquat",
+    "captions": [
+      "바벨을 앞에 얹기",
+      "상체 세워 앉기"
+    ],
+    "focus": {
+      "muscle": "대퇴직근 (앞 허벅지 중간) + 코어",
+      "move": "바벨을 앞에 얹어 상체를 세운 채 엉덩이로 내려간다",
+      "feel": "내려갈 때 배에 힘이 들어차는 느낌 + 허벅지 앞이 매끄럽게 눌림"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 프론트 스쿼트. Barbell front squat, bar rests across FRONT shoulders with elbows pointed forward and high. Start standing; end squat with upright torso, elbows high, heels down. Must not depict back squat or goblet.\nHighlight only relevant target musculature: 대퇴직근 (앞 허벅지 중간) + 코어. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"바벨을 앞쪽(쇄골·어깨 앞)에 올리고 팔꿈치를 살짝 올려 고정 (떨어지면 바벨이 흔들림)\",\"발 모양은 스쿼트와 동일, 뒤꿈치는 골반보다 조금 넓게, 무게중심 발볼\",\"그대로 내려갔다 올라오기 — 내려갈 때 배에 힘 들어가는 걸 느끼기\",\"내려갈 때 팔(팔꿈치)을 계속 올리려 노력\",\"목에 바벨 받치기 어려우면 케틀벨 8kg를 입 가릴 높이로 들고(고블릿) 대체\"],\"focus\":{\"muscle\":\"대퇴직근 (앞 허벅지 중간) + 코어\",\"move\":\"바벨을 앞에 얹어 상체를 세운 채 엉덩이로 내려간다\",\"feel\":\"내려갈 때 배에 힘이 들어차는 느낌 + 허벅지 앞이 매끄럽게 눌림\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_heelsquat",
+    "name": "뒤꿈치 받침 스쿼트 (힐 엘리베이티드)",
+    "kind": "heelsquat",
+    "captions": [
+      "뒤꿈치를 받치고 준비",
+      "엉덩이로 내려앉기"
+    ],
+    "focus": {
+      "muscle": "대퇴직근·내전근 + 둔근 (발목 보완)",
+      "move": "뒤꿈치를 받쳐 발목 각도를 올린 뒤 엉덩이로 깊게 앉는다",
+      "feel": "앞 허벅지와 안쪽이 평소보다 깊이 눌리는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 뒤꿈치 받침 스쿼트 (힐 엘리베이티드). Heel-elevated bodyweight squat: both heels clearly rest on small low wedge/plates, forefeet remain on floor. Start standing; end controlled squat, same wedges beneath heels, knees track toes, arms forward.\nHighlight only relevant target musculature: 대퇴직근·내전근 + 둔근 (발목 보완). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"뒤꿈치만 살짝 원판에 받치기(발 전체 X) — 발목 각도를 올려 가동성 보완, 앞꿈치는 떨어지지 않게 붙여둔다\",\"케틀벨(≈4kg)을 앞에 들고(프론트 스타일), 힙힌지 찍고 그대로 내려갔다 올라오기\",\"무릎으로 내려간다는 느낌이 아니라, 장요근·대퇴직근이 눌리며 엉덩이로 내려가는 느낌\",\"내려가며 마시고 올라오며 뱉기 · 발은 서로 가깝게\"],\"focus\":{\"muscle\":\"대퇴직근·내전근 + 둔근 (발목 보완)\",\"move\":\"뒤꿈치를 받쳐 발목 각도를 올린 뒤 엉덩이로 깊게 앉는다\",\"feel\":\"앞 허벅지와 안쪽이 평소보다 깊이 눌리는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_gobletsquat",
+    "name": "고블릿 스쿼트 (중량 앞으로)",
+    "kind": "goblet",
+    "captions": [
+      "덤벨을 가슴 앞에",
+      "등으로 버티며 앉기"
+    ],
+    "focus": {
+      "muscle": "둔근·대퇴 전체 + 버텨주는 등(척추기립근)",
+      "move": "중량을 앞에 든 채 등으로 버티고, 중심은 앞·엉덩이만 뒤로 빼며 앉는다",
+      "feel": "앞허벅지 한 곳이 아니라 다리 전체·위쪽까지 · 발바닥에서 엉덩이가 올라오는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 고블릿 스쿼트 (중량 앞으로). Goblet squat holding ONE vertical dumbbell with both hands at chest, elbows beneath dumbbell. Start standing; end squat thighs near parallel, weight remains close to chest, feet planted.\nHighlight only relevant target musculature: 둔근·대퇴 전체 + 버텨주는 등(척추기립근). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"덤벨을 가슴 앞에 세워 잡는다 — 중량이 앞에 있으므로 앞으로 쏠리는 힘이 생긴다\",\"⭐그 쏠림을 「등의 힘」으로 버틴다 — 나머지는 전부 고관절에 맡긴다\",\"머리를 세우고 중심은 앞에 둔다\"],\"cues\":[\"⭐중심이 앞에 있는 상태에서 「엉덩이만」 뒤로 빼면 된다 — 다른 걸 신경 쓸 필요 없다\",\"발가락을 누르며 천천히 내려간다\",\"내려가서 엉덩이를 조금 더 뒤로 당긴다\",\"상체는 조금 더 앞으로 · 허리가 기립하는 느낌을 유지\",\"⭐발바닥에서 엉덩이가 올라오는 느낌으로 일어난다 (엉덩이를 받쳐주는 게 없으니 발바닥으로 밀어 올린다)\",\"자극이 앞허벅지 한 곳이 아니라 다리 전체·위쪽부터 오면 제대로 된 것\"],\"focus\":{\"muscle\":\"둔근·대퇴 전체 + 버텨주는 등(척추기립근)\",\"move\":\"중량을 앞에 든 채 등으로 버티고, 중심은 앞·엉덩이만 뒤로 빼며 앉는다\",\"feel\":\"앞허벅지 한 곳이 아니라 다리 전체·위쪽까지 · 발바닥에서 엉덩이가 올라오는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_widesquat",
+    "name": "와이드 스쿼트 (내전근)",
+    "kind": "widesquat",
+    "captions": [
+      "보폭·발끝 넓히기",
+      "안쪽 허벅지로 받기"
+    ],
+    "focus": {
+      "muscle": "내전근(안쪽 허벅지) — 둔근을 걸리게 해주는 짝",
+      "move": "보폭·발끝을 넓히고 무릎을 발끝 방향으로 밀어주며, 내전근으로 잡으면서 내려간다",
+      "feel": "안쪽 허벅지가 「다리 찢기」 하듯 늘어나고 딱 걸리는 지점이 온다 — 뒤로 밀리면 실패"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 와이드 스쿼트 (내전근). Wide sumo bodyweight squat, visibly wide stance and toes outward. Start upright hands in front, end knees spread in toe directions and hips descend between legs. Highlight inner thighs/adductors and glutes, not narrow squat.\nHighlight only relevant target musculature: 내전근(안쪽 허벅지) — 둔근을 걸리게 해주는 짝. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"스쿼트와 같되 ⭐발끝과 보폭을 더 넓게 연다\",\"⭐상체를 살짝 앞으로 — 중심을 내 몸 안에 넣어둔다 (뒤로 빠지면 무릎이 앞으로 나온다)\",\"무릎을 살짝 구부리고 엉덩이만 살짝 뺀 그 「각」을 유지한 채 시작\"],\"cues\":[\"⭐무릎은 항상 발끝 방향으로 — 밀어주듯 내려가면 안쪽 허벅지가 「다리 찢기」 하듯 늘어난다\",\"⭐내전근이 브레이크를 잡아주면서 내려온다 — 내려갈 때도 안쪽으로 잡으면서\",\"안쪽이 약하면 몸이 자꾸 뒤로 가고 싶어진다 — 그때마다 앞으로 눌러준다\",\"발바닥 전체에 느낌이 있어야 한다\",\"고관절만 움직이게 — 무릎이 먼저 무너지지 않게\",\"⭐많이 안 앉아도 된다 — 「딱 걸리는」 지점이 있고 거기서 올라오면 된다\",\"뒤로 넘어가는 느낌이 있으면 안 된다\",\"호흡: 올라오면서 「후」\"],\"focus\":{\"muscle\":\"내전근(안쪽 허벅지) — 둔근을 걸리게 해주는 짝\",\"move\":\"보폭·발끝을 넓히고 무릎을 발끝 방향으로 밀어주며, 내전근으로 잡으면서 내려간다\",\"feel\":\"안쪽 허벅지가 「다리 찢기」 하듯 늘어나고 딱 걸리는 지점이 온다 — 뒤로 밀리면 실패\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_legcurl",
+    "name": "레그 컬 (라잉 레그 컬)",
+    "kind": "legcurl",
+    "captions": [
+      "엎드려 골반 고정",
+      "뒤 허벅지로 접기"
+    ],
+    "focus": {
+      "muscle": "햄스트링 (뒤 허벅지)",
+      "move": "엎드려 거치대를 엉덩이에 붙이듯 무릎을 끝까지 접는다",
+      "feel": "뒤 허벅지가 짧아지며 조여지는 느낌 (반동 없이)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 레그 컬 (라잉 레그 컬). PRONE lying leg curl machine, chest and thighs on flat bench, ankles under roller. Start knees almost straight; end heels curled toward glutes about 100 degrees knee flexion. Hips stay on pad.\nHighlight only relevant target musculature: 햄스트링 (뒤 허벅지). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"엎드려 발목 거치대에 아킬레스건을 잘 걸고, 앞쪽 발등 잡기\",\"허리를 꺾지 말고 등을 약간 둥글게 — 벤치를 몸으로 감싸는 느낌\",\"여기까지만 올리지 말고, 거치대를 엉덩이에 최대한 붙인다는 느낌으로 끝까지\",\"반동(치팅) 주지 말고 천천히\",\"다리를 약간 벌려서 — 모으면 힘이 강한 쪽 발로 쏠린다\"],\"focus\":{\"muscle\":\"햄스트링 (뒤 허벅지)\",\"move\":\"엎드려 거치대를 엉덩이에 붙이듯 무릎을 끝까지 접는다\",\"feel\":\"뒤 허벅지가 짧아지며 조여지는 느낌 (반동 없이)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_adduction",
+    "name": "이너타이 (힙 어덕션 · 모으기)",
+    "kind": "adduction",
+    "captions": [
+      "패드에 기대 다리 벌리기",
+      "안쪽 허벅지로 모으기"
+    ],
+    "focus": {
+      "muscle": "내전근 (안쪽 허벅지)",
+      "move": "다리를 넓게 벌려 늘렸다가 무릎 힘으로 모은다 (발 힘 X)",
+      "feel": "벌릴 때 안쪽이 시원하게 늘어나고, 모은 지점에서 꽉 조이는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 이너타이 (힙 어덕션 · 모으기). Seated hip ADDUCTION machine with pads at INNER knees. Start knees wide apart, end thighs brought together. Feet supported, torso stable. Not abduction.\nHighlight only relevant target musculature: 내전근 (안쪽 허벅지). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"목적은 내전근을 부드럽게 만드는 것 — 모으기보다 벌려 늘릴 때에 더 집중 (아플 정도까지는 X)\",\"혼자 할 때는 다리를 다 벌려놓고 앉기 — 가동범위가 길어져 스트레칭·효과 ↑\",\"가슴 펴고 명치 살짝 들고, 구부정하지 않게 뒤로 기대는 느낌\",\"발·발목 힘 쓰지 말고 무릎 힘으로 (안짱다리 하듯) — '무릎 아래는 없다'고 상상\",\"천천히 벌렸다가 모으고, 모은 지점에서 약 2초 꾹 눌러주는 느낌으로 힘을 유지 (터치 앤 고 X)\",\"집중력이 관건 — 신경 안 쓰고 하면 자극 위치를 놓친다 (약한 안쪽에 정확히 힘을 맞춰야)\"],\"focus\":{\"muscle\":\"내전근 (안쪽 허벅지)\",\"move\":\"다리를 넓게 벌려 늘렸다가 무릎 힘으로 모은다 (발 힘 X)\",\"feel\":\"벌릴 때 안쪽이 시원하게 늘어나고, 모은 지점에서 꽉 조이는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_legextension",
+    "name": "레그 익스텐션 (원레그)",
+    "kind": "legextension",
+    "captions": [
+      "골반 잡고 앉기",
+      "허벅지로 들어 펴기"
+    ],
+    "focus": {
+      "muscle": "대퇴직근 — 허벅지 가운데, 골반까지 이어진 유일한 갈래",
+      "move": "무릎을 앞으로 밀지 말고 골반 쪽으로 들어 올리면서 다리를 편다",
+      "feel": "골반에 힘이 딱 잡히고 마지막엔 무릎이 뜰 것 같은 느낌 — 무릎 관절이 아니라 허벅지 전체"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 레그 익스텐션 (원레그). Seated leg extension machine, back supported and ankle roller just above shoes. Start knees 90 degrees, end ONE working leg straight forward nearly horizontal, other leg remains lowered bent. No hyperextended knee.\nHighlight only relevant target musculature: 대퇴직근 — 허벅지 가운데, 골반까지 이어진 유일한 갈래. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"⭐패드를 발등이 아니라 「발목」에 건다 — 발목과 발등이 같이 걸리는 위치가 정답\",\"가운데 깊숙이 앉고 다리를 정면 위로 둔다\",\"⭐무릎이 항상 정면을 보게 — 안이나 밖으로 향하지 않게\",\"몸과 골반을 먼저 잡아둔 상태에서 출발\"],\"cues\":[\"⭐핵심 = 무릎을 「앞으로 미는」 게 아니라 무릎 자체를 들어 올린다 — 앞으로 밀면 무릎 관절에 부담이 온다\",\"⭐올릴 때 골반을 눌러주면서 — 골반까지 힘이 올라오게 하는 것만 신경 쓰면 된다\",\"끝까지 올라오고, 발끝도 들어준다\",\"⭐템포 — 속도를 조금 빨리. 위에서 멈출 필요 없다 (천천히 시작 → 가속 → 내릴 때 다시 천천히 · 처음부터 뻥뻥 차면 안 된다)\",\"손잡이를 살짝 당겨주는 힘 — 그래야 엉덩이가 패드에 박힌다\",\"마지막엔 무릎이 거의 뜰 정도로 들어준다 — 무릎이 골반을 세게 누를수록 더 들어간다\",\"등받이가 사선이면 그 사선만큼 다리가 올라와야 기구를 100% 쓰는 것\",\"내려올 때도 그 힘을 잃지 않고 천천히 — 내려올 때 살짝 떨리는 게 정상\"],\"focus\":{\"muscle\":\"대퇴직근 — 허벅지 가운데, 골반까지 이어진 유일한 갈래\",\"move\":\"무릎을 앞으로 밀지 말고 골반 쪽으로 들어 올리면서 다리를 편다\",\"feel\":\"골반에 힘이 딱 잡히고 마지막엔 무릎이 뜰 것 같은 느낌 — 무릎 관절이 아니라 허벅지 전체\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_legpress",
+    "name": "레그 프레스 (와이드 스탠스)",
+    "kind": "legpress",
+    "captions": [
+      "발판에 넓게 딛기",
+      "안쪽 허벅지로 밀기"
+    ],
+    "focus": {
+      "muscle": "안쪽 허벅지(내전근) + 둔근",
+      "move": "발을 넓게 벌린 채 안쪽 허벅지가 벌어지는 느낌으로 내렸다 민다",
+      "feel": "허벅지가 「다리 찢기」 하듯 안쪽이 늘어나는 느낌 — 앞 허벅지가 주인공이면 잘못"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 레그 프레스 (와이드 스탠스). 45 degree sled leg press, reclined seat, both feet WIDE stance on slanted footplate toes slightly out. Left knees bent toward body within stable pelvis range, right legs extend without locking knees. Back and hips stay supported.\nHighlight only relevant target musculature: 안쪽 허벅지(내전근) + 둔근. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"발을 발판 위쪽·넓게 — 발끝은 바깥으로 열고, 발이 발판 바깥으로 조금 나가도 된다\",\"뒤꿈치는 붙어 있게 두고 뒤꿈치만 살짝 안으로 → 허벅지가 「다리 찢기」 하는 느낌이 나면 정확한 위치\",\"⭐핵심 — 앞 허벅지로 내려오려 하지 말고 「안쪽 허벅지가 벌어진다」는 느낌으로 내려온다\",\"발바닥 전체로 밀고, 엄지발가락에 힘\",\"너무 벌리지 말 것 — 안쪽에 힘이 들어가는 지점을 찾아 조금씩 조절\",\"천천히 내려와 한 번 멈춰본다 — 멈춘 지점에서도 안쪽에 힘이 들어가 있어야 한다\"],\"focus\":{\"muscle\":\"안쪽 허벅지(내전근) + 둔근\",\"move\":\"발을 넓게 벌린 채 안쪽 허벅지가 벌어지는 느낌으로 내렸다 민다\",\"feel\":\"허벅지가 「다리 찢기」 하듯 안쪽이 늘어나는 느낌 — 앞 허벅지가 주인공이면 잘못\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_daily_hamstring",
+    "name": "햄스트링 스트레칭",
+    "kind": "hamstring",
+    "captions": [
+      "누워 수건으로 받치기",
+      "편 다리를 당겨 늘리기"
+    ],
+    "focus": {
+      "muscle": "햄스트링 (뒤 허벅지) 유연성",
+      "move": "누워서 수건으로 다리를 편 채 당긴다",
+      "feel": "뒤 허벅지가 길게 늘어나는 느낌 (앞꿈치는 자연스럽게)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 햄스트링 스트레칭. Supine towel hamstring stretch. One straight leg raised with towel loop around sole, hands hold towel ends; other leg comfortably extended on mat. First raised modestly, second raised higher toward vertical with knee straight and lumbar quiet, no forced ankle dorsiflexion.\nHighlight only relevant target musculature: 햄스트링 (뒤 허벅지) 유연성. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"누워서 수건을 발에 걸고 다리 펴주기\",\"앞꿈치를 너무 몸쪽으로 당기지 말 것 — 자연스럽게 풀어놓아야 스트레칭 효과 ↑\"],\"focus\":{\"muscle\":\"햄스트링 (뒤 허벅지) 유연성\",\"move\":\"누워서 수건으로 다리를 편 채 당긴다\",\"feel\":\"뒤 허벅지가 길게 늘어나는 느낌 (앞꿈치는 자연스럽게)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_daily_piriformis",
+    "name": "이상근 스트레칭",
+    "kind": "piriformis",
+    "captions": [
+      "앞다리를 벤치에 직각으로",
+      "상체를 앞으로 눕히기"
+    ],
+    "focus": {
+      "muscle": "이상근 (엉덩이 깊은 곳 · 좌골신경 통로)",
+      "move": "앞다리를 벤치에 직각으로 걸고 뒷다리를 뺀 뒤 상체를 눕힌다",
+      "feel": "엉덩이 깊은 곳이 강하게 늘어나는 느낌 — 20~30초 릴렉스하며"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 이상근 스트레칭. ELEVATED pigeon/piriformis stretch on bench. Front leg bent about90 degrees resting shin crosswise on bench, back leg extends behind toward floor. Start supported torso more upright; end hinge torso forward onto forearms over bench, pelvis stable. NOT supine figure-four.\nHighlight only relevant target musculature: 이상근 (엉덩이 깊은 곳 · 좌골신경 통로). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"벤치·박스 위에 앞다리를 「직각」으로 접어 올리기 (정강이가 가로로 놓이게)\",\"뒷다리는 뒤로 충분히 빼기 — 멀리 뺄수록 늘어남 ↑\",\"그대로 상체를 앞으로 눕히고 팔꿈치를 앞으로 쭉 밀어낸다\",\"20~30초 릴렉스하며 유지 · 다리당 2세트\",\"높이가 있을수록 다리가 더 올라가 자극이 크다 — 바닥에서 해도 되지만 자극은 약하다\"],\"focus\":{\"muscle\":\"이상근 (엉덩이 깊은 곳 · 좌골신경 통로)\",\"move\":\"앞다리를 벤치에 직각으로 걸고 뒷다리를 뺀 뒤 상체를 눕힌다\",\"feel\":\"엉덩이 깊은 곳이 강하게 늘어나는 느낌 — 20~30초 릴렉스하며\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_plank",
+    "name": "플랭크",
+    "kind": "plank",
+    "captions": [
+      "팔꿈치로 바닥 지지",
+      "몸을 일직선으로 유지"
+    ],
+    "focus": {
+      "muscle": "복부 (코어) 전체",
+      "move": "팔꿈치로 지지해 몸을 일직선으로 두고 배를 등에 붙인다",
+      "feel": "배가 지속적으로 조여지는 느낌 (허리가 아니라 배가 일해야)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 플랭크. Forearm plank preparation to hold. Left forearms on mat and knees supported, elbows under shoulders. Right knees lifted, toes and forearms support straight body line shoulder hip ankle. Abdomen braced, no hip sag.\nHighlight only relevant target musculature: 복부 (코어) 전체. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"어깨와 팔꿈치가 사각형을 이루게 팔꿈치로 지지\",\"팔꿈치를 좁혀 몸을 앞쪽으로 살짝 밀어 어깨에 약간 힘이 들어가게, 그 자세 그대로 버티기\",\"숨 뱉으면서 배를 등 쪽에 붙이기(복부 수축) — 이게 기본 자세이자 핵심\",\"엉덩이 뒤로 빠지지 않게 / 허리 꺾이지 않게\",\"몸이 바들바들 떨리는 게 정상\"],\"focus\":{\"muscle\":\"복부 (코어) 전체\",\"move\":\"팔꿈치로 지지해 몸을 일직선으로 두고 배를 등에 붙인다\",\"feel\":\"배가 지속적으로 조여지는 느낌 (허리가 아니라 배가 일해야)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_daily_foam",
+    "name": "폼롤러 이완",
+    "kind": "foam",
+    "captions": [
+      "겨드랑이 아래에 롤러",
+      "작은 범위로 천천히 이완"
+    ],
+    "focus": {
+      "muscle": "광배근·대원근·소흉근 이완",
+      "move": "폼롤러로 겨드랑이 아래 라인을 비벼 푼다",
+      "feel": "뭉친 곳이 풀리며 어깨·등이 가벼워지는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 폼롤러 이완. Side-lying lat foam rolling. Foam roller under lateral upper back just below armpit, bottom arm extended overhead, top hand on floor for support, knees/feet support weight. Two panels show small roll along lateral back, not rolling directly on lumbar spine or neck.\nHighlight only relevant target musculature: 광배근·대원근·소흉근 이완. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"등 뒤 바깥: 겨드랑이 아래 광배근·대원근 라인 비비기 (10회씩)\",\"가슴 앞쪽 바깥: 소흉근·전거근 라인 (갈비뼈 위까지 포함)\",\"흉추 이완: 날개뼈 사이 폼롤러 대고 뒤로 뻗기\",\"운동 전후 모두 수행 — 하고 나면 몸이 가벼워지는 느낌\"],\"focus\":{\"muscle\":\"광배근·대원근·소흉근 이완\",\"move\":\"폼롤러로 겨드랑이 아래 라인을 비벼 푼다\",\"feel\":\"뭉친 곳이 풀리며 어깨·등이 가벼워지는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_openbook",
+    "name": "오픈북 (흉추 스트레칭)",
+    "kind": "openbook",
+    "captions": [
+      "옆으로 누워 무릎 포개기",
+      "팔·시선 함께 열기"
+    ],
+    "focus": {
+      "muscle": "흉추 회전 + 견갑 가동성",
+      "move": "옆으로 누워 날개뼈를 열며 팔과 시선을 함께 돌린다",
+      "feel": "날개뼈가 벌어지며 가슴 앞이 열리는 느낌 (팔만 돌리면 안 됨)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 오픈북 (흉추 스트레칭). Side-lying open-book thoracic rotation. Knees bent90 and stacked throughout. First both arms straight in front palms together. Second top arm opens backward across chest toward floor behind, eyes follow hand, pelvis and knees stay stacked, head supported.\nHighlight only relevant target musculature: 흉추 회전 + 견갑 가동성. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"옆으로 누워 무릎 굽히고 두 팔을 앞으로 나란히 뻗기\",\"⭐팔만 여는 게 아니라 날개뼈가 열려야 한다 — 날개뼈를 쪼이면서 같이 돌아가는 느낌\",\"위쪽 팔은 낮은 상태를 유지하며 열기 (억지로 올리면 어깨만 아프다)\",\"시선과 고개도 팔을 따라 같이 돌아가기\",\"손이 바닥에 안 닿는 게 정상 — 억지로 닿게 하지 말 것\"],\"focus\":{\"muscle\":\"흉추 회전 + 견갑 가동성\",\"move\":\"옆으로 누워 날개뼈를 열며 팔과 시선을 함께 돌린다\",\"feel\":\"날개뼈가 벌어지며 가슴 앞이 열리는 느낌 (팔만 돌리면 안 됨)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_rehab_quadset",
+    "name": "쿼드 셋 (Quad Set)",
+    "kind": "quadset",
+    "captions": [
+      "무릎 아래 수건 받치기",
+      "허벅지 조여 수건 누르기"
+    ],
+    "focus": {
+      "muscle": "대퇴사두 (앞 허벅지) · 무릎 안정",
+      "move": "수건을 무릎으로 눌러 허벅지에 힘을 주고 버틴다",
+      "feel": "허벅지 앞이 단단해지는 느낌 — 3초 이상 유지"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 쿼드 셋 (Quad Set). Supine quad set rehab, legs resting long, rolled towel under working knee. First relaxed slight knee flexion over towel, second tighten quadriceps and gently press knee down into towel almost straight, heel stays resting. Tiny movement, do not depict leg raise. Highlight front thigh.\nHighlight only relevant target musculature: 대퇴사두 (앞 허벅지) · 무릎 안정. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"무릎 아래 접힌 부위 살짝 아래에 수건 받치기\",\"앞꿈치 당기고 엄지발가락 몸쪽으로\",\"순서 중요: 허벅지 힘 먼저 → 수건을 누르고 → 그다음 당기기 (당기기가 위주가 아니다)\",\"누른 상태로 버티기 — 바로 내리면 운동이 안 된다. 최소 3초 이상, 기본 10초 × 10회 (쉬워지면 10초 × 15회)\",\"천천히 내렸다가 끊기지 않게 반복\"],\"focus\":{\"muscle\":\"대퇴사두 (앞 허벅지) · 무릎 안정\",\"move\":\"수건을 무릎으로 눌러 허벅지에 힘을 주고 버틴다\",\"feel\":\"허벅지 앞이 단단해지는 느낌 — 3초 이상 유지\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_rehab_slr",
+    "name": "SLR (스트레이트 레그 레이즈)",
+    "kind": "slr",
+    "captions": [
+      "반대 다리는 세워 고정",
+      "편 다리만 천천히 들기"
+    ],
+    "focus": {
+      "muscle": "대퇴사두 + 장요근 (골반 앞)",
+      "move": "골반 고정한 채 편 다리를 천천히 들었다 내린다",
+      "feel": "무릎 위와 골반 앞이 당겨지는 느낌 (엉덩이는 뜨지 않게)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: SLR (스트레이트 레그 레이즈). Supine straight leg raise. NON-WORKING leg bent with foot planted on floor in BOTH panels. Working leg straight on mat initially, raised 30-45 degrees finally with knee straight. Pelvis stays level, no back arch. Opposite knee must stay bent.\nHighlight only relevant target musculature: 대퇴사두 + 장요근 (골반 앞). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"골반 바닥 고정 — 엉덩이가 들썩이지 않는 범위에서만 든다 (많이 올릴 필요 없음)\",\"받치는(안 드는) 다리는 무릎을 세워 접는다 — 다 펴면 허리가 뜨고 과신전(허리 젖혀짐)이 된다\",\"앞꿈치 당기고, 드는 다리는 무릎이 구부러지지 않게 쭉 펴서 들기\",\"내릴 때 뒤꿈치 바닥에 닿지 않게\",\"천천히! 무게가 없어 빠르게 하면 자극이 안 됨 — 힘을 딱 느끼고 천천히 내리기\"],\"focus\":{\"muscle\":\"대퇴사두 + 장요근 (골반 앞)\",\"move\":\"골반 고정한 채 편 다리를 천천히 들었다 내린다\",\"feel\":\"무릎 위와 골반 앞이 당겨지는 느낌 (엉덩이는 뜨지 않게)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_rehab_clamshell",
+    "name": "클램쉘 (Clamshell)",
+    "kind": "clamshell",
+    "captions": [
+      "옆으로 누워 발 모으기",
+      "발 붙인 채 무릎 열기"
+    ],
+    "focus": {
+      "muscle": "중둔근 (엉덩이 바깥)",
+      "move": "발은 붙인 채 엉덩이 힘으로 무릎을 조개처럼 연다",
+      "feel": "엉덩이 바깥이 조여지는 느낌 — 옛 좌골 통증 지점을 정확히 자극"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 클램쉘 (Clamshell). Side-lying clamshell, hips stacked and both knees bent, feet TOGETHER throughout. Left knees closed; right top knee opens upward about30degrees while feet maintain contact, torso/pelvis does not roll backward. Side glute red.\nHighlight only relevant target musculature: 중둔근 (엉덩이 바깥). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"옆으로 누워 무릎을 90도로 세우고, 뒤꿈치는 딱 붙인 채 발 고정 — 발이 움직이지 않게 (앞꿈치는 들려도 됨)\",\"손이 아니라 엉덩이 힘으로 무릎을 조개처럼 열어낸다\",\"몸을 완전히 옆으로 돌린다는 느낌으로, 열 수 있는 최대까지 (약 20회)\",\"밴드를 무릎에 걸면 자극·효과 ↑\"],\"focus\":{\"muscle\":\"중둔근 (엉덩이 바깥)\",\"move\":\"발은 붙인 채 엉덩이 힘으로 무릎을 조개처럼 연다\",\"feel\":\"엉덩이 바깥이 조여지는 느낌 — 옛 좌골 통증 지점을 정확히 자극\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_rehab_sslr",
+    "name": "SSLR (사이드 스트레이트 레그 레이즈)",
+    "kind": "sslr",
+    "captions": [
+      "몸과 위 다리를 일자로",
+      "엉덩이 옆으로 들어올리기"
+    ],
+    "focus": {
+      "muscle": "중둔근·대둔근 (엉덩이 옆)",
+      "move": "몸을 일자로 두고 편 다리를 옆으로 들어 올린다",
+      "feel": "엉덩이 옆이 뻑뻑하게 조여지는 느낌 (허벅지 힘 아님)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: SSLR (사이드 스트레이트 레그 레이즈). Side-lying straight leg hip abduction. Bottom leg slightly bent for stability, top leg straight in body line. Start top leg level; end top straight leg lifts about30degrees, toes facing forward not ceiling, pelvis stacked. Highlight side glute.\nHighlight only relevant target musculature: 중둔근·대둔근 (엉덩이 옆). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"옆으로 누워 몸을 완전히 일자로 — 목(경추)부터 발뒤꿈치까지 한 라인 유지, 몸을 더 옆으로 돌려서\",\"아래(앞) 다리는 살짝 앞으로 빼 지지 역할\",\"위 다리는 무릎을 완전히 펴 일자로, 앞꿈치 당기고 엉덩이·골반 힘으로 옆으로 들기\",\"손가락으로 장요근(골반 앞) 눌러주면 마사지 효과\"],\"focus\":{\"muscle\":\"중둔근·대둔근 (엉덩이 옆)\",\"move\":\"몸을 일자로 두고 편 다리를 옆으로 들어 올린다\",\"feel\":\"엉덩이 옆이 뻑뻑하게 조여지는 느낌 (허벅지 힘 아님)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_bridge",
+    "name": "브릿지 (Bridge)",
+    "kind": "bridge",
+    "captions": [
+      "누워 무릎 세우기",
+      "엉덩이로 골반 밀기"
+    ],
+    "focus": {
+      "muscle": "대둔근 (엉덩이) + 흉추 신전",
+      "move": "엉덩이 → 가슴 → 엉덩이 순서로 밀어 올린다",
+      "feel": "힘은 전부 엉덩이에 — 허리는 뻐근한 정도까지만(뜨끔하면 중단)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 브릿지 (Bridge). Supine glute bridge. Start knees bent feet flat shoulder-width arms along floor hips resting. End hips lifted so shoulder hip knee align, upper back/head stay on floor, not lumbar hyperextension. Glutes highlighted red.\nHighlight only relevant target musculature: 대둔근 (엉덩이) + 흉추 신전. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"누워서 다리를 넓게 — 뒤꿈치가 내 골반 라인에 오게, 앞꿈치는 살짝 팔자로 (무릎에 벌어지는 장력)\",\"순서: 엉덩이 → 가슴 → 나머지 엉덩이 쪼기 (익숙해지면 끊지 말고 부드럽게 연결)\",\"무릎이 계속 벌어져 있는 상태 유지 (좁아지면 더 벌리고 더 높이 올려도 됨)\",\"내릴 때는 역순 말고 편하게, 바닥에 닿기 전에 다시 올라가기\",\"올릴 때 가늘고 길게 뱉기 (세게 뱉지 말 것)\"],\"focus\":{\"muscle\":\"대둔근 (엉덩이) + 흉추 신전\",\"move\":\"엉덩이 → 가슴 → 엉덩이 순서로 밀어 올린다\",\"feel\":\"힘은 전부 엉덩이에 — 허리는 뻐근한 정도까지만(뜨끔하면 중단)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_birddog",
+    "name": "버드독 (Bird Dog)",
+    "kind": "birddog",
+    "captions": [
+      "네 발로 중립 잡기",
+      "반대 팔·다리 길게 뻗기"
+    ],
+    "focus": {
+      "muscle": "척추 기립근 + 코어 (중립 유지)",
+      "move": "배 중립을 지킨 채 반대쪽 팔·다리를 길게 뻗는다",
+      "feel": "배에 힘이 걸린 채 흔들림을 잡아내는 느낌 (허리는 꺾이지 않게)"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 버드독 (Bird Dog). Bird dog on all fours. Start hands below shoulders knees below hips. End LEFT arm and RIGHT leg extended horizontally in opposite directions, trunk level and neutral, other hand/knee remain supporting. No same-side extension.\nHighlight only relevant target musculature: 척추 기립근 + 코어 (중립 유지). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"사족(무릎 꿇고 손 짚은) 자세에서 척추 중립 — 꺾이지도 말리지도 않게 (애매하면 살짝 말린 쪽이 낫다)\",\"허리를 한 번 눌렀다가 후방으로 살짝 빼, 아랫배·엉덩이에 힘이 들어오는 지점에서 멈춤\",\"크로스로 반대쪽 팔·다리를 뻗으며 숨을 뱉어 복부에 힘 — 다리는 접어 빼지 말고 펴서\",\"멈춰 버티지 말고 계속 뻗어 올리는 느낌 (바로 내리면 효과 적음)\",\"좌우 중심 잡기 — 힘든 운동이라기보다 흔들림을 잡는 밸런스 운동\",\"대퇴골·상완골 라인이 바닥과 수직이 되게 세팅한 뒤 살짝 앞으로\",\"정점에서도 허리가 꺾이지 않게 — 배 중립(배에 힘 들어가는 위치)을 끝까지 유지\",\"한쪽만 반복하지 말고 좌우 크로스로 번갈아 / 2~3초 버티기\"],\"focus\":{\"muscle\":\"척추 기립근 + 코어 (중립 유지)\",\"move\":\"배 중립을 지킨 채 반대쪽 팔·다리를 길게 뻗는다\",\"feel\":\"배에 힘이 걸린 채 흔들림을 잡아내는 느낌 (허리는 꺾이지 않게)\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_deadbug",
+    "name": "데드버그",
+    "kind": "deadbug",
+    "captions": [
+      "허리를 바닥에 눌러 준비",
+      "반대 팔·다리 반쯤만 뻗기"
+    ],
+    "focus": {
+      "muscle": "복부 (코어) · 척추 정렬",
+      "move": "배를 조인 채 팔·다리를 「반쯤」(40%)만 천천히 뻗었다 돌아온다",
+      "feel": "내내 배가 조인 느낌 — 허리와 바닥 사이가 뜨면 이미 범위 초과"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 데드버그. Supine dead bug with neck supported by small folded towel and chin gently tucked. Start arms reaching upward, hips/knees bent90. End LEFT arm and RIGHT leg extend ONLY a SMALL PARTIAL range approximately40percent: arm stays well above floor, moving knee stays noticeably bent, foot elevated. Low back remains pressed to mat. Not full long-limb extension, not feet touching floor. Other arm/leg hold start.\nHighlight only relevant target musculature: 복부 (코어) · 척추 정렬. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⭐가장 중요 — 팔·다리를 끝까지 펴지 마세요. 「반쯤」(약 40%)만 내려갔다 올라옵니다\",\"⭐내 범위 찾는 법 — 내려가다 허리와 바닥 사이가 뜨려는 순간, 거기가 내 끝. 그 직전까지만\",\"⭐짧게 하는 건 봐주는 게 아닙니다 — 오히려 더 힘들고 더 잘 됩니다. 범위는 익숙해지면 저절로 넓어져요\",\"⭐팔과 다리가 같은 속도로 — 어느 하나가 먼저 도착하지 않게\",\"⭐매번 같은 자리에서 멈추기 — 시작도 끝도 여유 있게, 멈추는 지점이 일정해야 합니다\",\"⭐[8/21] 레그레이즈와 달리 처음부터 끝까지 계속 눌러둔다 — 다리를 뻗을 때 눌러둔 게 풀리면 복근이 아니라 골반이 일한다\",\"⭐[8/21] 확인법 — 허리 밑에 손을 넣어보고, 다리를 뻗는 동안 그 손이 계속 눌려 있는지 본다\",\"⭐[8/21] 턱을 살짝 당기면 복근이 더 세진다 (머리를 바닥에 완전히 붙이는 건 숙련자용)\",\"⭐[8/21] 팔까지 움직이므로 고정력이 더 필요 — 몸통이 덜컹거리지 않게\",\"누워서 앞꿈치가 보이게끔 / 머리는 바닥에 기댄 상태 / 무릎 약간 펴기\",\"⭐[8/18] 목에 수건을 받치고, 온몸을 바닥 쪽으로 눌러 몸이 「땅땅해진」 상태를 먼저 만든 뒤 시작\",\"발을 90도로 너무 꺾지 말고 살짝 붙여 — 90도면 오히려 복부 수축이 어렵다\",\"엉덩이를 살짝 들어(골반 후방경사) 복부가 수축된 상태를 만들고 그 힘을 유지하며 팔·다리 밀어내기 — 꼬리뼈가 살짝 떠도 OK, 허리를 꺾지(전방경사) 말 것\",\"반대쪽 팔·다리 크로스로 내려갔다가, 돌아올 때 배를 한 번 더 말아 쪼아준다 (그냥 오지 말 것)\",\"돌아올 때는 다리를 충분히 당겨와야 복부가 제대로 수축된다 — 내려가는 건 짧게, 돌아오는 건 충분히\",\"⭐[8/18] 올라올 때도 꼬리뼈를 계속 눌러둔 채로\",\"배에 힘이 지속적으로 (허리에 힘 들어가는 느낌 X) — 허리가 아닌 배가 일하게\",\"빠르게 하지 말고 진짜 천천히 — 각 동작을 완전히 통제하며\",\"빨라지지 않게 · 좌우 밸런스가 맞게끔 천천히 내려간다\"],\"focus\":{\"muscle\":\"복부 (코어) · 척추 정렬\",\"move\":\"배를 조인 채 팔·다리를 「반쯤」(40%)만 천천히 뻗었다 돌아온다\",\"feel\":\"내내 배가 조인 느낌 — 허리와 바닥 사이가 뜨면 이미 범위 초과\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_tbalance",
+    "name": "티밸런스 (T-balance)",
+    "kind": "tbalance",
+    "captions": [
+      "한 발로 중심 잡기",
+      "팔·반대 다리 뒤로 길게"
+    ],
+    "focus": {
+      "muscle": "중둔근·대둔근 + 발바닥",
+      "move": "한 발로 힙힌지하며 반대 팔·다리를 뒤로 뻗는다",
+      "feel": "발가락과 바깥 엉덩이에 텐션이 계속 걸린 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 티밸런스 (T-balance). Single-leg T-balance hip hinge. Support leg almost STRAIGHT (soft unlocked knee), torso hinges forward, opposite leg straight reaching back modestly, opposite arm extends back with that leg while other hand forward for balance per personal cue. Two panels upright single-leg setup then elongated hinge, not deep support-knee squat.\nHighlight only relevant target musculature: 중둔근·대둔근 + 발바닥. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"지지하는 발로 힙힌지 찍고 무게중심을 그 다리에 싣기 (손은 대각 앞쪽에 두면 밸런스에 도움)\",\"발가락 힘·바깥쪽 엉덩이에 텐션이 걸린 상태에서, 반대 다리와 팔을 함께 뒤로 쭉 뻗기\",\"다리는 구부리지 말고 펴서 쭉 (많이 올릴 필요 없음), 손도 같이 올린 상태\",\"가슴은 바닥 쪽으로 살짝·명치만 살짝 들고 시선은 바닥 / 허리 말리면 편다\",\"엉덩이 텐션을 운동 내내 유지 — 힙힌지에서 대퇴직근·골반을 손가락 하나 들어갈 만큼 타이트하게\",\"⭐드는 다리의 뒤꿈치가 돌아가지 않게(외회전 X) — 뒤꿈치가 일자로 올라온다고 생각\",\"머리를 앞으로 많이 보내며 힙힌지 / 무게중심 앞꿈치 · 발가락 힘\",\"내려올 때 무릎 접지 말고 그대로, 손도 같이 내려주기\"],\"focus\":{\"muscle\":\"중둔근·대둔근 + 발바닥\",\"move\":\"한 발로 힙힌지하며 반대 팔·다리를 뒤로 뻗는다\",\"feel\":\"발가락과 바깥 엉덩이에 텐션이 계속 걸린 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_stepup",
+    "name": "스텝업 (Step-up)",
+    "kind": "stepup",
+    "captions": [
+      "한 발을 벤치 위에",
+      "딛는 발로 밀어 올라가기"
+    ],
+    "focus": {
+      "muscle": "중둔근·대둔근 (엉덩이)",
+      "move": "딛는 발 뒤꿈치로 밟아 올라가고 천천히 내려온다",
+      "feel": "엉덩이가 접혔다 펴지며 강하게 쓰이는 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 스텝업 (Step-up). Step-up on low sturdy box. Start one entire foot planted on box, other foot on floor. End elevate body by extending working hip/knee, trailing foot lifted toward box, no leap. Keep same leading foot on box throughout.\nHighlight only relevant target musculature: 중둔근·대둔근 (엉덩이). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"올라갈 때는 무조건 딛는 발 뒤꿈치로 밟아 올라간다 (발을 조금 더 앞으로)\",\"올라간 발과 내려오는 발을 통일 — 예: 왼발로 올라가면 오른발로 내려오기\",\"내려올 때 천천히 버티며 엉덩이가 뒤로 접히는 느낌\",\"내려올 때 벤치에서 약간 멀리 내려오면 더 안정되고 엉덩이 힘이 잘 들어온다\",\"약간 앞으로 기울이듯 올라가기 · 무릎 앞으로\"],\"focus\":{\"muscle\":\"중둔근·대둔근 (엉덩이)\",\"move\":\"딛는 발 뒤꿈치로 밟아 올라가고 천천히 내려온다\",\"feel\":\"엉덩이가 접혔다 펴지며 강하게 쓰이는 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_tailbone_raise",
+    "name": "레그레이즈 (꼬리뼈 컨트롤)",
+    "kind": "legraise",
+    "captions": [
+      "아랫배 누르고 다리 들기",
+      "무릎 편 채 범위 조절"
+    ],
+    "focus": {
+      "muscle": "하복근 — 손바닥이 얹히는 바로 그 자리",
+      "move": "무릎을 편 채, 바닥을 강하게 눌러 시소처럼 다리가 저절로 떠오르게 한다",
+      "feel": "누르면 뜬다 · 아랫배가 조이며 떨린다 — 허리가 아프면 말아 올린 것"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 레그레이즈 (꼬리뼈 컨트롤). Supine straight double-leg raise with tailbone control, small pillow under head, both hands palms flat along sides. Start both straight legs raised60-70degrees. Second legs lower only to35-40degrees while lumbar stays pressed to mat, never curl pelvis up overhead. Highlight lower abdomen.\nHighlight only relevant target musculature: 하복근 — 손바닥이 얹히는 바로 그 자리. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"머리를 받치고 눕는다 — 목이 꺾이지 않을 정도의 수건·베개\",\"손바닥을 바닥에 펴서 내려놓고 팔은 다 편다 (좌우 균형은 이 팔이 잡아준다)\",\"다리를 올리고 ⭐무릎을 최대한 편다 — 무릎이 접혀 있으면 자극이 흩어진다\",\"아랫배를 먼저 잡고(꼬리뼈를 눌러 붙인 뒤) 시작\"],\"cues\":[\"⭐핵심 = 「누르면 뜬다」 — 바닥을 강하게 누르면 시소(지렛대)처럼 다리가 저절로 떠오른다\",\"⭐템포 — 너무 느리게 하지 말 것. 늘릴 때는 천천히, **수축(올릴 때)은 좀 더 빠르게**. 느리기만 하면 힘만 걸려 있고 근육이 제대로 안 쓰인다\",\"내려갔다가 올라올 때 다리를 모아준다 · 발끝도 들어준다\",\"⭐다리를 말아 올리지 말 것 — 너무 말면 하복부가 아니라 허리가 아프다\",\"내려갈 때 아랫배에 힘이 들어가 있고, 올라올 때 그 힘으로 올라온다\",\"허리와 바닥 사이 공간이 「0」 — 뜨면 즉시 범위를 줄인다\",\"다리 힘도 같이 써도 된다 — 다리와 하복부는 근육이 이어져 있다\",\"힘들어지면 바닥까지 내려가지 말고 위에서 짧게 움직인다\"],\"focus\":{\"muscle\":\"하복근 — 손바닥이 얹히는 바로 그 자리\",\"move\":\"무릎을 편 채, 바닥을 강하게 눌러 시소처럼 다리가 저절로 떠오르게 한다\",\"feel\":\"누르면 뜬다 · 아랫배가 조이며 떨린다 — 허리가 아프면 말아 올린 것\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_rotationlunge",
+    "name": "로테이션 런지 (로봇 런지)",
+    "kind": "rotationlunge",
+    "captions": [
+      "앞발에 중심을 싣기",
+      "살짝 돌며 뒤로 런지"
+    ],
+    "focus": {
+      "muscle": "둔근(엉덩이) + 복사근·흉추 회전 (상·하지 분리)",
+      "move": "돌리고 → 엉덩이 빼며 앉고 → 일어나 제자리 (로봇처럼 단계별로)",
+      "feel": "허벅지보다 엉덩이 자극이 강하게 — 축발이 땅에 박힌 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 로테이션 런지 (로봇 런지). Reverse lunge with small torso rotation toward FRONT working leg, hands forward holding no weight. Start standing ready with one foot loaded, second opposite leg steps back and knees bend, trunk hinges slightly and rotates modestly over front hip, feet stay separate no crossed lunge.\nHighlight only relevant target musculature: 둔근(엉덩이) + 복사근·흉추 회전 (상·하지 분리). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"덤벨(또는 맨몸)을 잡고 선다 — 손은 앞쪽에 둔다\",\"⭐앞다리 운동이므로 체중을 먼저 앞에 싣는다 (상체를 살짝 숙여 중심을 앞으로)\",\"발 압력 배분 ⭐앞꿈치 : 뒤꿈치 = 6:4 ~ 7:3 — 앞꿈치로만 서면 무릎에 부담\"],\"cues\":[\"⭐뒤로 다리를 뺄 때 「내 발로 서는 느낌」으로 — 뒷걸음질 치듯 밀려나면 안 된다\",\"⭐몸이 같이 돌아가야 한다 — 살짝 돌면서 앉아야 엉덩이가 늘어난다 (회전은 「살짝」이면 충분)\",\"상체는 앞으로, 무릎은 앞으로 나오지 않게 · 허리를 끼면서 앉는다\",\"⭐뒤꿈치를 밟는다 — 발 전체로 밟고 일어난다 (앞꿈치로만 밀면 무릎이 아프다)\",\"팔이 앞으로 오게 하려면 반대쪽 골반을 튼다 — 팔로 밀지 말 것\",\"어깨로 던지면 몸이 통째로 돌아간다 · 가슴만 살짝 굴려주는 정도\",\"앉을 때 팔은 앞으로 · 다리는 안쪽으로 (발 안쪽에 앉는 느낌)\"],\"focus\":{\"muscle\":\"둔근(엉덩이) + 복사근·흉추 회전 (상·하지 분리)\",\"move\":\"돌리고 → 엉덩이 빼며 앉고 → 일어나 제자리 (로봇처럼 단계별로)\",\"feel\":\"허벅지보다 엉덩이 자극이 강하게 — 축발이 땅에 박힌 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_bosurotation",
+    "name": "보수 로테이션 (한 발 밸런스 회전)",
+    "kind": "bosu",
+    "captions": [
+      "보수 위 한 발로 중심 잡기",
+      "공을 돌린 뒤 앉기"
+    ],
+    "focus": {
+      "muscle": "중둔근·뒷벅지 + 흉추 회전",
+      "move": "공을 먼저 ∞ 모양으로 돌리고, 발바닥 전체로 과감하게 깊게 앉는다",
+      "feel": "엉덩이에 크게 · 발목·종아리 힘이 빠질수록 잘 되고 있는 것"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 보수 로테이션 (한 발 밸런스 회전). BOSU single-leg balance rotation with small medicine ball held in two hands. Start one leading foot centered on BOSU dome, rear toes lightly on floor for balance, ball forward. Second ball/upper torso rotates slightly diagonally toward support leg and hips hinge into a modest controlled single-leg squat, rear foot light. Highlight glute medius, show BOSU clearly.\nHighlight only relevant target musculature: 중둔근·뒷벅지 + 흉추 회전. Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"공(볼)을 들고 먼저 중심부터 잡는다 — 손을 앞으로 밀면 앞발에 중심이 실린다\",\"⭐공만 먼저 돌린다 → 그다음 과감하게 깊게 앉는다. 하나하나 신경 쓰면 몸이 조립되지 않는다\",\"⭐회전은 무한대(∞) 모양 — 수평으로만 돌리면 발 중심이 안 잡힌다. 뒤쪽 어깨가 살짝 들어가듯 대각선으로\",\"뒷벅지로 엉덩이를 들면서 상체를 앞으로 밀어준다 — 「맘만 먹으면 뒷발을 뺄 수 있을」 정도\",\"앞꿈치로만 앉지 말 것 — 뒤꿈치까지 발바닥 전체에 힘이 있는 상태로 앉는다\",\"앉을 때 안쪽 허벅지를 붙이며 (약간 안짱다리 느낌)\",\"돌린 상태를 유지한 채 그대로 앉았다 올라오고 돌아온다\",\"지면 버전: 앞으로 나란히로 팔을 밀고 엉덩이도 뒤로 들어 올린다 — 팔을 미는 만큼 엉덩이가 들려야 균형이 맞는다\",\"⭐[9/1] 골프 다운스윙과 똑같다 — 탑에서 지면을 밟고 엉덩이가 뒤로 빠지면서 회전한다\",\"⭐[9/1] 무릎으로 가지 말 것 — 골반이 뒤로 빠지면서 돌아야 한다 · 축이 되는 다리에서 회전이 일어난다\"],\"focus\":{\"muscle\":\"중둔근·뒷벅지 + 흉추 회전\",\"move\":\"공을 먼저 ∞ 모양으로 돌리고, 발바닥 전체로 과감하게 깊게 앉는다\",\"feel\":\"엉덩이에 크게 · 발목·종아리 힘이 빠질수록 잘 되고 있는 것\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "pt_sldl",
+    "name": "싱글 레그 데드리프트 (외발)",
+    "kind": "sldl",
+    "captions": [
+      "한 발로 중심을 옮기기",
+      "다리를 뒤로 빼며 힙힌지"
+    ],
+    "focus": {
+      "muscle": "중둔근·햄스트링 + 발바닥 균형 (고관절 힌지)",
+      "move": "체중을 앞으로 옮긴 뒤 다리를 뒤로 빼며, 몸을 앞뒤로 길게 뽑아 접는다",
+      "feel": "고관절이 접히며 엉덩이·뒷벅지에 · 올라오면 바짝 선 느낌"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 싱글 레그 데드리프트 (외발). Single-leg dumbbell Romanian deadlift, one dumbbell held in opposite hand to support leg. Start upright one-foot stance, end hip hinge with straight rear leg reaching backward, support knee soft, dumbbell hanging below shoulder near support shin, spine neutral and pelvis square.\nHighlight only relevant target musculature: 중둔근·햄스트링 + 발바닥 균형 (고관절 힌지). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"prep\":[\"덤벨을 잡고 선다 · 다리는 팔자 말고 ⭐11자로\",\"핸드바(지지대)는 ⭐중심 잡기용으로만 — 매달리면 안 된다\",\"지지하는 발바닥으로 바닥을 누르고 몸을 바르게 세운다\",\"발 압력 배분 ⭐앞꿈치 : 뒤꿈치 = 6:4 ~ 7:3\"],\"cues\":[\"⭐순서가 핵심 — 체중을 먼저 앞으로 옮기고 → 그다음 다리를 뒤로 뺀다 (다리부터 빨리 빼지 말 것)\",\"다리가 눌린 힘으로 천천히 내려가면 고관절에 느낌이 오면서 몸이 딱 접힌다\",\"뒤로 뻗은 다리는 쭉 펴서 ⭐몸을 최대한 길게 뽑는다 — 지지하는 다리 힘으로\",\"⭐많이 안 내려가도 된다 — 균형을 유지할 수 있는 범위까지만. 너무 길게 가면 골반이 열린다\",\"올라올 때는 발바닥으로 밟으면서 · 올라온 뒤 ⭐구부정하지 말고 바짝 선다 (「나보다 키가 커지게」)\",\"시선은 정면\"],\"focus\":{\"muscle\":\"중둔근·햄스트링 + 발바닥 균형 (고관절 힌지)\",\"move\":\"체중을 앞으로 옮긴 뒤 다리를 뒤로 빼며, 몸을 앞뒤로 길게 뽑아 접는다\",\"feel\":\"고관절이 접히며 엉덩이·뒷벅지에 · 올라오면 바짝 선 느낌\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "golf_driver",
+    "name": "드라이버",
+    "kind": "golf",
+    "captions": [
+      "골반 접고 축 잡기",
+      "체중이동 후 면으로 임팩트"
+    ],
+    "focus": {
+      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
+      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
+      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 「뒤에서 못 박듯」 맞는 느낌 — 임팩트 후 팔은 곧게"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 드라이버. RIGHT-HANDED DRIVER golf setup versus IMPACT. First address wide stance with driver club head just behind teed ball inside left heel. Second impact hands ahead/near ball, weight shifted to lead LEFT leg, pelvis slightly opened, head remains behind ball, arms extended not locked. Correct long driver shaft and large head, ball on tee. No putting.\nHighlight only relevant target musculature: 몸의 축 + 골반·몸통 회전 (손목·팔 개입 X). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⛳ 준비: 골반 접기(힙힌지)로 견고하게\",\"① 백스윙 — 좌우 어깨 턴 높이 유지 (특히 오른쪽 어깨가 내려오지 않게)\",\"② 왼쪽 체중이동 ⭐가장 중요 — 체중을 옮기면서 손은 「내리려고만」 한다\",\"③ ⭐지연 — 채가 수직으로 떨어질 때까지 최대한 기다렸다가 몸통 회전 (먼저 돌리지 말 것)\",\"④ 임팩트 — 몸으로 시작해 「면」으로 타격 (드라이버는 뒤에서 못 박듯), 임팩트 순간 좌우 팔은 저항하듯 버틴다\",\"⑤ 마무리 — 임팩트 후 팔은 곧게 펴고, 머리·몸 중심 유지 확인 (순간적으로 지나감)\",\"헤드가 오기를 기다린다 — 주역은 헤드 (「채만 간다, 헤드만 보낸다」)\",\"뒤(사선 방향)에서 손·팔을 쓴다\",\"내려주기 = 체중이동 + 여유 (생략 불가), 나머지는 원심력 추가 정도\",\"오른쪽 버티기 (미세한 차이 → 큰 결과) / 왼쪽이 버틴 상태에서 임팩트\",\"면으로 타격 — 퍼올리기·밀기 금지, 체중 들리지 않고 지면을 향하도록\",\"떨어지는 힘을 회전으로 전환\"],\"focus\":{\"muscle\":\"몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)\",\"move\":\"체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트\",\"feel\":\"임팩트 순간 좌우 팔이 저항하며 면으로 「뒤에서 못 박듯」 맞는 느낌 — 임팩트 후 팔은 곧게\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "golf_iron7",
+    "name": "7번 아이언",
+    "kind": "golf",
+    "captions": [
+      "골반 접고 축 잡기",
+      "왼발로 지지하며 면 타격"
+    ],
+    "focus": {
+      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
+      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
+      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 7번 아이언. RIGHT-HANDED 7 IRON setup versus IMPACT. Address shoulder-width stance ball near center, medium iron shaft. Impact weight left leg, hands ahead of clubhead slight forward shaft lean, body rotates about stable head axis. Both hands grip club and club head at ball.\nHighlight only relevant target musculature: 몸의 축 + 골반·몸통 회전 (손목·팔 개입 X). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⛳ 준비: 골반 접기(힙힌지)로 견고하게\",\"① 백스윙 — 좌우 어깨 턴 높이 유지 (특히 오른쪽 어깨가 내려오지 않게)\",\"② 왼쪽 체중이동 ⭐가장 중요 — 체중을 옮기면서 손은 「내리려고만」 한다\",\"③ ⭐지연 — 채가 수직으로 떨어질 때까지 최대한 기다렸다가 몸통 회전 (먼저 돌리지 말 것)\",\"④ 임팩트 — 몸으로 시작해 클럽 「면」으로 타격, 임팩트 순간 좌우 팔은 저항하듯 버틴다\",\"⑤ 마무리 — 임팩트 후 팔은 곧게 펴고, 머리·몸 중심 유지 확인 (순간적으로 지나감)\",\"다운 스타트 시 왼다리 움직임 + 채 다운 움직임 일체화, K각도 유지\",\"턴 시 머리 각도·위치, 시선은 공 뒤\",\"초기 왼발 움직임 확실히 느끼기 / 왼·오른 어깨 위치\",\"치고 빠져나가는 느낌\",\"최대한 천천히, 전 구간 통제하에\"],\"focus\":{\"muscle\":\"몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)\",\"move\":\"체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트\",\"feel\":\"임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "golf_iron5",
+    "name": "5번 아이언",
+    "kind": "golf",
+    "captions": [
+      "왼팔과 축을 안정시키기",
+      "체중 옮겨 면으로 타격"
+    ],
+    "focus": {
+      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
+      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
+      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: 5번 아이언. RIGHT-HANDED 5 IRON address versus IMPACT. Slightly longer iron than7, ball a little forward of center, stance slightly wider. Impact weight lead left leg, left arm long, pelvis turned modestly and hands ahead of clubhead. Stable head, club contacts grounded ball.\nHighlight only relevant target musculature: 몸의 축 + 골반·몸통 회전 (손목·팔 개입 X). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⛳ 준비: 골반 접기(힙힌지)로 견고하게\",\"① 백스윙 — 좌우 어깨 턴 높이 유지 (특히 오른쪽 어깨가 내려오지 않게)\",\"② 왼쪽 체중이동 ⭐가장 중요 — 체중을 옮기면서 손은 「내리려고만」 한다\",\"③ ⭐지연 — 채가 수직으로 떨어질 때까지 최대한 기다렸다가 몸통 회전 (먼저 돌리지 말 것)\",\"④ 임팩트 — 몸으로 시작해 클럽 「면」으로 타격, 임팩트 순간 좌우 팔은 저항하듯 버틴다\",\"⑤ 마무리 — 임팩트 후 팔은 곧게 펴고, 머리·몸 중심 유지 확인 (순간적으로 지나감)\",\"7번보다 왼골반 더 개입\",\"왼어깨가 공보다 앞서 나가지 않게 (공간확보 = 축 고정)\",\"순서 지켜 왼팔이 고정되면 정타\",\"왼팔·왼어깨 버티기 + 다운 시 오른어깨 고정\",\"템포 느리게 (「빠르게」는 채 기준)\"],\"focus\":{\"muscle\":\"몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)\",\"move\":\"체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트\",\"feel\":\"임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  },
+  {
+    "id": "golf_ironp",
+    "name": "P 아이언 (피칭)",
+    "kind": "golf",
+    "captions": [
+      "짧은 클럽으로 중심 잡기",
+      "축 유지하며 면으로 타격"
+    ],
+    "focus": {
+      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
+      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
+      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
+    },
+    "prompt": "Scientific educational 3D anatomical fitness illustration. ONE two-panel comparison image, exactly 1536x1024, TWO EQUAL portrait panels SIDE BY SIDE (each768x1024), no border or gutter. No lettering, numbers, arrows, watermark, logos, or UI. Same scale, same camera and equipment in both panels, all limbs entirely visible with generous framing.\nDark charcoal #101114 backdrop, high quality silver-white anatomical adult male model with subtle detailed muscle separations, neutral bald head, black fitted shorts and shoes. Target muscles vivid RED, all other muscles neutral silver. Natural human proportions, sophisticated anatomical rendering, soft rim lighting, never cartoon or stick figure. Correct functional equipment.\nExercise: P 아이언 (피칭). RIGHT-HANDED PITCHING WEDGE setup versus IMPACT, not putting. Shorter shaft, narrower stance and centered ball. Impact left side supports weight, arms long through ball, slight shaft lean toward target, stable body center.\nHighlight only relevant target musculature: 몸의 축 + 골반·몸통 회전 (손목·팔 개입 X). Biomechanics and safety accuracy matter: no joint dislocations, hyperextension, extra limbs, disconnected cables or floating weights. Both hands correctly grasp any shared bar.\nPersonal coaching reference (latest specific dated cues take precedence over conflicting generic statements): {\"cues\":[\"⛳ 준비: 골반 접기(힙힌지)로 견고하게\",\"① 백스윙 — 좌우 어깨 턴 높이 유지 (특히 오른쪽 어깨가 내려오지 않게)\",\"② 왼쪽 체중이동 ⭐가장 중요 — 체중을 옮기면서 손은 「내리려고만」 한다\",\"③ ⭐지연 — 채가 수직으로 떨어질 때까지 최대한 기다렸다가 몸통 회전 (먼저 돌리지 말 것)\",\"④ 임팩트 — 몸으로 시작해 클럽 「면」으로 타격, 임팩트 순간 좌우 팔은 저항하듯 버틴다\",\"⑤ 마무리 — 임팩트 후 팔은 곧게 펴고, 머리·몸 중심 유지 확인 (순간적으로 지나감)\",\"가장 중요: 축·몸 고정\",\"임팩트 시 오른쪽 겨드랑이 밀착, 약간 미는 느낌도 좋다\"],\"focus\":{\"muscle\":\"몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)\",\"move\":\"체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트\",\"feel\":\"임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게\"}}.\nTranslate this into a clear START/READY pose on LEFT and described WORK/STRETCH/IMPACT pose on RIGHT. Keep source coaching in mind, but render NO TEXT: all captions will be added as readable native app text. No extra exercise variants in same panel."
+  }
+]

@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '47';
+  const ASSET_VER = '48';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -275,7 +275,7 @@ const Theme = (() => {
   }
 
 
-  // 원문 데이터와 별도로 관리하는 케이블 푸시다운 시각 안내.
+  // 원문·개인 메모와 분리한 운동별 시각 안내.
   const expanded3D = new Set();
   function focusHtml(e) {
     return e.focus ? `<div class="focus-box ${e.part === 'golf' ? 'golf' : ''}">
@@ -305,6 +305,19 @@ const Theme = (() => {
       <div class="exercise-3d-content"></div>
     </details>`;
   }
+  function exerciseMediaHtml(e) {
+    if (e.id === 'pt_pushdown') return pushdownMediaHtml();
+    const media = window.ExerciseMedia?.[e.id];
+    if (!media) return '';
+    return `<section class="exercise-guide" aria-label="${esc(e.name)} 2컷 안내">
+      <div class="guide-pair">${media.images.map((src, i) => `
+        <figure class="guide-shot">
+          <div class="guide-shot-title"><b>${i ? '동작' : '준비'}</b>${esc(media.captions[i])}</div>
+          <img src="${esc(src)}?v=${ASSET_VER}" alt="${esc(e.name)} · ${esc(media.captions[i])}" decoding="async">
+          <figcaption>${esc(media.notes[i])}</figcaption>
+        </figure>`).join('')}</div>
+    </section><details class="exercise-3d"><summary>입체로 자세 보기</summary><div class="exercise-3d-content"></div></details>`;
+  }
   function bindExercise3D(id) {
     const details = app.querySelector('.exercise-3d');
     if (!details) return;
@@ -314,8 +327,9 @@ const Theme = (() => {
       if (details.querySelector('iframe')) return;
       const frame = document.createElement('iframe');
       frame.className = 'exercise-3d-frame';
-      frame.title = '케이블 푸시다운 회전형 3D 자세 안내';
-      frame.src = `samples/pushdown-3d/viewer.html?v=${ASSET_VER}`;
+      frame.title = (Store.getById(id)?.name || '운동') + ' 회전형 3D 자세 안내';
+      const source = window.ExerciseMedia[id].viewer;
+      frame.src = source + (source.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
       details.querySelector('.exercise-3d-content').append(frame);
     };
     details.addEventListener('toggle', load);
@@ -340,7 +354,7 @@ const Theme = (() => {
     const e = Store.getById(id);
     if (!e) { go('home'); return; }
     const isGolf = e.part === 'golf';
-    const isPushdown = e.id === 'pt_pushdown';
+    const hasMedia = !!window.ExerciseMedia?.[e.id];
     const c = checks[id] || (checks[id] = new Set());
 
     const cues = (e.cues || []).map((cue, i) => `
@@ -374,7 +388,7 @@ const Theme = (() => {
           </div>
         </div>
 
-        ${isPushdown ? '' : focusHtml(e)}
+        ${hasMedia ? '' : focusHtml(e)}
 
         ${(e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
           ${e.steps.map(s => `<span class="step">${esc(s)}</span>`).join('<span class="sep">›</span>')}
@@ -389,11 +403,11 @@ const Theme = (() => {
           ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
         </div>` : ''}
 
-        ${!isPushdown && e.image ? `<div class="ex-figure">
+        ${!hasMedia && e.image ? `<div class="ex-figure">
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 
-        ${isPushdown ? pushdownMediaHtml() + focusHtml(e) : ''}
+        ${hasMedia ? exerciseMediaHtml(e) + focusHtml(e) : ''}
 
         ${cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ 운동 중 핵심
@@ -418,7 +432,7 @@ const Theme = (() => {
         </div>
       </div>
       ${tabbar(e.part)}`;
-    if (isPushdown) bindExercise3D(id);
+    if (hasMedia) bindExercise3D(id);
   }
 
   // ============ 네비게이션 ============

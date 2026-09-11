@@ -1,12 +1,16 @@
 /* sw.js — 오프라인 캐시 (앱 셸 + 데이터)
    콘텐츠 수정 시 CACHE 버전을 올리면 갱신됩니다. */
-const CACHE = 'ptgolf-v47';
+const CACHE = 'ptgolf-v48';
 const ASSETS = [
   './',
   './index.html',
   './css/style.css',
   './js/store.js',
   './js/app.js',
+  './js/exercise-media.js?v=48',
+  './media/3d/viewer.html?v=48',
+  './media/3d/poses.js?v=48',
+  './media/3d/viewer.js?v=48',
   './data/seed.json',
   './manifest.webmanifest',
   './icon.svg',
@@ -53,9 +57,9 @@ const ASSETS = [
   './docs/images/42_sldl.svg',
   './docs/images/43_chestpress.svg',
   './docs/images/44_pecdeck.svg',
-  './samples/pushdown-3d/combined-start.png?v=47',
-  './samples/pushdown-3d/combined-end.png?v=47',
-  './samples/pushdown-3d/viewer.html?v=47',
+  './samples/pushdown-3d/combined-start.png?v=48',
+  './samples/pushdown-3d/combined-end.png?v=48',
+  './samples/pushdown-3d/viewer.html?v=48',
   './samples/pushdown-3d/three.min.js',
   './samples/pushdown-3d/pushdown.js'
 ];
@@ -77,10 +81,21 @@ self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(e.request)
       .then(res => {
+        if (!res.ok) return res;
         const copy = res.clone();
         caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
         return res;
       })
-      .catch(() => caches.match(e.request).then(r => r || caches.match('./index.html')))
+      .catch(async () => {
+        const exact = await caches.match(e.request);
+        if (exact) return exact;
+        const url = new URL(e.request.url);
+        if (url.origin === self.location.origin) {
+          const cached = await caches.match(e.request, { ignoreSearch: true });
+          if (cached) return cached;
+          if (e.request.mode === 'navigate') return caches.match('./index.html');
+        }
+        return Response.error();
+      })
   );
 });

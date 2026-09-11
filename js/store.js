@@ -61,7 +61,15 @@ const Store = (() => {
     (seed.exercises || []).forEach(ex => {
       if (deleted.has(ex.id)) return;
       seenIds.add(ex.id);
-      result.push(overlay.overrides[ex.id] ? { ...ex, ...overlay.overrides[ex.id] } : ex);
+      const saved = overlay.overrides[ex.id];
+      const merged = saved ? { ...ex, ...saved } : ex;
+      // 과거 전체 객체 저장에 포함된 SVG 경로만 새 안내 이미지로 갱신한다.
+      // 사용자 지정 이미지 경로와 메모/즐겨찾기/운동 내용은 보존한다.
+      if (saved && ex.image && ex.image.startsWith('docs/images/guides/') &&
+          (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) {
+        merged.image = ex.image;
+      }
+      result.push(merged);
     });
     // seed 에 없는 신규(로컬 추가) 동작
     Object.values(overlay.overrides).forEach(ex => {
