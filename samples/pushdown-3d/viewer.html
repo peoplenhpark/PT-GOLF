@@ -1,0 +1,27 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>케이블 푸시다운 3D</title><style>
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;padding:10px;background:#101114;color:#f0f1f4;font:15px system-ui,"Malgun Gothic",sans-serif}
+#viewport{width:100%;height:clamp(320px,95vw,460px);position:relative;background:#14161b;border:1px solid #343944;border-radius:12px;overflow:hidden}
+canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}
+.stage{position:absolute;top:10px;left:10px;background:#252832e8;padding:8px;border-radius:7px;font-size:12px;pointer-events:none}
+.hint{position:absolute;bottom:12px;left:5px;right:5px;font-size:11px;text-align:center;color:#b9c0cb;pointer-events:none}
+.label{position:absolute;pointer-events:none;background:#16181de8;border:1px solid #aaaeb8;border-radius:5px;padding:4px 7px;font-size:11px;white-space:nowrap;transform:translate(-50%,-130%)}
+.label:after{content:"";position:absolute;left:50%;bottom:-10px;width:7px;height:7px;border:2px solid white;border-radius:50%}
+button,select{min-height:44px;border:1px solid #424752;border-radius:8px;background:#272b33;color:inherit;font:inherit;font-size:13px;padding:8px 11px;cursor:pointer}
+#play{background:#d95e51;border-color:#d95e51}
+button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visible{outline:2px solid #ff9a8f;outline-offset:-2px}
+.controls{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.scrub{display:flex;gap:10px;align-items:center;white-space:nowrap;font-size:12px;color:#bbc2cf}input[type=range]{width:100%;min-width:0;min-height:30px;accent-color:#e77f71}
+.phase{border-left:3px solid #e98274;margin:14px 0;padding:5px 0 5px 12px}.phase h3{margin:0 0 6px;font-size:16px}.phase p{margin:0;color:#bdc3cf;font-size:14px;line-height:1.7}
+.fine{color:#a5abb5;font-size:12px;line-height:1.75;margin:12px 0 0}#error{padding:20px}
+</style></head><body><div id="viewport"><span id="stage" class="stage">준비 자세</span><span id="elbow" class="label">팔꿈치 고정</span><span class="hint">드래그로 회전 · 휠 / 두 손가락으로 확대</span><div id="error" hidden></div></div>
+<div class="controls"><button id="play">일시정지</button><button data-view="front">앞</button><button data-view="side">옆</button><button data-view="back">뒤</button><button data-view="reset">처음 시점</button><button id="machine" aria-pressed="true">기구 표시</button><select id="speed" aria-label="재생 속도"><option value="1">보통 속도</option><option value=".5">느리게</option></select></div>
+<label class="scrub">동작<input id="progress" type="range" min="0" max="1000" value="0" aria-label="동작 위치 조절">1회</label>
+<div class="phase"><h3 id="phaseTitle">준비 · 기구 가까이 서기</h3><p id="phaseText">팔꿈치를 몸 옆에 고정하세요.</p></div>
+<p class="fine">3D는 동작 확인용으로 단순화한 인체입니다. 방향키로 회전, + / −로 확대·축소할 수도 있습니다.</p>
+<script src="three.min.js"></script><script src="pushdown.js"></script>
+<script>
+function reportHeight(){if(parent!==window)parent.postMessage({type:'ptgolf-viewer-height',height:document.body.getBoundingClientRect().height+4},location.origin);}
+new ResizeObserver(reportHeight).observe(document.body);
+window.addEventListener('load',reportHeight);
+</script></body></html>
