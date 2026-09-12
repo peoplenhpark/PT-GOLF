@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>스윙 노트 · 골프 3D</title>
-<link rel="stylesheet" href="viewer.css?v=53"></head><body>
-<div class="topline"><strong id="clubName">스윙 노트</strong><span>오른손잡이 · 동작 순서</span></div>
+<link rel="stylesheet" href="viewer.css?v=54"></head><body>
+<div class="topline"><strong id="clubName">스윙 노트</strong><span>오른손잡이 · 실측 스윙</span></div>
 <div id="viewport">
  <div class="view-tag" id="viewName">사선</div>
  <div class="legend"><span><i class="lead"></i>왼손</span><span><i class="trail"></i>오른손</span></div>
@@ -10,9 +10,9 @@
 </div>
 <div class="views" aria-label="보는 방향"><button data-view="front">앞</button><button data-view="side">옆</button><button data-view="back">뒤</button><button data-view="reset" aria-pressed="true">처음 시점</button></div>
 <div class="steps" id="steps" aria-label="스윙 단계"></div>
-<div class="transport"><button id="play">재생</button><label><span class="sr-only">동작 위치 조절</span><input id="progress" type="range" min="0" max="1000" value="0" aria-label="동작 위치 조절"></label><select id="speed" aria-label="재생 속도"><option value="1">천천히</option><option value=".5">더 천천히</option></select></div>
+<div class="transport"><button id="play">재생</button><label><span class="sr-only">동작 위치 조절</span><input id="progress" type="range" min="0" max="1000" value="0" aria-label="동작 위치 조절"></label><select id="speed" aria-label="재생 속도"><option value="1">실제 템포</option><option value=".35" selected>느리게</option><option value=".15">아주 느리게</option></select></div>
 <div class="phase"><h3 id="phaseTitle">1 · 준비</h3><p id="phaseText"></p></div>
 <p class="hint">드래그로 회전 · 두 손가락으로 확대<br>방향키로 회전 · + / −로 확대·축소</p>
-<p class="footnote">자세의 흐름을 확인하는 예시입니다. 개인 교정은 스윙 노트와 레슨을 기준으로 확인하세요.</p>
-<script src="../../samples/pushdown-3d/three.min.js"></script><script src="poses.js?v=53"></script><script src="viewer.js?v=53"></script>
+<p class="footnote">실측한 공통 스윙 예시입니다. 클럽별 개인 교정은 레슨을 기준으로 확인하세요. <a href="https://mocap.cs.cmu.edu/search.php?subjectnumber=64" target="_blank" rel="noopener">동작 출처 · CMU</a></p>
+<script src="../../samples/pushdown-3d/three.min.js"></script><script src="motion.js?v=54"></script><script src="poses.js?v=54"></script><script src="viewer.js?v=54"></script>
 </body></html>

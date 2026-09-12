@@ -1,10 +1,14 @@
 {
-  "version": 53,
+  "version": 54,
   "clubs": 4,
   "poseSamples": 4004,
   "limbsAndGrip": true,
+  "source": "CMU 64_01",
+  "recordedFrames": 281,
+  "continuousVelocity": true,
   "contact": true,
   "continuous": true,
+  "cameraStable": true,
   "widths": [
     320,
     390,

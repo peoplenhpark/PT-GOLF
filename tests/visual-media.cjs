@@ -55,7 +55,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
    assert(Math.abs(Number(await frame.locator('canvas').getAttribute('data-yaw'))-Math.PI)<.001);
    await frame.getByRole('button',{name:'처음 시점',exact:true}).click();
    if(e.id!=='pt_pushdown'){
-    const model=await frame.locator('canvas').evaluate(()=>window.exerciseViewer.snapshot());assert.equal(model.id,e.id);assert.equal(model.kind,media[e.id].kind);if(model.kind==='golf')assert.equal(model.renderer,'golf-v1');else assert(model.meshCount>50);
+    const model=await frame.locator('canvas').evaluate(()=>window.exerciseViewer.snapshot());assert.equal(model.id,e.id);assert.equal(model.kind,media[e.id].kind);if(model.kind==='golf')assert.equal(model.renderer,'golf-mocap-v2');else assert(model.meshCount>50);
    }
    await page.waitForTimeout(40);
    const frameHeight=await page.locator('iframe').evaluate(el=>el.getBoundingClientRect().height),bodyHeight=await frame.locator('body').evaluate(el=>el.getBoundingClientRect().height);

@@ -14,3 +14,5 @@ button[aria-pressed=true]{background:#d4e9b3;color:#18392b;border-color:#d4e9b3}
 .hint{font-size:11px;color:#91aaa0;line-height:1.7;margin:12px 0 6px}.footnote{font-size:11px;line-height:1.65;color:#91aaa0;margin:0}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
 #error{padding:70px 20px;color:#243d32;line-height:1.7}
 @media(min-width:650px){body{max-width:920px;margin:auto}.steps{grid-template-columns:repeat(8,1fr)}.hint br{display:none}.topline>span{font-size:12px}}
+
+.footnote a{color:#cadbba;text-decoration:underline}

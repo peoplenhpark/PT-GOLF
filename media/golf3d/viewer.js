@@ -39,47 +39,50 @@ const nose=obj('nose',sphere,mat.skin,headGroup);nose.scale.set(.023,.027,.025);
 for(const s of [-1,1]){const eye=obj('eye'+s,sphere,mat.dark,headGroup);eye.scale.set(.008,.009,.006);eye.position.set(s*.035,.026,.085);}
 const ground=obj('ground',new T.CircleGeometry(1.65,80),material(0xc6d8c9),scene);ground.rotation.x=-Math.PI/2;ground.position.y=.001;ground.castShadow=false;
 const ring=new T.Mesh(new T.RingGeometry(1.63,1.65,80),material(0x9bb6a3));ring.rotation.x=-Math.PI/2;ring.position.y=.003;scene.add(ring);
-const targetArrow=new T.ArrowHelper(new T.Vector3(-1,0,0),new T.Vector3(.55,.008,1.12),1.40,0x628a65,.14,.085);scene.add(targetArrow);
-const ball=obj('ball',sphere,ballMat,scene);ball.scale.setScalar(.027);ball.position.copy(vec(P.clubs[id].ball));ball.castShadow=true;
-if(P.clubs[id].driver)beam('tee',add(P.clubs[id].ball,[0,-.065,0]),add(P.clubs[id].ball,[0,-.022,0]),.005,.005,mat.cap);
+const targetArrow=new T.ArrowHelper(new T.Vector3(1,0,0),new T.Vector3(-.55,.008,1.12),1.40,0x628a65,.14,.085);scene.add(targetArrow);
+const ball=obj('ball',sphere,ballMat,scene);ball.scale.setScalar(.027);ball.position.copy(vec(P.pose(id,0).ball));ball.castShadow=true;
+if(P.clubs[id].driver){const b=P.pose(id,0).ball;beam('tee',[b[0],.01,b[2]],add(b,[0,-.022,0]),.005,.005,mat.cap);}
 const clubHead=obj('clubHead',P.clubs[id].driver?sphere:new T.BoxGeometry(1,1,1),P.clubs[id].driver?mat.head:mat.metal);
-let phase=0,playing=false,speed=1,yaw=.38,pitch=.13,distance=1,current,previousStage=-1;
+let phase=0,playing=false,speed=.35,yaw=.38,pitch=.13,distance=1,current,previousStage=-1;
 const target=new T.Vector3(-.025,1.02,.12);
-// Playback keeps a fixed frame. Paused steps fit the actual pose for legibility.
+// A single full-swing frame is used for playback, scrubbing and stage selection.
 const framing=[];
 for(let i=0;i<=200;i++){const p=P.pose(id,i/200);framing.push(...[p.head,p.tip,...p.wrists,...p.ankles].map(vec));}
 
 function render(){
  current=P.pose(id,phase);const p=current;
  const basis=new T.Matrix4().makeBasis(vec(p.right),vec(p.up),vec(p.front));
- torso.position.copy(vec(p.hip));torso.quaternion.setFromRotationMatrix(basis);
+ torso.position.copy(vec(p.hip));torso.quaternion.setFromRotationMatrix(basis);torso.scale.set(P.len(sub(p.shoulders[0],p.shoulders[1]))/.39,P.len(sub(p.neck,p.hip))/.50,p.scale);
  const hipQ=new T.Quaternion().setFromAxisAngle(axis,p.hipTurn);
- ell('pelvis',add(p.hip,[0,.005,0]),[.153,.125,.112],mat.pants,hipQ);
- beam('neck',p.neck,add(p.neck,mul(p.up,.08)),.049,.043,mat.skin);
- headGroup.position.copy(vec(p.head));headGroup.rotation.set(.20,phase>.75?-(phase-.75)*4:0,0);
+ ell('pelvis',p.hip,[.153*p.scale,.125*p.scale,.112*p.scale],mat.pants,hipQ);
+ beam('neck',p.neck,p.head,.049*p.scale,.043*p.scale,mat.skin);
+ headGroup.position.copy(vec(p.head));headGroup.scale.setScalar(p.scale);const headRight=vec(P.cross(p.headUp,p.headFront)).normalize(),headUp=new T.Vector3().crossVectors(vec(p.headFront),headRight).normalize();headGroup.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(headRight,headUp,vec(p.headFront)));
  for(let i=0;i<2;i++){
-  const s=i===0?-1:1;
+  const scale=p.scale;
   ell('shoulder'+i,p.shoulders[i],[.069,.073,.069],mat.shirt);
   beam('upperArm'+i,p.shoulders[i],p.elbows[i],.060,.044,mat.skin);
   beam('sleeve'+i,p.shoulders[i],mix(p.shoulders[i],p.elbows[i],.43),.070,.059,mat.shirt);
   ell('elbow'+i,p.elbows[i],[.045,.045,.045],mat.skin);
   beam('forearm'+i,p.elbows[i],p.wrists[i],.045,.028,mat.skin);
-  const handQ=new T.Quaternion().setFromUnitVectors(axis,vec(p.dir));
-  ell('hand'+i,p.wrists[i],[.036,.053,.033],i===0?mat.glove:mat.skin,handQ);
+  const palm=p.hands[i],handQ=new T.Quaternion().setFromUnitVectors(axis,vec(sub(palm,p.wrists[i])).normalize());
+  ell('hand'+i,mix(p.wrists[i],palm,.55),[.032*scale,P.len(sub(palm,p.wrists[i]))*.55+.014*scale,.027*scale],i===0?mat.glove:mat.skin,handQ);
   beam('thigh'+i,p.hips[i],p.knees[i],.084,.057,mat.pants);
   ell('knee'+i,p.knees[i],[.057,.059,.057],mat.pants);
   beam('shin'+i,p.knees[i],p.ankles[i],.055,.035,mat.pants);
-  const lift=i===1?p.heel:0,shoeQ=new T.Quaternion().setFromAxisAngle(new T.Vector3(1,0,0),Math.atan2(lift,.255));
-  ell('shoe'+i,[s*p.club.stance,.055+lift*.50,.035],[.065,.045,.145],mat.shoe,shoeQ);
+  const foot=p.feet[i],forward=vec(sub(foot.toe,foot.heel)).normalize(),side=new T.Vector3().crossVectors(axis,forward).normalize(),footUp=new T.Vector3().crossVectors(forward,side).normalize();
+  const shoeQ=new T.Quaternion().setFromRotationMatrix(new T.Matrix4().makeBasis(side,footUp,forward));
+  const center=add(mix(foot.heel,foot.toe,.50),[0,.012*scale,0]);
+  ell('shoe'+i,center,[.058*scale,.040*scale,P.len(sub(foot.toe,foot.heel))*.57],mat.shoe,shoeQ);
+
  }
  beam('shaft',p.grip,p.tip,.008,.0055,mat.shaft);
  beam('grip',add(p.grip,mul(p.dir,-.075)),add(p.grip,mul(p.dir,.16)),.013,.012,mat.grip);
  clubHead.position.copy(vec(p.tip));clubHead.scale.set(...(p.club.driver?[.064,.037,.044]:[.073,.060,.030]));
  // The head is perpendicular to the shaft. At contact its face is toward -X.
- const headUp=vec(p.dir).negate(),headSide=new T.Vector3(1,0,0).addScaledVector(headUp,-headUp.x).normalize();
- const headFront=new T.Vector3().crossVectors(headSide,headUp).normalize();clubHead.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(headSide,headUp,headFront));
+ const clubUp=vec(p.dir).negate(),headSide=vec(p.clubSide);
+ const headFront=new T.Vector3().crossVectors(headSide,clubUp).normalize();clubHead.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(headSide,clubUp,headFront));
  camera.position.set(target.x+Math.sin(yaw)*Math.cos(pitch)*6,target.y+Math.sin(pitch)*6,target.z+Math.cos(yaw)*Math.cos(pitch)*6);camera.lookAt(target);camera.updateMatrixWorld();
- const points=playing?framing:[p.head,p.tip,p.ball,...p.shoulders,...p.elbows,...p.wrists,...p.hips,...p.knees,...p.ankles].map(vec);
+ const points=framing;
  const projected=points.map(v=>v.clone().applyMatrix4(camera.matrixWorldInverse));
  const minX=Math.min(...projected.map(v=>v.x))-.15,maxX=Math.max(...projected.map(v=>v.x))+.15;
  const minY=Math.min(...projected.map(v=>v.y))-.16,maxY=Math.max(...projected.map(v=>v.y))+.23;
@@ -88,10 +91,10 @@ function render(){
  camera.position.add(offset);camera.lookAt(target.clone().add(offset));
  camera.left=-height*camera.aspect/2;camera.right=height*camera.aspect/2;camera.top=height/2;camera.bottom=-height/2;camera.updateProjectionMatrix();
  renderer.render(scene,camera);
- const arrowPoint=new T.Vector3(-.85,.01,1.12).project(camera);
+ const arrowPoint=new T.Vector3(.85,.01,1.12).project(camera);
  $('targetLabel').style.left=Math.max(8,Math.min($('viewport').clientWidth-75,(arrowPoint.x*.5+.5)*$('viewport').clientWidth))+'px';
  $('targetLabel').style.bottom=Math.max(8,Math.min($('viewport').clientHeight-52,(.5+arrowPoint.y*.5)*$('viewport').clientHeight-18))+'px';
- $('targetLabel').textContent=Math.abs(Math.cos(yaw))<.25?'타깃 방향':Math.cos(yaw)>0?'← 타깃':'타깃 →';
+ $('targetLabel').textContent=Math.abs(Math.cos(yaw))<.25?'타깃 방향':Math.cos(yaw)>0?'타깃 →':'← 타깃';
  canvas.dataset.ready='true';canvas.dataset.exercise=id;canvas.dataset.kind='golf';canvas.dataset.phase=phase;canvas.dataset.yaw=yaw;canvas.dataset.distance=distance;canvas.dataset.playing=playing;
  if(previousStage!==p.stage){previousStage=p.stage;$('phaseTitle').textContent=(p.stage+1)+' · '+P.stages[p.stage].name;$('phaseText').textContent=P.stages[p.stage].cue;document.querySelectorAll('[data-stage]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.stage)===p.stage));}
  $('progress').value=Math.round(phase*1000);
@@ -119,7 +122,7 @@ canvas.onkeydown=e=>{const keys=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',
 new ResizeObserver(()=>{const el=$('viewport');camera.aspect=el.clientWidth/el.clientHeight;camera.updateProjectionMatrix();renderer.setSize(el.clientWidth,el.clientHeight,false);render();}).observe($('viewport'));
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();setPlaying(false);fail('3D 표시가 중단되었습니다. 3D를 닫았다 다시 열어 주세요.');});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlaying(false);});
-let previous=performance.now();function tick(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(playing){phase=Math.min(1,phase+dt*speed/12);if(phase>=1)setPlaying(false);render();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
-window.exerciseViewer={snapshot:()=>({id,kind:'golf',renderer:'golf-v1',phase,playing,pose:current,yaw,distance,meshCount:body.children.length,projected:[current.head,current.tip,...current.ankles].map(p=>vec(p).project(camera).toArray())})};
+let previous=performance.now();function tick(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(playing){phase=Math.min(1,phase+dt*speed/P.duration);if(phase>=1)setPlaying(false);render();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+window.exerciseViewer={snapshot:()=>({id,kind:'golf',renderer:'golf-mocap-v2',phase,playing,pose:current,yaw,distance,meshCount:body.children.length,camera:{position:camera.position.toArray(),zoom:camera.zoom,left:camera.left,right:camera.right,top:camera.top,bottom:camera.bottom},projected:[current.head,current.tip,...current.ankles].map(p=>vec(p).project(camera).toArray())})};
 render();notifyHeight();
 })();
