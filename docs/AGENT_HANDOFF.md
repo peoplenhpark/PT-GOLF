@@ -1,13 +1,13 @@
 # PT-GOLF — 자기완결형 에이전트 핸드오프
 
 > 최종 갱신: **2026-09-12 · 케이블 푸시다운 배치 시험**
-> 이전 전체 배포: **5873b97** · 현재 seed **v33** · 자산 **v49** · SW **ptgolf-v49**
+> 이전 전체 배포: **5873b97** · 현재 seed **v33** · 자산 **v50** · SW **ptgolf-v50**
 > 이 문서는 이전 대화 없이 다음 에이전트가 작업을 이어갈 수 있도록 현재 상태, 결정, 코드 구조, 검증 및 이월 사항을 함께 담는다. 과거 기록과 충돌하면 본문의 현재 기준과 사용자의 새 요청을 우선한다.
 > 이 문서 자체의 최종 커밋은 `git log -1 -- docs/AGENT_HANDOFF.md`로 확인한다. 이번 변경은 푸시다운 화면 배치 시험이며 자산 버전을49로 올렸다.
 
 ## 0. 현재 상태와 다음 시작점
 
-**최신 요청: 한 운동만 순서를 시험 변경. pt_pushdown(케이블 푸시다운)만 2컷 → 움직임·느낌 → 3D 모델이다. 나머지46개는 2컷 → 3D → 움직임·느낌을 유지한다. 사용자가 확인하기 전 전체로 확대하지 않는다. 원문·메모·이미지·3D 동작은 그대로다.**
+**최신 요청: 한 운동만 순서를 시험 변경. pt_pushdown(케이블 푸시다운)만 움직임·느낌 → 2컷 → 3D 모델이다. 나머지46개는 2컷 → 3D → 움직임·느낌을 유지한다. 사용자가 확인하기 전 전체로 확대하지 않는다. 원문·메모·이미지·3D 동작은 그대로다.**
 
 - 사용자 요청 **“케이블 푸시다운을 표준으로 나머지 동작들도 2컷+3d 삽입”**은 구현·검증·push·라이브 확인까지 완료했다.
 - **47개 운동 = PT43 + 골프4**. 모든 운동에 2컷과 실제 회전·재생 가능한 3D가 연결된다.
@@ -22,10 +22,10 @@
 
 바로 확인할 주소:
 
-- 홈: https://peoplenhpark.github.io/PT-GOLF/?v=49
-- 데드버그: https://peoplenhpark.github.io/PT-GOLF/?v=49#exercise/pt_deadbug
-- 케이블 푸시다운: https://peoplenhpark.github.io/PT-GOLF/?v=49#exercise/pt_pushdown
-- 골프 드라이버: https://peoplenhpark.github.io/PT-GOLF/?v=49#exercise/golf_driver
+- 홈: https://peoplenhpark.github.io/PT-GOLF/?v=50
+- 데드버그: https://peoplenhpark.github.io/PT-GOLF/?v=50#exercise/pt_deadbug
+- 케이블 푸시다운: https://peoplenhpark.github.io/PT-GOLF/?v=50#exercise/pt_pushdown
+- 골프 드라이버: https://peoplenhpark.github.io/PT-GOLF/?v=50#exercise/golf_driver
 
 ## 1. 프로젝트와 실제 작업 위치
 
@@ -65,7 +65,7 @@ C:\APARK\PT_GOLF\
 
 ## 2. 사용자 확정 UI와 보존할 동작
 
-기본 운동 상세 순서는 다음과 같다. **푸시다운만 아래4·5번을 서로 바꾼 시험 배치**다. 없는 필드는 생략한다.
+기본 운동 상세 순서는 다음과 같다. **푸시다운만 아래5번을 3번 앞으로 옮긴 시험 배치**다. 없는 필드는 생략한다.
 
 1. 뒤로가기·운동명·카테고리 태그·갱신일·즐겨찾기/수정
 2. 단계 키워드(골프), 스펙(중량/횟수/핵심), 준비 자세
@@ -136,8 +136,8 @@ PT 카테고리 현재 순서: **등 / 팔 / 가슴 / 어깨 / 하체 / 하체 �
 
 - 앱: `focusHtml` / `exerciseMediaHtml` / `pushdownMediaHtml` / `bindExercise3D`.
 - URL: `#exercise/<id>`. 잘못된 id는 정상 운동 화면으로 취급하지 않는다.
-- 일반 iframe: `media/3d/viewer.html?exercise=<id>&v=49`.
-- 푸시다운 iframe: `samples/pushdown-3d/viewer.html?v=49`.
+- 일반 iframe: `media/3d/viewer.html?exercise=<id>&v=50`.
+- 푸시다운 iframe: `samples/pushdown-3d/viewer.html?v=50`.
 - iframe 높이는 `ptgolf-viewer-height` 메시지로 전달한다. 부모는 **origin, source===해당 iframe.contentWindow, 유한한 높이**를 검증하며320~1400 범위로 제한한다.
 - 3D는 로컬 `samples/pushdown-3d/three.min.js`(Three.js0.160.1)를 공유한다. MIT 라이선스 파일도 같은 폴더에 있다.
 - `poses.js`는 Three.js에 의존하지 않는 좌표 함수다. x=좌우, y=위, z=앞, 단위는 미터. 관절·기구·카메라 기준점·동작 단계를 반환한다.
@@ -194,7 +194,7 @@ PT 카테고리 현재 순서: **등 / 팔 / 가슴 / 어깨 / 하체 / 하체 �
 
 ## 6. 자산 버전과 배포
 
-현재 **N=49**. 앱/이미지/3D 변경 시 다음 버전은50이지만, 사용자가 그 사이 변경했을 수 있으므로 작업 시작 때 실제 파일을 확인한다.
+현재 **N=50**. 앱/이미지/3D 변경 시 다음 버전은51이지만, 사용자가 그 사이 변경했을 수 있으므로 작업 시작 때 실제 파일을 확인한다.
 
 함께 맞출 곳:
 

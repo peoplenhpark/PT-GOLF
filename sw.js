@@ -1,16 +1,16 @@
 /* sw.js — 오프라인 캐시 (앱 셸 + 데이터)
    콘텐츠 수정 시 CACHE 버전을 올리면 갱신됩니다. */
-const CACHE = 'ptgolf-v49';
+const CACHE = 'ptgolf-v50';
 const ASSETS = [
   './',
   './index.html',
   './css/style.css',
   './js/store.js',
   './js/app.js',
-  './js/exercise-media.js?v=49',
-  './media/3d/viewer.html?v=49',
-  './media/3d/poses.js?v=49',
-  './media/3d/viewer.js?v=49',
+  './js/exercise-media.js?v=50',
+  './media/3d/viewer.html?v=50',
+  './media/3d/poses.js?v=50',
+  './media/3d/viewer.js?v=50',
   './data/seed.json',
   './manifest.webmanifest',
   './icon.svg',
@@ -57,9 +57,9 @@ const ASSETS = [
   './docs/images/42_sldl.svg',
   './docs/images/43_chestpress.svg',
   './docs/images/44_pecdeck.svg',
-  './samples/pushdown-3d/combined-start.png?v=49',
-  './samples/pushdown-3d/combined-end.png?v=49',
-  './samples/pushdown-3d/viewer.html?v=49',
+  './samples/pushdown-3d/combined-start.png?v=50',
+  './samples/pushdown-3d/combined-end.png?v=50',
+  './samples/pushdown-3d/viewer.html?v=50',
   './samples/pushdown-3d/three.min.js',
   './samples/pushdown-3d/pushdown.js'
 ];

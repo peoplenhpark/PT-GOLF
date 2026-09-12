@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '49';
+  const ASSET_VER = '50';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -286,7 +286,8 @@ const Theme = (() => {
   }
   function pushdownMediaHtml(e) {
     const base = 'samples/pushdown-3d/';
-    return `<section class="pushdown-guide" aria-label="케이블 푸시다운 2컷 안내">
+    return `${focusHtml(e)}
+    <section class="pushdown-guide" aria-label="케이블 푸시다운 2컷 안내">
       <div class="guide-pair">
         <figure class="guide-shot">
           <div class="guide-shot-title"><b>준비</b> 몸과 팔꿈치 고정</div>
@@ -300,7 +301,6 @@ const Theme = (() => {
         </figure>
       </div>
     </section>
-    ${focusHtml(e)}
     <details class="exercise-3d">
       <summary>입체로 자세 보기</summary>
       <div class="exercise-3d-content"></div>
