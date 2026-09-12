@@ -17,7 +17,8 @@
 - 검증: `tests/golf-3d.cjs`의 **4,004개 포즈**, 고정 관절·그립/샤프트·공 접점·연속성, **320/390/768px · 384개 단계/시점**, 재생/정지/끝/재시작, 터치, 구형 링크, 오프라인 통과. 결과 `docs/visuals/golf-3d-verification.json`.
 - `tests/visual-media.cjs` 전체47개·원문1233·이미지94·모델47·메모·핀치·오프라인 통과. 골프 학습 허브 테스트도 통과. 골프 포즈의 수학 검사는 새 전용 테스트로 옮겼으며 PT의 기존 검사를 약화하지 않았다.
 - 모바일 4클럽 × 8단계를 실제 스크린샷으로 비교했다. 대표 검토 이미지 `docs/visuals/golf-3d-review.webp`; 전체 로컬 증거 `C:\Users\peopl\Documents\PT-GOLF-samples\golf-v53-qa`.
-- 배포 대상: https://peoplenhpark.github.io/PT-GOLF/?v=53#golf/notes (라이브 확인 결과는 배포 후 보강).
+- **현재 배포 보류**: 구현 커밋 `7bec656`은 로컬 main에 저장됨. `git push origin main`은 자동 승인 심사에서 거절됨: 원격 main/Pages 반영에 대한 명시적 승인 및 원격 소유권·보호 설정 미확인. 우회 재시도하지 않았으며 실제 사이트는 아직 v52다. 사용자 승인 후 정상 push → Pages 성공 → 라이브 파일/화면 검증이 남는다.
+- 배포 대상: https://peoplenhpark.github.io/PT-GOLF/?v=53#golf/notes . 로컬 검토 서버는 127.0.0.1:8792, 현재 실행 세션58933. 사용자 검토를 위해 유지하며 최종 배포 확인 후 이 세션만 종료한다.
 
 ## 0-A. v52 — 골프 학습 허브 (유지되는 기능)
 
