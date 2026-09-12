@@ -987,7 +987,7 @@ window.ExerciseMedia = {
       "docs/images/guides/golf_driver-start.webp",
       "docs/images/guides/golf_driver-end.webp"
     ],
-    "viewer": "media/3d/viewer.html?exercise=golf_driver"
+    "viewer": "media/golf3d/viewer.html?exercise=golf_driver"
   },
   "golf_iron7": {
     "name": "7번 아이언",
@@ -1010,7 +1010,7 @@ window.ExerciseMedia = {
       "docs/images/guides/golf_iron7-start.webp",
       "docs/images/guides/golf_iron7-end.webp"
     ],
-    "viewer": "media/3d/viewer.html?exercise=golf_iron7"
+    "viewer": "media/golf3d/viewer.html?exercise=golf_iron7"
   },
   "golf_iron5": {
     "name": "5번 아이언",
@@ -1033,7 +1033,7 @@ window.ExerciseMedia = {
       "docs/images/guides/golf_iron5-start.webp",
       "docs/images/guides/golf_iron5-end.webp"
     ],
-    "viewer": "media/3d/viewer.html?exercise=golf_iron5"
+    "viewer": "media/golf3d/viewer.html?exercise=golf_iron5"
   },
   "golf_ironp": {
     "name": "P 아이언 (피칭)",
@@ -1056,7 +1056,7 @@ window.ExerciseMedia = {
       "docs/images/guides/golf_ironp-start.webp",
       "docs/images/guides/golf_ironp-end.webp"
     ],
-    "viewer": "media/3d/viewer.html?exercise=golf_ironp"
+    "viewer": "media/golf3d/viewer.html?exercise=golf_ironp"
   },
   "pt_pushdown": {
     "name": "케이블 푸시다운",

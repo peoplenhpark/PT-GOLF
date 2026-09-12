@@ -240,33 +240,6 @@ function pose(kind,t,id){
   p.knees=[[-.37,.65,.325],[.105,.39,-.22]];p.ankles=[[.045,.65,.40],[.12,.065,-.48]];
   arms(p,[[-.30,.69,.30+.30*q],[.30,.69,.30+.30*q]],S.map(s=>[s,-1,0]));
   p.equipment.push({type:'stretchbench'});
- }else if(kind==='golf'){
-  // Right-handed: -x is target/lead side. Sequence preserves hands-drop delay.
-  const clubLength={golf_driver:1.05,golf_iron5:.99,golf_iron7:.96,golf_ironp:.91}[id]||.96;
-  const ballZ={golf_driver:.94,golf_iron5:.87,golf_iron7:.83,golf_ironp:.76}[id]||.83;
-  const keys=[
-   {t:0,turn:0,hip:0,shift:0,hand:[0,.91,.31],club:[0,.06,.94]},
-   {t:.14,turn:0,hip:0,shift:0,hand:[0,.91,.31],club:[0,.06,.94]},
-   {t:.40,turn:-1.15,hip:-.35,shift:.04,hand:[.39,1.66,-.12],club:[-.49,1.73,-.36]},
-   {t:.53,turn:-1.0,hip:-.27,shift:-.08,hand:[.31,1.11,.30],club:[.72,1.87,.32]},
-   {t:.66,turn:.18,hip:.48,shift:-.12,hand:[-.08,.94,.34],club:[id==='golf_driver'?-.14:0,.055,.94]},
-   {t:.80,turn:.90,hip:.85,shift:-.13,hand:[-.52,1.19,.30],club:[-1.04,.53,.53]},
-   {t:.91,turn:1.15,hip:1.05,shift:-.13,hand:[-.36,1.69,-.02],club:[.37,1.92,-.49]},
-   {t:1,turn:0,hip:0,shift:0,hand:[0,.91,.31],club:[0,.06,.94]}];
-  for(const k of keys)if([0,.14,.66,1].includes(k.t)){
-   k.club[2]=ballZ;const dx=k.club[0]-k.hand[0],dz=ballZ-k.hand[2];
-   k.hand[1]=k.club[1]+Math.sqrt(clubLength*clubLength-dx*dx-dz*dz);
-  }
-  let b=keys.findIndex(k=>k.t>t),a=keys[b-1],c=keys[b],u=smooth((t-a.t)/(c.t-a.t));
-  const lerp=k=>a[k]+(c[k]-a[k])*u;
-  p=base([lerp('shift'),.90,-.08],.25,lerp('turn'));
-  p.hips=S.map(s=>add(p.hip,[s*.105*Math.cos(lerp('hip')),0,-s*.105*Math.sin(lerp('hip'))]));
-  legs(p,S.map(s=>[s*({golf_driver:.22,golf_iron5:.19,golf_iron7:.17,golf_ironp:.15}[id]||.17),.065,0]));
-  let h=mix(a.hand,c.hand,u);const originalH=h.slice();
-  for(let pass=0;pass<8;pass++)for(const shoulder of p.shoulders){const d=sub(h,shoulder);if(len(d)>.55)h=add(shoulder,mul(unit(d),.55));}
-  arms(p,[add(h,[-.015,.018,0]),add(h,[.015,-.018,0])],[[ -1,-1,.2],[1,-1,.2]]);
-  p.equipment.push({type:'club',from:h,to:add(h,mul(unit(sub(mix(a.club,c.club,u),originalH)),clubLength)),driver:id==='golf_driver'},{type:'golfball',at:[id==='golf_driver'?-.14:0,.045,ballZ]});
-  p.target=[0,1.02,.10];p.distance=4.7;stage=t<.4?0:t<.66?1:2;
  }
  p.q=q;p.stage=stage;p.kind=kind;p.id=id;
  return p;

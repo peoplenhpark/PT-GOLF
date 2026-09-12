@@ -1,0 +1,19 @@
+{
+  "version": 53,
+  "clubs": 4,
+  "poseSamples": 4004,
+  "limbsAndGrip": true,
+  "contact": true,
+  "continuous": true,
+  "widths": [
+    320,
+    390,
+    768
+  ],
+  "stageViews": 384,
+  "playback": true,
+  "touch": true,
+  "legacyLink": true,
+  "offline": true,
+  "errors": []
+}
