@@ -1,0 +1,135 @@
+const assert = require('node:assert/strict');
+const fs = require('fs');
+const path = require('path');
+const {chromium} = require('playwright');
+const base = process.env.PTGOLF_BASE_URL || 'http://127.0.0.1:8792/';
+(async () => {
+ const browser = await chromium.launch({headless:true,channel:'chrome'});
+ const report={};
+ try {
+  const ctx = await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});
+  const page = await ctx.newPage(); const errors=[]; page.on('pageerror',e=>errors.push(e.message));
+  const seed=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/seed.json'),'utf8'));
+  const original=seed.exercises.find(x=>x.id==='golf_driver');
+  const overlay={overrides:{golf_driver:{...original,memo:'골프 기존 메모 <b>보존</b>',favorite:true}},deleted:[]};
+  await page.addInitScript(o=>{if(window!==window.top)return;if(!localStorage.getItem('ptgolf_overlay_v1'))localStorage.setItem('ptgolf_overlay_v1',JSON.stringify(o));},overlay);
+  await page.goto(base+'?v=52#golf/notes');
+  await page.getByRole('heading',{name:'클럽별 스윙 노트'}).waitFor();
+  assert.equal(await page.locator('.g-note-row').count(),4);
+  await page.getByRole('button',{name:'아이언',exact:true}).click();
+  assert.equal(await page.locator('.g-note-row').count(),3);
+  await page.getByRole('button',{name:'전체',exact:true}).click();
+  await page.getByRole('link',{name:'유튜브',exact:true}).click();
+  await page.locator('.g-video-card').first().waitFor();
+  assert.equal(await page.locator('.g-video-card').count(),3);
+  await page.getByRole('link',{name:'팔은 이렇게 사용해야 합니다! ›',exact:true}).click();
+  await page.getByRole('heading',{name:'영상 핵심',exact:true}).waitFor();
+  assert.equal(await page.locator('#g-player iframe').count(),0);
+  assert.equal(await page.locator('.g-moments a').count(),3);
+  await page.route('https://www.youtube-nocookie.com/**',r=>r.abort());
+  await page.getByRole('button',{name:'앱 안에서 재생',exact:true}).click();
+  assert((await page.locator('#g-player iframe').getAttribute('src')).includes('/RSbjGWhzEnQ?'));
+  assert(await page.getByRole('link',{name:'YouTube에서 영상 보기 ↗',exact:true}).isVisible());
+  await page.getByLabel('느낀 점·결과').fill('영상 메모 <script>bad</script>');
+  await page.getByLabel('적용 상태').selectOption('연습 중');
+  await page.getByRole('button',{name:'메모 저장',exact:true}).click();
+  await page.reload(); await page.getByLabel('느낀 점·결과').waitFor();
+  assert.equal(await page.getByLabel('느낀 점·결과').inputValue(),'영상 메모 <script>bad</script>');
+  await page.getByRole('button',{name:'레슨에서 질문',exact:true}).click();
+  await page.getByLabel('확인하고 싶은 내용').fill('팔을 내리는 시점은? <b>문자</b>');
+  await page.getByRole('button',{name:'질문 저장',exact:true}).click();
+  await page.getByRole('heading',{name:'다음 레슨에 물어볼 것'}).waitFor();
+  assert.equal(await page.locator('.g-question').count(),1);
+  assert.equal(await page.locator('.g-question b').count(),0);
+  await page.getByRole('button',{name:'레슨 기록하기',exact:true}).click();
+  await page.getByLabel('레슨 날짜').fill('2026-09-11');
+  await page.getByLabel('레슨 제목').fill('드라이버 순서 교정');
+  await page.getByLabel('코치', {exact:true}).fill('검증용 코치');
+  await page.locator('input[name="noteIds"][value="golf_driver"]').check();
+  await page.getByLabel('코치의 교정·감각').fill('팔과 회전의 순서를 나눠 느낀다.');
+  await page.locator('input[name="questionIds"]').check();
+  await page.getByRole('button',{name:'레슨 저장',exact:true}).click();
+  await page.getByRole('heading',{name:'드라이버 순서 교정',exact:true}).waitFor();
+  const lessonURL=page.url();
+  assert.equal(await page.locator('.g-video-card').count(),1);
+  assert((await page.locator('#app').innerText()).includes('이 레슨에서 확인한 질문'));
+  await page.getByRole('button',{name:'내 연습에 반영',exact:true}).click();
+  await page.getByLabel('내 연습 핵심').fill('오늘 집중: 팔 내리기 <check>');
+  await page.getByRole('button',{name:'집중 항목으로 저장',exact:true}).click();
+  await page.getByRole('heading',{name:'지금 집중할 것'}).waitFor();
+  assert.equal(await page.locator('.g-focus-item').count(),1);
+  await page.goto(base+'#exercise/golf_driver');
+  await page.locator('.memo-box').waitFor();
+  assert.equal(await page.locator('.memo-box').innerText(),overlay.overrides.golf_driver.memo);
+  assert.equal(await page.locator('.memo-box b').count(),0);
+  assert.equal(await page.locator('.g-related .g-lesson-row').count(),1);
+  assert.equal(await page.locator('.g-related .g-focus-item').count(),1);
+  assert.equal(await page.evaluate(()=>localStorage.getItem('ptgolf_overlay_v1')),JSON.stringify(overlay));
+  report.legacyGolfOverlayPreserved=true;
+  await page.getByRole('button',{name:'관련 레슨·영상 바로 보기 ↓',exact:true}).click();
+  assert(await page.locator('#g-related').isVisible());
+  await page.getByRole('link',{name:'체중이동',exact:true}).first().click();
+  await page.getByRole('heading',{name:'개인 레슨',exact:true}).waitFor();
+  assert.equal(await page.locator('.g-video-card').count(),1);
+  await page.goto(lessonURL);await page.getByRole('button',{name:'레슨 수정',exact:true}).click();
+  await page.getByLabel('내 연습 결과').fill('연습 후 기록');
+  await page.getByRole('button',{name:'레슨 저장',exact:true}).click();
+  assert((await page.locator('#app').innerText()).includes('2026-09-11'));
+  await page.reload();await page.getByRole('heading',{name:'내 연습 결과'}).waitFor();
+  report.lessonDateAndLinksPersist=true;
+  await page.goto(base+'#golf/notes'); await page.getByRole('button',{name:'집중 항목 해제',exact:true}).click();
+  assert.equal(await page.locator('.g-focus-item').count(),0);
+  await page.goto(base+'#exercise/golf_driver');await page.locator('.g-history').waitFor();
+  assert((await page.locator('.g-history').innerText()).includes('이전에 집중했던 내용'));
+  report.adoptionHistory=true;
+  // Search spans videos, personal notes and lessons.
+  await page.goto(base+'#golf/notes');await page.getByLabel('골프 전체 검색').fill('영상 메모');
+  await page.getByRole('button',{name:'검색',exact:true}).click();
+  await page.getByRole('heading',{name:'유튜브',exact:true}).waitFor();
+  assert.equal(await page.locator('.g-video-card').count(),1);
+  report.crossSectionSearch=true;
+  for(const width of [320,390,560]) {
+   await page.setViewportSize({width,height:844});
+   for(const hash of ['#golf/notes','#golf/lessons','#golf/videos','#golf/videos/uvgnUl93Twg','#golf/topic/'+encodeURIComponent('회전·순서')]){
+    await page.goto(base+hash);await page.locator('.g-tabs').waitFor();
+    assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),hash+' overflow '+width);
+   }
+  }
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(base+'#golf/videos');await page.locator('.g-video-card').first().waitFor();
+  await page.getByRole('button',{name:'테마 변경'}).click();
+  assert.equal(await page.locator('html').getAttribute('data-theme'),'light');
+  const output=process.env.SCREENSHOT_DIR;
+  if(output){fs.mkdirSync(output,{recursive:true});await page.screenshot({path:path.join(output,'golf-videos-light.png'),fullPage:true});}
+  await page.getByRole('button',{name:'테마 변경'}).click();
+  if(output)await page.screenshot({path:path.join(output,'golf-videos-dark.png'),fullPage:true});
+  report.mobileWidths=[320,390,560];
+  // Three maximum, duplicate prevention, inactive history, and storage write failure.
+  for(let i=0;i<3;i++){
+   await page.goto(base+'#golf/videos/RSbjGWhzEnQ');await page.getByRole('button',{name:'내 연습에 반영',exact:true}).click();
+   await page.getByLabel('내 연습 핵심').fill('핵심 '+i);await page.getByRole('button',{name:'집중 항목으로 저장',exact:true}).click();
+  }
+  await page.goto(base+'#golf/videos/RSbjGWhzEnQ');await page.getByRole('button',{name:'내 연습에 반영',exact:true}).click();
+  await page.getByLabel('내 연습 핵심').fill('네 번째');await page.getByRole('button',{name:'집중 항목으로 저장',exact:true}).click();
+  assert.equal(await page.getByLabel('내 연습 핵심').inputValue(),'네 번째');
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')).focus.filter(f=>f.active).length),3);
+  report.focusLimit=true;
+  await page.goto(base+'#golf/videos/RSbjGWhzEnQ');await page.getByLabel('느낀 점·결과').waitFor();
+  const savedBefore=await page.evaluate(()=>localStorage.getItem('ptgolf_learning_v1'));
+  await page.evaluate(()=>{Storage.prototype.setItem=function(){throw new Error('quota test');};});
+  await page.getByLabel('느낀 점·결과').fill('저장 실패 때 입력 유지');await page.getByRole('button',{name:'메모 저장',exact:true}).click();
+  assert.equal(await page.getByLabel('느낀 점·결과').inputValue(),'저장 실패 때 입력 유지');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('ptgolf_learning_v1')),savedBefore);
+  report.failedSavePreservesData=true;
+  assert.deepEqual(errors,[]);
+  await ctx.close();
+  const offline=await browser.newContext({serviceWorkers:'allow'}),op=await offline.newPage();
+  await op.goto(base+'#golf/videos/RSbjGWhzEnQ');await op.getByLabel('느낀 점·결과').waitFor();
+  await op.getByLabel('느낀 점·결과').fill('오프라인 보존');await op.getByRole('button',{name:'메모 저장',exact:true}).click();
+  await op.evaluate(()=>navigator.serviceWorker.ready);await op.reload();await op.getByLabel('느낀 점·결과').waitFor();
+  await offline.setOffline(true);await op.reload();await op.getByLabel('느낀 점·결과').waitFor();
+  assert.equal(await op.getByLabel('느낀 점·결과').inputValue(),'오프라인 보존');
+  assert((await op.locator('#app').innerText()).includes('영상 핵심'));report.offlineNotes=true;
+  console.log(JSON.stringify(report));
+ } finally {await browser.close();}
+})().catch(e=>{console.error(e);process.exit(1)});

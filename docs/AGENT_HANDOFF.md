@@ -1,11 +1,33 @@
 # PT-GOLF — 자기완결형 에이전트 핸드오프
 
-> 최종 갱신: **2026-09-12 · 전체 운동 배치 통일**
-> 이전 전체 배포: **5873b97** · 현재 seed **v33** · 자산 **v51** · SW **ptgolf-v51**
+> 최종 갱신: **2026-09-12 · 골프 학습 허브 v52**
+> 이전 전체 배포: **5873b97** · 현재 seed **v33** · 자산 **v52** · SW **ptgolf-v52**
 > 이 문서는 이전 대화 없이 다음 에이전트가 작업을 이어갈 수 있도록 현재 상태, 결정, 코드 구조, 검증 및 이월 사항을 함께 담는다. 과거 기록과 충돌하면 본문의 현재 기준과 사용자의 새 요청을 우선한다.
-> 이 문서 자체의 최종 커밋은 `git log -1 -- docs/AGENT_HANDOFF.md`로 확인한다. 이번 변경은 승인된 푸시다운 배치를 전체47개 운동에 적용한 것이며 자산 버전은51이다.
+> 이 문서 자체의 최종 커밋은 `git log -1 -- docs/AGENT_HANDOFF.md`로 확인한다. v51의 전체47개 운동 배치 위에 골프 학습 허브를 추가했다. 최신 커밋은 git log로 확인한다.
 
-## 0. 현재 상태와 다음 시작점
+## 0. 현재 v52 — 골프 학습 허브
+
+- 사용자 요청: 기존 골프 / 예정된 개인 레슨 / 지정 유튜브3편을 유기적으로 연결. 구현과 로컬 검증 완료.
+- 골프는 **스윙 노트 · 레슨 · 유튜브** 3탭. 기본 진입은 스윙 노트이며 전체/드라이버/아이언 분류를 유지한다.
+- 원문47개, 기존 id·메모·즐겨찾기·2컷·3D·seed33은 보존. 운동 갱신일도 무변경.
+- 새 파일: `js/golf-data.js`(주제·영상·공식 레슨), `js/golf.js`(학습 허브), `css/golf.css`, `tests/golf-hub.cjs`.
+- 영상: `0EgzSDUsKvg` 상하체 순서(심승룡), `uvgnUl93Twg` 들린척추 세팅(쇼츠골프), `RSbjGWhzEnQ` 팔 사용(세계유명 골프정보).
+- 첫째/셋째는 YouTube 자동자막, 둘째는 화면 내 5단계 문구를 직접 읽어 요약. 둘째 4단계는 **클럽이 뒤로 처지지 않도록**이며 오른발 뒤꿈치 유지로 오인하지 않는다. 세팅과 지연의 개인 적용은 다음 레슨 질문으로 연결했다.
+- 영상을 시청한 것만으로 기존 코칭을 덮어쓰지 않는다. 각 영상에 핵심 구간 링크·주제·관련 노트·내 적용 메모·적용 상태가 있다. 원본 YouTube 열기를 주 버튼으로 제공하고, 앱 내 재생은 클릭 시에만 iframe을 만든다. 외부 재생은 네트워크/YouTube 정책에 의존한다. 인앱 브라우저의 임베드 재생은 확인되지 않았으므로 정상 재생을 단정하지 않는다.
+- **영상/노트 → 질문 저장 → 레슨에서 답변받은 질문 선택 → 출처 자동 연결 → 내 연습에 반영** 흐름. 레슨은 날짜·코치·문제·교정·숙제·차이·결과와 관련 노트/영상/주제를 가진다. 질문 선택 시 출처 영상/노트가 자동 연결된다.
+- 개인 레슨을 가공해 만들어 넣지 않았다. 공식 `GolfContent.lessons`는 현재 빈 배열. 후속 실제 레슨을 반영할 때 안정된 id·실제 레슨 날짜·noteIds·videoIds·topics를 기록한다.
+- 골프 기기 기록 키 **`ptgolf_learning_v1`**: `{lessons, questions, focus, videoNotes}`. 기존 `ptgolf_overlay_v1`, 캘린더와 별개이며 자동 동기화 없음. JSON 내보내기/가져오기 UI는 복원하지 않았다.
+- `focus`는 사용자가 선택한 핵심 최대3개. 원본 출처와 연결할 노트 id를 보존하고, 해제 시 삭제 대신 `active:false`로 과거 이력을 남긴다. 기존 운동 코칭을 자동 덮어쓰지 않는다.
+- 상세 상단의 **관련 레슨·영상 바로 보기**는 하단 연결 구간으로 스크롤한다. 기존 움직임·느낌 → 2컷 → 3D 순서를 보존한다.
+- 주제 페이지는 같은 주제의 노트·개인 레슨·영상을 함께 보여준다. 골프 전체 검색은 기존 노트/메모·레슨·영상/메모를 함께 검색한다.
+- 링크: `#golf/notes`, `#golf/lessons`, `#golf/videos`, `#golf/videos/<id>`, `#golf/lessons/<id>`, `#golf/topic/<URI 인코딩 주제>`. 기존 `#exercise/<id>`도 유지.
+- 저장 실패 시 성공 메시지를 내지 않고 입력/기존 저장 데이터를 보존한다. 읽기 실패한 골프 키를 빈 데이터로 덮어쓰지 않는다.
+- v52 검증: 전체47개/원문1233/이미지94/모델47/메모/핀치/3D터치/오프라인 모두 통과. 새 골프 검사는 질문↔레슨↔영상↔노트, 날짜 보존, 채택 이력, 최대3개, 검색,320·390·560px, 다크·라이트, 저장 실패, 오프라인 메모를 검사한다.
+- 실행: 7절 NODE_PATH 설정 후 `node tests/golf-hub.cjs`. `tests/visual-media.cjs`는 이제 SW에서 현재 버전을 읽는다.
+- 배포 URL: https://peoplenhpark.github.io/PT-GOLF/?v=52#golf/notes
+- 다음: 실제 골프 레슨 자료가 오면 새 구조에 반영. PT 케이블 푸시다운 세팅 이월 사항은9절 유지.
+
+## 0-B. 이전 v51 완료 상태 (이력)
 
 **최신 확정: 사용자가 케이블 푸시다운 배치를 확인하고 전체 적용을 승인했다. 전체47개 운동은 움직임·느낌 → 2컷 → 3D 모델 순서다. 원문·메모·이미지·3D 동작은 그대로다.**
 
@@ -22,10 +44,10 @@
 
 바로 확인할 주소:
 
-- 홈: https://peoplenhpark.github.io/PT-GOLF/?v=51
-- 데드버그: https://peoplenhpark.github.io/PT-GOLF/?v=51#exercise/pt_deadbug
-- 케이블 푸시다운: https://peoplenhpark.github.io/PT-GOLF/?v=51#exercise/pt_pushdown
-- 골프 드라이버: https://peoplenhpark.github.io/PT-GOLF/?v=51#exercise/golf_driver
+- 홈: https://peoplenhpark.github.io/PT-GOLF/?v=52
+- 데드버그: https://peoplenhpark.github.io/PT-GOLF/?v=52#exercise/pt_deadbug
+- 케이블 푸시다운: https://peoplenhpark.github.io/PT-GOLF/?v=52#exercise/pt_pushdown
+- 골프 드라이버: https://peoplenhpark.github.io/PT-GOLF/?v=52#exercise/golf_driver
 
 ## 1. 프로젝트와 실제 작업 위치
 
@@ -137,7 +159,7 @@ PT 카테고리 현재 순서: **등 / 팔 / 가슴 / 어깨 / 하체 / 하체 �
 - 앱: `focusHtml` / `exerciseMediaHtml` / `pushdownMediaHtml` / `bindExercise3D`.
 - URL: `#exercise/<id>`. 잘못된 id는 정상 운동 화면으로 취급하지 않는다.
 - 일반 iframe: `media/3d/viewer.html?exercise=<id>&v=51`.
-- 푸시다운 iframe: `samples/pushdown-3d/viewer.html?v=51`.
+- 푸시다운 iframe: `samples/pushdown-3d/viewer.html?v=52`.
 - iframe 높이는 `ptgolf-viewer-height` 메시지로 전달한다. 부모는 **origin, source===해당 iframe.contentWindow, 유한한 높이**를 검증하며320~1400 범위로 제한한다.
 - 3D는 로컬 `samples/pushdown-3d/three.min.js`(Three.js0.160.1)를 공유한다. MIT 라이선스 파일도 같은 폴더에 있다.
 - `poses.js`는 Three.js에 의존하지 않는 좌표 함수다. x=좌우, y=위, z=앞, 단위는 미터. 관절·기구·카메라 기준점·동작 단계를 반환한다.
@@ -194,13 +216,14 @@ PT 카테고리 현재 순서: **등 / 팔 / 가슴 / 어깨 / 하체 / 하체 �
 
 ## 6. 자산 버전과 배포
 
-현재 **N=51**. 앱/이미지/3D 변경 시 다음 버전은52이지만, 사용자가 그 사이 변경했을 수 있으므로 작업 시작 때 실제 파일을 확인한다.
+현재 **N=52**. 앱/이미지/3D 변경 시 다음 버전은53이지만, 사용자가 그 사이 변경했을 수 있으므로 작업 시작 때 실제 파일을 확인한다.
 
 함께 맞출 곳:
 
 - `sw.js`의 `CACHE = 'ptgolf-vN'`와 ASSETS의 버전 쿼리.
 - `index.html`의 **css/style.css, js/store.js, js/exercise-media.js, js/app.js** 쿼리4개.
 - `js/app.js`의 `ASSET_VER`.
+- `index.html`의 `css/golf.css`, `js/golf-data.js`, `js/golf.js` 및 SW ASSETS도 함께 갱신.
 - `media/3d/viewer.html`의 **exercise-media.js, poses.js, viewer.js** 쿼리.
 - `samples/pushdown-3d/index.html`의 앱 바로가기 쿼리 및 문서의 대표 최신 링크.
 - 푸시다운 전용 `pushdown.js`/`three.min.js`는 현재 쿼리 없이 로드된다. 새 SW 캐시 및 네트워크 우선 정책으로 관리한다. 이 파일 자체를 수정할 때는 실제 새 코드 로딩까지 확인한다.

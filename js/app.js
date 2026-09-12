@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '51';
+  const ASSET_VER = '52';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -54,6 +54,7 @@ const Theme = (() => {
 
   // ============ 렌더 ============
   function render() {
+    if (view.name === 'golf-hub') return GolfHub.render(view, golfConfig());
     if (view.name === 'home') return renderHome();
     if (view.name === 'part') return renderPart(view.part);
     if (view.name === 'detail') return renderDetail(view.id);
@@ -129,7 +130,7 @@ const Theme = (() => {
       return `<div class="part ${p.id}" data-part-open="${p.id}">
         <div class="ico">${p.icon}</div>
         <div><div class="nm">${esc(p.label)}</div>
-        <div class="cnt">${cats.length}개 부위 · ${list.length}동작</div></div>
+        <div class="cnt">${p.id === 'golf' ? '스윙 노트 · 레슨 · 유튜브' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
       </div>`;
     }).join('');
 
@@ -151,6 +152,7 @@ const Theme = (() => {
   }
 
   function renderPart(part) {
+    if (part === 'golf') return GolfHub.render({ ...view, golfTab: 'notes', golfId: null }, golfConfig());
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
     const activeCat = view.cat && cats.includes(view.cat) ? view.cat : (cats[0] || null);
@@ -342,6 +344,7 @@ const Theme = (() => {
     frame.style.height = `${Math.max(320, Math.min(1400, Math.ceil(ev.data.height)))}px`;
   });
   function openExerciseLink() {
+    if (GolfHub.openLink(location.hash)) return true;
     const match = /^#exercise\/([a-zA-Z0-9_-]+)$/.exec(location.hash);
     if (!match) return false;
     const e = Store.getById(match[1]);
@@ -388,6 +391,8 @@ const Theme = (() => {
           </div>
         </div>
 
+        ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
+
         ${hasMedia ? '' : focusHtml(e)}
 
         ${(e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
@@ -427,6 +432,8 @@ const Theme = (() => {
           <div class="memo-box ${memo ? '' : 'ph'}" data-act="memo-edit">${memo ? esc(e.memo) : '운동하며 느낀 점을 적어두세요…'}</div>
         </div>
 
+        ${isGolf ? GolfHub.related(id) : ''}
+
         <div class="block del-row">
           <button class="del-btn" data-act="delete">🗑 이 동작 삭제</button>
         </div>
@@ -441,7 +448,9 @@ const Theme = (() => {
     if (name === 'home' || name === 'favorites') { view.part = null; view.id = null; }
     if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null, calYear: view.calYear, calMonth: view.calMonth }; }
     if (name === 'calendar') { view.part = null; view.id = null; }
-    const hash = view.name === 'detail' ? '#exercise/' + view.id : '';
+    const hash = view.name === 'detail' ? '#exercise/' + view.id :
+      view.name === 'golf-hub' ? '#golf/' + (view.golfTab || 'notes') + (view.golfId ? '/' + encodeURIComponent(view.golfId) : '') :
+      view.name === 'part' && view.part === 'golf' ? '#golf/notes' : '';
     history.replaceState(null, '', location.pathname + location.search + hash);
     window.scrollTo(0, 0);
     render();
@@ -655,6 +664,9 @@ const Theme = (() => {
   function linesOf(id) { return val(id).split('\n').map(s => s.trim()).filter(Boolean); }
   function setSeg(id, v) { [...document.getElementById(id).children].forEach(b => b.classList.toggle('on', b.dataset.val === v)); }
   function getSeg(id) { const on = document.getElementById(id).querySelector('.on'); return on ? on.dataset.val : 'pt'; }
+
+  function golfConfig() { return { app, go, toast, exRow, tabbar, refresh: render }; }
+  GolfHub.configure(golfConfig());
 
   // ============ 부트 ============
   Store.init().then(() => {

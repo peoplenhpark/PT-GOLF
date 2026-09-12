@@ -6,6 +6,7 @@ const root=path.resolve(__dirname,'..'),base=process.env.PTGOLF_BASE_URL||'http:
 const seed=JSON.parse(fs.readFileSync(path.join(root,'data/seed.json'),'utf8').replace(/^\uFEFF/,'')),ctx={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'js/exercise-media.js'),'utf8'),ctx);
 const media=ctx.window.ExerciseMedia,poses=require('../media/3d/poses.js');
+const assetVersion=fs.readFileSync(path.join(root,'sw.js'),'utf8').match(/ptgolf-v(\d+)/)[1];
 for(const e of seed.exercises){
  assert(media[e.id],e.id+' media missing');
  if(!process.env.SKIP_IMAGE_CHECK)for(const file of media[e.id].images)assert(fs.existsSync(path.join(root,file)),file);
@@ -33,7 +34,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});
   const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
   for(const e of seed.exercises){
-   await page.goto(base+'?v=51#exercise/'+e.id);await page.waitForSelector('.guide-pair img');
+   await page.goto(base+'?v='+assetVersion+'#exercise/'+e.id);await page.waitForSelector('.guide-pair img');
    const actual=norm(await page.locator('#app').innerText());
    const pr=seed.principles.find(p=>p.part===e.part&&p.scope===e.category)||seed.principles.find(p=>p.part===e.part&&p.scope==='*');
    const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
