@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '48';
+  const ASSET_VER = '49';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -284,7 +284,7 @@ const Theme = (() => {
       <div class="focus-line"><span class="fk">느낌</span>${esc(e.focus.feel)}</div>
     </div>` : '';
   }
-  function pushdownMediaHtml() {
+  function pushdownMediaHtml(e) {
     const base = 'samples/pushdown-3d/';
     return `<section class="pushdown-guide" aria-label="케이블 푸시다운 2컷 안내">
       <div class="guide-pair">
@@ -300,13 +300,14 @@ const Theme = (() => {
         </figure>
       </div>
     </section>
+    ${focusHtml(e)}
     <details class="exercise-3d">
       <summary>입체로 자세 보기</summary>
       <div class="exercise-3d-content"></div>
     </details>`;
   }
   function exerciseMediaHtml(e) {
-    if (e.id === 'pt_pushdown') return pushdownMediaHtml();
+    if (e.id === 'pt_pushdown') return pushdownMediaHtml(e);
     const media = window.ExerciseMedia?.[e.id];
     if (!media) return '';
     return `<section class="exercise-guide" aria-label="${esc(e.name)} 2컷 안내">
@@ -407,7 +408,7 @@ const Theme = (() => {
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 
-        ${hasMedia ? exerciseMediaHtml(e) + focusHtml(e) : ''}
+        ${hasMedia ? exerciseMediaHtml(e) + (e.id === 'pt_pushdown' ? '' : focusHtml(e)) : ''}
 
         ${cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ 운동 중 핵심

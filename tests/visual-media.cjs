@@ -33,7 +33,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});
   const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
   for(const e of seed.exercises){
-   await page.goto(base+'?v=48#exercise/'+e.id);await page.waitForSelector('.guide-pair img');
+   await page.goto(base+'?v=49#exercise/'+e.id);await page.waitForSelector('.guide-pair img');
    const actual=norm(await page.locator('#app').innerText());
    const pr=seed.principles.find(p=>p.part===e.part&&p.scope===e.category)||seed.principles.find(p=>p.part===e.part&&p.scope==='*');
    const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
@@ -41,7 +41,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
    assert.equal(await page.locator('.guide-shot').count(),2);assert.equal(await page.locator('.exercise-3d summary').innerText(),'입체로 자세 보기');
    assert.equal(await page.locator('iframe').count(),0);
    const order=await page.locator('.scr').evaluate(el=>Array.from(el.children).filter(x=>x.matches('.pushdown-guide,.exercise-guide,.exercise-3d,.focus-box')).map(x=>x.className.split(' ')[0]));
-   assert.deepEqual(order,[e.id==='pt_pushdown'?'pushdown-guide':'exercise-guide','exercise-3d','focus-box']);
+   assert.deepEqual(order,e.id==='pt_pushdown'?['pushdown-guide','focus-box','exercise-3d']:['exercise-guide','exercise-3d','focus-box']);
    assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),e.id+' horizontal overflow');
    if(!process.env.SKIP_IMAGE_CHECK){
     await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
