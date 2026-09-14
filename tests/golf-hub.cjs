@@ -21,7 +21,7 @@ const base = process.env.PTGOLF_BASE_URL || 'http://127.0.0.1:8792/';
   await page.getByRole('button',{name:'전체',exact:true}).click();
   await page.getByRole('link',{name:'유튜브',exact:true}).click();
   await page.locator('.g-video-card').first().waitFor();
-  assert.equal(await page.locator('.g-video-card').count(),3);
+  assert.equal(await page.locator('.g-video-card').count(),10);
   await page.getByRole('link',{name:'팔은 이렇게 사용해야 합니다! ›',exact:true}).click();
   await page.getByRole('heading',{name:'영상 핵심',exact:true}).waitFor();
   assert.equal(await page.locator('#g-player iframe').count(),0);

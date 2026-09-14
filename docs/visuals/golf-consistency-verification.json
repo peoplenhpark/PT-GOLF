@@ -1,0 +1,49 @@
+{
+  "version": 60,
+  "sources": {
+    "IsSS-GnQQyY": {
+      "seconds": 611,
+      "presentation": "3d",
+      "lessonSeconds": 60
+    },
+    "ULOLFCC-ly8": {
+      "seconds": 92,
+      "presentation": "original"
+    }
+  },
+  "ui": {
+    "actualWidths": [
+      320,
+      390,
+      768
+    ],
+    "chaptersPerWidth": 7,
+    "pointsPerChapter": 3,
+    "fontPixels": 16.5,
+    "fontWeight": 700,
+    "horizontalOverflow": false,
+    "activeChapterCount": 1,
+    "canvasesReady": true,
+    "sourceLinksVerified": true,
+    "endStops": true,
+    "replayRestarts": true,
+    "pauseAndScrub": true,
+    "originalEmbedVerified": true,
+    "videoCount": 10,
+    "newPageConsoleErrors": [],
+    "canvasesPerLesson": 1,
+    "model": "CMU64_01",
+    "views": [
+      "body",
+      "shoulder",
+      "impact"
+    ],
+    "abstractModelsRemoved": true,
+    "oldWristLessonUnaffected": true,
+    "topVideoIds": [
+      "bfMsJtV61hM",
+      "-h77kU-fpjg"
+    ]
+  },
+  "deployment": "local only"
+}

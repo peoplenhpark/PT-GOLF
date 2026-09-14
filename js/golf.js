@@ -41,7 +41,7 @@ window.GolfHub = (() => {
   const focusRow = f => `<div class="g-focus-item"><p>${e(f.text)}</p><div class="g-meta">${link('notes',f.noteId)} · 출처 ${link(f.kind,f.sourceId)}</div>${button('unpin','집중 항목 해제',`data-id="${e(f.id)}"`)}</div>`;
   function card(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)}${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}</article>`;
+    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)}${content.presentationFor(v)==='original'?' · 원본 + 편집 설명':' · 3D 레슨'}${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}</article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
@@ -83,7 +83,7 @@ window.GolfHub = (() => {
       if(lessons().length) body+=block('최근 레슨',lessonRow(lessons()[0]));
     } else if(tab==='videos') {
       const list=videos().filter(v=>matches({...v,...state.videoNotes[v.id]},view));
-      body+=`<p class="g-intro">선택한 영상 3편 · 보고, 비교하고, 내 연습으로 연결하세요.</p>${list.length?list.map(card).join(''):'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>'}`;
+      body+=`<p class="g-intro">선택한 영상 ${videos().length}편 · 보고, 비교하고, 내 연습으로 연결하세요.</p>${list.length?list.map(card).join(''):'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>'}`;
     } else {
       body+=`<div class="g-actions">${button('lesson-new','레슨 기록하기')}</div>`;
       const qs=state.questions.filter(q=>!q.lessonId);
@@ -106,13 +106,17 @@ window.GolfHub = (() => {
     const v=video(id); if(!v) return layout('<p>찾을 수 없는 영상입니다.</p>','videos');
     const n=state.videoNotes[id]||{};
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
+    const keepOriginal=content.presentationFor(v)==='original';
     layout(`<a class="back" href="#golf/videos">‹ 유튜브 목록</a><div class="g-meta">${e(v.channel)} · ${e(v.duration)}</div><h2 class="g-title">${e(v.title)}</h2>${chips(v.topics)}
-      <a class="g-link g-primary" href="https://www.youtube.com/shorts/${id}" target="_blank" rel="noopener noreferrer">YouTube에서 영상 보기 ↗</a>
+      ${keepOriginal?'<p class="g-meta">'+(content.durationSeconds(v)<=content.originalMaxSeconds?'3분 이하 영상 · 원본과 편집 설명을 함께 봅니다.':'원본과 편집 설명으로 확인하는 영상입니다.')+'</p>':''}
+      <a class="g-link g-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">YouTube에서 영상 보기 ↗</a>
       <div class="g-player" id="g-player">${button('play','앱 안에서 재생',`data-id="${e(id)}"`)}<span>재생할 때 YouTube에 연결됩니다.</span></div>
-      <a class="g-link" href="https://www.youtube.com/shorts/${id}" target="_blank" rel="noopener noreferrer">영상이 보이지 않으면 YouTube에서 열기 ↗</a>
+      <a class="g-link" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">영상이 보이지 않으면 YouTube에서 열기 ↗</a>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>
+      ${!keepOriginal?`<a class="g-link g-primary" href="${e(v.lessonHref || 'media/golf3d/lesson.html?v=60')}">${e(v.lessonLabel || '60초 임팩트 3D 레슨 열기 →')}</a>`:''}
       ${block('영상 핵심',paras(v.summary)+`<ul>${v.points.map(p=>`<li>${e(p)}</li>`).join('')}</ul><p class="g-meta">${e(v.evidence)}</p>`)}
       ${block('내 스윙과 연결',paras(v.connection)+noteLinks(relatedIds))}
+      ${v.relatedVideoIds?block('다음 동작으로 연결',v.relatedVideoIds.map(video).filter(Boolean).map(card).join('')):''}
       <div class="g-actions">${button('adopt','내 연습에 반영',`data-kind="videos" data-id="${id}"`)}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
       ${block('내 적용 메모',`<form data-g-form="video" data-id="${id}"><label for="g-video-status">적용 상태</label><select id="g-video-status" name="status">${['참고','연습 중','레슨에서 확인'].map(s=>`<option ${n.status===s?'selected':''}>${s}</option>`).join('')}</select><label for="g-video-memo">느낀 점·결과</label><textarea id="g-video-memo" name="memo" rows="4">${e(n.memo||'')}</textarea><button class="g-btn g-primary">메모 저장</button></form>`)}
       ${block('연결된 레슨',lessons().filter(l=>(l.videoIds||[]).includes(id)).map(lessonRow).join('')||'<p class="g-muted">이 영상을 참고한 레슨을 기록하면 여기에 연결됩니다.</p>')}

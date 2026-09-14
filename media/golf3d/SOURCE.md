@@ -22,3 +22,35 @@ The renderer keeps the same camera framing while playing, pausing, scrubbing and
 ## Validation
 
 Run `tests/golf-3d.cjs` against a locally served checkout. It checks fixed limb lengths, hand/shaft attachment, continuity and nonzero velocities across stage boundaries, consistent camera framing, all four note mappings, mobile controls and offline loading. Screenshots and playback still require visual review; passing coordinate tests alone does not establish a natural-looking or technically ideal swing.
+
+
+## 60초 임팩트 레슨 (v55)
+
+- 원본: 조윤성프로, https://www.youtube.com/watch?v=du58mmLNMnQ . 2026-09-13 자막과 8:14 시범 화면 확인. 영상 파일·음성·인물 외형을 복제하지 않고 설명을 재구성.
+- lesson.html/js/css: 60초 자막 + 7단계 + 전신/손목 시점. 전신은 위 CMU 공통 예시이며 해당 YouTube 인물의 캡처가 아니다. 손목은 별도의 교육용 절차적 모형이며 각도는 측정값이 아니다. 손가락은 한 그립을 감싸며 팔 길이는 고정된다.
+- 원본 2:59 점진적 동작, 4:14 힌지, 8:14 실제 왼손목은 평평해도 된다는 설명을 반영. 과도한 보잉 각도를 강제하지 않는다.
+
+
+## 이전 길이 기준 편집 레슨 (v56 · v57에서 3D 제거됨)
+
+- UA-HYcmiKTA: 백현범프로[백점골프], 원본15:53(953초). 자동자막 전체를 확인해 에이밍·셋업 핵심을80초·8단계 3D 배치도로 재구성. 코스/궤적/티높이 비교는 설명용이며 수치 시뮬레이션이 아니다. https://www.youtube.com/watch?v=UA-HYcmiKTA
+- CA-TZ7WQlHY: 심승룡 투어프로 [Nak Ta 골프], 원본2:46(166초). 쇼츠 링크지만2분 초과라60초·6단계 3D로 편집. 자동자막 전체와0:30 시범 화면 확인. https://www.youtube.com/watch?v=CA-TZ7WQlHY
+- 원본 동영상 파일을 복제/다운로드하지 않았다. 원본·시점 링크·기존 YouTube 임베드는 별도로 유지한다. 체중이동의 전신은 기존 CMU64_01; 화살표·고리는 교육용 안내이고 발 압력·근력 측정값이 아니다.
+- training-data.js는 원본 길이·출처 초·각 장면 세 가지 설명을 보관한다. 원본15:53 중 주된 에이밍과 티샷 셋업을 중심으로 요약하며 파3 세부 동작 전체를 복원한 것이 아니다.
+
+## v57 원본 유지 기준 변경
+
+원본 유지 기준은180초 이하(3분 포함). 에이밍은 사용자의 요청으로3D를 제거하고 원본과 편집 설명을 유지한다. 체중이동2:46도 원본으로 전환했다. training.js/css/data.js와 전신 강조 모드는 제거되었고 training.html은 이전 링크를 원본 자료로 연결하는 호환 페이지다. 손목·임팩트3D는 유지한다.
+
+
+## v58 어깨·임팩트 / 힘·타이밍
+
+- https://www.youtube.com/watch?v=IsSS-GnQQyY — 조윤성프로, 「일관성 있는 스윙 만드는 방법 [아내에게하는 골프레슨345]」. 2026-09-14 공개 플레이어611초 및 원본 자막 확인. 0:14 페이스 방향, 2:29 기울어진 축 회전, 3:05 골반·어깨 연결, 4:42 숙임 유지, 5:33 힌지와 얕은 통과, 8:00 어깨·팔꿈치,9:21 전체 연결을60초7단계로 재구성.
+- consistency.html/js: 어깨 회전축 도식과 클럽페이스·지면 확대 모형은 절차적 교육용3D다. 각도·경로는 실측이 아니며 긴 구간의 페이스 고정, 손목 잠금, 몸통 옆굽힘, 강제 머리 고정 지시가 아니다. 전신은 기존 CMU64_01예시 그대로 사용.
+- https://www.youtube.com/shorts/ULOLFCC-ly8 — 깡프로, 힘·타이밍. 공개 플레이어92초 및 자동자막 확인. 0:18 긴장 비교,0:36 중간 감각,0:44 전환 긴장 완화,1:00 과장 시범 설명,1:19 개인 리듬 찾기.3분 이하 원본+편집 설명으로 유지.0/5는 실제 근력 비율이 아니며 클럽을 놓거나 손목 구조를 무너뜨리는 지시가 아니다.
+- 영상 파일·음성·인물 외형은 복제하지 않았다. 원본 YouTube 및 시점 링크, 클릭 시 임베드 연결을 유지한다.
+
+
+## v60 일관성 레슨 표현 교체 (v58 별도 모형을 대체)
+
+사용자 요청으로 consistency.html/js의 추상 어깨·클럽 모형을 제거했다. 모든 장면은 기존 CMU64_01 골퍼의 동일한 연속 동작을 사용한다. 상체 확대는 골퍼의 양쪽 어깨와 몸통 축을, 임팩트 확대는 골퍼·손·클럽헤드와 짧은 실측 헤드 궤적을 함께 보여준다. 모션 데이터 자체는 수정하지 않았다. 색상·축은 교육용 안내이며 영상 속 강사의 동작을 측정하거나 그대로 재현한 것이 아니다. 원본 출처·7단계60초 설명 및 시점 링크는 유지한다.

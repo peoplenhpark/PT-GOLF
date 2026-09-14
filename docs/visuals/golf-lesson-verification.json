@@ -1,0 +1,16 @@
+{
+  "widths": [
+    320,
+    390,
+    768
+  ],
+  "chapters": 7,
+  "views": 2,
+  "pause": true,
+  "scrub": true,
+  "replay": true,
+  "keyboard": true,
+  "offline": true,
+  "full60seconds": true,
+  "errors": []
+}

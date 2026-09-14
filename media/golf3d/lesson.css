@@ -1,0 +1,17 @@
+
+.lesson-back{display:inline-block;color:#c0d6c9;text-decoration:none;padding:8px 0 18px;font-size:12px}.lesson-heading p{color:#a9c5b7;line-height:1.6;margin:5px 0;font-size:12px}.lesson-heading h1{font-size:23px;letter-spacing:-.7px;line-height:1.4;margin:4px 0 8px}.lesson-heading{margin:0 0 18px}.lesson-views{display:flex;gap:8px;margin-bottom:10px}.lesson-views button{flex:1}.base-control{display:none}.lesson-page .topline strong{font-size:12px;color:#a9c5b7}.lesson-page #viewport,.lesson-page #wristViewport{height:clamp(310px,95vw,470px)}#wristViewport{position:relative;border:1px solid #405956;border-radius:14px;overflow:hidden;background:#e7eeeb}.wrist-label,.wrist-legend,.wrist-cue{position:absolute;z-index:1;pointer-events:none;font-size:11px;color:#294944;background:#f7fbf3ec;padding:6px 9px;border-radius:6px}.wrist-label{top:10px;left:10px}.wrist-legend{right:10px;top:42px;display:grid;gap:5px}.wrist-cue{bottom:12px;left:12px;right:12px;text-align:center;line-height:1.6}.lesson-player{margin-top:18px}.lesson-transport{display:flex;align-items:center;justify-content:space-between;gap:10px}.lesson-transport button{background:#d4e9b3;color:#18392b;font-weight:700;padding:11px 16px}#lessonTime{font-variant-numeric:tabular-nums;color:#bcd3c5;font-size:12px}#lessonProgress{width:100%;accent-color:#d4e9b3;min-height:40px;margin:6px 0}.lesson-caption{min-height:176px;border-left:3px solid #c5dd9f;padding:4px 0 4px 14px}.lesson-caption span{color:#a8c48f;font-size:11px;letter-spacing:2px}.lesson-caption h2{font-size:19px;margin:7px 0;line-height:1.5}.lesson-caption p{color:#d0ddd5;font-size:14px;line-height:1.85;margin:0}#lessonChapters{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:18px 0 14px}#lessonChapters button{font-size:11px;line-height:1.5;padding:8px 2px}#lessonChapters small{display:block;font-size:10px;opacity:.7;margin-bottom:3px}#sourceMoment{display:inline-block;font-size:12px;color:#cce1b8;padding:8px 0 12px}.lesson-page .hint{margin-top:5px}@media(min-width:650px){.lesson-heading h1{font-size:30px}#lessonChapters{grid-template-columns:repeat(7,1fr)}.lesson-caption{min-height:132px}}
+
+/* Larger, bold explanations live within the visual card, below the model. */
+.lesson-visual{overflow:hidden;border:1px solid #405956;border-radius:14px;background:#e7eeeb}
+.lesson-visual #viewport,.lesson-visual #wristViewport{border:0;border-radius:0}
+.visual-explanation{padding:16px 18px 18px;border-top:1px solid #b7ccc2;background:#f2f7ef;color:#24443b;font-size:16.5px;font-weight:700;line-height:1.7;overflow-wrap:anywhere}
+.visual-explanation>strong{display:block;font-size:16.5px;font-weight:800;margin-bottom:10px;color:#174c3d}
+.visual-explanation ol{margin:0;padding-left:1.5em;display:grid;gap:8px}
+.visual-explanation li{padding-left:3px}
+.visual-explanation li::marker{color:#477b60;font-weight:800}
+.lesson-page .view-tag,.lesson-page .legend,.lesson-page .target-label,.wrist-label,.wrist-legend{font-size:16.5px;font-weight:700}
+.wrist-label{max-width:calc(100% - 145px);line-height:1.5}
+.wrist-legend{top:10px;line-height:1.5}
+.lesson-caption h2{font-size:28.5px;font-weight:800}
+.lesson-caption p{font-size:21px;font-weight:700;line-height:1.75}
+@media(max-width:360px){.visual-explanation{padding:14px 12px 16px}.lesson-page .legend{gap:6px;padding:5px}.lesson-page .view-tag{max-width:95px}}

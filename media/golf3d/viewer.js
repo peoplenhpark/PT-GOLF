@@ -3,7 +3,7 @@
 (function(){
 'use strict';
 const $=id=>document.getElementById(id),P=window.GolfPoses;
-const id=new URLSearchParams(location.search).get('exercise')||'golf_driver';
+const id=document.body.classList.contains('lesson-page')?'golf_iron7':new URLSearchParams(location.search).get('exercise')||'golf_driver';
 const notifyHeight=()=>parent.postMessage({type:'ptgolf-viewer-height',height:Math.ceil(document.body.getBoundingClientRect().height+2)},location.origin);
 new ResizeObserver(notifyHeight).observe(document.body);
 function fail(message){$('error').hidden=false;$('error').textContent=message;document.querySelectorAll('button,input,select').forEach(el=>el.disabled=true);notifyHeight();}
@@ -49,6 +49,41 @@ const target=new T.Vector3(-.025,1.02,.12);
 const framing=[];
 for(let i=0;i<=200;i++){const p=P.pose(id,i/200);framing.push(...[p.head,p.tip,...p.wrists,...p.ankles].map(vec));}
 
+
+// Source lesson opts into highlights on the same captured golfer, never a separate mannequin.
+const lessonEnabled=document.body.classList.contains('consistency-page');
+let lessonFocus='body';
+const focusFrames={shoulder:[],impact:[]};
+if(lessonEnabled){
+ for(let i=0;i<=160;i++){
+  const t=i/160,p=P.pose(id,t);
+  focusFrames.shoulder.push(...[p.head,p.hip,...p.shoulders,...p.elbows].map(vec));
+
+ }
+}
+if(lessonEnabled){for(let i=0;i<=80;i++){const p=P.pose(id,.708+i/80*.034);focusFrames.impact.push(...[p.head,p.hip,p.grip,p.tip,p.ball,...p.ankles].map(vec));}}
+const teaching=new T.Group();scene.add(teaching);teaching.visible=false;
+const leadGuide=new T.MeshBasicMaterial({color:0x24a7ef,transparent:true,opacity:.8,depthTest:false});
+const trailGuide=new T.MeshBasicMaterial({color:0xf18a30,transparent:true,opacity:.8,depthTest:false});
+const axisGuide=new T.MeshBasicMaterial({color:0xd5a20b,transparent:true,opacity:.8,depthTest:false});
+const guideSpheres=lessonEnabled?[leadGuide,trailGuide].map(m=>{const o=new T.Mesh(sphere,m);o.scale.setScalar(.082);o.renderOrder=5;teaching.add(o);return o;}):[];
+const spineGuide=lessonEnabled?new T.Mesh(new T.CylinderGeometry(.009,.009,1,12),axisGuide):null;
+if(spineGuide){teaching.add(spineGuide);spineGuide.renderOrder=5;}
+const headGlow=lessonEnabled?new T.Mesh(new T.SphereGeometry(.058,20,12),new T.MeshBasicMaterial({color:0xf0bf35,wireframe:true,transparent:true,opacity:.85,depthTest:false})):null;
+if(headGlow){teaching.add(headGlow);headGlow.renderOrder=5;}
+const tipTrack=lessonEnabled?new T.Line(new T.BufferGeometry(),new T.LineBasicMaterial({color:0xbd8913,transparent:true,opacity:.8})):null;
+if(tipTrack){const points=[];for(let i=0;i<=80;i++)points.push(vec(P.pose(id,.708+i/80*.034).tip));tipTrack.geometry.setFromPoints(points);teaching.add(tipTrack);}
+function teach(p){
+ if(!lessonEnabled)return;
+ teaching.visible=true;
+ guideSpheres.forEach((m,i)=>{m.visible=lessonFocus!=='impact';m.position.copy(vec(p.shoulders[i]));});
+ spineGuide.visible=lessonFocus==='shoulder';
+ if(spineGuide.visible){const a=vec(p.hip),b=vec(add(p.neck,mul(p.up,.15)));spineGuide.position.copy(a).add(b).multiplyScalar(.5);spineGuide.scale.y=a.distanceTo(b);spineGuide.quaternion.setFromUnitVectors(axis,b.sub(a).normalize());}
+ headGlow.visible=tipTrack.visible=lessonFocus==='impact';headGlow.position.copy(vec(p.tip));
+ clubHead.material=lessonFocus==='impact'?axisGuide:(p.club.driver?mat.head:mat.metal);
+ canvas.dataset.lessonFocus=lessonFocus;canvas.dataset.golferModel='CMU64_01';
+}
+
 function render(){
  current=P.pose(id,phase);const p=current;
  const basis=new T.Matrix4().makeBasis(vec(p.right),vec(p.up),vec(p.front));
@@ -82,14 +117,15 @@ function render(){
  const clubUp=vec(p.dir).negate(),headSide=vec(p.clubSide);
  const headFront=new T.Vector3().crossVectors(headSide,clubUp).normalize();clubHead.quaternion.setFromRotationMatrix(new T.Matrix4().makeBasis(headSide,clubUp,headFront));
  camera.position.set(target.x+Math.sin(yaw)*Math.cos(pitch)*6,target.y+Math.sin(pitch)*6,target.z+Math.cos(yaw)*Math.cos(pitch)*6);camera.lookAt(target);camera.updateMatrixWorld();
- const points=framing;
+ const points=lessonEnabled&&lessonFocus!=='body'&&(lessonFocus!=='impact'||(phase>=.708&&phase<=.742))?focusFrames[lessonFocus]:framing;
  const projected=points.map(v=>v.clone().applyMatrix4(camera.matrixWorldInverse));
  const minX=Math.min(...projected.map(v=>v.x))-.15,maxX=Math.max(...projected.map(v=>v.x))+.15;
  const minY=Math.min(...projected.map(v=>v.y))-.16,maxY=Math.max(...projected.map(v=>v.y))+.23;
- const height=Math.max(2.04,maxY-minY,(maxX-minX)/camera.aspect)*distance;
+ const height=Math.max(lessonEnabled&&lessonFocus==='shoulder'?1.15:2.04,maxY-minY,(maxX-minX)/camera.aspect)*distance;
  const offset=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,0).multiplyScalar((minX+maxX)/2).add(new T.Vector3().setFromMatrixColumn(camera.matrixWorld,1).multiplyScalar((minY+maxY)/2));
  camera.position.add(offset);camera.lookAt(target.clone().add(offset));
  camera.left=-height*camera.aspect/2;camera.right=height*camera.aspect/2;camera.top=height/2;camera.bottom=-height/2;camera.updateProjectionMatrix();
+ teach(p);
  renderer.render(scene,camera);
  const arrowPoint=new T.Vector3(.85,.01,1.12).project(camera);
  $('targetLabel').style.left=Math.max(8,Math.min($('viewport').clientWidth-75,(arrowPoint.x*.5+.5)*$('viewport').clientWidth))+'px';
@@ -123,6 +159,6 @@ new ResizeObserver(()=>{const el=$('viewport');camera.aspect=el.clientWidth/el.c
 canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();setPlaying(false);fail('3D 표시가 중단되었습니다. 3D를 닫았다 다시 열어 주세요.');});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlaying(false);});
 let previous=performance.now();function tick(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(playing){phase=Math.min(1,phase+dt*speed/P.duration);if(phase>=1)setPlaying(false);render();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
-window.exerciseViewer={snapshot:()=>({id,kind:'golf',renderer:'golf-mocap-v2',phase,playing,pose:current,yaw,distance,meshCount:body.children.length,camera:{position:camera.position.toArray(),zoom:camera.zoom,left:camera.left,right:camera.right,top:camera.top,bottom:camera.bottom},projected:[current.head,current.tip,...current.ankles].map(p=>vec(p).project(camera).toArray())})};
+window.exerciseViewer={setLessonFocus(value){if(!lessonEnabled||!['body','shoulder','impact'].includes(value))return;lessonFocus=value;distance=1;yaw=value==='shoulder'?.25:value==='impact'?.05:.38;pitch=.13;render();},setPhase(value){phase=clamp(value,0,1);setPlaying(false);render();},snapshot:()=>({id,kind:'golf',renderer:'golf-mocap-v2',phase,playing,pose:current,yaw,distance,meshCount:body.children.length,camera:{position:camera.position.toArray(),zoom:camera.zoom,left:camera.left,right:camera.right,top:camera.top,bottom:camera.bottom},projected:[current.head,current.tip,...current.ankles].map(p=>vec(p).project(camera).toArray())})};
 render();notifyHeight();
 })();
