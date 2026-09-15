@@ -1,4 +1,4 @@
-/* 사용자 지정 영상 10편. 2026-09-14 원본 페이지·자동자막/화면 문구 확인.
+/* 사용자 지정 영상 13편. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   version: 2,
@@ -14,7 +14,7 @@ window.GolfContent = {
   videos: [
 {
   "id": "bfMsJtV61hM",
-  "sampleHref": "media/golf3d/original.html?v=63",
+  "sampleHref": "media/golf3d/original.html?v=65",
   "sampleLabel": "실제 선수로 보기 · 원본 동작 + 관찰 설명 →",
   "title": "김민지5 프로 · 정면·좌측면 슬로모션 스윙",
   "originalTitle": "정면과 좌측면 슬로우모션 스윙100번 보면 비로소 보입니다. 🔥🔥김민지5 프로 Instagram@minji_five",
@@ -76,10 +76,134 @@ window.GolfContent = {
   "connection": "힘·타이밍 영상과 함께 과하게 붙잡는 긴장을 점검하고, 손목 임팩트 레슨의 구조 유지와 비교하세요. 드라이버 노트에 본인의 느낌을 기록해 개인 레슨에서 확인합니다.",
   "question": "제 드라이버 스윙에서는 헤드가 자연스럽게 통과하나요? 힘을 줄이는 감각과 손목을 일찍 푸는 동작을 어떻게 구분하면 좋을까요?",
   "relatedVideoIds": [
+    "Aj1UEMYPxBg",
     "ULOLFCC-ly8",
     "du58mmLNMnQ",
     "bfMsJtV61hM"
   ]
+},
+{
+  "id": "Aj1UEMYPxBg",
+  "title": "클럽 가속을 위한 오른팔 핵심 포인트",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "summary": "다운스윙을 시작할 때 오른팔이 가슴 앞에 놓이는 위치와 클럽을 가속하는 방향을 살펴보는 레슨입니다.",
+  "points": [
+    "클럽을 아래로 누르는 움직임과 몸의 왼쪽으로 가속하는 움직임을 구분해 봅니다.",
+    "오른팔이 몸 옆으로 빠져 있는 자세와 가슴 앞에 있는 자세를 원본 시범에서 비교합니다.",
+    "가슴 앞에서 다운스윙을 시작하는 연습을 반복하고, 내 스윙에서도 팔과 몸통의 위치를 함께 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 오른팔 가속 레슨 전체 보기"
+    },
+    {
+      "s": 20,
+      "label": "0:20 · 다운스윙 전환의 오른팔 위치"
+    },
+    {
+      "s": 40,
+      "label": "0:40 · 가슴 앞에서 시작하는 연습"
+    }
+  ],
+  "relatedVideoIds": [
+    "-h77kU-fpjg",
+    "S3fxUFBzfBo",
+    "RSbjGWhzEnQ"
+  ],
+  "connection": "헤드를 던지는 감각 영상과 함께 가속 방향을 비교하고, 팔로만 내리지 않는 연습으로 몸과 팔의 연결을 확인하세요. 공통 3D는 전체 흐름을 관찰하는 보조 예시입니다.",
+  "question": "제 다운스윙에서 오른팔이 몸 옆으로 빠지나요? 가슴 앞에 두는 느낌과 몸의 회전을 어떻게 연결하면 좋을까요?",
+  "evidence": "원본 제목·재생 화면의 자막·오른팔 시범을 확인해 핵심 정리",
+  "originalTitle": "클럽 가속을 위한 오른팔 핵심포인트",
+  "channel": "남프로TV & 브릿지골프",
+  "duration": "0:53",
+  "durationSeconds": 53,
+  "presentation": "original"
+},
+{
+  "id": "xUgGGs2Rh3w",
+  "title": "일관된 스윙을 위한 오른쪽 어깨 사용",
+  "topics": [
+    "준비·축",
+    "회전·순서"
+  ],
+  "summary": "오른쪽 어깨가 내려가며 회전하는 감각을 시범으로 교정하는 짧은 레슨입니다. 몸을 더 구부리는 동작과 어깨가 회전하는 동작을 구분해 봅니다.",
+  "points": [
+    "상체를 더 구부려 어깨를 낮추는 동작과, 준비한 자세에서 어깨가 돌아가는 동작을 비교합니다.",
+    "오른쪽 어깨가 내려가면서 회전할 때 왼쪽 어깨가 어떻게 움직이는지도 함께 관찰합니다.",
+    "한쪽 어깨만 억지로 낮추기보다 양어깨와 몸통이 연결되는 시범을 반복해서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 오른쪽 어깨 사용 레슨 전체 보기"
+    },
+    {
+      "s": 10,
+      "label": "0:10 · 몸을 더 구부리는 동작과 구분"
+    },
+    {
+      "s": 70,
+      "label": "1:10 · 내려가며 회전하는 어깨 관찰"
+    }
+  ],
+  "relatedVideoIds": [
+    "IsSS-GnQQyY",
+    "bfMsJtV61hM",
+    "ULOLFCC-ly8"
+  ],
+  "connection": "기존 어깨·임팩트 60초 레슨에서 회전 원리를 살펴보고, 김민지5 프로의 정면·측면 원본과 비교하세요. 자신의 준비 자세와 회전 감각은 스윙 노트에 기록해 레슨에서 확인합니다.",
+  "question": "오른쪽 어깨를 낮추려다 몸을 더 구부리고 있나요? 제 준비 자세에서 양어깨가 함께 회전하는 느낌을 확인하고 싶어요.",
+  "evidence": "원본 제목·재생 화면의 자막·어깨 교정 시범을 확인해 핵심 정리",
+  "originalTitle": "일관성있는 스윙 만드는 방법!👇풀영상",
+  "channel": "조윤성프로",
+  "duration": "1:44",
+  "durationSeconds": 104,
+  "presentation": "original"
+},
+{
+  "id": "S3fxUFBzfBo",
+  "title": "팔로만 내리지 않고 몸 회전과 연결하기",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "summary": "팔만 아래로 내리는 다운스윙 대신 몸의 회전과 팔의 지연을 연결해 클럽이 내려오는 흐름을 설명합니다. 벽을 이용한 클럽헤드 경로 연습을 함께 보여줍니다.",
+  "points": [
+    "팔만 아래로 당기면 클럽이 떨어지는 방향이 달라질 수 있다는 설명을 확인합니다.",
+    "몸이 회전할 때 팔이 급하게 따라 내려오지 않도록 연결하는 교정 감각을 비교합니다.",
+    "원본의 벽 연습은 클럽헤드가 뒤쪽 벽을 쓸듯 내려오는 경로를 느끼는 시범입니다. 이 감각을 내 스윙에 적용할지는 레슨에서 확인하세요."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 팔과 몸 회전 연결 전체 보기"
+    },
+    {
+      "s": 40,
+      "label": "0:40 · 회전과 클럽 경로 시범"
+    },
+    {
+      "s": 60,
+      "label": "1:00 · 벽을 이용한 경로 연습"
+    }
+  ],
+  "relatedVideoIds": [
+    "RSbjGWhzEnQ",
+    "Aj1UEMYPxBg",
+    "0EgzSDUsKvg"
+  ],
+  "connection": "기존 팔 내리기 영상과 비교하면서 두 설명의 연습 목적과 타이밍 차이를 확인하세요. 모든 스윙에 같은 처방을 적용하기보다 내 스윙 노트의 지연·회전 감각과 연결해 코치에게 질문합니다.",
+  "question": "제게 필요한 교정은 팔을 먼저 내리는 감각인가요, 몸 회전 속에서 팔을 기다리는 감각인가요? 두 연습을 어떻게 구분해야 할까요?",
+  "evidence": "원본 제목·설명란·몸 회전 및 벽 연습 화면을 확인해 핵심 정리",
+  "originalTitle": "팔로만 내리지 마세요!😡 #golfpro #golflesson #golfswing #golftips #골프연습 #골프프로 #이석영프로 #골프레슨 #골프스윙 #골프팁 #아이언스윙",
+  "channel": "이석영프로 [열정골프🔥]",
+  "duration": "1:30",
+  "durationSeconds": 90,
+  "presentation": "original"
 },
 {
   "id": "IsSS-GnQQyY",
@@ -127,9 +251,10 @@ window.GolfContent = {
   "connection": "준비·축 노트에서 숙임을 확인하고, 이 3D에서 어깨 회전과 임팩트 방향을 살펴보세요. 손목 임팩트 레슨으로 구조를 익힌 뒤 깡프로 영상으로 과한 긴장과 개인 리듬을 점검합니다.",
   "question": "저는 오른 어깨가 앞으로 덮치거나 몸이 먼저 펴지나요? 작은 스윙에서 페이스 방향과 공 앞쪽의 얕은 접촉을 함께 확인하고 싶어요.",
   "lesson3d": true,
-  "lessonHref": "media/golf3d/consistency.html?v=63",
+  "lessonHref": "media/golf3d/consistency.html?v=65",
   "lessonLabel": "60초 어깨·임팩트 3D 레슨 열기 →",
   "relatedVideoIds": [
+    "xUgGGs2Rh3w",
     "du58mmLNMnQ",
     "ULOLFCC-ly8",
     "uvgnUl93Twg"
@@ -350,7 +475,7 @@ window.GolfContent = {
       question: '저도 다운스윙에서 몸이 일찍 펴지나요? 클럽이 뒤로 처지는 것과 기존 노트의 지연은 어떻게 구분해야 하나요?'
     },
     {
-      id: 'RSbjGWhzEnQ', title: '팔은 이렇게 사용해야 합니다!', originalTitle: '팔은 이렇게 사용해야 합니다!',
+      id: 'RSbjGWhzEnQ', relatedVideoIds: ['S3fxUFBzfBo','Aj1UEMYPxBg','0EgzSDUsKvg'], title: '팔은 이렇게 사용해야 합니다!', originalTitle: '팔은 이렇게 사용해야 합니다!',
       channel: '세계유명 골프정보', duration: '1:38', topics: ['팔·타이밍', '회전·순서'],
       evidence: '자동자막을 바탕으로 정리',
       summary: '어깨와 손으로 먼저 달려들기보다, 중심축 방향으로 팔과 클럽을 내린 뒤 회전을 연결하는 감각을 설명합니다.',
@@ -370,12 +495,21 @@ window.GolfContent.presentationFor = v => v.presentation === 'original' || windo
 window.GolfContent.modelOptionFor = v => {
   if (!v || v.id === 'UA-HYcmiKTA') return null;
   if (v.lesson3d) return {
-    href: (v.lessonHref || 'media/golf3d/lesson.html?v=63'),
+    href: (v.lessonHref || 'media/golf3d/lesson.html?v=65'),
     detail: '영상의 원리를 재구성한 60초 레슨', kind: 'lesson'
   };
   const driver = v.id === '-h77kU-fpjg';
   return {
-    href: `media/golf3d/viewer.html?exercise=${driver ? 'golf_driver' : 'golf_iron7'}&source=${encodeURIComponent(v.id)}&v=63`,
+    href: `media/golf3d/viewer.html?exercise=${driver ? 'golf_driver' : 'golf_iron7'}&source=${encodeURIComponent(v.id)}&v=65`,
     detail: `공통 ${driver ? '드라이버' : '7번 아이언'} 스윙 예시`, kind: 'example'
   };
 };
+
+// Primary groups are separate from cross-cutting topic tags: each video appears once.
+window.GolfContent.videoGroups = [
+  {id:'pro-swings',title:'프로 스윙 시범',description:'실제 선수의 스윙을 보고 전체 흐름과 타이밍을 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
+  {id:'setup',title:'준비·자세',description:'에이밍, 정렬, 척추 기울기와 자세를 확인합니다.',videoIds:['UA-HYcmiKTA','uvgnUl93Twg']},
+  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg']},
+  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ']}
+];
+window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));

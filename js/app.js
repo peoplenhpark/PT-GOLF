@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '63';
+  const ASSET_VER = '65';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -130,7 +130,7 @@ const Theme = (() => {
       return `<div class="part ${p.id}" data-part-open="${p.id}">
         <div class="ico">${p.icon}</div>
         <div><div class="nm">${esc(p.label)}</div>
-        <div class="cnt">${p.id === 'golf' ? '스윙 노트 · 레슨 · 유튜브' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
+        <div class="cnt">${p.id === 'golf' ? '유튜브 · 레슨 · 스윙 노트' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
       </div>`;
     }).join('');
 
@@ -152,7 +152,7 @@ const Theme = (() => {
   }
 
   function renderPart(part) {
-    if (part === 'golf') return GolfHub.render({ ...view, golfTab: 'notes', golfId: null }, golfConfig());
+    if (part === 'golf') return GolfHub.render({ ...view, golfTab: 'videos', golfId: null }, golfConfig());
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
     const activeCat = view.cat && cats.includes(view.cat) ? view.cat : (cats[0] || null);
@@ -449,8 +449,9 @@ const Theme = (() => {
     if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null, calYear: view.calYear, calMonth: view.calMonth }; }
     if (name === 'calendar') { view.part = null; view.id = null; }
     const hash = view.name === 'detail' ? '#exercise/' + view.id :
-      view.name === 'golf-hub' ? '#golf/' + (view.golfTab || 'notes') + (view.golfId ? '/' + encodeURIComponent(view.golfId) : '') :
-      view.name === 'part' && view.part === 'golf' ? '#golf/notes' : '';
+      view.name === 'golf-hub' && view.golfTab === 'videos' && !view.golfId && view.golfGroup ? '#golf/group/' + encodeURIComponent(view.golfGroup) :
+      view.name === 'golf-hub' ? '#golf/' + (view.golfTab || 'videos') + (view.golfId ? '/' + encodeURIComponent(view.golfId) : '') :
+      view.name === 'part' && view.part === 'golf' ? '#golf/videos' : '';
     history.replaceState(null, '', location.pathname + location.search + hash);
     window.scrollTo(0, 0);
     render();

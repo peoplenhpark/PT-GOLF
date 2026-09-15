@@ -16,6 +16,6 @@
   const original=document.createElement('a');original.href=`https://www.youtube.com/watch?v=${source.id}`;original.target='_blank';original.rel='noopener noreferrer';original.textContent='원본 영상 보기 ↗';
   nav.append(current,original);
   const caption=document.createElement('p');caption.textContent=`${detail} · 원본 선수의 외형·동작 복원이 아닙니다.`;
-  const back=document.createElement('a');back.className='model-source-detail';back.href=`../../index.html?v=63#golf/videos/${source.id}`;back.textContent=`관련 영상·설명: ${source.title} →`;
+  const back=document.createElement('a');back.className='model-source-detail';back.href=`../../index.html?v=65#golf/videos/${source.id}`;back.textContent=`관련 영상·설명: ${source.title} →`;
   section.append(nav,caption,back);document.body.prepend(section);
 })();
