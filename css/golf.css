@@ -37,3 +37,5 @@
 .fab[hidden]{display:none}
 
 .g-link{text-decoration:none}
+
+.g-view-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 8px}.g-view-option{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:16px 12px;border:1px solid var(--golf-line);border-radius:13px;background:var(--golf-bg);min-width:0;min-height:94px}.g-view-option strong{font-size:16px;font-weight:800;line-height:1.5}.g-view-option span{font-size:12px;font-weight:500;line-height:1.6;color:var(--sub)}.g-view-option:hover{border-color:var(--golf)}.g-view-compact .g-view-option{padding:12px 10px}.g-view-compact strong{font-size:14px}.g-view-unavailable{background:var(--card);border-color:var(--line);color:var(--sub)}.g-view-note{margin:8px 0 16px}

@@ -1,30 +1,42 @@
 /* sw.js — 오프라인 캐시 (앱 셸 + 데이터)
    콘텐츠 수정 시 CACHE 버전을 올리면 갱신됩니다. */
-const CACHE = 'ptgolf-v60';
+const CACHE = 'ptgolf-v63';
 const ASSETS = [
   './',
   './index.html',
   './css/style.css',
   './js/store.js',
   './js/app.js',
-  './css/golf.css?v=60',
-  './js/golf-data.js?v=60',
-  './js/golf.js?v=60',
-  './js/exercise-media.js?v=60',
-  './media/golf3d/viewer.html?v=60',
-  './media/golf3d/viewer.css?v=60',
-  './media/golf3d/motion.js?v=60',
-  './media/golf3d/poses.js?v=60',
-  './media/golf3d/viewer.js?v=60',
-  './media/golf3d/lesson.html?v=60',
-  './media/golf3d/lesson.css?v=60',
-  './media/golf3d/lesson.js?v=60',
-  './media/golf3d/consistency.html?v=60',
-  './media/golf3d/consistency.js?v=60',
-  './media/golf3d/training.html?v=60',
-  './media/3d/viewer.html?v=60',
-  './media/3d/poses.js?v=60',
-  './media/3d/viewer.js?v=60',
+  './css/golf.css?v=63',
+  './js/golf-data.js?v=63',
+  './js/golf.js?v=63',
+  './js/exercise-media.js?v=63',
+  './media/golf3d/viewer.html?v=63',
+  './media/golf3d/viewer.css?v=63',
+  './media/golf3d/motion.js?v=63',
+  './media/golf3d/poses.js?v=63',
+  './media/golf3d/viewer.js?v=63',
+  './media/golf3d/player.js?v=63',
+  './media/golf3d/view-options.js?v=63',
+  './media/golf3d/player/player.json',
+  './media/golf3d/player/player.bin',
+  './media/golf3d/player/body-color.webp',
+  './media/golf3d/player/body-normal.webp',
+  './media/golf3d/player/head-color.webp',
+  './media/golf3d/player/head-normal.webp',
+  './media/golf3d/player/opacity-color.webp',
+  './media/golf3d/lesson.html?v=63',
+  './media/golf3d/lesson.css?v=63',
+  './media/golf3d/lesson.js?v=63',
+  './media/golf3d/consistency.html?v=63',
+  './media/golf3d/consistency.js?v=63',
+  './media/golf3d/training.html?v=63',
+  './media/golf3d/original.html?v=63',
+  './media/golf3d/original.css?v=63',
+  './media/golf3d/original.js?v=63',
+  './media/3d/viewer.html?v=63',
+  './media/3d/poses.js?v=63',
+  './media/3d/viewer.js?v=63',
   './data/seed.json',
   './manifest.webmanifest',
   './icon.svg',
@@ -71,9 +83,9 @@ const ASSETS = [
   './docs/images/42_sldl.svg',
   './docs/images/43_chestpress.svg',
   './docs/images/44_pecdeck.svg',
-  './samples/pushdown-3d/combined-start.png?v=60',
-  './samples/pushdown-3d/combined-end.png?v=60',
-  './samples/pushdown-3d/viewer.html?v=60',
+  './samples/pushdown-3d/combined-start.png?v=63',
+  './samples/pushdown-3d/combined-end.png?v=63',
+  './samples/pushdown-3d/viewer.html?v=63',
   './samples/pushdown-3d/three.min.js',
   './samples/pushdown-3d/pushdown.js'
 ];
@@ -91,7 +103,8 @@ self.addEventListener('activate', (e) => {
 
 // 네트워크 우선(최신 seed 반영) → 실패 시 캐시 폴백
 self.addEventListener('fetch', (e) => {
-  if (e.request.method !== 'GET') return;
+  // Let the browser handle external players and their origin/referrer requirements.
+  if (e.request.method !== 'GET' || new URL(e.request.url).origin !== self.location.origin) return;
   e.respondWith(
     fetch(e.request)
       .then(res => {

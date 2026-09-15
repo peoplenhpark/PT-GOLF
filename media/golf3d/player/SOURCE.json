@@ -1,0 +1,9 @@
+{
+  "model": "Microsoft Rocketbox Male_Adult_01",
+  "source": "https://github.com/microsoft/Microsoft-Rocketbox/tree/master/Assets/Avatars/Adults/Male_Adult_01",
+  "license": "MIT",
+  "sourceFbxSha256": "8d1edb51b4dc3427ae2456f4407fc105532c145dd019e53cd42bab31cc948a29",
+  "conversion": "Three.js FBXLoader 0.160.1; centimeter to meter; binary skinned mesh; 1024px WebP textures",
+  "motion": "CMU64_01, existing GolfPoses; procedural skeletal retargeting",
+  "specificPerson": false
+}

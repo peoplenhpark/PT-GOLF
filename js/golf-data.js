@@ -14,6 +14,8 @@ window.GolfContent = {
   videos: [
 {
   "id": "bfMsJtV61hM",
+  "sampleHref": "media/golf3d/original.html?v=63",
+  "sampleLabel": "실제 선수로 보기 · 원본 동작 + 관찰 설명 →",
   "title": "김민지5 프로 · 정면·좌측면 슬로모션 스윙",
   "originalTitle": "정면과 좌측면 슬로우모션 스윙100번 보면 비로소 보입니다. 🔥🔥김민지5 프로 Instagram@minji_five",
   "channel": "골족남TV",
@@ -125,7 +127,7 @@ window.GolfContent = {
   "connection": "준비·축 노트에서 숙임을 확인하고, 이 3D에서 어깨 회전과 임팩트 방향을 살펴보세요. 손목 임팩트 레슨으로 구조를 익힌 뒤 깡프로 영상으로 과한 긴장과 개인 리듬을 점검합니다.",
   "question": "저는 오른 어깨가 앞으로 덮치거나 몸이 먼저 펴지나요? 작은 스윙에서 페이스 방향과 공 앞쪽의 얕은 접촉을 함께 확인하고 싶어요.",
   "lesson3d": true,
-  "lessonHref": "media/golf3d/consistency.html?v=60",
+  "lessonHref": "media/golf3d/consistency.html?v=63",
   "lessonLabel": "60초 어깨·임팩트 3D 레슨 열기 →",
   "relatedVideoIds": [
     "du58mmLNMnQ",
@@ -363,3 +365,17 @@ window.GolfContent = {
 // Three minutes is inclusive. Explicit original preference overrides 3D.
 window.GolfContent.durationSeconds = v => v.durationSeconds ?? v.duration.split(':').reduce((seconds, part) => seconds * 60 + Number(part), 0);
 window.GolfContent.presentationFor = v => v.presentation === 'original' || window.GolfContent.durationSeconds(v) <= window.GolfContent.originalMaxSeconds ? 'original' : v.lesson3d ? '3d' : 'original';
+
+// A viewing option does not change the original/edited duration policy.
+window.GolfContent.modelOptionFor = v => {
+  if (!v || v.id === 'UA-HYcmiKTA') return null;
+  if (v.lesson3d) return {
+    href: (v.lessonHref || 'media/golf3d/lesson.html?v=63'),
+    detail: '영상의 원리를 재구성한 60초 레슨', kind: 'lesson'
+  };
+  const driver = v.id === '-h77kU-fpjg';
+  return {
+    href: `media/golf3d/viewer.html?exercise=${driver ? 'golf_driver' : 'golf_iron7'}&source=${encodeURIComponent(v.id)}&v=63`,
+    detail: `공통 ${driver ? '드라이버' : '7번 아이언'} 스윙 예시`, kind: 'example'
+  };
+};

@@ -39,9 +39,16 @@ window.GolfHub = (() => {
   const paras = text => `<p class="g-pre">${e(text)}</p>`;
   const activeFocus = id => state.focus.filter(f => f.active && (!id || f.noteId === id) && Store.getById(f.noteId));
   const focusRow = f => `<div class="g-focus-item"><p>${e(f.text)}</p><div class="g-meta">${link('notes',f.noteId)} · 출처 ${link(f.kind,f.sourceId)}</div>${button('unpin','집중 항목 해제',`data-id="${e(f.id)}"`)}</div>`;
+  function viewOptions(v,compact=false) {
+    const model=content.modelOptionFor(v);
+    return `<div class="g-view-options ${compact?'g-view-compact':''}" role="group" aria-label="${e(v.title)} 보기 방법">
+      ${model?`<a class="g-view-option" href="${e(model.href)}"><strong>실사형 3D로 보기</strong><span>${e(model.detail)}</span></a>`:'<div class="g-view-option g-view-unavailable"><strong>3D 제공 안 함</strong><span>에이밍은 원본으로 확인</span></div>'}
+      <a class="g-view-option" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer"><strong>원본 영상 보기 ↗</strong><span>실제 선수·코치의 영상 · YouTube</span></a>
+    </div>${!compact&&model?'<p class="g-meta g-view-note">3D는 학습용 모델이며 원본 선수의 외형·동작을 그대로 복원한 것은 아닙니다.</p>':''}`;
+  }
   function card(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)}${content.presentationFor(v)==='original'?' · 원본 + 편집 설명':' · 3D 레슨'}${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}</article>`;
+    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)}${content.presentationFor(v)==='original'?' · 원본 + 편집 설명':' · 3D 레슨'}${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}</article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
@@ -109,11 +116,10 @@ window.GolfHub = (() => {
     const keepOriginal=content.presentationFor(v)==='original';
     layout(`<a class="back" href="#golf/videos">‹ 유튜브 목록</a><div class="g-meta">${e(v.channel)} · ${e(v.duration)}</div><h2 class="g-title">${e(v.title)}</h2>${chips(v.topics)}
       ${keepOriginal?'<p class="g-meta">'+(content.durationSeconds(v)<=content.originalMaxSeconds?'3분 이하 영상 · 원본과 편집 설명을 함께 봅니다.':'원본과 편집 설명으로 확인하는 영상입니다.')+'</p>':''}
-      <a class="g-link g-primary" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">YouTube에서 영상 보기 ↗</a>
+      ${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱 안에서 재생',`data-id="${e(id)}"`)}<span>재생할 때 YouTube에 연결됩니다.</span></div>
       <a class="g-link" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">영상이 보이지 않으면 YouTube에서 열기 ↗</a>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>
-      ${!keepOriginal?`<a class="g-link g-primary" href="${e(v.lessonHref || 'media/golf3d/lesson.html?v=60')}">${e(v.lessonLabel || '60초 임팩트 3D 레슨 열기 →')}</a>`:''}
       ${block('영상 핵심',paras(v.summary)+`<ul>${v.points.map(p=>`<li>${e(p)}</li>`).join('')}</ul><p class="g-meta">${e(v.evidence)}</p>`)}
       ${block('내 스윙과 연결',paras(v.connection)+noteLinks(relatedIds))}
       ${v.relatedVideoIds?block('다음 동작으로 연결',v.relatedVideoIds.map(video).filter(Boolean).map(card).join('')):''}

@@ -18,3 +18,7 @@ button[aria-pressed=true]{background:#d4e9b3;color:#18392b;border-color:#d4e9b3}
 .footnote a{color:#cadbba;text-decoration:underline}
 
 .lesson-entry{display:block;padding:12px;margin-bottom:14px;border:1px solid #648a77;border-radius:10px;background:#203c33;color:#ddedc5;text-decoration:none;font-weight:650}
+
+.player-status{position:absolute;inset:0;display:grid;place-items:center;background:#e7eeebed;color:#294944;font-size:16px;font-weight:700;z-index:5;padding:24px;text-align:center}
+
+.model-options{margin:0 0 18px;border:1px solid #486453;border-radius:13px;padding:12px;background:#142b25}.model-options nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.model-options nav>*{display:flex;align-items:center;justify-content:center;text-align:center;padding:12px 8px;min-height:48px;border:1px solid #829a70;border-radius:8px;color:#e0ebd6;font-size:15px;font-weight:800;text-decoration:none;line-height:1.5}.model-options .model-option-current{background:#d6e8b9;color:#203c2b}.model-options p{font-size:12px;line-height:1.7;color:#b9cbbb;margin:10px 0 5px}.model-source-detail{display:block;color:#d0e6b4;font-size:12px;line-height:1.7;padding:5px 0}.model-options a:focus-visible{outline:3px solid #e2d092;outline-offset:3px}

@@ -54,3 +54,13 @@ Run `tests/golf-3d.cjs` against a locally served checkout. It checks fixed limb 
 ## v60 일관성 레슨 표현 교체 (v58 별도 모형을 대체)
 
 사용자 요청으로 consistency.html/js의 추상 어깨·클럽 모형을 제거했다. 모든 장면은 기존 CMU64_01 골퍼의 동일한 연속 동작을 사용한다. 상체 확대는 골퍼의 양쪽 어깨와 몸통 축을, 임팩트 확대는 골퍼·손·클럽헤드와 짧은 실측 헤드 궤적을 함께 보여준다. 모션 데이터 자체는 수정하지 않았다. 색상·축은 교육용 안내이며 영상 속 강사의 동작을 측정하거나 그대로 재현한 것이 아니다. 원본 출처·7단계60초 설명 및 시점 링크는 유지한다.
+
+
+## v61 실사형 골퍼
+
+- 인물: Microsoft Rocketbox `Male_Adult_01`, https://github.com/microsoft/Microsoft-Rocketbox/tree/master/Assets/Avatars/Adults/Male_Adult_01 . 공식 MIT 라이선스는 player/LICENSE.md에 포함. 특정 프로 선수의 외형이나 사용자의 아바타가 아니다.
+- 원본 FBX는 Three.js0.160.1 FBXLoader로 변환. tools/build_golf_player.mjs가 모델 골격·스키닝 가중치·메시를 player.json/player.bin으로 내보낸다.80개 뼈,22,320개 비색인 정점(7,440삼각형). 원본 출처·SHA256는 player/SOURCE.json에 기록.
+- 2K TGA 색상/노멀/알파 텍스처를 최대1024px WebP로 변환. 라이선스·메타데이터 포함 전체약2.0MB. 런타임은 추가 로더 라이브러리 없이 기존 Three.js SkinnedMesh/Skeleton을 사용한다.
+- player.js는 기존 CMU64_01의 골반·척추·어깨·팔·발을 인물 골격에 맞춰 재지정한다. 텍스처가 있는 손과 손가락을 그립 형태로 굽히며, 손목은 기록된 손 위치 주변에서 연결한다. 인물 체형에 맞춘 재타기팅이므로 원본 인체 치수를 그대로 측정·재현한 것으로 표현하지 않는다.
+- 기존 클럽·공·스윙 데이터는 유지. 네 클럽의 스윙 노트, 손목 레슨의 전신, 일관성 레슨의 모든 골퍼 장면에 공통 적용. 손목 원리의 별도 확대 모형은 보조 설명으로 유지.
+- 검증 명령: `node tests/golf-player.cjs <three-0.160.1-package-directory>` .4,004개포즈×80개뼈의 유한 행렬·연속성 및 스킨 정점 샘플 검사. 최대 인접관절 이동0.0175m,회전0.0787rad미만,손목–그립거리0.062m미만.

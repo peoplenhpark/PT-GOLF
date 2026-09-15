@@ -1,0 +1,30 @@
+{
+  "version": 61,
+  "model": "Microsoft Rocketbox Male_Adult_01",
+  "license": "MIT",
+  "geometryVertices": 22320,
+  "bones": 80,
+  "assetBytes": 2002894,
+  "poseSamples": 4004,
+  "maxBoneStepMeters": 0.01747395480677343,
+  "maxRotationStepRadians": 0.07861057635507086,
+  "maxWristGripDistanceMeters": 0.061560718934400634,
+  "finiteSkinnedVertices": true,
+  "browser": {
+    "width": 390,
+    "clubs": 4,
+    "stagesPerClub": [
+      "address",
+      "impact",
+      "finish"
+    ],
+    "allRealistic": true,
+    "horizontalOverflow": false,
+    "consistencyChapters": 7,
+    "pointsPerChapter": 3,
+    "wristDiagramPreserved": true,
+    "appIframeVerified": true,
+    "playPauseVerified": true
+  },
+  "deployment": "local only; live remains v60"
+}

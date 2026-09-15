@@ -22,6 +22,7 @@ const material=(color,roughness=.8)=>new T.MeshStandardMaterial({color,roughness
 const mat={shirt:material(0x247b73),skin:material(0xd69b72),pants:material(0x334552),shoe:material(0xf5f5e9),sole:material(0x2c403b),glove:material(0xf8fffa),cap:material(0xf2eee0),dark:material(0x1b3030),shaft:material(0x47595f,.32),grip:material(0x182c29),head:material(0x213439,.3),metal:material(0x80948f,.3)};
 const ballMat=material(0xffffff),body=new T.Group();scene.add(body);
 const sphere=new T.SphereGeometry(1,24,18),axis=new T.Vector3(0,1,0);
+let player=null;const playerStatus=document.createElement('div');playerStatus.className='player-status';playerStatus.textContent='실사형 골퍼 불러오는 중…';$('viewport').appendChild(playerStatus);
 const objects={};
 function obj(name,geometry,material,group=body){const m=new T.Mesh(geometry,material);m.castShadow=true;m.receiveShadow=group===scene;group.add(m);objects[name]=m;return m;}
 function ell(name,at,scale,material,quaternion){const m=objects[name]||obj(name,sphere,material);m.position.copy(vec(at));m.scale.set(...scale);m.quaternion.copy(quaternion||new T.Quaternion());return m;}
@@ -63,10 +64,10 @@ if(lessonEnabled){
 }
 if(lessonEnabled){for(let i=0;i<=80;i++){const p=P.pose(id,.708+i/80*.034);focusFrames.impact.push(...[p.head,p.hip,p.grip,p.tip,p.ball,...p.ankles].map(vec));}}
 const teaching=new T.Group();scene.add(teaching);teaching.visible=false;
-const leadGuide=new T.MeshBasicMaterial({color:0x24a7ef,transparent:true,opacity:.8,depthTest:false});
-const trailGuide=new T.MeshBasicMaterial({color:0xf18a30,transparent:true,opacity:.8,depthTest:false});
+const leadGuide=new T.MeshBasicMaterial({color:0x24a7ef,transparent:true,opacity:.6,depthTest:false});
+const trailGuide=new T.MeshBasicMaterial({color:0xf18a30,transparent:true,opacity:.6,depthTest:false});
 const axisGuide=new T.MeshBasicMaterial({color:0xd5a20b,transparent:true,opacity:.8,depthTest:false});
-const guideSpheres=lessonEnabled?[leadGuide,trailGuide].map(m=>{const o=new T.Mesh(sphere,m);o.scale.setScalar(.082);o.renderOrder=5;teaching.add(o);return o;}):[];
+const guideSpheres=lessonEnabled?[leadGuide,trailGuide].map(m=>{const o=new T.Mesh(sphere,m);o.scale.setScalar(.055);o.renderOrder=5;teaching.add(o);return o;}):[];
 const spineGuide=lessonEnabled?new T.Mesh(new T.CylinderGeometry(.009,.009,1,12),axisGuide):null;
 if(spineGuide){teaching.add(spineGuide);spineGuide.renderOrder=5;}
 const headGlow=lessonEnabled?new T.Mesh(new T.SphereGeometry(.058,20,12),new T.MeshBasicMaterial({color:0xf0bf35,wireframe:true,transparent:true,opacity:.85,depthTest:false})):null;
@@ -125,6 +126,7 @@ function render(){
  const offset=new T.Vector3().setFromMatrixColumn(camera.matrixWorld,0).multiplyScalar((minX+maxX)/2).add(new T.Vector3().setFromMatrixColumn(camera.matrixWorld,1).multiplyScalar((minY+maxY)/2));
  camera.position.add(offset);camera.lookAt(target.clone().add(offset));
  camera.left=-height*camera.aspect/2;camera.right=height*camera.aspect/2;camera.top=height/2;camera.bottom=-height/2;camera.updateProjectionMatrix();
+ if(player){player.pose(p);headGroup.visible=false;for(const [name,m] of Object.entries(objects))if(m.parent===body)m.visible=['shaft','grip','clubHead','tee'].includes(name);canvas.dataset.player='rocketbox-realistic';}
  teach(p);
  renderer.render(scene,camera);
  const arrowPoint=new T.Vector3(.85,.01,1.12).project(camera);
@@ -161,4 +163,5 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden)setPlaying(
 let previous=performance.now();function tick(now){const dt=Math.min((now-previous)/1000,.05);previous=now;if(playing){phase=Math.min(1,phase+dt*speed/P.duration);if(phase>=1)setPlaying(false);render();}requestAnimationFrame(tick);}requestAnimationFrame(tick);
 window.exerciseViewer={setLessonFocus(value){if(!lessonEnabled||!['body','shoulder','impact'].includes(value))return;lessonFocus=value;distance=1;yaw=value==='shoulder'?.25:value==='impact'?.05:.38;pitch=.13;render();},setPhase(value){phase=clamp(value,0,1);setPlaying(false);render();},snapshot:()=>({id,kind:'golf',renderer:'golf-mocap-v2',phase,playing,pose:current,yaw,distance,meshCount:body.children.length,camera:{position:camera.position.toArray(),zoom:camera.zoom,left:camera.left,right:camera.right,top:camera.top,bottom:camera.bottom},projected:[current.head,current.tip,...current.ankles].map(p=>vec(p).project(camera).toArray())})};
 render();notifyHeight();
+if(window.GolfPlayer){window.GolfPlayer.create().then(value=>{player=value;scene.add(player.group);playerStatus.hidden=true;render();}).catch(error=>{playerStatus.textContent='인물 모델을 불러오지 못했습니다. 새로고침해 주세요.';canvas.dataset.player='unavailable';console.error(error);});}else{playerStatus.hidden=true;}
 })();
