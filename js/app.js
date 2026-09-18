@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '65';
+  const ASSET_VER = '66';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -293,12 +293,12 @@ const Theme = (() => {
         <figure class="guide-shot">
           <div class="guide-shot-title"><b>준비</b> 몸과 팔꿈치 고정</div>
           <img src="${base}combined-start.png?v=${ASSET_VER}" alt="팔꿈치를 몸 옆에 고정하고 손잡이를 잡은 준비 자세" decoding="async">
-          <figcaption>기구 가까이 서서<br>팔꿈치를 몸 옆에.<small>손잡이를 잡고 배에 힘을 줍니다.</small></figcaption>
+          <figcaption>상체를 살짝 숙이고<br>팔꿈치를 몸 옆에.<small>가슴·골반을 고정하고 케이블 장력을 받습니다.</small></figcaption>
         </figure>
         <figure class="guide-shot">
           <div class="guide-shot-title"><b>팔 펴기</b> 삼두의 조임</div>
           <img src="${base}combined-end.png?v=${ASSET_VER}" alt="팔꿈치는 같은 자리에 두고 팔을 아래로 편 자세, 삼두근을 붉게 표시" decoding="async">
-          <figcaption>몸통은 그대로,<br>팔만 아래로 펴세요.<small>팔 뒤쪽이 조이는 느낌을 찾습니다.</small></figcaption>
+          <figcaption>몸통은 그대로,<br>팔을 아래로 펴세요.<small>돌아올 때도 천천히 장력을 버팁니다.</small></figcaption>
         </figure>
       </div>
     </section>
@@ -357,7 +357,7 @@ const Theme = (() => {
     const e = Store.getById(id);
     if (!e) { go('home'); return; }
     const isGolf = e.part === 'golf';
-    const hasMedia = !!window.ExerciseMedia?.[e.id];
+    const hasMedia = !isGolf && !!window.ExerciseMedia?.[e.id];
     const c = checks[id] || (checks[id] = new Set());
 
     const cues = (e.cues || []).map((cue, i) => `
@@ -408,7 +408,7 @@ const Theme = (() => {
           ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
         </div>` : ''}
 
-        ${!hasMedia && e.image ? `<div class="ex-figure">
+        ${!isGolf && !hasMedia && e.image ? `<div class="ex-figure">
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 

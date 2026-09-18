@@ -14,8 +14,6 @@ window.GolfContent = {
   videos: [
 {
   "id": "bfMsJtV61hM",
-  "sampleHref": "media/golf3d/original.html?v=65",
-  "sampleLabel": "실제 선수로 보기 · 원본 동작 + 관찰 설명 →",
   "title": "김민지5 프로 · 정면·좌측면 슬로모션 스윙",
   "originalTitle": "정면과 좌측면 슬로우모션 스윙100번 보면 비로소 보입니다. 🔥🔥김민지5 프로 Instagram@minji_five",
   "channel": "골족남TV",
@@ -40,7 +38,7 @@ window.GolfContent = {
       "label": "0:00 · 정면·좌측면 슬로모션 전체 보기"
     }
   ],
-  "connection": "어깨·임팩트 3D에서 원리를 살펴본 뒤 실제 스윙의 흐름과 비교해 보세요. 손목 임팩트 레슨과도 연결하고, 내 자세와 다른 부분은 스윙 노트에 남깁니다.",
+  "connection": "어깨·임팩트 원본 영상에서 원리를 살펴본 뒤 실제 스윙의 흐름과 비교해 보세요. 손목 임팩트 레슨과도 연결하고, 내 자세와 다른 부분은 스윙 노트에 남깁니다.",
   "question": "정면과 측면에서 제 스윙을 촬영하면 어깨·골반·팔의 연결에서 어떤 차이를 먼저 확인하면 좋을까요?",
   "relatedVideoIds": [
     "IsSS-GnQQyY",
@@ -114,7 +112,7 @@ window.GolfContent = {
     "S3fxUFBzfBo",
     "RSbjGWhzEnQ"
   ],
-  "connection": "헤드를 던지는 감각 영상과 함께 가속 방향을 비교하고, 팔로만 내리지 않는 연습으로 몸과 팔의 연결을 확인하세요. 공통 3D는 전체 흐름을 관찰하는 보조 예시입니다.",
+  "connection": "헤드를 던지는 감각 영상과 함께 가속 방향을 비교하고, 팔로만 내리지 않는 연습으로 몸과 팔의 연결을 확인하세요.",
   "question": "제 다운스윙에서 오른팔이 몸 옆으로 빠지나요? 가슴 앞에 두는 느낌과 몸의 회전을 어떻게 연결하면 좋을까요?",
   "evidence": "원본 제목·재생 화면의 자막·오른팔 시범을 확인해 핵심 정리",
   "originalTitle": "클럽 가속을 위한 오른팔 핵심포인트",
@@ -217,7 +215,7 @@ window.GolfContent = {
     "회전·순서",
     "팔·타이밍"
   ],
-  "evidence": "원본 공개 자막 확인 · 3분 초과 → 60초 교육용 3D 재구성",
+  "evidence": "원본 공개 자막을 확인해 정리",
   "summary": "기울어진 척추를 중심으로 어깨를 회전하고, 임팩트 부근에서 페이스가 목표 방향으로 짧게 통과하는 감각을 익힙니다. 작은 스윙부터 몸과 팔의 흐름을 연결합니다.",
   "points": [
     "임팩트 전후의 짧은 구간에서 페이스가 목표 쪽으로 통과하는 느낌을 연습합니다. 다운스윙 전체에서 페이스를 고정하지 않습니다.",
@@ -248,11 +246,8 @@ window.GolfContent = {
       "label": "8:00 · 오른팔꿈치와 어깨"
     }
   ],
-  "connection": "준비·축 노트에서 숙임을 확인하고, 이 3D에서 어깨 회전과 임팩트 방향을 살펴보세요. 손목 임팩트 레슨으로 구조를 익힌 뒤 깡프로 영상으로 과한 긴장과 개인 리듬을 점검합니다.",
+  "connection": "준비·축 노트에서 숙임을 확인하고, 원본 영상에서 어깨 회전과 임팩트 방향을 살펴보세요. 손목 임팩트 레슨으로 구조를 익힌 뒤 깡프로 영상으로 과한 긴장과 개인 리듬을 점검합니다.",
   "question": "저는 오른 어깨가 앞으로 덮치거나 몸이 먼저 펴지나요? 작은 스윙에서 페이스 방향과 공 앞쪽의 얕은 접촉을 함께 확인하고 싶어요.",
-  "lesson3d": true,
-  "lessonHref": "media/golf3d/consistency.html?v=65",
-  "lessonLabel": "60초 어깨·임팩트 3D 레슨 열기 →",
   "relatedVideoIds": [
     "xUgGGs2Rh3w",
     "du58mmLNMnQ",
@@ -304,7 +299,7 @@ window.GolfContent = {
       "label": "1:19 · 개인 힘·타이밍 찾기"
     }
   ],
-  "connection": "체중이동 영상의 지지·회전 순서에 이완 감각을 더합니다. 어깨 회전 3D와 손목 레슨에서 만든 구조를 유지하면서, 지나치게 붙잡는 힘만 줄여 보세요. 연습 결과는 스윙 노트에 기록하고 개인 레슨에서 확인합니다.",
+  "connection": "체중이동 영상의 지지·회전 순서에 이완 감각을 더합니다. 어깨 회전 영상과 손목 레슨에서 만든 구조를 유지하면서, 지나치게 붙잡는 힘만 줄여 보세요. 연습 결과는 스윙 노트에 기록하고 개인 레슨에서 확인합니다.",
   "question": "저는 언제부터 클럽을 과하게 붙잡고 끌고 오나요? 그립과 손목 구조를 유지하면서 긴장을 덜어낼 개인 타이밍을 확인하고 싶어요.",
   "relatedVideoIds": [
     "CA-TZ7WQlHY",
@@ -422,7 +417,7 @@ window.GolfContent = {
         "팔·타이밍",
         "회전·순서"
     ],
-    "evidence": "원본 자막 및 임팩트 시범 화면을 확인해 정리 · 60초 교육용 3D 연결",
+    "evidence": "원본 자막 및 임팩트 시범 화면을 확인해 정리",
     "summary": "오른손목 힌지가 일찍 풀리지 않도록 하며 왼손목을 점진적으로 말고, 몸의 회전과 연결해 핸드포워드 임팩트를 만드는 레슨입니다.",
     "points": [
         "백스윙 톱에서 내려오며 오른손목 힌지가 너무 일찍 풀리지 않게 하기.",
@@ -449,9 +444,8 @@ window.GolfContent = {
             "label": "8:14 · 보잉의 느낌과 실제 자세"
         }
     ],
-    "connection": "7번 아이언의 임팩트 연습과 연결됩니다. 60초 3D에서 전신 흐름과 손목 원리를 살펴본 뒤, 내 손목이 일찍 풀리는지 레슨에서 확인하세요.",
-    "question": "제 아이언 스윙도 손목이 일찍 풀리나요? 힌지 유지와 왼손목 동작을 몸의 회전과 어떻게 연결해야 할까요?",
-    "lesson3d": true
+    "connection": "7번 아이언의 임팩트 연습과 연결됩니다. 원본 영상에서 전신 흐름과 손목 원리를 살펴본 뒤, 내 손목이 일찍 풀리는지 레슨에서 확인하세요.",
+    "question": "제 아이언 스윙도 손목이 일찍 풀리나요? 힌지 유지와 왼손목 동작을 몸의 회전과 어떻게 연결해야 할까요?"
 },
     {
       id: '0EgzSDUsKvg', title: '상하체를 정확하게 쓰는 스윙 순서',
@@ -487,23 +481,9 @@ window.GolfContent = {
   ]
 };
 
-// Three minutes is inclusive. Explicit original preference overrides 3D.
+// Every golf video is available as its original with editorial notes.
 window.GolfContent.durationSeconds = v => v.durationSeconds ?? v.duration.split(':').reduce((seconds, part) => seconds * 60 + Number(part), 0);
-window.GolfContent.presentationFor = v => v.presentation === 'original' || window.GolfContent.durationSeconds(v) <= window.GolfContent.originalMaxSeconds ? 'original' : v.lesson3d ? '3d' : 'original';
-
-// A viewing option does not change the original/edited duration policy.
-window.GolfContent.modelOptionFor = v => {
-  if (!v || v.id === 'UA-HYcmiKTA') return null;
-  if (v.lesson3d) return {
-    href: (v.lessonHref || 'media/golf3d/lesson.html?v=65'),
-    detail: '영상의 원리를 재구성한 60초 레슨', kind: 'lesson'
-  };
-  const driver = v.id === '-h77kU-fpjg';
-  return {
-    href: `media/golf3d/viewer.html?exercise=${driver ? 'golf_driver' : 'golf_iron7'}&source=${encodeURIComponent(v.id)}&v=65`,
-    detail: `공통 ${driver ? '드라이버' : '7번 아이언'} 스윙 예시`, kind: 'example'
-  };
-};
+window.GolfContent.presentationFor = () => 'original';
 
 // Primary groups are separate from cross-cutting topic tags: each video appears once.
 window.GolfContent.videoGroups = [

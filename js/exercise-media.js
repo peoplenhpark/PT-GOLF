@@ -100,13 +100,13 @@ window.ExerciseMedia = {
       "겨드랑이 늘리며 넘기기"
     ],
     "notes": [
-      "⭐천장 보고 누워 손은 「세모」로 (양손으로 덤벨 한쪽을 감싸듯) — 이 그립이 밀고 있는 느낌을 만들어 준다",
-      "겨드랑이가 쭉 늘어나고 어깨가 부드럽게 돌아가는 느낌 — 허리가 꺾이면 실패"
+      "양손을 세모로 만들어 손바닥으로 받치고, 무릎과 골반을 고정한다",
+      "어깨를 밀어 편 채 천천히 넘긴다 — 뒤에서도 덤벨 무게를 받치며 버틴다"
     ],
     "focus": {
-      "muscle": "겨드랑이 라인(광배·대원근·전거근) + 어깨 가동",
-      "move": "어깨를 천장으로 편 상태를 유지한 채, 미는 느낌으로 뒤로 넘겼다 명치까지",
-      "feel": "겨드랑이가 쭉 늘어나고 어깨가 부드럽게 돌아가는 느낌 — 허리가 꺾이면 실패"
+      "muscle": "광배근·전거근·겨드랑이 라인 + 어깨·날개뼈 가동",
+      "move": "골반을 고정하고 어깨를 밀어 편 채, 덤벨을 손바닥으로 받치며 천천히 머리 뒤로 넘겼다 명치까지",
+      "feel": "뒤로 넘어가도 손바닥에 무게가 받쳐지고 겨드랑이가 길어지는 느낌"
     },
     "target": "chest",
     "images": [
@@ -965,98 +965,6 @@ window.ExerciseMedia = {
       "docs/images/guides/pt_sldl-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_sldl"
-  },
-  "golf_driver": {
-    "name": "드라이버",
-    "kind": "golf",
-    "captions": [
-      "골반 접고 축 잡기",
-      "체중이동 후 면으로 임팩트"
-    ],
-    "notes": [
-      "⛳ 준비: 골반 접기(힙힌지)로 견고하게",
-      "임팩트 순간 좌우 팔이 저항하며 면으로 「뒤에서 못 박듯」 맞는 느낌 — 임팩트 후 팔은 곧게"
-    ],
-    "focus": {
-      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
-      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
-      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 「뒤에서 못 박듯」 맞는 느낌 — 임팩트 후 팔은 곧게"
-    },
-    "target": "core",
-    "images": [
-      "docs/images/guides/golf_driver-start.webp",
-      "docs/images/guides/golf_driver-end.webp"
-    ],
-    "viewer": "media/golf3d/viewer.html?exercise=golf_driver"
-  },
-  "golf_iron7": {
-    "name": "7번 아이언",
-    "kind": "golf",
-    "captions": [
-      "골반 접고 축 잡기",
-      "왼발로 지지하며 면 타격"
-    ],
-    "notes": [
-      "⛳ 준비: 골반 접기(힙힌지)로 견고하게",
-      "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    ],
-    "focus": {
-      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
-      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
-      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    },
-    "target": "core",
-    "images": [
-      "docs/images/guides/golf_iron7-start.webp",
-      "docs/images/guides/golf_iron7-end.webp"
-    ],
-    "viewer": "media/golf3d/viewer.html?exercise=golf_iron7"
-  },
-  "golf_iron5": {
-    "name": "5번 아이언",
-    "kind": "golf",
-    "captions": [
-      "왼팔과 축을 안정시키기",
-      "체중 옮겨 면으로 타격"
-    ],
-    "notes": [
-      "⛳ 준비: 골반 접기(힙힌지)로 견고하게",
-      "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    ],
-    "focus": {
-      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
-      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
-      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    },
-    "target": "core",
-    "images": [
-      "docs/images/guides/golf_iron5-start.webp",
-      "docs/images/guides/golf_iron5-end.webp"
-    ],
-    "viewer": "media/golf3d/viewer.html?exercise=golf_iron5"
-  },
-  "golf_ironp": {
-    "name": "P 아이언 (피칭)",
-    "kind": "golf",
-    "captions": [
-      "짧은 클럽으로 중심 잡기",
-      "축 유지하며 면으로 타격"
-    ],
-    "notes": [
-      "⛳ 준비: 골반 접기(힙힌지)로 견고하게",
-      "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    ],
-    "focus": {
-      "muscle": "몸의 축 + 골반·몸통 회전 (손목·팔 개입 X)",
-      "move": "체중이동하며 손은 내리고 → 채가 수직 낙하할 때까지 기다렸다 몸통 회전 → 임팩트",
-      "feel": "임팩트 순간 좌우 팔이 저항하며 면으로 눌러 맞는 느낌 — 임팩트 후 팔은 곧게"
-    },
-    "target": "core",
-    "images": [
-      "docs/images/guides/golf_ironp-start.webp",
-      "docs/images/guides/golf_ironp-end.webp"
-    ],
-    "viewer": "media/golf3d/viewer.html?exercise=golf_ironp"
   },
   "pt_pushdown": {
     "name": "케이블 푸시다운",

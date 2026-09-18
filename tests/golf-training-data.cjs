@@ -1,37 +1,46 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
-const root=path.resolve(__dirname,'..'),ctx={window:{}};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(root,'js/golf-data.js'),'utf8'),ctx);const c=ctx.window.GolfContent;
-assert.equal(c.originalMaxSeconds,180);assert.equal(c.videos.length,13);
-for(const duration of ['2:00','2:46','2:59','3:00'])assert.equal(c.presentationFor({duration,lesson3d:true}),'original');
-assert.equal(c.presentationFor({duration:'3:01',lesson3d:true}),'3d');assert.equal(c.presentationFor({duration:'15:53',lesson3d:true,presentation:'original'}),'original');
-for(const id of ['UA-HYcmiKTA','CA-TZ7WQlHY']){const v=c.videos.find(v=>v.id===id);assert.equal(c.presentationFor(v),'original');assert(!v.trainingLesson);assert(!v.lesson3d);assert(v.points.length>=3);for(const linked of v.relatedVideoIds)assert(c.videos.some(x=>x.id===linked));}
-assert.equal(c.presentationFor(c.videos.find(v=>v.id==='du58mmLNMnQ')),'3d');
-for(const file of ['training.js','training.css','training-data.js'])assert(!fs.existsSync(path.join(root,'media/golf3d',file)));
-const sw=fs.readFileSync(path.join(root,'sw.js'),'utf8');for(const match of sw.matchAll(/'\.\/([^']*)'/g))assert(fs.existsSync(path.join(root,match[1].split('?')[0]||'index.html')));
-assert(!fs.readFileSync(path.join(root,'media/golf3d/lesson.html'),'utf8').includes('lesson=aiming'));
-console.log(JSON.stringify({originalLimitSeconds:180,inclusiveBoundary:true,aiming3dRemoved:true,shiftOriginal:true,impact3dPreserved:true,sourceAndNotesPreserved:true,cacheAssetsValid:true}));
-
-const long=c.videos.find(v=>v.id==='IsSS-GnQQyY'),short=c.videos.find(v=>v.id==='ULOLFCC-ly8');
-assert.equal(c.durationSeconds(long),611);assert.equal(c.presentationFor(long),'3d');
-assert.equal(c.durationSeconds(short),92);assert.equal(c.presentationFor(short),'original');assert(!short.lesson3d);
-assert(fs.existsSync(path.join(root,long.lessonHref.split('?')[0])));
-for(const v of c.videos){for(const id of v.relatedVideoIds||[])assert(c.videos.some(x=>x.id===id));for(const m of v.moments)assert(m.s>=0&&m.s<c.durationSeconds(v));}
-assert(short.relatedVideoIds.includes(long.id));assert(long.relatedVideoIds.includes(short.id));
-console.log('New sources: 611s → dedicated 3D, 92s → original; reciprocal links and source moments valid.');
-
-for(const [id,seconds] of [['Aj1UEMYPxBg',53],['xUgGGs2Rh3w',104],['S3fxUFBzfBo',90]]){
- const v=c.videos.find(v=>v.id===id);assert(v);assert.equal(c.durationSeconds(v),seconds);assert.equal(c.presentationFor(v),'original');assert.equal(c.modelOptionFor(v).kind,'example');assert(v.points.length>=3);
-}
-assert.equal(new Set(c.videos.map(v=>v.id)).size,13);
+const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);vm.runInContext(read('js/exercise-media.js'),ctx);
+const c=ctx.window.GolfContent,media=ctx.window.ExerciseMedia;
+assert.equal(c.videos.length,13);assert.equal(new Set(c.videos.map(v=>v.id)).size,13);
 assert.equal(c.videos[0].id,'bfMsJtV61hM');
-console.log('Three new original videos: verified durations, unique IDs, common 3D options and related links valid.');
-
-const groupedIds=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,4);
-assert.equal(new Set(c.videoGroups.map(g=>g.id)).size,4);
-assert.equal(groupedIds.length,c.videos.length);
-assert.equal(new Set(groupedIds).size,c.videos.length);
-for(const id of groupedIds)assert(c.videos.some(v=>v.id===id));
-for(const v of c.videos)assert(c.videoGroupFor(v));
+for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
+for(const v of c.videos){
+ assert.equal(c.presentationFor(v),'original');assert(!v.lesson3d&&!v.lessonHref&&!v.sampleHref);assert(v.points.length>=3);
+ for(const id of v.relatedVideoIds||[])assert(c.videos.some(x=>x.id===id));
+ for(const m of v.moments)assert(m.s>=0&&m.s<c.durationSeconds(v));
+}
+assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
+assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
+const grouped=c.videoGroups.flatMap(g=>g.videoIds);
+assert.equal(c.videoGroups.length,4);assert.equal(new Set(grouped).size,13);assert.equal(grouped.length,13);
 assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,2,5,4]);
-assert.equal(c.videoGroupFor(c.videos[0]).id,'pro-swings');
-console.log('Video groups: all 13 assigned exactly once; counts 2/2/5/4; prioritized pro clips retained.');
+for(const v of c.videos)assert(c.videoGroupFor(v));
+assert.equal(Object.keys(media).length,43);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
+for(const m of Object.values(media))assert(m.viewer);
+const sw=read('sw.js');
+for(const m of sw.matchAll(/'\.\/([^']*)'/g))assert(fs.existsSync(path.join(root,m[1].split('?')[0]||'index.html')));
+assert(!/media\/golf3d\/[^']*\.(js|css|bin|json|webp)/.test(sw));
+// Render every video and group through the real hub with a read-only storage double.
+const seed=JSON.parse(read('data/seed.json'));let writes=0;
+ctx.localStorage={getItem:()=>null,setItem:()=>{writes++;}};
+ctx.Store={getByPart:part=>seed.exercises.filter(e=>e.part===part),getById:id=>seed.exercises.find(e=>e.id===id),getCategories:()=>['드라이버','아이언']};
+vm.runInContext(read('js/golf.js'),ctx);
+const app={innerHTML:'',querySelector:()=>null},api={app,tabbar:()=>'',exRow:e=>e.name};
+const check=()=>{assert(!/3D|3d|실사형|입체로/.test(app.innerHTML));assert(!/<iframe/.test(app.innerHTML));};
+for(const v of c.videos){ctx.window.GolfHub.render({golfTab:'videos',golfId:v.id},api);check();assert(app.innerHTML.includes('https://www.youtube.com/watch?v='+v.id));assert(app.innerHTML.includes('내 적용 메모'));}
+for(const g of c.videoGroups){ctx.window.GolfHub.render({golfTab:'videos',golfGroup:g.id},api);check();assert.equal((app.innerHTML.match(/class="g-video-card"/g)||[]).length,g.videoIds.length);}
+ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card"/g)||[]).length,13);
+for(const tab of ['notes','lessons']){ctx.window.GolfHub.render({golfTab:tab},api);check();}
+assert.equal(writes,0);
+// Old URLs redirect to valid source/notes, including unsafe or unknown query values.
+for(const [file,query,suffix] of [
+ ['viewer','?exercise=golf_driver','#exercise/golf_driver'],['viewer','?source=Aj1UEMYPxBg','#golf/videos/Aj1UEMYPxBg'],
+ ['viewer','?source=javascript:bad&exercise=unknown','#golf/videos'],['lesson','','#golf/videos/du58mmLNMnQ'],
+ ['consistency','','#golf/videos/IsSS-GnQQyY'],['training','?lesson=shift','#golf/videos/CA-TZ7WQlHY'],['original','','#golf/videos/bfMsJtV61hM']]){
+ const html=read('media/golf3d/'+file+'.html');assert(!/<canvas|three\.min|viewer\.js|lesson\.js|consistency\.js/.test(html));let url='';
+ const local={window:ctx.window,URLSearchParams,location:{search:query,replace:v=>url=v},document:{getElementById:()=>({})}};
+ for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
+ assert(url.endsWith(suffix),file+' redirect '+url);
+}
+console.log('PASS: 13 originals, 4 groups, no golf 3D UI/cache, 43 PT models preserved, 7 old URL redirects, no storage writes.');

@@ -8,6 +8,7 @@ vm.runInNewContext(fs.readFileSync(path.join(root,'js/exercise-media.js'),'utf8'
 const media=ctx.window.ExerciseMedia,poses=require('../media/3d/poses.js');
 const assetVersion=fs.readFileSync(path.join(root,'sw.js'),'utf8').match(/ptgolf-v(\d+)/)[1];
 for(const e of seed.exercises){
+ if(e.part==='golf'||['pt_incline_smith_press','pt_dumbbell_press'].includes(e.id)){assert(!media[e.id]);continue;}
  assert(media[e.id],e.id+' media missing');
  if(!process.env.SKIP_IMAGE_CHECK)for(const file of media[e.id].images)assert(fs.existsSync(path.join(root,file)),file);
  if(e.id==='pt_pushdown'||media[e.id].kind==='golf')continue; // Dedicated golf engine is covered by golf-3d.cjs.
@@ -34,11 +35,12 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});
   const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
   for(const e of seed.exercises){
-   await page.goto(base+'?v='+assetVersion+'#exercise/'+e.id);await page.waitForSelector('.guide-pair img');
+   await page.goto(base+'?v='+assetVersion+'#exercise/'+e.id);await page.waitForSelector('.d-title');
    const actual=norm(await page.locator('#app').innerText());
    const pr=seed.principles.find(p=>p.part===e.part&&p.scope===e.category)||seed.principles.find(p=>p.part===e.part&&p.scope==='*');
    const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
    for(const line of lines){assert(actual.includes(norm(line)),e.id+' content lost: '+line);report.sourceLines++;}
+   if(!media[e.id]){assert.equal(await page.locator('.guide-shot,.exercise-3d,.ex-figure').count(),0);assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),e.id+' horizontal overflow');report.exercises++;continue;}
    assert.equal(await page.locator('.guide-shot').count(),2);assert.equal(await page.locator('.exercise-3d summary').innerText(),'입체로 자세 보기');
    assert.equal(await page.locator('iframe').count(),0);
    const order=await page.locator('.scr').evaluate(el=>Array.from(el.children).filter(x=>x.matches('.pushdown-guide,.exercise-guide,.exercise-3d,.focus-box')).map(x=>x.className.split(' ')[0]));
