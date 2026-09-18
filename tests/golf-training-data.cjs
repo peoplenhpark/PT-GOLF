@@ -16,7 +16,7 @@ const grouped=c.videoGroups.flatMap(g=>g.videoIds);
 assert.equal(c.videoGroups.length,4);assert.equal(new Set(grouped).size,13);assert.equal(grouped.length,13);
 assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,2,5,4]);
 for(const v of c.videos)assert(c.videoGroupFor(v));
-assert.equal(Object.keys(media).length,43);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
+assert.equal(Object.keys(media).length,45);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
 for(const m of Object.values(media))assert(m.viewer);
 const sw=read('sw.js');
 for(const m of sw.matchAll(/'\.\/([^']*)'/g))assert(fs.existsSync(path.join(root,m[1].split('?')[0]||'index.html')));
@@ -43,4 +43,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 13 originals, 4 groups, no golf 3D UI/cache, 43 PT models preserved, 7 old URL redirects, no storage writes.');
+console.log('PASS: 13 originals, 4 groups, no golf 3D UI/cache, 45 PT models preserved, 7 old URL redirects, no storage writes.');

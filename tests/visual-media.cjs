@@ -8,7 +8,7 @@ vm.runInNewContext(fs.readFileSync(path.join(root,'js/exercise-media.js'),'utf8'
 const media=ctx.window.ExerciseMedia,poses=require('../media/3d/poses.js');
 const assetVersion=fs.readFileSync(path.join(root,'sw.js'),'utf8').match(/ptgolf-v(\d+)/)[1];
 for(const e of seed.exercises){
- if(e.part==='golf'||['pt_incline_smith_press','pt_dumbbell_press'].includes(e.id)){assert(!media[e.id]);continue;}
+ if(e.part==='golf'){assert(!media[e.id]);continue;}
  assert(media[e.id],e.id+' media missing');
  if(!process.env.SKIP_IMAGE_CHECK)for(const file of media[e.id].images)assert(fs.existsSync(path.join(root,file)),file);
  if(e.id==='pt_pushdown'||media[e.id].kind==='golf')continue; // Dedicated golf engine is covered by golf-3d.cjs.

@@ -153,6 +153,25 @@ function pose(kind,t,id){
   p.ankles=p.knees.map(a=>add(a,[0,.425*Math.sin(q*1.85),-.425*Math.cos(q*1.85)]));
   arms(p,S.map(s=>[s*.27,.46,.61]));
   p.equipment.push({type:'pronebench'},{type:'legcurl'});p.target=[0,.6,0];p.distance=3.5;
+ }else if(['dumbbellpress','smithincline'].includes(kind)){
+  // Example setups, not measured personal bench angles or training loads.
+  const smith=kind==='smithincline';
+  p=smith?base([0,.62,0],-Math.PI/3):supine(.62);
+  legs(p,S.map(s=>[s*.28,.065,.43]),S.map(s=>[s*.15,0,1]));
+  if(smith){
+   const shoulder=p.shoulders[1],dz=.20,drop=.065;
+   const grip=.215+Math.sqrt(.29*.29-dz*dz-drop*drop);
+   const barZ=shoulder[2]+dz;
+   // Fixed width and depth: collars move only vertically on the rails.
+   arms(p,S.map(s=>[s*grip,shoulder[1]+.22+.265*q,barZ]),S.map(s=>[s*(grip-.215),-drop,dz]));
+   p.equipment=[{type:'inclinebench'},{type:'smith',barZ}];
+   p.target=[0,.99,-.10];p.distance=4.7;
+  }else{
+   const dz=.17,drop=.02,spread=Math.sqrt(.29*.29-dz*dz-drop*drop);
+   arms(p,S.map(s=>[s*(.215+spread*(1-q)+.015*q),.885+.295*q,-.30-.13*q]),S.map(s=>[s*spread,-drop,dz]));
+   p.equipment=[{type:'bench'},{type:'dumbbells'}];
+   p.target=[0,.80,-.1];p.distance=3.8;
+  }
  }else if(['benchpress','pullover'].includes(kind)){
   p=supine(.62);p.equipment=[{type:'bench'}];p.target=[0,.78,-.1];p.distance=3.8;
   if(kind==='benchpress'){

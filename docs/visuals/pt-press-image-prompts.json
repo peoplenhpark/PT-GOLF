@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-09-18",
+  "assets": [
+    {
+      "id": "pt_dumbbell_press",
+      "prompt": "Use case: scientific-educational. Create a matched two-panel exercise illustration asset for a Korean personal-training app: dumbbell chest press. Canvas wide landscape with exactly two equally sized portrait panels side by side, clean straight split at the middle, generous safe margin around EACH whole figure and equipment; no text, numbers, labels, border graphics or watermark. Consistent dark charcoal studio background, high quality silver-gray anatomical male athlete with subtle anatomical muscle definition, dark shorts and black training shoes. Pectoral muscles highlighted muted red. Both panels same athlete, same flat horizontal padded bench, same three-quarter view from foot end, same framing and lighting, whole head/body/feet/bench/weights in each panel. LEFT is the controlled lowered preparation position: lying supine on flat bench, head and upper back supported, buttocks on seat, modest natural lumbar space, feet firmly flat and set wide. Two separate compact dumbbells held beside mid-chest, elbows bent about 90 degrees and moderately tucked around 45 degrees from torso; wrists vertically stacked above elbows; forearms almost vertical, dumbbells at chest level but clear of torso, do not over-stretch shoulders. RIGHT is pressing finish: same supported body and planted feet, chest lifted, arms extended upward without exaggerated hyperextension, TWO DISTINCT dumbbells above chest slightly closer together than at bottom but not touching and not above forehead. Weights need visible separation, both hands wrapped around handles, no crossing limbs. Consistent human anatomy, correct number fingers and limbs. Fitness instruction render consistent with classic silver anatomical PT guides, not photorealistic living skin. A flat-bench demonstration only, no claim of exact personal setup. Deliver one combined two-panel image.",
+      "source": "exec-4e7b6c86-256d-425c-8738-ebf135ecf89f.png",
+      "outputs": [
+        "docs/images/guides/pt_dumbbell_press-start.webp",
+        "docs/images/guides/pt_dumbbell_press-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=pt_dumbbell_press&v=67"
+    },
+    {
+      "id": "pt_incline_smith_press",
+      "prompt": "Use case: scientific-educational. Create a two-panel exercise illustration for an existing PT coaching app: INCLINE SMITH MACHINE BENCH PRESS. One wide landscape canvas, exactly two equally wide portrait panels, clear straight center split, all subjects comfortably inside their own panel. No text, no labels, no angle or weight numbers, no watermark. Charcoal studio background. Silver-gray anatomical male athlete, dark shorts and black shoes, muted red emphasis on upper pectoral muscles. Same athlete and equipment and same three-quarter foot-side camera in BOTH panels. Show an unmistakable inclined padded backrest rising about 30 degrees from horizontal with separate short seat, supported head and upper back, buttocks remain on seat, feet flat on floor and wide, small natural lumbar space, chest lifted. Show a REAL SMITH MACHINE with TWO vertical steel guide rails outside the athlete's shoulders, and one straight horizontal bar attached by sliding collars to BOTH rails, symmetric small weight plates OUTSIDE guide rails, solid base and upper crossmember. Bar can only travel vertically at fixed front/back position. Hands symmetrical, closed overhand grip slightly wider than shoulders. LEFT PANEL preparation bottom position: bent elbows moderately tucked and directly below wrists, vertical forearms, straight bar ABOVE upper chest just below clavicles with a visible fist-sized clearance, not touching neck or chest, shoulder joints not overstretched. RIGHT PANEL press finish: bar higher on THE SAME vertical rails and same fore-aft path, both arms extended almost straight but not hyperextended, wrists underneath bar; torso/chest/head/bench/feet unchanged. No free-weight rack substitution, no missing rail, no detached bar, no straps, no extra limbs. Complete machine and whole athlete visible with safe margins. Educational 3D-render-style anatomy matching polished silver PT guides. Incline represents a demonstration setup, no measurement annotation.\nCritical geometric constraints: SHALLOW incline, back pad only 30 degrees above horizontal (not 45-60 degrees). In the bottom-position left panel the bar should be visibly adjacent to the red upper pectorals with a small fist gap, well BELOW the face, elbows below bar and near torso. Choose a camera angle from the side so this bar-to-upper-chest relationship is unambiguous, still see both hands and both feet. Right bar directly above same chest position, rises vertically along rails. Machine top must fit within frame. Render a fresh corrected composition.",
+      "source": "exec-34bf9958-d85e-4069-9c9e-94749f17eb15.png",
+      "outputs": [
+        "docs/images/guides/pt_incline_smith_press-start.webp",
+        "docs/images/guides/pt_incline_smith_press-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=pt_incline_smith_press&v=67"
+    }
+  ],
+  "processing": "Original two-panel PNG copied to ignored docs/images/guides/source; Sharp splits at center, trims 2px center borders, downsizes to700px width, WebP quality86. No semantic pixel editing."
+}

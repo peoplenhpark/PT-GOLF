@@ -1,0 +1,24 @@
+{
+  "assetVersion": 67,
+  "seedVersion": 34,
+  "deployed": false,
+  "poseSamples": 2002,
+  "unchangedExistingPoseSamples": 882,
+  "unchangedExistingMediaEntries": 43,
+  "generatedImagePanels": 4,
+  "responsiveWidths": [
+    320,
+    390,
+    768
+  ],
+  "uiModels": [
+    "pt_dumbbell_press",
+    "pt_incline_smith_press"
+  ],
+  "allImagesLoaded": true,
+  "overflow": false,
+  "iframeClipping": false,
+  "browserErrors": [],
+  "personalDataWrites": false,
+  "fullHistoricalWebGLSuiteRun": false
+}

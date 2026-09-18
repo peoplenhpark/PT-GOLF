@@ -18,8 +18,9 @@ button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visib
 <div class="controls"><button id="play">일시정지</button><button data-view="front">앞</button><button data-view="side">옆</button><button data-view="back">뒤</button><button data-view="reset">처음 시점</button><button id="machine" aria-pressed="true">기구 표시</button><select id="speed" aria-label="재생 속도"><option value="1">보통 속도</option><option value=".5">느리게</option></select></div>
 <label class="scrub">동작<input id="progress" type="range" min="0" max="1000" value="0" aria-label="동작 위치 조절">1회</label>
 <p id="muscle" class="fine"></p><div class="phase"><h3 id="phaseTitle">준비 · 기구 가까이 서기</h3><p id="phaseText">팔꿈치를 몸 옆에 고정하세요.</p></div>
+<p id="visualNote" class="fine" hidden></p>
 <p class="fine">3D는 동작 확인용으로 단순화한 인체입니다. 방향키로 회전, + / −로 확대·축소할 수도 있습니다.</p>
-<script src="../../samples/pushdown-3d/three.min.js"></script><script src="../../js/exercise-media.js?v=66"></script><script src="poses.js?v=66"></script><script src="viewer.js?v=66"></script>
+<script src="../../samples/pushdown-3d/three.min.js"></script><script src="../../js/exercise-media.js?v=67"></script><script src="poses.js?v=67"></script><script src="viewer.js?v=67"></script>
 <script>
 function reportHeight(){if(parent!==window)parent.postMessage({type:'ptgolf-viewer-height',height:document.body.getBoundingClientRect().height+4},location.origin);}
 new ResizeObserver(reportHeight).observe(document.body);

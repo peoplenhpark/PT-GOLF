@@ -974,5 +974,53 @@ window.ExerciseMedia = {
       "samples/pushdown-3d/combined-start.png",
       "samples/pushdown-3d/combined-end.png"
     ]
+  },
+  "pt_dumbbell_press": {
+    "name": "덤벨 프레스 (가슴)",
+    "kind": "dumbbellpress",
+    "captions": [
+      "가슴을 들고 덤벨 받기",
+      "양팔을 밀며 살짝 모으기"
+    ],
+    "notes": [
+      "발과 골반을 고정하고, 가슴 옆에서 손목·팔꿈치로 덤벨을 받칩니다",
+      "가슴 높이를 유지하며 밀고, 돌아올 때도 천천히 무게를 버팁니다"
+    ],
+    "focus": {
+      "muscle": "대흉근 + 어깨·삼두 + 좌우 균형",
+      "move": "가슴을 든 채 덤벨을 천천히 받아 내리고, 양팔을 앞으로 나란히 밀며 살짝 모은다",
+      "feel": "아래에서도 가슴·어깨·팔이 무게를 함께 받치며 좌우 궤적이 일정한 느낌"
+    },
+    "target": "chest",
+    "images": [
+      "docs/images/guides/pt_dumbbell_press-start.webp",
+      "docs/images/guides/pt_dumbbell_press-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_dumbbell_press",
+    "visualNote": "수평 벤치에서의 동작 예시입니다. 실제 수업의 벤치 각도·중량을 재현한 것은 아닙니다."
+  },
+  "pt_incline_smith_press": {
+    "name": "인클라인 스미스 벤치프레스",
+    "kind": "smithincline",
+    "captions": [
+      "경사 벤치에서 바 받기",
+      "가슴을 유지하며 밀기"
+    ],
+    "notes": [
+      "가슴을 들고 손바닥·팔꿈치로 받칩니다. 바는 윗가슴에서 주먹 하나 정도 띄웁니다",
+      "발과 골반은 고정한 채 바를 레일을 따라 밀고, 내려올 때 천천히 버팁니다"
+    ],
+    "focus": {
+      "muscle": "윗가슴 + 어깨·삼두 + 골반을 잡는 하체",
+      "move": "인클라인 벤치에서 가슴을 들고 손바닥·팔꿈치로 바를 수직으로 받았다가 밀어낸다",
+      "feel": "가슴·어깨·팔이 넓게 무게를 함께 받치고, 가슴 높이가 유지되는 느낌"
+    },
+    "target": "chest",
+    "images": [
+      "docs/images/guides/pt_incline_smith_press-start.webp",
+      "docs/images/guides/pt_incline_smith_press-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_incline_smith_press",
+    "visualNote": "경사 벤치와 수직 레일의 동작 예시입니다. 실제 기구의 각도·중량은 수업에서 맞춘 세팅을 따릅니다."
   }
 };

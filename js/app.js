@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '66';
+  const ASSET_VER = '67';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -318,7 +318,7 @@ const Theme = (() => {
           <img src="${esc(src)}?v=${ASSET_VER}" alt="${esc(e.name)} · ${esc(media.captions[i])}" decoding="async">
           <figcaption>${esc(media.notes[i])}</figcaption>
         </figure>`).join('')}</div>
-    </section><details class="exercise-3d"><summary>입체로 자세 보기</summary><div class="exercise-3d-content"></div></details>`;
+    ${media.visualNote ? `<p class="g-meta">${esc(media.visualNote)}</p>` : ''}</section><details class="exercise-3d"><summary>입체로 자세 보기</summary><div class="exercise-3d-content"></div></details>`;
   }
   function bindExercise3D(id) {
     const details = app.querySelector('.exercise-3d');

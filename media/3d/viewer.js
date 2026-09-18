@@ -3,7 +3,7 @@
 const $=id=>document.getElementById(id),vp=$('viewport');
 try{
  const id=new URLSearchParams(location.search).get('exercise'),entry=window.ExerciseMedia[id];
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=66#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=67#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -81,7 +81,7 @@ try{
    ell(body,add(mix(k,f,.42),mul(p.front,-.014)),[.049,.105,.045],skin,sub(f,k));
    // Feet follow shin on floor exercises; standing feet point forward.
    const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
-   const planted=['bridge','benchpress'].includes(p.kind)||(p.kind==='slr'&&i===1);
+   const planted=['bridge','benchpress','dumbbellpress','smithincline'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1];
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
    foot.quaternion.setFromUnitVectors(Z,new THREE.Vector3(...direction));
@@ -114,6 +114,33 @@ try{
     case 'mat':block(equipment,[0,.007,.08],[1.30,.015,2.30],accent);break;
     case 'seat':seatGear();break;
     case 'bench':bench([0,.46,-.15]);break;
+    case 'inclinebench':{
+     const center=add(add(p.hip,mul(p.up,.31)),mul(p.front,-.13));
+     block(equipment,center,[.43,.10,.87],rubber,p.front);
+     block(equipment,[0,.49,.17],[.43,.10,.34]);
+     for(const z of [-.59,.34]){
+      beam(equipment,[-.30,.035,z],[.30,.035,z],.035);
+      beam(equipment,[0,.035,z],[0,z<0?.68:.43,z],.035);
+     }
+     beam(equipment,[0,.07,.30],[0,.68,-.59],.035);
+     break;
+    }
+    case 'smith':{
+     const z=e.barZ,y=p.wrists[0][1];
+     for(const side of [-1,1]){
+      const x=side*.78;
+      beam(equipment,[x,.04,z],[x,1.90,z],.025,steel);
+      beam(equipment,[x,.04,z-.15],[x,1.90,z-.15],.035,steel);
+      beam(equipment,[x,.04,-.85],[x,.04,.65],.045);
+      block(equipment,[x,y,z],[.085,.15,.085],steel);
+      for(let h=.80;h<1.61;h+=.16)beam(equipment,[x,h,z-.15],[x,h,z-.075],.014);
+      const plate=mesh(equipment,cylinder,rubber);
+      plate.position.set(side*.88,y,z);plate.scale.set(.125,.05,.125);plate.rotation.z=Math.PI/2;
+     }
+     beam(equipment,[-.78,1.90,z],[.78,1.90,z],.035);
+     beam(equipment,[-1.0,y,z],[1.0,y,z],.016,steel);
+     break;
+    }
     case 'pronebench':bench([0,.49,.03]);break;
     case 'bar':beam(equipment,add(p.wrists[0],[-.15,0,0]),add(p.wrists[1],[.15,0,0]),.016);p.wrists.forEach(a=>handle(a));break;
     case 'dumbbells':p.wrists.forEach(dumbbell);break;
@@ -173,6 +200,7 @@ try{
   $('stage').textContent=labels[current.stage];$('phaseTitle').textContent=labels[current.stage];
   $('phaseText').textContent=current.stage===0?entry.notes[0]:current.stage===1?entry.focus.move:entry.focus.feel;
   $('muscle').textContent=entry.focus.muscle;
+  if(entry.visualNote){$('visualNote').hidden=false;$('visualNote').textContent=entry.visualNote;}
   red.emissive.setHex(0x6e1610);red.emissiveIntensity=.08+.13*current.q;
   canvas.dataset.phase=t.toFixed(4);canvas.dataset.kind=entry.kind;
  }
