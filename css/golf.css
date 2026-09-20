@@ -75,3 +75,5 @@
 .g-video-grid .g-mini-play{min-width:44px}
 .g-video-grid .g-mini-title{font-size:14px}
 @media(min-width:720px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.g-video-section h2{color:#C8A96B}
+.g-video-section h2 span{color:currentColor;opacity:.72}
