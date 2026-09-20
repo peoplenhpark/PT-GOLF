@@ -1,4 +1,4 @@
-/* 사용자 지정 영상 18편. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 23편. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   version: 3,
@@ -638,6 +638,66 @@ window.GolfContent = {
       moments: [{s:13,label:'0:13 · 팔 내리는 방향'}, {s:34,label:'0:34 · 반복 연습'}, {s:62,label:'1:02 · 무게와 리듬'}],
       connection: '기존 노트의 손 내리기 → 지연 → 회전과 함께 보세요. “팔을 쓰지 않기”와 “팔을 내리기”의 차이는 개인 레슨에서 확인할 질문입니다.',
       question: '제 스윙에서는 팔을 내리는 방향과 회전 시작 시점을 어떻게 잡아야 하나요? 팔을 쓰지 말라는 기존 감각과 비교해 주세요.'
+    },
+    {
+      id: 'aaOw2sdp-io', title: '백스윙 핵심 포인트',
+      originalTitle: '수 차례 연구 끝에 드디어 깨달은 백스윙 핵심 포인트', channel: '프로허석[Pro Golfer Heo]', duration: '1:28', durationSeconds: 88,
+      presentation: 'original', topics: ['준비·축', '회전·순서'],
+      evidence: '원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.',
+      summary: '백스윙 핵심 포인트를 주제로 한 원본 영상입니다.',
+      points: ['원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.', '준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.', '내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다.'],
+      moments: [{s:0,label:'0:00 · 원본 전체 보기'}],
+      connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
+      question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
+      relatedVideoIds: ['7sNhk9PhBxc', 'ojzyFHAQWnw']
+    },
+    {
+      id: '5glZX2pq15o', title: '힘 없이 나는 훅 바꾸기',
+      originalTitle: '백날 쳐도 힘 없이 훅이 난다? 이렇게만 바꿔도 바로 좋아집니다', channel: '프로허석[Pro Golfer Heo]', duration: '1:20', durationSeconds: 80,
+      presentation: 'original', topics: ['팔·타이밍', '회전·순서'],
+      evidence: '원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.',
+      summary: '힘 없이 훅이 나는 상황을 주제로 한 원본 영상입니다.',
+      points: ['원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.', '준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.', '내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다.'],
+      moments: [{s:0,label:'0:00 · 원본 전체 보기'}],
+      connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
+      question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
+      relatedVideoIds: ['du58mmLNMnQ', 'RSbjGWhzEnQ']
+    },
+    {
+      id: 'U4nn7s20ACc', title: '종결급 스윙 레슨',
+      originalTitle: '다른 레슨이 필요 없는 종결급 레슨입니다', channel: '프로허석[Pro Golfer Heo]', duration: '1:28', durationSeconds: 88,
+      presentation: 'original', topics: ['회전·순서'],
+      evidence: '원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.',
+      summary: '스윙 레슨을 주제로 한 원본 영상입니다.',
+      points: ['원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.', '준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.', '내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다.'],
+      moments: [{s:0,label:'0:00 · 원본 전체 보기'}],
+      connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
+      question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
+      relatedVideoIds: ['CA-TZ7WQlHY', '0EgzSDUsKvg']
+    },
+    {
+      id: '4uQe-J5qM2c', title: '헤드 던지는 2가지 핵심',
+      originalTitle: '헤드 던지는 2가지 핵심포인트', channel: '남프로TV & 브릿지골프', duration: '0:49', durationSeconds: 49,
+      presentation: 'original', topics: ['팔·타이밍', '회전·순서'],
+      evidence: '원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.',
+      summary: '헤드 던지는 감각의 핵심 포인트를 주제로 한 원본 영상입니다.',
+      points: ['원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.', '준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.', '내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다.'],
+      moments: [{s:0,label:'0:00 · 원본 전체 보기'}],
+      connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
+      question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
+      relatedVideoIds: ['-h77kU-fpjg', 'yv4KTSs8Riw']
+    },
+    {
+      id: '7sNhk9PhBxc', title: '백스윙 쉬워지는 2가지 핵심',
+      originalTitle: '백스윙 쉬워지는 2가지 핵심 포인트', channel: '남프로TV & 브릿지골프', duration: '0:44', durationSeconds: 44,
+      presentation: 'original', topics: ['준비·축', '회전·순서'],
+      evidence: '원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.',
+      summary: '백스윙을 쉽게 하는 핵심 포인트를 주제로 한 원본 영상입니다.',
+      points: ['원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.', '준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.', '내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다.'],
+      moments: [{s:0,label:'0:00 · 원본 전체 보기'}],
+      connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
+      question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
+      relatedVideoIds: ['aaOw2sdp-io', 'uvgnUl93Twg']
     }
   ]
 };
@@ -650,7 +710,7 @@ window.GolfContent.presentationFor = () => 'original';
 window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'실제 선수의 스윙을 보고 전체 흐름과 타이밍을 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'에이밍, 정렬, 척추 기울기와 자세를 확인합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg']},
-  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg']},
-  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ']}
+  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc']},
+  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
