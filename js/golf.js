@@ -58,7 +58,7 @@ window.GolfHub = (() => {
     return videoGroups().filter(g=>!selected||g.id===selected).map(g=>{
       const items=list.filter(v=>g.videoIds.includes(v.id));
       if(!items.length)return '';
-      return `<section class="g-video-section" aria-labelledby="g-group-${e(g.id)}"><header><h2 id="g-group-${e(g.id)}">${e(g.title)} <span>${items.length}편</span></h2>${!selected?`<a href="${groupHref(g.id)}">이 그룹만 보기 ›</a>`:''}</header><p class="g-meta">${e(g.description)}</p>${items.map(compactCard).join('')}</section>`;
+      return `<section class="g-video-section" aria-labelledby="g-group-${e(g.id)}"><header><h2 id="g-group-${e(g.id)}">${e(g.title)} <span>${items.length}편</span></h2>${!selected?`<a href="${groupHref(g.id)}">이 그룹만 보기 ›</a>`:''}</header><p class="g-meta">${e(g.description)}</p><div class="g-video-grid">${items.map(compactCard).join('')}</div></section>`;
     }).join('')||'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>';
   }
   function card(v) {

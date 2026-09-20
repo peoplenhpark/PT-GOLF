@@ -70,3 +70,8 @@
 }
   .g-video-groups a{flex-shrink:0}
 @media(max-width:360px){.g-intro{display:none}.g-video-section{margin-top:10px}}
+.g-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.g-video-grid .g-video-mini{grid-template-columns:minmax(0,1fr) 44px;gap:7px;padding:9px;margin-bottom:0}
+.g-video-grid .g-mini-play{min-width:44px}
+.g-video-grid .g-mini-title{font-size:14px}
+@media(min-width:720px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
