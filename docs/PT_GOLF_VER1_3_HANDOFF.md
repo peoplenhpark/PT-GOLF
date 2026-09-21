@@ -1,5 +1,11 @@
 # PT & GOLF VER1.3 — 새 세션 핸드오프
 
+## 최신 로컬 작업 · 2026-09-22 · PT 반응형 카드·세이지 라벤더 v76 (배포 승인)
+
+- 사용자 요청에 따라 PT 부위별 목록을 병렬 카드로 변경했다. 520px 미만은 2열, 그 이상은 3열이며, 카드에는 번호·운동명·핵심 사양·즐겨찾기 상태만 표시한다. 준비·동작 이미지와 회전·재생 가능한 3D, 체크리스트와 메모는 기존 상세 화면에서 그대로 제공한다.
+- PT 기본색은 세이지(`--pt #a7c7ac`, 배경 `#18291d`, 선 `#4a6e52`)로 낮추고, 완료·선택 상태만 라벤더(`--pt-secondary #b9add8`)로 구분했다. 골프의 청록·골드 계열은 변경하지 않았다. 라이트 테마에도 대응 색상을 추가했다.
+- `js/app.js` 문법, `tests/pt-press-media.cjs`, `tests/golf-training-data.cjs`, `git diff --check`, CUA 390px 2열·넓은 화면 3열·가로 넘침 없음·브라우저 오류 0개를 통과했다. 설치된 런타임에 Playwright 패키지가 없어 `tests/visual-media.cjs`는 실행하지 못했으며, 실제 CUA 화면으로 확인했다. 앱/SW/호환 주소는 76이다.
+- 사용자의 “배포해줘” 요청으로 v76 배포가 승인되었다. main push 후 GitHub Pages 공개 파일과 UI를 확인한다.
 ## 최신 로컬 작업 · 2026-09-20 · 골프 Shorts 5편 추가 v75 (미배포)
 
 - 사용자가 공유한 YouTube Shorts 5편(aaOw2sdp-io, 5glZX2pq15o, U4nn7s20ACc, 4uQe-J5qM2c, 7sNhk9PhBxc)을 원본 영상 목록에 추가했다. 원본 제목·채널은 YouTube oEmbed, 길이(88/80/88/49/44초)는 공개 watch 페이지 메타데이터로 확인했다.

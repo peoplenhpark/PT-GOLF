@@ -1,7 +1,7 @@
 :root{
   --bg:#0d0f14; --bg2:#05070a; --card:#171a21; --card2:#1e222b; --line:#2a2f3a;
   --txt:#e8eaed; --sub:#9aa3b0; --faint:#5b6472;
-  --pt:#4ade80; --pt-bg:#11341f; --pt-line:#2f7a4d;
+  --pt:#a7c7ac; --pt-bg:#18291d; --pt-line:#4a6e52; --pt-secondary:#b9add8; --pt-secondary-bg:#28243a; --pt-secondary-line:#625a82;
   --golf:#38bdf8; --golf-bg:#0f2c3f; --golf-line:#1c4a63;
   --warn:#fbbf24; --warn-bg:#241d0a; --warn-line:#5c4612;
   --danger:#f87171;
@@ -56,7 +56,7 @@ body{
   justify-content:space-between;cursor:pointer;border:1px solid var(--line);
   transition:transform .1s,box-shadow .15s;box-shadow:var(--shadow)}
 .part:active{transform:scale(.97);box-shadow:none}
-.part.pt{background:linear-gradient(145deg,#16271c,#11341f);border-color:var(--pt-line)}
+.part.pt{background:linear-gradient(145deg,#1b2c20,#18291d);border-color:var(--pt-line)}
 .part.golf{background:linear-gradient(145deg,#13212e,#0f2c3f);border-color:var(--golf-line)}
 .part .ico{font-size:28px}
 .part .nm{font-size:19px;font-weight:800}
@@ -92,7 +92,7 @@ body{
 .recent-chips .cnt-b{display:inline-flex;align-items:center;justify-content:center;
   min-width:18px;height:18px;padding:0 5px;border-radius:9px;
   background:var(--line);color:var(--sub);font-size:10.5px;font-weight:800}
-.recent-chips .chip.on .cnt-b{background:var(--pt);color:#0d0f14}
+.recent-chips .chip.on .cnt-b{background:var(--pt-secondary);color:#191529}
 .dot-today{width:5px;height:5px;border-radius:50%;background:var(--pt);flex:0 0 auto}
 #recent-list{margin-bottom:22px}
 
@@ -130,7 +130,7 @@ body{
   font-size:16px;color:var(--sub);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .icon-btn.fav.on{color:var(--warn);border-color:var(--warn-line)}
 
-.spec-box{background:linear-gradient(135deg,var(--pt-bg),#0e2a1a);border:1px solid var(--pt-line);
+.spec-box{background:linear-gradient(135deg,var(--pt-bg),#14261a);border:1px solid var(--pt-line);
   border-radius:16px;padding:15px 17px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
 .spec-box.golf{background:linear-gradient(135deg,var(--golf-bg),#0c2435);border-color:var(--golf-line)}
 .spec-box .k{font-size:11px;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
@@ -173,9 +173,9 @@ body{
 [data-part="golf"] .check:active{border-color:var(--golf-line)}
 .check .box{width:24px;height:24px;border-radius:8px;border:2px solid #3a414f;flex-shrink:0;
   margin-top:1px;position:relative;transition:.12s}
-.check.done .box{background:var(--pt);border-color:var(--pt)}
+.check.done .box{background:var(--pt-secondary);border-color:var(--pt-secondary-line)}
 [data-part="golf"] .check.done .box{background:var(--golf);border-color:var(--golf)}
-.check.done .box::after{content:"✓";position:absolute;color:#06210f;font-weight:900;font-size:15px;left:3px;top:-2px}
+.check.done .box::after{content:"✓";position:absolute;color:#191529;font-weight:900;font-size:15px;left:3px;top:-2px}
 .check .ctxt{font-size:15px;line-height:1.5}
 .check.done .ctxt{color:var(--sub);text-decoration:line-through;text-decoration-color:#3a4150}
 
@@ -308,7 +308,7 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 .cal-dots{display:flex;gap:3px;min-height:8px;align-items:center;justify-content:center}
 .dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex-shrink:0}
 .dot.sched{background:#60a5fa}
-.dot.done{background:var(--pt)}
+.dot.done{background:var(--pt-secondary)}
 .dot.rest{background:var(--warn)}
 
 .cal-legend{
@@ -328,7 +328,7 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 }
 .cal-btn-ic{font-size:28px;line-height:1}
 .cal-toggle-btn.sched-on{border-color:#60a5fa;color:#60a5fa;background:rgba(96,165,250,.1)}
-.cal-toggle-btn.done-on{border-color:var(--pt);color:var(--pt);background:rgba(74,222,128,.1)}
+.cal-toggle-btn.done-on{border-color:var(--pt-secondary-line);color:var(--pt-secondary);background:rgba(185,173,216,.13)}
 .cal-toggle-btn.rest-on{border-color:var(--warn);color:var(--warn);background:rgba(251,191,36,.1)}
 
 /* 예약 시간 선택 */
@@ -364,7 +364,7 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 [data-theme="light"]{
   --bg:#f5f7fa;--bg2:#eef0f5;--card:#ffffff;--card2:#f0f2f7;--line:#dde3ec;
   --txt:#1e293b;--sub:#64748b;--faint:#a0aec0;
-  --pt:#16a34a;--pt-bg:#dcfce7;--pt-line:#86efac;
+  --pt:#3f704e;--pt-bg:#e5f0e6;--pt-line:#a8c7ad;--pt-secondary:#675d91;--pt-secondary-bg:#f0ecf8;--pt-secondary-line:#c3b9dc;
   --golf:#0284c7;--golf-bg:#dbeafe;--golf-line:#93c5fd;
   --warn:#d97706;--warn-bg:#fef9c3;--warn-line:#fde68a;
   --danger:#dc2626;
@@ -376,11 +376,11 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 [data-theme="light"] body{background:var(--bg)}
 
 /* 파트 카드 */
-[data-theme="light"] .part.pt{background:linear-gradient(145deg,#f0fdf4,#dcfce7)}
+[data-theme="light"] .part.pt{background:linear-gradient(145deg,#f3f8f3,#e5f0e6)}
 [data-theme="light"] .part.golf{background:linear-gradient(145deg,#eff6ff,#dbeafe)}
 
 /* 스펙 박스 */
-[data-theme="light"] .spec-box{background:linear-gradient(135deg,#f0fdf4,#dcfce7)}
+[data-theme="light"] .spec-box{background:linear-gradient(135deg,#f3f8f3,#e5f0e6)}
 [data-theme="light"] .spec-box.golf{background:linear-gradient(135deg,#eff6ff,#dbeafe)}
 
 /* 체크박스 완료 체크 (다크에선 어두운 녹색 글자였음 → 라이트에선 흰색) */
@@ -413,7 +413,7 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 /* 캘린더 라이트 오버라이드 */
 [data-theme="light"] .cal-cell.today .cal-dn{color:#fff !important}
 [data-theme="light"] .cal-toggle-btn.sched-on{background:rgba(2,132,199,.08);border-color:var(--golf);color:var(--golf)}
-[data-theme="light"] .cal-toggle-btn.done-on{background:rgba(22,163,74,.08)}
+[data-theme="light"] .cal-toggle-btn.done-on{background:rgba(103,93,145,.09)}
 [data-theme="light"] .cal-toggle-btn.rest-on{background:rgba(217,119,6,.08)}
 [data-theme="light"] .cal-time-sel{color:var(--txt);background:var(--card)}
 
@@ -442,3 +442,13 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 .exercise-guide .guide-shot-title{min-height:82px}
 .exercise-guide .guide-shot figcaption{font-size:14px;overflow-wrap:anywhere}
 [data-part="golf"] .guide-shot-title b{color:var(--golf)}
+/* PT 목록 — 작은 화면은 2열, 넓은 화면은 3열의 짧은 운동 카드로 표시한다. */
+.pt-exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pt-exercise-grid .ex{position:relative;min-height:142px;margin:0;padding:13px 12px;align-items:flex-start;flex-direction:column;gap:8px;border-left-color:var(--line);border-top:3px solid var(--pt-line);border-radius:15px}
+.pt-exercise-grid .ex .num{width:32px;height:32px;border-radius:10px;font-size:14px}
+.pt-exercise-grid .ex .body{width:100%;min-width:0;padding-right:12px}
+.pt-exercise-grid .ex .t{font-size:14px;line-height:1.4;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pt-exercise-grid .ex .spec{font-size:11px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pt-exercise-grid .ex .meta{flex-wrap:wrap;gap:4px;font-size:10px;line-height:1.35}
+.pt-exercise-grid .ex .star,.pt-exercise-grid .ex .chev{position:absolute;top:16px;right:12px;line-height:1}
+@media(min-width:520px){.pt-exercise-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

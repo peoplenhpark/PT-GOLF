@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '75';
+  const ASSET_VER = '76';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -163,7 +163,7 @@ const Theme = (() => {
 
     const inCat = list.filter(e => e.category === activeCat);
     const rows = inCat.length
-      ? inCat.map((e, i) => exRow(e, i)).join('')
+      ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i)).join('')}</div>`
       : `<div class="empty">아직 동작이 없어요.<br>우측 하단 ➕ 로 추가하세요.</div>`;
 
     app.innerHTML = `
