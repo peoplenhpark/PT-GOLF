@@ -75,15 +75,21 @@ function pose(kind,t,id){
  }else if(kind==='sidelunge'){
   // Wide lateral lunge: one leg receives the hip, the other stays long.
   p=base([-.17*q,.90-.25*q,-.09*q],.12+.18*q);
-  legs(p,[[-.36,.065,0],[.36,.065,0]],[[-.70,0,.40],[.20,.85,.55]]);
+  // Lock the non-support leg long before loading the bent leg.
+  const outsideHip=p.hips[1],longLeg=.854,drop=outsideHip[1]-.065;
+  const reach=Math.sqrt(Math.max(.02,longLeg*longLeg-drop*drop-outsideHip[2]*outsideHip[2]));
+  const outside=[outsideHip[0]+reach,.065,0];
+  legs(p,[[-.36,.065,0],outside],[[-.70,0,.40],[.20,.85,.55]]);
   arms(p,S.map(s=>add(p.chest,[s*.18,-.12,.42])),S.map(s=>[s,-.35,.45]));
   p.target=[-.12,.52,.05];p.distance=4.0;
  }else if(kind==='hipopenclose'){
-  // One planted leg, one bent leg opening from the hip while holding support.
-  p=base([0,.90,0],.04);
-  legs(p,[[-.13,.065,0],[.13+.31*q,.50,.28*q]],[[0,.10,1],[1,.20,.30]]);
-  arms(p,[[-.55,1.20,.24],[.30,.80,.20]],[[-1,.15,.30],[1,-.30,.25]]);
-  p.equipment.push({type:'supportbar'});p.target=[.18,.86,.02];p.distance=4.0;
+  // Supported single-leg hinge: the free leg extends back, then pelvis and chest open together.
+  const lean=.14+.66*q,turn=.55*q;
+  p=base([-.08,.90-.025*q,-.05*q],lean,turn);
+  const support=[-.105,.065,0],trail=add(p.hips[1],mul(p.up,-.855));
+  legs(p,[support,trail],[[0,.15,1],[0,-.15,1]]);
+  arms(p,[[-.58,1.12,.28],add(p.shoulders[1],[.04,-.50,.14])],[[-1,.10,.25],[1,-.70,.20]]);
+  p.equipment.push({type:'supportbar'});p.target=[-.02,.76,.02];p.distance=4.15;
  }else if(kind==='bosu'){
   const turn=t<.26?smooth(t/.26):t<.72?1:1-smooth((t-.72)/.28);
   const sit=t<.26?0:t<.48?smooth((t-.26)/.22):t<.64?1:1-smooth((t-.64)/.20);
@@ -137,7 +143,7 @@ function pose(kind,t,id){
   }
  }else if(kind==='backextension'){
   // Bodyweight hinge: return from a supported fold to a neutral long spine.
-  p=base([0,.89,0],.88-.48*q);
+  p=base([0,.89,0],1.18-.78*q);
   legs(p,S.map(s=>[s*.14,.16,-.46]));
   arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.02,-.50,-.04])),S.map(s=>[s,-.1,-1]));
   p.equipment.push({type:'backextension'});p.target=[0,.9,.05];
