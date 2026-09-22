@@ -139,20 +139,20 @@ window.ExerciseMedia = {
     "viewer": "media/3d/viewer.html?exercise=pt_machinerow"
   },
   "pt_backextension": {
-    "name": "백 익스텐션 (+ 덤벨 로우)",
+    "name": "백 익스텐션 (맨몸 · 허리 세우기)",
     "kind": "backextension",
     "captions": [
-      "힙을 패드에 지지",
-      "몸 펴고 덤벨 당기기"
+      "골반·발로 기구 고정",
+      "엉덩이로 몸 일자"
     ],
     "notes": [
-      "기구에 뒤꿈치를 대고 발은 팔자로 · 몸은 일자",
-      "기립근·엉덩이·뒷벅지가 동시에 · 등 가운데가 접히는 느낌 — 허리만 아프면 힙을 안 쓰거나 머리가 들린 것"
+      "턱을 살짝 당기고 시선은 바닥 — 목과 허리를 한 줄로 길게 둔다",
+      "허리를 꺾지 말고 엉덩이를 조여 몸통을 일자까지만 든다"
     ],
     "focus": {
-      "muscle": "척추기립근 + 둔근·햄스트링(뒷근육 전부) + 날개뼈",
-      "move": "힙을 쪼는 힘으로 허리를 들고, 팔꿈치를 옆구리에 붙여 덤벨을 수직으로 당긴다",
-      "feel": "기립근·엉덩이·뒷벅지가 동시에 · 등 가운데가 접히는 느낌 — 허리만 아프면 힙을 안 쓰거나 머리가 들린 것"
+      "muscle": "둔근 + 햄스트링 + 척추기립근",
+      "move": "엉덩이를 조여 몸통을 일자까지만 들고, 힙힌지로 천천히 내려간다",
+      "feel": "엉덩이와 뒷벅지가 먼저 단단해지고 허리는 길게 버티는 느낌"
     },
     "target": "posterior",
     "images": [
@@ -533,17 +533,17 @@ window.ExerciseMedia = {
     "name": "레그 프레스 (와이드 스탠스)",
     "kind": "legpress",
     "captions": [
-      "발판에 넓게 딛기",
-      "안쪽 허벅지로 밀기"
+      "고관절 준비 후 넓게 딛기",
+      "골반 고정 · 발바닥으로 밀기"
     ],
     "notes": [
-      "발을 발판 위쪽·넓게 — 발끝은 바깥으로 열고, 발이 발판 바깥으로 조금 나가도 된다",
-      "허벅지가 「다리 찢기」 하듯 안쪽이 늘어나는 느낌 — 앞 허벅지가 주인공이면 잘못"
+      "고관절 오픈·클로즈와 와이드 사이드 런지로 먼저 준비한다",
+      "골반이 뜨지 않는 범위에서 천천히 내리고, 무릎은 발끝 방향을 따라간다"
     ],
     "focus": {
-      "muscle": "안쪽 허벅지(내전근) + 둔근",
-      "move": "발을 넓게 벌린 채 안쪽 허벅지가 벌어지는 느낌으로 내렸다 민다",
-      "feel": "허벅지가 「다리 찢기」 하듯 안쪽이 늘어나는 느낌 — 앞 허벅지가 주인공이면 잘못"
+      "muscle": "안쪽 허벅지(내전근) + 둔근 + 골반 안정",
+      "move": "넓게 딛고 발바닥 전체로 밀며, 골반이 흔들리지 않는 범위에서 천천히 내렸다 민다",
+      "feel": "안쪽 허벅지가 늘어나며 발바닥으로 고르게 미는 느낌 — 무릎이나 허리가 불편하면 범위를 줄인다"
     },
     "target": "adductors",
     "images": [
@@ -551,6 +551,52 @@ window.ExerciseMedia = {
       "docs/images/guides/pt_legpress-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_legpress"
+  },
+  "pt_wide_sidelunge_stretch": {
+    "name": "와이드 사이드 런지 스트레칭 (내전근)",
+    "kind": "sidelunge",
+    "captions": [
+      "발 넓게 · 팔 앞으로",
+      "엉덩이 뒤로 · 반대 다리 길게"
+    ],
+    "notes": [
+      "한쪽 발에 체중을 두고 무릎은 발끝 방향을 따라간다",
+      "안쪽 허벅지가 당기는 범위까지만 갔다가 완전히 돌아온다"
+    ],
+    "focus": {
+      "muscle": "내전근(안쪽 허벅지) + 둔근",
+      "move": "엉덩이를 뒤로 보내 한쪽으로 앉고, 반대 다리를 길게 펴며 돌아온다",
+      "feel": "편 다리의 안쪽 허벅지가 길게 늘어나는 느낌"
+    },
+    "target": "adductors",
+    "images": [
+      "docs/images/guides/pt_wide_sidelunge_stretch-start.webp",
+      "docs/images/guides/pt_wide_sidelunge_stretch-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_wide_sidelunge_stretch"
+  },
+  "pt_hip_openclose_stretch": {
+    "name": "고관절 오픈·클로즈 스트레칭",
+    "kind": "hipopenclose",
+    "captions": [
+      "지지물 잡고 골반 세우기",
+      "고관절만 천천히 열고 닫기"
+    ],
+    "notes": [
+      "서 있는 발은 바닥에 단단히 붙이고, 몸통과 골반은 흔들지 않는다",
+      "범위를 억지로 키우지 말고 부드럽게 열었다 닫는다"
+    ],
+    "focus": {
+      "muscle": "고관절 주변 + 중둔근",
+      "move": "지지물을 잡고 골반을 고정한 채 무릎을 천천히 열고 닫는다",
+      "feel": "서 있는 다리는 단단히 버티고, 움직이는 쪽 고관절이 부드럽게 풀리는 느낌"
+    },
+    "target": "glutes",
+    "images": [
+      "docs/images/guides/pt_hip_openclose_stretch-start.webp",
+      "docs/images/guides/pt_hip_openclose_stretch-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_hip_openclose_stretch"
   },
   "pt_daily_hamstring": {
     "name": "햄스트링 스트레칭",

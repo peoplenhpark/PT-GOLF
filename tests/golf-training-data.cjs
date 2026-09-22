@@ -16,7 +16,7 @@ const grouped=c.videoGroups.flatMap(g=>g.videoIds);
 assert.equal(c.videoGroups.length,4);assert.equal(new Set(grouped).size,23);assert.equal(grouped.length,23);
 assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,3,9,9]);
 for(const v of c.videos)assert(c.videoGroupFor(v));
-assert.equal(Object.keys(media).length,45);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
+assert.equal(Object.keys(media).length,47);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
 for(const m of Object.values(media))assert(m.viewer);
 const sw=read('sw.js');
 for(const m of sw.matchAll(/'\.\/([^']*)'/g))assert(fs.existsSync(path.join(root,m[1].split('?')[0]||'index.html')));

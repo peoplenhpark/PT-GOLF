@@ -3,7 +3,7 @@
 const $=id=>document.getElementById(id),vp=$('viewport');
 try{
  const id=new URLSearchParams(location.search).get('exercise'),entry=window.ExerciseMedia[id];
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=76#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=77#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -166,6 +166,7 @@ try{
      for(let s of [-1,1]){beam(equipment,[s*.42,.04,-.55],[s*.42,1.85,-.35],.035);block(equipment,add(p.shoulders[s<0?0:1],[0,.08,0]),[.15,.10,.27]);}
      block(equipment,add(p.chest,[0,0,-.15]),[.43,.5,.10]);break;}
     case 'backextension':block(equipment,[0,.82,.05],[.45,.17,.25]);beam(equipment,[0,.02,-.4],[0,.77,.03],.04);block(equipment,[0,.10,-.45],[.6,.08,.3]);break;
+    case 'supportbar':beam(equipment,[-.62,.02,.24],[-.62,1.42,.24],.035,steel);beam(equipment,[-.62,1.20,.24],[-.30,1.20,.24],.026,steel);break;
     case 'legextension':beam(equipment,add(p.ankles[0],[-.08,.02,.04]),add(p.ankles[0],[.38,.02,.04]),.067,rubber);beam(equipment,[.29,.54,.38],add(p.ankles[0],[.42,0,0]),.027);break;
     case 'legcurl':beam(equipment,add(p.ankles[0],[0,.055,0]),add(p.ankles[1],[0,.055,0]),.065,rubber);break;
     case 'adduction':for(let i=0;i<2;i++){block(equipment,add(p.knees[i],[i?-.06:.06,.05,-.02]),[.08,.22,.15]);beam(equipment,[0,.35,.17],p.knees[i],.025);}break;
