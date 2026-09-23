@@ -1,4 +1,4 @@
-/* 사용자 지정 영상 23편. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 31편. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   version: 3,
@@ -698,7 +698,260 @@ window.GolfContent = {
       connection: '같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.',
       question: '이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?',
       relatedVideoIds: ['aaOw2sdp-io', 'uvgnUl93Twg']
+    },
+{
+  "id": "Wlbi1o9fb2Q",
+  "title": "상체 힘이 아닌, 헤드를 던지는 스윙",
+  "originalTitle": "상체 힘이 아닌, 헤드를 던지는 스윙",
+  "channel": "프로허석[Pro Golfer Heo]",
+  "duration": "1:58",
+  "durationSeconds": 118,
+  "presentation": "original",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "상체 힘과 헤드를 던지는 스윙을 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
     }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "4uQe-J5qM2c",
+    "yv4KTSs8Riw"
+  ]
+},
+{
+  "id": "A_fu4ajV-_I",
+  "title": "골프스윙 · 유정환",
+  "originalTitle": "골프스윙 golf @2progolf #golfswing 골프 #골프레슨 #j82golf #제이82 비거리 ゴルフ #golflesson golftips",
+  "channel": "유정환",
+  "duration": "0:15",
+  "durationSeconds": 15,
+  "presentation": "original",
+  "topics": [
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "골프스윙을 주제로 공유된 짧은 원본 영상입니다. 제목만으로 세부 교정 주제를 특정하지 않고 전체 흐름을 비교해 보세요.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "U4nn7s20ACc"
+  ]
+},
+{
+  "id": "FjWulC87mzM",
+  "title": "헤드 무게와 브레이크의 의미",
+  "originalTitle": "헤드 무게를 느끼는 브레이크의 진짜 의미! 자꾸 어깨에 힘 들어가는 사람 보세요",
+  "channel": "프로허석[Pro Golfer Heo]",
+  "duration": "1:29",
+  "durationSeconds": 89,
+  "presentation": "original",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "헤드 무게를 느끼는 브레이크와 어깨 긴장을 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "Wlbi1o9fb2Q",
+    "ULOLFCC-ly8"
+  ]
+},
+{
+  "id": "dBsZdo7VEAA",
+  "title": "아이언·드라이버 핵심동작 익히기",
+  "originalTitle": "아이언이든 드라이버든 골프가 쉬워지는 핵심동작 익히기",
+  "channel": "프로허석[Pro Golfer Heo]",
+  "duration": "1:12",
+  "durationSeconds": 72,
+  "presentation": "original",
+  "topics": [
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "아이언과 드라이버의 핵심동작을 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "U4nn7s20ACc",
+    "0EgzSDUsKvg"
+  ]
+},
+{
+  "id": "WWtv4x3uz-M",
+  "title": "백스윙에서 지킬 2가지",
+  "originalTitle": "백스윙 2가지만 지켜도 정말 쉬워집니다",
+  "channel": "남프로TV & 브릿지골프",
+  "duration": "0:38",
+  "durationSeconds": 38,
+  "presentation": "original",
+  "topics": [
+    "준비·축",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "백스윙에서 지킬 두 가지를 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "7sNhk9PhBxc",
+    "aaOw2sdp-io"
+  ]
+},
+{
+  "id": "o4KqDhYXlTw",
+  "title": "오른손 올바르게 사용하기",
+  "originalTitle": "#오른손올바르게사용하기 #golf #golfswing #정확한오른손동작# #정확성과비거리늘리기 #♡",
+  "channel": "김대용프로TV",
+  "duration": "0:06",
+  "durationSeconds": 6,
+  "presentation": "original",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "올바른 오른손 동작과 정확성·비거리를 주제로 한 짧은 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "wBlnDaqkGi0",
+    "Aj1UEMYPxBg"
+  ]
+},
+{
+  "id": "ThwbClowjjU",
+  "title": "드라이버 · 세게 쳐도 비거리가 안 나는 이유",
+  "originalTitle": "드라이버 세게 치는데 비거리가 안 나는 진짜 이유",
+  "channel": "프로허석[Pro Golfer Heo]",
+  "duration": "1:50",
+  "durationSeconds": 110,
+  "presentation": "original",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "드라이버를 세게 쳐도 비거리가 나지 않는 이유를 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "Wlbi1o9fb2Q",
+    "yv4KTSs8Riw"
+  ]
+},
+{
+  "id": "XvPYFd-seNw",
+  "title": "헤드가 던져지는 감각",
+  "originalTitle": "이렇게만 하면 헤드가 던져져요!!! #골프",
+  "channel": "테디TV",
+  "duration": "0:32",
+  "durationSeconds": 32,
+  "presentation": "original",
+  "topics": [
+    "팔·타이밍",
+    "회전·순서"
+  ],
+  "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+  "summary": "헤드가 던져지는 감각을 주제로 한 원본 영상입니다.",
+  "points": [
+    "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
+    "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
+    "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+  ],
+  "moments": [
+    {
+      "s": 0,
+      "label": "0:00 · 원본 전체 보기"
+    }
+  ],
+  "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
+  "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+  "relatedVideoIds": [
+    "4uQe-J5qM2c",
+    "Wlbi1o9fb2Q"
+  ]
+}
   ]
 };
 
@@ -710,7 +963,7 @@ window.GolfContent.presentationFor = () => 'original';
 window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'실제 선수의 스윙을 보고 전체 흐름과 타이밍을 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'에이밍, 정렬, 척추 기울기와 자세를 확인합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg']},
-  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc']},
-  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c']}
+  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M']},
+  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
