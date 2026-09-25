@@ -98,8 +98,11 @@ window.GolfHub = (() => {
     if (tab==='topic') return topicPage(id);
     if (tab==='search') return searchPage(view);
     const selectedGroup=videoGroups().some(g=>g.id===view.golfGroup)?view.golfGroup:null;
-    const featured=tab==='videos' && !selectedGroup && !view.golfTopic && !(view.golfQuery||'').trim() ? video(content.featuredVideoId) : null;
-    let body=(featured?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2>${compactCard(featured)}</section>`:'')+(tab==='videos'?videoGroupNav(selectedGroup):'')+filters(view);
+    const isAllVideos=tab==='videos' && !selectedGroup && !view.golfTopic && !(view.golfQuery||'').trim();
+    const featured=isAllVideos ? video(content.featuredVideoId) : null;
+    const recent=isAllVideos ? content.recentVideos() : [];
+    const recentSection=recent.length?`<section class="g-video-section g-recent-section" aria-labelledby="g-recent-title"><header><h2 id="g-recent-title">최근 업로드 <span>최근 7일 · ${recent.length}편</span></h2></header><p class="g-meta">YouTube에 공개된 날짜를 기준으로 표시합니다.</p><div class="g-video-grid">${recent.map(compactCard).join('')}</div></section>`:'';
+    let body=recentSection+(featured?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2>${compactCard(featured)}</section>`:'')+(tab==='videos'?videoGroupNav(selectedGroup):'')+filters(view);
     if (tab==='notes') {
       const fs=activeFocus();
       body+=block('지금 집중할 것',fs.length?fs.map(focusRow).join(''):'<p class="g-muted">노트·레슨·영상에서 지금 연습할 핵심을 골라 최대 3개까지 모아보세요.</p>');

@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>골프 자료로 이동</title></head>
-<body><p>골프 자료로 이동합니다.</p><a id="destination" href="../../index.html?v=84#golf/videos">골프 자료 열기</a>
-<script src="../../js/golf-data.js?v=84"></script>
+<body><p>골프 자료로 이동합니다.</p><a id="destination" href="../../index.html?v=85#golf/videos">골프 자료 열기</a>
+<script src="../../js/golf-data.js?v=85"></script>
 <script>
 const params=new URLSearchParams(location.search);
 const id=params.get('source'),exercise=params.get('exercise');
 const validVideo=window.GolfContent.videos.some(v=>v.id===id);
 const validNote=['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(exercise);
 const hash=validVideo?'#golf/videos/'+id:validNote?'#exercise/'+exercise:'#golf/videos';
-const url='../../index.html?v=84'+hash;
+const url='../../index.html?v=85'+hash;
 document.getElementById('destination').href=url;
 location.replace(url);
 </script></body></html>
