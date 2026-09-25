@@ -1,10 +1,10 @@
 # PT & GOLF VER1.3 — 새 세션 핸드오프
-## 최신 로컬 작업 · 2026-09-25 · 골프 최근 업로드 섹션 v85 (배포 승인)
+## 최신 릴리스 · 2026-09-25 · 골프 최근 업로드 섹션 v85 (배포 완료)
 
 - 골프 유튜브 전체 목록 맨 위에 기본 영상·그룹 탐색보다 앞서 “최근 업로드” 섹션을 배치했다. 검색/주제/그룹 필터 화면에는 해당 필터 결과를 우선한다.
 - 기존 38개 영상에 YouTube 원본 공개 일시를 저장하고 최근 7×24시간에 든 항목을 공개 시각 내림차순으로 계산한다. 서울시간 2026-09-25 17:13 기준 6편: ThwbClowjjU, A_fu4ajV-_I, o4KqDhYXlTw, mGYe7UjYXfo, 28HBEaS-G54, cQiwXcbWZc4. 날짜가 지나면 자동으로 섹션에서 빠진다.
 - 원본 공개 날짜는 각 YouTube watch page의 player metadata에서 확인했다. 그룹·기본 영상·개인 기록과 골프 이미지·3D 미제공 정책을 유지한다.
-- 앱/SW/호환 자산은 v85. 사용자가 2026-09-26 배포를 요청했다. 배포 후 GitHub Pages 성공 및 공개 UI를 확인한다. 미리보기 http://127.0.0.1:8792/index.html?v=85#golf/videos .
+- 배포 커밋 c90d632a071bde7aa4a5ac045b1a7bc32fa95c98. GitHub Pages 실행 36168208027 success. 공개 index·CSS·앱 JS·38개 공개 날짜 필드·SW v85 및 최근 섹션 코드를 확인했다. 공개 URL https://peoplenhpark.github.io/PT-GOLF/?v=85#golf/videos .
 
 ## 릴리스 v84 · 2026-09-25 · 골프 Shorts 7편
 
