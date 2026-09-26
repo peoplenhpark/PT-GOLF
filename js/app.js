@@ -32,10 +32,13 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '85';
+  const ASSET_VER = '88';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
+  let historyIndex = Number.isInteger(history.state?.ptgolfIndex) ? history.state.ptgolfIndex : 0;
+  let historyMaxIndex = historyIndex;
+  let ignoreHashChange = false;
   // 운동 1회용 체크 상태(저장 안 함): { exId: Set(cueIndex) }
   const checks = {};
   let confirmCb = null;
@@ -344,7 +347,7 @@ const Theme = (() => {
     frame.style.height = `${Math.max(320, Math.min(1400, Math.ceil(ev.data.height)))}px`;
   });
   function openExerciseLink() {
-    if (GolfHub.openLink(location.hash)) return true;
+    if (GolfHub.openLink(location.hash, 'replace')) return true;
     const match = /^#exercise\/([a-zA-Z0-9_-]+)$/.exec(location.hash);
     if (!match) return false;
     const e = Store.getById(match[1]);
@@ -444,6 +447,9 @@ const Theme = (() => {
 
   // ============ 네비게이션 ============
   function go(name, opts = {}) {
+    const historyMode = opts.__historyMode || 'push';
+    opts = { ...opts };
+    delete opts.__historyMode;
     view = { ...view, name, ...opts };
     if (name === 'home' || name === 'favorites') { view.part = null; view.id = null; }
     if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null, calYear: view.calYear, calMonth: view.calMonth }; }
@@ -452,16 +458,56 @@ const Theme = (() => {
       view.name === 'golf-hub' && view.golfTab === 'videos' && !view.golfId && view.golfGroup ? '#golf/group/' + encodeURIComponent(view.golfGroup) :
       view.name === 'golf-hub' ? '#golf/' + (view.golfTab || 'videos') + (view.golfId ? '/' + encodeURIComponent(view.golfId) : '') :
       view.name === 'part' && view.part === 'golf' ? '#golf/videos' : '';
-    history.replaceState(null, '', location.pathname + location.search + hash);
+    if (historyMode === 'push') {
+      historyIndex++;
+      historyMaxIndex = historyIndex;
+    }
+    history[historyMode === 'push' ? 'pushState' : 'replaceState'](
+      { ptgolfView: { ...view }, ptgolfIndex: historyIndex }, '', location.pathname + location.search + hash);
+    updateHistoryButtons();
     window.scrollTo(0, 0);
     render();
   }
 
+  function updateHistoryButtons() {
+    const back = document.getElementById('history-back');
+    const forward = document.getElementById('history-forward');
+    if (back) back.disabled = historyIndex <= 0;
+    if (forward) forward.disabled = historyIndex >= historyMaxIndex;
+  }
+
+  function restoreHistory(event) {
+    const saved = event.state?.ptgolfView;
+    if (saved && typeof saved === 'object' && typeof saved.name === 'string') {
+      ignoreHashChange = true;
+      setTimeout(() => { ignoreHashChange = false; }, 0);
+      view = { ...saved };
+      historyIndex = Number.isInteger(event.state.ptgolfIndex) ? event.state.ptgolfIndex : historyIndex;
+      historyMaxIndex = Math.max(historyMaxIndex, historyIndex);
+      updateHistoryButtons();
+      render();
+      return;
+    }
+    if (!openExerciseLink()) go('home', { __historyMode: 'replace' });
+  }
+
   // ============ 이벤트 (위임) ============
   document.body.addEventListener('click', (ev) => {
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent]');
+    const link = ev.target.closest('a[href^="#golf"],a[href^="#exercise/"]');
+    if (link) {
+      const hash = link.getAttribute('href');
+      if (GolfHub.openLink(hash, 'push')) { ev.preventDefault(); return; }
+      const match = /^#exercise\/([a-zA-Z0-9_-]+)$/.exec(hash);
+      if (match) {
+        const ex = Store.getById(match[1]);
+        if (ex) { ev.preventDefault(); go('detail', { id: ex.id, part: ex.part }); return; }
+      }
+    }
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history]');
     if (!t) return;
 
+    if (t.dataset.history === 'back') { history.back(); return; }
+    if (t.dataset.history === 'forward') { history.forward(); return; }
     if (t.dataset.nav) { go(t.dataset.nav); return; }
     if (t.hasAttribute('data-back')) { go(view.part || 'home'); return; }
     if (t.dataset.partOpen) { go(t.dataset.partOpen); return; }
@@ -672,8 +718,16 @@ const Theme = (() => {
   // ============ 부트 ============
   Store.init().then(() => {
     Theme.init();   // 버튼 아이콘 동기화 (인라인 스크립트가 html 속성은 설정했지만 버튼 아이콘은 여기서)
-    if (!openExerciseLink()) render();
-    window.addEventListener('hashchange', () => { if (!openExerciseLink()) go('home'); });
+    if (!openExerciseLink()) {
+      history.replaceState({ ptgolfView: { ...view }, ptgolfIndex: historyIndex }, '', location.href);
+      render();
+    }
+    updateHistoryButtons();
+    window.addEventListener('popstate', restoreHistory);
+    window.addEventListener('hashchange', () => {
+      if (ignoreHashChange) return;
+      if (!openExerciseLink()) go('home', { __historyMode: 'replace' });
+    });
     if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
       // 이전에 이미 SW가 있던 경우에만, 새 SW가 제어권을 잡으면 1회 자동 새로고침 → 최신본 즉시 반영
       const hadController = !!navigator.serviceWorker.controller;

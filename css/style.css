@@ -21,11 +21,15 @@ body{
   -webkit-text-size-adjust:125%;text-size-adjust:125%;
 }
 #app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
+.history-controls{position:fixed;top:calc(var(--safe-top) + 8px);left:max(10px,calc(50% - 280px + 10px));display:flex;gap:5px;z-index:41}
+.history-controls button{min-height:42px;padding:0 11px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--txt);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;box-shadow:var(--shadow-sm);touch-action:manipulation}
+.history-controls button:disabled{opacity:.42;cursor:default;box-shadow:none}
+.history-controls button:not(:disabled):active{transform:scale(.96);border-color:var(--golf)}
 
 /* ---------- scroll area ---------- */
 .scr{
   flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;
-  padding:calc(var(--safe-top) + 18px) 16px calc(90px + var(--safe-bot));
+  padding:calc(var(--safe-top) + 60px) 16px calc(90px + var(--safe-bot));
 }
 .scr::-webkit-scrollbar{width:0}
 

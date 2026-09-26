@@ -258,16 +258,16 @@ window.GolfHub = (() => {
       }
     });
   }
-  function openLink(hash) {
+  function openLink(hash, historyMode='replace') {
     const groupMatch=/^#golf\/group\/([a-z0-9-]+)$/.exec(hash);
     if(groupMatch){
       const group=videoGroups().find(g=>g.id===groupMatch[1]);
-      go('videos',null,{golfGroup:group?.id||null,golfQuery:'',golfTopic:null,cat:null});return true;
+      go('videos',null,{golfGroup:group?.id||null,golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
     }
-    if(/^#golf\/?$/.test(hash)){go('videos',null,{golfQuery:'',golfTopic:null,cat:null});return true;}
+    if(/^#golf\/?$/.test(hash)){go('videos',null,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;}
     const m=/^#golf\/(notes|lessons|videos|topic)(?:\/([^/]+))?$/.exec(hash);if(!m)return false;
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
-    go(m[1],id,{golfQuery:'',golfTopic:null,cat:null});return true;
+    go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
   return {configure,render,related,openLink};
 })();
