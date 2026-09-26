@@ -32,7 +32,7 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '88';
+  const ASSET_VER = '89';
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
@@ -75,6 +75,10 @@ const Theme = (() => {
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
+      <div class="history-controls" aria-label="화면 이동">
+        <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${historyIndex <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
+        <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${historyIndex >= historyMaxIndex ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
+      </div>
     </nav>
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
   }
