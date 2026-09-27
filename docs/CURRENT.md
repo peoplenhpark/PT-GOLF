@@ -4,7 +4,8 @@
 
 ## 상태
 
-- 공개 확인된 이전 버전: v89. v90 개선 작업과 검증을 진행 중이며, 공개 배포 성공 여부는 실제 Pages 실행과 공개 화면 확인 후 이 항목에 기록한다.
+- 현재 공개 버전: v90 (2026-09-27 배포 완료). 코드 커밋 c6d524d406631d4656a2daa2cf9b46059556d91d. GitHub Actions 실행 36288651723의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=90#golf/videos . release.json/index/초안·라우팅·SW 파일 확인, 390px 공개 화면의 PT 새로고침 복원·가로 넘침 없음·페이지 스크립트 오류 0건 확인. 게시 방식을 GitHub Actions로 전환하여 검증 성공한 _site만 게시한다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.
