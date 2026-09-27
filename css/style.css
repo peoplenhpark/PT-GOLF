@@ -458,3 +458,22 @@ textarea.memo-input{width:100%;background:var(--card);border:1px solid var(--gol
 .pt-exercise-grid .ex .meta{flex-wrap:wrap;gap:4px;font-size:10px;line-height:1.35}
 .pt-exercise-grid .ex .star,.pt-exercise-grid .ex .chev{position:absolute;top:16px;right:12px;line-height:1}
 @media(min-width:520px){.pt-exercise-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* v90: legible controls and semantic interactive elements. */
+a.ex,a.part{color:inherit;text-decoration:none}
+button.memo-box{display:block;width:100%;text-align:left;font:inherit;cursor:pointer}
+button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card);border:1px solid var(--line)}
+.check input[type=checkbox]{width:24px;height:24px;flex:0 0 24px;accent-color:var(--pt);margin:2px 10px 0 0}
+:focus-visible{outline:3px solid var(--golf);outline-offset:3px}
+.draft-status,.offline-tools p{font-size:13px;color:var(--sub);margin:8px 0;line-height:1.5}
+.personal-note-label{padding:12px;border:1px solid var(--golf-line);border-radius:12px;background:var(--golf-bg);margin:12px 0}
+.personal-note-label p{font-size:13px;margin-top:5px;color:var(--sub)}
+.search-result{display:block;color:inherit;text-decoration:none;padding:14px;margin:10px 0;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.search-result strong{display:block;margin:6px 0}
+.search-result p,.search-result small{font-size:13px;line-height:1.5;color:var(--sub);overflow-wrap:anywhere}
+.offline-tools{padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:14px}
+.history-controls button,.tabbar .tab{font-size:11px;line-height:1.3}
+.tag.cat{font-family:inherit}
+.modal .btn,.hd-search{min-height:44px}
+@media(max-width:360px){.tabbar .tab{font-size:10.5px}.history-controls{flex-basis:90px;margin-left:0;padding-inline:1px}.history-controls button{font-size:10.5px}}
+
+.storage-warning{padding:14px;border:1px solid var(--warn-line);background:var(--warn-bg);border-radius:12px;margin:12px 0}.storage-warning p{font-size:14px;margin:8px 0}

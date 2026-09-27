@@ -1,229 +1,157 @@
-/*
- * store.js — 하이브리드 데이터 레이어
- *
- *  데이터 = seed.json (저장소에 커밋된 영구 콘텐츠)  +  localStorage overlay(내 편집)
- *
- *   - seed.json   : 기본 동작/원칙. git 으로 버전관리되는 "원본".
- *   - overlay     : 사용자가 앱에서 추가/수정/삭제/메모/즐겨찾기 한 내용. 브라우저(localStorage)에 저장.
- *   - getAll()    : 둘을 병합해서 반환.
- *   - exportJSON(): 병합 결과 전체를 내려받기 → seed.json 에 붙여넣어 "영구화" 가능.
- *   - importJSON(): 백업 파일을 overlay 로 복원.
- *
- *  체크리스트의 체크 상태는 운동 1회용이라 저장하지 않는다(앱 메모리에만, 새로고침 시 리셋).
- */
+/* Seed content is read-only. New local changes store only the fields the user edits.
+   Ambiguous legacy full-object overlays remain intact and are flagged for review. */
 const Store = (() => {
-  const LS_KEY = 'ptgolf_overlay_v1';
-  const SEED_URL = 'data/seed.json?v=' + Date.now();
-
+  const persistence = window.Persistence;
+  if (!persistence) throw new Error('Persistence module is required');
+  const LS_KEY = persistence.KEYS.overlay, CAL_KEY = persistence.KEYS.calendar;
+  const SEED_URL = 'data/seed.json';
+  const emptyOverlay = () => ({ schemaVersion: 2, overrides: {}, deleted: [], legacyIds: [] });
+  const overlayHandle = persistence.open(LS_KEY, { defaults: emptyOverlay, validate: persistence.validators[LS_KEY] });
+  const calendarHandle = persistence.open(CAL_KEY, { defaults: () => ({}), validate: persistence.validators[CAL_KEY] });
   let seed = { parts: [], principles: [], exercises: [] };
-  let overlay = loadOverlay();          // { overrides:{id:exercise}, deleted:[id] }
+  const equal = persistence.equal;
 
-  function loadOverlay() {
-    try {
-      const raw = localStorage.getItem(LS_KEY);
-      if (raw) {
-        const o = JSON.parse(raw);
-        return { overrides: o.overrides || {}, deleted: o.deleted || [] };
-      }
-    } catch (e) { console.warn('overlay 로드 실패', e); }
-    return { overrides: {}, deleted: [] };
+  function validateSeed(data) {
+    if (!data || !Array.isArray(data.parts) || !Array.isArray(data.principles) || !Array.isArray(data.exercises)) return false;
+    const ids = new Set();
+    return data.exercises.every(ex => {
+      if (!ex || typeof ex.id !== 'string' || !ex.id || ['__proto__', 'constructor', 'prototype'].includes(ex.id) || ids.has(ex.id) || typeof ex.name !== 'string' || typeof ex.part !== 'string') return false;
+      ids.add(ex.id);
+      return ['cues', 'reminders', 'steps', 'prep'].every(key => ex[key] === undefined || (Array.isArray(ex[key]) && ex[key].every(value => typeof value === 'string')));
+    });
   }
-
-  function persist() {
-    localStorage.setItem(LS_KEY, JSON.stringify(overlay));
-  }
-
   async function init() {
-    try {
-      const res = await fetch(SEED_URL, { cache: 'no-store' });
-      seed = await res.json();
-    } catch (e) {
-      console.error('seed.json 로드 실패 — 로컬 파일을 직접 열면 실패할 수 있습니다. 서버로 실행하세요.', e);
-      seed = { parts: [], principles: [], exercises: [] };
+    const response = await fetch(SEED_URL, { cache: 'no-cache' });
+    if (response.ok === false) throw new Error('기본 운동 자료를 불러오지 못했습니다. 연결을 확인하고 다시 시도해 주세요.');
+    const next = await response.json();
+    if (!validateSeed(next)) throw new Error('기본 운동 자료의 형식이 올바르지 않습니다. 다시 불러오기를 시도해 주세요.');
+    seed = next;
+  }
+  function overlay() { return overlayHandle.read(); }
+  function prepare(next) {
+    if (next.schemaVersion !== 2) {
+      // No comparison against today's seed can prove which old fields the user edited.
+      next.legacyIds = Object.keys(next.overrides);
+      next.schemaVersion = 2;
     }
+    next.legacyIds ||= [];
+    return next;
   }
-
-  // ---- 읽기 ----
   function getParts() { return seed.parts || []; }
-
   function getPrinciple(part, category) {
-    // 카테고리 전용 원칙을 '*'(범용)보다 우선 — 배열 순서와 무관하게 특정 원칙이 이긴다
-    const list = (seed.principles || []).filter(p => p.part === part);
-    return list.find(p => p.scope === category) || list.find(p => p.scope === '*') || null;
+    const list = (seed.principles || []).filter(item => item.part === part);
+    return list.find(item => item.scope === category) || list.find(item => item.scope === '*') || null;
   }
-
-  /** seed + overlay 병합된 전체 동작 목록 */
   function getAll() {
-    const deleted = new Set(overlay.deleted);
+    const local = overlay(), deleted = new Set(local.deleted), seen = new Set();
     const result = [];
-    const seenIds = new Set();
-
-    (seed.exercises || []).forEach(ex => {
-      if (deleted.has(ex.id)) return;
-      seenIds.add(ex.id);
-      const saved = overlay.overrides[ex.id];
-      const merged = saved ? { ...ex, ...saved } : ex;
-      // 과거 전체 객체 저장에 포함된 SVG 경로만 새 안내 이미지로 갱신한다.
-      // 사용자 지정 이미지 경로와 메모/즐겨찾기/운동 내용은 보존한다.
-      if (saved && ex.image && ex.image.startsWith('docs/images/guides/') &&
-          (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) {
-        merged.image = ex.image;
-      }
+    for (const ex of seed.exercises) {
+      seen.add(ex.id);
+      if (deleted.has(ex.id)) continue;
+      const saved = local.overrides[ex.id];
+      const merged = saved ? { ...ex, ...saved } : { ...ex };
+      if (saved && ex.image?.startsWith('docs/images/guides/') && (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) merged.image = ex.image;
       result.push(merged);
-    });
-    // seed 에 없는 신규(로컬 추가) 동작
-    Object.values(overlay.overrides).forEach(ex => {
-      if (!seenIds.has(ex.id) && !deleted.has(ex.id)) result.push(ex);
-    });
+    }
+    for (const [id, ex] of Object.entries(local.overrides)) {
+      if (!seen.has(id) && !deleted.has(id)) result.push({ ...ex, id });
+    }
     return result;
   }
-
-  function getByPart(part) { return getAll().filter(e => e.part === part); }
-  function getById(id) { return getAll().find(e => e.id === id) || null; }
-  function getFavorites() { return getAll().filter(e => e.favorite); }
-
-  /** part 내 카테고리 목록(순서 보존) */
-  function getCategories(part) {
-    const seen = new Set(); const cats = [];
-    getByPart(part).forEach(e => { if (!seen.has(e.category)) { seen.add(e.category); cats.push(e.category); } });
-    return cats;
-  }
-
-  /** 동작 검색 — 이름·스펙·카테고리·큐·잊지말것·스텝·메모 전체에서 찾는다.
-   *  공백으로 여러 단어를 넣으면 모두 포함(AND)하는 동작만 반환. */
-  function search(q) {
-    const terms = (q || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+  function getByPart(part) { return getAll().filter(ex => ex.part === part); }
+  function getById(id) { return getAll().find(ex => ex.id === id) || null; }
+  function getFavorites() { return getAll().filter(ex => ex.favorite); }
+  function getCategories(part) { return [...new Set(getByPart(part).map(ex => ex.category))]; }
+  function search(query) {
+    const terms = (query || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) return [];
-    return getAll().filter(e => {
-      const f = e.focus || {};
-      const hay = [e.name, e.spec, e.category, f.muscle || '', f.move || '', f.feel || '',
-        ...(e.prep || []), ...(e.cues || []), ...(e.reminders || []), ...(e.steps || []), e.memo || '']
-        .join(' ').toLowerCase();
-      return terms.every(t => hay.includes(t));
+    return getAll().filter(ex => {
+      const focus = ex.focus || {};
+      const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
+        ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []), ex.memo || ''].join(' ').toLowerCase();
+      return terms.every(term => text.includes(term));
     });
   }
-
-  // ---- 쓰기 (CRUD) ----
-  function newId() { return 'usr_' + Math.random().toString(36).slice(2, 9); }
-
-  /** 추가 또는 수정. id 없으면 생성 후 반환된 객체의 id 사용. */
+  function newId() { return 'usr_' + (globalThis.crypto?.randomUUID?.() || Math.random().toString(36).slice(2)); }
   function upsert(ex) {
-    if (!ex.id) ex.id = newId();
-    ex.updated = todayStr();
-    overlay.overrides[ex.id] = { ...getById(ex.id), ...ex };
-    overlay.deleted = overlay.deleted.filter(d => d !== ex.id);
-    persist();
-    return overlay.overrides[ex.id];
-  }
-
-  /** 삭제. seed 항목이면 deleted 마스크, 로컬 항목이면 overlay 제거. */
-  function remove(id) {
-    delete overlay.overrides[id];
-    const isSeed = (seed.exercises || []).some(e => e.id === id);
-    if (isSeed && !overlay.deleted.includes(id)) overlay.deleted.push(id);
-    persist();
-  }
-
-  function patch(id, fields) {
-    const cur = getById(id);
-    if (!cur) return null;
-    return upsert({ ...cur, ...fields });
-  }
-
-  function setMemo(id, memo)      { return patch(id, { memo }); }
-  function toggleFavorite(id) {
-    const cur = getById(id);
-    return cur ? patch(id, { favorite: !cur.favorite }) : null;
-  }
-
-  // ---- 백업 / 복원 ----
-  /** 병합된 현재 상태 전체를 seed 스키마로 내보낸다. */
-  function exportData() {
-    return {
-      version: seed.version || 1,
-      updated: todayStr(),
-      parts: seed.parts,
-      principles: seed.principles,
-      exercises: getAll()
-    };
-  }
-
-  /** 파일에서 불러온 데이터를 overlay 로 전체 반영(seed 대비 덮어쓰기). */
-  function importData(data) {
-    const overrides = {};
-    (data.exercises || []).forEach(ex => { if (ex.id) overrides[ex.id] = ex; });
-    // seed 에 있는데 import 에 없는 항목은 삭제 처리
-    const importedIds = new Set((data.exercises || []).map(e => e.id));
-    const deleted = (seed.exercises || []).map(e => e.id).filter(id => !importedIds.has(id));
-    overlay = { overrides, deleted };
-    persist();
-  }
-
-  function resetOverlay() {
-    overlay = { overrides: {}, deleted: [] };
-    persist();
-  }
-
-  function hasLocalChanges() {
-    return Object.keys(overlay.overrides).length > 0 || overlay.deleted.length > 0;
-  }
-
-  // ---- 캘린더 ----
-  const CAL_KEY = 'ptgolf_calendar_v1';
-
-  function getCalendar() {
-    try { return JSON.parse(localStorage.getItem(CAL_KEY) || '{}'); } catch { return {}; }
-  }
-
-  function setCalEntry(dateStr, data) {
-    const cal = getCalendar();
-    if (data && (data.scheduled || data.completed || data.rest)) {
-      cal[dateStr] = {
-        scheduled: !!data.scheduled,
-        completed: !!data.completed,
-        rest:      !!data.rest,
-        schedTime: data.schedTime || ''
-      };
-    } else {
-      delete cal[dateStr];
-    }
-    localStorage.setItem(CAL_KEY, JSON.stringify(cal));
-  }
-
-  function getCalEntry(dateStr) {
-    return getCalendar()[dateStr] || null;
-  }
-
-  /* 최근 N일(오늘 포함) 안에 갱신된 동작을 날짜별로 묶어 최신순 반환.
-     해당 기간에 갱신 이력이 없으면 빈 배열 → 홈에서 섹션 자체를 감춘다. */
-  function getRecentSessions(days = 7) {
-    const today = todayStr();
-    const from = new Date(today + 'T00:00:00');
-    from.setDate(from.getDate() - (days - 1));
-    const p = n => String(n).padStart(2, '0');
-    const fromStr = `${from.getFullYear()}-${p(from.getMonth() + 1)}-${p(from.getDate())}`;
-
-    const byDate = {};
-    getAll().forEach(e => {
-      const d = e.updated;
-      if (!d || d < fromStr || d > today) return;
-      (byDate[d] = byDate[d] || []).push(e);
+    const id = ex.id || newId();
+    if (typeof id !== 'string' || ['__proto__', 'constructor', 'prototype'].includes(id)) throw new Error('운동 식별자를 확인해 주세요.');
+    const original = seed.exercises.find(item => item.id === id);
+    overlayHandle.update(next => {
+      prepare(next);
+      const saved = { ...(next.overrides[id] || {}), id };
+      const preserveLegacy = next.legacyIds.includes(id);
+      for (const [field, value] of Object.entries(ex)) {
+        if (field === 'id' || field === 'updated' || value === undefined) continue;
+        if (original && !preserveLegacy && equal(value, original[field])) delete saved[field];
+        else saved[field] = value;
+      }
+      saved.updated = todayStr();
+      next.overrides[id] = saved;
+      next.deleted = next.deleted.filter(item => item !== id);
     });
-    return Object.keys(byDate).sort().reverse()
-      .map(date => ({ date, exercises: byDate[date] }));
+    return getById(id);
   }
-
+  function remove(id) {
+    overlayHandle.update(next => {
+      prepare(next); delete next.overrides[id];
+      next.legacyIds = next.legacyIds.filter(item => item !== id);
+      if (seed.exercises.some(ex => ex.id === id) && !next.deleted.includes(id)) next.deleted.push(id);
+    });
+  }
+  function patch(id, fields) { return getById(id) ? upsert({ ...fields, id }) : null; }
+  function setMemo(id, memo) { return patch(id, { memo }); }
+  function toggleFavorite(id) {
+    const current = getById(id);
+    return current ? patch(id, { favorite: !current.favorite }) : null;
+  }
+  function exportData() {
+    // Legacy consumers retain their seed-shaped fields; the versioned bundle is complete.
+    return { ...persistence.exportBackup(), version: seed.version || 1, updated: todayStr(),
+      parts: seed.parts, principles: seed.principles, exercises: getAll() };
+  }
+  function importData(data) {
+    if (data?.format === 'ptgolf-backup') return persistence.restoreBackup(data);
+    if (!validateSeed(data)) throw new Error('운동 백업 파일의 형식이 올바르지 않습니다.');
+    const overrides = {};
+    data.exercises.forEach(ex => { overrides[ex.id] = ex; });
+    const imported = new Set(data.exercises.map(ex => ex.id));
+    const next = { schemaVersion: 2, overrides, deleted: seed.exercises.filter(ex => !imported.has(ex.id)).map(ex => ex.id), legacyIds: [...imported] };
+    // A legacy import updates only the overlay, preserving every other store in the full snapshot.
+    const backup = persistence.exportBackup(); backup.stores[LS_KEY] = next;
+    return persistence.restoreBackup(backup);
+  }
+  function resetOverlay() { overlayHandle.commit(emptyOverlay()); }
+  function hasLocalChanges() { const local = overlay(); return Object.keys(local.overrides).length > 0 || local.deleted.length > 0; }
+  function getCalendar() { return calendarHandle.read(); }
+  function setCalEntry(dateStr, data) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) throw new Error('날짜 형식을 확인해 주세요.');
+    calendarHandle.update(next => {
+      if (data && (data.scheduled || data.completed || data.rest)) {
+        next[dateStr] = { scheduled: !!data.scheduled, completed: !!data.completed, rest: !!data.rest, schedTime: data.schedTime || '' };
+      } else delete next[dateStr];
+    });
+  }
+  function getCalEntry(dateStr) { return getCalendar()[dateStr] || null; }
+  function getRecentSessions(days = 7) {
+    const today = todayStr(), from = new Date(today + 'T00:00:00');
+    from.setDate(from.getDate() - (days - 1));
+    const pad = number => String(number).padStart(2, '0');
+    const fromStr = `${from.getFullYear()}-${pad(from.getMonth() + 1)}-${pad(from.getDate())}`, byDate = {};
+    getAll().forEach(ex => { if (ex.updated && ex.updated >= fromStr && ex.updated <= today) (byDate[ex.updated] ||= []).push(ex); });
+    return Object.keys(byDate).sort().reverse().map(date => ({ date, exercises: byDate[date] }));
+  }
   function todayStr() {
-    // Date 사용(런타임 브라우저). 빌드 환경 제약과 무관.
-    const d = new Date();
-    const p = n => String(n).padStart(2, '0');
-    return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+    const date = new Date(), pad = number => String(number).padStart(2, '0');
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
   }
-
-  return {
-    init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites,
-    getCategories, search, upsert, remove, patch, setMemo, toggleFavorite,
-    exportData, importData, resetOverlay, hasLocalChanges, todayStr, getRecentSessions,
-    getCalendar, setCalEntry, getCalEntry
-  };
+  function reload() { overlayHandle.reload(); calendarHandle.reload(); }
+  function getStatus() {
+    const local = overlay();
+    return { overlay: overlayHandle.status(), calendar: calendarHandle.status(),
+      legacyIds: local.schemaVersion === 2 ? (local.legacyIds || []).slice() : Object.keys(local.overrides) };
+  }
+  return { init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getCategories, search,
+    upsert, remove, patch, setMemo, toggleFavorite, exportData, importData, resetOverlay, hasLocalChanges,
+    todayStr, getRecentSessions, getCalendar, setCalEntry, getCalEntry, reload, getStatus };
 })();

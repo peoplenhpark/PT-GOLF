@@ -14,3 +14,9 @@ transcript*.txt
 
 # Full resolution generation sources stay local; optimized pairs are deployed.
 docs/images/guides/source/
+
+# Reproducible validation dependencies and publish output.
+node_modules/
+_site/
+playwright-report/
+test-results/

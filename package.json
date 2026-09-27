@@ -1,0 +1,15 @@
+{
+  "name": "pt-golf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static PT and golf personal notes PWA",
+  "scripts": {
+    "release:prepare": "node scripts/release.cjs",
+    "validate": "node scripts/validate.cjs",
+    "test": "node scripts/validate.cjs",
+    "test:browser": "node tests/browser-smoke.cjs",
+    "build:site": "node scripts/site.cjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "playwright": "1.62.1" }
+}

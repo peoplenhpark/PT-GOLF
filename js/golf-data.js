@@ -1406,3 +1406,30 @@ window.GolfContent.videoGroups = [
   {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
+
+// Evidence labels describe what was reviewed, never whether a cue is right for a person.
+window.GolfContent.evidenceFor = v => {
+  if ((v.evidence || '').includes('영상 요약이 아닌')) return {kind:'metadata',label:'제목·메타데이터 확인',heading:'비교 관찰 포인트'};
+  if ((v.evidence || '').includes('편집자가 제안하는 관찰')) return {kind:'observation',label:'시범 화면 확인',heading:'편집자의 관찰 포인트'};
+  return {kind:'source',label:'자막·화면 기반 정리',heading:'원본 내용 정리'};
+};
+window.GolfContent.relatedFor = (note, options = {}) => {
+  const c = window.GolfContent;
+  const noteTitle = `${note.name || ''} ${note.category || ''}`;
+  const noteClub = /드라이버/.test(noteTitle) ? '드라이버' : /아이언|피칭/.test(noteTitle) ? '아이언' : '';
+  const number = /([57])번/.exec(noteTitle)?.[1];
+  const explicit = new Set(options.videoIds || []);
+  const noteTopics = options.topics || c.noteTopics[note.id] || [];
+  return c.videos.map((video, index) => {
+    const title = `${video.title} ${video.originalTitle || ''}`;
+    const common = video.topics.filter(t => noteTopics.includes(t));
+    const titleClubs = ['드라이버','아이언'].filter(club => title.includes(club));
+    const sameClub = !!noteClub && titleClubs.includes(noteClub);
+    const differentClub = !!noteClub && titleClubs.length > 0 && !sameClub;
+    const exactNumber = !!number && title.includes(number+'번');
+    const linked = explicit.has(video.id);
+    const score = linked ? 100 : differentClub ? -1 : (exactNumber ? 20 : sameClub ? 10 : 0) + common.length;
+    const reason = linked ? '내 레슨에 직접 연결한 영상' : exactNumber ? `제목에 ${number}번 아이언이 명시된 영상` : sameClub ? `제목에 ${noteClub}가 명시된 영상` : common.length ? `공통 주제 · ${common.join(' · ')}` : '';
+    return {video,reason,score,index};
+  }).filter(x => x.score > 0).sort((a,b) => b.score-a.score || a.index-b.index).slice(0,5).map(({video,reason}) => ({video,reason}));
+};

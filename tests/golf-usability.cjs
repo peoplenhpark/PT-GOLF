@@ -1,0 +1,75 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const root = path.resolve(__dirname, '..');
+const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+const seed = JSON.parse(read('data/seed.json'));
+function setup(stored = null) {
+  const disk = new Map(stored === null ? [] : [['ptgolf_learning_v1', stored]]);
+  let writes = 0, clears = 0;
+  const handlers = {};
+  const app = {innerHTML:'',querySelector:()=>null,addEventListener:(type,fn)=>{handlers[type]=fn;}};
+  const ctx = {window:{},localStorage:{getItem:key=>disk.get(key)??null,setItem:(key,value)=>{writes++;disk.set(key,value);},removeItem:key=>disk.delete(key)},
+    Store:{getByPart:part=>seed.exercises.filter(x=>x.part===part),getById:id=>seed.exercises.find(x=>x.id===id),getCategories:()=>['드라이버','아이언'],todayStr:()=> '2026-09-27'},
+    FormData:class{constructor(form){this.values=form.values;}get(key){return this.values[key]??null;}getAll(key){return this.values[key]??[];}},crypto:{randomUUID:()=> 'test-id'}};
+  vm.createContext(ctx);
+  for (const file of ['js/persistence.js','js/golf-data.js']) vm.runInContext(read(file),ctx);
+  ctx.window.AppDrafts = {bind:()=>{},clear:()=>{clears++;},hasPending:()=>false};
+  vm.runInContext(read('js/golf.js'),ctx);
+  const messages=[];
+  const routes=[];
+  const api={app,tabbar:()=>'',exRow:x=>x.name,go:(...args)=>routes.push(args),toast:text=>messages.push(text),refresh:()=>{}};
+  ctx.window.GolfHub.configure(api);
+  return {ctx,app,api,disk,handlers,messages,routes,stats:()=>({writes,clears})};
+}
+const s = setup();
+const c=s.ctx.window.GolfContent, hub=s.ctx.window.GolfHub;
+assert.deepEqual(c.videos.reduce((counts,v)=>{const kind=c.evidenceFor(v).kind;counts[kind]=(counts[kind]||0)+1;return counts;},{}),{metadata:25,observation:2,source:11});
+const latest = Math.max(...c.videos.map(v=>Date.parse(v.publishedAt)));
+assert(c.recentVideos(latest+7*86400000).length>0,'inclusive 168-hour boundary');
+assert.equal(c.recentVideos(latest+7*86400000+1).length,0,'expired videos leave recent only');
+vm.runInContext(`Date.now=()=>${latest+8*86400000}`,s.ctx);
+hub.render({golfTab:'videos'},s.api);
+assert(s.app.innerHTML.includes('최근 7일 · 0편'));
+assert(s.app.innerHTML.includes('YouTube 공개일 기준'));
+assert(s.app.innerHTML.includes('전체 38편 중 0편'));
+assert(s.app.innerHTML.includes('최근 7일에 공개된 영상은 없습니다'));
+assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,38);
+for (const note of seed.exercises.filter(x=>x.part==='golf')) {
+  const related = c.relatedFor(note);
+  assert(related.length>0&&related.length<=5);
+  assert.equal(new Set(related.map(x=>x.video.id)).size,related.length);
+  assert(related.every(x=>x.reason));
+  if(note.id==='golf_driver') assert(related.every(x=>!/아이언/.test(x.video.title+' '+x.video.originalTitle)||/드라이버/.test(x.video.title+' '+x.video.originalTitle)));
+}
+const manual=c.relatedFor(seed.exercises.find(x=>x.id==='golf_driver'),{videoIds:['9YWDNMyTQy4']});
+assert.equal(manual[0].video.id,'9YWDNMyTQy4');
+assert.equal(manual[0].reason,'내 레슨에 직접 연결한 영상');
+assert.equal(hub.searchRecords('9YWDNMyTQy4').length,0,'hidden IDs are not searchable');
+const matches=hub.searchRecords('김동현프로');
+assert(matches.some(x=>x.type==='video'&&x.matchedFields.includes('채널')));
+assert(matches.every(x=>x.href&&x.excerpt&&x.matchedFields.length));
+hub.render({golfTab:'videos',golfId:'9YWDNMyTQy4'},s.api);
+assert(s.app.innerHTML.includes('비교 관찰 포인트'));
+assert(!s.app.innerHTML.includes('>영상 핵심<'));
+assert(s.app.innerHTML.includes('제목·메타데이터 확인'));
+assert.equal(s.stats().writes,0,'rendering and search never persist user records');
+const searchForm={dataset:{gForm:'search'},values:{q:'드라이버'}};
+s.handlers.submit({target:{closest:()=>searchForm},preventDefault:()=>{}});
+assert.equal(s.routes.at(-1)[0],'search');
+assert.equal(s.routes.at(-1)[1].scope,'all');
+assert.equal(s.routes.at(-1)[1].q,'드라이버');
+const form={dataset:{gForm:'video',id:'9YWDNMyTQy4'},values:{memo:'내 연습 메모',status:'연습 중'}};
+s.handlers.submit({target:{closest:()=>form},preventDefault:()=>{}});
+assert.equal(JSON.parse(s.disk.get('ptgolf_learning_v1')).videoNotes['9YWDNMyTQy4'].memo,'내 연습 메모');
+assert.equal(s.stats().clears,1,'draft cleared only after successful save');
+s.ctx.window.AppDrafts.clear=()=>{throw Error('draft quota');};
+assert.doesNotThrow(()=>s.handlers.submit({target:{closest:()=>form},preventDefault:()=>{}}));
+assert(s.messages.at(-1).includes('기록은 저장됐습니다'));
+const broken=setup('{invalid json');
+broken.handlers.submit({target:{closest:()=>form},preventDefault:()=>{}});
+assert.equal(broken.disk.get('ptgolf_learning_v1'),'{invalid json','corrupt original remains untouched');
+assert.equal(broken.stats().clears,0,'failed save retains draft');
+assert(broken.messages.some(x=>x.includes('기존 기록을 보호')));
+console.log('PASS: golf recent expiry/empty state, evidence levels, relevant five, visible-field search, save/draft and corrupt-data protection.');

@@ -78,3 +78,17 @@
 @media(min-width:720px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .g-video-section h2{color:#C8A96B}
 .g-video-section h2 span{color:currentColor;opacity:.72}
+
+/* Keep each card title at full width, including compact mobile grids. */
+.g-video-grid .g-video-mini{grid-template-columns:minmax(0,1fr);align-items:stretch;gap:9px;padding:12px}
+.g-video-grid .g-mini-detail{justify-content:flex-start;min-height:76px}
+.g-video-grid .g-mini-title{font-size:15px;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
+.g-video-grid .g-mini-play{flex-direction:row;gap:7px;min-height:44px;align-self:end;font-size:12px}
+.g-mini-meta,.g-mini-date{font-size:12px;font-weight:500;line-height:1.6;color:var(--sub)}
+.g-mini-date{display:block}
+.g-date-basis{display:block!important;font-size:13px!important;line-height:1.65!important;color:var(--sub);margin:8px 0 16px}
+.g-trust-note,.g-evidence-note{border-left:3px solid var(--golf);padding:10px 12px;background:var(--golf-bg);font-size:14px!important;line-height:1.7;margin:12px 0 18px}
+.g-evidence-badge{display:inline-flex;border:1px solid var(--golf-line);border-radius:6px;padding:4px 8px;font-size:12px;font-weight:600;color:var(--golf);margin:5px 0 8px}
+.g-related-reason{font-size:13px!important;font-weight:700!important;color:var(--golf);margin:14px 0 7px}
+.g-view-options{grid-template-columns:minmax(0,1fr)}
+.g-hub input:focus-visible,.g-hub textarea:focus-visible,.g-hub select:focus-visible{outline:2px solid var(--golf);outline-offset:3px}

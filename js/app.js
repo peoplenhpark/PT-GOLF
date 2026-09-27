@@ -6,7 +6,7 @@ const Theme = (() => {
   const DARK_META  = '#0d0f14';
   const LIGHT_META = '#f5f7fa';
 
-  function get() { return localStorage.getItem(KEY) || 'dark'; }
+  function get() { try{return localStorage.getItem(KEY)||'dark';}catch{return 'dark';} }
 
   function apply(t) {
     document.documentElement.setAttribute('data-theme', t);
@@ -32,12 +32,11 @@ const Theme = (() => {
   const toastEl = document.getElementById('toast');
 
   // 자산 버전 — 그림(SVG) URL에 붙여 캐시 강제 갱신 (릴리스 시 index.html·sw.js와 함께 올릴 것)
-  const ASSET_VER = '89';
+  const ASSET_VER = String(window.PTGolfRelease?.version || '90');
 
   // 화면 상태
   let view = { name: 'home', part: null, cat: null, id: null };
-  let historyIndex = Number.isInteger(history.state?.ptgolfIndex) ? history.state.ptgolfIndex : 0;
-  let historyMaxIndex = historyIndex;
+  const navigation = AppNavigation.create();
   let ignoreHashChange = false;
   // 운동 1회용 체크 상태(저장 안 함): { exId: Set(cueIndex) }
   const checks = {};
@@ -56,8 +55,8 @@ const Theme = (() => {
   }
 
   // ============ 렌더 ============
-  function render() {
-    if (view.name === 'golf-hub') return GolfHub.render(view, golfConfig());
+  function renderScreen() {
+    if(view.name==='golf-hub')return renderGolf();
     if (view.name === 'home') return renderHome();
     if (view.name === 'part') return renderPart(view.part);
     if (view.name === 'detail') return renderDetail(view.id);
@@ -66,6 +65,24 @@ const Theme = (() => {
     if (view.name === 'calendar') return renderCalendar();
   }
 
+  function renderGolf() {
+    try {if(!window.GolfHub||!window.GolfContent)throw new Error('골프 자료 없음');GolfHub.render(view,golfConfig());}
+    catch(error){app.innerHTML='<div class="scr"><h1>골프 자료를 불러오지 못했습니다</h1><p>연결을 확인한 후 새로고침해 주세요. 저장한 기록은 보존됩니다.</p><button class="btn" data-act="reload">다시 불러오기</button></div>'+tabbar('golf');}
+  }
+  function render() {
+    renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
+    if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
+    navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
+  }
+  function renderStorageStatus(){
+    const status=Persistence.getStatus(),errors=status.stores.filter(s=>!s.ok);
+    if(status.available&&!status.restorePending&&!errors.length)return;
+    const banner=document.createElement('section');banner.className='storage-warning';banner.setAttribute('role','alert');
+    banner.innerHTML='<strong>개인 기록을 보호하고 있습니다</strong><p>'+(status.restorePending?'이전 복원이 중단되어 추가 저장을 멈췄습니다. 이전 기록 복구를 실행할 수 있습니다.':'일부 기록을 읽거나 저장할 수 없습니다. 기존 원본은 지우지 않았습니다.')+'</p><button class="btn" data-act="recovery-copy">원본 복구 사본 보관</button>'+(status.restorePending?'<button class="btn" data-act="recover-restore">이전 기록 복구</button>':'');
+    app.querySelector('.scr')?.prepend(banner);
+  }
+  function renderPreserving(){navigation.saveScroll();render();}
+  function saveError(error){toast(error.code==='CONFLICT'?'다른 탭에서 같은 기록이 변경됐습니다. 입력 내용을 보관하고 다시 확인해 주세요.':error.code==='CORRUPT'?'저장된 기록을 읽지 못해 원본을 보호하고 있습니다.':'저장하지 못했습니다. 입력 내용은 그대로 두었습니다.');}
   function tabbar(active) {
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
@@ -76,8 +93,8 @@ const Theme = (() => {
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
       <div class="history-controls" aria-label="화면 이동">
-        <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${historyIndex <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
-        <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${historyIndex >= historyMaxIndex ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
+        <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${navigation.index <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
+        <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${navigation.index >= navigation.max ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
       </div>
     </nav>
     <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
@@ -89,7 +106,7 @@ const Theme = (() => {
       showCat ? `<span>${partIcon(e.part)} ${esc(e.category || '')}</span>` : '',
       (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : ''
     ].filter(Boolean).join('');
-    return `<div class="ex ${e.part}" data-open="${e.id}">
+    return `<a class="ex ${esc(e.part)}" href="#exercise/${encodeURIComponent(e.id)}" data-open="${esc(e.id)}">
       <div class="num">${idx != null ? idx + 1 : (mark || (showCat ? '🔍' : '★'))}</div>
       <div class="body">
         <div class="t">${esc(e.name)}</div>
@@ -97,7 +114,7 @@ const Theme = (() => {
         ${metas ? `<div class="meta">${metas}</div>` : ''}
       </div>
       ${star}
-    </div>`;
+    </a>`;
   }
 
   const DOW = ['일', '월', '화', '수', '목', '금', '토'];
@@ -134,11 +151,11 @@ const Theme = (() => {
     const partCards = parts.map(p => {
       const list = Store.getByPart(p.id);
       const cats = Store.getCategories(p.id);
-      return `<div class="part ${p.id}" data-part-open="${p.id}">
+      return `<a class="part ${p.id}" href="#${p.id}" data-part-open="${p.id}">
         <div class="ico">${p.icon}</div>
         <div><div class="nm">${esc(p.label)}</div>
         <div class="cnt">${p.id === 'golf' ? '유튜브 · 레슨 · 스윙 노트' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
-      </div>`;
+      </a>`;
     }).join('');
 
     const favs = Store.getFavorites();
@@ -149,7 +166,7 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr">
         <div class="hd"><h1>PT노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
-        <input class="search" data-act="search-focus" placeholder="🔍 동작 검색…" readonly>
+        <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
         <div class="parts">${partCards}</div>
         ${recentSectionHtml()}
         ${favSection}
@@ -159,7 +176,7 @@ const Theme = (() => {
   }
 
   function renderPart(part) {
-    if (part === 'golf') return GolfHub.render({ ...view, golfTab: 'videos', golfId: null }, golfConfig());
+    if(part==='golf'){view={...view,name:'golf-hub',golfTab:'videos',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
     const activeCat = view.cat && cats.includes(view.cat) ? view.cat : (cats[0] || null);
@@ -222,20 +239,20 @@ const Theme = (() => {
       const dots = (entry.scheduled ? '<span class="dot sched"></span>' : '') +
                    (entry.completed ? '<span class="dot done"></span>'  : '') +
                    (entry.rest      ? '<span class="dot rest"></span>'  : '');
-      cells += `<div class="cal-cell${ds === today ? ' today' : ''}${dow === 0 ? ' sun' : ''}${dow === 6 ? ' sat' : ''}" data-cal-date="${ds}">
+      cells += `<button type="button" aria-label="${ds}${entry.scheduled ? ' 예약' : ''}${entry.completed ? ' 실시' : ''}${entry.rest ? ' 휴무' : ''}" class="cal-cell${ds === today ? ' today' : ''}${dow === 0 ? ' sun' : ''}${dow === 6 ? ' sat' : ''}" data-cal-date="${ds}">
         <span class="cal-dn">${d}</span>
         ${timeLabel}
-        <div class="cal-dots">${dots}</div>
-      </div>`;
+        <span class="cal-dots">${dots}</span>
+      </button>`;
     }
 
     app.innerHTML = `
       <div class="scr">
         <div class="hd"><h1>🗓️ 캘린더</h1></div>
         <div class="cal-nav">
-          <button class="cal-nav-btn" data-cal-nav="-1">‹</button>
+          <button class="cal-nav-btn" data-cal-nav="-1" aria-label="이전 달">‹</button>
           <span class="cal-month-lbl">${year}년 ${month + 1}월</span>
-          <button class="cal-nav-btn" data-cal-nav="1">›</button>
+          <button class="cal-nav-btn" data-cal-nav="1" aria-label="다음 달">›</button>
         </div>
         <div class="cal-dow">
           <span class="sun">일</span><span>월</span><span>화</span>
@@ -251,38 +268,21 @@ const Theme = (() => {
       ${tabbar('calendar')}`;
   }
 
-  /** 검색 결과 영역 HTML — 입력이 없으면 안내, 있으면 결과 수 + 목록(카테고리 표시) */
   function searchResultsHtml(q) {
-    if (!(q || '').trim()) {
-      return `<div class="empty">동작 이름·체크리스트·잊지 말 것·메모까지 한 번에 검색해요.<br>
-        예: <b>엉덩이</b> · <b>견갑</b> · <b>호흡</b> · <b>힙힌지</b><br>
-        <span class="hint2">여러 단어를 띄어 쓰면 모두 포함된 동작만 나와요</span></div>`;
-    }
-    const res = Store.search(q);
-    if (!res.length) return `<div class="empty">「${esc(q)}」 검색 결과가 없어요.<br>다른 단어로 찾아보세요.</div>`;
-    return `<div class="sec-t">검색 결과 ${res.length}개</div>` +
-      res.map(e => exRow(e, null, true)).join('');
+    if(!(q||'').trim())return '<div class="empty">운동·영상·레슨·내 메모를 한 번에 검색하세요.<br>여러 단어는 모두 포함된 결과를 찾습니다.</div>';
+    const all=AppSearch.records(q),res=all.filter(r=>!view.scope||view.scope==='all'||r.type===view.scope);
+    return '<p class="sec-t" role="status">검색 결과 '+res.length+'개 · 전체 '+all.length+'개</p>'+res.map(r=>
+      '<a class="search-result" href="'+esc(r.href)+'"><span class="tag">'+esc(AppSearch.labels[r.type]||r.type)+'</span><strong>'+esc(r.title)+'</strong><p>'+esc((r.excerpt||'').slice(0,180))+'</p><small>일치: '+esc((r.matchedFields||[]).join(' · '))+'</small></a>').join('')+(res.length?'':'<p class="empty">다른 검색어나 범위를 선택해 주세요.</p>');
   }
-
   function renderSearch() {
-    const q = view.q || '';
-    app.innerHTML = `
-      <div class="scr">
-        <button class="back" data-nav="home">‹ 홈</button>
-        <input class="search" id="search-input" placeholder="🔍 동작 검색…" value="${esc(q)}"
-               autocomplete="off" autocapitalize="off" spellcheck="false">
-        <div id="search-results">${searchResultsHtml(q)}</div>
-      </div>
-      ${tabbar(null)}`;
-    const inp = document.getElementById('search-input');
-    inp.focus();
-    inp.setSelectionRange(inp.value.length, inp.value.length);
-    inp.oninput = () => {
-      view.q = inp.value;
-      document.getElementById('search-results').innerHTML = searchResultsHtml(inp.value);
-    };
+    const q=view.q||'';
+    app.innerHTML='<div class="scr"><button class="back" data-nav="home">‹ 홈</button><h1>전체 검색</h1>'+
+      '<input class="search" type="search" data-no-draft id="search-input" aria-label="검색어" placeholder="운동·영상·레슨·메모 검색" value="'+esc(q)+'" autocomplete="off">'+
+      '<div class="chips" aria-label="검색 범위">'+Object.entries({all:'전체',...AppSearch.labels}).map(([key,label])=>'<button class="chip '+((view.scope||'all')===key?'on':'')+'" data-scope="'+key+'" aria-pressed="'+((view.scope||'all')===key)+'">'+label+'</button>').join('')+
+      '</div><div id="search-results">'+searchResultsHtml(q)+'</div></div>'+tabbar(null);
+    const inp=document.getElementById('search-input');
+    inp.oninput=()=>{view.q=inp.value;navigation.sync(view);document.getElementById('search-results').innerHTML=searchResultsHtml(view.q);};
   }
-
 
   // 원문·개인 메모와 분리한 운동별 시각 안내.
   const expanded3D = new Set();
@@ -350,15 +350,7 @@ const Theme = (() => {
         ev.data?.type !== 'ptgolf-viewer-height' || !Number.isFinite(ev.data.height)) return;
     frame.style.height = `${Math.max(320, Math.min(1400, Math.ceil(ev.data.height)))}px`;
   });
-  function openExerciseLink() {
-    if (GolfHub.openLink(location.hash, 'replace')) return true;
-    const match = /^#exercise\/([a-zA-Z0-9_-]+)$/.exec(location.hash);
-    if (!match) return false;
-    const e = Store.getById(match[1]);
-    if (!e) return false;
-    go('detail', { id: e.id, part: e.part });
-    return true;
-  }
+  function openExerciseLink(){const next=AppNavigation.fromHash(location.hash);go(next.name,{...next,__historyMode:'replace'});return true;}
 
   function renderDetail(id) {
     const e = Store.getById(id);
@@ -368,9 +360,7 @@ const Theme = (() => {
     const c = checks[id] || (checks[id] = new Set());
 
     const cues = (e.cues || []).map((cue, i) => `
-      <div class="check ${c.has(i) ? 'done' : ''}" data-cue="${i}">
-        <div class="box"></div><div class="ctxt">${esc(cue)}</div>
-      </div>`).join('');
+      <label class="check ${c.has(i) ? 'done' : ''}"><input type="checkbox" data-no-draft data-cue="${i}" ${c.has(i) ? 'checked' : ''}><span class="ctxt">${esc(cue)}</span></label>`).join('');
 
     const reminders = (e.reminders || []).filter(r => r.trim()).map(r =>
       `<div class="remind"><span class="b">•</span><div>${esc(r)}</div></div>`).join('');
@@ -388,9 +378,9 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr" data-part="${e.part}">
         <button class="back" data-back>‹ ${esc(e.category || partLabel(e.part))}</button>
-        <div class="d-title">${esc(e.name)}</div>
+        <h1 class="d-title">${esc(e.name)}</h1>${isGolf ? '<div class="personal-note-label"><strong>개인 연습 감각 · 확인 전</strong><p>혼자 연습하며 느낀 기록입니다. 정답으로 단정하지 않고 레슨 및 원본 영상과 비교해 확인하세요.</p></div>' : ''}
         <div class="d-tags">
-          <span class="tag cat link ${isGolf ? 'golf' : ''}" data-catnav="${esc(e.part)}::${esc(e.category || '')}" role="link" tabindex="0">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')} ›</span>
+          <button class="tag cat link ${isGolf ? 'golf' : ''}" data-catnav="${esc(e.part)}::${esc(e.category || '')}">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')} ›</button>
           ${e.updated ? `<span class="tag">갱신 ${esc(e.updated.slice(5).replace('-', '/'))}</span>` : ''}
           <div class="d-actions">
             <button class="icon-btn fav ${e.favorite ? 'on' : ''}" data-act="fav" title="즐겨찾기">${e.favorite ? '★' : '☆'}</button>
@@ -411,7 +401,7 @@ const Theme = (() => {
         </div>` : ''}
 
         ${(e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
-          <div class="prep-h">🧩 준비 자세</div>
+          <div class="prep-h">🧩 ${isGolf ? '준비할 때 느낀 점' : '준비 자세'}</div>
           ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
         </div>` : ''}
 
@@ -419,101 +409,73 @@ const Theme = (() => {
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 
-        ${hasMedia ? focusHtml(e) + exerciseMediaHtml(e) : ''}
+        ${hasMedia ? focusHtml(e) + exerciseMediaHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
         ${cues ? `<div class="block">
-          <div class="block-h ${isGolf ? 'golf' : ''}">✅ 운동 중 핵심
+          <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '운동 중 핵심'}
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
           ${cues}
           ${c.size ? `<button class="reset-cues" data-act="reset-cues">체크 초기화</button>` : ''}
         </div>` : ''}
 
         ${reminders ? `<div class="block">
-          <div class="block-h warn">🔥 잊지 말 것</div>${reminders}</div>` : ''}
+          <div class="block-h warn">🔥 ${isGolf ? '다음 연습에서 확인할 점' : '잊지 말 것'}</div>${reminders}</div>` : ''}
 
         ${prBlock}
 
         <div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}" style="display:flex">📝 내 메모
             <button class="memo-edit" data-act="memo-edit">편집</button></div>
-          <div class="memo-box ${memo ? '' : 'ph'}" data-act="memo-edit">${memo ? esc(e.memo) : '운동하며 느낀 점을 적어두세요…'}</div>
+          <button type="button" class="memo-box ${memo ? '' : 'ph'}" data-act="memo-edit">${memo ? esc(e.memo) : '운동하며 느낀 점을 적어두세요…'}</button>
         </div>
 
-        ${isGolf ? GolfHub.related(id) : ''}
+        ${isGolf ? (window.GolfHub?.related(id)||'') : ''}
 
         <div class="block del-row">
           <button class="del-btn" data-act="delete">🗑 이 동작 삭제</button>
         </div>
       </div>
       ${tabbar(e.part)}`;
-    if (hasMedia) bindExercise3D(id);
+    if(hasMedia){bindExercise3D(id);AppOffline.bind(app,id);}
   }
 
   // ============ 네비게이션 ============
-  function go(name, opts = {}) {
-    const historyMode = opts.__historyMode || 'push';
-    opts = { ...opts };
-    delete opts.__historyMode;
-    view = { ...view, name, ...opts };
-    if (name === 'home' || name === 'favorites') { view.part = null; view.id = null; }
-    if (name === 'pt' || name === 'golf') { view = { name: 'part', part: name, cat: view.part === name ? view.cat : null, calYear: view.calYear, calMonth: view.calMonth }; }
-    if (name === 'calendar') { view.part = null; view.id = null; }
-    const hash = view.name === 'detail' ? '#exercise/' + view.id :
-      view.name === 'golf-hub' && view.golfTab === 'videos' && !view.golfId && view.golfGroup ? '#golf/group/' + encodeURIComponent(view.golfGroup) :
-      view.name === 'golf-hub' ? '#golf/' + (view.golfTab || 'videos') + (view.golfId ? '/' + encodeURIComponent(view.golfId) : '') :
-      view.name === 'part' && view.part === 'golf' ? '#golf/videos' : '';
-    if (historyMode === 'push') {
-      historyIndex++;
-      historyMaxIndex = historyIndex;
-    }
-    history[historyMode === 'push' ? 'pushState' : 'replaceState'](
-      { ptgolfView: { ...view }, ptgolfIndex: historyIndex }, '', location.pathname + location.search + hash);
-    updateHistoryButtons();
-    window.scrollTo(0, 0);
-    render();
+  function go(name,opts={}) {
+    const mode=opts.__historyMode||'push';opts={...opts};delete opts.__historyMode;
+    const previous=view;view={...view,name,...opts};
+    if(name==='pt')view={name:'part',part:'pt',cat:previous.part==='pt'?previous.cat:null};
+    if(name==='golf')view={name:'golf-hub',part:'golf',golfTab:'videos',golfId:null};
+    if(name==='home'||name==='favorites'||name==='calendar'){view.part=null;view.id=null;}
+    if(name==='detail')view.part=Store.getById(view.id)?.part||view.part;
+    navigation.write(view,mode);render();
   }
-
-  function updateHistoryButtons() {
-    const back = document.getElementById('history-back');
-    const forward = document.getElementById('history-forward');
-    if (back) back.disabled = historyIndex <= 0;
-    if (forward) forward.disabled = historyIndex >= historyMaxIndex;
+  function updateHistoryButtons(){
+    const back=document.getElementById('history-back'),forward=document.getElementById('history-forward');
+    if(back)back.disabled=navigation.index<=0;if(forward)forward.disabled=navigation.index>=navigation.max;
   }
-
-  function restoreHistory(event) {
-    const saved = event.state?.ptgolfView;
-    if (saved && typeof saved === 'object' && typeof saved.name === 'string') {
-      ignoreHashChange = true;
-      setTimeout(() => { ignoreHashChange = false; }, 0);
-      view = { ...saved };
-      historyIndex = Number.isInteger(event.state.ptgolfIndex) ? event.state.ptgolfIndex : historyIndex;
-      historyMaxIndex = Math.max(historyMaxIndex, historyIndex);
-      updateHistoryButtons();
-      render();
-      return;
-    }
-    if (!openExerciseLink()) go('home', { __historyMode: 'replace' });
+  function restoreHistory(event){
+    ignoreHashChange=true;setTimeout(()=>{ignoreHashChange=false;},0);
+    view=navigation.read(event.state);if(view.name==='detail')view.part=Store.getById(view.id)?.part;render();
   }
 
   // ============ 이벤트 (위임) ============
   document.body.addEventListener('click', (ev) => {
-    const link = ev.target.closest('a[href^="#golf"],a[href^="#exercise/"]');
-    if (link) {
-      const hash = link.getAttribute('href');
-      if (GolfHub.openLink(hash, 'push')) { ev.preventDefault(); return; }
-      const match = /^#exercise\/([a-zA-Z0-9_-]+)$/.exec(hash);
-      if (match) {
-        const ex = Store.getById(match[1]);
-        if (ex) { ev.preventDefault(); go('detail', { id: ex.id, part: ex.part }); return; }
-      }
+    try {
+    if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
+    const scopeButton=ev.target.closest('[data-scope]');
+    if(scopeButton){view.scope=scopeButton.dataset.scope;navigation.sync(view);render();return;}
+    const link=ev.target.closest('a[href^="#"]');
+    if(link&&!link.hasAttribute('data-open')&&!link.hasAttribute('data-part-open')){
+      ev.preventDefault();const next=AppNavigation.fromHash(link.getAttribute('href'));go(next.name,next);return;
     }
     const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history]');
     if (!t) return;
+    if(t.tagName==='A')ev.preventDefault();
 
     if (t.dataset.history === 'back') { history.back(); return; }
     if (t.dataset.history === 'forward') { history.forward(); return; }
     if (t.dataset.nav) { go(t.dataset.nav); return; }
-    if (t.hasAttribute('data-back')) { go(view.part || 'home'); return; }
+    if(t.hasAttribute('data-back')){if(navigation.index>0)history.back();else go(view.part||'home');return;}
     if (t.dataset.partOpen) { go(t.dataset.partOpen); return; }
     if (t.dataset.open) { const ex = Store.getById(t.dataset.open); go('detail', { id: t.dataset.open, part: ex ? ex.part : null }); return; }
     if (t.dataset.recent) {
@@ -525,7 +487,7 @@ const Theme = (() => {
         c.classList.toggle('on', c.dataset.recent === view.recentDate));
       return;
     }
-    if (t.dataset.cat) { view.cat = t.dataset.cat; render(); return; }
+    if(t.dataset.cat){go('part',{part:view.part,cat:t.dataset.cat});return;}
     if (t.hasAttribute('data-cue')) { toggleCue(view.id, +t.dataset.cue); return; }
     if (t.dataset.calNav) {
       const now = new Date();
@@ -533,26 +495,25 @@ const Theme = (() => {
       let cm = (view.calMonth ?? now.getMonth()) + parseInt(t.dataset.calNav);
       if (cm < 0) { cm = 11; cy--; } else if (cm > 11) { cm = 0; cy++; }
       view.calYear = cy; view.calMonth = cm;
-      renderCalendar(); return;
+      go('calendar',{calYear:cy,calMonth:cm,__historyMode:'replace'});return;
     }
     if (t.dataset.calDate) { openCalModal(t.dataset.calDate); return; }
     if (t.dataset.catnav) {
       const [p, cat] = t.dataset.catnav.split('::');
-      view = { name: 'part', part: p, cat: cat || null };
-      window.scrollTo(0, 0);
-      render();
+      go(p==='golf'?'golf-hub':'part',p==='golf'?{part:p,golfTab:'notes',cat:cat||null}:{part:p,cat:cat||null});
       return;
     }
 
     const act = t.dataset.act;
     if (!act) return;
     handleAct(act);
+    }catch(error){saveError(error);}
   });
 
   function toggleCue(id, i) {
     const c = checks[id] || (checks[id] = new Set());
     c.has(i) ? c.delete(i) : c.add(i);
-    renderDetail(id);
+    const checkbox=app.querySelector('[data-cue="'+i+'"]');checkbox?.closest('.check')?.classList.toggle('done',c.has(i));const counter=app.querySelector('.ctr');if(counter)counter.textContent=c.size+' / '+(Store.getById(id).cues||[]).length;
   }
 
   // ============ 캘린더 날짜 모달 ============
@@ -574,7 +535,7 @@ const Theme = (() => {
       `${y}년 ${parseInt(m)}월 ${parseInt(d)}일`;
     document.getElementById('cal-time-sel').value = calModalState.schedTime;
     updateCalModalBtns();
-    calModalEl.classList.remove('hidden');
+    AppDialogs.show(calModalEl);
   }
 
   function updateCalModalBtns() {
@@ -585,7 +546,7 @@ const Theme = (() => {
   }
 
   function closeCalModal() {
-    calModalEl.classList.add('hidden');
+    AppDialogs.hide(calModalEl);
     calModalDate = null;
   }
 
@@ -597,7 +558,7 @@ const Theme = (() => {
       Store.setCalEntry(calModalDate, { ...calModalState, schedTime });
     }
     closeCalModal();
-    renderCalendar();
+    renderPreserving();
     toast('저장됨');
   }
 
@@ -605,14 +566,17 @@ const Theme = (() => {
 
   function handleAct(act) {
     switch (act) {
-      case 'search-focus': go('search', { q: '' }); break;
+      case 'search-focus': go('search',{q:'',scope:'all'});document.getElementById('search-input')?.focus();break;
+      case 'reload': location.reload();break;
+      case 'recovery-copy':{const blob=new Blob([JSON.stringify(Persistence.recoveryCopy(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='ptgolf-recovery-'+Store.todayStr()+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);break;}
+      case 'recover-restore':askConfirm('중단된 복원 이전의 기록으로 되돌릴까요?',()=>{Persistence.recoverRestore();Store.reload();renderPreserving();toast('이전 기록을 복구했습니다.');},'복구');break;
       case 'add': openEditor(null); break;
       case 'edit': openEditor(Store.getById(view.id)); break;
       case 'fav':
         Store.toggleFavorite(view.id);
         toast(Store.getById(view.id).favorite ? '⭐ 즐겨찾기 추가' : '즐겨찾기 해제');
-        renderDetail(view.id); break;
-      case 'reset-cues': checks[view.id] = new Set(); renderDetail(view.id); break;
+        renderPreserving(); break;
+      case 'reset-cues': checks[view.id] = new Set(); renderPreserving(); break;
       case 'memo-edit': openMemoEditor(); break;
       case 'delete':
         askConfirm(`「${Store.getById(view.id).name}」 동작을 삭제할까요?`, () => {
@@ -644,9 +608,10 @@ const Theme = (() => {
         <button class="btn ghost" id="memo-cancel">취소</button>
         <button class="btn primary" id="memo-save">메모 저장</button></div>`;
     const ta = document.getElementById('memo-input');
-    ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length);
-    document.getElementById('memo-save').onclick = () => { Store.setMemo(view.id, ta.value.trim()); toast('메모 저장됨'); renderDetail(view.id); };
-    document.getElementById('memo-cancel').onclick = () => renderDetail(view.id);
+    AppDrafts.bind(wrap,location.hash);
+    ta.focus();ta.setSelectionRange(ta.value.length,ta.value.length);
+    document.getElementById('memo-save').onclick=()=>{try{Store.setMemo(view.id,ta.value.trim());AppDrafts.clear(ta);toast('메모 저장됨');renderPreserving();}catch(error){saveError(error);}};
+    document.getElementById('memo-cancel').onclick=()=>{try{AppDrafts.clear(ta);renderPreserving();}catch(error){saveError(error);}};
   }
 
   // ============ 추가/수정 모달 ============
@@ -662,7 +627,10 @@ const Theme = (() => {
     val('f-cues', ex ? (ex.cues || []).join('\n') : '');
     val('f-reminders', ex ? (ex.reminders || []).join('\n') : '');
     refreshCatList(part);
-    modal.classList.remove('hidden');
+    modal.dataset.draftKey='editor:'+(editingId||'new');
+    AppDrafts.bind(modal,modal.dataset.draftKey,true);
+    refreshCatList(getSeg('f-part'));
+    AppDialogs.show(modal);
   }
   function refreshCatList(part) {
     const dl = document.getElementById('cat-list');
@@ -682,26 +650,26 @@ const Theme = (() => {
       reminders: linesOf('f-reminders'),
     };
     if (editingId) { const cur = Store.getById(editingId); data.memo = cur.memo; data.favorite = cur.favorite; }
-    const saved = Store.upsert(data);
+    const saved=Store.upsert(data);
+    AppDrafts.clear(modal);
+    const wasEditing=!!editingId;
     closeModal();
-    toast(editingId ? '수정됨' : '추가됨');
+    toast(wasEditing ? '수정됨' : '추가됨');
     go('detail', { id: saved.id, part: null });
   }
-  function closeModal() { modal.classList.add('hidden'); editingId = null; }
+  function closeModal(){AppDialogs.hide(modal);editingId=null;AppUpdate.apply?.();}
 
   // 세그먼트 컨트롤 (PT/골프)
-  document.getElementById('f-part').addEventListener('click', (e) => {
-    const b = e.target.closest('button'); if (!b) return;
-    setSeg('f-part', b.dataset.val); refreshCatList(b.dataset.val);
-  });
+  document.getElementById('f-part').addEventListener('change',e=>refreshCatList(e.target.value));
 
   // ============ 확인 다이얼로그 ============
-  function askConfirm(msg, cb) {
+  function askConfirm(msg,cb,label='삭제') {
+    confirmEl.querySelector('[data-act="confirm-yes"]').textContent=label;
     document.getElementById('confirm-msg').textContent = msg;
-    confirmCb = cb; confirmEl.classList.remove('hidden');
+    confirmCb=cb;AppDialogs.show(confirmEl);
   }
   function closeConfirm(yes) {
-    confirmEl.classList.add('hidden');
+    AppDialogs.hide(confirmEl);
     if (yes && confirmCb) confirmCb();
     confirmCb = null;
   }
@@ -713,37 +681,21 @@ const Theme = (() => {
   // ---- helpers ----
   function val(id, v) { const el = document.getElementById(id); if (v !== undefined) el.value = v; return el.value; }
   function linesOf(id) { return val(id).split('\n').map(s => s.trim()).filter(Boolean); }
-  function setSeg(id, v) { [...document.getElementById(id).children].forEach(b => b.classList.toggle('on', b.dataset.val === v)); }
-  function getSeg(id) { const on = document.getElementById(id).querySelector('.on'); return on ? on.dataset.val : 'pt'; }
+  function setSeg(id,v){document.getElementById(id).value=v;}
+  function getSeg(id){return document.getElementById(id).value||'pt';}
 
   function golfConfig() { return { app, go, toast, exRow, tabbar, refresh: render }; }
-  GolfHub.configure(golfConfig());
-
-  // ============ 부트 ============
-  Store.init().then(() => {
-    Theme.init();   // 버튼 아이콘 동기화 (인라인 스크립트가 html 속성은 설정했지만 버튼 아이콘은 여기서)
-    if (!openExerciseLink()) {
-      history.replaceState({ ptgolfView: { ...view }, ptgolfIndex: historyIndex }, '', location.href);
-      render();
-    }
-    updateHistoryButtons();
-    window.addEventListener('popstate', restoreHistory);
-    window.addEventListener('hashchange', () => {
-      if (ignoreHashChange) return;
-      if (!openExerciseLink()) go('home', { __historyMode: 'replace' });
-    });
-    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-      // 이전에 이미 SW가 있던 경우에만, 새 SW가 제어권을 잡으면 1회 자동 새로고침 → 최신본 즉시 반영
-      const hadController = !!navigator.serviceWorker.controller;
-      let reloaded = false;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (reloaded || !hadController) return;
-        reloaded = true; location.reload();
-      });
-      // updateViaCache:'none' — 브라우저 HTTP 캐시를 무시하고 sw.js를 항상 새로 받아 갱신 감지
-      navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
-        .then(reg => { reg.update(); })
-        .catch(() => {});
-    }
+  try{window.GolfHub?.configure(golfConfig());}catch(error){console.warn('골프 초기화 실패',error);}
+  Store.init().then(()=>{
+    Theme.init();view=navigation.read();
+    if(view.name==='detail')view.part=Store.getById(view.id)?.part;
+    navigation.start(view);render();
+    window.addEventListener('popstate',restoreHistory);
+    window.addEventListener('hashchange',()=>{if(!ignoreHashChange)openExerciseLink();});
+    Persistence.subscribe(event=>{if(!event.external&&!event.restored)return;if(AppDrafts.activePending()||AppDrafts.hasUnstored()||document.querySelector('.modal:not(.hidden)')){toast('다른 탭에서 기록이 바뀌었습니다. 작성 중인 내용을 먼저 확인해 주세요.');return;}Store.reload();renderPreserving();});
+    AppUpdate.init(toast);
+  }).catch(error=>{
+    app.innerHTML='<div class="scr"><h1>자료를 불러오지 못했습니다</h1><p>기존 기록은 보존됩니다. 연결을 확인한 뒤 다시 시도해 주세요.</p><button class="btn" data-act="reload">다시 불러오기</button></div>';
+    console.error('시작 실패',error);
   });
 })();

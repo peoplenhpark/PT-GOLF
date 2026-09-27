@@ -1,110 +1,148 @@
-/* sw.js — 오프라인 캐시 (앱 셸 + 데이터)
-   콘텐츠 수정 시 CACHE 버전을 올리면 갱신됩니다. */
-const CACHE = 'ptgolf-v89';
-const ASSETS = [
-  './',
-  './index.html',
-  './css/style.css',
-  './js/store.js',
-  './js/app.js',
-  './css/golf.css?v=89',
-  './js/golf-data.js?v=89',
-  './js/golf.js?v=89',
-  './js/exercise-media.js?v=89',
-  './media/golf3d/viewer.html?v=89',
-  './media/golf3d/lesson.html?v=89',
-  './media/golf3d/consistency.html?v=89',
-  './media/golf3d/training.html?v=89',
-  './media/golf3d/original.html?v=89',
-  './media/3d/viewer.html?v=89',
-  './media/3d/poses.js?v=89',
-  './media/3d/viewer.js?v=89',
-  './data/seed.json',
-  './manifest.webmanifest',
-  './icon.svg',
-  './icon-maskable.svg',
-  './docs/images/01_quadset.svg',
-  './docs/images/02_slr.svg',
-  './docs/images/03_clamshell.svg',
-  './docs/images/04_sslr.svg',
-  './docs/images/05_halfsquat.svg',
-  './docs/images/06_frontsquat.svg',
-  './docs/images/07_armcurl.svg',
-  './docs/images/08_pullup.svg',
-  './docs/images/09_seatedrow.svg',
-  './docs/images/10_latpulldown.svg',
-  './docs/images/11_armpulldown.svg',
-  './docs/images/12_vsquat.svg',
-  './docs/images/13_squat.svg',
-  './docs/images/14_legcurl.svg',
-  './docs/images/15_adduction.svg',
-  './docs/images/16_legextension.svg',
-  './docs/images/17_deadbug.svg',
-  './docs/images/18_plank.svg',
-  './docs/images/19_hamstring.svg',
-  './docs/images/20_piriformis.svg',
-  './docs/images/21_foam.svg',
-  './docs/images/22_birddog.svg',
-  './docs/images/23_tbalance.svg',
-  './docs/images/24_stepup.svg',
-  './docs/images/25_bridge.svg',
-  './docs/images/26_openbook.svg',
-  './docs/images/27_benchpress.svg',
-  './docs/images/30_tailbone_raise.svg',
-  './docs/images/31_rotationlunge.svg',
-  './docs/images/32_dbpullover.svg',
-  './docs/images/33_widesquat.svg',
-  './docs/images/34_machinerow.svg',
-  './docs/images/35_bosurotation.svg',
-  './docs/images/36_legpress.svg',
-  './docs/images/37_pushdown.svg',
-  './docs/images/38_backextension.svg',
-  './docs/images/39_facepull.svg',
-  './docs/images/40_lateralraise.svg',
-  './docs/images/41_gobletsquat.svg',
-  './docs/images/42_sldl.svg',
-  './docs/images/43_chestpress.svg',
-  './docs/images/44_pecdeck.svg',
-  './samples/pushdown-3d/combined-start.png?v=89',
-  './samples/pushdown-3d/combined-end.png?v=89',
-  './samples/pushdown-3d/viewer.html?v=89',
-  './samples/pushdown-3d/three.min.js',
-  './samples/pushdown-3d/pushdown.js'
-];
+/* App shell stays small; selected exercise media is prepared explicitly. */
+importScripts('./release-assets.js');
+const RELEASE = globalThis.PTGolfRelease;
+const CACHE = 'ptgolf-v' + RELEASE.version;
+const OWN_CACHE = /^ptgolf-v\d+$/;
+const BASE = new URL('./', self.location.href);
+const TIMEOUT_MS = 4000;
+const KNOWN_FILES = new Set([...RELEASE.shell, ...Object.values(RELEASE.exercises).flat()]);
+const META_URL = new URL('__offline-prepared__', BASE).href;
 
-self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+function localFile(value) {
+  const url = new URL(typeof value === 'string' ? value : value.url, BASE);
+  if (url.origin !== BASE.origin || !url.pathname.startsWith(BASE.pathname)) return null;
+  return url.pathname.slice(BASE.pathname.length) || 'index.html';
+}
+function cacheKey(value) {
+  const file = localFile(value);
+  return file === null ? null : new URL(file, BASE).href;
+}
+async function fetchBounded(request) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try { return await fetch(request, { signal: controller.signal, cache: 'no-cache' }); }
+  finally { clearTimeout(timer); }
+}
+async function cacheResponse(cache, key, response) {
+  if (response.ok && response.type !== 'opaque') await cache.put(key, response.clone());
+}
+async function loadAsset(file, cache) {
+  const key = cacheKey(file);
+  const cached = await cache.match(key);
+  if (cached) return true;
+  const response = await fetchBounded(new URL(file, BASE).href);
+  if (!response.ok) throw new Error(String(response.status));
+  await cacheResponse(cache, key, response);
+  return true;
+}
+async function preparedIds(cache) {
+  try { return (await (await cache.match(META_URL)).json()).exerciseIds || []; }
+  catch { return []; }
+}
+async function rememberPrepared(cache, ids) {
+  const previous = await preparedIds(cache);
+  await cache.put(META_URL, new Response(JSON.stringify({ exerciseIds: [...new Set([...previous, ...ids])] }),
+    { headers: { 'Content-Type': 'application/json' } }));
+}
+async function prepareExercises(ids) {
+  const cache = await caches.open(CACHE);
+  const requestedIds = [...new Set(ids)];
+  const validIds = requestedIds.filter(id => Object.prototype.hasOwnProperty.call(RELEASE.exercises, id));
+  const files = [...new Set(validIds.flatMap(id => RELEASE.exercises[id]))];
+  const failed = [];
+  let cached = 0;
+  // Four concurrent downloads keep large selections responsive without flooding the connection.
+  let cursor = 0;
+  async function worker() {
+    while (cursor < files.length) {
+      const file = files[cursor++];
+      try { await loadAsset(file, cache); cached++; } catch { failed.push(file); }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(4, files.length) }, worker));
+  const ready = validIds.filter(id => RELEASE.exercises[id].every(file => !failed.includes(file)));
+  await rememberPrepared(cache, ready);
+  return { ok: failed.length === 0 && validIds.length === requestedIds.length, cached, failed, exerciseIds: ready };
+}
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    await Promise.all(RELEASE.shell.map(async file => {
+      const response = await fetchBounded(new URL(file, BASE).href);
+      if (!response.ok) throw new Error('Cannot install required asset: ' + file);
+      await cacheResponse(cache, cacheKey(file), response);
+    }));
+    // Existing clients decide when their drafts are safe before activating an update.
+    if (!self.registration.active) await self.skipWaiting();
+  })());
 });
-
-self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
-      .then(() => self.clients.claim())
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const ownKeys = (await caches.keys()).filter(key => OWN_CACHE.test(key) && key !== CACHE);
+    // Keep only the chosen offline exercises across releases, never arbitrary old JS/assets.
+    const ids = new Set();
+    for (const key of ownKeys) for (const id of await preparedIds(await caches.open(key))) ids.add(id);
+    const result = ids.size ? await prepareExercises([...ids]) : { ok: true };
+    // Keep an old own cache if network failed during migration; fetch fallback remains current-only.
+    const retained = result.ok ? null : ownKeys.sort((a,b)=>Number(b.slice(8))-Number(a.slice(8)))[0];
+    await Promise.all(ownKeys.filter(key=>key!==retained).map(key=>caches.delete(key)));
+    await self.clients.claim();
+  })());
 });
-
-// 네트워크 우선(최신 seed 반영) → 실패 시 캐시 폴백
-self.addEventListener('fetch', (e) => {
-  // Let the browser handle external players and their origin/referrer requirements.
-  if (e.request.method !== 'GET' || new URL(e.request.url).origin !== self.location.origin) return;
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
-        if (!res.ok) return res;
-        const copy = res.clone();
-        caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
-        return res;
-      })
-      .catch(async () => {
-        const exact = await caches.match(e.request);
-        if (exact) return exact;
-        const url = new URL(e.request.url);
-        if (url.origin === self.location.origin) {
-          const cached = await caches.match(e.request, { ignoreSearch: true });
-          if (cached) return cached;
-          if (e.request.mode === 'navigate') return caches.match('./index.html');
-        }
-        return Response.error();
-      })
-  );
+self.addEventListener('fetch', event => {
+  const file = localFile(event.request);
+  if (event.request.method !== 'GET' || file === null) return;
+  if (!KNOWN_FILES.has(file) && event.request.mode !== 'navigate') return;
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    const key = cacheKey(event.request);
+    const cached = await cache.match(key);
+    // Keep HTML, JS and CSS on the controlling release until a verified worker activates.
+    // Fetching a new index while serving old cached scripts would mix releases.
+    const freshRequired = file === 'data/seed.json';
+    if (cached && !freshRequired) return cached;
+    try {
+      const response = await fetchBounded(event.request);
+      if (response.status >= 500 && cached) return cached;
+      if (response.ok && KNOWN_FILES.has(file)) {
+        event.waitUntil(cacheResponse(cache, key, response));
+      }
+      return response;
+    } catch {
+      if (cached) return cached;
+      if (event.request.mode === 'navigate') {
+        const shell = await cache.match(cacheKey('index.html'));
+        if (shell) return shell;
+      }
+      return Response.error();
+    }
+  })());
+});
+self.addEventListener('message', event => {
+  const message = event.data || {};
+  if (message.type === 'PTGOLF_SKIP_WAITING') {
+    event.waitUntil(self.skipWaiting());
+    return;
+  }
+  if (!['PTGOLF_PREPARE_OFFLINE', 'PTGOLF_OFFLINE_STATUS'].includes(message.type)) return;
+  const ids = Array.isArray(message.exerciseIds) ? message.exerciseIds.filter(id => typeof id === 'string') : [];
+  const reply = data => {
+    const result = { requestId: message.requestId, version: RELEASE.version, ...data };
+    if (event.ports?.[0]) event.ports[0].postMessage(result); else event.source?.postMessage(result);
+  };
+  event.waitUntil((async () => {
+    if (message.type === 'PTGOLF_PREPARE_OFFLINE') {
+      reply({ type: 'PTGOLF_OFFLINE_RESULT', ...await prepareExercises(ids) });
+      return;
+    }
+    const cache = await caches.open(CACHE);
+    const readyIds = [], missingIds = [];
+    for (const id of ids) {
+      const files = RELEASE.exercises[id];
+      const ready = files && (await Promise.all(files.map(file => cache.match(cacheKey(file))))).every(Boolean);
+      (ready ? readyIds : missingIds).push(id);
+    }
+    reply({ type: 'PTGOLF_OFFLINE_STATUS', ok: true, readyIds, missingIds });
+  })().catch(() => reply({ type: 'PTGOLF_OFFLINE_RESULT', ok: false, cached: 0, failed: ['오프라인 저장을 완료하지 못했습니다.'], exerciseIds: [] })));
 });

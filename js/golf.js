@@ -2,13 +2,15 @@
 window.GolfHub = (() => {
   const KEY = 'ptgolf_learning_v1';
   const content = window.GolfContent;
-  let api, current, state, loadError = false;
+  let api, current, state, loadError = false, unsubscribe;
   const empty = () => ({lessons: [], questions: [], focus: [], videoNotes: {}});
+  const validState = value => !!value && ['lessons','questions','focus'].every(k => Array.isArray(value[k])) && !!value.videoNotes && typeof value.videoNotes === 'object' && !Array.isArray(value.videoNotes);
+  let persistence;
   try {
-    const raw = localStorage.getItem(KEY);
-    state = raw ? JSON.parse(raw) : empty();
-    if (!state || !['lessons','questions','focus'].every(k => Array.isArray(state[k])) ||
-        !state.videoNotes || typeof state.videoNotes !== 'object') throw new Error('invalid golf data');
+    persistence = window.Persistence?.open(KEY, {defaults:empty, validate:value=>validState(value)&&(!window.Persistence.validators?.[KEY]||window.Persistence.validators[KEY](value))});
+    const raw = persistence ? null : localStorage.getItem(KEY);
+    state = persistence ? persistence.read() : raw ? JSON.parse(raw) : empty();
+    if (!validState(state) || (persistence && !persistence.status().ok)) throw new Error('invalid golf data');
   } catch { state = empty(); loadError = true; }
   const e = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const uid = () => 'g_' + crypto.randomUUID();
@@ -20,15 +22,32 @@ window.GolfHub = (() => {
   const lesson = id => lessons().find(l => l.id === id);
   const source = (kind,id) => kind === 'videos' ? video(id) : kind === 'lessons' ? lesson(id) : Store.getById(id);
   const sourceTitle = (kind,id) => { const x = source(kind,id); return x?.title || x?.name || '원본 항목'; };
-  const relatedVideos = id => videos().filter(v => v.topics.some(t => topics(id).includes(t)));
+  const relatedVideos = id => {
+    const note = Store.getById(id);
+    return note ? content.relatedFor(note,{topics:topics(id),videoIds:relatedLessons(id).flatMap(l=>l.videoIds||[])}) : [];
+  };
   const relatedLessons = id => lessons().filter(l => (l.noteIds || []).includes(id));
   const stamp = () => new Date().toISOString();
+  const dateLabel = value => Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).format(new Date(value)) : '날짜 미확인';
+  const publishedLabel = v => `<time datetime="${e(v.publishedAt||'')}" title="YouTube 공개일 · 한국 시간">공개 ${e(dateLabel(v.publishedAt))}</time>`;
+  const evidenceLabel = v => `<span class="g-evidence-badge">${e(content.evidenceFor(v).label)}</span>`;
   function change(fn) {
     if (loadError) { api.toast('저장된 골프 기록을 읽지 못했습니다. 기존 기록을 보호하기 위해 저장을 멈췄습니다.'); return false; }
     try {
       const next = JSON.parse(JSON.stringify(state)); fn(next);
-      localStorage.setItem(KEY, JSON.stringify(next)); state = next; return true;
-    } catch { api.toast('저장하지 못했습니다. 입력 내용을 복사해 보관해 주세요.'); return false; }
+      if (persistence) state = persistence.commit(next);
+      else { localStorage.setItem(KEY, JSON.stringify(next)); state = next; }
+      return true;
+    } catch (error) {
+      api.toast(error.code === 'CONFLICT' ? '다른 탭에서 같은 기록을 수정했습니다. 입력은 초안으로 보관됩니다. 새로고침 후 확인해 주세요.' : '저장하지 못했습니다. 입력 내용을 복사해 보관해 주세요.');
+      return false;
+    }
+  }
+  function finishSaved(form,message) {
+    let cleared=true;
+    try { cleared=window.AppDrafts?.clear(form)!==false; } catch { cleared=false; }
+    api.toast(cleared?message:'기록은 저장됐습니다. 초안을 정리하지 못해 이 화면을 유지합니다.');
+    return cleared;
   }
   function go(tab='videos',id=null,extra={}) { api.go('golf-hub',{part:'golf',golfTab:tab,golfId:id,golfGroup:null,...extra}); }
   function href(kind,id) { return kind === 'notes' ? '#exercise/' + encodeURIComponent(id) : '#golf/' + kind + '/' + encodeURIComponent(id); }
@@ -63,11 +82,11 @@ window.GolfHub = (() => {
   }
   function card(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · 원본 + 편집 설명${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}</article>`;
+    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div>${evidenceLabel(v)}<a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}</article>`;
   }
   function compactCard(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span></a><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
+    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${publishedLabel(v)}</span></a><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
@@ -79,13 +98,30 @@ window.GolfHub = (() => {
   function layout(body, selected='videos') {
     api.app.innerHTML = `<div class="scr g-hub" data-part="golf"><button class="back" data-nav="home">‹ 홈</button><div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${body}<p class="g-footnote">메모·레슨·집중 항목은 이 기기에 저장됩니다.</p></div>${api.tabbar('golf')}`;
     const fab = api.app.querySelector('.fab'); if(fab) fab.hidden = true;
+    window.AppDrafts?.bind(api.app);
   }
+  function visibleFields(x) {
+    return Object.entries({제목:x.title||x.name,원본제목:x.originalTitle,채널:x.channel,클럽:x.category,주제:(x.topics||[]).join(' '),설명:[x.summary,...(x.points||[]),x.connection,x.spec,x.focus?.muscle,x.focus?.move,x.focus?.feel,...(x.cues||[]),...(x.reminders||[]),...(x.prep||[]),...(x.steps||[])].filter(Boolean).join(' '),메모:x.memo,레슨:[x.coach,x.problem,x.correction,x.homework,x.difference,x.result].filter(Boolean).join(' '),상태:x.status}).filter(([,value])=>typeof value==='string'&&value.trim());
+  }
+  const termsFor = query => (query||'').trim().toLocaleLowerCase('ko').split(/\s+/).filter(Boolean);
   function matches(x,view) {
-    const q=(view.golfQuery||'').trim().toLowerCase().split(/\s+/).filter(Boolean);
-    return (!view.golfTopic || (x.topics||[]).includes(view.golfTopic)) && q.every(w => JSON.stringify(x).toLowerCase().includes(w));
+    const hay = visibleFields(x).map(([,value])=>value).join(' ').toLocaleLowerCase('ko');
+    return (!view.golfTopic || (x.topics||[]).includes(view.golfTopic)) && termsFor(view.golfQuery).every(w=>hay.includes(w));
+  }
+  function searchRecords(query) {
+    const terms = termsFor(query);
+    if (!terms.length) return [];
+    return [
+      ...notes().map(x=>({x:{...x,topics:topics(x.id)},type:'note',kind:'notes'})),
+      ...lessons().map(x=>({x,type:'lesson',kind:'lessons'})),
+      ...videos().map(x=>({x:{...x,...state.videoNotes[x.id]},type:'video',kind:'videos'}))
+    ].filter(({x})=>matches(x,{golfQuery:query})).map(({x,type,kind})=>{
+      const fields = visibleFields(x).filter(([,value])=>terms.some(t=>value.toLocaleLowerCase('ko').includes(t)));
+      return {id:x.id,type,title:x.title||x.name,href:href(kind,x.id),excerpt:(fields[0]?.[1]||'').slice(0,180),matchedFields:fields.map(([label])=>label)};
+    });
   }
   function filters(view) {
-    return `<form class="g-search" data-g-form="search"><label for="g-search">골프 전체 검색</label><div class="g-actions"><input id="g-search" name="q" value="${e(view.golfQuery||'')}" placeholder="클럽·주제·메모"><button class="g-btn">검색</button></div></form>${view.golfTopic?`<div class="g-actions"><span>${e(view.golfTopic)}</span>${button('clear-filter','주제 해제')}</div>`:''}`;
+    return `<form class="g-search" data-g-form="search"><label for="g-search">전체 검색</label><div class="g-actions"><input id="g-search" name="q" data-no-draft value="${e(view.golfQuery||'')}" placeholder="운동·영상·레슨·메모"><button class="g-btn">검색</button></div></form>${view.golfTopic?`<div class="g-actions"><span>${e(view.golfTopic)}</span>${button('clear-filter','주제 해제')}</div>`:''}`;
   }
   function render(view,config) {
     api=config; current=view;
@@ -101,14 +137,16 @@ window.GolfHub = (() => {
     const isAllVideos=tab==='videos' && !selectedGroup && !view.golfTopic && !(view.golfQuery||'').trim();
     const featured=isAllVideos ? video(content.featuredVideoId) : null;
     const recent=isAllVideos ? content.recentVideos() : [];
-    const recentSection=recent.length?`<section class="g-video-section g-recent-section" aria-labelledby="g-recent-title"><header><h2 id="g-recent-title">최근 업로드 <span>최근 7일 · ${recent.length}편</span></h2></header><p class="g-meta">YouTube에 공개된 날짜를 기준으로 표시합니다.</p><div class="g-video-grid">${recent.map(compactCard).join('')}</div></section>`:'';
+    const now=Date.now(), weekAgo=now-7*24*60*60*1000;
+    const recentSection=isAllVideos?`<section class="g-video-section g-recent-section" aria-labelledby="g-recent-title"><header><h2 id="g-recent-title">최근 업로드 <span>최근 7일 · ${recent.length}편</span></h2></header><p class="g-date-basis">${e(dateLabel(new Date(weekAgo).toISOString()))} ~ ${e(dateLabel(new Date(now).toISOString()))} · 한국 시간 기준 최근 168시간<br>YouTube 공개일 기준 · 전체 ${videos().length}편 중 ${recent.length}편입니다. 아래 주제별 목록에도 표시됩니다.</p>${recent.length?`<div class="g-video-grid">${recent.map(compactCard).join('')}</div>`:'<p class="g-muted">최근 7일에 공개된 영상은 없습니다. 이전 영상은 아래 전체 목록에서 볼 수 있어요.</p>'}</section>`:'';
     let body=recentSection+(featured?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2>${compactCard(featured)}</section>`:'')+(tab==='videos'?videoGroupNav(selectedGroup):'')+filters(view);
     if (tab==='notes') {
       const fs=activeFocus();
+      body+='<p class="g-trust-note">스윙 노트는 혼자 연습하며 느낀 개인 감각입니다. 내게 맞는지는 원본 영상과 레슨에서 확인하세요.</p>';
       body+=block('지금 집중할 것',fs.length?fs.map(focusRow).join(''):'<p class="g-muted">노트·레슨·영상에서 지금 연습할 핵심을 골라 최대 3개까지 모아보세요.</p>');
       body+=`<div class="chips" aria-label="클럽 분류">${['',...Store.getCategories('golf')].map(c=>`<button class="chip ${(!view.cat&&!c)||view.cat===c?'on':''}" data-g="category" data-id="${e(c)}" aria-pressed="${(!view.cat&&!c)||view.cat===c?'true':'false'}">${e(c||'전체')}</button>`).join('')}</div>`;
       const list=notes().filter(n => (!view.cat || n.category===view.cat) && matches({...n,topics:topics(n.id)},view));
-      body+=block('클럽별 스윙 노트',list.length?list.map(n=>`<div class="g-note-row">${api.exRow(n,null,true)}<div class="g-meta">${relatedLessons(n.id).length}개 레슨 · ${relatedVideos(n.id).length}개 참고 영상</div></div>`).join(''):'<p class="g-muted">조건에 맞는 노트가 없습니다.</p>');
+      body+=block('클럽별 스윙 노트',list.length?list.map(n=>`<div class="g-note-row">${api.exRow(n,null,true)}<div class="g-meta">${relatedLessons(n.id).length}개 레슨 · 참고 영상 ${relatedVideos(n.id).length}편 먼저 보기</div></div>`).join(''):'<p class="g-muted">조건에 맞는 노트가 없습니다.</p>');
       body+='<div class="g-actions"><button type="button" class="g-btn" data-act="add">스윙 노트 추가</button></div>';
       body+=block('주제로 이어보기',chips(content.topics));
       if(lessons().length) body+=block('최근 레슨',lessonRow(lessons()[0]));
@@ -124,13 +162,13 @@ window.GolfHub = (() => {
     }
     layout(body,tab);
   }
-  function noteLinks(ids) { return `<div class="g-links">${ids.map(id=>Store.getById(id)?link('notes',id):'').join('')}</div>`; }
+  function noteLinks(ids) { const links=ids.filter(id=>Store.getById(id)).map(id=>link('notes',id)).join(''); return links?`<div class="g-links">${links}</div>`:''; }
   function related(id) {
     const n=Store.getById(id); if(n?.part!=='golf') return '';
     const fs=activeFocus(id), history=state.focus.filter(f=>f.noteId===id&&!f.active);
-    return `<div class="g-related" id="g-related">${block('내 연습에 반영한 핵심',fs.length?fs.map(focusRow).join(''):'<p class="g-muted">현재 기준 노트입니다. 새 레슨에서 확인한 교정은 출처와 함께 여기에 모읍니다.</p>')}
+    return `<div class="g-related" id="g-related">${block('내 연습에 반영한 핵심',fs.length?fs.map(focusRow).join(''):'<p class="g-muted">나의 연습 감각을 기록한 노트입니다. 레슨에서 확인한 내용은 출처와 함께 모아 보세요.</p>')}
       <div class="g-actions">${button('adopt','집중 항목 정하기',`data-kind="notes" data-id="${e(id)}"`)}${button('ask','레슨에서 질문',`data-kind="notes" data-id="${e(id)}"`)}</div>
-      ${chips(topics(id))}${block('연결된 레슨',relatedLessons(id).map(lessonRow).join('')||'<p class="g-muted">아직 연결된 레슨이 없습니다.</p>')}${block('같은 주제의 유튜브',relatedVideos(id).map(card).join('')||'<p class="g-muted">아직 연결된 영상이 없습니다.</p>')}
+      ${chips(topics(id))}${block('연결된 레슨',relatedLessons(id).map(lessonRow).join('')||'<p class="g-muted">아직 연결된 레슨이 없습니다.</p>')}${block('먼저 비교할 참고 영상',relatedVideos(id).map(({video,reason})=>`<p class="g-related-reason">${e(reason)}</p>${card(video)}`).join('')||'<p class="g-muted">아직 연결된 영상이 없습니다.</p>')}<p class="g-meta">제목·공통 주제·직접 연결한 레슨으로 고른 참고 자료입니다. 내 스윙에 맞는 교정인지 확인한 것은 아닙니다.</p><a class="g-link" href="#golf/videos">전체 ${videos().length}편 보기</a>
       ${history.length?`<details class="g-history"><summary>이전에 집중했던 내용 (${history.length})</summary>${history.map(f=>`<p>${e(f.text)}</p><div class="g-meta">${e(f.created.slice(0,10))} · ${link(f.kind,f.sourceId)}</div>`).join('')}</details>`:''}</div>`;
   }
   function videoDetail(id) {
@@ -141,13 +179,13 @@ window.GolfHub = (() => {
     const backLabel=group?group.title:'유튜브 목록';
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
     const keepOriginal=content.presentationFor(v)==='original';
-    layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)}</div><h2 class="g-title">${e(v.title)}</h2>${chips(v.topics)}
+    layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}</div><h2 class="g-title">${e(v.title)}</h2>${evidenceLabel(v)}<p class="g-evidence-note">${e(v.evidence)}<br>내 스윙에 맞는 교정인지는 레슨에서 확인하세요.</p>${chips(v.topics)}
       ${keepOriginal?'<p class="g-meta">'+(content.durationSeconds(v)<=content.originalMaxSeconds?'3분 이하 영상 · 원본과 편집 설명을 함께 봅니다.':'원본과 편집 설명으로 확인하는 영상입니다.')+'</p>':''}
       ${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱 안에서 재생',`data-id="${e(id)}"`)}<span>재생할 때 YouTube에 연결됩니다.</span></div>
       <a class="g-link" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">영상이 보이지 않으면 YouTube에서 열기 ↗</a>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>
-      ${block('영상 핵심',paras(v.summary)+`<ul>${v.points.map(p=>`<li>${e(p)}</li>`).join('')}</ul><p class="g-meta">${e(v.evidence)}</p>`)}
+      ${block(content.evidenceFor(v).heading,paras(v.summary)+`<ul>${v.points.map(p=>`<li>${e(p)}</li>`).join('')}</ul>`)}
       ${block('내 스윙과 연결',paras(v.connection)+noteLinks(relatedIds))}
       ${v.relatedVideoIds?block('다음 동작으로 연결',v.relatedVideoIds.map(video).filter(Boolean).map(card).join('')):''}
       <div class="g-actions">${button('adopt','내 연습에 반영',`data-kind="videos" data-id="${id}"`)}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
@@ -169,7 +207,7 @@ window.GolfHub = (() => {
     return `<label for="g-${name}">${label}</label>${type==='textarea'?`<textarea ${props} rows="3">${e(value)}</textarea>`:`<input ${props} type="${type}" value="${e(value)}">`}`;
   }
   function choices(name,items,selected=[]) {
-    return `<div class="g-choices">${items.map(x=>`<label><input type="checkbox" name="${name}" value="${e(x.id)}" ${selected.includes(x.id)?'checked':''}> <span>${e(x.title||x.name)}</span></label>`).join('')}</div>`;
+    return `<div class="g-choices">${items.map(x=>`<label><input id="g-${e(name)}-${e(encodeURIComponent(x.id))}" type="checkbox" name="${name}" value="${e(x.id)}" ${selected.includes(x.id)?'checked':''}> <span>${e(x.title||x.name)}</span></label>`).join('')}</div>`;
   }
   function lessonEditor(id) {
     const l=lesson(id)||{}, pending=state.questions.filter(q=>!q.lessonId||q.lessonId===id);
@@ -198,14 +236,19 @@ window.GolfHub = (() => {
     if(!content.topics.includes(t)) return go();
     layout(`<a class="back" href="#golf/notes">‹ 스윙 노트</a><h2>${e(t)}</h2>${block('스윙 노트',noteLinks(notes().filter(n=>topics(n.id).includes(t)).map(n=>n.id)))}${block('개인 레슨',lessons().filter(l=>(l.topics||[]).includes(t)).map(lessonRow).join('')||'<p class="g-muted">이 주제의 개인 레슨은 아직 없습니다.</p>')}${block('참고 영상',videos().filter(v=>v.topics.includes(t)).map(card).join(''))}`);
   }
-  function searchPage(view) {
-    const v={...view,golfTopic:null};
-    const ns=notes().filter(n=>matches({...n,topics:topics(n.id)},v));
-    const ls=lessons().filter(l=>matches(l,v)), vs=videos().filter(x=>matches({...x,...state.videoNotes[x.id]},v));
-    layout(filters(v)+block('스윙 노트',noteLinks(ns.map(n=>n.id))||'<p>검색 결과가 없습니다.</p>')+block('레슨',ls.map(lessonRow).join('')||'<p>검색 결과가 없습니다.</p>')+block('유튜브',vs.map(card).join('')||'<p>검색 결과가 없습니다.</p>'));
-  }
+  function searchPage(view) { return api.go('search',{q:view.golfQuery||'',scope:'all',__historyMode:'replace'}); }
+
   function configure(config) {
     api=config;
+    if (persistence && !unsubscribe) unsubscribe = window.Persistence.subscribe(event=>{
+      if ((event.key!==KEY && event.key!==null) || (!event.external&&!event.restored)) return;
+      if (window.AppDrafts?.activePending?.() ?? window.AppDrafts?.hasPending?.()) {
+        api.toast('다른 탭의 기록이 바뀌었습니다. 작성 중인 내용은 초안으로 유지합니다.');
+        return;
+      }
+      state=persistence.reload(); loadError=!persistence.status().ok;
+      if(current) api.refresh();
+    });
     api.app.addEventListener('click', ev=>{
       const b=ev.target.closest('[data-g]'); if(!b) return;
       ev.preventDefault(); ev.stopPropagation(); const id=b.dataset.id,kind=b.dataset.kind;
@@ -230,21 +273,21 @@ window.GolfHub = (() => {
     api.app.addEventListener('submit',ev=>{
       const form=ev.target.closest('[data-g-form]'); if(!form) return;
       ev.preventDefault(); const fd=new FormData(form), text=n=>String(fd.get(n)||'').trim(), all=n=>fd.getAll(n).map(String);
-      if(form.dataset.gForm==='search') return go('search',null,{golfQuery:text('q'),golfTopic:null});
+      if(form.dataset.gForm==='search') return api.go('search',{q:text('q'),scope:'all'});
       if(form.dataset.gForm==='video') {
-        if(change(s=>{s.videoNotes[form.dataset.id]={memo:text('memo'),status:text('status')};})) api.toast('메모 저장됨'); return;
+        if(change(s=>{s.videoNotes[form.dataset.id]={...s.videoNotes[form.dataset.id],memo:text('memo'),status:text('status')};})){finishSaved(form,'메모 저장됨');} return;
       }
       if(form.dataset.gForm==='question') {
         if(!text('text')) return;
         const id=form.dataset.id||uid();
-        if(change(s=>{const old=s.questions.find(q=>q.id===id);const q={id,kind:form.dataset.kind,sourceId:form.dataset.source,text:text('text'),created:old?.created||stamp()};if(old)Object.assign(old,q);else s.questions.push(q);})){api.toast('레슨 질문에 저장했습니다.');go('lessons');} return;
+        if(change(s=>{const old=s.questions.find(q=>q.id===id);const q={id,kind:form.dataset.kind,sourceId:form.dataset.source,text:text('text'),created:old?.created||stamp()};if(old)Object.assign(old,q);else s.questions.push(q);})){form.dataset.id=id;if(finishSaved(form,'레슨 질문에 저장했습니다.'))go('lessons');} return;
       }
       if(form.dataset.gForm==='adopt') {
         if(!text('text')||!Store.getById(text('noteId'))) return;
-        if(activeFocus().length>=3){api.toast('집중 항목 3개 중 하나를 해제한 뒤 추가하세요.');return;}
-        const item={id:uid(),text:text('text'),noteId:text('noteId'),kind:form.dataset.kind,sourceId:form.dataset.source,active:true,created:stamp()};
-        if(state.focus.some(f=>f.active&&f.noteId===item.noteId&&f.text===item.text)){api.toast('이미 같은 집중 항목이 있습니다.');return;}
-        if(change(s=>s.focus.push(item))){api.toast('내 연습에 반영했습니다.');go('notes');} return;
+        if(activeFocus().length>=3&&!state.focus.some(f=>f.id===form.dataset.id)){api.toast('집중 항목 3개 중 하나를 해제한 뒤 추가하세요.');return;}
+        const item={id:form.dataset.id||uid(),text:text('text'),noteId:text('noteId'),kind:form.dataset.kind,sourceId:form.dataset.source,active:true,created:stamp()};
+        if(state.focus.some(f=>f.id!==item.id&&f.active&&f.noteId===item.noteId&&f.text===item.text)){api.toast('이미 같은 집중 항목이 있습니다.');return;}
+        if(change(s=>{const existing=s.focus.find(f=>f.id===item.id);if(existing)Object.assign(existing,item);else s.focus.push(item);})){form.dataset.id=item.id;if(finishSaved(form,'내 연습에 반영했습니다.'))go('notes');} return;
       }
       if(form.dataset.gForm==='lesson') {
         if(!text('title')||!text('correction')||!/^\d{4}-\d{2}-\d{2}$/.test(text('date')))return;
@@ -254,7 +297,7 @@ window.GolfHub = (() => {
           videoIds:[...new Set([...all('videoIds'),...selected.filter(q=>q.kind==='videos').map(q=>q.sourceId)])],topics:all('topics'),updated:stamp()};
         if(!ls.noteIds.length){api.toast('관련 스윙 노트를 하나 이상 선택하세요.');return;}
         ls.topics=[...new Set([...ls.topics,...ls.videoIds.flatMap(id=>video(id)?.topics||[])])];
-        if(change(s=>{const i=s.lessons.findIndex(l=>l.id===ls.id);if(i<0)s.lessons.push(ls);else s.lessons[i]=ls;s.questions.forEach(q=>{if(all('questionIds').includes(q.id))q.lessonId=ls.id;else if(q.lessonId===ls.id)delete q.lessonId;});})){api.toast('레슨을 저장했습니다.');go('lessons',ls.id);}return;
+        if(change(s=>{const i=s.lessons.findIndex(l=>l.id===ls.id);if(i<0)s.lessons.push(ls);else s.lessons[i]=ls;s.questions.forEach(q=>{if(all('questionIds').includes(q.id))q.lessonId=ls.id;else if(q.lessonId===ls.id)delete q.lessonId;});})){form.dataset.id=ls.id;if(finishSaved(form,'레슨을 저장했습니다.'))go('lessons',ls.id);}return;
       }
     });
   }
@@ -269,5 +312,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink};
+  return {configure,render,related,openLink,searchRecords};
 })();
