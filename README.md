@@ -20,8 +20,9 @@ python -m http.server 8792
 
 ```sh
 npm ci
+npm run deletions:list
 npm run release:prepare
-npm run validate
+npm run release:preflight
 npx playwright install chromium
 npm run test:browser
 npm run build:site
@@ -40,3 +41,5 @@ GitHub Pages Source를 **GitHub Actions**로 설정하면 저장소 워크플로
 - `sw.js`: 앱 셸 캐시·선택 운동 오프라인 준비·안전한 업데이트
 - `scripts/validate.cjs` / `tests/`: 현행 검증 게이트와 격리된 테스트
 - `docs/CURRENT.md`: 단일 현재 운영 기준
+
+중앙 삭제 요청은 [docs/DELETION_REQUESTS.md](docs/DELETION_REQUESTS.md)의 절차를 따릅니다. 미확인 요청이 있거나 승인된 대상이 원본에 남아 있으면 Pages 배포가 중단됩니다.

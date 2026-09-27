@@ -8,6 +8,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
  const base='http://127.0.0.1:'+server.address().port+'/';
  const launch={headless:true};if(process.env.PTGOLF_BROWSER_PATH)launch.executablePath=process.env.PTGOLF_BROWSER_PATH;
  const browser=await chromium.launch(launch),context=await browser.newContext({viewport:{width:390,height:844},serviceWorkers:'allow'}),page=await context.newPage();
+ await page.addInitScript(()=>{window.__openedDeletionUrls=[];window.open=url=>{window.__openedDeletionUrls.push(String(url));return {};};});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
   await page.goto(base);await page.locator('.part.pt').waitFor();
@@ -28,15 +29,30 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#app').evaluate(el=>el.inert),true);
   await page.locator('#f-spec').fill('수정 초안');await page.keyboard.press('Escape');await page.locator('[data-act=edit]').click();assert.equal(await page.locator('#f-spec').inputValue(),'수정 초안');await page.keyboard.press('Escape');
   await page.locator('[data-act=add]').click();await page.locator('#f-part').selectOption('golf');await page.locator('#f-name').fill('새 노트 초안');await page.keyboard.press('Escape');await page.locator('[data-act=add]').click();assert.equal(await page.locator('#f-part').inputValue(),'golf');assert.equal(await page.locator('#f-name').inputValue(),'새 노트 초안');await page.keyboard.press('Escape');
-  await page.locator('[data-nav=home]').click();await page.locator('[data-act=search-focus]').click();await page.locator('#search-input').fill('회귀 검사');
+  await page.locator('[data-act=delete]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('.d-title').count(),1,'exercise remains visible until confirmation');
+  await page.locator('[data-act=confirm-yes]').click();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator(`[data-open="${firstId}"]`).count(),0,'confirmed exercise is hidden on this device');
+  const exerciseDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
+  assert(exerciseDeletion.queue.includes(firstId));assert(!exerciseDeletion.queue.includes('회귀 검사 개인 메모'),'private exercise memo must not enter deletion queue');
+  {const issue=new URL(exerciseDeletion.url);assert.equal(issue.searchParams.get('template'),'content-removal.md');assert.equal(issue.searchParams.get('labels'),'deletion-request');assert.match(issue.searchParams.get('body'),/<!-- pt-golf-deletion-request:v1 -->/);assert.match(issue.searchParams.get('body'),/<!-- \/pt-golf-deletion-request -->/);assert.match(issue.searchParams.get('body'),new RegExp('content-id: '+firstId));assert(!issue.searchParams.get('body').includes('회귀 검사 개인 메모'));}
+  await page.locator('.tab[data-nav=home]').click();await page.locator('.deletion-queue').waitFor();assert.match(await page.locator('.deletion-queue').textContent(),/삭제만을 위한 새 버전은 만들지 않/);
+  await page.locator(`[data-delete-restore="del_exercise_${firstId}"]`).click();assert.equal(await page.locator('.deletion-queue').count(),0);
+  await page.locator('[data-nav=pt]').click();await page.locator(`[data-open="${firstId}"]`).waitFor();
+  await page.locator('.tab[data-nav=home]').click();await page.locator('[data-act=search-focus]').click();await page.locator('#search-input').fill('회귀 검사');
   await page.locator('.search-result').first().waitFor();await page.reload();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('.search-result').first().click();await page.locator('.d-title').waitFor();await page.locator('#history-back').click();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('[data-nav=golf]').click();await page.locator('.g-video-grid').first().waitFor();
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
+  assert.equal(await page.locator('.g-video-card .g-delete-video').count(),await page.locator('.g-video-card').count(),'every visible video card has a delete action');
   await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();await page.locator('[data-g-form=video] textarea').fill('골프 영상 초안');
   await page.reload();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안');
   await page.locator('[data-g-form=video] button').click();assert.match(await page.locator('[data-draft-status]').first().textContent(),/저장/);
+  await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').first().click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
+  await page.locator('[data-act=confirm-yes]').click();await page.getByRole('heading',{name:'이 기기에서 삭제 요청한 영상입니다'}).waitFor();
+  const videoDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
+  assert(videoDeletion.queue.includes('cQiwXcbWZc4'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');
+  {const issue=new URL(videoDeletion.url);assert.match(issue.searchParams.get('body'),/content-kind: video/);assert.match(issue.searchParams.get('body'),/content-id: cQiwXcbWZc4/);assert(!issue.searchParams.get('body').includes('골프 영상 초안'));}
+  await page.locator('[data-g=restore-video]').first().click();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안','restoring a video preserves its memo');
   await page.goto(base+'#golf/notes');await page.locator('[data-open]').first().click();await page.locator('.personal-note-label').waitFor();assert.match(await page.locator('.personal-note-label').textContent(),/개인 연습 감각/);
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.goto(base+'#golf/videos');await page.locator('.g-video-grid').first().waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no overflow at '+width);if(process.env.PTGOLF_SCREENSHOT_DIR){fs.mkdirSync(process.env.PTGOLF_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'golf-'+width+'.png'),fullPage:false});}}
   await page.goto(base+'#exercise/'+firstId);await page.locator('[data-offline]').waitFor();
@@ -49,6 +65,6 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
-  console.log('PASS: fresh boot, PT/hash/history reload, memo/editor/video drafts, search restoration, golf group reset, mobile widths, offline image+3D, and isolated golf failure. Isolated browser data only.');
+  console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, and isolated golf failure. Isolated browser data only.');
  } finally {await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

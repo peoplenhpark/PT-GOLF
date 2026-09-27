@@ -3,11 +3,12 @@
 const Store = (() => {
   const persistence = window.Persistence;
   if (!persistence) throw new Error('Persistence module is required');
-  const LS_KEY = persistence.KEYS.overlay, CAL_KEY = persistence.KEYS.calendar;
+  const LS_KEY = persistence.KEYS.overlay, CAL_KEY = persistence.KEYS.calendar, DELETE_KEY = persistence.KEYS.deletions;
   const SEED_URL = 'data/seed.json';
   const emptyOverlay = () => ({ schemaVersion: 2, overrides: {}, deleted: [], legacyIds: [] });
   const overlayHandle = persistence.open(LS_KEY, { defaults: emptyOverlay, validate: persistence.validators[LS_KEY] });
   const calendarHandle = persistence.open(CAL_KEY, { defaults: () => ({}), validate: persistence.validators[CAL_KEY] });
+  const deletionHandle = persistence.open(DELETE_KEY, { defaults: () => ({ requests: [] }), validate: persistence.validators[DELETE_KEY] });
   let seed = { parts: [], principles: [], exercises: [] };
   const equal = persistence.equal;
 
@@ -26,6 +27,7 @@ const Store = (() => {
     const next = await response.json();
     if (!validateSeed(next)) throw new Error('기본 운동 자료의 형식이 올바르지 않습니다. 다시 불러오기를 시도해 주세요.');
     seed = next;
+    completeRemovedDeletionRequests('exercise', seed.exercises.map(item => item.id));
   }
   function overlay() { return overlayHandle.read(); }
   function prepare(next) {
@@ -43,7 +45,7 @@ const Store = (() => {
     return list.find(item => item.scope === category) || list.find(item => item.scope === '*') || null;
   }
   function getAll() {
-    const local = overlay(), deleted = new Set(local.deleted), seen = new Set();
+    const local = overlay(), deleted = new Set([...local.deleted, ...getAllDeletionRequests().filter(item => item.kind === 'exercise' && item.status !== 'cancelled').map(item => item.contentId)]), seen = new Set();
     const result = [];
     for (const ex of seed.exercises) {
       seen.add(ex.id);
@@ -92,13 +94,86 @@ const Store = (() => {
     });
     return getById(id);
   }
-  function remove(id) {
-    overlayHandle.update(next => {
-      prepare(next); delete next.overrides[id];
-      next.legacyIds = next.legacyIds.filter(item => item !== id);
-      if (seed.exercises.some(ex => ex.id === id) && !next.deleted.includes(id)) next.deleted.push(id);
-    });
+  function isSeed(id) { return seed.exercises.some(item => item.id === id); }
+  function getAllDeletionRequests() {
+    return deletionHandle.read().requests.slice().sort((a, b) => b.requestedAt.localeCompare(a.requestedAt));
   }
+  function getDeletionRequests(kind) {
+    const options = kind && typeof kind === 'object' ? kind : {};
+    const category = typeof kind === 'string' ? kind : options.kind;
+    return getAllDeletionRequests().filter(item => (!category || item.kind === category) && (options.includeResolved || item.status === 'pending'));
+  }
+  function isDeleted(kind, id) {
+    return (kind === 'exercise' && overlay().deleted.includes(id)) || getAllDeletionRequests().some(item => item.kind === kind && item.contentId === id && item.status !== 'cancelled');
+  }
+  function requestDeletion(item) {
+    const data = typeof item === 'string' ? { kind: 'exercise', contentId: item } : { ...item };
+    const kind = data.kind || 'exercise', contentId = data.contentId || data.id;
+    if (!['exercise', 'video'].includes(kind) || typeof contentId !== 'string' || !contentId || ['__proto__', 'constructor', 'prototype'].includes(contentId)) throw new Error('삭제할 항목을 확인해 주세요.');
+    const original = kind === 'exercise' ? seed.exercises.find(ex => ex.id === contentId) : null;
+    const saved = kind === 'exercise' ? overlay().overrides[contentId] : null;
+    if (kind === 'exercise' && !original && !saved) throw new Error('삭제할 운동을 찾을 수 없습니다.');
+    // One stable record per content item prevents duplicate requests across tabs.
+    const requestId = 'del_' + kind + '_' + contentId;
+    const committed = deletionHandle.update(next => {
+      let request = next.requests.find(entry => entry.kind === kind && entry.contentId === contentId);
+      if (request?.status === 'pending') return;
+      const fields = { id: request?.id || requestId, kind, contentId,
+        title: String(data.title || saved?.name || original?.name || contentId),
+        source: kind === 'video' || original ? 'seed' : 'local', requestedAt: new Date().toISOString(), status: 'pending' };
+      if (request) { Object.assign(request, fields); delete request.resolvedAt; }
+      else next.requests.push(fields);
+    });
+    const request = committed.requests.find(entry => entry.kind === kind && entry.contentId === contentId);
+    if (!request || request.status !== 'pending') {
+      const error = new Error('다른 화면에서 삭제 요청 상태가 변경됐습니다. 최신 상태를 확인해 주세요.'); error.code = 'CONFLICT'; throw error;
+    }
+    return request;
+  }
+  function markDeletionRequest(requestId, status) {
+    if (!['pending', 'completed', 'cancelled'].includes(status)) throw new Error('삭제 요청 상태를 확인해 주세요.');
+    if (!getAllDeletionRequests().some(item => item.id === requestId)) return null;
+    const committed = deletionHandle.update(next => {
+      const request = next.requests.find(item => item.id === requestId);
+      request.status = status;
+      if (status === 'pending') delete request.resolvedAt;
+      else request.resolvedAt = new Date().toISOString();
+    });
+    return committed.requests.find(item => item.id === requestId) || null;
+  }
+  function completeRemovedDeletionRequests(kind, currentIds) {
+    if (!['exercise', 'video'].includes(kind) || !Array.isArray(currentIds)) throw new Error('삭제 완료 확인 대상을 확인해 주세요.');
+    const present = new Set(currentIds), missing = new Set(getDeletionRequests(kind)
+      .filter(item => item.source === 'seed' && !present.has(item.contentId)).map(item => item.id));
+    if (!missing.size) return 0;
+    deletionHandle.update(next => {
+      next.requests.forEach(item => {
+        if (!missing.has(item.id) || item.status !== 'pending') return;
+        item.status = 'completed'; item.resolvedAt = new Date().toISOString();
+      });
+    });
+    return missing.size;
+  }
+  function restoreDeleted(id, kind = 'exercise') {
+    const request = getAllDeletionRequests().find(item => item.id === id || (item.kind === kind && item.contentId === id));
+    const contentId = request?.contentId || id, category = request?.kind || kind;
+    const legacyMask = category === 'exercise' && overlay().deleted.includes(contentId);
+    if (legacyMask && request) {
+      // Rare legacy masks and new requests are restored as one rollback-protected bundle.
+      const backup = persistence.exportBackup();
+      backup.stores[LS_KEY].deleted = backup.stores[LS_KEY].deleted.filter(value => value !== contentId);
+      const target = backup.stores[DELETE_KEY]?.requests.find(value => value.id === request.id);
+      if (target) { target.status = 'cancelled'; target.resolvedAt = new Date().toISOString(); }
+      persistence.restoreBackup(backup);
+    } else if (legacyMask) {
+      overlayHandle.update(next => { next.deleted = next.deleted.filter(value => value !== contentId); });
+    } else if (request) markDeletionRequest(request.id, 'cancelled');
+    else return false;
+    return true;
+  }
+  function clearDeletionRequest(requestId) { return restoreDeleted(requestId); }
+  // Deletion hides content locally and records a reversible request; content bytes stay intact.
+  function remove(id) { return requestDeletion(id); }
   function patch(id, fields) { return getById(id) ? upsert({ ...fields, id }) : null; }
   function setMemo(id, memo) { return patch(id, { memo }); }
   function toggleFavorite(id) {
@@ -122,7 +197,7 @@ const Store = (() => {
     return persistence.restoreBackup(backup);
   }
   function resetOverlay() { overlayHandle.commit(emptyOverlay()); }
-  function hasLocalChanges() { const local = overlay(); return Object.keys(local.overrides).length > 0 || local.deleted.length > 0; }
+  function hasLocalChanges() { const local = overlay(); return Object.keys(local.overrides).length > 0 || local.deleted.length > 0 || getAllDeletionRequests().length > 0; }
   function getCalendar() { return calendarHandle.read(); }
   function setCalEntry(dateStr, data) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) throw new Error('날짜 형식을 확인해 주세요.');
@@ -145,13 +220,15 @@ const Store = (() => {
     const date = new Date(), pad = number => String(number).padStart(2, '0');
     return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
   }
-  function reload() { overlayHandle.reload(); calendarHandle.reload(); }
+  function reload() { overlayHandle.reload(); calendarHandle.reload(); deletionHandle.reload(); }
   function getStatus() {
     const local = overlay();
-    return { overlay: overlayHandle.status(), calendar: calendarHandle.status(),
+    return { overlay: overlayHandle.status(), calendar: calendarHandle.status(), deletions: deletionHandle.status(),
       legacyIds: local.schemaVersion === 2 ? (local.legacyIds || []).slice() : Object.keys(local.overrides) };
   }
   return { init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getCategories, search,
     upsert, remove, patch, setMemo, toggleFavorite, exportData, importData, resetOverlay, hasLocalChanges,
-    todayStr, getRecentSessions, getCalendar, setCalEntry, getCalEntry, reload, getStatus };
+    todayStr, getRecentSessions, getCalendar, setCalEntry, getCalEntry, reload, getStatus, isSeed,
+    requestDeletion, restoreDeleted, getDeletionRequests, getAllDeletionRequests, isDeleted, markDeletionRequest, clearDeletionRequest,
+    completeRemovedDeletionRequests };
 })();

@@ -4,8 +4,10 @@ window.Persistence = (() => {
   'use strict';
   const KEYS = Object.freeze({
     overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1',
-    golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme'
+    golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme',
+    deletions: 'ptgolf_deletion_requests_v1'
   });
+  const V90_KEYS = Object.values(KEYS).filter(key => key !== KEYS.deletions);
   const JOURNAL = 'ptgolf_restore_journal_v1';
   const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
   const listeners = new Set();
@@ -130,10 +132,15 @@ window.Persistence = (() => {
     value.focus.every(item => stringFields(item, ['text', 'noteId', 'kind', 'sourceId']) && (item.active === undefined || typeof item.active === 'boolean')) &&
     record(value.videoNotes) && Object.values(value.videoNotes).every(item => record(item) && stringFields(item, ['memo', 'status']));
   const validDrafts = value => record(value) && Object.values(value).every(item => record(item) && ['string', 'boolean'].includes(typeof item.value) && typeof item.updated === 'string' && Number.isFinite(Date.parse(item.updated)));
-  const validators = { [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts };
+  const validDeletions = value => record(value) && keyed(value.requests) && new Set(value.requests.map(item => item.kind + '/' + item.contentId)).size === value.requests.length && value.requests.every(item =>
+    ['exercise', 'video'].includes(item.kind) && typeof item.contentId === 'string' && !!item.contentId &&
+    typeof item.title === 'string' && typeof item.requestedAt === 'string' && Number.isFinite(Date.parse(item.requestedAt)) &&
+    ['pending', 'completed', 'cancelled'].includes(item.status) && (item.source === undefined || ['seed', 'local'].includes(item.source)) &&
+    stringFields(item, ['deviceId', 'resolvedAt']));
+  const validators = { [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts, [KEYS.deletions]: validDeletions };
   function validateBackup(data) {
-    if (!record(data) || data.format !== 'ptgolf-backup' || data.schemaVersion !== 1 || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
-    const expected = Object.values(KEYS);
+    if (!record(data) || data.format !== 'ptgolf-backup' || ![1, 2].includes(data.schemaVersion) || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
+    const expected = data.schemaVersion === 1 ? V90_KEYS : Object.values(KEYS);
     if (Object.keys(data.stores).length !== expected.length || !expected.every(key => Object.hasOwn(data.stores, key))) throw failure('INVALID_BACKUP', '일부 기록이 빠진 백업입니다. 모든 저장소가 포함되어야 합니다.');
     expected.forEach(key => {
       const value = data.stores[key];
@@ -150,29 +157,33 @@ window.Persistence = (() => {
       if (key === KEYS.theme || raw === null) stores[key] = raw;
       else { try { stores[key] = JSON.parse(raw); } catch { throw failure('CORRUPT', '손상된 기록이 있어 일반 백업 대신 원본 복구 사본이 필요합니다.', key); } }
     }
-    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 1, createdAt: new Date().toISOString(), stores });
+    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 2, createdAt: new Date().toISOString(), stores });
   }
   function recoveryCopy() {
     const rawStores = {}; Object.values(KEYS).forEach(key => { rawStores[key] = rawRead(key); });
-    return { format: 'ptgolf-recovery-copy', schemaVersion: 1, createdAt: new Date().toISOString(), rawStores };
+    return { format: 'ptgolf-recovery-copy', schemaVersion: 2, createdAt: new Date().toISOString(), rawStores };
   }
   function reloadHandles(keys) { handles.forEach(item => { if (keys.includes(item.key)) item.handle.reload(); }); }
   function applyRawStores(rawStores) {
-    for (const key of Object.values(KEYS)) rawWrite(key, rawStores[key]);
+    for (const key of Object.values(KEYS)) if (Object.hasOwn(rawStores, key)) rawWrite(key, rawStores[key]);
   }
   function recoverRestore() {
     const text = rawRead(JOURNAL); if (text === null) return false;
     let journal; try { journal = JSON.parse(text); } catch { throw failure('CORRUPT', '복구 사본을 읽을 수 없습니다. 원본 파일을 먼저 보관해 주세요.'); }
-    if (!record(journal.before) || !Object.values(KEYS).every(key => Object.hasOwn(journal.before, key) && (journal.before[key] === null || typeof journal.before[key] === 'string'))) throw failure('CORRUPT', '복구 사본 형식이 올바르지 않습니다.');
+    if (!record(journal.before) || !V90_KEYS.every(key => Object.hasOwn(journal.before, key)) || !Object.keys(journal.before).every(key => Object.values(KEYS).includes(key) && (journal.before[key] === null || typeof journal.before[key] === 'string'))) throw failure('CORRUPT', '복구 사본 형식이 올바르지 않습니다.');
     applyRawStores(journal.before); rawWrite(JOURNAL, null);
     reloadHandles(Object.values(KEYS)); emit({ key: null, restored: true }); return true;
   }
   function restoreBackup(data) {
     const backup = validateBackup(data); assertReady();
     const before = recoveryCopy().rawStores, after = {};
-    Object.values(KEYS).forEach(key => { const value = backup.stores[key]; after[key] = value === null || key === KEYS.theme ? value : JSON.stringify(value); });
+    Object.values(KEYS).forEach(key => {
+      // v90 backups predate deletion requests and must not erase the current queue.
+      if (!Object.hasOwn(backup.stores, key)) { after[key] = before[key]; return; }
+      const value = backup.stores[key]; after[key] = value === null || key === KEYS.theme ? value : JSON.stringify(value);
+    });
     // The previous raw bytes remain recoverable even if a tab closes during restore.
-    const journal = JSON.stringify({ schemaVersion: 1, createdAt: new Date().toISOString(), before });
+    const journal = JSON.stringify({ schemaVersion: 2, createdAt: new Date().toISOString(), before });
     rawWrite(SNAPSHOT, journal); rawWrite(JOURNAL, journal);
     try { applyRawStores(after); rawWrite(JOURNAL, null); }
     catch (err) {

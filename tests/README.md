@@ -4,6 +4,8 @@
 
 ## 현행 필수 검사
 
+- 중앙 삭제 요청 파싱·사용자 승인과 원본 제거 동시 조건·GitHub 조회 실패 차단: `deletion-requests.cjs` (모의 API, 네트워크 호출 없음)
+
 - 골프 영상 ID·그룹·렌더 및 과거 주소 연결: `golf-training-data.cjs`
 - PT 이미지 등록·개인 코칭 자세: `pt-press-media.cjs`, `pt-*-pose.cjs`
 - SW 캐시 범위·데이터 키·실패 폴백·선택 운동 준비·업데이트: `service-worker.cjs`

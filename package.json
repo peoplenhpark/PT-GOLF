@@ -8,8 +8,15 @@
     "validate": "node scripts/validate.cjs",
     "test": "node scripts/validate.cjs",
     "test:browser": "node tests/browser-smoke.cjs",
-    "build:site": "node scripts/site.cjs"
+    "build:site": "node scripts/site.cjs",
+    "deletions:list": "node scripts/deletion-requests.cjs list",
+    "deletions:check": "node scripts/deletion-requests.cjs check",
+    "release:preflight": "node scripts/deletion-requests.cjs check && node scripts/validate.cjs"
   },
-  "engines": { "node": ">=20" },
-  "devDependencies": { "playwright": "1.62.1" }
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
 }

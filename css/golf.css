@@ -92,3 +92,15 @@
 .g-related-reason{font-size:13px!important;font-weight:700!important;color:var(--golf);margin:14px 0 7px}
 .g-view-options{grid-template-columns:minmax(0,1fr)}
 .g-hub input:focus-visible,.g-hub textarea:focus-visible,.g-hub select:focus-visible{outline:2px solid var(--golf);outline-offset:3px}
+
+/* Request removal without nesting an action inside the title link. */
+.g-mini-actions{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;align-items:stretch}
+.g-mini-actions .g-mini-play{min-width:0;min-height:44px;font-size:12px;flex-direction:row;gap:4px}
+.g-delete-video{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 10px;border:1px solid var(--line);border-radius:7px;background:var(--card);color:var(--danger);font:inherit;font-size:12px;font-weight:600;cursor:pointer;word-break:keep-all}
+.g-mini-actions .g-delete-video{min-width:0;padding:5px 2px;font-size:12px}
+.g-card-footer{display:flex;justify-content:flex-end;margin-top:10px}
+.g-deletion-panel{border:1px solid var(--line);border-radius:12px;padding:16px;margin:28px 0}
+.g-deletion-panel h2 span{font-size:13px;color:var(--sub)}
+.g-deletion-item{padding:16px 0;border-top:1px solid var(--line)}
+.g-deletion-item h3{font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.g-deletion-panel>p{font-size:13px;margin:10px 0}

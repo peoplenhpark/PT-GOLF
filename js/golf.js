@@ -14,7 +14,8 @@ window.GolfHub = (() => {
   } catch { state = empty(); loadError = true; }
   const e = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const uid = () => 'g_' + crypto.randomUUID();
-  const videos = () => content.videos;
+  const isVideoDeleted = id => !!Store.isDeleted?.('video',id);
+  const videos = () => content.videos.filter(v=>!isVideoDeleted(v.id));
   const lessons = () => [...new Map([...content.lessons, ...state.lessons].map(l => [l.id,l])).values()].sort((a,b) => b.date.localeCompare(a.date));
   const notes = () => Store.getByPart('golf');
   const topics = id => content.noteTopics[id] || [];
@@ -24,7 +25,7 @@ window.GolfHub = (() => {
   const sourceTitle = (kind,id) => { const x = source(kind,id); return x?.title || x?.name || '원본 항목'; };
   const relatedVideos = id => {
     const note = Store.getById(id);
-    return note ? content.relatedFor(note,{topics:topics(id),videoIds:relatedLessons(id).flatMap(l=>l.videoIds||[])}) : [];
+    return note ? content.relatedFor(note,{topics:topics(id),videoIds:relatedLessons(id).flatMap(l=>l.videoIds||[])}).filter(item=>!isVideoDeleted(item.video.id)) : [];
   };
   const relatedLessons = id => lessons().filter(l => (l.noteIds || []).includes(id));
   const stamp = () => new Date().toISOString();
@@ -39,7 +40,7 @@ window.GolfHub = (() => {
       else { localStorage.setItem(KEY, JSON.stringify(next)); state = next; }
       return true;
     } catch (error) {
-      api.toast(error.code === 'CONFLICT' ? '다른 탭에서 같은 기록을 수정했습니다. 입력은 초안으로 보관됩니다. 새로고침 후 확인해 주세요.' : '저장하지 못했습니다. 입력 내용을 복사해 보관해 주세요.');
+      api.toast(error.code === 'CONFLICT' ? '다른 탭에서 같은 기록을 수정했습니다. 현재 입력은 유지하고 있습니다. 내용을 복사한 뒤 최신 기록을 확인해 주세요.' : '저장하지 못했습니다. 입력 내용을 복사해 보관해 주세요.');
       return false;
     }
   }
@@ -53,6 +54,25 @@ window.GolfHub = (() => {
   function href(kind,id) { return kind === 'notes' ? '#exercise/' + encodeURIComponent(id) : '#golf/' + kind + '/' + encodeURIComponent(id); }
   const link = (kind,id,label) => `<a class="g-link" href="${href(kind,id)}">${e(label || sourceTitle(kind,id))} ›</a>`;
   const button = (action,label,attrs='') => `<button type="button" class="g-btn" data-g="${action}" ${attrs}>${e(label)}</button>`;
+  const deleteButton = v => `<button type="button" class="g-delete-video" data-g="delete-video" data-id="${e(v.id)}" aria-label="${e(v.title)} · 삭제 요청">삭제 요청</button>`;
+  function deletionRequests() { return Store.getDeletionRequests?.('video') || []; }
+  function pendingDeletions() {
+    const pending=deletionRequests();
+    if(!pending.length)return '';
+    return `<section class="g-deletion-panel" aria-labelledby="g-deletion-title"><h2 id="g-deletion-title">삭제 요청 관리 <span>${pending.length}건</span></h2><p>이 기기에서는 숨겼습니다. 삭제만을 위한 새 버전은 만들지 않고, 다음 배포 때 GitHub 요청을 확인해 전체 목록에 반영합니다. 메모는 보존됩니다.</p>${pending.map(request=>`<article class="g-deletion-item"><h3>${e(request.title)}</h3><p class="g-meta">요청 초안 보관됨 · 사이트 반영 여부는 GitHub에서 확인하세요.</p><div class="g-actions"><button type="button" class="g-btn" data-g="restore-video" data-id="${e(request.contentId)}">요청 취소 · 이 기기에 복원</button><button type="button" class="g-btn" data-g="resubmit-deletion" data-id="${e(request.id)}">GitHub 요청 열기 ↗</button></div></article>`).join('')}<p class="g-meta">이미 GitHub에 등록한 요청은 취소 버튼으로 닫히지 않습니다. 해당 요청도 직접 취소해 주세요.</p></section>`;
+  }
+  function requestVideoDeletion(id) {
+    const v=video(id); if(!v)return;
+    if(!api.confirmDeletion||!Store.requestDeletion){api.toast('삭제 요청 기능을 준비하지 못했습니다. 다시 불러온 뒤 시도해 주세요.');return;}
+    const item={kind:'video',contentId:v.id,title:v.title};
+    api.confirmDeletion(item,()=>{
+      let request;
+      try { request=Store.requestDeletion(item); }
+      catch(error){api.toast(error.message||'삭제 요청을 저장하지 못했습니다.');return;}
+      api.refresh();
+      api.openDeletionIssue?.(request);
+    });
+  }
   const chips = ts => `<div class="g-tags">${ts.map(t=>`<a href="#golf/topic/${encodeURIComponent(t)}" class="g-topic">${e(t)}</a>`).join('')}</div>`;
   const block = (title,body) => `<section class="g-section"><h2>${e(title)}</h2>${body}</section>`;
   const paras = text => `<p class="g-pre">${e(text)}</p>`;
@@ -82,11 +102,11 @@ window.GolfHub = (() => {
   }
   function card(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div>${evidenceLabel(v)}<a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}</article>`;
+    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div>${evidenceLabel(v)}<a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}<div class="g-card-footer">${deleteButton(v)}</div></article>`;
   }
   function compactCard(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${publishedLabel(v)}</span></a><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
+    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${publishedLabel(v)}</span></a><div class="g-mini-actions"><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a>${deleteButton(v)}</div></article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
@@ -136,7 +156,7 @@ window.GolfHub = (() => {
     const selectedGroup=videoGroups().some(g=>g.id===view.golfGroup)?view.golfGroup:null;
     const isAllVideos=tab==='videos' && !selectedGroup && !view.golfTopic && !(view.golfQuery||'').trim();
     const featured=isAllVideos ? video(content.featuredVideoId) : null;
-    const recent=isAllVideos ? content.recentVideos() : [];
+    const recent=isAllVideos ? content.recentVideos().filter(v=>!isVideoDeleted(v.id)) : [];
     const now=Date.now(), weekAgo=now-7*24*60*60*1000;
     const recentSection=isAllVideos?`<section class="g-video-section g-recent-section" aria-labelledby="g-recent-title"><header><h2 id="g-recent-title">최근 업로드 <span>최근 7일 · ${recent.length}편</span></h2></header><p class="g-date-basis">${e(dateLabel(new Date(weekAgo).toISOString()))} ~ ${e(dateLabel(new Date(now).toISOString()))} · 한국 시간 기준 최근 168시간<br>YouTube 공개일 기준 · 전체 ${videos().length}편 중 ${recent.length}편입니다. 아래 주제별 목록에도 표시됩니다.</p>${recent.length?`<div class="g-video-grid">${recent.map(compactCard).join('')}</div>`:'<p class="g-muted">최근 7일에 공개된 영상은 없습니다. 이전 영상은 아래 전체 목록에서 볼 수 있어요.</p>'}</section>`:'';
     let body=recentSection+(featured?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2>${compactCard(featured)}</section>`:'')+(tab==='videos'?videoGroupNav(selectedGroup):'')+filters(view);
@@ -152,7 +172,7 @@ window.GolfHub = (() => {
       if(lessons().length) body+=block('최근 레슨',lessonRow(lessons()[0]));
     } else if(tab==='videos') {
       const list=videos().filter(v=>matches({...v,...state.videoNotes[v.id]},view));
-      body+=`<p class="g-intro">${selectedGroup?'선택한 그룹의 영상을 모았습니다.':`영상 ${videos().length}편 · 주제별로 골라 보고 내 연습으로 연결하세요.`}</p>${groupedVideos(list.filter(v=>v.id!==featured?.id),selectedGroup)}`;
+      body+=`<p class="g-intro">${selectedGroup?'선택한 그룹의 영상을 모았습니다.':`영상 ${videos().length}편 · 주제별로 골라 보고 내 연습으로 연결하세요.`}</p>${groupedVideos(list.filter(v=>v.id!==featured?.id),selectedGroup)}${pendingDeletions()}`;
     } else {
       body+=`<div class="g-actions">${button('lesson-new','레슨 기록하기')}</div>`;
       const qs=state.questions.filter(q=>!q.lessonId);
@@ -172,7 +192,8 @@ window.GolfHub = (() => {
       ${history.length?`<details class="g-history"><summary>이전에 집중했던 내용 (${history.length})</summary>${history.map(f=>`<p>${e(f.text)}</p><div class="g-meta">${e(f.created.slice(0,10))} · ${link(f.kind,f.sourceId)}</div>`).join('')}</details>`:''}</div>`;
   }
   function videoDetail(id) {
-    const v=video(id); if(!v) return layout('<p>찾을 수 없는 영상입니다.</p>','videos');
+    const v=video(id);
+    if(!v) return layout(isVideoDeleted(id)?`<h2>이 기기에서 삭제 요청한 영상입니다</h2><p>메모는 보존되어 있습니다. 요청을 취소하면 이 기기에서 다시 볼 수 있습니다.</p><div class="g-actions">${button('restore-video','이 기기에 복원',`data-id="${e(id)}"`)}<a class="g-link" href="#golf/videos">영상 목록</a></div>${pendingDeletions()}`:'<p>찾을 수 없는 영상입니다.</p>','videos');
     const n=state.videoNotes[id]||{};
     const group=content.videoGroupFor(v);
     const backHref=group?groupHref(group.id):'#golf/videos';
@@ -181,7 +202,7 @@ window.GolfHub = (() => {
     const keepOriginal=content.presentationFor(v)==='original';
     layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}</div><h2 class="g-title">${e(v.title)}</h2>${evidenceLabel(v)}<p class="g-evidence-note">${e(v.evidence)}<br>내 스윙에 맞는 교정인지는 레슨에서 확인하세요.</p>${chips(v.topics)}
       ${keepOriginal?'<p class="g-meta">'+(content.durationSeconds(v)<=content.originalMaxSeconds?'3분 이하 영상 · 원본과 편집 설명을 함께 봅니다.':'원본과 편집 설명으로 확인하는 영상입니다.')+'</p>':''}
-      ${viewOptions(v)}
+      <div class="g-actions">${deleteButton(v)}</div>${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱 안에서 재생',`data-id="${e(id)}"`)}<span>재생할 때 YouTube에 연결됩니다.</span></div>
       <a class="g-link" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">영상이 보이지 않으면 YouTube에서 열기 ↗</a>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>
@@ -240,9 +261,10 @@ window.GolfHub = (() => {
 
   function configure(config) {
     api=config;
+    Store.completeRemovedDeletionRequests?.('video',content.videos.map(item=>item.id));
     if (persistence && !unsubscribe) unsubscribe = window.Persistence.subscribe(event=>{
       if ((event.key!==KEY && event.key!==null) || (!event.external&&!event.restored)) return;
-      if (window.AppDrafts?.activePending?.() ?? window.AppDrafts?.hasPending?.()) {
+      if ((window.AppDrafts?.activePending?.() ?? window.AppDrafts?.hasPending?.()) || window.AppDrafts?.hasUnstored?.()) {
         api.toast('다른 탭의 기록이 바뀌었습니다. 작성 중인 내용은 초안으로 유지합니다.');
         return;
       }
@@ -252,6 +274,17 @@ window.GolfHub = (() => {
     api.app.addEventListener('click', ev=>{
       const b=ev.target.closest('[data-g]'); if(!b) return;
       ev.preventDefault(); ev.stopPropagation(); const id=b.dataset.id,kind=b.dataset.kind;
+      if(b.dataset.g==='delete-video')return requestVideoDeletion(id);
+      if(b.dataset.g==='restore-video') {
+        try { Store.restoreDeleted(id,'video'); api.toast('이 기기에 영상을 복원했습니다.'); api.refresh(); }
+        catch(error){api.toast(error.message||'영상을 복원하지 못했습니다.');}
+        return;
+      }
+      if(b.dataset.g==='resubmit-deletion') {
+        const request=deletionRequests().find(item=>item.id===id);
+        if(request)api.openDeletionIssue?.(request);
+        return;
+      }
       if(b.dataset.g==='jump-related') { document.getElementById('g-related')?.scrollIntoView({block:'start'}); return; }
       if(b.dataset.g==='category') return go('notes',null,{cat:id||null});
       if(b.dataset.g==='lesson-new') return go('lesson-edit');
@@ -293,8 +326,8 @@ window.GolfHub = (() => {
         if(!text('title')||!text('correction')||!/^\d{4}-\d{2}-\d{2}$/.test(text('date')))return;
         const selected=state.questions.filter(q=>all('questionIds').includes(q.id));
         const ls={id:form.dataset.id||uid(),date:text('date'),title:text('title'),coach:text('coach'),problem:text('problem'),correction:text('correction'),homework:text('homework'),difference:text('difference'),result:text('result'),
-          noteIds:[...new Set([...all('noteIds'),...selected.filter(q=>q.kind==='notes').map(q=>q.sourceId)])],
-          videoIds:[...new Set([...all('videoIds'),...selected.filter(q=>q.kind==='videos').map(q=>q.sourceId)])],topics:all('topics'),updated:stamp()};
+          noteIds:[...new Set([...all('noteIds'),...(lesson(form.dataset.id)?.noteIds||[]).filter(id=>Store.isDeleted?.('exercise',id)),...selected.filter(q=>q.kind==='notes').map(q=>q.sourceId)])],
+          videoIds:[...new Set([...all('videoIds'),...(lesson(form.dataset.id)?.videoIds||[]).filter(isVideoDeleted),...selected.filter(q=>q.kind==='videos').map(q=>q.sourceId)])],topics:all('topics'),updated:stamp()};
         if(!ls.noteIds.length){api.toast('관련 스윙 노트를 하나 이상 선택하세요.');return;}
         ls.topics=[...new Set([...ls.topics,...ls.videoIds.flatMap(id=>video(id)?.topics||[])])];
         if(change(s=>{const i=s.lessons.findIndex(l=>l.id===ls.id);if(i<0)s.lessons.push(ls);else s.lessons[i]=ls;s.questions.forEach(q=>{if(all('questionIds').includes(q.id))q.lessonId=ls.id;else if(q.lessonId===ls.id)delete q.lessonId;});})){form.dataset.id=ls.id;if(finishSaved(form,'레슨을 저장했습니다.'))go('lessons',ls.id);}return;

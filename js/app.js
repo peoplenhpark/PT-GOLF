@@ -106,7 +106,7 @@ const Theme = (() => {
       showCat ? `<span>${partIcon(e.part)} ${esc(e.category || '')}</span>` : '',
       (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : ''
     ].filter(Boolean).join('');
-    return `<a class="ex ${esc(e.part)}" href="#exercise/${encodeURIComponent(e.id)}" data-open="${esc(e.id)}">
+    return `<div class="ex-shell"><a class="ex ${esc(e.part)}" href="#exercise/${encodeURIComponent(e.id)}" data-open="${esc(e.id)}">
       <div class="num">${idx != null ? idx + 1 : (mark || (showCat ? '🔍' : '★'))}</div>
       <div class="body">
         <div class="t">${esc(e.name)}</div>
@@ -114,7 +114,50 @@ const Theme = (() => {
         ${metas ? `<div class="meta">${metas}</div>` : ''}
       </div>
       ${star}
-    </a>`;
+    </a><button type="button" class="item-delete" data-delete-ex="${esc(e.id)}" aria-label="${esc(e.name)} 삭제 요청" title="삭제 요청">삭제</button></div>`;
+  }
+
+  function deletionRequestsHtml() {
+    const requests = Store.getDeletionRequests ? Store.getDeletionRequests() : [];
+    if (!requests.length) return '';
+    return `<section class="deletion-queue" aria-labelledby="deletion-queue-title">
+      <h2 id="deletion-queue-title">삭제 요청 <span>${requests.length}건</span></h2>
+      <p>현재 기기에서는 숨겨졌습니다. 삭제만을 위한 새 버전은 만들지 않으며, GitHub에 등록한 요청은 다음 배포 전에 항목명과 ID를 다시 확인합니다.</p>
+      ${requests.map(request => {
+        const localOnly = request.source === 'local' || (request.kind === 'exercise' && request.contentId.startsWith('usr_'));
+        return `<article class="deletion-request"><div><strong>${request.kind === 'video' ? '영상' : '동작'} · ${esc(request.title)}</strong><small>ID ${esc(request.contentId)}</small></div>
+          <div class="deletion-request-actions">${localOnly ? '<span class="tag">이 기기만</span>' : `<a class="btn" href="${esc(DeletionFlow.issueUrl(request))}" target="_blank" rel="noopener noreferrer">배포 요청 보내기 ↗</a>`}
+          <button type="button" class="btn ghost" data-delete-restore="${esc(request.id)}">복원</button></div></article>`;
+      }).join('')}
+    </section>`;
+  }
+
+  function confirmDeletion(item, onConfirm) {
+    const localOnly = item.source === 'local' || (item.kind === 'exercise' && item.contentId.startsWith('usr_'));
+    const next = localOnly
+      ? '이 기기에서 숨깁니다. 개인 추가 동작은 배포 원본에 없으므로 중앙 요청은 만들지 않습니다.'
+      : '이 기기에서 먼저 숨기고 GitHub 삭제 요청 화면을 엽니다. 삭제만을 위한 새 버전은 만들지 않으며, 다음 배포 전에 항목명과 ID를 다시 확인한 뒤 원본에서 삭제합니다.';
+    askConfirm(`「${item.title}」을 삭제 요청할까요? ${next}`, onConfirm, localOnly ? '이 기기에서 숨기기' : '숨기고 요청');
+  }
+
+  function openDeletionIssue(request) {
+    if (request.source === 'local' || (request.kind === 'exercise' && request.contentId.startsWith('usr_'))) return false;
+    const result = DeletionFlow.openIssue(request);
+    toast(result.attempted ? 'GitHub 화면에서 Submit new issue를 눌러 요청을 등록해 주세요' : '홈의 삭제 요청에서 배포 요청을 열어 주세요');
+    return result.attempted;
+  }
+
+  function requestExerciseDeletion(id) {
+    const exercise = Store.getById(id);
+    if (!exercise) return;
+    const item = { kind: 'exercise', contentId: exercise.id, title: exercise.name, source: Store.isSeed(exercise.id) ? 'seed' : 'local' };
+    confirmDeletion(item, () => {
+      const request = Store.requestDeletion(item);
+      openDeletionIssue(request);
+      toast(item.source === 'local' ? '이 기기에서 숨겼습니다' : '숨김 처리 · 삭제 요청 등록을 완료해 주세요');
+      if (view.name === 'detail' && view.id === id) go(exercise.part);
+      else renderPreserving();
+    });
   }
 
   const DOW = ['일', '월', '화', '수', '목', '금', '토'];
@@ -168,6 +211,7 @@ const Theme = (() => {
         <div class="hd"><h1>PT노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
         <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
         <div class="parts">${partCards}</div>
+        ${deletionRequestsHtml()}
         ${recentSectionHtml()}
         ${favSection}
         <div class="local-note">추가·수정·메모는 이 기기에 자동 저장됩니다.</div>
@@ -432,7 +476,7 @@ const Theme = (() => {
         ${isGolf ? (window.GolfHub?.related(id)||'') : ''}
 
         <div class="block del-row">
-          <button class="del-btn" data-act="delete">🗑 이 동작 삭제</button>
+          <button class="del-btn" data-act="delete">🗑 이 동작 삭제 요청</button>
         </div>
       </div>
       ${tabbar(e.part)}`;
@@ -468,9 +512,21 @@ const Theme = (() => {
     if(link&&!link.hasAttribute('data-open')&&!link.hasAttribute('data-part-open')){
       ev.preventDefault();const next=AppNavigation.fromHash(link.getAttribute('href'));go(next.name,next);return;
     }
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history]');
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history],[data-delete-ex],[data-delete-restore],[data-delete-send]');
     if (!t) return;
     if(t.tagName==='A')ev.preventDefault();
+
+    if (t.dataset.deleteEx) { requestExerciseDeletion(t.dataset.deleteEx); return; }
+    if (t.dataset.deleteRestore) {
+      Store.restoreDeleted(t.dataset.deleteRestore);
+      toast('항목을 다시 표시합니다. GitHub 요청을 등록했다면 해당 요청도 닫아 주세요.');
+      renderPreserving(); return;
+    }
+    if (t.dataset.deleteSend) {
+      const request = Store.getDeletionRequests().find(item => item.id === t.dataset.deleteSend);
+      if (request) openDeletionIssue(request);
+      return;
+    }
 
     if (t.dataset.history === 'back') { history.back(); return; }
     if (t.dataset.history === 'forward') { history.forward(); return; }
@@ -579,10 +635,7 @@ const Theme = (() => {
       case 'reset-cues': checks[view.id] = new Set(); renderPreserving(); break;
       case 'memo-edit': openMemoEditor(); break;
       case 'delete':
-        askConfirm(`「${Store.getById(view.id).name}」 동작을 삭제할까요?`, () => {
-          const part = Store.getById(view.id).part;
-          Store.remove(view.id); toast('삭제됨'); go(part);
-        }); break;
+        requestExerciseDeletion(view.id); break;
       case 'theme-toggle': Theme.toggle(); toast(Theme.get() === 'light' ? '☀️ 라이트 모드' : '🌙 다크 모드'); break;
       case 'cal-modal-close': closeCalModal(); break;
       case 'cal-modal-save':  saveCalModal(); break;
@@ -684,7 +737,7 @@ const Theme = (() => {
   function setSeg(id,v){document.getElementById(id).value=v;}
   function getSeg(id){return document.getElementById(id).value||'pt';}
 
-  function golfConfig() { return { app, go, toast, exRow, tabbar, refresh: render }; }
+  function golfConfig() { return { app, go, toast, exRow, tabbar, refresh: render, confirmDeletion, openDeletionIssue, issueUrl: DeletionFlow.issueUrl }; }
   try{window.GolfHub?.configure(golfConfig());}catch(error){console.warn('골프 초기화 실패',error);}
   Store.init().then(()=>{
     Theme.init();view=navigation.read();

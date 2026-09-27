@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const persistenceCode = fs.readFileSync(path.join(root, 'js/persistence.js'), 'utf8');
 const storeCode = fs.readFileSync(path.join(root, 'js/store.js'), 'utf8') + '\nglobalThis.Store = Store;';
-const K = { overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1', golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme' };
+const K = { overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1', golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme', deletions: 'ptgolf_deletion_requests_v1' };
 const JOURNAL = 'ptgolf_restore_journal_v1';
 const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
 const plain = value => JSON.parse(JSON.stringify(value));
@@ -116,7 +116,7 @@ async function test(name, fn) { await fn(); checks++; }
     const t = await tab(); t.s.setMemo('a', 'memo'); t.s.setCalEntry('2026-09-27', { rest: true });
     t.storage.map.set(K.golf, JSON.stringify({ ...emptyGolf(), videoNotes: { v: { memo: 'golf' } } }));
     t.storage.map.set(K.drafts, JSON.stringify({ screen: { value: 'unfinished', updated: '2026-09-27T00:00:00.000Z' } })); t.storage.map.set(K.theme, 'light');
-    const backup = t.s.exportData(); assert.equal(backup.format, 'ptgolf-backup'); assert.equal(Object.keys(backup.stores).length, 5);
+    const backup = t.s.exportData(); assert.equal(backup.format, 'ptgolf-backup'); assert.equal(Object.keys(backup.stores).length, 6);
     assert.equal(backup.stores[K.golf].videoNotes.v.memo, 'golf'); assert.equal(backup.stores[K.drafts].screen.value, 'unfinished');
     const invalid = plain(backup); delete invalid.stores[K.golf]; const before = ownData(t.storage), count = t.storage.writes();
     assert.throws(() => t.s.importData(invalid), code('INVALID_BACKUP')); assert.deepEqual(ownData(t.storage), before); assert.equal(t.storage.writes(), count);
@@ -154,6 +154,68 @@ async function test(name, fn) { await fn(); checks++; }
     const t = await tab(); t.context.fetch = async () => ({ ok: false }); await assert.rejects(t.s.init());
     assert.equal(t.s.getAll().length, 2); t.context.fetch = async () => ({ ok: true, json: async () => ({ exercises: [] }) });
     await assert.rejects(t.s.init()); assert.equal(t.s.getAll().length, 2);
+  });
+  await test('exercise deletion atomically hides and queues without changing source bytes', async () => {
+    const t = await tab(); t.s.setMemo('a', 'private memo'); const rawOverlay = t.storage.map.get(K.overlay), originalSeed = t.seed(), beforeWrites = t.storage.writes();
+    const request = t.s.requestDeletion('a');
+    assert.equal(request.kind, 'exercise'); assert.equal(request.source, 'seed'); assert.equal(request.contentId, 'a'); assert.equal(request.status, 'pending');
+    assert.equal(t.storage.writes() - beforeWrites, 1); assert.equal(t.s.getById('a'), null); assert.equal(t.s.isDeleted('exercise', 'a'), true);
+    assert.equal(t.storage.map.get(K.overlay), rawOverlay); assert.deepEqual(t.seed(), originalSeed); assert(!t.storage.map.get(K.deletions).includes('private memo'));
+    const again = t.s.requestDeletion('a'); assert.equal(again.id, request.id); assert.equal(t.s.getDeletionRequests().length, 1);
+    assert.equal(t.s.restoreDeleted(request.id), true); assert.equal(t.s.getById('a').memo, 'private memo'); assert.equal(t.s.getDeletionRequests().length, 0);
+    assert.equal(t.s.getAllDeletionRequests()[0].status, 'cancelled');
+  });
+  await test('user-created exercise deletion retains the complete local record for restore', async () => {
+    const t = await tab(); const item = t.s.upsert({ name: 'My exercise', part: 'pt', memo: 'My details', cues: ['custom cue'] });
+    const before = t.storage.map.get(K.overlay), request = t.s.remove(item.id);
+    assert.equal(request.source, 'local'); assert.equal(t.s.isSeed(item.id), false); assert.equal(t.s.getById(item.id), null); assert.equal(t.storage.map.get(K.overlay), before);
+    t.s.restoreDeleted(item.id); assert.deepEqual(plain(t.s.getById(item.id)), plain(item));
+  });
+  await test('video requests share the queue and completed requests remain locally hidden', async () => {
+    const t = await tab(); const request = t.s.requestDeletion({ kind: 'video', contentId: 'video-1', title: 'Video title' });
+    assert.equal(request.source, 'seed'); assert.equal(t.s.getDeletionRequests('video').length, 1); assert.equal(t.s.getDeletionRequests('exercise').length, 0);
+    assert.equal(t.s.isDeleted('video', 'video-1'), true); t.s.markDeletionRequest(request.id, 'completed');
+    assert.equal(t.s.getDeletionRequests('video').length, 0); assert.equal(t.s.getDeletionRequests({ includeResolved: true }).length, 1); assert.equal(t.s.isDeleted('video', 'video-1'), true);
+    t.s.restoreDeleted('video-1', 'video'); assert.equal(t.s.isDeleted('video', 'video-1'), false);
+    const renewed = t.s.requestDeletion({ kind: 'video', contentId: 'video-1', title: 'Video title' }); assert.equal(renewed.id, request.id); assert.equal(t.s.getAllDeletionRequests().length, 1);
+  });
+  await test('a centrally removed seed item completes its pending local request on the next seed load', async () => {
+    const t = await tab(); const request = t.s.requestDeletion('a');
+    t.updateSeed(seed => { seed.exercises = seed.exercises.filter(item => item.id !== 'a'); }); await t.s.init();
+    assert.equal(t.s.getDeletionRequests('exercise').length, 0);assert.equal(t.s.getAllDeletionRequests().find(item => item.id === request.id).status, 'completed');
+    assert.equal(t.s.getById('a'), null);
+  });
+  await test('failed or corrupt queue writes do not hide content or delete original data', async () => {
+    const t = await tab(); const before = ownData(t.storage); t.storage.fail(key => key === K.deletions);
+    assert.throws(() => t.s.requestDeletion('a'), code('WRITE_FAILED')); assert.equal(t.s.getById('a').name, 'Original A'); assert.deepEqual(ownData(t.storage), before);
+    const bad = await tab(disk({ [K.deletions]: '{corrupt queue' }));
+    assert.throws(() => bad.s.requestDeletion('a'), code('CORRUPT')); assert.equal(bad.s.getById('a').name, 'Original A'); assert.equal(bad.storage.map.get(K.deletions), '{corrupt queue');
+  });
+  await test('independent deletion requests merge and same request status conflicts', async () => {
+    const d = disk(), a = await tab(d), b = await tab(d); const first = a.s.requestDeletion('a'); b.s.requestDeletion('b');
+    assert.equal(b.s.getDeletionRequests().length, 2); assert.equal(b.s.getAll().length, 0);
+    const x = await tab(d), y = await tab(d); x.s.markDeletionRequest(first.id, 'completed');
+    assert.throws(() => y.s.restoreDeleted(first.id), code('CONFLICT')); assert.equal(JSON.parse(d.map.get(K.deletions)).requests.find(r => r.id === first.id).status, 'completed');
+  });
+  await test('deletion requests round-trip through complete backup and restore', async () => {
+    const source = await tab(); source.s.requestDeletion('a'); source.s.requestDeletion({ kind: 'video', contentId: 'v', title: 'V' });
+    const backup = source.s.exportData(); assert.equal(backup.schemaVersion, 2); assert.equal(backup.stores[K.deletions].requests.length, 2);
+    const dest = await tab(); dest.s.importData(backup); assert.equal(dest.s.getById('a'), null); assert.equal(dest.s.isDeleted('video', 'v'), true);
+    dest.s.restoreDeleted('a'); assert.equal(dest.s.getById('a').name, 'Original A');
+  });
+  await test('v90 five-store backups preserve current deletion requests', async () => {
+    const t = await tab(); const legacy = t.s.exportData(); legacy.schemaVersion = 1; delete legacy.stores[K.deletions];
+    t.s.requestDeletion('a'); const queue = t.storage.map.get(K.deletions); t.s.importData(legacy);
+    assert.equal(t.storage.map.get(K.deletions), queue); assert.equal(t.s.isDeleted('exercise', 'a'), true);
+    const legacyBefore = ownData(t.storage); delete legacyBefore[K.deletions];
+    t.storage.map.set(JOURNAL, JSON.stringify({ schemaVersion: 1, before: legacyBefore }));
+    assert.equal(t.p.recoverRestore(), true); assert.equal(t.storage.map.get(K.deletions), queue);
+  });
+  await test('legacy delete masks restore alone and alongside new queued requests', async () => {
+    const d = disk({ [K.overlay]: JSON.stringify({ overrides: { a: { id: 'a', memo: 'kept' } }, deleted: ['a'] }) });
+    const t = await tab(d); assert.equal(t.s.getById('a'), null); t.s.restoreDeleted('a'); assert.equal(t.s.getById('a').memo, 'kept');
+    const u = await tab(disk({ [K.overlay]: JSON.stringify({ overrides: { a: { id: 'a', memo: 'also kept' } }, deleted: ['a'] }) }));
+    u.s.requestDeletion('a'); u.s.restoreDeleted('a'); assert.equal(u.s.getById('a').memo, 'also kept'); assert.equal(u.s.getDeletionRequests().length, 0);
   });
   console.log(`PASS: ${checks} storage reliability scenarios; fake localStorage only, no user data accessed.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });
