@@ -13,9 +13,9 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
  try{
   await page.goto(base);await page.locator('.part.pt').waitFor();
   await page.locator('[data-nav=pt]').click();assert.match(page.url(),/#pt/);
-  await page.reload();await page.locator('.pt-exercise-grid').waitFor();
+  await page.reload();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator('[data-delete-ex]').count(),0,'exercise lists do not show delete actions');
   const firstId=await page.locator('.ex').first().getAttribute('data-open');
-  await page.locator('.ex').first().click();await page.locator('.d-title').waitFor();assert.match(page.url(),/#exercise/);
+  await page.locator('.ex').first().click();await page.locator('.d-title').waitFor();assert.match(page.url(),/#exercise/);assert.equal(await page.locator('[data-act=delete]').count(),1,'exercise detail has one delete action');
   await page.locator('#history-back').click();await page.locator('.pt-exercise-grid').waitFor();await page.reload();await page.locator('.pt-exercise-grid').waitFor();
   assert.equal(await page.locator('#history-forward').isEnabled(),true);
   await page.locator('#history-forward').click();await page.locator('.d-title').waitFor();
@@ -28,7 +28,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#modal').getAttribute('role'),'dialog');
   assert.equal(await page.locator('#app').evaluate(el=>el.inert),true);
   await page.locator('#f-spec').fill('수정 초안');await page.keyboard.press('Escape');await page.locator('[data-act=edit]').click();assert.equal(await page.locator('#f-spec').inputValue(),'수정 초안');await page.keyboard.press('Escape');
-  await page.locator('[data-act=add]').click();await page.locator('#f-part').selectOption('golf');await page.locator('#f-name').fill('새 노트 초안');await page.keyboard.press('Escape');await page.locator('[data-act=add]').click();assert.equal(await page.locator('#f-part').inputValue(),'golf');assert.equal(await page.locator('#f-name').inputValue(),'새 노트 초안');await page.keyboard.press('Escape');
+  assert.equal(await page.locator('.fab').count(),0,'floating add button is intentionally removed');
   await page.locator('[data-act=delete]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('.d-title').count(),1,'exercise remains visible until confirmation');
   await page.locator('[data-act=confirm-yes]').click();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator(`[data-open="${firstId}"]`).count(),0,'confirmed exercise is hidden on this device');
   const exerciseDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
@@ -43,11 +43,11 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('[data-nav=golf]').click();await page.locator('.g-video-grid').first().waitFor();
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
-  assert.equal(await page.locator('.g-video-card .g-delete-video').count(),await page.locator('.g-video-card').count(),'every visible video card has a delete action');
+  assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
   await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();await page.locator('[data-g-form=video] textarea').fill('골프 영상 초안');
   await page.reload();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안');
   await page.locator('[data-g-form=video] button').click();assert.match(await page.locator('[data-draft-status]').first().textContent(),/저장/);
-  await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').first().click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
+  assert.equal(await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').count(),1,'video detail has one delete action');await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
   await page.locator('[data-act=confirm-yes]').click();await page.getByRole('heading',{name:'이 기기에서 삭제 요청한 영상입니다'}).waitFor();
   const videoDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
   assert(videoDeletion.queue.includes('cQiwXcbWZc4'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');

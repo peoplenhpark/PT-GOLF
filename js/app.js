@@ -96,8 +96,7 @@ const Theme = (() => {
         <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${navigation.index <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
         <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${navigation.index >= navigation.max ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
       </div>
-    </nav>
-    <button class="fab" data-act="add" aria-label="동작 추가">+</button>`;
+    </nav>`;
   }
 
   function exRow(e, idx, showCat, mark) {
@@ -106,7 +105,7 @@ const Theme = (() => {
       showCat ? `<span>${partIcon(e.part)} ${esc(e.category || '')}</span>` : '',
       (e.memo && e.memo.trim()) ? `<span>✏️ 메모</span>` : ''
     ].filter(Boolean).join('');
-    return `<div class="ex-shell"><a class="ex ${esc(e.part)}" href="#exercise/${encodeURIComponent(e.id)}" data-open="${esc(e.id)}">
+    return `<a class="ex ${esc(e.part)}" href="#exercise/${encodeURIComponent(e.id)}" data-open="${esc(e.id)}">
       <div class="num">${idx != null ? idx + 1 : (mark || (showCat ? '🔍' : '★'))}</div>
       <div class="body">
         <div class="t">${esc(e.name)}</div>
@@ -114,7 +113,7 @@ const Theme = (() => {
         ${metas ? `<div class="meta">${metas}</div>` : ''}
       </div>
       ${star}
-    </a><button type="button" class="item-delete" data-delete-ex="${esc(e.id)}" aria-label="${esc(e.name)} 삭제 요청" title="삭제 요청">삭제</button></div>`;
+    </a>`;
   }
 
   function deletionRequestsHtml() {
@@ -232,7 +231,7 @@ const Theme = (() => {
     const inCat = list.filter(e => e.category === activeCat);
     const rows = inCat.length
       ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i)).join('')}</div>`
-      : `<div class="empty">아직 동작이 없어요.<br>우측 하단 ➕ 로 추가하세요.</div>`;
+      : `<div class="empty">아직 표시할 동작이 없어요.<br>숨긴 동작은 홈의 삭제 요청에서 복원할 수 있어요.</div>`;
 
     app.innerHTML = `
       <div class="scr" data-part="${part}">
@@ -512,11 +511,10 @@ const Theme = (() => {
     if(link&&!link.hasAttribute('data-open')&&!link.hasAttribute('data-part-open')){
       ev.preventDefault();const next=AppNavigation.fromHash(link.getAttribute('href'));go(next.name,next);return;
     }
-    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history],[data-delete-ex],[data-delete-restore],[data-delete-send]');
+    const t = ev.target.closest('[data-nav],[data-open],[data-part-open],[data-cat],[data-act],[data-cue],[data-back],[data-cal-nav],[data-cal-date],[data-catnav],[data-recent],[data-history],[data-delete-restore],[data-delete-send]');
     if (!t) return;
     if(t.tagName==='A')ev.preventDefault();
 
-    if (t.dataset.deleteEx) { requestExerciseDeletion(t.dataset.deleteEx); return; }
     if (t.dataset.deleteRestore) {
       Store.restoreDeleted(t.dataset.deleteRestore);
       toast('항목을 다시 표시합니다. GitHub 요청을 등록했다면 해당 요청도 닫아 주세요.');

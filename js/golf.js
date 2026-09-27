@@ -102,11 +102,11 @@ window.GolfHub = (() => {
   }
   function card(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div>${evidenceLabel(v)}<a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}<div class="g-card-footer">${deleteButton(v)}</div></article>`;
+    return `<article class="g-video-card"><div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div>${evidenceLabel(v)}<a class="g-card-title" href="${href('videos',v.id)}">${e(v.title)} <span>›</span></a><p>${e(v.summary)}</p>${chips(v.topics)}${viewOptions(v,true)}</article>`;
   }
   function compactCard(v) {
     const n = state.videoNotes[v.id] || {};
-    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${publishedLabel(v)}</span></a><div class="g-mini-actions"><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a>${deleteButton(v)}</div></article>`;
+    return `<article class="g-video-card g-video-mini"><a class="g-mini-detail" href="${href('videos',v.id)}" aria-label="${e(v.title)} · 설명과 메모 보기"><span class="g-mini-title">${e(v.title)} <span aria-hidden="true">›</span></span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${publishedLabel(v)}</span></a><a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(v.title)} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
@@ -117,7 +117,6 @@ window.GolfHub = (() => {
   }
   function layout(body, selected='videos') {
     api.app.innerHTML = `<div class="scr g-hub" data-part="golf"><button class="back" data-nav="home">‹ 홈</button><div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${body}<p class="g-footnote">메모·레슨·집중 항목은 이 기기에 저장됩니다.</p></div>${api.tabbar('golf')}`;
-    const fab = api.app.querySelector('.fab'); if(fab) fab.hidden = true;
     window.AppDrafts?.bind(api.app);
   }
   function visibleFields(x) {

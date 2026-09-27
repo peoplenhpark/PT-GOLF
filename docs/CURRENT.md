@@ -6,6 +6,7 @@
 
 - 현재 공개 버전: v91 (2026-09-27 배포 완료). 코드 커밋 8d7e89d54e0f000258cf81ff6cc22ae017cff4f3. GitHub Actions 실행 36301415821의 verify/deploy 모두 성공했다.
 - 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=91#golf/videos . 공개 release.json과 index가 v91 및 삭제 요청 모듈을 제공하는 것을 확인했다. 격리된 Chromium에서 운동·영상 삭제 확인 전 보존, 확인 후 숨김, 복원, 개인 메모 보존과 320/390/768px 가로 넘침 없음을 검증했다. 검증 성공한 _site만 게시한다.
+- 다음 배포 대기: 화면의 플로팅 `+` 추가 버튼과 운동·영상 목록 카드의 삭제 버튼을 제거했다. 삭제 요청은 각 항목의 상세 화면에 1개만 유지한다. 이 변경만을 위한 새 버전은 만들지 않으며 다음 기능·콘텐츠 배포에 포함한다. 골프 화면의 명시적인 `스윙 노트 추가` 동작과 기존 항목 편집은 유지한다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.

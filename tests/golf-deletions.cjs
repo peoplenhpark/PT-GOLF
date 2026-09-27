@@ -25,9 +25,10 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   assert.equal(store.getAllDeletionRequests().find(item=>item.id===removedRequest.id).status,'completed','missing source completes its local request after the central release');
   const render=v=>{view=v;hub.render(v,api);};
   const click=(action,id)=>handlers.click({target:{closest:()=>({dataset:{g:action,id}})},preventDefault:()=>{},stopPropagation:()=>{}});
-  const cardCount=()=> (app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length;
   render({golfTab:'videos'});
-  assert.equal((app.innerHTML.match(/data-g="delete-video"/g)||[]).length,cardCount(),'each mini card has an independent delete button');
+  assert.equal((app.innerHTML.match(/data-g="delete-video"/g)||[]).length,0,'video lists do not show delete buttons');
+  render({golfTab:'videos',golfId:'9YWDNMyTQy4'});
+  assert.equal((app.innerHTML.match(/data-g="delete-video"/g)||[]).length,1,'video detail shows exactly one delete button');
   click('delete-video','9YWDNMyTQy4');
   assert.equal(confirmations.at(-1).item.contentId,'9YWDNMyTQy4');
   assert.equal(store.isDeleted('video','9YWDNMyTQy4'),false,'confirmation is required');
@@ -48,7 +49,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   assert(!app.innerHTML.includes('id="g-player"'));
   render({golfTab:'videos'});
   const recentId=c.recentVideos()[0].id,priorRecent=c.recentVideos().length;
-  click('delete-video',recentId);confirmations.at(-1).callback();
+  render({golfTab:'videos',golfId:recentId});click('delete-video',recentId);confirmations.at(-1).callback();render({golfTab:'videos'});
   assert(app.innerHTML.includes(`최근 7일 · ${priorRecent-1}편`));
   assert(app.innerHTML.includes('전체 36편'));
   assert(!app.innerHTML.includes(`href="#golf/videos/${recentId}"`));
@@ -66,9 +67,9 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   assert.equal(c.videos.length,38,'source objects remain intact until a later approved release');
   const visible=c.videos.find(v=>!store.isDeleted('video',v.id));
   const issueCount=issues.length;
-  rejectWrite=true;click('delete-video',visible.id);confirmations.at(-1).callback();
+  render({golfTab:'videos',golfId:visible.id});rejectWrite=true;click('delete-video',visible.id);confirmations.at(-1).callback();
   assert(!store.isDeleted('video',visible.id),'failed queue write must not hide video');
   assert.equal(issues.length,issueCount,'failed queue write must not open a submission');
   assert(messages.length>0);
-  console.log('PASS: every golf video has confirmed deletion, local hide/request atomicity, all listing exclusions, retry/restore, memo and lesson preservation.');
+  console.log('PASS: golf lists omit delete actions, detail keeps one confirmed deletion, local hide/request atomicity, all listing exclusions, retry/restore, memo and lesson preservation.');
 })().catch(error=>{console.error(error);process.exitCode=1;});
