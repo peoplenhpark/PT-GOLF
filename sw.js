@@ -98,10 +98,9 @@ self.addEventListener('fetch', event => {
     const cache = await caches.open(CACHE);
     const key = cacheKey(event.request);
     const cached = await cache.match(key);
-    // Keep HTML, JS and CSS on the controlling release until a verified worker activates.
-    // Fetching a new index while serving old cached scripts would mix releases.
-    const freshRequired = file === 'data/seed.json';
-    if (cached && !freshRequired) return cached;
+    // Keep seed, HTML, JS and CSS on the controlling release until a verified worker activates.
+    // New seed entries must not be paired with an old ExerciseMedia registry.
+    if (cached) return cached;
     try {
       const response = await fetchBounded(event.request);
       if (response.status >= 500 && cached) return cached;

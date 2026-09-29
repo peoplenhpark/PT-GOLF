@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..'),base=process.env.PTGOLF_BASE_URL||'http:
 const seed=JSON.parse(fs.readFileSync(path.join(root,'data/seed.json'),'utf8').replace(/^\uFEFF/,'')),ctx={window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(root,'js/exercise-media.js'),'utf8'),ctx);
 const media=ctx.window.ExerciseMedia,poses=require('../media/3d/poses.js');
-const assetVersion=fs.readFileSync(path.join(root,'sw.js'),'utf8').match(/ptgolf-v(\d+)/)[1];
+const assetVersion=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'utf8')).version;
 for(const e of seed.exercises){
  if(e.part==='golf'){assert(!media[e.id]);continue;}
  assert(media[e.id],e.id+' media missing');

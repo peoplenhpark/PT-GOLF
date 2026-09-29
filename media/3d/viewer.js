@@ -80,7 +80,7 @@ try{
    ell(body,k,[.052,.057,.049],joint);limb(k,f,.045);
    ell(body,add(mix(k,f,.42),mul(p.front,-.014)),[.049,.105,.045],skin,sub(f,k));
    // Feet follow shin on floor exercises; standing feet point forward.
-   const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
+   const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover','sealrow'];
    const planted=['bridge','benchpress','dumbbellpress','smithincline'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1];
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
@@ -139,6 +139,27 @@ try{
      }
      beam(equipment,[-.78,1.90,z],[.78,1.90,z],.035);
      beam(equipment,[-1.0,y,z],[1.0,y,z],.016,steel);
+     break;
+    }
+    case 'sealbench':{
+     const center=e.center||[0,.82,-.04],size=e.size||[.40,.12,1.28];
+     block(equipment,center,size,rubber);
+     // Feet stay outside the dumbbell path; the elevated pad supports chest, pelvis and thighs.
+     for(const side of [-1,1]){
+      const topZ=center[2]+side*.57,footZ=center[2]+side*.74;
+      beam(equipment,[0,.055,footZ],[0,center[1]-.08,topZ],.038,steel);
+      beam(equipment,[-.37,.045,footZ],[.37,.045,footZ],.04,steel);
+     }
+     beam(equipment,[0,.23,center[2]-.43],[0,.23,center[2]+.43],.03,steel);
+     break;
+    }
+    case 'ezbar':{
+     const hand=mix(p.wrists[0],p.wrists[1],.5),half=Math.abs(p.wrists[1][0]-p.wrists[0][0])*.5;
+     const points=[[-half-.26,0],[-half-.10,0],[-half-.045,-.028],[-half+.045,.028],[-.08,0],[.08,0],[half-.045,.028],[half+.045,-.028],[half+.10,0],[half+.26,0]];
+     for(let i=1;i<points.length;i++)beam(equipment,add(hand,[points[i-1][0],0,points[i-1][1]]),add(hand,[points[i][0],0,points[i][1]]),.015,steel);
+     for(const side of [-1,1]){
+      const plate=mesh(equipment,cylinder,rubber);plate.position.set(hand[0]+side*(half+.20),hand[1],hand[2]);plate.scale.set(.105,.045,.105);plate.rotation.z=Math.PI/2;
+     }
      break;
     }
     case 'pronebench':bench([0,.49,.03]);break;

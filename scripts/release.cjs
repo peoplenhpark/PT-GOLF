@@ -39,8 +39,18 @@ function htmlAssets(file) {
 const ctx = { window: {} };
 vm.runInNewContext(read('js/exercise-media.js'), ctx);
 const seed = JSON.parse(read('data/seed.json'));
+const ptIds = new Set(seed.exercises.filter(e=>e.part==='pt').map(e=>e.id));
+const mediaIds = new Set(Object.keys(ctx.window.ExerciseMedia));
+const missingMedia = [...ptIds].filter(id=>!mediaIds.has(id));
+const orphanMedia = [...mediaIds].filter(id=>!ptIds.has(id));
+if (missingMedia.length || orphanMedia.length) {
+  throw new Error('PT seed/media mismatch; missing media: ' + (missingMedia.join(', ') || 'none') +
+    '; orphan media: ' + (orphanMedia.join(', ') || 'none'));
+}
 const exercises = {};
 for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
+  if (!Array.isArray(media.images) || media.images.length !== 2) throw new Error(id + ' must have exactly 2 start/end images');
+  if (!media.viewer) throw new Error(id + ' must have a 3D viewer');
   const viewer = clean(media.viewer);
   const legacyImage = seed.exercises.find(e=>e.id===id)?.image;
   exercises[id] = [...new Set([...(media.images || []).map(clean), ...(legacyImage ? [clean(legacyImage)] : []), viewer,

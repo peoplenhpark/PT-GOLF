@@ -16,13 +16,21 @@ const grouped=c.videoGroups.flatMap(g=>g.videoIds);
 assert.equal(c.videoGroups.length,4);assert.equal(new Set(grouped).size,38);assert.equal(grouped.length,38);
 assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,4,14,18]);
 for(const v of c.videos)assert(c.videoGroupFor(v));
-assert.equal(Object.keys(media).length,47);assert(Object.keys(media).every(id=>id.startsWith('pt_')));
-for(const m of Object.values(media))assert(m.viewer);
+const seed=JSON.parse(read('data/seed.json'));
+const ptIds=seed.exercises.filter(e=>e.part==='pt').map(e=>e.id).sort();
+const mediaIds=Object.keys(media).sort();
+assert.equal(ptIds.length,50);
+assert.deepEqual(mediaIds,ptIds);
+for(const [id,m] of Object.entries(media)){
+ assert(m.viewer,id+' viewer');
+ assert.equal(m.images?.length,2,id+' start/end images');
+ for(const image of m.images)assert(fs.existsSync(path.join(root,image)),id+' missing '+image);
+}
 const sw=read('sw.js');
 for(const m of sw.matchAll(/'\.\/([^']*)'/g))assert(fs.existsSync(path.join(root,m[1].split('?')[0]||'index.html')));
 assert(!/media\/golf3d\/[^']*\.(js|css|bin|json|webp)/.test(sw));
 // Render every video and group through the real hub with a read-only storage double.
-const seed=JSON.parse(read('data/seed.json'));let writes=0;
+let writes=0;
 ctx.localStorage={getItem:()=>null,setItem:()=>{writes++;}};
 ctx.Store={getByPart:part=>seed.exercises.filter(e=>e.part===part),getById:id=>seed.exercises.find(e=>e.id===id),getCategories:()=>['드라이버','아이언']};
 vm.runInContext(read('js/golf.js'),ctx);
@@ -48,4 +56,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 38 originals, 4 groups, no golf 3D UI/cache, 47 PT models preserved, 7 old URL redirects, no storage writes.');
+console.log('PASS: 38 originals, 4 groups, no golf 3D UI/cache, 50 PT models match seed/media, 7 old URL redirects, no storage writes.');

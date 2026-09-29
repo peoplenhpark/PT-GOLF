@@ -99,6 +99,26 @@ function pose(kind,t,id){
   arms(p,[add(ball,[-.10,0,0]),add(ball,[.10,0,0])]);
   p.equipment.push({type:'bosu'},{type:'ball',at:ball});
   stage=t<.26?0:t<.64?1:2;
+ }else if(kind==='sealrow'){
+  // Prone chest-supported row: the body stays on the high flat bench while the arms pull.
+  p=base([0,.99,0],Math.PI/2);
+  p.knees=S.map(s=>[s*.105,.99,-.43]);
+  p.ankles=S.map(s=>[s*.105,.99,-.855]);
+  arms(p,S.map(s=>[s*.30,.425+.31*q,.47-.20*q]),S.map(s=>[s*.30,.50,-1]));
+  p.equipment=[{type:'sealbench',center:[0,.82,-.04],size:[.40,.12,1.28]},{type:'dumbbells'}];
+  p.target=[0,.79,.0];p.distance=4.1;
+ }else if(kind==='uprightrow'){
+  // EZ-bar path ends below the chest; the neck and shoulders never shrug upward.
+  p=base([0,.90,0]);
+  legs(p,S.map(s=>[s*.16,.065,.0]));
+  arms(p,S.map(s=>[s*.225,.81+.41*q,.12+.02*q]),S.map(s=>[s,.15,-.20]));
+  p.equipment=[{type:'ezbar'}];p.target=[0,.94,.06];p.distance=3.9;
+ }else if(kind==='dbrdl'){
+  // Two-foot Romanian deadlift: hip hinge and controlled return, dumbbells below shoulders.
+  p=base([0,.90-.06*q,-.03-.22*q],.06+1.0*q);
+  legs(p,S.map(s=>[s*.16,.065,.04]),S.map(s=>[s*.05,0,1]));
+  arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.025,-.568,.035])),S.map(s=>[s,-.15,-1]));
+  p.equipment=[{type:'dumbbells'}];p.target=[0,.79,.02];p.distance=4.0;
  }else if(kind==='curl'){
   p=base([0,.90,0],.07);
   arms(p,S.map(s=>[s*.235,.91+.54*q,.17]),S.map(s=>[s*.05,-1,-1]));

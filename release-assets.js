@@ -85,6 +85,15 @@ globalThis.PTGolfRelease = {
       "media/3d/viewer.js",
       "samples/pushdown-3d/three.min.js"
     ],
+    "pt_seal_row": [
+      "docs/images/guides/pt_seal_row-end.webp",
+      "docs/images/guides/pt_seal_row-start.webp",
+      "js/exercise-media.js",
+      "media/3d/poses.js",
+      "media/3d/viewer.html",
+      "media/3d/viewer.js",
+      "samples/pushdown-3d/three.min.js"
+    ],
     "pt_backextension": [
       "docs/images/38_backextension.svg",
       "docs/images/guides/pt_backextension-end.webp",
@@ -155,6 +164,15 @@ globalThis.PTGolfRelease = {
       "media/3d/viewer.js",
       "samples/pushdown-3d/three.min.js"
     ],
+    "pt_uprightrow": [
+      "docs/images/guides/pt_uprightrow-end.webp",
+      "docs/images/guides/pt_uprightrow-start.webp",
+      "js/exercise-media.js",
+      "media/3d/poses.js",
+      "media/3d/viewer.html",
+      "media/3d/viewer.js",
+      "samples/pushdown-3d/three.min.js"
+    ],
     "pt_vsquat": [
       "docs/images/12_vsquat.svg",
       "docs/images/guides/pt_vsquat-end.webp",
@@ -218,6 +236,15 @@ globalThis.PTGolfRelease = {
       "docs/images/33_widesquat.svg",
       "docs/images/guides/pt_widesquat-end.webp",
       "docs/images/guides/pt_widesquat-start.webp",
+      "js/exercise-media.js",
+      "media/3d/poses.js",
+      "media/3d/viewer.html",
+      "media/3d/viewer.js",
+      "samples/pushdown-3d/three.min.js"
+    ],
+    "pt_dumbbell_rdl": [
+      "docs/images/guides/pt_dumbbell_rdl-end.webp",
+      "docs/images/guides/pt_dumbbell_rdl-start.webp",
       "js/exercise-media.js",
       "media/3d/poses.js",
       "media/3d/viewer.html",

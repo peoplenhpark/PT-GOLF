@@ -1,0 +1,49 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-09-29",
+  "assets": [
+    {
+      "id": "pt_seal_row",
+      "prompts": {
+        "start": "Use case: scientific-educational. Create the START / lowered-arm frame of a two-frame seal row exercise guide. Match the established PT guide style: charcoal studio background, gray anatomical male figure, black shorts and training shoes, realistic 3D medical-fitness rendering, subtle red target-muscle highlights, and clean unlabelled presentation. The exercise is a DUMBBELL SEAL ROW. One athletic adult gray anatomical figure lies FACE DOWN on a sturdy elevated FLAT black padded seal-row bench. The sternum, abdomen and pelvis stay supported by the pad. Both legs extend straight behind the hips along the long bench, stable and supported, not hanging down or standing on the floor. Neck stays neutral and head follows the spine, looking down. Arms hang long down on the two sides of the bench, elbows almost straight, each hand holding one black dumbbell below its shoulder in a neutral grip. Both dumbbells are clear of the floor, with ample vertical clearance under the elevated bench. Highlight latissimus dorsi and the mid-back around the shoulder blades in muted red; all other anatomy stays grayscale. Camera: rear-side three-quarter view, slightly elevated enough to clearly see the back and both shoulder blades; head at lower-left and legs receding toward upper-right. Show entire figure, entire bench, and both dumbbells, with comfortable margins in a portrait 3:4 composition. This is one single frame, not a panel or diptych. No text, labels, arrows, border, watermark or logo. No duplicated limbs. No movement blur. Chest must remain pressed to the pad, spine neutral, and equipment physically plausible. This same exact figure, bench, camera and light will be used for a subsequent end-frame edit.",
+        "end": "Use case: precise-object-edit, scientific-educational exercise guide. Edit the provided seal-row START frame into its matching END / pulled-up frame. Change ONLY the arms, dumbbells and the associated natural scapular contraction. Preserve the exact same gray anatomical man, short dark hair, black shorts, shoes, full-length flat elevated black bench, charcoal studio background, portrait canvas, camera framing, lighting, surface textures and muted red highlighted back muscles. Keep the chest, sternum, abdomen and pelvis supported on the pad, legs extended and resting in exactly their same positions, head neutral and facing down. From the hanging-arm start pose, bend BOTH elbows and row both dumbbells upward beside the lower ribs, elbows travel backward close alongside the torso, elbows bent roughly 90 degrees, forearms nearly vertical and wrists straight in a neutral dumbbell grip. Both elbows end just above the torso/bench line, with no exaggerated shoulder shrug or overly high pull. Shoulder blades gently draw together; no torso lift, no lumbar arch and no head tilt. Both dumbbells must remain visible. Render a single still educational END frame. No text, arrows, labels, watermark or logo. Do not add or remove objects; no extra limbs. Keep everything else pixel-close to the reference."
+      },
+      "sources": [
+        "exec-a4e285fe-3374-45ff-a4a6-e61a983d777c.png",
+        "exec-48731e0a-9aa4-4a85-a643-381f519c1a49.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_seal_row-start.webp",
+        "docs/images/guides/pt_seal_row-end.webp"
+      ],
+      "processing": "The end frame used the generated start frame as the recent-image edit reference; both were resized proportionally to 700px width and encoded as WebP quality 88."
+    },
+    {
+      "id": "pt_uprightrow",
+      "prompt": "Make ONE two-panel fitness coaching comparison image, exactly two equal panels SIDE BY SIDE, landscape 1536x1024. This is one coherent illustration with the SAME fully clothed adult male athlete duplicated at identical scale, camera angle, light, clothing and equipment in both halves. Use a gray fitted short-sleeve T-shirt with subtle muted red overlay areas at shoulder caps and upper back, black knee-length shorts and black sneakers. Dark charcoal studio background, realistic polished 3D fitness instruction illustration. No text, arrows, labels, dividing line, watermarks or logos. Keep each full body entirely inside its half with head, feet, both elbows and both ends of the bar visible. Same mild front three-quarter camera. Exercise: standing EZ curl-bar upright row, palms down on the angled grips about shoulder width, modest small black plates at both ends. LEFT HALF: READY position. Stand upright, feet hip-width, shoulders relaxed, arms hanging almost straight, EZ bar close to front of upper thighs. RIGHT HALF: controlled PULL position. Feet and torso remain fixed; same bar pulled close to the body to lower chest just below sternum, elbows point outward and upward but stay below shoulder height. Hands stay below elbows, wrists neutral on angled grips. Neck long, no shrug, no bent torso. Do not show a biceps curl. Both halves show exactly the same person in the same clothes and the same bar, with only arms and bar moving. No bare torso, no anatomical dissection, fully clothed adult sports instruction.",
+      "source": "exec-7ec71b41-14c5-436c-8760-23c73f6e7473.png",
+      "outputs": [
+        "docs/images/guides/pt_uprightrow-start.webp",
+        "docs/images/guides/pt_uprightrow-end.webp"
+      ],
+      "processing": "The generated two-panel image was split at the center and encoded as two 768x1024 WebP files."
+    },
+    {
+      "id": "pt_dumbbell_rdl",
+      "prompts": {
+        "end": "Single portrait 3:4 educational exercise illustration: a fully clothed gray male athletic training mannequin performing the lowered phase of a dumbbell Romanian deadlift. A safe technical sports textbook demonstration. The mannequin wears a matte gray fitted long sleeve training top, opaque charcoal shorts and dark trainers. Seamless dark charcoal studio background, soft dramatic studio lighting, realistic 3D sports anatomy style, detailed fabric and form, small muted red target-muscle surface overlays on the outer hip area and backs of the thighs, subtle engraved-muscle pattern on the gray clothing. Camera at waist height, predominantly SIDE VIEW with a slight view of the back shoulder, whole body from head to shoes centered with comfortable margins. Face toward image right. Feet are hip-width apart, flat and parallel, knees softly bent, shins almost vertical. Hips pushed well backward, neutral straight torso tilted forward approximately 45 degrees, neck aligned with back looking down. Exactly two black compact dumbbells with round plates, one securely in each hand. Straight arms hang vertically from shoulders so the dumbbells sit close to the legs just below knee level. Proper hip hinge, no squat, no rounded spine. Arms do not brace on legs. No bench. No writing, labels, arrows, watermarks, logos or extra equipment. Clean clinical strength-training demonstration.",
+        "start": "Make the matching START position image for this exact dumbbell Romanian deadlift demonstration. Preserve the same fully clothed gray anatomical fitness mannequin, gray anatomical-pattern long sleeve shirt, opaque charcoal training shorts with muted red hip and hamstring muscle overlays, black shoes, two round-plate black dumbbells, dark charcoal studio, lighting, image proportions and predominantly side view with slight rear three-quarter angle. Change only the exercise pose: stand tall, upright neutral spine and neck, head stacked over shoulders, hips above ankles, both feet flat and hip-width apart, knees softly unlocked. One dumbbell held in each hand, arms long and relaxed, weights beside and close to the front of the thighs. Both dumbbells must be visible as distinct weights, with the far dumbbell partly visible beyond the far thigh, each attached naturally to its own hand. Keep whole figure head-to-shoes fully in frame with margins. Do not leave the torso leaning forward: this is the standing start and finish position. Sports textbook technical instruction image; no nudity, no text, arrows, labels or logos. All other details unchanged."
+      },
+      "sources": [
+        "exec-aa8edd90-702e-4a2b-88ff-0e8429eeba35.png",
+        "exec-9567569a-eceb-491d-8b0f-57832a052327.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_dumbbell_rdl-start.webp",
+        "docs/images/guides/pt_dumbbell_rdl-end.webp"
+      ],
+      "processing": "The standing start frame used the generated lowered frame as the recent-image edit reference; original pixels were encoded to WebP quality 88."
+    }
+  ],
+  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style."
+}
