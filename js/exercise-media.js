@@ -140,19 +140,19 @@ window.ExerciseMedia = {
     "viewer": "media/3d/viewer.html?exercise=pt_machinerow"
   },
   "pt_seal_row": {
-    "name": "씰 로우 (가슴 지지 로우)",
+    "name": "씰 로우 (인클라인 가슴 지지 로우)",
     "kind": "sealrow",
     "captions": [
-      "몸통을 지지하고 팔 늘이기",
-      "가슴을 붙인 채 당기기"
+      "경사 벤치에 가슴 고정",
+      "가슴을 붙인 채 팔꿈치 당기기"
     ],
     "notes": [
-      "벤치 위로 충분히 올라와 골반부터 명치까지 지지하고, 목을 길게 유지한다",
-      "몸통을 들지 않은 채 팔꿈치를 뒤로 보내 등 가운데를 좌우 고르게 조인다"
+      "경사 벤치에 가슴을 붙이고 두 발로 바닥을 지지한 채 팔을 자연스럽게 늘어뜨린다",
+      "몸통을 들지 않고 팔꿈치를 뒤로 보내 등 가운데를 좌우 고르게 조인다"
     ],
     "focus": {
-      "muscle": "광배근·능형근·등 상부 + 몸통 후면 안정",
-      "move": "골반부터 명치까지 지지한 채 팔꿈치를 뒤로 보내 당겼다가 통제하며 편다",
+      "muscle": "광배근·능형근·등 상부",
+      "move": "경사 벤치에 가슴을 고정하고 팔꿈치를 뒤로 당겼다가 천천히 편다",
       "feel": "몸통은 패드에 고정되고 등 가운데가 좌우 고르게 조여지는 느낌"
     },
     "target": "back",
@@ -161,7 +161,7 @@ window.ExerciseMedia = {
       "docs/images/guides/pt_seal_row-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_seal_row",
-    "visualNote": "벤치 각도와 실제 바·덤벨 종류가 녹취에서 확인되지 않아, 시각 자료는 낮은 벤치와 덤벨을 사용한 자세 예시입니다."
+    "visualNote": "오늘 PT에서 확인한 경사 벤치 가슴 지지와 덤벨 한 개당 7kg을 반영한 자세 예시입니다. 정확한 벤치 각도는 미확인입니다."
   },
   "pt_backextension": {
     "name": "백 익스텐션 (맨몸 · 허리 세우기)",
@@ -325,28 +325,11 @@ window.ExerciseMedia = {
     "viewer": "media/3d/viewer.html?exercise=pt_lateralraise"
   },
   "pt_uprightrow": {
-    "name": "업라이트 로우 (서서 당기기)",
-    "kind": "uprightrow",
-    "captions": [
-      "곧게 서서 몸 가까이 잡기",
-      "손목을 세우고 팔꿈치로 당기기"
-    ],
-    "notes": [
-      "손바닥이 몸을 향하게 잡고 가슴을 편 채 손목 각도를 중립으로 유지한다",
-      "어깨가 조금 따라오는 것은 괜찮지만 앞으로 말리거나 목을 과하게 으쓱하지 않는다"
-    ],
-    "focus": {
-      "muscle": "측면 어깨·등 상부·승모근",
-      "move": "곧게 선 채 손목을 중립으로 두고, 팔꿈치가 이끌어 손잡이를 몸 가까이 올린다",
-      "feel": "손목이나 목보다 어깨 옆과 윗등이 부드럽게 참여하는 느낌"
-    },
-    "target": "shoulders",
-    "images": [
-      "docs/images/guides/pt_uprightrow-start.webp",
-      "docs/images/guides/pt_uprightrow-end.webp"
-    ],
-    "viewer": "media/3d/viewer.html?exercise=pt_uprightrow",
-    "visualNote": "정확한 기구가 녹취에서 확인되지 않아 EZ바를 사용한 업라이트 로우 자세 예시입니다."
+    "name": "서서 당기기 (사진 확인 예정)",
+    "pending": true,
+    "pendingMessage": "현재 등록됐던 업라이트 로우와 다른 운동입니다. 다음 사진으로 기구와 동작을 확인한 뒤 이미지와 3D를 추가합니다.",
+    "images": [],
+    "viewer": ""
   },
   "pt_vsquat": {
     "name": "V-스쿼트",
@@ -510,28 +493,28 @@ window.ExerciseMedia = {
     "viewer": "media/3d/viewer.html?exercise=pt_widesquat"
   },
   "pt_dumbbell_rdl": {
-    "name": "덤벨 루마니안 데드리프트 (양발)",
+    "name": "덤벨 루마니안 데드리프트 (양발·덤벨 1개)",
     "kind": "dbrdl",
     "captions": [
-      "양발을 맞추고 길게 서기",
-      "엉덩이를 뒤로 보내 접기"
+      "덤벨 1개를 턱밑 성배 그립으로 들기",
+      "중앙선으로 내리며 힙힌지"
     ],
     "notes": [
-      "발을 골반 너비로 맞추고 중량을 다리 가까이 둔 채 목부터 골반까지 길게 세운다",
-      "허리와 골반이 말리기 전까지 엉덩이를 뒤로 보내 뒤 허벅지의 늘어남을 찾는다"
+      "양발로 선 뒤 덤벨 한 개를 세로로 두고 양손을 모아 성배처럼 잡아 턱밑까지 올린다",
+      "턱밑의 덤벨을 몸의 중앙선으로 내리며 엉덩이를 뒤로 보내 뒤 허벅지의 늘어남을 찾는다"
     ],
     "focus": {
       "muscle": "둔근·햄스트링·척추기립근",
-      "move": "양발을 고르게 누르며 엉덩이를 뒤로 보내 고관절을 접고, 후면 사슬로 다시 선다",
+      "move": "덤벨 한 개를 턱밑에서 중앙선으로 내리며 양발을 고르게 누르고 엉덩이를 뒤로 보내 고관절을 접는다",
       "feel": "허리가 접히지 않은 채 엉덩이와 뒤 허벅지가 길게 늘어났다 단단히 서는 느낌"
     },
-    "target": "hamstrings",
+    "target": "posterior",
     "images": [
       "docs/images/guides/pt_dumbbell_rdl-start.webp",
       "docs/images/guides/pt_dumbbell_rdl-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_dumbbell_rdl",
-    "visualNote": "덤벨과 중량은 자세 설명용 예시입니다. 녹취의 「10kg에 10kg」을 실제 기구·개별 중량 처방으로 확정하지 않습니다."
+    "visualNote": "오늘 PT에서 확인한 덤벨 1개·턱밑 성배 그립에서 중앙선으로 내리는 양발 힙힌지를 남자 모형으로 반영한 자세 예시입니다. 사용 중량은 미확인입니다."
   },
   "pt_legcurl": {
     "name": "레그 컬 (라잉 레그 컬)",

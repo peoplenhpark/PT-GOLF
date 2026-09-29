@@ -164,15 +164,7 @@ globalThis.PTGolfRelease = {
       "media/3d/viewer.js",
       "samples/pushdown-3d/three.min.js"
     ],
-    "pt_uprightrow": [
-      "docs/images/guides/pt_uprightrow-end.webp",
-      "docs/images/guides/pt_uprightrow-start.webp",
-      "js/exercise-media.js",
-      "media/3d/poses.js",
-      "media/3d/viewer.html",
-      "media/3d/viewer.js",
-      "samples/pushdown-3d/three.min.js"
-    ],
+    "pt_uprightrow": [],
     "pt_vsquat": [
       "docs/images/12_vsquat.svg",
       "docs/images/guides/pt_vsquat-end.webp",

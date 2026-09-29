@@ -10,6 +10,12 @@ const assetVersion=JSON.parse(fs.readFileSync(path.join(root,'release.json'),'ut
 for(const e of seed.exercises){
  if(e.part==='golf'){assert(!media[e.id]);continue;}
  assert(media[e.id],e.id+' media missing');
+ if(media[e.id].pending){
+  assert.equal(media[e.id].pending,true,e.id+' pending flag');
+  assert.equal(typeof media[e.id].pendingMessage,'string',e.id+' pending message');assert(media[e.id].pendingMessage.trim(),e.id+' empty pending message');
+  assert(Array.isArray(media[e.id].images));assert.equal(media[e.id].images.length,0,e.id+' pending images');assert.equal(media[e.id].viewer,'',e.id+' pending viewer');
+  continue;
+ }
  if(!process.env.SKIP_IMAGE_CHECK)for(const file of media[e.id].images)assert(fs.existsSync(path.join(root,file)),file);
  if(e.id==='pt_pushdown'||media[e.id].kind==='golf')continue; // Dedicated golf engine is covered by golf-3d.cjs.
  for(let i=0;i<=50;i++){
@@ -39,9 +45,15 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
    const actual=norm(await page.locator('#app').innerText());
    const pr=seed.principles.find(p=>p.part===e.part&&p.scope===e.category)||seed.principles.find(p=>p.part===e.part&&p.scope==='*');
    const guide=e.gripGuide,gripLines=guide?[guide.title,guide.summary,guide.common,guide.orientationNote,guide.evidence,
-    ...guide.options.flatMap(item=>Object.values(item)),...guide.orientations.flatMap(item=>Object.values(item))]:[];
-   const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...gripLines,...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
+    ...guide.options.flatMap(item=>[item.label,item.badge,item.width,item.palm,item.muscles,item.detail,item.caution]),...guide.orientations.flatMap(item=>Object.values(item))]:[];
+   const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus||{}),...gripLines,...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
    for(const line of lines){assert(actual.includes(norm(line)),e.id+' content lost: '+line);report.sourceLines++;}
+   if(media[e.id]?.pending){
+    assert.equal(await page.locator('.media-pending').count(),1,e.id+' pending notice');
+    assert((await page.locator('.media-pending').innerText()).includes(media[e.id].pendingMessage),e.id+' pending message is visible');
+    assert.equal(await page.locator('.guide-shot,.exercise-guide,.exercise-3d,.ex-figure').count(),0,e.id+' must hide unconfirmed visuals');
+    assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),e.id+' horizontal overflow');report.exercises++;continue;
+   }
    if(!media[e.id]){assert.equal(await page.locator('.guide-shot,.exercise-3d,.ex-figure').count(),0);assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),e.id+' horizontal overflow');report.exercises++;continue;}
    assert.equal(await page.locator('.guide-shot').count(),2);assert.equal(await page.locator('.exercise-3d summary').innerText(),'입체로 자세 보기');
    assert.equal(await page.locator('iframe').count(),0);

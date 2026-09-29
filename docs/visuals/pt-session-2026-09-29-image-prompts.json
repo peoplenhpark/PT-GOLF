@@ -45,5 +45,107 @@
       "processing": "The standing start frame used the generated lowered frame as the recent-image edit reference; original pixels were encoded to WebP quality 88."
     }
   ],
-  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style."
+  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style. The corrections array preserves the later user-confirmed changes separately from the original v92 generation history. Prompt text there is a faithful summary of the generation calls rather than a verbatim tool transcript. The public app remains v93/seed v38 until a later deployment; these records describe pending seed v39 assets.",
+  "corrections": [
+    {
+      "id": "pt_seal_row",
+      "revision": "user-confirmed correction pending seed v39",
+      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "confirmed": [
+        "incline bench with the chest supported",
+        "dumbbell row",
+        "reported load: 7kg per dumbbell"
+      ],
+      "unknown": [
+        "exact bench angle"
+      ],
+      "promptRecordType": "generation-call summary",
+      "prompts": {
+        "start": "Scientific-educational portrait exercise guide on a charcoal background. Show one adult in a 30–40 degree incline chest-supported dumbbell-row setup: chest held against the inclined pad, both feet planted on the floor, two dumbbells hanging from nearly straight arms. Use the established grayscale figure and muted-red back-muscle treatment. Keep the whole body and bench visible. No text, labels, arrows, border, watermark or logo.",
+        "end": "Edit the matching start image into the pulled position while preserving the same person, incline bench, camera, lighting and planted feet. Keep the chest supported and pull both dumbbells beside the ribs with elbows traveling back and the shoulder blades drawing together naturally. Do not lift the torso or shrug. No text, labels, arrows, watermark or logo."
+      },
+      "sources": [
+        "exec-86abad30-477a-4aa7-877e-92ad9caac7e2.png",
+        "exec-92a16a05-e44e-4663-b2e0-033aae73e85e.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_seal_row-start.webp",
+        "docs/images/guides/pt_seal_row-end.webp"
+      ],
+      "processing": "The generated start and edited end frames were resized to 700x933 with Pillow LANCZOS and encoded as WebP quality 90."
+    },
+    {
+      "id": "pt_uprightrow",
+      "revision": "user-confirmed mismatch pending seed v39",
+      "status": "photo pending; old EZ-bar visuals hidden",
+      "temporaryName": "서서 당기기 (사진 확인 예정)",
+      "confirmed": [
+        "the performed exercise is different from the currently registered EZ-bar upright row"
+      ],
+      "unknown": [
+        "equipment name",
+        "load",
+        "target muscles",
+        "movement details"
+      ],
+      "visualPolicy": "Keep the original v92 image-generation record as history, but do not show those images or that 3D model in the current exercise detail. Add new visuals only after the user supplies a photo."
+    },
+    {
+      "id": "pt_dumbbell_rdl",
+      "revision": "user-confirmed correction pending seed v39",
+      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "confirmed": [
+        "two-foot hip hinge",
+        "exactly one dumbbell held vertically",
+        "both hands cupped together around the dumbbell in a goblet-style grip"
+      ],
+      "unknown": [
+        "load"
+      ],
+      "promptRecordType": "generation-call summary",
+      "prompts": {
+        "start": "Scientific-educational portrait exercise guide on a charcoal background. Show one fully clothed grayscale adult standing tall with both feet planted, holding exactly one dumbbell vertically in front of the body with both hands cupped together in a goblet-style grip. Use muted-red hip and hamstring highlights. Keep the whole body and the single dumbbell visible. No text, labels, arrows, watermark or logo.",
+        "end": "Edit the matching start image into a two-foot Romanian-deadlift hip hinge while preserving the same person, single vertical dumbbell, camera and lighting. Push the hips back, keep a neutral spine and softly bent knees, and lower the one dumbbell near knee level while both hands stay together in the goblet grip. No squat, rounded back, text, labels, arrows, watermark or logo."
+      },
+      "sources": [
+        "exec-a344f1c9-5f5a-4e60-bceb-b76fa24ceec3.png",
+        "exec-8a1e633b-11e1-45e8-b655-685b267594fd.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_dumbbell_rdl-start.webp",
+        "docs/images/guides/pt_dumbbell_rdl-end.webp"
+      ],
+      "processing": "The generated start and edited end frames were resized to 700x933 with Pillow LANCZOS and encoded as WebP quality 90."
+    },
+    {
+      "id": "pt_dumbbell_rdl",
+      "revision": "user-confirmed under-chin hold and male-model correction pending seed v39",
+      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "confirmed": [
+        "adult male model for both frames",
+        "exactly one vertical dumbbell held with both hands",
+        "standing start position holds the goblet dumbbell directly under the chin",
+        "hip hinge lowers the same dumbbell along the body's centerline to knee or upper-shin height"
+      ],
+      "unknown": [
+        "load",
+        "repetitions",
+        "sets",
+        "exact bottom range"
+      ],
+      "prompts": {
+        "start": "Portrait 3:4 scientific fitness illustration of a full-body adult male anatomical model standing hip-width, holding exactly one vertical dumbbell directly under the chin with both hands cupping it in a goblet grip; grayscale body, charcoal shorts and shoes, muted-red posterior-chain highlights, white background, no text or extra weights.",
+        "end": "Edit the same male model into a two-foot Romanian-deadlift hip hinge with neutral spine and softly bent knees; lower the same one vertical dumbbell from under the chin down the centerline to knee or upper-shin height while both hands stay together; preserve style and remove extra weights or text."
+      },
+      "sources": [
+        "exec-d5186364-99e0-4dad-9775-49a2d76c6db3.png",
+        "exec-94f6da80-3fd3-4923-b359-a64cb4080012.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_dumbbell_rdl-start.webp",
+        "docs/images/guides/pt_dumbbell_rdl-end.webp"
+      ],
+      "processing": "Each generated male frame was fit without distortion to 700x933 on white using Pillow ImageOps.pad with LANCZOS and encoded as WebP quality 90."
+    }
+  ]
 }

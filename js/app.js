@@ -430,7 +430,9 @@ const Theme = (() => {
     const e = Store.getById(id);
     if (!e) { go('home'); return; }
     const isGolf = e.part === 'golf';
-    const hasMedia = !isGolf && !!window.ExerciseMedia?.[e.id];
+    const mediaEntry = !isGolf ? window.ExerciseMedia?.[e.id] : null;
+    const mediaPending = !!mediaEntry?.pending;
+    const hasMedia = !!mediaEntry && !mediaPending;
     const c = checks[id] || (checks[id] = new Set());
 
     const cues = (e.cues || []).map((cue, i) => `
@@ -480,6 +482,11 @@ const Theme = (() => {
         </div>` : ''}
 
         ${gripGuideHtml(e)}
+
+        ${mediaPending ? `<div class="prep-box media-pending" role="note">
+          <div class="prep-h">📷 시각 자료 확인 예정</div>
+          <div class="prep-line"><span class="pb">·</span><div>${esc(mediaEntry.pendingMessage)}</div></div>
+        </div>` : ''}
 
         ${!isGolf && !hasMedia && e.image ? `<div class="ex-figure">
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">

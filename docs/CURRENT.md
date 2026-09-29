@@ -6,7 +6,7 @@
 
 - 현재 공개 버전: v93 (2026-09-29 배포 완료). 코드 커밋 8af72f0b34ee20cab20ce4c80ea800b9dbbcb757. GitHub Actions 실행 36548331762의 verify/deploy 모두 성공했다.
 - 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=93#golf/videos . 공개 release.json은 v93, seed는 v38, PT 50개와 골프 영상 38편을 반환한다. 공개 화면에서 골프 영상·스윙 노트의 실전 요약과 랫풀다운 손 위치 안내를 확인했다.
-- 다음 배포 대기: 없음.
+- 다음 배포 대기: seed v39에서 오늘 확인한 PT 3개를 정정한다. 공개본은 다음 배포 전까지 v93·seed v38을 유지한다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.
@@ -46,6 +46,14 @@
 - `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## 다음 배포 대기 · 2026-09-29 PT 동작 확인
+
+- 세 항목의 ID(`pt_seal_row`, `pt_uprightrow`, `pt_dumbbell_rdl`)를 유지해 개인 메모·즐겨찾기·삭제 요청을 보존한다. 정정 데이터는 seed v39로 준비하며, 별도 배포 전까지 공개본은 v93·seed v38이다.
+- `pt_seal_row`는 평평한 씰 로우가 아니라 경사를 준 벤치에 가슴을 지지하는 덤벨 로우이며, 확인된 중량은 덤벨 한 개당 7kg이다. 정확한 벤치 각도는 알 수 없어 임의로 확정하지 않는다. 준비·동작 이미지와 3D는 경사 가슴 지지 자세로 교정한다.
+- `pt_uprightrow`는 기존에 표시한 EZ바 업라이트 로우와 다른 운동임이 확인됐다. 임시 이름을 `서서 당기기 (사진 확인 예정)`으로 두고 기존 시각자료는 숨긴다. 사진을 받기 전까지 기구명·중량·주동근·세부 동작을 추정하지 않는다.
+- `pt_dumbbell_rdl`은 양발로 서서 덤벨 1개를 세로로 들고 양손을 모아 성배처럼 턱밑까지 올린 뒤, 고관절을 접으며 몸의 중앙선으로 내리는 운동이다. 중량은 확인되지 않았다. 준비·동작 이미지와 3D는 같은 남자 모형, 턱밑 성배 그립과 덤벨 1개로 교정한다.
+- 새로 생성한 씰 로우와 양발 덤벨 RDL 이미지의 프롬프트·원본·변환 기록은 `docs/visuals/pt-session-2026-09-29-image-prompts.json`에 보존한다. 업라이트 로우의 이전 생성 기록도 최초 v92 자료로 남기되 현행 화면에서는 사용하지 않는다.
 
 ## v93 반영 범위 · 2026-09-29
 

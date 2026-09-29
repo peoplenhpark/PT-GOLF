@@ -38,6 +38,12 @@ const mediaIds=Object.keys(media).sort();
 assert.equal(ptIds.length,50);
 assert.deepEqual(mediaIds,ptIds);
 for(const [id,m] of Object.entries(media)){
+ if(m.pending){
+  assert.equal(m.pending,true,id+' pending flag');
+  assert.equal(typeof m.pendingMessage,'string',id+' pending message');assert(m.pendingMessage.trim(),id+' empty pending message');
+  assert(Array.isArray(m.images));assert.equal(m.images.length,0,id+' pending images');assert.equal(m.viewer,'',id+' pending viewer');
+  continue;
+ }
  assert(m.viewer,id+' viewer');
  assert.equal(m.images?.length,2,id+' start/end images');
  for(const image of m.images)assert(fs.existsSync(path.join(root,image)),id+' missing '+image);

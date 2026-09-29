@@ -49,6 +49,14 @@ if (missingMedia.length || orphanMedia.length) {
 }
 const exercises = {};
 for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
+  if (media.pending) {
+    if (media.pending !== true) throw new Error(id + ' pending media flag must be true');
+    if (typeof media.pendingMessage !== 'string' || !media.pendingMessage.trim()) throw new Error(id + ' pending media must explain what is being confirmed');
+    if (!Array.isArray(media.images) || media.images.length !== 0) throw new Error(id + ' pending media must not include images');
+    if (media.viewer !== '') throw new Error(id + ' pending media must not include a 3D viewer');
+    exercises[id] = [];
+    continue;
+  }
   if (!Array.isArray(media.images) || media.images.length !== 2) throw new Error(id + ' must have exactly 2 start/end images');
   if (!media.viewer) throw new Error(id + ' must have a 3D viewer');
   const viewer = clean(media.viewer);

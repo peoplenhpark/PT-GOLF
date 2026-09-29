@@ -80,7 +80,7 @@ try{
    ell(body,k,[.052,.057,.049],joint);limb(k,f,.045);
    ell(body,add(mix(k,f,.42),mul(p.front,-.014)),[.049,.105,.045],skin,sub(f,k));
    // Feet follow shin on floor exercises; standing feet point forward.
-   const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover','sealrow'];
+   const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
    const planted=['bridge','benchpress','dumbbellpress','smithincline'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1];
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
@@ -139,6 +139,17 @@ try{
      }
      beam(equipment,[-.78,1.90,z],[.78,1.90,z],.035);
      beam(equipment,[-1.0,y,z],[1.0,y,z],.016,steel);
+     break;
+    }
+    case 'inclinesealbench':{
+     const center=e.center||add(add(p.hip,mul(p.up,.20)),mul(p.front,.13));
+     block(equipment,center,[.44,.10,.92],rubber,p.front);
+     const low=add(center,mul(p.up,-.38)),high=add(center,mul(p.up,.38));
+     for(const point of [low,high]){
+      beam(equipment,[0,.055,point[2]],[0,point[1]-.06,point[2]],.038,steel);
+      beam(equipment,[-.36,.045,point[2]],[.36,.045,point[2]],.04,steel);
+     }
+     beam(equipment,[0,.10,low[2]],[0,high[1]-.08,high[2]],.035,steel);
      break;
     }
     case 'sealbench':{

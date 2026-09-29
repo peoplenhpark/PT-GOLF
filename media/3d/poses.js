@@ -1,5 +1,5 @@
 /* Exercise-specific joint poses in metres. x=left/right, y=up, z=front.
-   Coaching variants come from seed v33; rendering never modifies exercise records. */
+   Coaching variants come from seed v39; rendering never modifies exercise records. */
 (function(root){
 'use strict';
 const add=(a,b)=>a.map((v,i)=>v+b[i]), sub=(a,b)=>a.map((v,i)=>v-b[i]), mul=(a,k)=>a.map(v=>v*k);
@@ -100,13 +100,14 @@ function pose(kind,t,id){
   p.equipment.push({type:'bosu'},{type:'ball',at:ball});
   stage=t<.26?0:t<.64?1:2;
  }else if(kind==='sealrow'){
-  // Prone chest-supported row: the body stays on the high flat bench while the arms pull.
-  p=base([0,.99,0],Math.PI/2);
-  p.knees=S.map(s=>[s*.105,.99,-.43]);
-  p.ankles=S.map(s=>[s*.105,.99,-.855]);
-  arms(p,S.map(s=>[s*.30,.425+.31*q,.47-.20*q]),S.map(s=>[s*.30,.50,-1]));
-  p.equipment=[{type:'sealbench',center:[0,.82,-.04],size:[.40,.12,1.28]},{type:'dumbbells'}];
-  p.target=[0,.79,.0];p.distance=4.1;
+  // Incline chest-supported row: chest and feet stay fixed while the elbows pull back.
+  p=base([0,.78,-.16],Math.PI/3);
+  legs(p,S.map(s=>[s*.16,.065,-.54]),S.map(s=>[s*.05,0,1]));
+  const hanging=S.map(s=>[s*.29,.46,.34]),pulled=S.map(s=>[s*.29,.76,.02]);
+  arms(p,hanging.map((a,i)=>mix(a,pulled[i],q)),S.map(s=>[s*.40,.30,-.80]));
+  const padCenter=add(mix(p.hip,p.chest,.52),mul(p.front,.13));
+  p.equipment=[{type:'inclinesealbench',center:padCenter},{type:'dumbbells'}];
+  p.target=[0,.77,.02];p.distance=4.1;
  }else if(kind==='uprightrow'){
   // EZ-bar path ends below the chest; the neck and shoulders never shrug upward.
   p=base([0,.90,0]);
@@ -114,11 +115,14 @@ function pose(kind,t,id){
   arms(p,S.map(s=>[s*.225,.81+.41*q,.12+.02*q]),S.map(s=>[s,.15,-.20]));
   p.equipment=[{type:'ezbar'}];p.target=[0,.94,.06];p.distance=3.9;
  }else if(kind==='dbrdl'){
-  // Two-foot Romanian deadlift: hip hinge and controlled return, dumbbells below shoulders.
+  // Two-foot Romanian deadlift with one vertical dumbbell held by both hands.
   p=base([0,.90-.06*q,-.03-.22*q],.06+1.0*q);
   legs(p,S.map(s=>[s*.16,.065,.04]),S.map(s=>[s*.05,0,1]));
-  arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.025,-.568,.035])),S.map(s=>[s,-.15,-1]));
-  p.equipment=[{type:'dumbbells'}];p.target=[0,.79,.02];p.distance=4.0;
+  const highGrip=add(add(p.chest,mul(p.up,.08)),mul(p.front,.18));
+  const lowGrip=add(mix(p.shoulders[0],p.shoulders[1],.5),[0,-.55,.02]);
+  const grip=mix(highGrip,lowGrip,q);
+  arms(p,S.map(s=>add(grip,[s*.055,0,0])),S.map(s=>[s,-.15,-1]));
+  p.equipment=[{type:'goblet'}];p.target=[0,.79,.02];p.distance=4.0;
  }else if(kind==='curl'){
   p=base([0,.90,0],.07);
   arms(p,S.map(s=>[s*.235,.91+.54*q,.17]),S.map(s=>[s*.05,-1,-1]));

@@ -1,44 +1,66 @@
-const assert=require('node:assert/strict'),P=require('../media/3d/poses.js');
-const kinds=['sealrow','uprightrow','dbrdl'];
-const expected={sealrow:['sealbench','dumbbells'],uprightrow:['ezbar'],dbrdl:['dumbbells']};
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),P=require('../media/3d/poses.js');
+const root=path.resolve(__dirname,'..');
+const read=file=>fs.readFileSync(path.join(root,file),'utf8').replace(/^\uFEFF/,'');
+const seed=JSON.parse(read('data/seed.json')),ctx={window:{}};
+vm.runInNewContext(read('js/exercise-media.js'),ctx);
+const media=ctx.window.ExerciseMedia;
+const byId=id=>{const item=seed.exercises.find(e=>e.id===id);assert(item,id+' seed record missing');return item;};
+const recordText=item=>JSON.stringify(item).replace(/\s+/g,'');
+const seal=byId('pt_seal_row'),upright=byId('pt_uprightrow'),rdl=byId('pt_dumbbell_rdl');
+assert(/한\s*개당\s*7\s*kg/i.test(seal.spec),'seal row keeps the confirmed per-dumbbell 7kg load');
+assert(recordText(seal).includes('경사'),'seal row identifies the inclined chest support');
+assert(recordText(rdl).includes('덤벨1개'),'RDL identifies one dumbbell');
+assert(recordText(rdl).includes('성배'),'RDL identifies the goblet-style grip');
+assert(/턱\s*(?:아래|밑)/.test(JSON.stringify(rdl)),'RDL records the confirmed under-chin start position');
+assert(recordText(upright).includes('사진')&&recordText(upright).includes('확인'),'standing pull stays pending until the photo arrives');
+const pending=media.pt_uprightrow;
+assert.equal(pending.pending,true,'standing pull media is explicitly pending');
+assert.equal(typeof pending.pendingMessage,'string');assert(pending.pendingMessage.trim(),'pending media requires an explanation');
+assert(Array.isArray(pending.images));assert.equal(pending.images.length,0,'pending media has no images');
+assert.equal(pending.viewer,'','pending media has no 3D viewer');
+
+const models=[
+ {kind:'sealrow',id:'pt_seal_row',equipment:['inclinesealbench','dumbbells']},
+ {kind:'dbrdl',id:'pt_dumbbell_rdl',equipment:['goblet']}
+];
 const near=(a,b,message,tolerance=1e-8)=>assert(Math.abs(a-b)<tolerance,message+': '+a+' != '+b);
 const keys=['hip','head','chest','neck','hips','shoulders','elbows','wrists','knees','ankles'];
 let samples=0;
-for(const kind of kinds){
- const start=P.pose(kind,0,'pt_'+kind),end=P.pose(kind,.5,'pt_'+kind);let previous;
- assert.deepEqual(end.equipment.map(e=>e.type),expected[kind]);
+for(const model of models){
+ const {kind,id}=model,start=P.pose(kind,0,id),end=P.pose(kind,.5,id);let previous;
+ assert.deepEqual(end.equipment.map(e=>e.type),model.equipment,id+' equipment');
  for(let frame=0;frame<=1000;frame++){
-  const p=P.pose(kind,frame/1000,'pt_'+kind);samples++;
-  for(const key of keys)assert(p[key].flat().every(Number.isFinite),kind+' finite '+key);
+  const p=P.pose(kind,frame/1000,id);samples++;
+  for(const key of keys)assert(p[key].flat().every(Number.isFinite),id+' finite '+key);
   for(let side=0;side<2;side++){
-   for(const [a,b,length]of [['shoulders','elbows',.29],['elbows','wrists',.285],['hips','knees',.43],['knees','ankles',.425]])near(P.len(P.sub(p[a][side],p[b][side])),length,kind+' limb '+a);
-   if(previous)assert(P.len(P.sub(p.wrists[side],previous.wrists[side]))<.007,kind+' continuous wrist path');
+   for(const [a,b,length]of [['shoulders','elbows',.29],['elbows','wrists',.285],['hips','knees',.43],['knees','ankles',.425]])near(P.len(P.sub(p[a][side],p[b][side])),length,id+' limb '+a);
+   if(previous)assert(P.len(P.sub(p.wrists[side],previous.wrists[side]))<.007,id+' continuous wrist path');
   }
+  assert.deepEqual(p.ankles,start.ankles,id+' both feet remain planted');
+  for(const ankle of p.ankles)near(ankle[1],.065,id+' foot sole height');
   if(kind==='sealrow'){
-   for(const key of ['hip','head','chest','neck','hips','shoulders','knees','ankles'])assert.deepEqual(p[key],start[key],'supported row body drift '+key);
-   const bench=p.equipment[0];
-   assert(p.wrists[0][1]<bench.center[1]-bench.size[1]/2-.02,'bar must remain below bench pad');
-   near(p.up[1],0,'seal row torso stays horizontal');
+   for(const key of ['hip','head','chest','neck','hips','shoulders','knees','ankles'])assert.deepEqual(p[key],start[key],'incline-supported row body drift '+key);
+   assert(p.up[1]>.2&&p.up[1]<.85,'seal row torso must stay inclined');
+   assert(Math.abs(p.up[2])>.5,'seal row chest must follow the incline pad');
   }else{
-   assert.deepEqual(p.ankles,start.ankles,kind+' both feet remain planted');
-   for(const ankle of p.ankles)near(ankle[1],.065,'foot sole height');
-  }
-  if(kind==='uprightrow'){
-   assert.deepEqual(p.shoulders,start.shoulders,'upright row must not shrug');
-   assert.deepEqual(p.head,start.head,'upright row head stays still');
-   for(let i=0;i<2;i++){assert(p.elbows[i][1]<p.shoulders[i][1]-.03,'elbows stay below shoulders');near(p.wrists[i][0],start.wrists[i][0],'fixed EZ grip width');}
-   near(p.wrists[0][1],p.wrists[1][1],'EZ bar remains level');
-   assert(p.wrists[0][1]<p.chest[1],'bar remains below upper chest');
-  }
-  if(kind==='dbrdl'){
+   const [left,right]=p.wrists;
+   assert(Math.abs(left[0]-right[0])<.13,'RDL hands stay close around one dumbbell');
+   near((left[0]+right[0])/2,0,'RDL grip remains centered',1e-7);
+   near(left[1],right[1],'RDL hands stay level');near(left[2],right[2],'RDL hands share one dumbbell depth');
    const spine=P.unit(P.sub(p.head,p.hip));near(P.len(P.sub(spine,p.up)),0,'RDL spine stays in one neutral line');
-   for(let i=0;i<2;i++){assert(p.wrists[i][1]<p.elbows[i][1],'RDL arms remain long below shoulders');assert(Math.abs(p.wrists[i][2]-p.shoulders[i][2])<.05,'RDL dumbbells follow the shoulders');}
   }
   previous=p;
  }
- if(kind==='sealrow'){assert(end.wrists[0][1]>start.wrists[0][1]+.30,'seal row pulls weight upward');assert(end.elbows[0][2]<start.elbows[0][2]-.15,'seal row elbows move toward hips');}
- if(kind==='uprightrow'){assert(end.wrists[0][1]>start.wrists[0][1]+.4,'upright bar rises');assert(Math.abs(end.elbows[0][0])>Math.abs(end.wrists[0][0])+.20,'upright elbows open outward');}
- if(kind==='dbrdl'){assert(end.hip[2]<start.hip[2]-.20,'RDL hips move backward');assert(end.head[1]<start.head[1]-.3,'RDL torso hinges');assert(end.wrists[0][1]<start.wrists[0][1]-.25,'RDL dumbbells descend');assert(Math.abs(end.wrists[0][1]-end.knees[0][1])<.06,'RDL end near knee level');}
- for(const key of keys)for(let i=0;i<start[key].flat().length;i++)near(previous[key].flat()[i],start[key].flat()[i],kind+' repeat seam',1e-7);
+ if(kind==='sealrow'){
+  assert(end.wrists[0][1]>start.wrists[0][1]+.15,'seal row pulls the weight upward');
+  assert(P.len(P.sub(end.wrists[0],end.hip))<P.len(P.sub(start.wrists[0],start.hip)),'seal row pulls the weight toward the body');
+ }else{
+  const startGrip=P.mix(start.wrists[0],start.wrists[1],.5),endGrip=P.mix(end.wrists[0],end.wrists[1],.5);
+  assert(startGrip[1]>start.chest[1]&&startGrip[1]<start.head[1],'RDL starts with the goblet dumbbell under the chin');
+  assert(end.hip[2]<start.hip[2]-.15,'RDL hips move backward');
+  assert(end.head[1]<start.head[1]-.3,'RDL torso hinges');
+  assert(endGrip[1]<startGrip[1]-.3,'the single dumbbell lowers from under the chin during the hinge');
+ }
+ for(const key of keys)for(let i=0;i<start[key].flat().length;i++)near(previous[key].flat()[i],start[key].flat()[i],id+' repeat seam',1e-7);
 }
-console.log(JSON.stringify({models:3,poseSamples:samples,finiteJoints:true,constantLimbLengths:true,supportedSealRow:true,neutralUprightRow:true,twoFootRDL:true,matchingEquipment:true}));
+console.log(JSON.stringify({models:2,poseSamples:samples,finiteJoints:true,constantLimbLengths:true,inclineSupportedSealRow:true,singleGobletRDL:true,pendingVisuals:1,matchingEquipment:true}));
