@@ -45,12 +45,12 @@
       "processing": "The standing start frame used the generated lowered frame as the recent-image edit reference; original pixels were encoded to WebP quality 88."
     }
   ],
-  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style. The corrections array preserves the later user-confirmed changes separately from the original v92 generation history. Prompt text there is a faithful summary of the generation calls rather than a verbatim tool transcript. The public app remains v93/seed v38 until a later deployment; these records describe pending seed v39 assets.",
+  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style. The corrections array preserves the later user-confirmed changes separately from the original v92 generation history. Prompt text there is a faithful summary of the generation calls rather than a verbatim tool transcript. The corrected assets are deployed in public v94/seed v39; the standing-pull entry remains photo-pending and intentionally has no current images or 3D.",
   "corrections": [
     {
       "id": "pt_seal_row",
-      "revision": "user-confirmed correction pending seed v39",
-      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "revision": "user-confirmed correction deployed in v94/seed v39",
+      "status": "corrected visual deployed in public v94/seed v39",
       "confirmed": [
         "incline bench with the chest supported",
         "dumbbell row",
@@ -76,8 +76,8 @@
     },
     {
       "id": "pt_uprightrow",
-      "revision": "user-confirmed mismatch pending seed v39",
-      "status": "photo pending; old EZ-bar visuals hidden",
+      "revision": "user-confirmed mismatch handled in v94/seed v39",
+      "status": "public v94/seed v39 shows a photo-pending notice; old EZ-bar visuals are hidden",
       "temporaryName": "서서 당기기 (사진 확인 예정)",
       "confirmed": [
         "the performed exercise is different from the currently registered EZ-bar upright row"
@@ -92,8 +92,8 @@
     },
     {
       "id": "pt_dumbbell_rdl",
-      "revision": "user-confirmed correction pending seed v39",
-      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "revision": "user-confirmed correction deployed in v94/seed v39",
+      "status": "corrected visual deployed in public v94/seed v39",
       "confirmed": [
         "two-foot hip hinge",
         "exactly one dumbbell held vertically",
@@ -119,8 +119,8 @@
     },
     {
       "id": "pt_dumbbell_rdl",
-      "revision": "user-confirmed under-chin hold and male-model correction pending seed v39",
-      "status": "corrected visual prepared; public v93/seed v38 remains until later deployment",
+      "revision": "user-confirmed under-chin hold and male-model correction deployed in v94/seed v39",
+      "status": "corrected visual deployed in public v94/seed v39",
       "confirmed": [
         "adult male model for both frames",
         "exactly one vertical dumbbell held with both hands",
