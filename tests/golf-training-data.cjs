@@ -7,9 +7,25 @@ assert.equal(c.videos[0].id,'9YWDNMyTQy4');
 for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
 for(const v of c.videos){
  assert.equal(c.presentationFor(v),'original');assert(!v.lesson3d&&!v.lessonHref&&!v.sampleHref);assert(v.points.length>=3);
- for(const id of v.relatedVideoIds||[])assert(c.videos.some(x=>x.id===id));
+ const practical=c.practicalFor(v);assert(['metadata','observation','source'].includes(practical.kind));
+ for(const key of ['action','feel','check','caution'])assert.equal(typeof practical[key],'string',v.id+' practical '+key);
+ assert(practical.action.length>20&&practical.feel.length>20&&practical.check.length>20,v.id+' practical summary is too vague');
+ assert.equal(practical.labels.length,3);
+ if(practical.kind==='metadata')assert(!practical.action.includes('원본을 처음부터 보며 제목에서 말하는 동작'),v.id+' keeps generic metadata copy');
+ for(const id of v.relatedVideoIds||[]){assert(c.videos.some(x=>x.id===id));assert.notEqual(id,v.id,v.id+' cannot relate to itself');}
  for(const m of v.moments)assert(m.s>=0&&m.s<c.durationSeconds(v));
 }
+const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
+const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
+const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
+assert.equal(metadataRows.length,25);assert.equal(reviewedRows.length,13);
+assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,25,'metadata comparisons must be title-specific');
+assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,25,'metadata questions must be title-specific');
+for(const {video,practical} of metadataRows){
+ assert(!/적용하세요|무너지는 하나/.test(practical.action),video.id+' must not prescribe an unreviewed cue');
+ assert(!practical.feel.includes('바로 교정 동작으로 바꾸세요'),video.id+' must keep comparison observational');
+}
+for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.question,video.id+' uses its reviewed lesson question');
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
@@ -34,17 +50,24 @@ let writes=0;
 ctx.localStorage={getItem:()=>null,setItem:()=>{writes++;}};
 ctx.Store={getByPart:part=>seed.exercises.filter(e=>e.part===part),getById:id=>seed.exercises.find(e=>e.id===id),getCategories:()=>['드라이버','아이언']};
 vm.runInContext(read('js/golf.js'),ctx);
+const noteSummaryMatches=ctx.window.GolfHub.searchRecords('뒤에서 못 박듯');
+assert(noteSummaryMatches.some(result=>result.type==='note'&&result.id==='golf_driver'&&result.matchedFields.includes('설명')),'golf internal search includes practicalSummary feel');
 const app={innerHTML:'',querySelector:()=>null},api={app,tabbar:()=>'',exRow:e=>e.name};
 const check=()=>{assert(!/3D|3d|실사형|입체로/.test(app.innerHTML));assert(!/<iframe/.test(app.innerHTML));};
-for(const v of c.videos){ctx.window.GolfHub.render({golfTab:'videos',golfId:v.id},api);check();assert(app.innerHTML.includes('https://www.youtube.com/watch?v='+v.id));assert(app.innerHTML.includes('내 적용 메모'));}
-for(const g of c.videoGroups){ctx.window.GolfHub.render({golfTab:'videos',golfGroup:g.id},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,g.videoIds.length);}
+for(const v of c.videos){ctx.window.GolfHub.render({golfTab:'videos',golfId:v.id},api);check();assert(app.innerHTML.includes('https://www.youtube.com/watch?v='+v.id));assert(app.innerHTML.includes('내 적용 메모'));assert(app.innerHTML.includes('class="g-practical-summary"'));assert(app.innerHTML.includes('class="g-source-detail"'));}
+for(const g of c.videoGroups){ctx.window.GolfHub.render({golfTab:'videos',golfGroup:g.id},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,g.videoIds.length);assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,g.videoIds.length);}
+assert(!/class="g-mini-detail"[^>]*aria-label=/.test(app.innerHTML),'visible takeaway and evidence stay in the link accessible name');
 ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,c.videos.length+c.recentVideos().length);
+assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,c.videos.length+c.recentVideos().length);
 assert.equal(c.featuredVideoId,'9YWDNMyTQy4');
 assert(app.innerHTML.indexOf('g-featured-video')<app.innerHTML.indexOf('g-video-groups'));
 assert.equal((app.innerHTML.match(/href="#golf\/videos\/9YWDNMyTQy4"/g)||[]).length,1);
 ctx.window.GolfHub.render({golfTab:'videos',golfQuery:'어깨'},api);assert(!app.innerHTML.includes('g-featured-video'));assert(!app.innerHTML.includes('watch?v=9YWDNMyTQy4'));
 ctx.window.GolfHub.render({golfTab:'videos',golfGroup:'arms-impact'},api);assert(app.innerHTML.includes('watch?v=9YWDNMyTQy4'));assert(!app.innerHTML.includes('g-featured-video'));
 for(const tab of ['notes','lessons']){ctx.window.GolfHub.render({golfTab:tab},api);check();}
+const driver=seed.exercises.find(e=>e.id==='golf_driver');driver.practicalSummary={action:'검증용 오늘 동작',feel:'검증용 개인 감각'};
+ctx.window.GolfHub.render({golfTab:'notes'},api);assert(app.innerHTML.includes('검증용 오늘 동작'));assert(app.innerHTML.includes('검증용 개인 감각'));delete driver.practicalSummary;
+const metadataQuestion=c.videos.find(v=>v.id==='cQiwXcbWZc4');ctx.window.GolfHub.render({golfTab:'question-edit',sourceKind:'videos',sourceId:metadataQuestion.id},api);assert(app.innerHTML.includes(c.practicalFor(metadataQuestion).check));
 assert.equal(writes,0);
 // Old URLs redirect to valid source/notes, including unsafe or unknown query values.
 for(const [file,query,suffix] of [

@@ -37,14 +37,35 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('.tab[data-nav=home]').click();await page.locator('.deletion-queue').waitFor();assert.match(await page.locator('.deletion-queue').textContent(),/삭제만을 위한 새 버전은 만들지 않/);
   await page.locator(`[data-delete-restore="del_exercise_${firstId}"]`).click();assert.equal(await page.locator('.deletion-queue').count(),0);
   await page.locator('[data-nav=pt]').click();await page.locator(`[data-open="${firstId}"]`).waitFor();
-  await page.locator('.tab[data-nav=home]').click();await page.locator('[data-act=search-focus]').click();await page.locator('#search-input').fill('회귀 검사');
+  await page.goto(base+'#exercise/pt_latpulldown');await page.locator('.grip-guide').waitFor();
+  assert.equal(await page.locator('.grip-card').count(),3,'lat pulldown shows three width cards');
+  assert.equal(await page.locator('.grip-card.is-session').count(),1,'current PT grip is distinguished');
+  assert.equal(await page.locator('.grip-orientation-item').count(),2,'neutral and underhand notes are shown');
+  assert.match(await page.locator('.grip-guide').textContent(),/모든 위치에서 광배근이 주동근/);
+  assert.match(await page.locator('.exercise-guide .g-meta').textContent(),/기본 오버그립 자세 예시/);
+  await page.locator('.memo-edit').click();await page.locator('#memo-input').fill('회귀 검사 개인 메모 · 랫풀다운 그립 메모');
+  await page.locator('#memo-save').click();await page.reload();await page.locator('.grip-guide').waitFor();
+  assert.match(await page.locator('.memo-box').textContent(),/랫풀다운 그립 메모/);
+  await page.goto(base);await page.locator('[data-act=search-focus]').click();await page.locator('#search-input').fill('중립그립');
+  await page.locator('.search-result').first().waitFor();assert.match(await page.locator('.search-result').first().getAttribute('href'),/pt_latpulldown/);
+  assert.match(await page.locator('.search-result').first().textContent(),/손 위치/);
+  await page.locator('#search-input').fill('회귀 검사');
   await page.locator('.search-result').first().waitFor();await page.reload();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('.search-result').first().click();await page.locator('.d-title').waitFor();await page.locator('#history-back').click();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('[data-nav=golf]').click();await page.locator('.g-video-grid').first().waitFor();
+  assert((await page.locator('.g-mini-takeaway').count())>0,'golf list shows practical takeaways');
+  assert.equal(await page.locator('.g-mini-takeaway').first().evaluate(el=>!!el.textContent.trim()),true);
+  assert.equal(await page.locator('.g-mini-detail').first().getAttribute('aria-label'),null,'takeaway and evidence remain in the link accessible name');
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
-  await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();await page.locator('[data-g-form=video] textarea').fill('골프 영상 초안');
+  await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
+  assert.equal(await page.locator('.g-practical-summary dl>div').count(),3,'video detail shows three practical summary rows');
+  assert.match(await page.locator('.g-practical-summary').textContent(),/원본에서 볼 것/);
+  assert.match(await page.locator('.g-practical-caution').textContent(),/제목·채널·길이/);
+  await page.locator('[data-g=ask]').click();assert.match(await page.getByLabel('확인하고 싶은 내용').inputValue(),/레슨에서 먼저 확인/);
+  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
+  await page.locator('[data-g-form=video] textarea').fill('골프 영상 초안');
   await page.reload();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안');
   await page.locator('[data-g-form=video] button').click();assert.match(await page.locator('[data-draft-status]').first().textContent(),/저장/);
   assert.equal(await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').count(),1,'video detail has one delete action');await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
@@ -53,8 +74,15 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert(videoDeletion.queue.includes('cQiwXcbWZc4'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');
   {const issue=new URL(videoDeletion.url);assert.match(issue.searchParams.get('body'),/content-kind: video/);assert.match(issue.searchParams.get('body'),/content-id: cQiwXcbWZc4/);assert(!issue.searchParams.get('body').includes('골프 영상 초안'));}
   await page.locator('[data-g=restore-video]').first().click();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안','restoring a video preserves its memo');
-  await page.goto(base+'#golf/notes');await page.locator('[data-open]').first().click();await page.locator('.personal-note-label').waitFor();assert.match(await page.locator('.personal-note-label').textContent(),/개인 연습 감각/);
-  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});await page.goto(base+'#golf/videos');await page.locator('.g-video-grid').first().waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no overflow at '+width);if(process.env.PTGOLF_SCREENSHOT_DIR){fs.mkdirSync(process.env.PTGOLF_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'golf-'+width+'.png'),fullPage:false});}}
+  await page.goto(base+'#golf/notes');assert.equal(await page.locator('.g-note-summary').count(),4);await page.locator('[data-open]').first().click();await page.locator('.personal-note-label').waitFor();assert.match(await page.locator('.personal-note-label').textContent(),/개인 연습 감각/);
+  for(const width of [320,390,768]){
+   await page.setViewportSize({width,height:844});await page.goto(base+'#golf/videos');await page.locator('.g-video-grid').first().waitFor();
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no golf overflow at '+width);
+   if(width<720)assert.equal(await page.locator('.g-video-grid').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length),1,'single golf column below 720px at '+width);
+   assert.equal(await page.locator('.g-mini-takeaway').evaluateAll(items=>items.every(item=>item.scrollHeight<=item.clientHeight+1)),true,'golf takeaways are not clipped at '+width);
+   if(process.env.PTGOLF_SCREENSHOT_DIR){fs.mkdirSync(process.env.PTGOLF_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'golf-'+width+'.png'),fullPage:false});}
+   await page.goto(base+'#exercise/pt_latpulldown');await page.locator('.grip-guide').waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no lat grip overflow at '+width);if(process.env.PTGOLF_SCREENSHOT_DIR)await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'lat-grip-'+width+'.png'),fullPage:true});
+  }
   await page.goto(base+'#exercise/'+firstId);await page.locator('[data-offline]').waitFor();
   await page.evaluate(async()=>{await navigator.serviceWorker.ready;});
   if(!await page.evaluate(()=>!!navigator.serviceWorker.controller)){await page.reload();await page.locator('[data-offline]').waitFor();}

@@ -11,6 +11,31 @@ const Store = (() => {
   const deletionHandle = persistence.open(DELETE_KEY, { defaults: () => ({ requests: [] }), validate: persistence.validators[DELETE_KEY] });
   let seed = { parts: [], principles: [], exercises: [] };
   const equal = persistence.equal;
+  const record = value => !!value && typeof value === 'object' && !Array.isArray(value);
+  const stringFields = (value, fields) => fields.every(field => typeof value[field] === 'string');
+  function validGripGuide(guide) {
+    if (guide === undefined) return true;
+    return record(guide) &&
+      stringFields(guide, ['title', 'summary', 'common', 'sessionId', 'orientationNote', 'evidence']) &&
+      Array.isArray(guide.options) && guide.options.length > 0 &&
+      guide.options.every(option => record(option) &&
+        stringFields(option, ['id', 'label', 'badge', 'width', 'palm', 'muscles', 'detail', 'caution'])) &&
+      new Set(guide.options.map(option => option.id)).size === guide.options.length &&
+      guide.options.some(option => option.id === guide.sessionId) &&
+      Array.isArray(guide.orientations) &&
+      guide.orientations.every(item => record(item) && stringFields(item, ['name', 'position', 'note']));
+  }
+  function validPracticalSummary(summary) {
+    return summary === undefined || (record(summary) && stringFields(summary, ['action', 'feel']));
+  }
+  function gripGuideText(ex) {
+    const guide = ex.gripGuide;
+    if (!guide) return [];
+    return [guide.title, guide.summary, guide.common, guide.orientationNote, guide.evidence,
+      ...(guide.options || []).flatMap(option => Object.values(option)),
+      ...(guide.orientations || []).flatMap(item => Object.values(item))]
+      .filter(value => typeof value === 'string');
+  }
 
   function validateSeed(data) {
     if (!data || !Array.isArray(data.parts) || !Array.isArray(data.principles) || !Array.isArray(data.exercises)) return false;
@@ -18,7 +43,8 @@ const Store = (() => {
     return data.exercises.every(ex => {
       if (!ex || typeof ex.id !== 'string' || !ex.id || ['__proto__', 'constructor', 'prototype'].includes(ex.id) || ids.has(ex.id) || typeof ex.name !== 'string' || typeof ex.part !== 'string') return false;
       ids.add(ex.id);
-      return ['cues', 'reminders', 'steps', 'prep'].every(key => ex[key] === undefined || (Array.isArray(ex[key]) && ex[key].every(value => typeof value === 'string')));
+      return ['cues', 'reminders', 'steps', 'prep'].every(key => ex[key] === undefined || (Array.isArray(ex[key]) && ex[key].every(value => typeof value === 'string'))) &&
+        validGripGuide(ex.gripGuide) && validPracticalSummary(ex.practicalSummary);
     });
   }
   async function init() {
@@ -52,6 +78,8 @@ const Store = (() => {
       if (deleted.has(ex.id)) continue;
       const saved = local.overrides[ex.id];
       const merged = saved ? { ...ex, ...saved } : { ...ex };
+      // Editorial summaries advance with the seed even when an old full-object override preserves personal fields.
+      if (ex.practicalSummary) merged.practicalSummary = { ...ex.practicalSummary };
       if (saved && ex.image?.startsWith('docs/images/guides/') && (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) merged.image = ex.image;
       result.push(merged);
     }
@@ -70,7 +98,8 @@ const Store = (() => {
     return getAll().filter(ex => {
       const focus = ex.focus || {};
       const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
-        ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []), ex.memo || ''].join(' ').toLowerCase();
+        ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []),
+        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ex.memo || ''].join(' ').toLowerCase();
       return terms.every(term => text.includes(term));
     });
   }

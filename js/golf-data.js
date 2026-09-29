@@ -1,7 +1,7 @@
 /* 사용자 지정 영상 38편. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
-  version: 3,
+  version: 4,
   featuredVideoId: '9YWDNMyTQy4',
   originalMaxSeconds: 180,
   topics: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
@@ -1182,7 +1182,7 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "mGYe7UjYXfo",
+        "28HBEaS-G54",
         "du58mmLNMnQ"
       ],
       "publishedAt": "2026-09-23T02:00:31-07:00"
@@ -1215,7 +1215,7 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "0lbtJgkzqWM",
+        "S3fxUFBzfBo",
         "U4nn7s20ACc"
       ],
       "publishedAt": "2026-09-16T23:03:58-07:00"
@@ -1281,7 +1281,7 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "wwZFeiPAoMU",
+        "CA-TZ7WQlHY",
         "ULOLFCC-ly8"
       ],
       "publishedAt": "2026-09-16T03:00:11-07:00"
@@ -1347,7 +1347,7 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "zT6zJCJ59js",
+        "UA-HYcmiKTA",
         "bfMsJtV61hM"
       ],
       "publishedAt": "2026-04-13T20:46:11-07:00"
@@ -1380,7 +1380,7 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "cQiwXcbWZc4",
+        "IsSS-GnQQyY",
         "dBsZdo7VEAA"
       ],
       "publishedAt": "2026-09-24T02:00:26-07:00"
@@ -1400,18 +1400,238 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 
 // Primary groups are separate from cross-cutting topic tags: each video appears once.
 window.GolfContent.videoGroups = [
-  {id:'pro-swings',title:'프로 스윙 시범',description:'실제 선수의 스윙을 보고 전체 흐름과 타이밍을 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
-  {id:'setup',title:'준비·자세',description:'에이밍, 정렬, 척추 기울기와 자세를 확인합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
-  {id:'rotation',title:'회전·체중이동',description:'어깨·골반의 회전, 체중이동과 힘을 쓰는 순서를 연결합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4']},
-  {id:'arms-impact',title:'팔·임팩트',description:'팔과 손목의 움직임을 클럽 가속과 임팩트로 연결합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4']}
+  {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
+  {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
+  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4']},
+  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
+const golfObservationIds = new Set(['bfMsJtV61hM','-h77kU-fpjg']);
+const golfSourceContentIds = new Set(['Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ']);
+const golfEvidenceKind = v => golfObservationIds.has(v.id) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
-  if ((v.evidence || '').includes('영상 요약이 아닌')) return {kind:'metadata',label:'제목·메타데이터 확인',heading:'비교 관찰 포인트'};
-  if ((v.evidence || '').includes('편집자가 제안하는 관찰')) return {kind:'observation',label:'시범 화면 확인',heading:'편집자의 관찰 포인트'};
-  return {kind:'source',label:'자막·화면 기반 정리',heading:'원본 내용 정리'};
+  const kind = golfEvidenceKind(v);
+  if (kind === 'metadata') return {kind,label:'제목·메타데이터 확인',heading:'확인된 범위와 관찰 포인트'};
+  if (kind === 'observation') return {kind,label:'시범 화면 확인',heading:'편집자의 관찰 포인트'};
+  return {kind,label:'자막·화면 기반 정리',heading:'원본 내용 정리'};
+};
+
+const golfMetadataPractice = {
+  '9YWDNMyTQy4': {
+    action:'“아래로 내려놓기”가 손·팔·클럽헤드 중 무엇을 뜻하는지 원본 시범에서 구분하세요.',
+    feel:'같은 클럽의 허리 높이 스윙을 촬영해 원본이 강조한 대상의 내려가는 경로만 나란히 기록하세요.',
+    check:'영상의 “아래로”가 제 스윙에도 필요한 감각인지, 손으로 누르는 동작과 어떻게 다른지 확인해 주세요.'
+  },
+  'ojzyFHAQWnw': {
+    action:'영상이 실제로 보여주는 각도에서 어깨가 어느 기울기와 방향으로 도는지 확인하세요.',
+    feel:'같은 촬영 각도의 내 스윙에서 양어깨를 잇는 선만 표시하고 모양 차이를 사실로 기록하세요.',
+    check:'보이는 어깨 방향 차이가 촬영 각도 때문인지 실제 교정할 움직임인지 확인해 주세요.'
+  },
+  'wBlnDaqkGi0': {
+    action:'영상이 다루는 구간을 먼저 찾고 그 구간에서 오른팔의 팔꿈치·손 위치가 어떻게 바뀌는지 보세요.',
+    feel:'내 영상의 같은 구간에서 팔꿈치와 손 위치를 한 프레임씩 비교하되 원본 자세를 바로 복제하지 마세요.',
+    check:'제 오른팔 위치가 실제 타점이나 구질 문제의 원인인지, 바꿔야 할 시점은 언제인지 확인해 주세요.'
+  },
+  'yv4KTSs8Riw': {
+    action:'원본이 말하는 두 가지 가속 요소를 그대로 적고 각각 어느 구간의 설명인지 나누세요.',
+    feel:'내 스윙에서는 두 요소를 한꺼번에 바꾸지 말고 먼저 관찰되는 요소 하나만 표시하세요.',
+    check:'두 가속 요소 중 제게 필요한 것이 있는지, 있다면 어떤 순서로 연습할지 확인해 주세요.'
+  },
+  '4ePhtleqZBA': {
+    action:'단계별 드릴의 실제 순서와 각 단계를 넘어가는 기준을 원본에서 먼저 확인하세요.',
+    feel:'내 드라이버 루틴과 원본의 단계를 나란히 적고 처음 달라지는 단계 하나만 찾으세요.',
+    check:'이 단계 순서가 제 드라이버 구질과 몸 상태에도 맞는 연습인지 확인해 주세요.'
+  },
+  'aaOw2sdp-io': {
+    action:'원본이 백스윙의 어느 구간·부위·방향을 핵심으로 설명하는지 한 문장으로 적으세요.',
+    feel:'같은 각도의 내 백스윙에서 그 한 가지가 보이는지만 비교하고 다른 모양은 판단하지 마세요.',
+    check:'이 백스윙 차이가 실제 교정 대상인지 촬영 각도나 가동범위 차이인지 확인해 주세요.'
+  },
+  '5glZX2pq15o': {
+    action:'영상이 훅의 원인을 페이스·경로·타점 중 무엇으로 설명하는지 먼저 확인하세요.',
+    feel:'같은 조건의 한 샷에서 시작 방향·휘어짐·타점만 기록하고 영상의 원인 설명과 따로 비교하세요.',
+    check:'제 훅도 영상이 말한 원인과 같은지 임팩트 자국과 구질을 함께 확인해 주세요.'
+  },
+  'U4nn7s20ACc': {
+    action:'“종결급”이라는 제목보다 원본이 제시하는 실제 동작·드릴·결과 기준 한 가지를 찾으세요.',
+    feel:'내 영상의 같은 구간에서 그 기준 하나만 관찰하고 스윙 전체 모양을 한꺼번에 따라 하지 마세요.',
+    check:'원본의 기준이 제 미스샷을 설명하는지, 우선 적용할 가치가 있는지 확인해 주세요.'
+  },
+  '4uQe-J5qM2c': {
+    action:'원본이 말하는 헤드를 던지는 두 요소를 구분하고 손을 던지는 동작과 다른지 확인하세요.',
+    feel:'내 영상에서는 두 요소 중 하나씩만 보며 손·클럽헤드가 움직이는 순서를 기록하세요.',
+    check:'제가 손목을 급하게 푸는지 헤드가 자연스럽게 통과하는지 구분해 주세요.'
+  },
+  '7sNhk9PhBxc': {
+    action:'원본의 두 가지 기준을 그대로 적고 각각 셋업·회전·팔 중 어디의 설명인지 확인하세요.',
+    feel:'내 백스윙을 같은 각도에서 촬영해 두 기준을 한 번에 고치지 말고 보이는 차이만 따로 적으세요.',
+    check:'두 기준 가운데 제 스윙에 확인이 필요한 것이 있는지, 우선순위는 무엇인지 알려 주세요.'
+  },
+  'Wlbi1o9fb2Q': {
+    action:'상체 힘을 줄이는 방법과 클럽헤드가 지나가는 시범 구간을 원본에서 함께 확인하세요.',
+    feel:'내 영상에서는 상체 모양보다 그립·어깨 긴장과 클럽헤드가 지나가는 시점만 비교하세요.',
+    check:'제 문제도 상체의 과한 긴장인지, 힘을 줄여도 손목 구조가 유지되는지 확인해 주세요.'
+  },
+  'A_fu4ajV-_I': {
+    action:'촬영 각도와 사용 클럽을 먼저 확인하고 축·템포·피니시 중 보이는 요소 하나만 고르세요.',
+    feel:'가능하면 같은 클럽과 각도로 내 스윙을 촬영해 선택한 요소의 차이만 기록하세요.',
+    check:'프로의 겉모양과 다른 점이 실제 교정 대상인지 체형·클럽 차이인지 확인해 주세요.'
+  },
+  'FjWulC87mzM': {
+    action:'원본이 “브레이크”와 “헤드 무게”를 어떤 뜻과 시점으로 설명하는지 먼저 확인하세요.',
+    feel:'원본의 전후 시범이 있다면 어깨 긴장과 클럽 흐름에서 달라 보이는 한 가지만 적으세요.',
+    check:'이 브레이크 감각이 제 타이밍에 필요한지, 어깨를 굳히는 동작과 어떻게 다른지 확인해 주세요.'
+  },
+  'dBsZdo7VEAA': {
+    action:'원본에서 아이언과 드라이버에 공통이라고 말하는 동작과 달라지는 조건을 나눠 적으세요.',
+    feel:'내 영상은 클럽별로 따로 촬영해 공통점 하나와 셋업 차이 하나만 비교하세요.',
+    check:'두 클럽에 같은 감각을 써도 되는지, 제 셋업에서 달리할 부분은 무엇인지 확인해 주세요.'
+  },
+  'WWtv4x3uz-M': {
+    action:'원본이 말하는 두 가지를 그대로 적고 각각 백스윙의 어느 구간에 해당하는지 확인하세요.',
+    feel:'같은 각도의 내 백스윙에서 두 기준이 보이는지만 기록하고 맞고 틀림은 먼저 단정하지 마세요.',
+    check:'이 두 기준이 제 스윙에도 필요한지, 확인한다면 어떤 순서가 좋은지 알려 주세요.'
+  },
+  'o4KqDhYXlTw': {
+    action:'원본이 오른손의 모양·힘 방향·사용 시점 중 실제로 무엇을 다루는지 구분하세요.',
+    feel:'내 영상에서는 원본과 같은 구간의 오른손과 클럽페이스 관계만 비교해 기록하세요.',
+    check:'이 오른손 설명이 제 정확성과 비거리 문제에 필요한지, 과한 손 개입과 어떻게 구분할지 확인해 주세요.'
+  },
+  'ThwbClowjjU': {
+    action:'세게 쳐도 거리가 나지 않는 이유를 원본이 어떤 동작과 결과 기준으로 설명하는지 확인하세요.',
+    feel:'같은 조건의 드라이버 샷에서 힘의 크기보다 타점·시작 방향·피니시 균형을 기록하세요.',
+    check:'제 비거리 문제도 영상이 말한 원인과 같은지, 먼저 측정할 결과가 무엇인지 확인해 주세요.'
+  },
+  'XvPYFd-seNw': {
+    action:'원본 시범에서 손을 던지는 모습과 클럽헤드가 지나가는 모습이 어떻게 다른지 확인하세요.',
+    feel:'같은 속도의 내 영상에서 손·헤드 순서만 비교하고 손목을 일부러 급하게 풀지는 마세요.',
+    check:'제 스윙에서 헤드가 자연스럽게 통과하는지 손목을 일찍 푸는지 구분해 주세요.'
+  },
+  'mGYe7UjYXfo': {
+    action:'뒤땅과 손목 풀림이 어느 구간에서 나타나고 드릴이 무엇 하나를 바꾸려는지 확인하세요.',
+    feel:'작은 스윙의 타점 위치를 드릴 전후로 기록하되 손목 모양 하나로 원인을 단정하지 마세요.',
+    check:'제 뒤땅 원인이 손목 풀림인지 다른 셋업·체중이동 문제인지 확인해 주세요.'
+  },
+  '0lbtJgkzqWM': {
+    action:'용어보다 원본 화면에서 클럽헤드가 실제로 지나가는 방향과 촬영 각도를 확인하세요.',
+    feel:'같은 각도의 내 영상에서 백스윙과 다운스윙 경로를 각각 한 선으로 표시해 비교하세요.',
+    check:'보이는 경로 차이가 제 비거리와 구질에 필요한 교정인지 확인해 주세요.'
+  },
+  '28HBEaS-G54': {
+    action:'옷을 터는 비유가 손목·팔꿈치·팔 전체 중 어느 부위와 구간을 뜻하는지 시범에서 확인하세요.',
+    feel:'공 없이 느린 동작으로 시범의 범위만 비교하고 손목을 순간적으로 꺾어 복제하지 마세요.',
+    check:'이 비유가 제 임팩트에 도움이 되는지, 급한 손목 동작으로 변하지 않는지 확인해 주세요.'
+  },
+  'wwZFeiPAoMU': {
+    action:'원본이 힘을 빼라고 하는 부위와 힘을 유지하거나 쓰는 순간을 나눠 적으세요.',
+    feel:'내 스윙에서는 그립·어깨 긴장을 각각 기록해 클럽 흐름과 함께 달라지는지만 비교하세요.',
+    check:'제게 불필요한 긴장은 어디에서 시작되고 유지해야 할 힘은 무엇인지 확인해 주세요.'
+  },
+  't_9sQjrS2o4': {
+    action:'“툭”이라는 힘의 크기보다 임팩트 전후 클럽헤드와 몸의 순서를 원본에서 확인하세요.',
+    feel:'허리 높이 스윙에서 거리 대신 타점과 시작 방향을 기록해 원본의 순서와 비교하세요.',
+    check:'제 임팩트에도 이 순서가 필요한지, 작은 힘과 느슨한 구조를 어떻게 구분할지 확인해 주세요.'
+  },
+  'zT6zJCJ59js': {
+    action:'원본이 그립의 손가락 위치·압력·페이스 정렬 중 실제로 어떤 기준을 설명하는지 확인하세요.',
+    feel:'같은 카메라 각도의 내 그립 사진에서 해당 기준 하나만 비교하고 손 크기 차이를 함께 기록하세요.',
+    check:'이 그립 기준이 제 손 크기와 손목 편안함에도 맞는지 확인해 주세요.'
+  },
+  'cQiwXcbWZc4': {
+    action:'제목이 포괄적이므로 원본에서 실제로 강조하는 구간과 동작을 한 문장으로 기록하세요.',
+    feel:'같은 촬영 각도의 내 영상에서 그 한 가지가 보이는지만 표시하고 바로 교정 동작으로 바꾸지는 마세요.',
+    check:'원본에서 적은 한 문장이 실제 제 문제와 관련 있는지 레슨에서 먼저 확인해도 될까요?'
+  }
+};
+
+const golfReviewedPractice = {
+  'bfMsJtV61hM': {
+    action:'정면과 좌측면에서 어드레스·백스윙·임팩트·피니시 중 한 구간을 골라 어깨·골반·팔 위치를 봅니다.',
+    feel:'같은 클럽과 각도로 내 스윙을 촬영해 고른 구간의 차이 하나만 기록하고 전체 흐름을 다시 확인합니다.'
+  },
+  '-h77kU-fpjg': {
+    action:'전환 이후부터 피니시까지 손·클럽헤드·몸이 움직이는 순서를 원본 시범에서 함께 봅니다.',
+    feel:'같은 각도의 내 영상에서 헤드가 통과하는 시점을 비교하되 클럽을 놓거나 손목만 급하게 풀지는 않습니다.'
+  },
+  'Aj1UEMYPxBg': {
+    action:'오른팔을 가슴 앞에 둔 시범과 몸 옆으로 빠진 시범을 비교하며 클럽의 가속 방향을 구분합니다.',
+    feel:'오른팔이 몸 옆으로 빠지지 않고 가슴 앞에서 몸통과 함께 다운스윙을 시작하는 감각을 살펴봅니다.'
+  },
+  'xUgGGs2Rh3w': {
+    action:'상체를 더 구부리지 않고 준비한 기울기에서 양어깨가 함께 회전하는 작은 동작을 비교합니다.',
+    feel:'오른어깨가 내려가며 돌 때 왼어깨도 함께 움직이고 몸통이 옆으로 꺾이지 않는 감각을 살펴봅니다.'
+  },
+  'S3fxUFBzfBo': {
+    action:'벽 연습을 천천히 보며 팔만 아래로 당기는 움직임과 몸 회전 속에서 클럽이 내려오는 경로를 구분합니다.',
+    feel:'팔이 급하게 떨어지기보다 몸통 회전과 연결되고 클럽헤드가 뒤쪽 벽을 쓸듯 내려오는 감각을 비교합니다.'
+  },
+  'IsSS-GnQQyY': {
+    action:'작은 스윙에서 기울어진 척추를 중심으로 어깨를 돌리고 임팩트 전후 페이스가 목표 쪽으로 통과하게 합니다.',
+    feel:'오른어깨가 아래·안쪽으로 돌며 공 앞쪽을 얕고 길게 지나가되 몸통을 옆으로 꺾거나 손목을 잠그지 않습니다.'
+  },
+  'ULOLFCC-ly8': {
+    action:'작고 느린 스윙에서 긴장을 거의 뺀 상태와 강하게 준 상태를 비교해 편안한 중간 감각을 찾습니다.',
+    feel:'그립과 손목 구조는 유지하면서 불필요한 긴장만 줄고 몸과 클럽의 흐름은 이어지는지 살펴봅니다.'
+  },
+  'UA-HYcmiKTA': {
+    action:'공 뒤에서 출발 방향과 내려올 구역을 정한 뒤 클럽페이스를 먼저 맞추고 가상의 T자에 스탠스를 둡니다.',
+    feel:'클럽페이스는 목표를 향하고 몸의 정렬선은 기차 레일처럼 평행하게 놓이는지 확인합니다.'
+  },
+  'CA-TZ7WQlHY': {
+    action:'전환에서 큰 회전을 서두르지 않고 왼발로 작게 시프트한 뒤 지지가 생기면 골반 회전을 연결합니다.',
+    feel:'그립과 어깨의 과한 긴장은 줄이고 클럽을 받치며, 연습의 구분 동작은 실제 스윙에서 끊지 않습니다.'
+  },
+  'du58mmLNMnQ': {
+    action:'작은 백스윙에서 오른손목 힌지를 유지하고 왼손목 동작을 몸의 회전과 점진적으로 연결합니다.',
+    feel:'양손이 왼 허벅지 앞에 오고 오른어깨가 턱 아래로 통과하되 손만 목표 쪽으로 끌지 않습니다.'
+  },
+  '0EgzSDUsKvg': {
+    action:'전환에서 상체 숙임을 유지하고 작은 시프트를 만든 뒤 회전을 연결하는 순서를 나누어 익힙니다.',
+    feel:'백스윙에서 하체가 함께 밀리지 않고 지지되며 팔과 어깨에 과한 힘이 들어가지 않는지 살펴봅니다.'
+  },
+  'uvgnUl93Twg': {
+    action:'왼어깨가 공 쪽을 향한 채 오른골반을 더 깊게 접고 왼발 뒤꿈치로 지면을 밀어 회전 공간을 만듭니다.',
+    feel:'몸이 일찍 펴지지 않고 골반 공간이 남되 클럽이 몸 뒤로 처지지 않는지 천천히 확인합니다.'
+  },
+  'RSbjGWhzEnQ': {
+    action:'상체로 먼저 치는 힘을 줄이고 팔을 축 방향으로 내린 뒤 헤드 무게가 떨어지는 시점에 하체 회전을 연결합니다.',
+    feel:'팔 내리기와 회전을 느리게 나누어 익힌 뒤 하나로 연결하며 헤드 무게가 오는 타이밍을 살펴봅니다.'
+  }
+};
+const golfPracticeLabels = {
+  metadata:['원본에서 볼 것','내 영상과 비교','레슨에서 확인'],
+  observation:['시범에서 볼 것','내 영상과 비교','레슨에서 확인'],
+  source:['핵심 동작','느껴볼 것','레슨에서 확인']
+};
+window.GolfContent.practicalFor = v => {
+  const kind = golfEvidenceKind(v);
+  const labels = golfPracticeLabels[kind];
+  if (kind === 'metadata') {
+    const item = golfMetadataPractice[v.id] || {
+      action:'“' + v.title + '”에서 실제로 강조하는 한 동작을 원본에서 확인하세요.',
+      feel:'같은 촬영 각도의 내 영상에서 그 동작이 보이는지만 기록하고 바로 따라 하지는 마세요.',
+      check:'원본에서 확인한 동작이 제 스윙에도 필요한지 레슨에서 확인해 주세요.'
+    };
+    return {
+      kind, labels,
+      action:item.action,
+      feel:item.feel,
+      check:item.check,
+      caution:'현재 확인된 것은 제목·채널·길이입니다. 세부 동작은 원본을 보기 전에는 교정 지시로 사용하지 마세요.'
+    };
+  }
+  const item = golfReviewedPractice[v.id] || {action:v.summary,feel:v.connection};
+  return {
+    kind, labels,
+    action:item.action,
+    feel:item.feel,
+    check:v.question || '이 동작이 제 스윙에도 필요한지 레슨에서 확인해 주세요.',
+    caution:kind === 'observation'
+      ? '화면에서 보이는 움직임을 비교한 내용이며 그대로 따라야 하는 처방은 아닙니다.'
+      : '자막·화면을 바탕으로 정리한 일반 참고입니다. 내 스윙에 맞는 교정인지는 결과와 레슨에서 확인하세요.'
+  };
 };
 window.GolfContent.relatedFor = (note, options = {}) => {
   const c = window.GolfContent;

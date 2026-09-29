@@ -38,7 +38,9 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
    await page.goto(base+'?v='+assetVersion+'#exercise/'+e.id);await page.waitForSelector('.d-title');
    const actual=norm(await page.locator('#app').innerText());
    const pr=seed.principles.find(p=>p.part===e.part&&p.scope===e.category)||seed.principles.find(p=>p.part===e.part&&p.scope==='*');
-   const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
+   const guide=e.gripGuide,gripLines=guide?[guide.title,guide.summary,guide.common,guide.orientationNote,guide.evidence,
+    ...guide.options.flatMap(item=>Object.values(item)),...guide.orientations.flatMap(item=>Object.values(item))]:[];
+   const lines=[e.name,e.spec,...(e.prep||[]),...(e.steps||[]),...e.cues,...e.reminders,...Object.values(e.focus),...gripLines,...(pr?.items||[]),...(pr?.reminders||[]),e.memo,'내 메모'].filter(Boolean);
    for(const line of lines){assert(actual.includes(norm(line)),e.id+' content lost: '+line);report.sourceLines++;}
    if(!media[e.id]){assert.equal(await page.locator('.guide-shot,.exercise-3d,.ex-figure').count(),0);assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)),e.id+' horizontal overflow');report.exercises++;continue;}
    assert.equal(await page.locator('.guide-shot').count(),2);assert.equal(await page.locator('.exercise-3d summary').innerText(),'입체로 자세 보기');

@@ -113,10 +113,26 @@ window.Persistence = (() => {
   }
   const stringFields = (value, names) => names.every(name => value[name] === undefined || typeof value[name] === 'string');
   const stringLists = (value, names) => names.every(name => value[name] === undefined || (Array.isArray(value[name]) && value[name].every(item => typeof item === 'string')));
+  const requiredStringFields = (value, names) => names.every(name => typeof value[name] === 'string');
+  function validGripGuide(value) {
+    return value === undefined || (record(value) &&
+      requiredStringFields(value, ['title', 'summary', 'common', 'sessionId', 'orientationNote', 'evidence']) &&
+      Array.isArray(value.options) && value.options.length > 0 &&
+      value.options.every(option => record(option) &&
+        requiredStringFields(option, ['id', 'label', 'badge', 'width', 'palm', 'muscles', 'detail', 'caution'])) &&
+      new Set(value.options.map(option => option.id)).size === value.options.length &&
+      value.options.some(option => option.id === value.sessionId) &&
+      Array.isArray(value.orientations) &&
+      value.orientations.every(item => record(item) && requiredStringFields(item, ['name', 'position', 'note'])));
+  }
+  function validPracticalSummary(value) {
+    return value === undefined || (record(value) && requiredStringFields(value, ['action', 'feel']));
+  }
   function validExercise(value) {
     return record(value) && stringFields(value, ['id', 'name', 'part', 'category', 'spec', 'memo', 'updated', 'image']) &&
       stringLists(value, ['cues', 'reminders', 'steps', 'prep']) && (value.favorite === undefined || typeof value.favorite === 'boolean') &&
-      (value.focus === undefined || (record(value.focus) && stringFields(value.focus, ['muscle', 'move', 'feel'])));
+      (value.focus === undefined || (record(value.focus) && stringFields(value.focus, ['muscle', 'move', 'feel']))) &&
+      validGripGuide(value.gripGuide) && validPracticalSummary(value.practicalSummary);
   }
   function validOverlay(value) {
     return record(value) && record(value.overrides) && Array.isArray(value.deleted) && value.deleted.every(id => typeof id === 'string') &&

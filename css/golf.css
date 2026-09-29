@@ -18,7 +18,12 @@
 .g-video-card{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:16px;margin-bottom:14px}
 .g-card-title{display:block;font-size:17px;font-weight:800;line-height:1.6;margin:5px 0 8px}
 .g-video-card p{color:var(--sub)}.g-video-card .g-tags{margin-bottom:0}
+.g-card-takeaway{margin:8px 0 12px;color:var(--txt)!important}
+.g-card-takeaway strong{display:block;margin-bottom:3px;color:var(--golf);font-size:11px}
 .g-note-row{margin-bottom:17px}.g-note-row .ex{margin-bottom:4px}.g-note-row>.g-meta{padding:0 10px}
+.g-note-summary{margin:5px 8px 7px;padding:10px 11px;border-left:3px solid var(--golf);border-radius:8px;background:var(--golf-bg)}
+.g-note-summary>div{display:grid;grid-template-columns:78px minmax(0,1fr);gap:7px;font-size:12px;line-height:1.55}
+.g-note-summary b{color:var(--golf)}.g-note-summary span{min-width:0;overflow-wrap:anywhere}
 .g-lesson-row{padding:15px 0;border-bottom:1px solid var(--line)}.g-lesson-row>p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .g-empty{padding:20px 0;color:var(--sub)}.g-question{padding:14px 0;border-bottom:1px solid var(--line)}.g-question .g-btn{margin-top:8px}
 .g-title{font-size:22px!important;line-height:1.5;margin-top:8px!important}
@@ -32,6 +37,18 @@
 .g-choices label{display:flex!important;align-items:flex-start;gap:10px;background:var(--card);padding:12px;border-radius:10px;border:1px solid var(--line);color:var(--txt)!important;min-height:44px}
 .g-choices input{width:20px;height:20px;accent-color:var(--golf);flex-shrink:0;margin-top:2px}
 .g-pre{white-space:pre-wrap;overflow-wrap:anywhere}.g-history{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;font-size:13px;color:var(--sub)}.g-history summary{cursor:pointer;min-height:44px}.g-history p{margin:10px 0}
+.g-practical-summary{margin:18px 0;padding:15px;border:1px solid var(--golf-line);border-radius:16px;background:linear-gradient(145deg,var(--golf-bg),var(--card))}
+.g-practical-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.g-practical-head h2{margin:0!important;color:var(--txt);font-size:17px!important}
+.g-practical-head span{flex:0 0 auto;padding:4px 7px;border:1px solid var(--golf-line);border-radius:999px;color:var(--golf);font-size:10px;font-weight:700}
+.g-practical-summary dl{margin:0}
+.g-practical-summary dl>div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:9px;padding:10px 0;border-top:1px solid var(--line)}
+.g-practical-summary dt{color:var(--golf);font-size:12px;font-weight:800;line-height:1.55}
+.g-practical-summary dd{min-width:0;margin:0;color:var(--txt);font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+.g-practical-caution{margin:8px 0 0!important;padding-top:10px;border-top:1px dashed var(--golf-line);color:var(--sub)!important;font-size:12px!important;line-height:1.6!important}
+.g-source-detail{margin:22px 0;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.g-source-detail summary{min-height:48px;padding:13px 14px;cursor:pointer;color:var(--golf);font-size:14px;font-weight:800}
+.g-source-detail>div{padding:0 14px 14px}.g-source-detail ul{padding-left:20px;font-size:14px;line-height:1.75}
 .g-related{border-top:1px solid var(--line);padding-top:8px;margin-top:20px}
 .g-hub button:focus-visible,.g-hub a:focus-visible,.g-related button:focus-visible,.g-related a:focus-visible{outline:2px solid var(--golf);outline-offset:3px}
 .g-link{text-decoration:none}
@@ -51,6 +68,9 @@
 .g-video-mini{display:grid;grid-template-columns:minmax(0,1fr) 52px;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:13px}
 .g-mini-detail{display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;min-height:52px}
 .g-mini-title{font-size:15px;font-weight:800;line-height:1.4;overflow-wrap:anywhere}
+.g-mini-takeaway{display:block;color:var(--txt);font-size:12px;font-weight:600;line-height:1.55}
+.g-mini-takeaway b{display:block;color:var(--golf);font-size:10px;line-height:1.45;margin-bottom:2px}
+.g-mini-evidence{font-size:10px;line-height:1.4;color:var(--sub)}
 .g-mini-meta{font-size:11px;font-weight:500;color:var(--sub);line-height:1.5;overflow-wrap:anywhere}
 .g-mini-play{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:44px;min-height:52px;border:1px solid var(--golf-line);border-radius:10px;background:var(--golf-bg);font-size:10px;font-weight:700}
 .g-mini-play>span:first-child{font-size:16px;line-height:1}
@@ -69,17 +89,17 @@
 }
   .g-video-groups a{flex-shrink:0}
 @media(max-width:360px){.g-intro{display:none}.g-video-section{margin-top:10px}}
-.g-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.g-video-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
 .g-video-grid .g-video-mini{grid-template-columns:minmax(0,1fr) 44px;gap:7px;padding:9px;margin-bottom:0}
 .g-video-grid .g-mini-play{min-width:44px}
 .g-video-grid .g-mini-title{font-size:14px}
-@media(min-width:720px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:720px){.g-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .g-video-section h2{color:#C8A96B}
 .g-video-section h2 span{color:currentColor;opacity:.72}
 
 /* Keep each card title at full width, including compact mobile grids. */
 .g-video-grid .g-video-mini{grid-template-columns:minmax(0,1fr);align-items:stretch;gap:9px;padding:12px}
-.g-video-grid .g-mini-detail{justify-content:flex-start;min-height:76px}
+.g-video-grid .g-mini-detail{justify-content:flex-start;min-height:122px}
 .g-video-grid .g-mini-title{font-size:15px;line-height:1.5;word-break:keep-all;overflow-wrap:break-word}
 .g-video-grid .g-mini-play{flex-direction:row;gap:7px;min-height:44px;align-self:end;font-size:12px}
 .g-mini-meta,.g-mini-date{font-size:12px;font-weight:500;line-height:1.6;color:var(--sub)}
@@ -97,3 +117,8 @@
 .g-deletion-item{padding:16px 0;border-top:1px solid var(--line)}
 .g-deletion-item h3{font-size:15px;line-height:1.5;overflow-wrap:anywhere}
 .g-deletion-panel>p{font-size:13px;margin:10px 0}
+@media(max-width:360px){
+  .g-video-grid{grid-template-columns:minmax(0,1fr)}
+  .g-practical-head{align-items:flex-start;flex-direction:column}
+  .g-practical-summary dl>div{grid-template-columns:minmax(0,1fr);gap:3px}
+}

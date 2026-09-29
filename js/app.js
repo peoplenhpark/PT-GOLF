@@ -336,6 +336,37 @@ const Theme = (() => {
       <div class="focus-line"><span class="fk">느낌</span>${esc(e.focus.feel)}</div>
     </div>` : '';
   }
+  function gripGuideHtml(e) {
+    const guide = e.gripGuide;
+    if (!guide?.options?.length) return '';
+    const options = guide.options.map(option => `
+      <article class="grip-card ${option.id === guide.sessionId ? 'is-session' : ''}" data-grip-id="${esc(option.id)}">
+        <div class="grip-card-head"><h3>${esc(option.label)}</h3><span class="grip-badge">${esc(option.badge)}</span></div>
+        <dl class="grip-facts">
+          <div><dt>폭</dt><dd>${esc(option.width)}</dd></div>
+          <div><dt>손바닥</dt><dd>${esc(option.palm)}</dd></div>
+          <div><dt>근육</dt><dd>${esc(option.muscles)}</dd></div>
+        </dl>
+        <p>${esc(option.detail)}</p>
+        <p class="grip-caution">${esc(option.caution)}</p>
+      </article>`).join('');
+    const orientations = (guide.orientations || []).map(item => `
+      <div class="grip-orientation-item">
+        <strong>${esc(item.name)}</strong><span>${esc(item.position)}</span>
+        <p>${esc(item.note)}</p>
+      </div>`).join('');
+    return `<section class="grip-guide" aria-label="${esc(guide.title)}">
+      <div class="grip-guide-head"><span aria-hidden="true">✋</span><h2>${esc(guide.title)}</h2></div>
+      <p class="grip-summary">${esc(guide.summary)}</p>
+      <p class="grip-common">${esc(guide.common)}</p>
+      <div class="grip-grid">${options}</div>
+      ${orientations ? `<div class="grip-orientations" aria-label="손바닥 방향 참고">
+        <h3>손바닥 방향 참고</h3><div class="grip-orientation-list">${orientations}</div>
+        <p class="grip-orientation-note">${esc(guide.orientationNote)}</p>
+      </div>` : ''}
+      <p class="grip-evidence">${esc(guide.evidence)}</p>
+    </section>`;
+  }
   function pushdownMediaHtml() {
     const base = 'samples/pushdown-3d/';
     return `<section class="pushdown-guide" aria-label="케이블 푸시다운 2컷 안내">
@@ -447,6 +478,8 @@ const Theme = (() => {
           <div class="prep-h">🧩 ${isGolf ? '준비할 때 느낀 점' : '준비 자세'}</div>
           ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
         </div>` : ''}
+
+        ${gripGuideHtml(e)}
 
         ${!isGolf && !hasMedia && e.image ? `<div class="ex-figure">
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">

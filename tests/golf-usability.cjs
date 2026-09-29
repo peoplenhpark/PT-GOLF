@@ -25,7 +25,8 @@ function setup(stored = null) {
 }
 const s = setup();
 const c=s.ctx.window.GolfContent, hub=s.ctx.window.GolfHub;
-assert.deepEqual(c.videos.reduce((counts,v)=>{const kind=c.evidenceFor(v).kind;counts[kind]=(counts[kind]||0)+1;return counts;},{}),{metadata:25,observation:2,source:11});
+const evidenceCounts=c.videos.reduce((counts,v)=>{const kind=c.evidenceFor(v).kind;assert(['metadata','observation','source'].includes(kind));counts[kind]=(counts[kind]||0)+1;return counts;},{});
+assert.deepEqual(evidenceCounts,{metadata:25,observation:2,source:11});
 const latest = Math.max(...c.videos.map(v=>Date.parse(v.publishedAt)));
 assert(c.recentVideos(latest+7*86400000).length>0,'inclusive 168-hour boundary');
 assert.equal(c.recentVideos(latest+7*86400000+1).length,0,'expired videos leave recent only');
@@ -36,6 +37,7 @@ assert(s.app.innerHTML.includes('YouTube 공개일 기준'));
 assert(s.app.innerHTML.includes('전체 38편 중 0편'));
 assert(s.app.innerHTML.includes('최근 7일에 공개된 영상은 없습니다'));
 assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,38);
+assert.equal((s.app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,38);
 for (const note of seed.exercises.filter(x=>x.part==='golf')) {
   const related = c.relatedFor(note);
   assert(related.length>0&&related.length<=5);
@@ -51,9 +53,15 @@ const matches=hub.searchRecords('김동현프로');
 assert(matches.some(x=>x.type==='video'&&x.matchedFields.includes('채널')));
 assert(matches.every(x=>x.href&&x.excerpt&&x.matchedFields.length));
 hub.render({golfTab:'videos',golfId:'9YWDNMyTQy4'},s.api);
-assert(s.app.innerHTML.includes('비교 관찰 포인트'));
-assert(!s.app.innerHTML.includes('>영상 핵심<'));
+assert(s.app.innerHTML.includes('확인된 범위와 관찰 포인트'));
+assert(s.app.innerHTML.includes('한눈에 적용'));
+assert(s.app.innerHTML.includes('원본에서 볼 것'));
+assert(s.app.innerHTML.includes('내 영상과 비교'));
+assert(s.app.innerHTML.includes('레슨에서 확인'));
 assert(s.app.innerHTML.includes('제목·메타데이터 확인'));
+hub.render({golfTab:'notes'},s.api);
+assert.equal((s.app.innerHTML.match(/class="g-note-summary"/g)||[]).length,4);
+assert(s.app.innerHTML.includes('개인 연습 감각'));
 assert.equal(s.stats().writes,0,'rendering and search never persist user records');
 const searchForm={dataset:{gForm:'search'},values:{q:'드라이버'}};
 s.handlers.submit({target:{closest:()=>searchForm},preventDefault:()=>{}});
