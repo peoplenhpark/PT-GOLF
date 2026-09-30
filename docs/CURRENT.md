@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: v94 (2026-09-30 배포 완료). 코드 커밋 54f4ff8d7c8f952a51fff8c919ba4dfc9ca5baa6. GitHub Actions 실행 36588332950의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=94#pt . 공개 release.json은 v94, seed는 v39, PT 50개를 반환한다. 공개 Chrome에서 씰 로우·양발 덤벨 RDL의 교정 이미지와 3D, 서서 당기기의 사진 확인 예정 상태를 확인했다.
-- 다음 배포 대기: v95 골프 Shorts 반영 및 검증 중.
+- 현재 공개 버전: v95 (2026-09-30 배포 완료). 코드 커밋 5cc410b732f40bf64fae7539485a2630571043ed. GitHub Actions 실행 36682197684의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=95#golf/videos . 공개 release.json은 v95, seed는 v39, PT 50개와 고유 골프 영상 40편을 반환한다. 공개 Chrome 320·390·768px에서 등록일 기준 최근 9편, 팔·임팩트 20편, 신규 상세 2개와 가로 넘침·브라우저 오류 0건을 확인했다.
+- 다음 배포 대기: 없음.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.
@@ -56,11 +56,12 @@
 - 고유 골프 영상은 38편에서 40편으로 늘어난다. 개인 스윙 노트는 계속 개인 연습 감각으로 표시하며, 기존 영상 메모·레슨 연결·즐겨찾기와 PT 50개는 유지한다.
 - 최근 7일 기준을 YouTube 공개 시각에서 앱 최초 등록 시각으로 바꿨다. 기존 38편은 최초 반영 Git 이력의 한국 시각을 백필하고, 신규 2편은 2026-09-30 등록 시각을 기록한다. 최근 목록은 등록 시각 내림차순이며 정확히 최근 168시간을 사용한다.
 
-### v95 배포 전 검증
+### v95 검증·배포
 
 - 배포 전 열린 구조화 삭제 요청은 0건이었다.
 - 현행 Node 검사 15개와 격리된 Chromium 전체 회귀가 통과했다. 생성한 _site에서 등록일 기준 최근 영상 9편, 신규 상세 2개, 팔·임팩트 20편, 고유 영상 40편을 확인했다.
 - 320·390·768px에서 최근 목록과 신규 상세의 가로 넘침이 없었고 브라우저 오류는 0건이었다.
+- GitHub Actions 실행 36682197684가 성공했다. 공개 release.json v95와 공개 Chrome에서 전체 40편, 등록일 기준 최근 9편, 팔·임팩트 20편, 신규 상세 2개를 다시 확인했다.
 
 ## v94 반영 범위 · 2026-09-30
 
