@@ -1,8 +1,8 @@
 # 운동 시각 안내 — 2컷 + 회전형 3D
 
-> v96 릴리스·seed v40은 PT 50개를 제공한다. 50개 모두 **움직임·느낌 → 2컷 → 3D** 순서로 표시한다. 아래 전체 검증 기록의 기반은 최초 v48의 47개이며, 2026-09-29 신규 PT 3개와 이후 정정 이력을 함께 보존한다.
+> 공개본 v96·seed v40은 PT 50개를 제공한다. 50개 모두 **움직임·느낌 → 2컷 → 3D** 순서로 표시한다. 아래 전체 검증 기록의 기반은 최초 v48의 47개이며, 2026-09-29 신규 PT 3개와 이후 정정 이력을 함께 보존한다.
 
-- 적용 범위: v96·seed v40의 PT 50개. 50개 모두 시각자료를 제공한다. 케이블 푸시다운 표준을 확인된 PT 동작에 확장하며 골프 4개는 원본 영상·노트 UI를 사용한다.
+- 적용 범위: 공개본 v96·seed v40의 PT 50개. 50개 모두 시각자료를 제공한다. 케이블 푸시다운 표준을 확인된 PT 동작에 확장하며 골프 4개는 원본 영상·노트 UI를 사용한다.
 - 화면: 기존 움직임·느낌 → 준비/동작 2컷 → **입체로 자세 보기** → 핵심 체크·잊지 말 것·공통 원칙 → 내 메모.
 - 이미지 확대 안내나 3D 소개 부제는 넣지 않는다. 브라우저 기본 핀치 확대를 유지한다.
 - 시각 자료는 `js/exercise-media.js`가 운동 데이터와 연결한다. 확인되지 않은 동작은 잘못된 이미지·3D를 보여 주지 않고 확인 예정 상태로 표시한다.
@@ -39,8 +39,8 @@
 - 생성 이미지가 다 준비되기 전에는 `SKIP_IMAGE_CHECK=1`로 동작·내용만 검증할 수 있다. 최종 검증에서는 반드시 해제한다.
 - `SCREENSHOT_DIR`를 지정하면 모든 운동의 3D 뷰포트 스크린샷을 저장한다.
 - 최종 결과: [verification.json](verification.json). 좌표 이상 목록: [pose-check.json](pose-check.json).
-- 자산 버전은 `release.json`에서 관리하며, v96에서는 index와 공통 뷰어의 참조 및 서비스 워커 캐시를 같은 릴리스로 제공한다.
+- 자산 버전은 `release.json`에서 관리하며, 공개 v96에서는 index와 공통 뷰어의 참조 및 서비스 워커 캐시를 같은 릴리스로 제공한다.
 - SW는 셸/뷰어/라이브러리를 선캐시하고 큰 운동 이미지는 방문 시 캐시한다. 처음 보려는 운동 이미지는 네트워크가 필요하다. 쿼리 버전이 바뀌어도 오프라인 셸/seed가 캐시로 복구되도록 했다.
 
 ## 근거
-개인 동작의 우선 근거는 seed v40의 준비·큐·리마인더·focus 및 사용자가 직접 확인한 정정 내용이다. 일반 관절 움직임과 운동 분류는 [ACE 운동 라이브러리](https://www.acefitness.org/resources/everyone/exercise-library/) 및 [NASM 버드독](https://www.nasm.org/resource-center/exercise-library/bird-dog), 기존 [ACE 트라이셉스 프레스다운](https://www.acefitness.org/resources/everyone/exercise-library/3/triceps-pressdown/) 자료를 참고했다. 이것을 개인 자세의 임상 검증이나 인증으로 해석하지 않는다.
+개인 동작의 우선 근거는 공개본 seed v40의 준비·큐·리마인더·focus 및 사용자가 직접 확인한 정정 내용이다. 일반 관절 움직임과 운동 분류는 [ACE 운동 라이브러리](https://www.acefitness.org/resources/everyone/exercise-library/) 및 [NASM 버드독](https://www.nasm.org/resource-center/exercise-library/bird-dog), 기존 [ACE 트라이셉스 프레스다운](https://www.acefitness.org/resources/everyone/exercise-library/3/triceps-pressdown/) 자료를 참고했다. 이것을 개인 자세의 임상 검증이나 인증으로 해석하지 않는다.

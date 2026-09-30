@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: v95 (2026-09-30 배포 완료). 코드 커밋 5cc410b732f40bf64fae7539485a2630571043ed. GitHub Actions 실행 36682197684의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=95#golf/videos . 공개 release.json은 v95, seed는 v39, PT 50개와 고유 골프 영상 40편을 반환한다. 공개 Chrome 320·390·768px에서 등록일 기준 최근 9편, 팔·임팩트 20편, 신규 상세 2개와 가로 넘침·브라우저 오류 0건을 확인했다.
-- 다음 배포 대기: v96 통합 검증 중.
+- 현재 공개 버전: v96 (2026-09-30 배포 완료). 코드 커밋 9890e4260673145c97f9ba2153465276ab7d2757. GitHub Actions 실행 36730903162의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=96#exercise/pt_uprightrow . 공개 release.json은 v96, seed는 v40, PT 50개와 고유 골프 영상 40편을 반환한다. 공개 Chrome 320·390·768px에서 D.Y. 로우 2컷·전용 3D·0.5배 자동 시작, 덤벨 RDL의 낮춘 골반, 골프 상세의 즐겨찾기·수정 버튼, 가로 넘침·브라우저 오류 0건을 확인했다.
+- 다음 배포 대기: 없음.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.
@@ -59,12 +59,14 @@
 - 덤벨 루마니안 데드리프트는 동작 이미지와 3D 최저 자세의 골반을 더 낮춘다. 덤벨 1개, 양손 성배 그립, 턱밑 시작, 양발 고정과 중립 척추는 유지한다.
 - PT 데이터는 seed v40이며 50개 운동 ID와 개인 기록 연결은 유지한다. 새 이미지의 프롬프트·사용자 사진·제조사 참조·변환 기록은 `docs/visuals/pt-session-2026-09-29-image-prompts.json`에 보존한다.
 
-### v96 배포 전 검증
+### v96 검증·배포
 
 - 열린 중앙 삭제 요청은 0건이었다.
 - `scripts/validate.cjs`에서 현행 Node 검사 16개와 JavaScript 문법 검사 17개가 모두 통과했고, `scripts/site.cjs`는 게시용 런타임 파일 177개를 생성했다. 격리된 Chromium의 전체 브라우저 스모크 검사도 통과했다.
 - 전체 시각 검사에서 상세 화면 54개, 이미지 100장, 3D 모델 50개를 확인했다. 브라우저 오류 0건이며 터치 회전·확대, 오프라인 재열기, 개인 메모 보존도 통과했다.
 - 320·390·768px 화면에서 가로 넘침이 없었다. D.Y. 로우는 준비·동작 2컷과 62개 메시의 전용 3D, 0.5배 자동 재생을 확인했고, 덤벨 RDL의 최저 골반 높이 0.76과 골프 상세의 즐겨찾기·수정 버튼 및 반복 근거 배지 0개를 확인했다.
+- GitHub Actions 실행 36730903162의 검증과 Pages 배포가 성공했다. 공개 release.json v96과 seed v40을 확인했다.
+- 공개 Chrome의 320·390·768px에서도 D.Y. 로우 이미지 2장·전용 3D 62개 메시·0.5배 자동 시작, 덤벨 RDL 최저 골반 높이 0.76, 골프 즐겨찾기·수정 버튼, 반복 근거 배지 0개, 가로 넘침·브라우저 오류 0건을 다시 확인했다.
 
 ## v95 반영 범위 · 2026-09-30
 
