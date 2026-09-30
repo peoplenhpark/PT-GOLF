@@ -6,11 +6,11 @@
 
 - 중앙 삭제 요청 파싱·사용자 승인과 원본 제거 동시 조건·GitHub 조회 실패 차단: `deletion-requests.cjs` (모의 API, 네트워크 호출 없음)
 
-- 골프 영상 ID·그룹·렌더 및 과거 주소 연결: `golf-training-data.cjs`
+- 골프 영상 ID·그룹·앱 최초 등록일·최근 등록 정렬·렌더 및 과거 주소 연결: `golf-training-data.cjs`, `golf-usability.cjs`
 - PT 이미지 등록·개인 코칭 자세: `pt-press-media.cjs`, `pt-*-pose.cjs`
 - SW 캐시 범위·데이터 키·실패 폴백·선택 운동 준비·업데이트: `service-worker.cjs`
 - 추가 저장 계층/앱 상태 Node 검사는 `scripts/validate.cjs`에서 자동 탐색한다.
-- 모바일 화면·뒤로/앞으로·새 설치/오프라인 등 브라우저 회귀: `browser-smoke.cjs`
+- 모바일 화면·최근 등록일 표시·뒤로/앞으로·새 설치/오프라인 등 브라우저 회귀: `browser-smoke.cjs`
 
 ## 역사·선택 검사
 

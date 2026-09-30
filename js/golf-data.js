@@ -1,7 +1,7 @@
-/* 사용자 지정 영상 38편. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 40편. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
-  version: 4,
+  version: 5,
   featuredVideoId: '9YWDNMyTQy4',
   originalMaxSeconds: 180,
   topics: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
@@ -44,7 +44,8 @@ window.GolfContent = {
         "RSbjGWhzEnQ",
         "4ePhtleqZBA"
       ],
-      "publishedAt": "2026-08-03T06:45:36-07:00"
+      "publishedAt": "2026-08-03T06:45:36-07:00",
+      "addedAt": "2026-09-19T18:25:07+09:00"
     },
     {
       "id": "ojzyFHAQWnw",
@@ -77,7 +78,8 @@ window.GolfContent = {
         "xUgGGs2Rh3w",
         "IsSS-GnQQyY"
       ],
-      "publishedAt": "2025-06-08T01:00:51-07:00"
+      "publishedAt": "2025-06-08T01:00:51-07:00",
+      "addedAt": "2026-09-19T18:25:07+09:00"
     },
     {
       "id": "wBlnDaqkGi0",
@@ -110,7 +112,8 @@ window.GolfContent = {
         "Aj1UEMYPxBg",
         "RSbjGWhzEnQ"
       ],
-      "publishedAt": "2026-08-16T18:15:26-07:00"
+      "publishedAt": "2026-08-16T18:15:26-07:00",
+      "addedAt": "2026-09-19T18:25:07+09:00"
     },
     {
       "id": "yv4KTSs8Riw",
@@ -143,7 +146,8 @@ window.GolfContent = {
         "Aj1UEMYPxBg",
         "-h77kU-fpjg"
       ],
-      "publishedAt": "2026-09-03T02:20:45-07:00"
+      "publishedAt": "2026-09-03T02:20:45-07:00",
+      "addedAt": "2026-09-19T18:25:07+09:00"
     },
     {
       "id": "4ePhtleqZBA",
@@ -176,7 +180,8 @@ window.GolfContent = {
         "9YWDNMyTQy4",
         "-h77kU-fpjg"
       ],
-      "publishedAt": "2026-09-18T05:13:56-07:00"
+      "publishedAt": "2026-09-18T05:13:56-07:00",
+      "addedAt": "2026-09-19T18:25:07+09:00"
     },
     {
       "id": "bfMsJtV61hM",
@@ -211,7 +216,8 @@ window.GolfContent = {
         "du58mmLNMnQ",
         "-h77kU-fpjg"
       ],
-      "publishedAt": "2026-09-13T16:29:00-07:00"
+      "publishedAt": "2026-09-13T16:29:00-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "-h77kU-fpjg",
@@ -246,7 +252,8 @@ window.GolfContent = {
         "du58mmLNMnQ",
         "bfMsJtV61hM"
       ],
-      "publishedAt": "2026-09-10T19:30:33-07:00"
+      "publishedAt": "2026-09-10T19:30:33-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "Aj1UEMYPxBg",
@@ -288,7 +295,8 @@ window.GolfContent = {
       "duration": "0:53",
       "durationSeconds": 53,
       "presentation": "original",
-      "publishedAt": "2026-09-11T01:31:25-07:00"
+      "publishedAt": "2026-09-11T01:31:25-07:00",
+      "addedAt": "2026-09-15T16:24:20+09:00"
     },
     {
       "id": "xUgGGs2Rh3w",
@@ -330,7 +338,8 @@ window.GolfContent = {
       "duration": "1:44",
       "durationSeconds": 104,
       "presentation": "original",
-      "publishedAt": "2026-09-09T02:00:03-07:00"
+      "publishedAt": "2026-09-09T02:00:03-07:00",
+      "addedAt": "2026-09-15T16:24:20+09:00"
     },
     {
       "id": "S3fxUFBzfBo",
@@ -372,7 +381,8 @@ window.GolfContent = {
       "duration": "1:30",
       "durationSeconds": 90,
       "presentation": "original",
-      "publishedAt": "2026-09-14T14:38:20-07:00"
+      "publishedAt": "2026-09-14T14:38:20-07:00",
+      "addedAt": "2026-09-15T16:24:20+09:00"
     },
     {
       "id": "IsSS-GnQQyY",
@@ -425,7 +435,8 @@ window.GolfContent = {
         "ULOLFCC-ly8",
         "uvgnUl93Twg"
       ],
-      "publishedAt": "2026-09-05T16:00:28-07:00"
+      "publishedAt": "2026-09-05T16:00:28-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "ULOLFCC-ly8",
@@ -478,7 +489,8 @@ window.GolfContent = {
         "IsSS-GnQQyY",
         "du58mmLNMnQ"
       ],
-      "publishedAt": "2026-09-13T03:22:47-07:00"
+      "publishedAt": "2026-09-13T03:22:47-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "UA-HYcmiKTA",
@@ -530,7 +542,8 @@ window.GolfContent = {
         "du58mmLNMnQ"
       ],
       "presentation": "original",
-      "publishedAt": "2026-04-20T03:00:48-07:00"
+      "publishedAt": "2026-04-20T03:00:48-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "CA-TZ7WQlHY",
@@ -579,7 +592,8 @@ window.GolfContent = {
         "ULOLFCC-ly8"
       ],
       "presentation": "original",
-      "publishedAt": "2026-09-13T03:20:31-07:00"
+      "publishedAt": "2026-09-13T03:20:31-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "du58mmLNMnQ",
@@ -624,7 +638,8 @@ window.GolfContent = {
       ],
       "connection": "7번 아이언의 임팩트 연습과 연결됩니다. 원본 영상에서 전신 흐름과 손목 원리를 살펴본 뒤, 내 손목이 일찍 풀리는지 레슨에서 확인하세요.",
       "question": "제 아이언 스윙도 손목이 일찍 풀리나요? 힌지 유지와 왼손목 동작을 몸의 회전과 어떻게 연결해야 할까요?",
-      "publishedAt": "2026-09-12T16:00:32-07:00"
+      "publishedAt": "2026-09-12T16:00:32-07:00",
+      "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
       "id": "0EgzSDUsKvg",
@@ -659,7 +674,8 @@ window.GolfContent = {
       ],
       "connection": "기존 노트의 체중이동 → 지연 → 회전과 비교해서 볼 영상입니다. 여기서 말하는 기다림과 팔의 움직임이 내 스윙에서 어떻게 연결되는지 확인하세요.",
       "question": "체중이동할 때 상체가 먼저 열리나요? 제 스윙에서 시프트와 회전의 순서를 확인하고 싶어요.",
-      "publishedAt": "2026-09-09T02:10:35-07:00"
+      "publishedAt": "2026-09-09T02:10:35-07:00",
+      "addedAt": "2026-09-12T22:46:39+09:00"
     },
     {
       "id": "uvgnUl93Twg",
@@ -687,7 +703,8 @@ window.GolfContent = {
       ],
       "connection": "기존 노트의 골반 접기·공간 확보·축 유지와 연결됩니다. 클럽이 뒤로 처지는 것과 기존 노트의 지연은 같은 뜻으로 단정하지 않고 다음 레슨에서 구분합니다.",
       "question": "저도 다운스윙에서 몸이 일찍 펴지나요? 클럽이 뒤로 처지는 것과 기존 노트의 지연은 어떻게 구분해야 하나요?",
-      "publishedAt": "2026-06-29T05:48:53-07:00"
+      "publishedAt": "2026-06-29T05:48:53-07:00",
+      "addedAt": "2026-09-12T22:46:39+09:00"
     },
     {
       "id": "RSbjGWhzEnQ",
@@ -727,7 +744,8 @@ window.GolfContent = {
       ],
       "connection": "기존 노트의 손 내리기 → 지연 → 회전과 함께 보세요. “팔을 쓰지 않기”와 “팔을 내리기”의 차이는 개인 레슨에서 확인할 질문입니다.",
       "question": "제 스윙에서는 팔을 내리는 방향과 회전 시작 시점을 어떻게 잡아야 하나요? 팔을 쓰지 말라는 기존 감각과 비교해 주세요.",
-      "publishedAt": "2025-03-20T05:00:46-07:00"
+      "publishedAt": "2025-03-20T05:00:46-07:00",
+      "addedAt": "2026-09-12T22:46:39+09:00"
     },
     {
       "id": "aaOw2sdp-io",
@@ -760,7 +778,8 @@ window.GolfContent = {
         "7sNhk9PhBxc",
         "ojzyFHAQWnw"
       ],
-      "publishedAt": "2026-04-16T02:00:02-07:00"
+      "publishedAt": "2026-04-16T02:00:02-07:00",
+      "addedAt": "2026-09-20T15:30:11+09:00"
     },
     {
       "id": "5glZX2pq15o",
@@ -793,7 +812,8 @@ window.GolfContent = {
         "du58mmLNMnQ",
         "RSbjGWhzEnQ"
       ],
-      "publishedAt": "2026-03-30T02:00:00-07:00"
+      "publishedAt": "2026-03-30T02:00:00-07:00",
+      "addedAt": "2026-09-20T15:30:11+09:00"
     },
     {
       "id": "U4nn7s20ACc",
@@ -825,7 +845,8 @@ window.GolfContent = {
         "CA-TZ7WQlHY",
         "0EgzSDUsKvg"
       ],
-      "publishedAt": "2026-03-23T02:00:44-07:00"
+      "publishedAt": "2026-03-23T02:00:44-07:00",
+      "addedAt": "2026-09-20T15:30:11+09:00"
     },
     {
       "id": "4uQe-J5qM2c",
@@ -839,12 +860,12 @@ window.GolfContent = {
         "팔·타이밍",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
-      "summary": "헤드 던지는 감각의 핵심 포인트를 주제로 한 원본 영상입니다.",
+      "evidence": "YouTube 원본 제목·채널·길이·게시일과 재생 화면의 자막·시범을 확인했습니다. 일부 자막 표현이 불명확해 특정 관절 동작은 단정하지 않습니다.",
+      "summary": "그립 쪽을 당기고 헤드를 밀어내는 힘을 함께 쓰면서 몸이 위로 들리지 않게 가슴 회전을 이어 헤드를 보내는 시범입니다.",
       "points": [
-        "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
-        "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
-        "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+        "그립 쪽을 당기는 힘과 클럽헤드를 밀어내는 힘을 함께 쓰는 장면을 봅니다.",
+        "전환과 임팩트에서 몸이 수직으로 들리는 동작에 X 표시가 나온 구간을 확인합니다.",
+        "임팩트에서 가슴이 공에 고정되지 않고 왼쪽으로 회전하는 흐름을 관찰합니다."
       ],
       "moments": [
         {
@@ -853,12 +874,13 @@ window.GolfContent = {
         }
       ],
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
-      "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+      "question": "이 두 힘과 가슴 회전이 제 스윙에도 필요한지, 손목만 급히 풀거나 몸이 일어나는 동작과 어떻게 구분할지 확인해 주세요.",
       "relatedVideoIds": [
         "-h77kU-fpjg",
         "yv4KTSs8Riw"
       ],
-      "publishedAt": "2026-08-06T01:13:12-07:00"
+      "publishedAt": "2026-08-06T01:13:12-07:00",
+      "addedAt": "2026-09-20T15:30:11+09:00"
     },
     {
       "id": "7sNhk9PhBxc",
@@ -891,7 +913,8 @@ window.GolfContent = {
         "aaOw2sdp-io",
         "uvgnUl93Twg"
       ],
-      "publishedAt": "2026-07-31T22:52:23-07:00"
+      "publishedAt": "2026-07-31T22:52:23-07:00",
+      "addedAt": "2026-09-20T15:30:11+09:00"
     },
     {
       "id": "Wlbi1o9fb2Q",
@@ -924,7 +947,8 @@ window.GolfContent = {
         "4uQe-J5qM2c",
         "yv4KTSs8Riw"
       ],
-      "publishedAt": "2026-08-20T02:00:02-07:00"
+      "publishedAt": "2026-08-20T02:00:02-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "A_fu4ajV-_I",
@@ -955,7 +979,8 @@ window.GolfContent = {
       "relatedVideoIds": [
         "U4nn7s20ACc"
       ],
-      "publishedAt": "2026-09-19T17:28:13-07:00"
+      "publishedAt": "2026-09-19T17:28:13-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "FjWulC87mzM",
@@ -988,7 +1013,8 @@ window.GolfContent = {
         "Wlbi1o9fb2Q",
         "ULOLFCC-ly8"
       ],
-      "publishedAt": "2026-04-14T02:00:22-07:00"
+      "publishedAt": "2026-04-14T02:00:22-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "dBsZdo7VEAA",
@@ -1020,7 +1046,8 @@ window.GolfContent = {
         "U4nn7s20ACc",
         "0EgzSDUsKvg"
       ],
-      "publishedAt": "2026-07-10T02:00:34-07:00"
+      "publishedAt": "2026-07-10T02:00:34-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "WWtv4x3uz-M",
@@ -1053,7 +1080,8 @@ window.GolfContent = {
         "7sNhk9PhBxc",
         "aaOw2sdp-io"
       ],
-      "publishedAt": "2026-04-28T01:40:18-07:00"
+      "publishedAt": "2026-04-28T01:40:18-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "o4KqDhYXlTw",
@@ -1086,7 +1114,8 @@ window.GolfContent = {
         "wBlnDaqkGi0",
         "Aj1UEMYPxBg"
       ],
-      "publishedAt": "2026-09-22T01:38:29-07:00"
+      "publishedAt": "2026-09-22T01:38:29-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "ThwbClowjjU",
@@ -1119,7 +1148,8 @@ window.GolfContent = {
         "Wlbi1o9fb2Q",
         "yv4KTSs8Riw"
       ],
-      "publishedAt": "2026-09-18T02:00:36-07:00"
+      "publishedAt": "2026-09-18T02:00:36-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "XvPYFd-seNw",
@@ -1152,7 +1182,8 @@ window.GolfContent = {
         "4uQe-J5qM2c",
         "Wlbi1o9fb2Q"
       ],
-      "publishedAt": "2026-04-26T02:19:45-07:00"
+      "publishedAt": "2026-04-26T02:19:45-07:00",
+      "addedAt": "2026-09-23T14:48:29+09:00"
     },
     {
       "id": "mGYe7UjYXfo",
@@ -1185,7 +1216,8 @@ window.GolfContent = {
         "28HBEaS-G54",
         "du58mmLNMnQ"
       ],
-      "publishedAt": "2026-09-23T02:00:31-07:00"
+      "publishedAt": "2026-09-23T02:00:31-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "0lbtJgkzqWM",
@@ -1218,7 +1250,8 @@ window.GolfContent = {
         "S3fxUFBzfBo",
         "U4nn7s20ACc"
       ],
-      "publishedAt": "2026-09-16T23:03:58-07:00"
+      "publishedAt": "2026-09-16T23:03:58-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "28HBEaS-G54",
@@ -1251,7 +1284,8 @@ window.GolfContent = {
         "t_9sQjrS2o4",
         "XvPYFd-seNw"
       ],
-      "publishedAt": "2026-09-23T03:00:24-07:00"
+      "publishedAt": "2026-09-23T03:00:24-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "wwZFeiPAoMU",
@@ -1284,7 +1318,8 @@ window.GolfContent = {
         "CA-TZ7WQlHY",
         "ULOLFCC-ly8"
       ],
-      "publishedAt": "2026-09-16T03:00:11-07:00"
+      "publishedAt": "2026-09-16T03:00:11-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "t_9sQjrS2o4",
@@ -1298,12 +1333,12 @@ window.GolfContent = {
         "팔·타이밍",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
-      "summary": "7번 아이언 거리와 임팩트 원리를 주제로 한 원본 영상입니다.",
+      "evidence": "YouTube 원본 제목·채널·길이·게시일과 재생 화면의 자막·시범을 확인했습니다. 제목의 거리는 개인 성과를 보장하지 않습니다.",
+      "summary": "반스윙에서 왼팔이 클럽을 왼쪽으로 리드해 손·그립이 배꼽보다 왼쪽에서 맞는 압축 임팩트를 보여줍니다.",
       "points": [
-        "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
-        "준비 자세부터 피니시까지 팔과 몸통의 움직임을 함께 관찰합니다.",
-        "내 스윙과 비교한 차이는 메모에 남기고 다음 레슨에서 확인합니다."
+        "반스윙에서 임팩트를 압축한다고 설명하는 시범을 봅니다.",
+        "손·그립이 배꼽보다 왼쪽에 들어온 상태에서 공을 맞히는 구간을 확인합니다.",
+        "왼팔이 클럽을 왼쪽으로 리드하고 절반 스윙으로 반복하는 연습을 관찰합니다."
       ],
       "moments": [
         {
@@ -1312,12 +1347,13 @@ window.GolfContent = {
         }
       ],
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
-      "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
+      "question": "왼팔 리드와 손·그립 위치가 제 아이언 임팩트에도 필요한지, 과한 핸드 퍼스트나 몸의 쏠림과 어떻게 구분할지 확인해 주세요.",
       "relatedVideoIds": [
         "28HBEaS-G54",
         "du58mmLNMnQ"
       ],
-      "publishedAt": "2026-06-19T03:10:18-07:00"
+      "publishedAt": "2026-06-19T03:10:18-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "zT6zJCJ59js",
@@ -1350,7 +1386,8 @@ window.GolfContent = {
         "UA-HYcmiKTA",
         "bfMsJtV61hM"
       ],
-      "publishedAt": "2026-04-13T20:46:11-07:00"
+      "publishedAt": "2026-04-13T20:46:11-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
     },
     {
       "id": "cQiwXcbWZc4",
@@ -1383,7 +1420,76 @@ window.GolfContent = {
         "IsSS-GnQQyY",
         "dBsZdo7VEAA"
       ],
-      "publishedAt": "2026-09-24T02:00:26-07:00"
+      "publishedAt": "2026-09-24T02:00:26-07:00",
+      "addedAt": "2026-09-25T14:41:50+09:00"
+    },
+    {
+      "id": "ldkU0D_Ylms",
+      "title": "헤드를 툭 놓는 릴리스 타이밍",
+      "originalTitle": "임팩이 약한 분을 위한 필수 영상 #골프 #golf #ゴルフ",
+      "channel": "몽땅골프",
+      "duration": "0:36",
+      "durationSeconds": 36,
+      "presentation": "original",
+      "topics": [
+        "체중이동",
+        "팔·타이밍"
+      ],
+      "evidence": "YouTube 원본 제목·채널·길이·게시일과 재생 화면의 자막·시범을 확인했습니다. 화면의 잠깐 기다림은 연습 큐이며 실제 스윙의 완전 정지로 단정하지 않습니다.",
+      "summary": "체중 이동 뒤 팔이 내려온 구간에서 급히 지나가지 않고 짧게 기다린 뒤 헤드를 툭 놓는 릴리스 타이밍을 보여줍니다.",
+      "points": [
+        "체중을 옮긴 뒤 팔이 내려오는 구간과 헤드가 풀리는 순서를 봅니다.",
+        "팔이 급히 지나가지 않고 손을 쓸 시간을 준다는 화면 설명을 확인합니다.",
+        "헤드를 바닥에 툭 놓는 시범을 실제 스윙의 완전 정지와 구분해 관찰합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "체중 이동과 팔 하강 뒤 헤드를 놓는 순서를 작은 스윙에서 비교하되, 잠깐 기다림을 실제 정지로 만들지는 않습니다.",
+      "question": "영상의 잠깐 기다림이 제 스윙에는 필요한 타이밍 감각인지, 실제 정지나 손목 조작으로 변하지 않게 어떻게 연습할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "4uQe-J5qM2c",
+        "t_9sQjrS2o4"
+      ],
+      "publishedAt": "2026-09-29T19:45:27-07:00",
+      "addedAt": "2026-09-30T15:48:15+09:00"
+    },
+    {
+      "id": "M-ryH3IhUXI",
+      "title": "오른팔꿈치 궤도·릴리스 드릴",
+      "originalTitle": "프로들만 아는 팔꿈치 연습 방법 #골프 #golf #ゴルフ",
+      "channel": "몽땅골프",
+      "duration": "0:15",
+      "durationSeconds": 15,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "evidence": "YouTube 원본 제목·채널·길이·게시일과 재생 화면의 문구·시범을 확인했습니다. 별도 설명이나 자막은 없어 효과 원리는 추정하지 않습니다.",
+      "summary": "구분 동작으로 오른팔꿈치를 옆구리에 붙이는 궤도를 확인하고 임팩트에서 오른손을 놓는 드릴을 보여줍니다.",
+      "points": [
+        "구분 동작에서 오른팔꿈치가 몸통 옆구리 쪽으로 들어오는 궤도를 봅니다.",
+        "몸통 옆구리에 바짝 붙이는 느낌이라는 화면 문구와 시범을 함께 확인합니다.",
+        "임팩트에서 오른손을 놓는 동작을 팔꿈치 궤도와 나누어 관찰합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "오른팔꿈치 궤도와 오른손 릴리스를 구분 동작으로 살펴보되, 팔꿈치를 억지로 조이는 동작으로 바꾸지 않습니다.",
+      "question": "이 오른팔꿈치 드릴이 제 스윙에 맞는지, 팔꿈치를 억지로 조이거나 오른손을 일찍 놓는 동작과 어떻게 구분할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "Aj1UEMYPxBg",
+        "wBlnDaqkGi0"
+      ],
+      "publishedAt": "2026-09-28T19:45:31-07:00",
+      "addedAt": "2026-09-30T15:48:15+09:00"
     }
   ]
 };
@@ -1394,8 +1500,10 @@ window.GolfContent.presentationFor = () => 'original';
 window.GolfContent.recentVideos = (now = Date.now()) => {
   const weekAgo = now - 7 * 24 * 60 * 60 * 1000;
   return window.GolfContent.videos
-    .filter(v => { const published = Date.parse(v.publishedAt); return Number.isFinite(published) && published <= now && published >= weekAgo; })
-    .sort((a,b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
+    .map((video,index) => ({video,index,added:Date.parse(video.addedAt)}))
+    .filter(item => Number.isFinite(item.added) && item.added <= now && item.added >= weekAgo)
+    .sort((a,b) => b.added - a.added || a.index - b.index)
+    .map(item => item.video);
 };
 
 // Primary groups are separate from cross-cutting topic tags: each video appears once.
@@ -1403,13 +1511,13 @@ window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
   {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4']},
-  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4']}
+  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
 const golfObservationIds = new Set(['bfMsJtV61hM','-h77kU-fpjg']);
-const golfSourceContentIds = new Set(['Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ']);
+const golfSourceContentIds = new Set(['Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
 const golfEvidenceKind = v => golfObservationIds.has(v.id) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
   const kind = golfEvidenceKind(v);
@@ -1458,11 +1566,6 @@ const golfMetadataPractice = {
     action:'“종결급”이라는 제목보다 원본이 제시하는 실제 동작·드릴·결과 기준 한 가지를 찾으세요.',
     feel:'내 영상의 같은 구간에서 그 기준 하나만 관찰하고 스윙 전체 모양을 한꺼번에 따라 하지 마세요.',
     check:'원본의 기준이 제 미스샷을 설명하는지, 우선 적용할 가치가 있는지 확인해 주세요.'
-  },
-  '4uQe-J5qM2c': {
-    action:'원본이 말하는 헤드를 던지는 두 요소를 구분하고 손을 던지는 동작과 다른지 확인하세요.',
-    feel:'내 영상에서는 두 요소 중 하나씩만 보며 손·클럽헤드가 움직이는 순서를 기록하세요.',
-    check:'제가 손목을 급하게 푸는지 헤드가 자연스럽게 통과하는지 구분해 주세요.'
   },
   '7sNhk9PhBxc': {
     action:'원본의 두 가지 기준을 그대로 적고 각각 셋업·회전·팔 중 어디의 설명인지 확인하세요.',
@@ -1529,11 +1632,6 @@ const golfMetadataPractice = {
     feel:'내 스윙에서는 그립·어깨 긴장을 각각 기록해 클럽 흐름과 함께 달라지는지만 비교하세요.',
     check:'제게 불필요한 긴장은 어디에서 시작되고 유지해야 할 힘은 무엇인지 확인해 주세요.'
   },
-  't_9sQjrS2o4': {
-    action:'“툭”이라는 힘의 크기보다 임팩트 전후 클럽헤드와 몸의 순서를 원본에서 확인하세요.',
-    feel:'허리 높이 스윙에서 거리 대신 타점과 시작 방향을 기록해 원본의 순서와 비교하세요.',
-    check:'제 임팩트에도 이 순서가 필요한지, 작은 힘과 느슨한 구조를 어떻게 구분할지 확인해 주세요.'
-  },
   'zT6zJCJ59js': {
     action:'원본이 그립의 손가락 위치·압력·페이스 정렬 중 실제로 어떤 기준을 설명하는지 확인하세요.',
     feel:'같은 카메라 각도의 내 그립 사진에서 해당 기준 하나만 비교하고 손 크기 차이를 함께 기록하세요.',
@@ -1598,6 +1696,22 @@ const golfReviewedPractice = {
   'RSbjGWhzEnQ': {
     action:'상체로 먼저 치는 힘을 줄이고 팔을 축 방향으로 내린 뒤 헤드 무게가 떨어지는 시점에 하체 회전을 연결합니다.',
     feel:'팔 내리기와 회전을 느리게 나누어 익힌 뒤 하나로 연결하며 헤드 무게가 오는 타이밍을 살펴봅니다.'
+  },
+  '4uQe-J5qM2c': {
+    action:'그립 쪽을 당기는 힘과 헤드를 밀어내는 힘을 함께 쓰고 몸이 위로 들리지 않게 가슴 회전을 이어갑니다.',
+    feel:'손목만 급히 풀기보다 가슴이 왼쪽으로 도는 흐름 속에서 클럽헤드가 통과하는 순서를 살펴봅니다.'
+  },
+  't_9sQjrS2o4': {
+    action:'반스윙에서 왼팔이 클럽을 왼쪽으로 리드해 손·그립이 배꼽보다 왼쪽에서 맞는 구간을 확인합니다.',
+    feel:'거리보다 타점과 시작 방향을 기록하며 압축 임팩트가 과한 핸드 퍼스트나 몸의 쏠림으로 변하지 않는지 살펴봅니다.'
+  },
+  'ldkU0D_Ylms': {
+    action:'체중 이동 뒤 팔이 내려올 때 급히 지나가지 않고 짧게 기다린 뒤 헤드를 툭 놓는 순서를 확인합니다.',
+    feel:'작은 스윙에서 헤드가 풀리는 시점을 비교하되 연습용 기다림을 실제 스윙의 완전 정지로 만들지 않습니다.'
+  },
+  'M-ryH3IhUXI': {
+    action:'구분 동작으로 오른팔꿈치가 옆구리 쪽으로 들어오는 궤도를 본 뒤 임팩트에서 오른손 놓기를 따로 확인합니다.',
+    feel:'팔꿈치를 억지로 조이지 않고 몸통과 함께 내려오는지, 오른손 릴리스가 너무 일찍 시작되지 않는지 살펴봅니다.'
   }
 };
 const golfPracticeLabels = {

@@ -55,6 +55,11 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('[data-nav=golf]').click();await page.locator('.g-video-grid').first().waitFor();
   assert((await page.locator('.g-mini-takeaway').count())>0,'golf list shows practical takeaways');
   assert.equal(await page.locator('.g-mini-takeaway').first().evaluate(el=>!!el.textContent.trim()),true);
+  assert.match(await page.locator('.g-recent-section').textContent(),/내가 앱에 처음 등록한 시각 기준/);
+  assert.match(await page.locator('.g-mini-date').first().textContent(),/등록/);
+  const registeredRecent=await page.evaluate(()=>window.GolfContent.recentVideos(Date.parse('2026-09-30T16:00:00+09:00')).map(v=>v.id));
+  assert.deepEqual(registeredRecent.slice(0,2),['ldkU0D_Ylms','M-ryH3IhUXI'],'same-time registrations keep source order');
+  assert(registeredRecent.includes('t_9sQjrS2o4'),'older YouTube video is recent by app registration');
   assert.equal(await page.locator('.g-mini-detail').first().getAttribute('aria-label'),null,'takeaway and evidence remain in the link accessible name');
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');

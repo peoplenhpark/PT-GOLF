@@ -15,7 +15,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   ctx.window.AppDrafts={bind:()=>{},clear:()=>true,hasPending:()=>false};
   vm.runInContext(read('js/golf.js'),ctx);
   const hub=ctx.window.GolfHub,c=ctx.window.GolfContent;
-  const latest=Math.max(...c.videos.map(v=>Date.parse(v.publishedAt)));
+  const latest=Math.max(...c.videos.map(v=>Date.parse(v.addedAt)));
   vm.runInContext(`Date.now=()=>${latest}`,ctx);
   const removedRequest=store.requestDeletion({kind:'video',contentId:'ZZZZZZZZZZZ',title:'중앙 삭제 완료 영상'});
   const app={innerHTML:'',querySelector:()=>null,addEventListener:(type,fn)=>{handlers[type]=fn;}},handlers={},confirmations=[],issues=[],messages=[];
@@ -51,7 +51,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   const recentId=c.recentVideos()[0].id,priorRecent=c.recentVideos().length;
   render({golfTab:'videos',golfId:recentId});click('delete-video',recentId);confirmations.at(-1).callback();render({golfTab:'videos'});
   assert(app.innerHTML.includes(`최근 7일 · ${priorRecent-1}편`));
-  assert(app.innerHTML.includes('전체 36편'));
+  assert(app.innerHTML.includes('전체 38편'));
   assert(!app.innerHTML.includes(`href="#golf/videos/${recentId}"`));
   render({golfTab:'videos',golfGroup:'arms-impact'});
   assert(!app.innerHTML.includes('href="#golf/videos/9YWDNMyTQy4"'));
@@ -64,7 +64,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   assert(!store.isDeleted('video','9YWDNMyTQy4'));
   assert(app.innerHTML.includes('href="#golf/videos/9YWDNMyTQy4"'));
   assert.equal(store.getDeletionRequests('video').length,1);
-  assert.equal(c.videos.length,38,'source objects remain intact until a later approved release');
+  assert.equal(c.videos.length,40,'source objects remain intact until a later approved release');
   const visible=c.videos.find(v=>!store.isDeleted('video',v.id));
   const issueCount=issues.length;
   render({golfTab:'videos',golfId:visible.id});rejectWrite=true;click('delete-video',visible.id);confirmations.at(-1).callback();
