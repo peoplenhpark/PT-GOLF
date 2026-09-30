@@ -55,10 +55,11 @@ for(let i=0;i<12;i++){let b=new THREE.Mesh(new THREE.BoxGeometry(.31,.035,.19),r
 const cableGeo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(),new THREE.Vector3()]);const cable=new THREE.Line(cableGeo,new THREE.LineBasicMaterial({color:'#c8ccd3'}));scene.add(cable);
 const floor=new THREE.Mesh(new THREE.CircleGeometry(1.35,80),mat('#20232b',.9));floor.rotation.x=-Math.PI/2;floor.position.set(0,.002,.25);floor.receiveShadow=true;scene.add(floor);
 const grid=new THREE.GridHelper(2.4,12,'#343944','#2a2e38');grid.position.set(0,.004,.25);scene.add(grid);
-let yaw=1.12,pitch=.10,distance=3.55,phase=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,speed=1,last=performance.now();
+const autoplay=new URLSearchParams(location.search).get('autoplay')==='1';
+let yaw=1.12,pitch=.10,distance=3.55,phase=0,playing=autoplay,speed=.5,last=performance.now();
 const target=new THREE.Vector3(0,1.06,.10),pointers=new Map();let pinch=0,previous;
 function updateCamera(){camera.position.set(target.x+distance*Math.cos(pitch)*Math.sin(yaw),target.y+distance*Math.sin(pitch),target.z+distance*Math.cos(pitch)*Math.cos(yaw));camera.lookAt(target);canvas.dataset.yaw=yaw.toFixed(3);canvas.dataset.distance=distance.toFixed(3);}
-function play(v){playing=v;$('play').textContent=v?'일시정지':'재생';}play(playing);
+function play(v){playing=v;canvas.dataset.playing=String(v);$('play').textContent=v?'일시정지':'재생';}play(playing);canvas.dataset.speed=String(speed);
 function pose(t){let q,stage,title,text;if(t<.12){q=0;stage='01 준비';title='준비 · 기구 가까이 서기';text='손잡이를 잡고 팔꿈치를 몸 옆에 고정하세요.';}
 else if(t<.46){let u=(t-.12)/.34;q=u*u*(3-2*u);stage='02 팔 펴기';title='팔꿈치를 펴서 아래로';text='배에 힘을 주고, 가슴과 몸통은 그대로 유지하세요.';}
 else if(t<.60){q=1;stage='02 삼두의 조임';title='팔 뒤쪽의 조임을 느끼기';text='어깨로 누르지 않고 삼두에 힘이 들어오는지 확인하세요.';}
@@ -75,7 +76,7 @@ for(let evt of ['pointerup','pointercancel','lostpointercapture'])canvas.addEven
 canvas.addEventListener('wheel',e=>{e.preventDefault();distance=THREE.MathUtils.clamp(distance*Math.exp(e.deltaY*.001),1.5,6);updateCamera();},{passive:false});
 canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-'].includes(e.key))return;e.preventDefault();if(e.key==='ArrowLeft')yaw+=.18;if(e.key==='ArrowRight')yaw-=.18;if(e.key==='ArrowUp')pitch=Math.min(.85,pitch+.1);if(e.key==='ArrowDown')pitch=Math.max(-.3,pitch-.1);if(e.key==='+'||e.key==='=')distance=Math.max(1.5,distance-.2);if(e.key==='-')distance=Math.min(6,distance+.2);updateCamera();});
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{yaw={front:0,side:Math.PI/2,back:Math.PI,reset:1.12}[b.dataset.view];pitch=.1;if(b.dataset.view==='reset')distance=3.55;updateCamera();});
-$('play').onclick=()=>play(!playing);$('speed').onchange=e=>speed=Number(e.target.value);$('progress').oninput=e=>{play(false);phase=Number(e.target.value)/1000;if(phase===1)phase=.9999;pose(phase);};
+$('play').onclick=()=>play(!playing);$('speed').onchange=e=>{speed=Number(e.target.value);canvas.dataset.speed=String(speed);};$('progress').oninput=e=>{play(false);phase=Number(e.target.value)/1000;if(phase===1)phase=.9999;pose(phase);};
 $('machine').onclick=()=>{machine.visible=!machine.visible;cable.visible=machine.visible;$('machine').setAttribute('aria-pressed',machine.visible?'true':'false');};
 document.addEventListener('visibilitychange',()=>last=performance.now());canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();play(false);$('error').hidden=false;$('error').textContent='3D 화면 연결이 끊겼습니다. 페이지를 새로고침해 주세요.';});
 updateCamera();resize();pose(phase);

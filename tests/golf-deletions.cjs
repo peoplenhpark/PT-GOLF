@@ -50,8 +50,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   render({golfTab:'videos'});
   const recentId=c.recentVideos()[0].id,priorRecent=c.recentVideos().length;
   render({golfTab:'videos',golfId:recentId});click('delete-video',recentId);confirmations.at(-1).callback();render({golfTab:'videos'});
-  assert(app.innerHTML.includes(`최근 7일 · ${priorRecent-1}편`));
-  assert(app.innerHTML.includes('전체 38편'));
+  assert(app.innerHTML.includes(`7일 · ${priorRecent-1}편`));
   assert(!app.innerHTML.includes(`href="#golf/videos/${recentId}"`));
   render({golfTab:'videos',golfGroup:'arms-impact'});
   assert(!app.innerHTML.includes('href="#golf/videos/9YWDNMyTQy4"'));

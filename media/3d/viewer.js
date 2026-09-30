@@ -2,8 +2,8 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),vp=$('viewport');
 try{
- const id=new URLSearchParams(location.search).get('exercise'),entry=window.ExerciseMedia[id];
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=95#exercise/'+id);return;}
+ const params=new URLSearchParams(location.search),id=params.get('exercise'),entry=window.ExerciseMedia[id];
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=96#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -188,6 +188,26 @@ try{
      beam(equipment,[s*.39,1.48,.80],p.wrists[i],.03);handle(p.wrists[i],true);
      const o=mesh(equipment,cylinder,rubber);o.position.set(s*.46,1.29,.67);o.scale.set(.14,.055,.14);o.rotation.z=Math.PI/2;
     }break;
+    case 'dyrowmachine':{
+     // Plate-loaded ISO-Lateral D.Y. Row: seat/chest pad plus two independent high pivots.
+     block(equipment,[0,.43,-.06],[.38,.12,.40],rubber,[0,.98,-.18]);
+     block(equipment,[0,.97,.13],[.30,.38,.10],rubber,p.up);
+     beam(equipment,[0,.03,-.08],[0,.91,.05],.045);
+     beam(equipment,[-.42,.025,-.30],[.42,.025,-.30],.045);
+     for(let i=0;i<2;i++){
+      const s=i?1:-1,pivot=e.pivots[i];
+      beam(equipment,[s*.67,.04,.62],[s*.67,1.59,.46],.043);
+      beam(equipment,[s*.67,1.59,.46],pivot,.043);
+      beam(equipment,pivot,[s*.43,1.30,.36],.035);
+      beam(equipment,[s*.43,1.30,.36],p.wrists[i],.030);
+      // Angled handle follows the machine's underhand-grip setup.
+      beam(equipment,add(p.wrists[i],[s*.055,.035,0]),add(p.wrists[i],[-s*.055,-.035,0]),.017,rubber);
+      beam(equipment,[s*.69,1.17,.45],[s*.86,1.17,.45],.023);
+      const plate=mesh(equipment,cylinder,rubber);plate.position.set(s*.75,1.17,.45);plate.scale.set(.145,.055,.145);plate.rotation.z=Math.PI/2;
+     }
+     beam(equipment,[-.70,1.63,.46],[.70,1.63,.46],.040);
+     break;
+    }
     case 'lowcable':tower(1.15);for(const a of p.wrists){cable([0,.84,1.15],a);handle(a,true);}break;
     case 'footplate':block(equipment,[0,.24,.64],[.55,.07,.24]);break;
     case 'chestpad':block(equipment,[0,1.0,.145],[.25,.28,.1]);beam(equipment,[0,.2,.7],[0,1.0,.2],.035);break;
@@ -221,11 +241,12 @@ try{
  }
  const floor=new THREE.Mesh(new THREE.CircleGeometry(1.8,80),mat('#1b1f26',.95));floor.rotation.x=-Math.PI/2;floor.position.y=-.016;scene.add(floor);
  const grid=new THREE.GridHelper(3.4,17,'#353b47','#272c35');grid.position.y=-.012;scene.add(grid);
- let yaw=1.05,pitch=.20,phase=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,speed=1,last=performance.now();
+ const autoplay=params.get('autoplay')==='1';
+ let yaw=1.05,pitch=.20,phase=0,playing=autoplay,speed=.5,last=performance.now();
  let current=P.pose(entry.kind,0,id),distance=current.distance,defaultDistance=distance;
  let target=new THREE.Vector3(...current.target),pointers=new Map(),pinch=0;
  function updateCamera(){camera.position.set(target.x+distance*Math.cos(pitch)*Math.sin(yaw),target.y+distance*Math.sin(pitch),target.z+distance*Math.cos(pitch)*Math.cos(yaw));camera.lookAt(target);canvas.dataset.yaw=yaw.toFixed(3);canvas.dataset.distance=distance.toFixed(3);}
- function play(v){playing=v;$('play').textContent=v?'일시정지':'재생';}play(playing);
+ function play(v){playing=v;canvas.dataset.playing=String(v);$('play').textContent=v?'일시정지':'재생';}play(playing);canvas.dataset.speed=String(speed);
  function pose(t){
   current=P.pose(entry.kind,t,id);used={};human(current);gear(current);
   for(const [key,list]of Object.entries(pools))for(let i=used[key]||0;i<list.length;i++)list[i].visible=false;
@@ -238,7 +259,7 @@ try{
   canvas.dataset.phase=t.toFixed(4);canvas.dataset.kind=entry.kind;
  }
  // Read-only snapshot for deterministic pose and WebGL verification.
- window.exerciseViewer={snapshot:()=>JSON.parse(JSON.stringify({id,kind:entry.kind,phase,pose:current,yaw,distance,meshCount:body.children.length}))};
+ window.exerciseViewer={snapshot:()=>JSON.parse(JSON.stringify({id,kind:entry.kind,phase,pose:current,yaw,distance,playing,speed,meshCount:body.children.length}))};
  function resize(){const r=vp.getBoundingClientRect();renderer.setSize(r.width,r.height);camera.aspect=r.width/r.height;camera.updateProjectionMatrix();}
  new ResizeObserver(resize).observe(vp);
  function orbit(dx,dy){yaw-=dx*.008;pitch=THREE.MathUtils.clamp(pitch+dy*.005,-.25,1.25);updateCamera();}
@@ -248,7 +269,7 @@ try{
  canvas.addEventListener('wheel',e=>{e.preventDefault();distance=THREE.MathUtils.clamp(distance*Math.exp(e.deltaY*.001),1.3,7);updateCamera();},{passive:false});
  canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-'].includes(e.key))return;e.preventDefault();if(e.key==='ArrowLeft')yaw+=.18;if(e.key==='ArrowRight')yaw-=.18;if(e.key==='ArrowUp')pitch=Math.min(1.25,pitch+.1);if(e.key==='ArrowDown')pitch=Math.max(-.25,pitch-.1);if(e.key==='+'||e.key==='=')distance=Math.max(1.3,distance-.2);if(e.key==='-')distance=Math.min(7,distance+.2);updateCamera();});
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{yaw={front:0,side:Math.PI/2,back:Math.PI,reset:1.05}[b.dataset.view];pitch=.20;if(b.dataset.view==='reset')distance=defaultDistance;updateCamera();});
- $('play').onclick=()=>play(!playing);$('speed').onchange=e=>speed=Number(e.target.value);
+ $('play').onclick=()=>play(!playing);$('speed').onchange=e=>{speed=Number(e.target.value);canvas.dataset.speed=String(speed);};
  $('progress').oninput=e=>{play(false);phase=Math.min(.99999,Number(e.target.value)/1000);pose(phase);};
  $('machine').onclick=()=>{equipment.visible=!equipment.visible;$('machine').setAttribute('aria-pressed',String(equipment.visible));};
  document.addEventListener('visibilitychange',()=>last=performance.now());

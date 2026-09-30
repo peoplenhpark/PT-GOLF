@@ -325,11 +325,28 @@ window.ExerciseMedia = {
     "viewer": "media/3d/viewer.html?exercise=pt_lateralraise"
   },
   "pt_uprightrow": {
-    "name": "서서 당기기 (사진 확인 예정)",
-    "pending": true,
-    "pendingMessage": "현재 등록됐던 업라이트 로우와 다른 운동입니다. 다음 사진으로 기구와 동작을 확인한 뒤 이미지와 3D를 추가합니다.",
-    "images": [],
-    "viewer": ""
+    "name": "해머 스트렝스 아이소-레터럴 D.Y. 로우",
+    "kind": "dyrow",
+    "captions": [
+      "가슴을 패드에 고정",
+      "팔꿈치를 아래·뒤로 당기기"
+    ],
+    "notes": [
+      "기울어진 시트·가슴 패드에 몸을 고정하고, 언더핸드 그립으로 손잡이를 잡아 팔을 위·앞으로 뻗는다",
+      "몸통을 젖히지 않고 팔꿈치를 아래·뒤로 보내 윗배 쪽으로 당긴다"
+    ],
+    "focus": {
+      "muscle": "광배근·대원근 중심의 등 + 능형근·이두 보조",
+      "move": "가슴을 패드에 고정하고 팔꿈치를 위·앞에서 아래·뒤로 보내 손잡이를 윗배 쪽으로 당긴다",
+      "feel": "몸통은 흔들리지 않고 겨드랑이 뒤쪽에서 등 아래 방향으로 조여드는 느낌"
+    },
+    "target": "back",
+    "images": [
+      "docs/images/guides/pt_uprightrow-start.webp",
+      "docs/images/guides/pt_uprightrow-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_uprightrow",
+    "visualNote": "첨부 사진과 제조사 설명에서 확인한 언더핸드 그립·머리 위 피벗·기울어진 시트와 가슴 패드·좌우 독립 레버를 반영한 예시입니다. 실제 사용 중량은 미확인입니다."
   },
   "pt_vsquat": {
     "name": "V-스쿼트",

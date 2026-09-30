@@ -45,7 +45,7 @@
       "processing": "The standing start frame used the generated lowered frame as the recent-image edit reference; original pixels were encoded to WebP quality 88."
     }
   ],
-  "notes": "Local referenced-image paths failed in the Windows image tool wrapper, so recent conversation images were used for edit continuity. Initial bare anatomical figure prompts for two assets were blocked by an output safety false positive; fully clothed gray educational models preserved the charcoal, grayscale and muted-red target style. The corrections array preserves the later user-confirmed changes separately from the original v92 generation history. Prompt text there is a faithful summary of the generation calls rather than a verbatim tool transcript. The corrected assets are deployed in public v94/seed v39; the standing-pull entry remains photo-pending and intentionally has no current images or 3D.",
+  "notes": "The original v92 generation records and v94 corrections remain as history. The 2026-09-30 v96 corrections supersede the photo-pending upright-row entry with the user-confirmed D.Y. Row and lower the dumbbell RDL bottom position. Project-referenced outputs are stored as optimized WebP files; generated source PNGs remain in the built-in image tool output directory.",
   "corrections": [
     {
       "id": "pt_seal_row",
@@ -146,6 +146,59 @@
         "docs/images/guides/pt_dumbbell_rdl-end.webp"
       ],
       "processing": "Each generated male frame was fit without distortion to 700x933 on white using Pillow ImageOps.pad with LANCZOS and encoded as WebP quality 90."
+    },
+    {
+      "id": "pt_uprightrow",
+      "revision": "user-supplied equipment photos confirmed Hammer Strength ISO-LATERAL D.Y. ROW for v96",
+      "status": "the v94 photo-pending record is replaced by two D.Y. Row guide images and a dedicated 3D movement while the existing exercise ID is preserved",
+      "confirmed": [
+        "the machine nameplate reads HAMMER STRENGTH ISO-LATERAL D.Y. ROW",
+        "plate-loaded left and right lever arms move independently",
+        "the movement uses an underhand grip and overhead pivots",
+        "the angled seat and chest pad stabilize a seated high-to-low row"
+      ],
+      "unknown": [
+        "training load used in the photographed session",
+        "user-specific seat height",
+        "user-specific end range, repetitions and sets"
+      ],
+      "references": [
+        "C:/Users/peopl/Downloads/KakaoTalk_20260930_224746283.jpg",
+        "C:/Users/peopl/Downloads/KakaoTalk_20260930_224746938.jpg",
+        "C:/Users/peopl/Downloads/KakaoTalk_20260930_224747615.jpg",
+        "https://www.lifefitness.com/en-us/catalog/strength-training/plate-loaded/plate-loaded-iso-lateral-d-y-row"
+      ],
+      "prompts": {
+        "start": "Use case: scientific-educational\nAsset type: PT exercise preparation image for a mobile exercise guide\nPrimary request: Create the START position of the Hammer Strength plate-loaded ISO-LATERAL D.Y. ROW shown in the three reference photos.\nInput images: Images 1-3 are equipment references; preserve the distinctive black plate-loaded machine, overhead pivots, independent lever arms, angled seat, small chest pad, underhand handles, and weight plates.\nScene/backdrop: clean dark charcoal studio background and floor, no gym clutter.\nSubject: one fit adult male anatomical fitness model, seated facing the machine, pelvis fully on the angled seat, feet firmly braced, chest gently supported on the pad, neutral spine. He holds both handles with an underhand grip. Arms are nearly extended upward and forward along the machine's natural arc, elbows soft rather than locked, shoulders controlled and not shrugged.\nStyle/medium: realistic premium exercise-instruction photography with subtle anatomical muscle overlay.\nComposition/framing: full-body three-quarter side view; show the entire model, seat, chest pad, handles, lever path, and enough of the machine to understand setup. Portrait 3:4 composition.\nLighting/mood: crisp neutral studio lighting.\nColor palette: dark machine/background; grayscale skin and clothing; muted red overlay only on latissimus dorsi, rhomboids, middle trapezius, rear deltoids, and biceps.\nConstraints: biomechanically plausible D.Y. Row setup; chest remains against pad; underhand grip; machine matches the references; no text, no arrows, no labels, no logo, no watermark.\nAvoid: upright-row barbell, standing pose, cable machine, lat pulldown, overhand grip, unsupported torso, extra limbs, distorted hands, disconnected handles, unrealistic machine geometry.",
+        "end": "Use case: scientific-educational\nAsset type: PT exercise action image for a mobile exercise guide\nPrimary request: Create the END position of the Hammer Strength plate-loaded ISO-LATERAL D.Y. ROW. Image 1 is the required visual identity, camera, model, studio, and machine reference for the paired START image. Images 2-4 are real equipment references.\nScene/backdrop: preserve Image 1's clean dark charcoal studio background.\nSubject: preserve the same fit adult male anatomical model, clothing, seat position, feet, torso angle, camera angle, and machine from Image 1. He stays seated with pelvis on the angled seat and chest supported on the pad. Both handles are pulled down and back along the overhead-pivot natural arc toward the lower ribs/upper waist. Elbows travel down and back close to the torso, shoulder blades draw together without shrugging, wrists stay neutral in the underhand grip.\nStyle/medium: same realistic premium exercise-instruction photography and subtle anatomical overlay as Image 1.\nComposition/framing: same full-body three-quarter rear-side portrait 3:4 composition as Image 1; show the whole body and the machine's moving arms clearly.\nLighting/mood: match Image 1.\nColor palette: match Image 1; muted red overlay only on latissimus dorsi, rhomboids, middle trapezius, rear deltoids, and biceps.\nConstraints: change the exercise phase from START to END only; preserve machine geometry, identity, subject, chest contact, seat and feet; biomechanically plausible D.Y. Row contraction; no text, arrows, labels, logo, or watermark.\nAvoid: standing pose, upright-row barbell, cable machine, lat pulldown, overhand grip, torso leaning away from pad, excessive lumbar arch, shoulders shrugged, handles at the neck, extra limbs, distorted hands, disconnected handles."
+      },
+      "sources": [
+        "exec-3dadbb5d-7b09-47bd-9f31-9e32afcd91f7.png",
+        "exec-0679002a-3138-4e5c-91ff-747793ec6b69.png"
+      ],
+      "outputs": [
+        "docs/images/guides/pt_uprightrow-start.webp",
+        "docs/images/guides/pt_uprightrow-end.webp"
+      ],
+      "processing": "The built-in image_gen tool used the three user photos as equipment references; the generated start frame was also used to hold identity and composition for the end frame. Both outputs were fit to 700x933 with Pillow LANCZOS and encoded as WebP quality 86."
+    },
+    {
+      "id": "pt_dumbbell_rdl",
+      "revision": "user-requested lower-hip action-frame correction for v96",
+      "status": "the action image and 3D bottom pose lower the pelvis while preserving one vertical dumbbell, the two-hand goblet grip and a neutral-spine hip hinge",
+      "confirmed": [
+        "the action position should lower the hips more than the v94 image",
+        "exactly one dumbbell remains on the body centerline",
+        "the movement retains a hip hinge with additional knee flexion rather than becoming a deep squat"
+      ],
+      "unknown": [
+        "exact user-specific bottom depth",
+        "training load"
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: PT exercise action image for a mobile exercise guide\nPrimary request: Edit Image 1 so the male model performs the same single-dumbbell goblet Romanian deadlift action with his hips moderately lower than in the original.\nInput images: Image 1 is the edit target and action pose. Image 2 is the paired start image and identity/style reference.\nRequired pose change: lower the pelvis about 10-15 cm by adding modest knee flexion and letting the hips travel slightly farther down and back. Keep a clear hip hinge, neutral straight spine, long neck, heels planted, knees tracking over the feet, and the single dumbbell descending on the body's centerline between the knees. The dumbbell remains held vertically with both hands around its upper head/handle, matching the paired start.\nInvariants: preserve the same male model, face, clothing, shoes, white background, grayscale anatomical illustration style, muted red posterior-chain muscle overlay, camera angle, framing, and exactly one dumbbell. Keep the torso hinged and the shoulders above the dumbbell.\nConstraints: anatomically plausible; lower hips without turning it into a deep squat; full body visible; no text, no labels, no watermark.\nAvoid: two dumbbells, dumbbell under the chin in the end pose, rounded lower back, knees collapsing inward, heels lifted, excessive squat depth, altered identity, extra limbs or fingers.",
+      "source": "exec-2ab856ba-ebf3-4b80-a7ad-dc998ad3cbde.png",
+      "output": "docs/images/guides/pt_dumbbell_rdl-end.webp",
+      "processing": "The built-in image_gen tool used the existing v94 start and end WebPs as references. The result was fit to 700x933 with Pillow LANCZOS and encoded as WebP quality 86."
     }
   ]
 }

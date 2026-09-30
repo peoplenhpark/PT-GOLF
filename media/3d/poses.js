@@ -1,5 +1,5 @@
 /* Exercise-specific joint poses in metres. x=left/right, y=up, z=front.
-   Coaching variants come from seed v39; rendering never modifies exercise records. */
+   Coaching variants come from seed v40; rendering never modifies exercise records. */
 (function(root){
 'use strict';
 const add=(a,b)=>a.map((v,i)=>v+b[i]), sub=(a,b)=>a.map((v,i)=>v-b[i]), mul=(a,k)=>a.map(v=>v*k);
@@ -108,15 +108,17 @@ function pose(kind,t,id){
   const padCenter=add(mix(p.hip,p.chest,.52),mul(p.front,.13));
   p.equipment=[{type:'inclinesealbench',center:padCenter},{type:'dumbbells'}];
   p.target=[0,.77,.02];p.distance=4.1;
- }else if(kind==='uprightrow'){
-  // EZ-bar path ends below the chest; the neck and shoulders never shrug upward.
-  p=base([0,.90,0]);
-  legs(p,S.map(s=>[s*.16,.065,.0]));
-  arms(p,S.map(s=>[s*.225,.81+.41*q,.12+.02*q]),S.map(s=>[s,.15,-.20]));
-  p.equipment=[{type:'ezbar'}];p.target=[0,.94,.06];p.distance=3.9;
+ }else if(kind==='dyrow'){
+  // Hammer Strength ISO-Lateral D.Y. Row: angled support, overhead pivots and independent high-to-low handles.
+  p=base([0,.62,-.02],.10);
+  legs(p,S.map(s=>[s*.16,.065,.52]),S.map(s=>[s*.12,0,1]));
+  const extended=S.map(s=>[s*.28,1.32,.43]),pulled=S.map(s=>[s*.25,.93,.23]);
+  arms(p,extended.map((a,i)=>mix(a,pulled[i],q)),S.map(s=>[s*.55,-.55,-.75]));
+  p.equipment=[{type:'dyrowmachine',pivots:S.map(s=>[s*.58,1.57,.46])}];
+  p.target=[0,.88,.12];p.distance=4.15;
  }else if(kind==='dbrdl'){
   // Two-foot Romanian deadlift with one vertical dumbbell held by both hands.
-  p=base([0,.90-.06*q,-.03-.22*q],.06+1.0*q);
+  p=base([0,.90-.14*q,-.03-.22*q],.06+1.0*q);
   legs(p,S.map(s=>[s*.16,.065,.04]),S.map(s=>[s*.05,0,1]));
   const highGrip=add(add(p.chest,mul(p.up,.08)),mul(p.front,.18));
   const lowGrip=add(mix(p.shoulders[0],p.shoulders[1],.5),[0,-.55,.02]);

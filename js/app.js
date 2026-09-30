@@ -412,7 +412,8 @@ const Theme = (() => {
       frame.className = 'exercise-3d-frame';
       frame.title = (Store.getById(id)?.name || '운동') + ' 회전형 3D 자세 안내';
       const source = window.ExerciseMedia[id].viewer;
-      frame.src = source + (source.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
+      const versionedSource = source + (source.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
+      frame.src = versionedSource + '&autoplay=1';
       details.querySelector('.exercise-3d-content').append(frame);
     };
     details.addEventListener('toggle', load);

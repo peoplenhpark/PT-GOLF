@@ -65,7 +65,16 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
     report.images+=2;
    }
    await page.locator('.exercise-3d summary').click();
+   assert((await page.locator('.exercise-3d-frame').getAttribute('src')).includes('autoplay=1'),e.id+' 3D opens with autoplay');
    const frame=page.frameLocator('.exercise-3d-frame');await frame.locator('canvas[data-yaw]').waitFor();
+   assert.equal(await frame.locator('#speed').inputValue(),'.5',e.id+' defaults to slow playback');
+   assert.equal(await frame.locator('#play').innerText(),'일시정지',e.id+' starts playing when opened');
+   assert.equal(await frame.locator('canvas').getAttribute('data-playing'),'true',e.id+' playback state');
+   assert.equal(await frame.locator('canvas').getAttribute('data-speed'),'0.5',e.id+' playback speed state');
+   if(e.id==='pt_pullup'||e.id==='pt_pushdown'){
+    const phaseBefore=Number(await frame.locator('canvas').getAttribute('data-phase'));await page.waitForTimeout(160);
+    const phaseAfter=Number(await frame.locator('canvas').getAttribute('data-phase'));assert(phaseAfter>phaseBefore,e.id+' animation advances automatically');
+   }
    await frame.locator('#progress').fill('500');await frame.locator('#progress').dispatchEvent('input');
    await frame.getByRole('button',{name:'뒤',exact:true}).click();
    assert(Math.abs(Number(await frame.locator('canvas').getAttribute('data-yaw'))-Math.PI)<.001);
