@@ -7,6 +7,7 @@
 - 현재 공개 버전: v96 (2026-09-30 배포 완료). 코드 커밋 9890e4260673145c97f9ba2153465276ab7d2757. GitHub Actions 실행 36730903162의 verify/deploy 모두 성공했다.
 - 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=96#exercise/pt_uprightrow . 공개 release.json은 v96, seed는 v40, PT 50개와 고유 골프 영상 40편을 반환한다. 공개 Chrome 320·390·768px에서 D.Y. 로우 2컷·전용 3D·0.5배 자동 시작, 덤벨 RDL의 낮춘 골반, 골프 상세의 즐겨찾기·수정 버튼, 가로 넘침·브라우저 오류 0건을 확인했다.
 - 다음 배포 대기: 없음.
+- 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 앱 릴리스 v96·seed v40을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
 - 기본 운동/원칙: `data/seed.json`. PT 미디어 등록부: `js/exercise-media.js`. 골프 영상/주제: `js/golf-data.js`.
@@ -46,7 +47,7 @@
 
 ## 기록과 테스트 구분
 
-- `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
+- `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
 

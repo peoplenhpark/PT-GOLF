@@ -4,6 +4,8 @@
 
 **현재 운영 기준과 사용자 결정은 [docs/CURRENT.md](docs/CURRENT.md)를 확인하세요.** 이전 HANDOFF 문서는 역사 자료입니다.
 
+새 작업 세션은 [PT & GOLF VER1.5 핸드오프](docs/PT_GOLF_VER1_5_HANDOFF.md)에서 시작합니다. VER1.5는 세션 이름이며 현재 공개 앱 버전은 v96입니다.
+
 ## 실행
 
 ```sh
