@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: v96 (2026-09-30 배포 완료). 코드 커밋 9890e4260673145c97f9ba2153465276ab7d2757. GitHub Actions 실행 36730903162의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=96#exercise/pt_uprightrow . 공개 release.json은 v96, seed는 v40, PT 50개와 고유 골프 영상 40편을 반환한다. 공개 Chrome 320·390·768px에서 D.Y. 로우 2컷·전용 3D·0.5배 자동 시작, 덤벨 RDL의 낮춘 골반, 골프 상세의 즐겨찾기·수정 버튼, 가로 넘침·브라우저 오류 0건을 확인했다.
-- 다음 배포 대기: v97 HT 섹션·PT 연동·HT 첫 영상·준비/동작 이미지·전용 3D. 로컬 Node/브라우저 검증 완료. 2026-10-02 사용자 배포 승인으로 게시를 진행 중이며 완료 전 공개 기준은 v96이다.
+- 현재 공개 버전: v97 (2026-10-02 배포 완료). 코드 커밋 bdf31041a7b5b13d066074f3fec1e8f230045b1f. GitHub Actions 실행 37005065389의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=97#exercise/ht_bulgarian_split_squat . 공개 release.json은 v97, seed는 v41이며 PT 50개·HT 1개·스윙 노트 4개를 반환한다. 공개 앱의 v96→v97 갱신과 기존 즐겨찾기 유지, HT 준비/동작 이미지 각 700px 로딩, 전용 3D의 느린 자동 재생·PT 연결을 확인했다. 현재 화면의 가로 넘침과 브라우저 오류는 없었다. 기존 Three.js 배포 형식의 deprecation 경고 1건은 남아 있다.
+- 다음 배포 대기: 없음. HT 섹션·PT 연동·HT 첫 영상·준비/동작 이미지·전용 3D를 v97로 배포했다.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -73,7 +73,7 @@
 - 320·390·768px에서 홈·HT 목록·HT 상세·연관 PT 상세의 가로 넘침과 메뉴 글자 잘림 없음. 기존 골프·PT 이미지/3D·저장·초안·서비스 워커 회귀도 통과했다. 실제 사용자 저장소에는 테스트 데이터를 쓰지 않았다.
 - HT 전용 3D 1,001프레임에서 관절 길이·앞발 고정·뒷발/벤치 접촉·연속성·중립 척추를 검증했다. 320·390·768px에서 2컷 로딩·3D 컨트롤·시점 회전·확대·슬라이더·0.5배 자동 시작을 확인했고, 오프라인에서도 두 이미지와 3D·개인 메모가 보존됐다.
 - 로컬 Chrome HT 상세에서 YouTube 임베드의 실제 재생을 확인했다. 앱 내 미리보기에서도 새 2컷과 전용 3D를 열어 확인했다.
-- 2026-10-02 사용자가 “배포해줘”로 공개 배포를 승인했다. 검증된 v97을 main에 게시하고 워크플로 성공·공개 확인 증거를 기록한다.
+- 2026-10-02 사용자 배포 승인 후 코드 커밋 bdf31041a7b5b13d066074f3fec1e8f230045b1f를 main에 게시했다. https://github.com/peoplenhpark/PT-GOLF/actions/runs/37005065389 의 verify/deploy가 모두 성공했으며 공개 v97·seed v41·HT 2컷·전용 3D를 확인했다. 개인 저장소에 테스트 데이터를 쓰지 않았다.
 
 ## v96 반영 범위 · 2026-09-30
 
