@@ -89,6 +89,7 @@ const Theme = (() => {
     return `<nav class="tabbar">
       ${t('home', '🏠', '홈')}
       ${t('pt', '🏋️', 'PT')}
+      ${t('ht', '🏡', 'HT')}
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
@@ -196,7 +197,7 @@ const Theme = (() => {
       return `<a class="part ${p.id}" href="#${p.id}" data-part-open="${p.id}">
         <div class="ico">${p.icon}</div>
         <div><div class="nm">${esc(p.label)}</div>
-        <div class="cnt">${p.id === 'golf' ? '유튜브 · 레슨 · 스윙 노트' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
+        <div class="cnt">${p.id === 'golf' ? '영상 · 레슨 · 노트' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
       </a>`;
     }).join('');
 
@@ -427,6 +428,23 @@ const Theme = (() => {
   });
   function openExerciseLink(){const next=AppNavigation.fromHash(location.hash);go(next.name,{...next,__historyMode:'replace'});return true;}
 
+  function trainingVideoHtml(e) {
+    const video=e.sourceVideo;
+    if(!video || !/^[A-Za-z0-9_-]{11}$/.test(video.youtubeId))return '';
+    const url='https://www.youtube.com/shorts/'+video.youtubeId;
+    return '<section class="training-video" aria-label="원본 운동 영상"><h2>▶ 원본 영상</h2><h3>'+esc(video.title)+'</h3>'+
+      '<p class="training-meta">'+esc(video.channel)+' · '+esc(video.durationSeconds)+'초 · 공개 '+esc(video.publishedAt)+'</p>'+
+      '<div class="training-player"><button class="btn primary" data-act="training-play">영상 재생</button></div>'+
+      '<a class="btn ghost" href="'+url+'" target="_blank" rel="noopener noreferrer">YouTube에서 보기 ↗</a>'+
+      '<details class="training-evidence"><summary>출처와 확인 범위</summary><p>'+esc(video.evidence)+'</p><p>확인 '+esc(video.verifiedAt)+' · 앱 등록 '+esc(video.registeredAt.slice(0,10))+'</p></details></section>';
+  }
+  function relatedTrainingHtml(e) {
+    const related=Store.getRelatedExercises(e.id);
+    if(!related.length)return '';
+    const label=e.part==='ht'?'PT에서 함께 보기':'HT에서 함께 보기';
+    return '<section class="training-related" aria-label="'+label+'"><h2>'+label+'</h2>'+related.map(({exercise,reason})=>
+      '<div>'+exRow(exercise,null,true,exercise.part==='ht'?'🏡':'🏋️')+'<p class="training-reason">'+esc(reason)+'</p></div>').join('')+'</section>';
+  }
   function renderDetail(id) {
     const e = Store.getById(id);
     if (!e) { go('home'); return; }
@@ -467,6 +485,7 @@ const Theme = (() => {
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
+        ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
 
         ${(e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
@@ -493,7 +512,7 @@ const Theme = (() => {
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 
-        ${hasMedia ? focusHtml(e) + exerciseMediaHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
+        ${hasMedia ? focusHtml({...e,focus:e.focus||mediaEntry.focus}) + exerciseMediaHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
         ${cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '운동 중 핵심'}
@@ -513,7 +532,7 @@ const Theme = (() => {
           <button type="button" class="memo-box ${memo ? '' : 'ph'}" data-act="memo-edit">${memo ? esc(e.memo) : '운동하며 느낀 점을 적어두세요…'}</button>
         </div>
 
-        ${isGolf ? (window.GolfHub?.related(id)||'') : ''}
+        ${isGolf ? (window.GolfHub?.related(id)||'') : relatedTrainingHtml(e)}
 
         <div class="block del-row">
           <button class="del-btn" data-act="delete">🗑 이 동작 삭제 요청</button>
@@ -527,7 +546,7 @@ const Theme = (() => {
   function go(name,opts={}) {
     const mode=opts.__historyMode||'push';opts={...opts};delete opts.__historyMode;
     const previous=view;view={...view,name,...opts};
-    if(name==='pt')view={name:'part',part:'pt',cat:previous.part==='pt'?previous.cat:null};
+    if(name==='pt'||name==='ht')view={name:'part',part:name,cat:previous.part===name?previous.cat:null};
     if(name==='golf')view={name:'golf-hub',part:'golf',golfTab:'videos',golfId:null};
     if(name==='home'||name==='favorites'||name==='calendar'){view.part=null;view.id=null;}
     if(name==='detail')view.part=Store.getById(view.id)?.part||view.part;
@@ -665,6 +684,14 @@ const Theme = (() => {
       case 'reload': location.reload();break;
       case 'recovery-copy':{const blob=new Blob([JSON.stringify(Persistence.recoveryCopy(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='ptgolf-recovery-'+Store.todayStr()+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);break;}
       case 'recover-restore':askConfirm('중단된 복원 이전의 기록으로 되돌릴까요?',()=>{Persistence.recoverRestore();Store.reload();renderPreserving();toast('이전 기록을 복구했습니다.');},'복구');break;
+      case 'training-play': {
+        const video=Store.getById(view.id)?.sourceVideo,host=app.querySelector('.training-player');
+        if(!host || !/^[A-Za-z0-9_-]{11}$/.test(video?.youtubeId||''))break;
+        const frame=document.createElement('iframe');
+        frame.title=video.title;frame.src='https://www.youtube-nocookie.com/embed/'+video.youtubeId+'?autoplay=1&playsinline=1';
+        frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;
+        frame.referrerPolicy='strict-origin-when-cross-origin';host.replaceChildren(frame);break;
+      }
       case 'add': openEditor(null); break;
       case 'edit': openEditor(Store.getById(view.id)); break;
       case 'fav':
@@ -711,7 +738,7 @@ const Theme = (() => {
   function openEditor(ex) {
     editingId = ex ? ex.id : null;
     document.getElementById('modal-title').textContent = ex ? '동작 수정' : '동작 추가';
-    const part = ex ? ex.part : (view.part || 'pt');
+    const part = ex ? ex.part : 'pt';
     setSeg('f-part', part);
     val('f-category', ex ? ex.category : (view.cat || ''));
     val('f-name', ex ? ex.name : '');

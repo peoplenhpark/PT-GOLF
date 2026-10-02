@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-02",
+  "tool": "built-in image_gen",
+  "exerciseId": "ht_bulgarian_split_squat",
+  "sourceUrl": "https://www.youtube.com/shorts/xJXXLBGYO3c",
+  "referenceStyle": "docs/images/guides/pt_sldl-start.webp",
+  "scope": "Original anatomical illustration of a movement example; not a reproduction of the video's person or a personal measured prescription.",
+  "prompts": {
+    "initialStart": "Create one standalone exercise instruction image for the START/TOP position of a Bulgarian split squat (rear-foot-elevated split squat). Use the supplied reference only for the anatomical male mannequin style: silver gray anatomical adult male with black shorts and black low-profile sneakers, dark charcoal studio backdrop, subtle red highlight on glutes of the FRONT working leg. Do NOT copy the reference's deadlift stance, dumbbell, or support pole.\nFull body visible, portrait 3:4, side three-quarter view, man facing image RIGHT. Front LEFT leg weight-bearing, entire front shoe on floor at image right. Rear RIGHT leg reaches backward to image left; top/instep of rear foot rests comfortably over the near edge of a low stable flat padded exercise bench behind him. Bench must be visibly underneath the rear instep, with realistic broad metal supports on the floor. Rear knee bent naturally, FRONT knee nearly straight but not locked. Hips high, torso mostly upright with small forward lean, neutral straight spine; hands lightly clasped in front of chest. No weights, no handheld support. Clear two-leg anatomy, no limb crossings, no extra limbs. Frame both front sole-ground contact and rear foot-bench contact unobstructed. Bench long axis crosses left-right relative to the body (bench width spans behind the person), not under his pelvis. Educational example only, no numeric angles or prescribed heights. Soft rim light, premium anatomical fitness illustration matching the reference. No words, no labels, no arrows, no watermark. This is the upright START, not the lowered squat.",
+    "anatomyCorrection": "Correct the anatomical error in this generated exercise guide. It currently has THREE legs and THREE feet. Render EXACTLY TWO legs and TWO shoes total. Keep ONE front supporting leg and shoe on the floor, and ONE rear leg bending backward to place its foot on the bench. REMOVE the extra straight leg and extra floor shoe at image-right behind the near supporting leg completely; rebuild that far-side hip into the bent rear leg reaching the bench. Each leg must connect to its own hip: foreground LEFT hip -> foreground straight weight-bearing left leg -> ONE left shoe on the ground; background RIGHT hip -> right thigh angled back -> bent right knee -> right lower leg -> ONE right shoe with instep resting on the bench. There must be no third leg, ghost calf or third shoe. Hands clasped, same gray male mannequin black shorts charcoal scene, same camera, stable bench. Two separated, readable legs, exactly one shoe on ground and one shoe on bench. Top/start pose of Bulgarian split squat. No text.",
+    "end": "Create one standalone exercise instruction image for the LOWERED/BOTTOM position of a Bulgarian split squat (rear-foot-elevated split squat). Match the supplied reference ONLY for the silver gray anatomical adult male mannequin, black shorts, black low-profile sneakers and charcoal studio background. Do NOT copy the reference's deadlift stance, dumbbell or support pole.\nFull body portrait 3:4. Three-quarter side view facing image RIGHT. Front LEFT foot at image right fully flat on floor; rear RIGHT instep remains on a low stable padded bench behind him at image left. Bench has broad grounded metal supports. Hips LOWERED between the staggered feet, front hip and knee flexed; front thigh approaches horizontal, front knee stays in line with front toes. Rear knee bends toward the floor but remains clearly above it. Mild forward torso inclination from hip with neutral spine; hands clasped at chest. Red glute emphasis on FRONT working hip, restrained and illustrative. Both feet remain at their original split-stance positions, rear instep supported on bench edge, rear toes point back/down naturally. No free-floating foot, no foot penetrating bench, no seated pelvis, no weights. Balanced human anatomy, no crossed/extra limbs. Clearly distinct from upright start. Show entire person, bench and both contact points. No labels, text, arrows, watermark, numerical dimensions. Anatomical educational example, not measured personal prescription.\nUse the provided corrected START illustration as the identity, camera, equipment and lighting reference. Change only the pose to the lowered split squat. EXACTLY TWO LEGS / TWO SHOES: one foreground left foot on the floor and one background right foot on the bench. The front thigh is now angled forward toward the right with its knee bent, hip lowers/backshifts, rear knee descends toward floor. Keep both shoes at the same contact positions, keep the bench fixed. Do not add a standing third leg. Retain the same aspect ratio.",
+    "finalStart": "Create the matching upright START position for this Bulgarian split squat illustration. Preserve this EXACT bench position, rear shoe position on bench and front shoe position on floor at lower RIGHT (do not slide either foot). Straighten the front working knee to softly extended while raising the pelvis upward and slightly forward above the front leg. Rear thigh extends down/back from opposite hip, rear knee remains bent with instep resting on bench. Torso returns to a slight forward lean, hands remain clasped. Keep the same man, clothes, framing, scale, camera, background, lighting and red front-glute highlight. EXACTLY TWO LEGS AND TWO FEET total: ONE foot on floor and ONE on bench. No duplicated leg, no extra shoe. Neutral back. No text. Preserve shoe/bench ground contact positions from the reference so the resulting start/end pair can be compared."
+  },
+  "selected": {
+    "start": "C:/Users/peopl/.codex/generated_images/01a0f2fa-e75c-7050-9eee-558de05b918e/exec-34be513b-eff1-45d8-8d4f-29af007a7efc.png",
+    "end": "C:/Users/peopl/.codex/generated_images/01a0f2fa-e75c-7050-9eee-558de05b918e/exec-ada224a2-1c02-4eee-b299-fdd20534d135.png"
+  },
+  "rejected": [
+    {
+      "file": "exec-f69fa1fb-c080-4975-ae89-8278d99598f2.png",
+      "reason": "Extra third leg and floor shoe; not used."
+    },
+    {
+      "file": "exec-a1616256-2146-479b-bfd2-8d2b8f352926.png",
+      "reason": "Anatomy fixed, but front shoe position differed from end image; replaced with matching-stance top image."
+    }
+  ],
+  "outputs": [
+    "docs/images/guides/ht_bulgarian_split_squat-start.webp",
+    "docs/images/guides/ht_bulgarian_split_squat-end.webp"
+  ],
+  "conversion": {
+    "tool": "sharp",
+    "operation": "resize without cropping, width 700px; WebP quality 88",
+    "originalsPreserved": true
+  },
+  "verification": [
+    "Exactly two legs and two shoes in selected images",
+    "Front shoe flat on floor; rear shoe supported by bench",
+    "Same bench, contact locations and identity; distinct top and lower poses"
+  ],
+  "limitations": [
+    "Illustrative support height, stride and depth; not personal prescription",
+    "No unconfirmed weight or rep/set count added"
+  ]
+}

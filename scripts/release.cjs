@@ -39,12 +39,12 @@ function htmlAssets(file) {
 const ctx = { window: {} };
 vm.runInNewContext(read('js/exercise-media.js'), ctx);
 const seed = JSON.parse(read('data/seed.json'));
-const ptIds = new Set(seed.exercises.filter(e=>e.part==='pt').map(e=>e.id));
+const ptIds = new Set(seed.exercises.filter(e=>['pt','ht'].includes(e.part)).map(e=>e.id));
 const mediaIds = new Set(Object.keys(ctx.window.ExerciseMedia));
 const missingMedia = [...ptIds].filter(id=>!mediaIds.has(id));
 const orphanMedia = [...mediaIds].filter(id=>!ptIds.has(id));
 if (missingMedia.length || orphanMedia.length) {
-  throw new Error('PT seed/media mismatch; missing media: ' + (missingMedia.join(', ') || 'none') +
+  throw new Error('PT/HT seed/media mismatch; missing media: ' + (missingMedia.join(', ') || 'none') +
     '; orphan media: ' + (orphanMedia.join(', ') || 'none'));
 }
 const exercises = {};

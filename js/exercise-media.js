@@ -1141,5 +1141,29 @@ window.ExerciseMedia = {
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_incline_smith_press",
     "visualNote": "경사 벤치와 수직 레일의 동작 예시입니다. 실제 기구의 각도·중량은 수업에서 맞춘 세팅을 따릅니다."
+  },
+  "ht_bulgarian_split_squat": {
+    "name": "불가리안 스플릿 스쿼트",
+    "kind": "bulgariansplit",
+    "captions": [
+      "뒷발을 벤치에 올려 준비",
+      "앞발을 고정하고 몸 낮추기"
+    ],
+    "notes": [
+      "앞발은 바닥에, 뒷발 발등은 벤치에 지지한 준비 예시입니다. 몸에 맞는 간격을 먼저 확인합니다.",
+      "앞쪽 무릎과 고관절을 굽히며 몸을 낮춥니다. 상체는 약간 기울이고 두 발의 지지 위치는 유지합니다."
+    ],
+    "focus": {
+      "muscle": "둔근·대퇴사두 · 앞쪽 다리 지지",
+      "move": "앞발을 바닥에 고정하고, 뒷발은 벤치에 지지한 채 천천히 내려갔다 올라옵니다.",
+      "feel": "앞쪽 다리로 버티는 느낌과 균형을 확인합니다. 그림의 깊이를 그대로 맞추기보다 편안하게 조절합니다."
+    },
+    "target": "glutes",
+    "visualNote": "이미지와 3D는 원본 영상의 동작을 설명하는 예시입니다. 벤치 높이·보폭·깊이·각도는 개인 수업 실측값이나 처방이 아닙니다.",
+    "images": [
+      "docs/images/guides/ht_bulgarian_split_squat-start.webp",
+      "docs/images/guides/ht_bulgarian_split_squat-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_bulgarian_split_squat"
   }
 };

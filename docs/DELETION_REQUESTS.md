@@ -15,7 +15,7 @@ content-id: abcDEF_1234
 <!-- /pt-golf-deletion-request -->
 ```
 
-`content-kind`는 `video` 또는 `exercise`이고, 영상은 11자 YouTube ID, 운동은 `pt_*`/`golf_*` ID입니다. 사유는 표시 블록 밖에 적습니다. 검사기는 repo의 열린 issue만 읽으며 Pull Request, 닫힌 요청, 형식이 맞지 않는 본문을 승인이나 실행 명령으로 처리하지 않습니다. 라벨은 선택 사항이며 검사 권한이나 승인 근거가 아닙니다.
+`content-kind`는 `video` 또는 `exercise`이고, 영상은 11자 YouTube ID, 운동은 `pt_*`/`ht_*`/`golf_*` ID입니다. 사유는 표시 블록 밖에 적습니다. 검사기는 repo의 열린 issue만 읽으며 Pull Request, 닫힌 요청, 형식이 맞지 않는 본문을 승인이나 실행 명령으로 처리하지 않습니다. 라벨은 선택 사항이며 검사 권한이나 승인 근거가 아닙니다.
 
 ## 다음 배포 전 확인
 

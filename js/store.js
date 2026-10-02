@@ -44,7 +44,7 @@ const Store = (() => {
       if (!ex || typeof ex.id !== 'string' || !ex.id || ['__proto__', 'constructor', 'prototype'].includes(ex.id) || ids.has(ex.id) || typeof ex.name !== 'string' || typeof ex.part !== 'string') return false;
       ids.add(ex.id);
       return ['cues', 'reminders', 'steps', 'prep'].every(key => ex[key] === undefined || (Array.isArray(ex[key]) && ex[key].every(value => typeof value === 'string'))) &&
-        validGripGuide(ex.gripGuide) && validPracticalSummary(ex.practicalSummary);
+        validGripGuide(ex.gripGuide) && validPracticalSummary(ex.practicalSummary) && persistence.validTrainingContent(ex);
     });
   }
   async function init() {
@@ -90,6 +90,17 @@ const Store = (() => {
   }
   function getByPart(part) { return getAll().filter(ex => ex.part === part); }
   function getById(id) { return getAll().find(ex => ex.id === id) || null; }
+  function getRelatedExercises(id) {
+    const all=getAll(),current=all.find(ex=>ex.id===id);
+    if(!current || !['pt','ht'].includes(current.part))return [];
+    const links=new Map();
+    for(const link of current.relatedExercises||[])links.set(link.id,link.reason);
+    for(const ex of all)for(const link of ex.relatedExercises||[])if(link.id===id && !links.has(ex.id))links.set(ex.id,link.reason);
+    return [...links].flatMap(([otherId,reason])=>{
+      const exercise=all.find(ex=>ex.id===otherId);
+      return exercise && exercise.id!==id && ['pt','ht'].includes(exercise.part) && exercise.part!==current.part ? [{exercise,reason}] : [];
+    });
+  }
   function getFavorites() { return getAll().filter(ex => ex.favorite); }
   function getCategories(part) { return [...new Set(getByPart(part).map(ex => ex.category))]; }
   function search(query) {
@@ -99,7 +110,7 @@ const Store = (() => {
       const focus = ex.focus || {};
       const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
         ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []),
-        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ex.memo || ''].join(' ').toLowerCase();
+        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ex.sourceVideo?.title || '', ex.sourceVideo?.channel || '', ex.memo || ''].join(' ').toLowerCase();
       return terms.every(term => text.includes(term));
     });
   }
@@ -108,6 +119,7 @@ const Store = (() => {
     const id = ex.id || newId();
     if (typeof id !== 'string' || ['__proto__', 'constructor', 'prototype'].includes(id)) throw new Error('운동 식별자를 확인해 주세요.');
     const original = seed.exercises.find(item => item.id === id);
+    if (!original && !overlay().overrides[id]) ex = { ...ex, part: ex.part || 'pt' };
     overlayHandle.update(next => {
       prepare(next);
       const saved = { ...(next.overrides[id] || {}), id };
@@ -255,7 +267,7 @@ const Store = (() => {
     return { overlay: overlayHandle.status(), calendar: calendarHandle.status(), deletions: deletionHandle.status(),
       legacyIds: local.schemaVersion === 2 ? (local.legacyIds || []).slice() : Object.keys(local.overrides) };
   }
-  return { init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getCategories, search,
+  return { init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getRelatedExercises, getCategories, search,
     upsert, remove, patch, setMemo, toggleFavorite, exportData, importData, resetOverlay, hasLocalChanges,
     todayStr, getRecentSessions, getCalendar, setCalEntry, getCalEntry, reload, getStatus, isSeed,
     requestDeletion, restoreDeleted, getDeletionRequests, getAllDeletionRequests, isDeleted, markDeletionRequest, clearDeletionRequest,

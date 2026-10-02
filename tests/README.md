@@ -4,6 +4,10 @@
 
 ## 현행 필수 검사
 
+- HT 불가리안 스플릿 스쿼트 전용 포즈·고정 발/벤치 접촉·관절 길이 1,001프레임: `ht-bulgarian-pose.cjs`. 2컷·3D 조작·오프라인 재열기는 `browser-smoke.cjs`에 포함한다.
+
+- HT 섹션·PT 기본 분류·PT/HT 양방향 연동·영상 검색·개인 기록 보존·숨김/복원·삭제 요청 게이트: `ht-training.cjs`. 실제 UI와 모바일·오프라인은 `browser-smoke.cjs`에서 함께 확인한다.
+
 - 중앙 삭제 요청 파싱·사용자 승인과 원본 제거 동시 조건·GitHub 조회 실패 차단: `deletion-requests.cjs` (모의 API, 네트워크 호출 없음)
 
 - 골프 영상 ID·그룹·앱 최초 등록일·최근 등록 정렬·영상 즐겨찾기·로컬 수정·렌더 및 과거 주소 연결: `golf-training-data.cjs`, `golf-usability.cjs`

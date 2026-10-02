@@ -104,9 +104,68 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await context.setOffline(true);await page.reload();await page.locator('.d-title').waitFor();assert.equal(await page.locator('.guide-shot img').evaluateAll(imgs=>imgs.every(i=>i.complete&&i.naturalWidth>0)),true);
   await page.locator('.exercise-3d summary').click();await page.locator('.exercise-3d-frame').waitFor();await page.frameLocator('.exercise-3d-frame').locator('canvas').waitFor({timeout:20000});
   await context.setOffline(false);
+
+  // HT uses the existing exercise storage and links to PT without cloning its records.
+  const htId='ht_bulgarian_split_squat';
+  await page.goto(base+'#home');await page.locator('.part.ht').waitFor();await page.locator('.part.ht').click();
+  assert.match(page.url(),/#ht/);await page.reload();await page.locator('[data-open="'+htId+'"]').click();
+  await page.locator('.training-video').waitFor();assert.equal(await page.locator('.training-video iframe').count(),0,'video loads only on request');
+  assert.equal(await page.locator('.training-video a').getAttribute('href'),'https://www.youtube.com/shorts/xJXXLBGYO3c');
+  await page.locator('[data-act=fav]').click();await page.locator('[data-act=memo-edit]').first().click();
+  await page.locator('#memo-input').fill('HT 브라우저 개인 메모');await page.locator('#memo-save').click();
+  await page.locator('[data-act=edit]').click();assert.equal(await page.locator('#f-part').inputValue(),'ht');
+  await page.locator('#f-name').fill('내 불가리안 스쿼트');await page.locator('[data-act=modal-save]').click();
+  await page.reload();await page.locator('.training-video').waitFor();assert.equal(await page.locator('.d-title').textContent(),'내 불가리안 스쿼트');
+  assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');assert.equal(await page.locator('.fav.on').count(),1);
+  await page.locator('.training-related [data-open=pt_squat]').click();await page.locator('.training-related [data-open="'+htId+'"]').click();
+  assert.match(page.url(),new RegExp('#exercise/'+htId));await page.locator('[data-nav=favorites]').click();await page.locator('[data-open="'+htId+'"]').click();
+  await page.goto(base+'#search?q='+encodeURIComponent('요즘원픽')+'&scope=ht');await page.locator('.search-result').waitFor();assert.equal(await page.locator('.search-result').count(),1);
+  await page.locator('.search-result').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),1);
+  await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-yes]').click();await page.locator('[data-part=ht]').waitFor();assert.equal(await page.locator('[data-open="'+htId+'"]').count(),0);
+  await page.goto(base+'#exercise/pt_squat');await page.locator('.d-title').waitFor();assert.equal(await page.locator('.training-related [data-open="'+htId+'"]').count(),0);
+  await page.goto(base+'#home');await page.locator('[data-delete-restore="del_exercise_'+htId+'"]').click();
+  await page.goto(base+'#exercise/'+htId);await page.locator('.training-video').waitFor();assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
+
+  // HT preparation/action illustrations and its dedicated rear-foot-elevated 3D.
+  await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+  await page.locator('.exercise-3d summary').click();
+  const htFrame=page.frameLocator('.exercise-3d-frame');await htFrame.locator('canvas[data-ready]').waitFor();
+  assert.equal(await htFrame.locator('canvas').getAttribute('data-kind'),'bulgariansplit');assert.equal(await htFrame.locator('#speed').inputValue(),'.5');
+  assert.equal(await htFrame.locator('#play').innerText(),'일시정지');
+  await htFrame.locator('#progress').fill('500');await htFrame.locator('#progress').dispatchEvent('input');assert.equal(await htFrame.locator('#play').innerText(),'재생');
+  const htModel=await htFrame.locator('canvas').evaluate(()=>window.exerciseViewer.snapshot());assert.equal(htModel.pose.equipment[0].type,'splitbench');assert(htModel.pose.hip[1]<.6);
+  await htFrame.getByRole('button',{name:'옆',exact:true}).click();assert(Math.abs(Number(await htFrame.locator('canvas').getAttribute('data-yaw'))-Math.PI/2)<.002);
+  await htFrame.locator('canvas').press('ArrowLeft');assert(Number(await htFrame.locator('canvas').getAttribute('data-yaw'))>Math.PI/2+.1);
+  const oldDistance=Number(await htFrame.locator('canvas').getAttribute('data-distance'));await htFrame.locator('canvas').press('+');assert(Number(await htFrame.locator('canvas').getAttribute('data-distance'))<oldDistance);
+  await htFrame.getByRole('button',{name:'처음 시점',exact:true}).click();
+  for(const width of [320,390,768]){
+    await page.setViewportSize({width,height:844});await htFrame.locator('canvas').scrollIntoViewIfNeeded();
+    assert.equal(await htFrame.locator('body').evaluate(el=>el.scrollWidth<=innerWidth),true,'HT 3D controls fit at '+width);
+    if(process.env.PTGOLF_SCREENSHOT_DIR)await htFrame.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht-3d-'+width+'.png')});
+  }
+  await page.locator('.exercise-3d summary').click();await page.locator('.exercise-3d-frame').waitFor({state:'detached'});
+  await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
+  // Fulfill only the third-party embed in this isolated test; the original was separately checked.
+  await page.route('https://www.youtube-nocookie.com/**',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><title>Video embed test</title>'}));
+  await page.locator('[data-act=training-play]').click();assert.match(await page.locator('.training-player iframe').getAttribute('src'),/embed\/xJXXLBGYO3c\?autoplay=1/);
+  await page.locator('#toast').waitFor({state:'hidden'});
+  for(const width of [320,390,768]){
+    await page.setViewportSize({width,height:844});
+    for(const route of ['#home','#ht','#exercise/'+htId,'#exercise/pt_squat']){
+      await page.goto(base+route);await page.locator('.scr').waitFor();
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no HT overflow '+route+' at '+width);
+      assert.equal(await page.locator('.tabbar .tab').evaluateAll(els=>els.every(el=>el.scrollWidth<=el.clientWidth+1)),true,'navigation labels fit at '+width);
+      if(process.env.PTGOLF_SCREENSHOT_DIR && route!=='#exercise/pt_squat')await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht-'+route.replace(/[^a-z0-9]/gi,'_')+'-'+width+'.png'),fullPage:true});
+    }
+  }
+  await context.setOffline(true);await page.goto(base+'#ht');await page.locator('[data-open="'+htId+'"]').click();await page.locator('.training-video').waitFor();
+  assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
+  await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+  await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();
+  assert.equal(await page.frameLocator('.exercise-3d-frame').locator('canvas').getAttribute('data-kind'),'bulgariansplit');await context.setOffline(false);
   assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
-  console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, and isolated golf failure. Isolated browser data only.');
+  console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');
  } finally {await browser.close();await new Promise(r=>server.close(r));}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -22,7 +22,7 @@ window.AppNavigation = (() => {
     let parts; try { parts=raw.slice(1).split('/').map(decodeURIComponent); } catch { return {name:'home'}; }
     const [a,b,c] = parts;
     if(a==='exercise' && b) return {name:'detail',id:b};
-    if(a==='pt') return {name:'part',part:'pt',cat:p.get('cat')};
+    if(a==='pt'||a==='ht') return {name:'part',part:a,cat:p.get('cat')};
     if(a==='favorites') return {name:'favorites'};
     if(a==='calendar') return {name:'calendar',calYear:p.has('year')?Number(p.get('year')):undefined,calMonth:p.has('month')?Number(p.get('month')):undefined};
     if(a==='search') return {name:'search',q:p.get('q')||'',scope:p.get('scope')||'all'};

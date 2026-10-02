@@ -55,6 +55,15 @@ function pose(kind,t,id){
   }else arms(p,S.map(s=>add(p.chest,[s*.20,-.06,.43])),S.map(s=>[s,-1,0]));
   if(kind==='heelsquat')p.equipment.push({type:'heelpad'});
   if(v)p.equipment.push({type:'vsquat'});
+ }else if(kind==='bulgariansplit'){
+  // Front sole on the floor; opposite instep on a fixed rear bench.
+  // Example geometry only: no personal stance/depth measurements are implied.
+  p=base([0,.87-.30*q,.04-.16*q],.10+.18*q);
+  legs(p,[[-.13,.065,.30],[.13,.49,-.65]],[[0,0,1],[0,0,1]]);
+  arms(p,S.map(s=>add(p.chest,[s*.045,.04,.27])),[[-1,-.5,0],[1,-.5,0]]);
+  p.footDirections=[[0,0,1],[0,-.4,-Math.sqrt(.84)]];
+  p.equipment=[{type:'splitbench',center:[0,.355,-.76],size:[1.05,.11,.46]}];
+  p.target=[0,.82,-.20];p.distance=4.25;
  }else if(['tbalance','sldl'].includes(kind)){
   const a=.12+q*.92;p=base([-.08,kind==='tbalance'?.915:.90-.02*q,-.04*q],a);
   const foot=[-.105,.065,0],back=add(p.hips[1],[0,-.855*Math.cos(a),-.855*Math.sin(a)]);

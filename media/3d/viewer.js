@@ -3,7 +3,7 @@
 const $=id=>document.getElementById(id),vp=$('viewport');
 try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),entry=window.ExerciseMedia[id];
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=96#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=97#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -82,7 +82,7 @@ try{
    // Feet follow shin on floor exercises; standing feet point forward.
    const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
    const planted=['bridge','benchpress','dumbbellpress','smithincline'].includes(p.kind)||(p.kind==='slr'&&i===1);
-   const direction=planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1];
+   const direction=p.footDirections?.[i]|| (planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1]);
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
    foot.quaternion.setFromUnitVectors(Z,new THREE.Vector3(...direction));
   }
@@ -114,6 +114,14 @@ try{
     case 'mat':block(equipment,[0,.007,.08],[1.30,.015,2.30],accent);break;
     case 'seat':seatGear();break;
     case 'bench':bench([0,.46,-.15]);break;
+    case 'splitbench':{
+     block(equipment,e.center,e.size,rubber);
+     for(const x of [-.43,.43]){
+      for(const z of [-.91,-.61])beam(equipment,[x,.035,z],[x,.30,z],.035,steel);
+      beam(equipment,[x,.035,-1.01],[x,.035,-.51],.04,steel);
+     }
+     beam(equipment,[-.43,.22,-.76],[.43,.22,-.76],.035,steel);break;
+    }
     case 'inclinebench':{
      const center=add(add(p.hip,mul(p.up,.31)),mul(p.front,-.13));
      block(equipment,center,[.43,.10,.87],rubber,p.front);

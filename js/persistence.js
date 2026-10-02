@@ -128,11 +128,18 @@ window.Persistence = (() => {
   function validPracticalSummary(value) {
     return value === undefined || (record(value) && requiredStringFields(value, ['action', 'feel']));
   }
+  function validTrainingContent(value) {
+    const video=value.sourceVideo,links=value.relatedExercises;
+    return (video===undefined || (record(video) && requiredStringFields(video,['youtubeId','title','channel','publishedAt','registeredAt','verifiedAt','evidence']) &&
+      /^[A-Za-z0-9_-]{11}$/.test(video.youtubeId) && Number.isFinite(video.durationSeconds) && video.durationSeconds>0 &&
+      Number.isFinite(Date.parse(video.registeredAt)))) &&
+      (links===undefined || (Array.isArray(links) && links.every(link=>record(link) && requiredStringFields(link,['id','reason']))));
+  }
   function validExercise(value) {
     return record(value) && stringFields(value, ['id', 'name', 'part', 'category', 'spec', 'memo', 'updated', 'image']) &&
       stringLists(value, ['cues', 'reminders', 'steps', 'prep']) && (value.favorite === undefined || typeof value.favorite === 'boolean') &&
       (value.focus === undefined || (record(value.focus) && stringFields(value.focus, ['muscle', 'move', 'feel']))) &&
-      validGripGuide(value.gripGuide) && validPracticalSummary(value.practicalSummary);
+      validGripGuide(value.gripGuide) && validPracticalSummary(value.practicalSummary) && validTrainingContent(value);
   }
   function validOverlay(value) {
     return record(value) && record(value.overrides) && Array.isArray(value.deleted) && value.deleted.every(id => typeof id === 'string') &&
@@ -218,6 +225,6 @@ window.Persistence = (() => {
   if (typeof window.addEventListener === 'function') window.addEventListener('storage', event => {
     if (Object.values(KEYS).includes(event.key) || event.key === JOURNAL || event.key === null) emit({ key: event.key, external: true });
   });
-  return { KEYS, open, equal, validators, exportBackup, validateBackup, restoreBackup, recoverRestore, recoveryCopy, getStatus,
+  return { KEYS, open, equal, validators, validTrainingContent, exportBackup, validateBackup, restoreBackup, recoverRestore, recoveryCopy, getStatus,
     subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); } };
 })();

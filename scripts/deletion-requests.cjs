@@ -19,7 +19,7 @@ function parseRequest(issue) {
   const id = /^content-id: ([A-Za-z0-9_-]+)$/.exec(lines[1])?.[1];
   if (!kind || !id) return null;
   if (kind === 'video' && !/^[A-Za-z0-9_-]{11}$/.test(id)) return null;
-  if (kind === 'exercise' && !/^(pt|golf)_[a-z0-9_]{1,70}$/.test(id)) return null;
+  if (kind === 'exercise' && !/^(pt|ht|golf)_[a-z0-9_]{1,70}$/.test(id)) return null;
   return { issue: issue.number, kind, id, url: 'https://github.com/' + REPOSITORY + '/issues/' + issue.number };
 }
 function validateApprovals(input) {
