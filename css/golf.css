@@ -125,3 +125,12 @@
   .g-practical-head{align-items:flex-start;flex-direction:column}
   .g-practical-summary dl>div{grid-template-columns:minmax(0,1fr);gap:3px}
 }
+
+/* All video sections use parallel cards, sized by the available content width. */
+.g-video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.g-video-grid .g-video-mini{min-width:0;padding:10px;gap:8px}
+.g-video-grid .g-mini-title{font-size:14px;overflow-wrap:anywhere}
+.g-video-grid .g-mini-takeaway,.g-video-grid .g-mini-meta,.g-video-grid .g-mini-date{overflow-wrap:anywhere}
+.g-featured-video,.g-video-section{container-type:inline-size}
+@container(min-width:500px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:360px){.g-video-grid{gap:8px}.g-video-grid .g-video-mini{padding:8px}}

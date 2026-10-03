@@ -1,0 +1,59 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-03",
+  "conversion": "700px width WebP quality 86; no pose edits",
+  "sources": [
+    "https://www.youtube.com/shorts/t296ifVRmT4",
+    "https://www.youtube.com/shorts/0yfyF2uTO6E"
+  ],
+  "assets": [
+    {
+      "name": "ht_wide_dumbbell-start",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target glutes. START pose of wide stance dumbbell sumo squat. Both feet planted wider than shoulder width, toes modestly outward. Standing tall with soft knees. A SINGLE horizontal dumbbell hangs centrally between the thighs; both hands next to each other grasp the center handle, straight relaxed arms. NOT holding it at chest. See both feet, both hands, single weight.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-7a78424a-a4fd-451d-bded-b5ac693b2b55.png",
+      "target": "docs/images/guides/ht_wide_dumbbell-start.webp"
+    },
+    {
+      "name": "ht_wide_dumbbell-end",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target glutes. LOWERED pose of wide stance dumbbell sumo squat. Both feet planted wide, toes modestly outward. Hips descend and move back, knees bend and track toes, thighs above horizontal, torso leans moderately with long neutral back. A SINGLE horizontal dumbbell hangs centrally between knees, both hands together on center handle, long arms. Weight clears the floor. See whole body, feet and single weight.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-f3033220-fd04-4ce3-8952-5f631a6801ee.png",
+      "target": "docs/images/guides/ht_wide_dumbbell-end.webp"
+    },
+    {
+      "name": "ht_upper_onearmrow-start",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target back. START of supported ONE ARM DUMBBELL ROW. Black flat bench oriented fore-aft. Left knee and left palm planted on bench top. Right foot planted on floor beside bench. Torso almost horizontal with neutral spine. Right arm hanging down, holding ONE dumbbell below right shoulder. Exactly two hands: left supports bench, right holds weight. Head follows spine. Camera from right side three-quarter so working arm and all support contacts visible.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-8cbbd9c2-78c1-4090-9acb-a3bc2d486ddd.png",
+      "target": "docs/images/guides/ht_upper_onearmrow-start.webp"
+    },
+    {
+      "name": "ht_upper_onearmrow-end",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target back. PULL phase of supported ONE ARM DUMBBELL ROW. Black flat bench oriented fore-aft. Left knee and left palm planted on bench top. Right foot planted on floor beside bench. Torso almost horizontal with neutral spine. Right elbow bent and pulled backward toward right hip, ONE dumbbell beside waist below lower ribs. Exactly two hands: left supports bench, right holds weight. Head follows spine. Camera from right side three-quarter so working arm and all support contacts visible.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-ceac1fa9-eb8e-4731-b3ad-e78b57e47ebe.png",
+      "target": "docs/images/guides/ht_upper_onearmrow-end.webp"
+    },
+    {
+      "name": "ht_upper_preacher-start",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target biceps. START of seated EZ BAR PREACHER CURL. Adult male sits behind a wide sloping preacher pad, BOTH upper arms rest continuously on front of angled pad. Hands underhand on the same single small EZ curl bar. Elbows nearly extended, not locked, forearms down-forward following pad slope. Both feet on ground. Full preacher bench with sloping arm pad, seat and frame visible. Three-quarter side view showing upper-arm support clearly. NOT a standing curl.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-2debbe10-8df1-4b27-8357-1c108bdfef69.png",
+      "target": "docs/images/guides/ht_upper_preacher-start.webp"
+    },
+    {
+      "name": "ht_upper_preacher-end",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target biceps. TOP of seated EZ BAR PREACHER CURL. Adult male sits behind a wide sloping preacher pad, BOTH upper arms rest continuously on angled pad. Underhand hands lift the same single small EZ curl bar toward shoulders by bending elbows; elbows and upper arms remain planted, forearms raised. Both feet on ground. Full preacher bench with sloping arm pad, seat and frame visible. Three-quarter side view showing upper-arm support clearly. NOT a standing curl.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-df638675-7f83-4a37-992c-77a819e109ee.png",
+      "target": "docs/images/guides/ht_upper_preacher-end.webp"
+    },
+    {
+      "name": "ht_upper_lyingextension-start",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target triceps on backs of upper arms red. START of lying EZ bar triceps extension on black flat bench. Adult male lying face up, head torso and hips supported, knees bent and feet planted on floor. Holds ONE small EZ bar with BOTH hands above the head/upper chest, elbows almost extended. Upper arms angled slightly toward the head from vertical. Full body, whole bench and feet visible, three-quarter side view. NOT bench press, NOT pullover.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-694e0a05-e268-4728-964c-a5dddf9fe792.png",
+      "target": "docs/images/guides/ht_upper_lyingextension-start.webp"
+    },
+    {
+      "name": "ht_upper_lyingextension-end",
+      "prompt": "Use case: scientific-educational. Asset: a single portrait 3:4 exercise anatomy illustration for a dark fitness app. One adult athletic male anatomical mannequin with realistic gray musculature, matte black shorts, subtle red highlighting only the target muscles. Charcoal studio background, simple black gym equipment, clean instructional 3D render, full body and all equipment fit with margin, floor contact clearly visible, no text, no arrows, no logos, no duplicate limbs, exactly two arms and two legs. Three-quarter side view, anatomically plausible joints. Target triceps on backs of upper arms red. LOWERED pose of lying EZ bar triceps extension on black flat bench. Adult male lying face up, head torso and hips supported, knees bent and feet planted on floor. Upper arms stay raised angled slightly toward the head from vertical. Bend ONLY elbows to lower the ONE small EZ bar to just behind and above the crown of the head, leaving safe clearance. BOTH hands hold same bar, elbows point up, shoulders stable. Full body, whole bench and feet visible, three-quarter side view. NOT bench press, NOT pullover.",
+      "source": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-933dc96c-8d74-4cc5-80fc-2d3f1f7eec7c.png",
+      "target": "docs/images/guides/ht_upper_lyingextension-end.webp"
+    }
+  ]
+}

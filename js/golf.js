@@ -191,11 +191,12 @@ window.GolfHub = (() => {
     const favoriteOnly=tab==='video-favorites';
     const selectedGroup=videoGroups().some(g=>g.id===view.golfGroup)?view.golfGroup:null;
     const isAllVideos=tab==='videos' && !selectedGroup && !view.golfTopic && !(view.golfQuery||'').trim();
-    const featured=isAllVideos ? video(content.featuredVideoId) : null;
+    const featured=isAllVideos ? [...new Set(content.featuredVideoIds || [content.featuredVideoId])].map(video).filter(Boolean) : [];
+    const featuredIds=new Set(featured.map(v=>v.id));
     const now=Date.now(), weekAgo=now-7*24*60*60*1000;
     const recent=isAllVideos ? content.recentVideos(now).filter(v=>!isVideoDeleted(v.id)) : [];
     const recentSection=isAllVideos?`<section class="g-video-section g-recent-section" aria-labelledby="g-recent-title"><header><h2 id="g-recent-title">최근 등록 <span>7일 · ${recent.length}편</span></h2></header><p class="g-date-basis">앱 등록일 기준 · ${e(dateLabel(new Date(weekAgo).toISOString()))} ~ ${e(dateLabel(new Date(now).toISOString()))}</p>${recent.length?`<div class="g-video-grid">${recent.map(compactCard).join('')}</div>`:'<p class="g-muted">최근 등록 영상이 없습니다.</p>'}</section>`:'';
-    let body=recentSection+(featured?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2>${compactCard(featured)}</section>`:'')+((tab==='videos'||favoriteOnly)?videoGroupNav(favoriteOnly?'favorites':selectedGroup):'')+filters(view);
+    let body=recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본 영상</h2><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'')+((tab==='videos'||favoriteOnly)?videoGroupNav(favoriteOnly?'favorites':selectedGroup):'')+filters(view);
     if (tab==='notes') {
       const fs=activeFocus();
       body+='<p class="g-trust-note">스윙 노트는 혼자 연습하며 느낀 개인 감각입니다. 내게 맞는지는 원본 영상과 레슨에서 확인하세요.</p>';
@@ -210,7 +211,7 @@ window.GolfHub = (() => {
       const list=videos().filter(v=>(!favoriteOnly||videoNote(v.id).favorite)&&matches({...v,...state.videoNotes[v.id]},view));
       body+=favoriteOnly
         ? `<section class="g-video-section g-favorites-section" aria-labelledby="g-favorites-title"><header><h2 id="g-favorites-title">즐겨찾기 <span>${list.length}편</span></h2></header>${list.length?`<div class="g-video-grid">${list.map(compactCard).join('')}</div>`:'<p class="g-muted">영상 상세에서 ☆를 누르면 여기에 모입니다.</p>'}</section>${pendingDeletions()}`
-        : `${groupedVideos(list.filter(v=>v.id!==featured?.id),selectedGroup)}${pendingDeletions()}`;
+        : `${groupedVideos(list.filter(v=>!featuredIds.has(v.id)),selectedGroup)}${pendingDeletions()}`;
     } else {
       body+=`<div class="g-actions">${button('lesson-new','레슨 기록하기')}</div>`;
       const qs=state.questions.filter(q=>!q.lessonId);

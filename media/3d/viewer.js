@@ -2,8 +2,10 @@
 (()=>{'use strict';
 const $=id=>document.getElementById(id),vp=$('viewport');
 try{
- const params=new URLSearchParams(location.search),id=params.get('exercise'),entry=window.ExerciseMedia[id];
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=97#exercise/'+id);return;}
+ const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
+ const variant=params.get('variant');
+ const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=103#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -67,6 +69,7 @@ try{
    torsoEll(p,at(p.hip,s*.11,.19,.073),[.037,.1,.035],targetMat('core'));
    limb(a,b,.055);ell(body,a,[.076,.083,.073],targetMat('shoulders'),sub(b,a));
    const bicep=add(mix(a,b,.52),mul(p.front,.035));ell(body,bicep,[.037,.084,.032],targetMat('biceps'),sub(b,a));
+   if(entry.target==='triceps')ell(body,add(mix(a,b,.5),mul(p.front,-.04)),[.040,.09,.036],red,sub(b,a));
    ell(body,b,[.034,.036,.034],joint);limb(b,c,.034);
    ell(body,c,[.038,.047,.025],skin,sub(c,b));
    for(let n=0;n<4;n++)ell(body,add(c,add(mul(unit(sub(c,b)),.039),mul(p.right,(n-1.5)*.014))),[.006,.028,.008],skin,sub(c,b));
@@ -81,7 +84,7 @@ try{
    ell(body,add(mix(k,f,.42),mul(p.front,-.014)),[.049,.105,.045],skin,sub(f,k));
    // Feet follow shin on floor exercises; standing feet point forward.
    const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
-   const planted=['bridge','benchpress','dumbbellpress','smithincline'].includes(p.kind)||(p.kind==='slr'&&i===1);
+   const planted=['bridge','benchpress','dumbbellpress','smithincline','lyingextension'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=p.footDirections?.[i]|| (planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1]);
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
    foot.quaternion.setFromUnitVectors(Z,new THREE.Vector3(...direction));
@@ -114,6 +117,24 @@ try{
     case 'mat':block(equipment,[0,.007,.08],[1.30,.015,2.30],accent);break;
     case 'seat':seatGear();break;
     case 'bench':bench([0,.46,-.15]);break;
+    case 'sumodumbbell':{
+     const at=mix(p.wrists[0],p.wrists[1],.5);
+     beam(equipment,add(at,[-.17,0,0]),add(at,[.17,0,0]),.017,steel);
+     for(const s of [-1,1]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(at,[s*.14,0,0]));o.scale.set(.12,.06,.12);o.rotation.z=Math.PI/2;}break;
+    }
+    case 'onedumbbell':dumbbell(p.wrists[e.side]);break;
+    case 'rowbench':{
+     block(equipment,e.center,e.size);
+     for(const z of [-1.05,.45]){beam(equipment,[-.105,.04,z],[-.105,.46,z],.035);beam(equipment,[-.32,.04,z],[.1,.04,z],.035);}break;
+    }
+    case 'preacherbench':{
+     block(equipment,[0,.48,0],[.46,.12,.40]);beam(equipment,[0,.04,0],[0,.45,0],.04);
+     const normal=[0,Math.sqrt(.29*.29-.25*.25)/.29,.25/.29];
+     const center=add(mix(mix(p.shoulders[0],p.shoulders[1],.5),mix(p.elbows[0],p.elbows[1],.5),.6),mul(normal,-.078));
+     block(equipment,center,[.65,.08,.44],rubber,normal);
+     beam(equipment,[0,.04,center[2]],[0,center[1]-.08,center[2]],.04);
+     for(const z of [0,.38])beam(equipment,[-.34,.035,z],[.34,.035,z],.04);break;
+    }
     case 'splitbench':{
      block(equipment,e.center,e.size,rubber);
      for(const x of [-.43,.43]){

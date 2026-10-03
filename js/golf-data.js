@@ -1,8 +1,9 @@
-/* 사용자 지정 영상 40편. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 46편. 2026-10-03 발바닥 흐름·작은 백스윙 영상 2편 추가. 2026-10-03 신규 3편과 기본영상 「열리면 편해져」 추가. 2026-10-03 기본 영상 「레깅을 원하다」 추가. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   version: 5,
   featuredVideoId: '9YWDNMyTQy4',
+  featuredVideoIds: ['9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE'],
   originalMaxSeconds: 180,
   topics: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
   noteTopics: {
@@ -1490,6 +1491,210 @@ window.GolfContent = {
       ],
       "publishedAt": "2026-09-28T19:45:31-07:00",
       "addedAt": "2026-09-30T15:48:15+09:00"
+    },
+    {
+      "id": "3kNb6TQN2T0",
+      "title": "레깅을 원하다",
+      "originalTitle": "레깅을 원하다",
+      "channel": "김기백 프로-ki200",
+      "duration": "0:09",
+      "durationSeconds": 9,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "evidence": "2026-10-03 YouTube 원본 제목·채널·길이·공개일을 확인했습니다. 설명란에는 추가 설명이 없습니다. 아래 내용은 상세 교정 요약이 아닌 비교 관찰 안내입니다.",
+      "summary": "레깅을 주제로 한 김기백 프로의 짧은 원본 영상입니다. 사용자가 지정한 기본 영상으로 함께 확인합니다.",
+      "points": [
+        "원본에서 팔·손과 클럽헤드가 내려오는 순서를 관찰합니다.",
+        "손목 각도의 한 장면보다 준비부터 피니시까지 이어지는 흐름을 비교합니다.",
+        "내 스윙에서 보이는 차이를 메모하고 레슨에서 적용 여부를 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "기존 기본 영상인 아래로 내려놓기와 나란히 보며 팔 하강과 클럽헤드 움직임에서 비교할 점을 기록합니다.",
+      "question": "영상에서 말하는 레깅이 제 스윙에도 필요한지, 손목 각도를 억지로 유지하는 것과 어떻게 다른지 확인해 주세요.",
+      "relatedVideoIds": [
+        "9YWDNMyTQy4",
+        "wBlnDaqkGi0"
+      ],
+      "publishedAt": "2026-10-03",
+      "addedAt": "2026-10-03T18:10:03+09:00"
+    },
+    {
+      "id": "VGya7_OVLYo",
+      "title": "클럽속도 폭발 · 눌러치기",
+      "originalTitle": "클럽속도 폭발 #장타의조건 #눌러치기",
+      "channel": "최승식프로 골프일기",
+      "duration": "0:41",
+      "durationSeconds": 41,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "evidence": "2026-10-03 원본 제목·채널·길이·공개일·설명란을 확인했습니다. 설명란은 손목 움직임과 다운블로우를 주제로 안내합니다. 아래 항목은 비교 관찰 안내이며 전체 음성·세부 교정 지침을 전사한 요약은 아닙니다.",
+      "summary": "클럽 속도와 눌러치기를 주제로 한 원본 영상입니다. 설명란에서 언급한 손목 움직임을 시범과 함께 확인합니다.",
+      "points": [
+        "원본에서 손목 움직임과 클럽헤드가 공을 통과하는 경로를 나누어 관찰하세요.",
+        "내 영상의 임팩트 전후에서 손과 헤드의 위치 변화를 비교하고, 속도나 비거리 향상은 관찰만으로 단정하지 마세요.",
+        "내 스윙에서 확인한 차이는 개인 적용 메모에 기록하고 다음 레슨에서 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "내 영상의 임팩트 전후에서 손과 헤드의 위치 변화를 비교하고, 속도나 비거리 향상은 관찰만으로 단정하지 마세요.",
+      "question": "영상에서 말하는 손목 움직임이 제 스윙에 필요한지, 손으로 과하게 감거나 누르는 동작과 어떻게 구분할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "3kNb6TQN2T0",
+        "9YWDNMyTQy4"
+      ],
+      "publishedAt": "2026-10-02",
+      "addedAt": "2026-10-03T18:29:49+09:00"
+    },
+    {
+      "id": "QsmMamIFMsE",
+      "title": "열리면 편해져",
+      "originalTitle": "열리면 편해져",
+      "channel": "김기백 프로-ki200",
+      "duration": "0:19",
+      "durationSeconds": 19,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "evidence": "2026-10-03 원본 제목·채널·길이·공개일·설명란을 확인했습니다. 추가 설명이 없으며 시작 화면에는 막히는 스윙과 열리는 스윙을 비교하는 문구가 있습니다. 아래 항목은 비교 관찰 안내이며 전체 음성·세부 교정 지침을 전사한 요약은 아닙니다.",
+      "summary": "막히는 스윙과 열리는 스윙을 비교하는 원본 영상입니다. 사용자 지정 기본 영상으로 함께 확인합니다.",
+      "points": [
+        "막히는 스윙과 열리는 스윙의 비교에서 어깨 회전과 팔·클럽이 지나가는 공간을 관찰하세요.",
+        "같은 촬영 각도의 내 스윙과 비교해 몸통 회전과 팔의 위치가 달라지는 구간을 기록하세요.",
+        "내 스윙에서 확인한 차이는 개인 적용 메모에 기록하고 다음 레슨에서 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "같은 촬영 각도의 내 스윙과 비교해 몸통 회전과 팔의 위치가 달라지는 구간을 기록하세요.",
+      "question": "영상의 열리는 느낌이 제 스윙에 필요한지, 몸을 너무 일찍 열거나 어깨를 과하게 돌리는 것과 어떻게 구분할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "3kNb6TQN2T0",
+        "ojzyFHAQWnw"
+      ],
+      "publishedAt": "2026-09-19",
+      "addedAt": "2026-10-03T18:29:49+09:00"
+    },
+    {
+      "id": "jlqT_vNRcSI",
+      "title": "왼쪽 어깨가 들리는 이유",
+      "originalTitle": "왼쪽어깨 이래서 들리는건 몰랏죠?",
+      "channel": "김기백 프로-ki200",
+      "duration": "0:21",
+      "durationSeconds": 21,
+      "presentation": "original",
+      "topics": [
+        "준비·축",
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "evidence": "2026-10-03 원본 제목·채널·길이·공개일·설명란을 확인했습니다. 추가 설명이 없으며 시작 화면은 왼쪽 어깨와 오른팔 움직임의 관계를 주제로 제시합니다. 아래 항목은 비교 관찰 안내이며 전체 음성·세부 교정 지침을 전사한 요약은 아닙니다.",
+      "summary": "왼쪽 어깨가 들리는 움직임을 다루는 원본 영상입니다. 화면이 제시한 오른팔과의 관계를 시범에서 비교합니다.",
+      "points": [
+        "왼쪽 어깨 높이가 바뀌는 구간과 오른팔 움직임을 원본에서 함께 관찰하세요.",
+        "내 스윙을 같은 각도에서 촬영해 어깨와 팔의 위치 변화를 나란히 기록하고 원인은 별도로 확인하세요.",
+        "내 스윙에서 확인한 차이는 개인 적용 메모에 기록하고 다음 레슨에서 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "내 스윙을 같은 각도에서 촬영해 어깨와 팔의 위치 변화를 나란히 기록하고 원인은 별도로 확인하세요.",
+      "question": "제 왼쪽 어깨 움직임이 오른팔 사용과 관련되는지, 정상적인 회전과 교정이 필요한 들림을 어떻게 구분할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "wBlnDaqkGi0",
+        "ojzyFHAQWnw"
+      ],
+      "publishedAt": "2026-08-22",
+      "addedAt": "2026-10-03T18:29:49+09:00"
+    },
+    {
+      "id": "zB5hFmVpisI",
+      "title": "스윙은 발바닥부터 시작",
+      "originalTitle": "스윙은 발바닥부터 시작",
+      "channel": "golfzip(골프모음집)",
+      "duration": "0:08",
+      "durationSeconds": 8,
+      "presentation": "original",
+      "topics": [
+        "체중이동",
+        "회전·순서"
+      ],
+      "evidence": "2026-10-03 원본 제목·채널·길이·공개일·설명란과 시작 화면을 확인했습니다. 설명란은 골프 관련 태그이며 시작 화면에 발바닥에서 흐름을 느끼라는 문구가 있습니다. 전체 음성 전사는 하지 않았으며 아래 항목은 비교 관찰 안내입니다.",
+      "summary": "발바닥에서 시작되는 스윙 흐름을 주제로 한 짧은 영상입니다. 시작 화면의 안내와 시범을 함께 비교합니다.",
+      "points": [
+        "발바닥에서 흐름을 느낀다는 원본 안내를 보고 발·하체와 몸통이 움직이는 순서를 관찰하세요.",
+        "같은 촬영 각도의 내 영상에서 양발 지지와 몸통 움직임이 바뀌는 구간을 비교해 기록하세요.",
+        "관찰한 차이와 개인 연습 감각을 구분해 메모하고 레슨에서 적용 여부를 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "같은 촬영 각도의 내 영상에서 양발 지지와 몸통 움직임이 바뀌는 구간을 비교해 기록하세요.",
+      "question": "제 스윙에서 발바닥 지지와 체중 이동의 순서를 어떻게 확인할지, 발을 억지로 밀거나 몸을 흔드는 것과 어떻게 구분할지 물어보세요.",
+      "relatedVideoIds": [
+        "CA-TZ7WQlHY",
+        "ldkU0D_Ylms"
+      ],
+      "publishedAt": "2026-10-03",
+      "addedAt": "2026-10-03T21:45:17+09:00"
+    },
+    {
+      "id": "FnbyQ-UYjMI",
+      "title": "작은 백스윙과 회전 시범",
+      "originalTitle": "아마추어가 200미터만 보내면되지, 문제있나요",
+      "channel": "워너비샷",
+      "duration": "0:06",
+      "durationSeconds": 6,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "evidence": "2026-10-03 원본 제목·채널·길이·공개일·설명란과 시작 화면을 확인했습니다. 설명란은 스윙·레슨 해설 콘텐츠라고 안내하며 시작 화면에 백스윙 크기와 회전에 관한 문구가 있습니다. 전체 음성 전사는 하지 않았으며 아래 항목은 비교 관찰 안내입니다.",
+      "summary": "백스윙 크기와 몸의 회전을 주제로 한 짧은 시범입니다. 제목의 200m는 확인된 측정값이나 개인 목표로 해석하지 않습니다.",
+      "points": [
+        "백스윙을 크게 하지 않고 회전한다는 화면 문구와 실제 팔·몸통의 움직임을 비교하세요.",
+        "내 영상과 백스윙 크기·피니시 흐름을 나란히 비교하되 시범만으로 비거리나 효과를 단정하지 마세요.",
+        "관찰한 차이와 개인 연습 감각을 구분해 메모하고 레슨에서 적용 여부를 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "connection": "내 영상과 백스윙 크기·피니시 흐름을 나란히 비교하되 시범만으로 비거리나 효과를 단정하지 마세요.",
+      "question": "제 스윙에 적절한 백스윙 크기와 회전 범위는 어느 정도인지, 팔을 몸에 억지로 붙이는 동작과 어떻게 다른지 확인해 주세요.",
+      "relatedVideoIds": [
+        "QsmMamIFMsE",
+        "3kNb6TQN2T0"
+      ],
+      "publishedAt": "2026-10-03",
+      "addedAt": "2026-10-03T21:45:17+09:00"
     }
   ]
 };
@@ -1510,8 +1715,8 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
-  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4']},
-  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']}
+  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4','QsmMamIFMsE','jlqT_vNRcSI','zB5hFmVpisI','FnbyQ-UYjMI']},
+  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI','3kNb6TQN2T0','VGya7_OVLYo']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
@@ -1527,6 +1732,16 @@ window.GolfContent.evidenceFor = v => {
 };
 
 const golfMetadataPractice = {
+"zB5hFmVpisI":{"action":"발바닥에서 흐름을 느낀다는 원본 안내를 보고 발·하체와 몸통이 움직이는 순서를 관찰하세요.","feel":"같은 촬영 각도의 내 영상에서 양발 지지와 몸통 움직임이 바뀌는 구간을 비교해 기록하세요.","check":"제 스윙에서 발바닥 지지와 체중 이동의 순서를 어떻게 확인할지, 발을 억지로 밀거나 몸을 흔드는 것과 어떻게 구분할지 물어보세요."},
+"FnbyQ-UYjMI":{"action":"백스윙을 크게 하지 않고 회전한다는 화면 문구와 실제 팔·몸통의 움직임을 비교하세요.","feel":"내 영상과 백스윙 크기·피니시 흐름을 나란히 비교하되 시범만으로 비거리나 효과를 단정하지 마세요.","check":"제 스윙에 적절한 백스윙 크기와 회전 범위는 어느 정도인지, 팔을 몸에 억지로 붙이는 동작과 어떻게 다른지 확인해 주세요."},
+"VGya7_OVLYo":{"action":"원본에서 손목 움직임과 클럽헤드가 공을 통과하는 경로를 나누어 관찰하세요.","feel":"내 영상의 임팩트 전후에서 손과 헤드의 위치 변화를 비교하고, 속도나 비거리 향상은 관찰만으로 단정하지 마세요.","check":"영상에서 말하는 손목 움직임이 제 스윙에 필요한지, 손으로 과하게 감거나 누르는 동작과 어떻게 구분할지 확인해 주세요."},
+"QsmMamIFMsE":{"action":"막히는 스윙과 열리는 스윙의 비교에서 어깨 회전과 팔·클럽이 지나가는 공간을 관찰하세요.","feel":"같은 촬영 각도의 내 스윙과 비교해 몸통 회전과 팔의 위치가 달라지는 구간을 기록하세요.","check":"영상의 열리는 느낌이 제 스윙에 필요한지, 몸을 너무 일찍 열거나 어깨를 과하게 돌리는 것과 어떻게 구분할지 확인해 주세요."},
+"jlqT_vNRcSI":{"action":"왼쪽 어깨 높이가 바뀌는 구간과 오른팔 움직임을 원본에서 함께 관찰하세요.","feel":"내 스윙을 같은 각도에서 촬영해 어깨와 팔의 위치 변화를 나란히 기록하고 원인은 별도로 확인하세요.","check":"제 왼쪽 어깨 움직임이 오른팔 사용과 관련되는지, 정상적인 회전과 교정이 필요한 들림을 어떻게 구분할지 확인해 주세요."},
+  '3kNb6TQN2T0': {
+    action:'레깅을 주제로 한 원본에서 팔·손과 클럽헤드가 내려오는 순서를 관찰하세요.',
+    feel:'내 스윙 영상과 같은 구간을 나란히 보며 손과 헤드의 위치 변화만 기록하세요.',
+    check:'영상의 레깅이 제 스윙에도 필요한지, 손목 각도를 억지로 유지하는 것과 어떻게 다른지 확인해 주세요.'
+  },
   '9YWDNMyTQy4': {
     action:'“아래로 내려놓기”가 손·팔·클럽헤드 중 무엇을 뜻하는지 원본 시범에서 구분하세요.',
     feel:'같은 클럽의 허리 높이 스윙을 촬영해 원본이 강조한 대상의 내려가는 경로만 나란히 기록하세요.',

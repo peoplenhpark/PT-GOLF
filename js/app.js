@@ -208,7 +208,7 @@ const Theme = (() => {
 
     app.innerHTML = `
       <div class="scr">
-        <div class="hd"><h1>PT노트</h1><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div>
+        <div class="hd"><h1>PT노트</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
         <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
         <div class="parts">${partCards}</div>
         ${deletionRequestsHtml()}
@@ -389,36 +389,58 @@ const Theme = (() => {
       <div class="exercise-3d-content"></div>
     </details>`;
   }
+  const selectedTrainingMedia = new Map();
+  function currentExerciseMedia(id) {
+    const entry=window.ExerciseMedia?.[id];
+    return entry?.variants?.find(v=>v.id===selectedTrainingMedia.get(id)) || entry?.variants?.[0] || entry;
+  }
+  function exerciseVisualHtml(e) {
+    const entry=window.ExerciseMedia[e.id],media=currentExerciseMedia(e.id);
+    if(!entry.variants)return focusHtml({...e,focus:e.focus||media.focus})+exerciseMediaHtml(e);
+    const selector=entry.variants ? `<div class="training-media-selector"><label for="training-movement">영상 속 동작 선택</label><select id="training-movement" data-no-draft>${entry.variants.map(v=>`<option value="${esc(v.id)}" ${v.id===media.id?'selected':''}>${esc(v.name)}</option>`).join('')}</select></div>` : '';
+    return selector+`<div class="training-media-content">${focusHtml({...e,focus:e.focus||media.focus})+exerciseMediaHtml(e)}</div>`;
+  }
+  function bindExerciseMedia(id) {
+    bindExercise3D(id);
+    const selector=app.querySelector('#training-movement');
+    if(selector)selector.addEventListener('change',()=>{
+      selectedTrainingMedia.set(id,selector.value);
+      const e=Store.getById(id),media=currentExerciseMedia(id);
+      app.querySelector('.training-media-content').innerHTML=focusHtml({...e,focus:media.focus})+exerciseMediaHtml(e);
+      bindExercise3D(id);
+    });
+  }
   function exerciseMediaHtml(e) {
     if (e.id === 'pt_pushdown') return pushdownMediaHtml();
-    const media = window.ExerciseMedia?.[e.id];
+    const media = currentExerciseMedia(e.id);
     if (!media) return '';
-    return `<section class="exercise-guide" aria-label="${esc(e.name)} 2컷 안내">
+    return `<section class="exercise-guide" aria-label="${esc(media.name)} 2컷 안내">
       <div class="guide-pair">${media.images.map((src, i) => `
         <figure class="guide-shot">
           <div class="guide-shot-title"><b>${i ? '동작' : '준비'}</b>${esc(media.captions[i])}</div>
-          <img src="${esc(src)}?v=${ASSET_VER}" alt="${esc(e.name)} · ${esc(media.captions[i])}" decoding="async">
+          <img src="${esc(src)}?v=${ASSET_VER}" alt="${esc(media.name)} · ${esc(media.captions[i])}" decoding="async">
           <figcaption>${esc(media.notes[i])}</figcaption>
         </figure>`).join('')}</div>
     ${media.visualNote ? `<p class="g-meta">${esc(media.visualNote)}</p>` : ''}</section><details class="exercise-3d"><summary>입체로 자세 보기</summary><div class="exercise-3d-content"></div></details>`;
   }
   function bindExercise3D(id) {
+    const media=currentExerciseMedia(id),key=id+':'+(media?.id||id);
     const details = app.querySelector('.exercise-3d');
     if (!details) return;
     const load = () => {
-      if (!details.open) { expanded3D.delete(id); details.querySelector('.exercise-3d-content').replaceChildren(); return; }
-      expanded3D.add(id);
+      if (!details.open) { expanded3D.delete(key); details.querySelector('.exercise-3d-content').replaceChildren(); return; }
+      expanded3D.add(key);
       if (details.querySelector('iframe')) return;
       const frame = document.createElement('iframe');
       frame.className = 'exercise-3d-frame';
-      frame.title = (Store.getById(id)?.name || '운동') + ' 회전형 3D 자세 안내';
-      const source = window.ExerciseMedia[id].viewer;
+      frame.title = (media.name || Store.getById(id)?.name || '운동') + ' 회전형 3D 자세 안내';
+      const source = media.viewer;
       const versionedSource = source + (source.includes('?') ? '&' : '?') + 'v=' + ASSET_VER;
       frame.src = versionedSource + '&autoplay=1';
       details.querySelector('.exercise-3d-content').append(frame);
     };
     details.addEventListener('toggle', load);
-    if (expanded3D.has(id)) { details.open = true; load(); }
+    if (expanded3D.has(key)) { details.open = true; load(); }
   }
   window.addEventListener('message', ev => {
     const frame = app.querySelector('.exercise-3d-frame');
@@ -512,7 +534,7 @@ const Theme = (() => {
           <img src="${esc(e.image)}?v=${ASSET_VER}" alt="${esc(e.name)} 준비 자세와 동작 안내" loading="lazy" decoding="async">
         </div>` : ''}
 
-        ${hasMedia ? focusHtml({...e,focus:e.focus||mediaEntry.focus}) + exerciseMediaHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
+        ${hasMedia ? exerciseVisualHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
         ${cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '운동 중 핵심'}
@@ -539,7 +561,7 @@ const Theme = (() => {
         </div>
       </div>
       ${tabbar(e.part)}`;
-    if(hasMedia){bindExercise3D(id);AppOffline.bind(app,id);}
+    if(hasMedia){bindExerciseMedia(id);AppOffline.bind(app,id);}
   }
 
   // ============ 네비게이션 ============

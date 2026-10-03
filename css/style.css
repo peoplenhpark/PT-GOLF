@@ -549,3 +549,7 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 
 .toast{max-width:calc(100vw - 32px);width:max-content;white-space:normal;overflow-wrap:anywhere;text-align:center}
 @media(max-width:600px){.toast{bottom:calc(132px + var(--safe-bot))}}
+
+.training-media-selector{display:grid;gap:8px;margin:20px 0 12px}.training-media-selector label{font-weight:700}.training-media-selector select{width:100%;min-width:0;min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--txt);font:inherit}
+
+.hd-meta{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}.app-version{color:var(--sub);font-size:12px;font-weight:700;line-height:1.5;font-variant-numeric:tabular-nums}

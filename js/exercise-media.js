@@ -1165,5 +1165,207 @@ window.ExerciseMedia = {
       "docs/images/guides/ht_bulgarian_split_squat-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=ht_bulgarian_split_squat"
+  },
+  "ht_wide_dumbbell": {
+    "id": "ht_wide_dumbbell",
+    "name": "와이드 덤벨 하체 운동",
+    "kind": "sumodumbbell",
+    "target": "glutes",
+    "captions": [
+      "넓게 서서 덤벨을 아래로",
+      "무릎과 골반을 굽혀 낮추기"
+    ],
+    "notes": [
+      "발을 넓게 두고 덤벨 하나를 양손으로 몸 아래에 잡은 예시입니다.",
+      "발을 고정한 채 골반과 무릎을 굽힙니다. 영상의 하단 부분 반복은 원본과 따로 비교하세요."
+    ],
+    "focus": {
+      "muscle": "둔근·허벅지",
+      "move": "덤벨을 양다리 사이에 두고 골반과 무릎을 굽혔다가 천천히 올라옵니다.",
+      "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+    },
+    "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다. 3D는 기본 하강·복귀 경로이며 영상의 하단 부분 반복 전체를 재현하지 않습니다.",
+    "images": [
+      "docs/images/guides/ht_wide_dumbbell-start.webp",
+      "docs/images/guides/ht_wide_dumbbell-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_wide_dumbbell"
+  },
+  "ht_upper_form": {
+    "id": "ht_upper_form",
+    "name": "상체 운동 자세 체크 · 6가지",
+    "kind": "htlateral",
+    "target": "shoulders",
+    "captions": [
+      "팔을 길게 내려 준비",
+      "팔을 옆으로 들어 올리기"
+    ],
+    "notes": [
+      "덤벨을 양옆에 들고 몸통을 안정시킵니다.",
+      "팔꿈치를 가볍게 굽힌 상태로 팔을 옆으로 들어 올리는 예시입니다."
+    ],
+    "focus": {
+      "muscle": "어깨",
+      "move": "상체를 약간 기울인 채 팔을 옆으로 올렸다가 천천히 내립니다.",
+      "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+    },
+    "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다. 영상의 교정 포인트는 위 설명과 원본에서 비교하세요.",
+    "images": [
+      "docs/images/guides/pt_lateralraise-start.webp",
+      "docs/images/guides/pt_lateralraise-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_upper_form",
+    "variants": [
+      {
+        "id": "ht_upper_lateral",
+        "name": "레터럴 레이즈",
+        "kind": "htlateral",
+        "target": "shoulders",
+        "captions": [
+          "팔을 길게 내려 준비",
+          "팔을 옆으로 들어 올리기"
+        ],
+        "notes": [
+          "덤벨을 양옆에 들고 몸통을 안정시킵니다.",
+          "팔꿈치를 가볍게 굽힌 상태로 팔을 옆으로 들어 올리는 예시입니다."
+        ],
+        "focus": {
+          "muscle": "어깨",
+          "move": "상체를 약간 기울인 채 팔을 옆으로 올렸다가 천천히 내립니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다. 영상의 교정 포인트는 위 설명과 원본에서 비교하세요.",
+        "images": [
+          "docs/images/guides/pt_lateralraise-start.webp",
+          "docs/images/guides/pt_lateralraise-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_lateral"
+      },
+      {
+        "id": "ht_upper_onearmrow",
+        "name": "원암 덤벨 로우",
+        "kind": "onearmrow",
+        "target": "back",
+        "captions": [
+          "한 손·한 무릎으로 지지",
+          "팔꿈치를 뒤로 당기기"
+        ],
+        "notes": [
+          "한 손과 같은 쪽 무릎을 벤치에 지지하고 반대쪽 손에 덤벨을 듭니다.",
+          "지지 자세를 유지하며 덤벨을 허리 옆으로 당기는 예시입니다."
+        ],
+        "focus": {
+          "muscle": "등·견갑 주변",
+          "move": "몸통을 유지하고 작업 쪽 팔꿈치를 뒤로 보내며 덤벨을 허리 옆으로 당깁니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_onearmrow-start.webp",
+          "docs/images/guides/ht_upper_onearmrow-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_onearmrow"
+      },
+      {
+        "id": "ht_upper_preacher",
+        "name": "프리처 컬",
+        "kind": "preachercurl",
+        "target": "biceps",
+        "captions": [
+          "위팔을 패드에 붙여 준비",
+          "위팔을 유지하며 팔꿈치 굽히기"
+        ],
+        "notes": [
+          "위팔을 경사진 패드에 지지하고 바를 아래로 내려 준비합니다.",
+          "위팔을 패드에서 떼지 않고 팔꿈치를 굽혀 바를 올립니다."
+        ],
+        "focus": {
+          "muscle": "상완이두",
+          "move": "패드에 위팔을 지지한 상태에서 팔꿈치를 굽혔다 폅니다. 끝범위를 강제로 잠그지 않습니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_preacher-start.webp",
+          "docs/images/guides/ht_upper_preacher-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_preacher"
+      },
+      {
+        "id": "ht_upper_latpull",
+        "name": "랫풀다운",
+        "kind": "htlatpull",
+        "target": "back",
+        "captions": [
+          "앉아서 위쪽 바 잡기",
+          "팔꿈치를 옆구리 방향으로"
+        ],
+        "notes": [
+          "앉아서 허벅지를 고정하고 위쪽 바를 잡은 예시입니다.",
+          "몸통을 유지하면서 팔꿈치를 아래로 내리는 경로를 확인합니다."
+        ],
+        "focus": {
+          "muscle": "등·견갑 주변",
+          "move": "위쪽 바를 잡고 팔꿈치를 옆구리 방향으로 내렸다가 천천히 돌아갑니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다. 영상의 교정 포인트는 위 설명과 원본에서 비교하세요.",
+        "images": [
+          "docs/images/guides/pt_latpulldown-start.webp",
+          "docs/images/guides/pt_latpulldown-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_latpull"
+      },
+      {
+        "id": "ht_upper_lyingextension",
+        "name": "라잉 트라이셉스 익스텐션",
+        "kind": "lyingextension",
+        "target": "triceps",
+        "captions": [
+          "누워 팔을 머리 쪽으로 기울이기",
+          "위팔을 유지하고 팔꿈치 굽히기"
+        ],
+        "notes": [
+          "벤치에 누워 발을 지지하고, 위팔을 머리 방향으로 약간 기울여 바를 듭니다.",
+          "위팔을 유지하면서 팔꿈치를 굽혀 머리 뒤쪽으로 바를 낮추는 예시입니다."
+        ],
+        "focus": {
+          "muscle": "상완삼두",
+          "move": "위팔의 기울기를 유지하며 팔꿈치를 굽혔다 펴고 바가 머리에 닿지 않도록 여유를 둡니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_lyingextension-start.webp",
+          "docs/images/guides/ht_upper_lyingextension-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_lyingextension"
+      },
+      {
+        "id": "ht_upper_facepull",
+        "name": "페이스풀",
+        "kind": "facepull",
+        "target": "back",
+        "captions": [
+          "로프를 앞으로 잡기",
+          "팔꿈치 높이를 유지하며 당기기"
+        ],
+        "notes": [
+          "서서 케이블 로프를 앞으로 잡고 몸통을 안정시킵니다.",
+          "팔꿈치를 어깨 부근 높이로 두고 로프를 얼굴 쪽으로 당깁니다."
+        ],
+        "focus": {
+          "muscle": "등·견갑 주변",
+          "move": "몸통을 유지하고 팔꿈치 높이를 확인하며 로프를 얼굴 쪽으로 당겼다가 돌아갑니다.",
+          "feel": "몸통과 지지 부위를 유지하며 편안한 범위에서 움직임을 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시입니다. 기구 높이·각도·가동 범위·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다. 영상의 교정 포인트는 위 설명과 원본에서 비교하세요.",
+        "images": [
+          "docs/images/guides/pt_facepull-start.webp",
+          "docs/images/guides/pt_facepull-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_facepull"
+      }
+    ]
   }
 };

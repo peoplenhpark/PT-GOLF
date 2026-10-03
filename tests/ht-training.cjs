@@ -21,14 +21,14 @@ vm.runInContext(read('js/search.js'),context);vm.runInContext(read('js/navigatio
  assert.equal(s.upsert({id:'usr_ht',name:'집 운동',part:'ht'}).part,'ht');
  assert.equal(context.AppNavigation.fromHash('#ht?cat='+encodeURIComponent('하체')).part,'ht');
  assert.equal(context.AppNavigation.hashFor({name:'part',part:'ht',cat:'하체'}),'#ht?cat='+encodeURIComponent('하체'));
- assert.equal(context.AppSearch.records('요즘원픽','ht')[0].id,id);assert.equal(context.AppSearch.records('요즘원픽','pt').length,0);
+ assert(context.AppSearch.records('요즘원픽','ht').some(e=>e.id===id));assert.equal(context.AppSearch.records('요즘원픽','pt').length,0);
  assert(s.getRelatedExercises(id).some(r=>r.exercise.id==='pt_squat'));assert(s.getRelatedExercises('pt_squat').some(r=>r.exercise.id===id));
  s.setMemo(id,'HT 개인 메모');s.toggleFavorite(id);s.patch(id,{name:'내 HT 이름'});
  const registered=s.getById(id).sourceVideo.registeredAt;
  current.exercises.find(e=>e.id===id).spec='새 원본 안내';await s.init();
  assert.equal(s.getById(id).spec,'새 원본 안내');assert.equal(s.getById(id).name,'내 HT 이름');assert.equal(s.getById(id).sourceVideo.registeredAt,registered);
  assert.equal(s.getById('pt_squat').memo,'기존 PT 메모');
- const request=s.requestDeletion(id);assert.equal(s.getRelatedExercises('pt_squat').length,0);assert.equal(context.AppSearch.records('요즘원픽','ht').length,0);
+ const request=s.requestDeletion(id);assert.equal(s.getRelatedExercises('pt_squat').length,0);assert(!context.AppSearch.records('요즘원픽','ht').some(e=>e.id===id));
  const {parseRequest,readSources,evaluateRequests}=require('../scripts/deletion-requests.cjs');
  const parsed=parseRequest({number:987,state:'open',body:context.DeletionFlow.issueBody(request)});
  assert.equal(parsed.id,id);assert.equal(parsed.kind,'exercise');assert(readSources(root).sourceIds.exercise.has(id));

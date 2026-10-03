@@ -55,6 +55,31 @@ function pose(kind,t,id){
   }else arms(p,S.map(s=>add(p.chest,[s*.20,-.06,.43])),S.map(s=>[s,-1,0]));
   if(kind==='heelsquat')p.equipment.push({type:'heelpad'});
   if(v)p.equipment.push({type:'vsquat'});
+ }else if(kind==='sumodumbbell'){
+  p=base([0,.85-.29*q,-.16*q],.13+.43*q);
+  legs(p,S.map(s=>[s*.32,.065,.02]),S.map(s=>[s*.55,0,1]));
+  arms(p,S.map(s=>[s*.04,p.shoulders[0][1]-.53,p.shoulders[0][2]+.01]),S.map(s=>[s,-1,0]));
+  p.footDirections=S.map(s=>[s*.3,0,Math.sqrt(.91)]);
+  p.equipment=[{type:'sumodumbbell'}];p.target=[0,.8,0];p.distance=4.1;
+ }else if(kind==='onearmrow'){
+  p=base([0,.86,-.28],1.2);
+  legs(p,[[-.105,.57,-1.05],[.32,.065,-.40]]);
+  p.knees[0]=[-.105,.62,-.28-Math.sqrt(.43*.43-.24*.24)];
+  p.ankles[0]=add(p.knees[0],[0,-.05,-Math.sqrt(.425*.425-.05*.05)]);
+  arms(p,[[-.215,.605,.44],mix(add(p.shoulders[1],[.04,-.54,0]),[.30,.87,-.18],q)],[[-1,0,.3],[1,.2,-1]]);
+  p.footDirections=[[0,0,-1],[0,0,1]];
+  p.equipment=[{type:'rowbench',center:[-.105,.51,-.30],size:[.40,.14,1.9]},{type:'onedumbbell',side:1}];
+  p.target=[0,.72,-.22];p.distance=4.2;
+ }else if(kind==='preachercurl'){
+  p=base([0,.59,0],.12);legs(p,S.map(s=>[s*.17,.065,.44]));
+  p.elbows=p.shoulders.map(a=>add(a,[0,-.25,Math.sqrt(.29*.29-.25*.25)]));
+  const a=.55+1.65*q;p.wrists=p.elbows.map(e=>add(e,[0,-.285*Math.cos(a),.285*Math.sin(a)]));
+  p.equipment=[{type:'preacherbench'},{type:'ezbar'}];p.target=[0,.85,.12];p.distance=3.8;
+ }else if(kind==='lyingextension'){
+  p=supine(.62);legs(p,S.map(s=>[s*.26,.065,.43]));
+  p.elbows=p.shoulders.map(a=>add(a,[0,.28,-Math.sqrt(.29*.29-.28*.28)]));
+  const a=.30+1.65*q;p.wrists=p.elbows.map(e=>add(e,[0,.285*Math.cos(a),-.285*Math.sin(a)]));
+  p.equipment=[{type:'bench'},{type:'ezbar'}];p.target=[0,.78,-.18];p.distance=4.1;
  }else if(kind==='bulgariansplit'){
   // Front sole on the floor; opposite instep on a fixed rear bench.
   // Example geometry only: no personal stance/depth measurements are implied.
@@ -138,8 +163,8 @@ function pose(kind,t,id){
   p=base([0,.90,0],.07);
   arms(p,S.map(s=>[s*.235,.91+.54*q,.17]),S.map(s=>[s*.05,-1,-1]));
   p.equipment.push({type:'bar'});
- }else if(kind==='lateral'){
-  p=base();p.elbows=S.map(s=>add(p.shoulders[s===-1?0:1],[s*.29*Math.sin(q*1.5),-.29*Math.cos(q*1.5),.035]));
+ }else if(['lateral','htlateral'].includes(kind)){
+  p=base([0,.90,0],kind==='htlateral'?.12:0);p.elbows=S.map(s=>add(p.shoulders[s===-1?0:1],[s*.29*Math.sin(q*1.5),-.29*Math.cos(q*1.5),.035]));
   p.wrists=p.elbows.map((a,i)=>add(a,[S[i]*.275*Math.sin(q*1.5),-.275*Math.cos(q*1.5),.025]));
   p.equipment.push({type:'dumbbells'});p.distance=4.2;
  }else if(kind==='pullup'){
@@ -147,10 +172,10 @@ function pose(kind,t,id){
   arms(p,[[-.27,2.13,.08],[.27,2.13,.08]],[[ -1,-1,.3],[1,-1,.3]]);
   legs(p,S.map(s=>[s*.12,.30+.33*q,-.24]));
   p.equipment.push({type:'pullup'});p.target=[0,1.2,0];p.distance=4.5;
- }else if(['latpull','row','machinerow','chestpress','pecdeck'].includes(kind)){
+ }else if(['latpull','htlatpull','row','machinerow','chestpress','pecdeck'].includes(kind)){
   p=seat();
-  if(kind==='latpull'){
-   p.ankles=p.ankles.map(a=>[a[0],.10,a[2]]);
+  if(['latpull','htlatpull'].includes(kind)){
+   if(kind==='latpull')p.ankles=p.ankles.map(a=>[a[0],.10,a[2]]);
    arms(p,S.map(s=>[s*.31,1.62-.43*q,.18]),S.map(s=>[s,-1,0]));
    p.equipment.push({type:'latpull'},{type:'bar'});
   }else if(['row','machinerow'].includes(kind)){

@@ -92,7 +92,8 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const width of [320,390,768]){
    await page.setViewportSize({width,height:844});await page.goto(base+'#golf/videos');await page.locator('.g-video-grid').first().waitFor();
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no golf overflow at '+width);
-   if(width<720)assert.equal(await page.locator('.g-video-grid').first().evaluate(el=>getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length),1,'single golf column below 720px at '+width);
+   const gridColumns=await page.locator('.g-video-grid').evaluateAll(items=>items.map(el=>({width:el.getBoundingClientRect().width,columns:getComputedStyle(el).gridTemplateColumns.trim().split(/\s+/).length})));
+   for(const grid of gridColumns)assert.equal(grid.columns,grid.width>=500?3:2,'parallel golf cards at '+width);
    assert.equal(await page.locator('.g-mini-takeaway').evaluateAll(items=>items.every(item=>item.scrollHeight<=item.clientHeight+1)),true,'golf takeaways are not clipped at '+width);
    if(process.env.PTGOLF_SCREENSHOT_DIR){fs.mkdirSync(process.env.PTGOLF_SCREENSHOT_DIR,{recursive:true});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'golf-'+width+'.png'),fullPage:false});}
    await page.goto(base+'#exercise/pt_latpulldown');await page.locator('.grip-guide').waitFor();assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no lat grip overflow at '+width);if(process.env.PTGOLF_SCREENSHOT_DIR)await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'lat-grip-'+width+'.png'),fullPage:true});
@@ -119,7 +120,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');assert.equal(await page.locator('.fav.on').count(),1);
   await page.locator('.training-related [data-open=pt_squat]').click();await page.locator('.training-related [data-open="'+htId+'"]').click();
   assert.match(page.url(),new RegExp('#exercise/'+htId));await page.locator('[data-nav=favorites]').click();await page.locator('[data-open="'+htId+'"]').click();
-  await page.goto(base+'#search?q='+encodeURIComponent('요즘원픽')+'&scope=ht');await page.locator('.search-result').waitFor();assert.equal(await page.locator('.search-result').count(),1);
+  await page.goto(base+'#search?q='+encodeURIComponent('불가리안')+'&scope=ht');await page.locator('.search-result').waitFor();assert.equal(await page.locator('.search-result').count(),1);
   await page.locator('.search-result').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),1);
   await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-yes]').click();await page.locator('[data-part=ht]').waitFor();assert.equal(await page.locator('[data-open="'+htId+'"]').count(),0);
   await page.goto(base+'#exercise/pt_squat');await page.locator('.d-title').waitFor();assert.equal(await page.locator('.training-related [data-open="'+htId+'"]').count(),0);
@@ -163,6 +164,50 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
   await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();
   assert.equal(await page.frameLocator('.exercise-3d-frame').locator('canvas').getAttribute('data-kind'),'bulgariansplit');await context.setOffline(false);
+  // A source video can contain multiple movements. Switching must preserve memo drafts,
+  // replace the old iframe and include every variant in the parent offline bundle.
+  const collection='ht_upper_form',variants=[['ht_upper_lateral','htlateral'],['ht_upper_onearmrow','onearmrow'],['ht_upper_preacher','preachercurl'],['ht_upper_latpull','htlatpull'],['ht_upper_lyingextension','lyingextension'],['ht_upper_facepull','facepull']];
+  for(const exerciseId of ['ht_wide_dumbbell',collection]){
+    await page.goto(base+'#exercise/'+exerciseId);await page.locator('.training-video').waitFor();
+    await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
+  }
+  await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('동작 선택 중 작성한 메모');
+  for(const [variant,kind] of variants){
+    await page.locator('#training-movement').selectOption(variant);
+    assert.equal(await page.locator('#memo-input').inputValue(),'동작 선택 중 작성한 메모');
+    assert.equal(await page.locator('.exercise-3d-frame').count(),0);
+    await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth===700));
+    await page.locator('.exercise-3d summary').click();
+    const frame=page.frameLocator('.exercise-3d-frame');await frame.locator('canvas[data-ready]').waitFor();
+    assert.equal(await frame.locator('canvas').getAttribute('data-kind'),kind);assert.equal(await frame.locator('#speed').inputValue(),'.5');
+    await frame.locator('#progress').fill('500');await frame.locator('#progress').dispatchEvent('input');
+    assert.equal(await frame.locator('#play').innerText(),'재생');
+    await frame.locator('canvas').press('ArrowLeft');await frame.locator('canvas').press('+');
+    for(const width of [320,390,768]){
+      await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+      assert(await frame.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));
+    }
+    if(process.env.PTGOLF_SCREENSHOT_DIR){
+      await frame.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,variant+'-3d.png')});
+      await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,variant+'-detail.png'),fullPage:true});
+    }
+  }
+  await page.locator('#memo-save').click();
+  await context.setOffline(true);await page.reload();await page.locator('#training-movement').waitFor();
+  assert.equal(await page.locator('.memo-box').textContent(),'동작 선택 중 작성한 메모');
+  for(const [variant,kind] of variants){
+    await page.locator('#training-movement').selectOption(variant);
+    await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+    await page.locator('.exercise-3d summary').click();const frame=page.frameLocator('.exercise-3d-frame');await frame.locator('canvas[data-ready]').waitFor();
+    assert.equal(await frame.locator('canvas').getAttribute('data-kind'),kind);
+  }
+  await page.goto(base+'#exercise/ht_wide_dumbbell');await page.locator('.training-video').waitFor();
+  await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth===700));
+  await page.locator('.exercise-3d summary').click();const lowerFrame=page.frameLocator('.exercise-3d-frame');await lowerFrame.locator('canvas[data-ready]').waitFor();
+  assert.equal(await lowerFrame.locator('canvas').getAttribute('data-kind'),'sumodumbbell');
+  await lowerFrame.locator('#progress').fill('500');await lowerFrame.locator('#progress').dispatchEvent('input');
+  if(process.env.PTGOLF_SCREENSHOT_DIR)await lowerFrame.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_wide_dumbbell-3d.png')});
+  await context.setOffline(false);
   assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
