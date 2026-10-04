@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver1.0 (내부 릴리스 v103, 2026-10-03 배포 완료). 코드 커밋 87f80ee343c4b5ddb36fc8a6470b102b120c6a63. GitHub Actions 실행 37125856942의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=103#home . 공개 release.json은 version 103 / displayVersion 1.0, seed v42이며 PT 50개·HT 3개·스윙 노트 4개다. 골프 영상 46편·기본영상 3편과 2~3열 카드, 홈 날짜 위 ver1.0 표시, HT 상체 6개 동작 선택과 700px 이미지 2컷, 원암 로우 전용 3D 0.5배 자동재생을 공개 사이트에서 확인했다. 브라우저 오류는 없었다.
-- 다음 배포 대기: 내부 v104 / seed v43 (2026-10-04), 표시 버전은 ver1.1로 배포 준비. 불가리안 스쿼트 보강 영상 8dN-DGm3hhg, HT 하체 6종 whDF33nt_Fo, 골프 신규 6편·기본영상 EgdcUOkvJKk 추가. 로컬 PT 50개·HT 4개·스윙 노트 4개, 골프 52편·기본영상 4편이다. 사용자의 배포 요청에 따라 displayVersion을 1.1로 올렸다. 배포 완료 전이며 같은 배포 재시도에서는 다시 올리지 않는다.
+- 현재 공개 버전: ver1.1 (내부 릴리스 v104, 2026-10-04 배포 완료). 코드 커밋 a7dc571c3b7ea35676a6dcc0b715cef4cbd6294d. GitHub Actions 실행 37179944036의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=104#home . 공개 release.json은 version 104 / displayVersion 1.1, seed v43이며 PT 50개·HT 4개·스윙 노트 4개다. 골프 52편·기본영상 4편과 2~3열 카드, 홈 날짜 위 ver1.1 표시, 불가리안 원본·보강 영상 2개, HT 하체 6개 선택별 이미지 2컷과 3D 0.5배 자동재생을 공개 사이트에서 확인했다. 브라우저 오류는 없었다.
+- 다음 배포 대기: 없음. 현재 요청한 HT·골프 변경을 ver1.1로 배포했다. 다음 새로운 배포 준비 때 displayVersion을 1.2로 올리며, 로컬 수정이나 같은 배포 재시도에서는 올리지 않는다.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -268,3 +268,8 @@
 - 원본 확인 범위: docs/ht-videos-2026-10-04.json, docs/golf-videos-2026-10-04.json. 이미지 도구·최종 프롬프트·경로: docs/ht-image-prompts-2026-10-04.json (built-in image_gen).
 - 기존 seed 57개 및 골프 46편은 HEAD와 데이터 대조 통과. 불가리안 보강 목록만 추가하고 기존 모든 필드는 보존했다.
 - 검증 완료: release 일치, 17개 구문 검사·20개 Node 검사, 신규 하체 6종 6006프레임, 격리 브라우저의 보강 영상 독립 재생·메모/즐겨찾기 보존·6개 동작 선택/2컷/3D 회전/0.5배 자동재생·320/390/768px·오프라인 로딩 통과. _site 197개 런타임 파일 생성, 로컬 release.json v104/displayVersion 1.0 확인. 미리보기: http://127.0.0.1:46097/ht-media/?v=104#exercise/ht_lower_six
+
+## 2026-10-04 ver1.1 배포 완료
+
+- 사용자 명시 요청에 따라 배포. 삭제 대기 요청 0건, 필수 검사 및 GitHub Actions 브라우저 검사·Pages 배포 성공.
+- 공개 사이트의 표시 버전·전체 개수·기본영상 배치·불가리안 보강 연결·하체 6종 이미지 및 3D 로딩 확인 완료. 이전 로컬 미배포 기록은 당시 작업 이력이다.
