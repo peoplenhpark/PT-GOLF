@@ -1,9 +1,9 @@
-/* 사용자 지정 영상 46편. 2026-10-03 발바닥 흐름·작은 백스윙 영상 2편 추가. 2026-10-03 신규 3편과 기본영상 「열리면 편해져」 추가. 2026-10-03 기본 영상 「레깅을 원하다」 추가. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 52편. 2026-10-04 신규 6편·중복 4편 유지, 기본영상 1편 추가. 2026-10-03 발바닥 흐름·작은 백스윙 영상 2편 추가. 2026-10-03 신규 3편과 기본영상 「열리면 편해져」 추가. 2026-10-03 기본 영상 「레깅을 원하다」 추가. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   version: 5,
   featuredVideoId: '9YWDNMyTQy4',
-  featuredVideoIds: ['9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE'],
+  featuredVideoIds: ['9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk'],
   originalMaxSeconds: 180,
   topics: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
   noteTopics: {
@@ -1695,6 +1695,204 @@ window.GolfContent = {
       ],
       "publishedAt": "2026-10-03",
       "addedAt": "2026-10-03T21:45:17+09:00"
+    },
+    {
+      "id": "jg52OubK_L0",
+      "title": "던지기 전에 한 박자만 기다리세요",
+      "originalTitle": "던지기 전에 한 박자만 기다리세요 #golf #골프 #golftips",
+      "channel": "공맞는순간",
+      "durationSeconds": 7,
+      "publishedAt": "2026-09-30",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "원본 자막은 백스윙 탑에서 급하게 던지지 말라는 타이밍 설명입니다.",
+      "points": [
+        "탑에서 서두르는 동작과 여유를 둔 전환을 원본에서 비교합니다.",
+        "한 박자는 연습 감각 표현이며 정해진 정지 시간으로 해석하지 않습니다.",
+        "이 감각이 내 스윙에 필요한지는 타점과 레슨에서 확인합니다."
+      ],
+      "connection": "내 영상에서 탑 직후 손과 클럽이 움직이는 시점을 비교하고 기다림이 완전한 정지로 바뀌는지 기록합니다.",
+      "question": "제 전환에서도 급하게 던지는 문제가 있는지, 기다림이 필요한 구간을 확인해 주세요.",
+      "relatedVideoIds": [
+        "ldkU0D_Ylms"
+      ],
+      "duration": "0:07",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 및 한국어 자동자막 확인. 자동자막의 용어 오류 가능성을 고려한 요약이며 개인 레슨 처방과 구분합니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "lb2CrZl0FrA",
+      "title": "공에서 멀어지세요 · 뒤쪽 공간",
+      "originalTitle": "공에서 멀어지세요",
+      "channel": "스윙포인트 SwingPoint",
+      "durationSeconds": 8,
+      "publishedAt": "2026-04-01",
+      "topics": [
+        "회전·순서",
+        "준비·축"
+      ],
+      "summary": "원본 자막은 공 쪽으로 밀리는 움직임 대신 뒤쪽에 공간을 만드는 감각을 설명합니다.",
+      "points": [
+        "공 쪽으로 밀리는 장면과 뒤로 공간을 만드는 장면을 비교합니다.",
+        "제목을 공에서 무조건 멀리 서라는 셋업 지시로 해석하지 않습니다.",
+        "어느 부위가 움직이는지는 같은 촬영 각도에서 원본 시범과 비교합니다."
+      ],
+      "connection": "내 측면 영상에서 골반과 공 사이 공간이 전환 전후 어떻게 달라지는지 관찰하고 몸 전체를 뒤로 피하는 동작과 구분합니다.",
+      "question": "제 스윙에서 공 쪽으로 밀리는 부위가 무엇인지, 뒤쪽 공간 감각을 어떻게 적용할지 확인해 주세요.",
+      "relatedVideoIds": [
+        "uvgnUl93Twg"
+      ],
+      "duration": "0:08",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 및 한국어 자동자막 확인. 자동자막의 용어 오류 가능성을 고려한 요약이며 개인 레슨 처방과 구분합니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "q1P0eGWA8_s",
+      "title": "머리가 왜 나간다? · 축 이동 확인",
+      "originalTitle": "머리가 왜나간다?",
+      "channel": "김기백 프로-ki200",
+      "durationSeconds": 34,
+      "publishedAt": "2026-10-03",
+      "topics": [
+        "준비·축",
+        "회전·순서"
+      ],
+      "summary": "머리 이동의 원인을 다루는 제목의 원본입니다. 세부 교정은 원본에서 확인합니다.",
+      "points": [
+        "제목·채널·길이·공개일을 확인했습니다.",
+        "자동자막은 배경음악이어서 코칭 요약에 사용하지 않았습니다.",
+        "머리를 고정하라는 지시로 단정하지 않고 원본의 원인 설명을 먼저 확인합니다."
+      ],
+      "connection": "같은 촬영 각도에서 머리와 몸통의 이동 시점을 나누어 관찰합니다.",
+      "question": "제 머리 이동이 결과인지 원인인지, 실제 교정할 부위를 확인해 주세요.",
+      "relatedVideoIds": [
+        "xUgGGs2Rh3w"
+      ],
+      "duration": "0:34",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 확인. 자동자막은 배경음악으로 내용 요약에서 제외했으며 세부 동작을 확인한 코칭이 아닙니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "unGNdzyt7kE",
+      "title": "드라이버는 이 느낌으로 · 스윙 감각",
+      "originalTitle": "드라이버 잘치는 방법?! 드라이버는 바로 이 느낌으로 치셔야 합니다! #드라이버스윙 #드라이버스피드 #골프스윙 #동탄골프레슨 #강남골프레슨 #수원골프레슨",
+      "channel": "티나프로 [Tina Pro LPGA]",
+      "durationSeconds": 19,
+      "publishedAt": "2026-08-19",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "드라이버의 스윙 감각을 다루는 제목의 원본입니다. 구체적인 동작은 원본에서 확인합니다.",
+      "points": [
+        "제목·채널·길이·공개일을 확인했습니다.",
+        "추가 설명이 없고 자동자막은 음악이어서 동작 지시를 추정하지 않았습니다.",
+        "느낌이라는 표현이 어느 부위와 순간을 말하는지 원본을 보며 확인합니다."
+      ],
+      "connection": "내 드라이버 영상에서 원본과 같은 구간의 팔·클럽 흐름을 비교합니다.",
+      "question": "이 드라이버 감각이 제 스윙에도 필요한지, 어떤 결과로 확인해야 할지 알려 주세요.",
+      "relatedVideoIds": [
+        "ThwbClowjjU"
+      ],
+      "duration": "0:19",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 확인. 자동자막은 배경음악으로 내용 요약에서 제외했으며 세부 동작을 확인한 코칭이 아닙니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "En79wtGEzs4",
+      "title": "독학 골퍼를 위한 백스윙·다운스윙 순서",
+      "originalTitle": "독학 골퍼라면 이것만 죽어라 하세요 #골프레슨 #골프 #골프스윙 #golfswing #golftips #golflesson #shorts",
+      "channel": "박창현 골프TV",
+      "durationSeconds": 60,
+      "publishedAt": "2026-07-06",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "원본은 테이크어웨이 뒤 왼팔을 가슴을 따라 올리고 내리는 감각에 오른손목 움직임을 연결합니다.",
+      "points": [
+        "오른 허벅지 부근까지 손을 보내는 첫 구간을 설명합니다.",
+        "왼팔을 가슴 쪽으로 올릴 때 몸통 회전과 오른손목 굽힘을 연결합니다.",
+        "내려올 때 오른손목 모양을 유지한 채 왼팔을 내리고 손이 주머니 높이에 올 때 회전하는 감각을 소개합니다."
+      ],
+      "connection": "공 없이 작은 구분 동작으로 팔이 올라가고 내려오는 순서를 비교합니다. 영상의 각도 표현을 개인 측정값으로 적용하지 않습니다.",
+      "question": "왼팔을 쓸어 올리고 내리는 비유가 제 스윙에서는 어떤 궤도인지, 손목을 억지로 고정하지 않는지 확인해 주세요.",
+      "relatedVideoIds": [
+        "du58mmLNMnQ"
+      ],
+      "duration": "1:00",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 및 한국어 자동자막 확인. 자동자막의 용어 오류 가능성을 고려한 요약이며 개인 레슨 처방과 구분합니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "EgdcUOkvJKk",
+      "title": "아이언 다운블로 · 체중이동으로 눌러 맞히기",
+      "originalTitle": "7번 아이언 150m 안나가면 꼭 봐야하는 영상/#아이언스윙 #아이언잘치는법 #엄보형프로",
+      "channel": "엄보형 프로의 볼플라이트 골프레슨",
+      "durationSeconds": 99,
+      "publishedAt": "2026-09-28",
+      "topics": [
+        "체중이동",
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "원본은 팔로 가파르게 끌어내리기보다 회전·코킹·릴리스에 하체 체중이동을 연결해 다운블로를 만드는 방법을 설명합니다.",
+      "points": [
+        "손목 각도를 억지로 유지하거나 팔로 가파르게 누르는 방식의 문제를 설명합니다.",
+        "먼저 반스윙에서 몸의 회전과 코킹·릴리스 흐름을 확인합니다.",
+        "그 흐름에 하체 체중이동을 연결하는 시범이며 제목의 150m를 개인 필수 비거리로 삼지 않습니다."
+      ],
+      "connection": "작은 아이언 스윙에서 팔 힘보다 체중이동 시점과 타점·최저점을 함께 기록해 원본 감각과 비교합니다.",
+      "question": "제 아이언도 팔로 누르거나 가파르게 끌어내리는지, 체중이동 시점과 최저점으로 확인해 주세요.",
+      "relatedVideoIds": [
+        "t_9sQjrS2o4",
+        "CA-TZ7WQlHY"
+      ],
+      "duration": "1:39",
+      "presentation": "original",
+      "evidence": "2026-10-04 원본 제목·채널·공개일·길이 및 한국어 자동자막 확인. 자동자막의 용어 오류 가능성을 고려한 요약이며 개인 레슨 처방과 구분합니다.",
+      "moments": [
+        {
+          "s": 0,
+          "label": "0:00 · 원본 전체 보기"
+        }
+      ],
+      "addedAt": "2026-10-04T12:14:00.371+09:00"
     }
   ]
 };
@@ -1715,14 +1913,14 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
-  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4','QsmMamIFMsE','jlqT_vNRcSI','zB5hFmVpisI','FnbyQ-UYjMI']},
-  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI','3kNb6TQN2T0','VGya7_OVLYo']}
+  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4','QsmMamIFMsE','jlqT_vNRcSI','zB5hFmVpisI','FnbyQ-UYjMI','lb2CrZl0FrA','q1P0eGWA8_s','EgdcUOkvJKk']},
+  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI','3kNb6TQN2T0','VGya7_OVLYo','jg52OubK_L0','unGNdzyt7kE','En79wtGEzs4']}
 ];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
 const golfObservationIds = new Set(['bfMsJtV61hM','-h77kU-fpjg']);
-const golfSourceContentIds = new Set(['Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
+const golfSourceContentIds = new Set(['jg52OubK_L0','lb2CrZl0FrA','En79wtGEzs4','EgdcUOkvJKk','Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
 const golfEvidenceKind = v => golfObservationIds.has(v.id) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
   const kind = golfEvidenceKind(v);
@@ -1732,6 +1930,8 @@ window.GolfContent.evidenceFor = v => {
 };
 
 const golfMetadataPractice = {
+"q1P0eGWA8_s":{"action":"머리가 움직이는 구간과 원본이 설명하는 원인 부위를 구분해 원본에서 확인하세요.","feel":"내 정면 영상에서 머리 이동이 시작되는 시점과 몸통 이동 시점을 나누어 기록하세요.","check":"제 머리 이동도 원본과 같은 원인인지, 머리 고정 대신 어떤 동작을 확인할지 알려 주세요."},
+"unGNdzyt7kE":{"action":"드라이버 시범의 느낌이 손·팔·몸 회전 중 어느 부위와 순간을 뜻하는지 확인하세요.","feel":"같은 각도의 내 드라이버 영상에서 해당 구간의 팔과 클럽 흐름을 비교해 한 가지 차이를 기록하세요.","check":"이 드라이버 감각이 제 타점과 시작 방향에 도움이 되는지 레슨에서 확인해 주세요."},
 "zB5hFmVpisI":{"action":"발바닥에서 흐름을 느낀다는 원본 안내를 보고 발·하체와 몸통이 움직이는 순서를 관찰하세요.","feel":"같은 촬영 각도의 내 영상에서 양발 지지와 몸통 움직임이 바뀌는 구간을 비교해 기록하세요.","check":"제 스윙에서 발바닥 지지와 체중 이동의 순서를 어떻게 확인할지, 발을 억지로 밀거나 몸을 흔드는 것과 어떻게 구분할지 물어보세요."},
 "FnbyQ-UYjMI":{"action":"백스윙을 크게 하지 않고 회전한다는 화면 문구와 실제 팔·몸통의 움직임을 비교하세요.","feel":"내 영상과 백스윙 크기·피니시 흐름을 나란히 비교하되 시범만으로 비거리나 효과를 단정하지 마세요.","check":"제 스윙에 적절한 백스윙 크기와 회전 범위는 어느 정도인지, 팔을 몸에 억지로 붙이는 동작과 어떻게 다른지 확인해 주세요."},
 "VGya7_OVLYo":{"action":"원본에서 손목 움직임과 클럽헤드가 공을 통과하는 경로를 나누어 관찰하세요.","feel":"내 영상의 임팩트 전후에서 손과 헤드의 위치 변화를 비교하고, 속도나 비거리 향상은 관찰만으로 단정하지 마세요.","check":"영상에서 말하는 손목 움직임이 제 스윙에 필요한지, 손으로 과하게 감거나 누르는 동작과 어떻게 구분할지 확인해 주세요."},

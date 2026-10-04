@@ -129,10 +129,14 @@ window.Persistence = (() => {
     return value === undefined || (record(value) && requiredStringFields(value, ['action', 'feel']));
   }
   function validTrainingContent(value) {
-    const video=value.sourceVideo,links=value.relatedExercises;
-    return (video===undefined || (record(video) && requiredStringFields(video,['youtubeId','title','channel','publishedAt','registeredAt','verifiedAt','evidence']) &&
-      /^[A-Za-z0-9_-]{11}$/.test(video.youtubeId) && Number.isFinite(video.durationSeconds) && video.durationSeconds>0 &&
-      Number.isFinite(Date.parse(video.registeredAt)))) &&
+    const video=value.sourceVideo,extra=value.supplementaryVideos,links=value.relatedExercises;
+    const validVideo=v=>record(v) && requiredStringFields(v,['youtubeId','title','channel','publishedAt','registeredAt','verifiedAt','evidence']) &&
+      /^[A-Za-z0-9_-]{11}$/.test(v.youtubeId) && Number.isFinite(v.durationSeconds) && v.durationSeconds>0 &&
+      Number.isFinite(Date.parse(v.registeredAt)) && stringLists(v,['points']);
+    const videos=[...(video?[video]:[]),...(Array.isArray(extra)?extra:[])];
+    return (video===undefined || validVideo(video)) &&
+      (extra===undefined || (Array.isArray(extra) && extra.every(validVideo))) &&
+      new Set(videos.map(v=>v.youtubeId)).size===videos.length &&
       (links===undefined || (Array.isArray(links) && links.every(link=>record(link) && requiredStringFields(link,['id','reason']))));
   }
   function validExercise(value) {

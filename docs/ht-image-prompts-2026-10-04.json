@@ -1,0 +1,52 @@
+{
+  "tool": "built-in image_gen",
+  "sourceVideo": "https://www.youtube.com/shorts/whDF33nt_Fo",
+  "note": "Original educational illustrations, not source frames. Diptychs split and downscaled to 700px WebP.",
+  "prompts": [
+    {
+      "id": "wide",
+      "prompt": "Use case: scientific-educational. Create a clean fitness instruction diptych, two equal-width square panels side by side on a light ivory background, thin vertical dividing line exactly in center. Same anonymous adult male athletic demonstrator in navy T-shirt, gray shorts, sneakers, realistic professional 3D illustration. Full body and all equipment visible with comfortable margins. Three-quarter side view, facing right. No text, no logos, no arrows, no labels, no anatomy overlays. Clear anatomically plausible poses. Wide goblet squat holding ONE dumbbell horizontally at upper chest in BOTH hands, elbows bent. LEFT panel preparation upright, feet wider than shoulders and toes slightly outward. RIGHT panel squat bottom, hips lowered and knees bent tracking toes, both entire soles planted. Keep same wide foot stance and dumbbell grip across panels.",
+      "original": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-1b1b327b-167a-411f-bf81-cd1f62d307ff.png",
+      "outputs": [
+        "docs/images/guides/ht_lower_wide-start.webp",
+        "docs/images/guides/ht_lower_wide-end.webp"
+      ]
+    },
+    {
+      "id": "narrow",
+      "prompt": "Use case: scientific-educational. Create a clean fitness instruction diptych, two equal-width square panels side by side on a light ivory background, thin vertical dividing line exactly in center. Same anonymous adult male athletic demonstrator in navy T-shirt, gray shorts, sneakers, realistic professional 3D illustration. Full body and all equipment visible with comfortable margins. Three-quarter side view, facing right. No text, no logos, no arrows, no labels, no anatomy overlays. Clear anatomically plausible poses. Narrow goblet squat holding ONE dumbbell horizontally at upper chest in BOTH hands. LEFT panel preparation upright with feet narrowly hip width, parallel. RIGHT panel controlled squat with bent knees and hips lowered, feet remain same narrow hip-width stance and flat, chest supported upright. Clearly a narrow stance, not a wide squat.",
+      "original": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-8aca4cdf-40b0-4bf5-87e8-e0c173d10b79.png",
+      "outputs": [
+        "docs/images/guides/ht_lower_narrow-start.webp",
+        "docs/images/guides/ht_lower_narrow-end.webp"
+      ]
+    },
+    {
+      "id": "split",
+      "prompt": "Use case: scientific-educational. Create a clean fitness instruction diptych, two equal-width square panels side by side on a light ivory background, thin vertical dividing line exactly in center. Same anonymous adult male athletic demonstrator in navy T-shirt, gray shorts, sneakers, realistic professional 3D illustration. Full body and all equipment visible with comfortable margins. Three-quarter side view, facing right. No text, no logos, no arrows, no labels, no anatomy overlays. Clear anatomically plausible poses. Bodyweight stationary split squat, NO dumbbells and NO bench. Both hands rest on hips. LEFT panel upright split stance with one foot forward flat on floor and other foot behind on ball of foot, heel lifted. RIGHT panel same feet fixed on floor, both knees bent, rear knee approaches floor while front sole stays flat. Torso slight forward inclination, rear foot is never elevated onto equipment.",
+      "original": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-365bbde5-29cc-4992-a963-3e9396b5b17f.png",
+      "outputs": [
+        "docs/images/guides/ht_lower_split-start.webp",
+        "docs/images/guides/ht_lower_split-end.webp"
+      ]
+    },
+    {
+      "id": "stiff",
+      "prompt": "Use case: scientific-educational. Create a clean fitness instruction diptych, two equal-width square panels side by side on a light ivory background, thin vertical dividing line exactly in center. Same anonymous adult male athletic demonstrator in navy T-shirt, gray shorts, sneakers, realistic professional 3D illustration. Full body and all equipment visible with comfortable margins. Three-quarter side view, facing right. No text, no logos, no arrows, no labels, no anatomy overlays. Clear anatomically plausible poses. Dumbbell stiff-leg hip hinge / deadlift with ONE dumbbell in EACH hand (two total), arms hanging straight below shoulders. LEFT panel stands tall, feet hip-width, knees softly bent and dumbbells beside front thighs. RIGHT panel hips pushed backward and torso inclined forward with neutral flat back, knees mildly bent, dumbbells close to shins just below knee, arms vertical. Both feet stay flat in same position; no squat, no rounded back.",
+      "original": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-62c4a455-6735-4a4d-846e-33a496a2f7f7.png",
+      "outputs": [
+        "docs/images/guides/ht_lower_stiff-start.webp",
+        "docs/images/guides/ht_lower_stiff-end.webp"
+      ]
+    },
+    {
+      "id": "extension",
+      "prompt": "Use case: scientific-educational. Fitness instruction diptych with two equal square panels side by side, thin center divider, ivory background. Same anonymous adult male in navy t-shirt gray shorts sneakers, professional realistic 3D illustration, full-body three-quarter side view facing right, all machine visible. Seated bilateral leg extension machine: back supported on upright pad, hips and thighs firmly on seat, knees at front edge, cylindrical horizontal roller across BOTH lower shins above ankles, hands hold side handles. LEFT preparation BOTH knees bent 90 degrees and shins down. RIGHT action BOTH knees extended simultaneously with legs forward almost horizontal, the SAME SINGLE roller contacts both lower shins and rises with them. Clear distinction bent versus straight knees. Never lift just one leg. No text, labels, logos, arrows or anatomy overlays; comfortable margins.",
+      "original": "C:\\Users\\peopl\\.codex\\generated_images\\01a0f2fa-e75c-7050-9eee-558de05b918e\\exec-a36ff831-79bf-42c7-ad95-d7b2c153424f.png",
+      "outputs": [
+        "docs/images/guides/ht_lower_extension-start.webp",
+        "docs/images/guides/ht_lower_extension-end.webp"
+      ]
+    }
+  ]
+}

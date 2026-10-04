@@ -1,4 +1,4 @@
-/* Presentation only: original coaching and local edits stay in Store. */
+/* Exercise preparation/action images and interactive pose registry. */
 window.ExerciseMedia = {
   "pt_pullup": {
     "name": "풀업",
@@ -1365,6 +1365,182 @@ window.ExerciseMedia = {
           "docs/images/guides/pt_facepull-end.webp"
         ],
         "viewer": "media/3d/viewer.html?exercise=ht_upper_form&variant=ht_upper_facepull"
+      }
+    ]
+  },
+  "ht_lower_six": {
+    "name": "하체 운동 시범 · 6가지",
+    "kind": "legcurl",
+    "target": "hamstrings",
+    "captions": [
+      "엎드려 골반과 허벅지 지지",
+      "양 무릎을 굽혀 롤러 올리기"
+    ],
+    "notes": [
+      "기구에 엎드려 하체를 지지하고 발목 위에 롤러를 둡니다.",
+      "골반 지지를 유지하며 양 무릎을 굽혔다가 천천히 돌아옵니다."
+    ],
+    "focus": {
+      "muscle": "허벅지 뒤쪽",
+      "move": "골반 지지를 유지하며 양 무릎을 굽혔다가 천천히 돌아옵니다.",
+      "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+    },
+    "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다.",
+    "images": [
+      "docs/images/guides/pt_legcurl-start.webp",
+      "docs/images/guides/pt_legcurl-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_lower_six",
+    "variants": [
+      {
+        "id": "ht_lower_curl",
+        "name": "라잉 레그 컬",
+        "kind": "legcurl",
+        "target": "hamstrings",
+        "captions": [
+          "엎드려 골반과 허벅지 지지",
+          "양 무릎을 굽혀 롤러 올리기"
+        ],
+        "notes": [
+          "기구에 엎드려 하체를 지지하고 발목 위에 롤러를 둡니다.",
+          "골반 지지를 유지하며 양 무릎을 굽혔다가 천천히 돌아옵니다."
+        ],
+        "focus": {
+          "muscle": "허벅지 뒤쪽",
+          "move": "골반 지지를 유지하며 양 무릎을 굽혔다가 천천히 돌아옵니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다. 2컷은 기존 PT의 같은 동작 기본 예시를 공유합니다.",
+        "images": [
+          "docs/images/guides/pt_legcurl-start.webp",
+          "docs/images/guides/pt_legcurl-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_curl"
+      },
+      {
+        "id": "ht_lower_wide",
+        "name": "와이드 고블릿 스쿼트",
+        "kind": "htwidegoblet",
+        "target": "quads",
+        "captions": [
+          "발을 넓히고 덤벨을 가슴 앞에",
+          "같은 발 간격으로 내려앉기"
+        ],
+        "notes": [
+          "발을 넓게 두고 덤벨 1개를 가슴 앞에 가로로 받칩니다.",
+          "발바닥을 지지하며 무릎과 골반을 굽혔다가 일어납니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "발바닥을 지지하며 무릎과 골반을 굽혔다가 일어납니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_lower_wide-start.webp",
+          "docs/images/guides/ht_lower_wide-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_wide"
+      },
+      {
+        "id": "ht_lower_narrow",
+        "name": "내로우 고블릿 스쿼트",
+        "kind": "htnarrowgoblet",
+        "target": "quads",
+        "captions": [
+          "발 간격을 좁혀 준비",
+          "발 지지를 유지하며 내려앉기"
+        ],
+        "notes": [
+          "발을 골반 너비 부근으로 두고 덤벨 1개를 가슴 앞에 잡습니다.",
+          "같은 발 간격을 유지하면서 무릎과 골반을 굽혔다가 일어납니다."
+        ],
+        "focus": {
+          "muscle": "허벅지 앞쪽·둔근",
+          "move": "같은 발 간격을 유지하면서 무릎과 골반을 굽혔다가 일어납니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_lower_narrow-start.webp",
+          "docs/images/guides/ht_lower_narrow-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_narrow"
+      },
+      {
+        "id": "ht_lower_split",
+        "name": "스플릿 스쿼트 · 바닥 지지",
+        "kind": "htfloorsplit",
+        "target": "quads",
+        "captions": [
+          "앞발과 뒷발 모두 바닥에",
+          "양 무릎을 굽혀 낮아지기"
+        ],
+        "notes": [
+          "앞발 전체와 뒷발 앞부분을 바닥에 지지하고 두 손은 골반에 둡니다.",
+          "두 발 위치를 유지한 채 양 무릎을 굽혀 낮아졌다가 올라옵니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "두 발 위치를 유지한 채 양 무릎을 굽혀 낮아졌다가 올라옵니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_lower_split-start.webp",
+          "docs/images/guides/ht_lower_split-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_split"
+      },
+      {
+        "id": "ht_lower_stiff",
+        "name": "덤벨 스티프레그 데드리프트",
+        "kind": "htstiffdeadlift",
+        "target": "hamstrings",
+        "captions": [
+          "덤벨 2개를 아래로 들기",
+          "골반을 뒤로 접어 덤벨 낮추기"
+        ],
+        "notes": [
+          "양손에 덤벨을 하나씩 들고 무릎을 부드럽게 둡니다.",
+          "허리를 둥글게 말지 않고 골반을 뒤로 보내며 덤벨을 다리 가까이 낮춥니다."
+        ],
+        "focus": {
+          "muscle": "허벅지 뒤쪽·둔근",
+          "move": "허리를 둥글게 말지 않고 골반을 뒤로 보내며 덤벨을 다리 가까이 낮춥니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_lower_stiff-start.webp",
+          "docs/images/guides/ht_lower_stiff-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_stiff"
+      },
+      {
+        "id": "ht_lower_extension",
+        "name": "레그 익스텐션 · 양발",
+        "kind": "htlegextension",
+        "target": "quads",
+        "captions": [
+          "등을 기대고 양 무릎 굽히기",
+          "양 무릎을 함께 펴기"
+        ],
+        "notes": [
+          "기구에 앉아 등과 허벅지를 지지하고 양쪽 정강이 아래에 롤러를 둡니다.",
+          "허벅지와 골반을 지지한 채 양 무릎을 함께 폈다가 돌아옵니다."
+        ],
+        "focus": {
+          "muscle": "허벅지 앞쪽",
+          "move": "허벅지와 골반을 지지한 채 양 무릎을 함께 폈다가 돌아옵니다.",
+          "feel": "지지 부위를 유지하고 편안한 범위에서 준비 자세와 동작 자세의 차이를 확인합니다."
+        },
+        "visualNote": "동작 구조를 설명하는 예시이며 기구 높이·보폭·깊이·중량은 개인 수업 실측값이나 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_lower_extension-start.webp",
+          "docs/images/guides/ht_lower_extension-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_extension"
       }
     ]
   }

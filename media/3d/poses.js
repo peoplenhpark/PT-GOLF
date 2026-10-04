@@ -55,6 +55,29 @@ function pose(kind,t,id){
   }else arms(p,S.map(s=>add(p.chest,[s*.20,-.06,.43])),S.map(s=>[s,-1,0]));
   if(kind==='heelsquat')p.equipment.push({type:'heelpad'});
   if(v)p.equipment.push({type:'vsquat'});
+ }else if(['htwidegoblet','htnarrowgoblet'].includes(kind)){
+  const wide=kind==='htwidegoblet',width=wide?.29:.12;
+  p=base([0,.87-.34*q,-.15*q],.06+.25*q);
+  legs(p,S.map(s=>[s*width,.065,0]),S.map(s=>[s*(wide?.6:.05),0,1]));
+  arms(p,S.map(s=>add(p.chest,[s*.14,.09,.20])),S.map(s=>[s,-1,0]));
+  p.footDirections=S.map(s=>[wide?s*.24:0,0,wide?Math.sqrt(1-.24*.24):1]);
+  p.equipment=[{type:'horizontalgoblet'}];p.target=[0,.82,0];p.distance=3.9;
+ }else if(kind==='htfloorsplit'){
+  p=base([0,.76-.24*q,0],.08+.12*q);
+  legs(p,[[-.12,.065,.40],[.12,.11,-.39]],[[0,0,1],[0,0,1]]);
+  arms(p,S.map(s=>add(p.hip,[s*.18,.10,.04])),S.map(s=>[s,0,-1]));
+  p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
+  p.target=[0,.72,.02];p.distance=3.9;
+ }else if(kind==='htstiffdeadlift'){
+  p=base([0,.87-.10*q,-.27*q],.03+.95*q);
+  legs(p,S.map(s=>[s*.15,.065,0]));
+  arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.035,-.555,.025])),S.map(s=>[s,0,1]));
+  p.equipment=[{type:'dumbbells'}];p.target=[0,.8,.06];p.distance=3.9;
+ }else if(kind==='htlegextension'){
+  p=seat();p.knees=p.hips.map(h=>add(h,[0,-.035,Math.sqrt(.43*.43-.035*.035)]));
+  p.ankles=p.knees.map(k=>add(k,[0,-.425*Math.cos(q*1.45),.425*Math.sin(q*1.45)]));
+  arms(p,S.map(s=>[s*.27,.53,.06]));p.equipment.push({type:'legextension'});
+  p.target=[0,.76,.15];p.distance=3.9;
  }else if(kind==='sumodumbbell'){
   p=base([0,.85-.29*q,-.16*q],.13+.43*q);
   legs(p,S.map(s=>[s*.32,.065,.02]),S.map(s=>[s*.55,0,1]));

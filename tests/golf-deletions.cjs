@@ -63,7 +63,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   assert(!store.isDeleted('video','9YWDNMyTQy4'));
   assert(app.innerHTML.includes('href="#golf/videos/9YWDNMyTQy4"'));
   assert.equal(store.getDeletionRequests('video').length,1);
-  assert.equal(c.videos.length,46,'source objects remain intact until a later approved release');
+  assert.equal(c.videos.length,52,'source objects remain intact until a later approved release');
   const visible=c.videos.find(v=>!store.isDeleted('video',v.id));
   const issueCount=issues.length;
   render({golfTab:'videos',golfId:visible.id});rejectWrite=true;click('delete-video',visible.id);confirmations.at(-1).callback();

@@ -5,7 +5,7 @@ try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
  const variant=params.get('variant');
  const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=103#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=104#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -205,6 +205,9 @@ try{
     case 'pronebench':bench([0,.49,.03]);break;
     case 'bar':beam(equipment,add(p.wrists[0],[-.15,0,0]),add(p.wrists[1],[.15,0,0]),.016);p.wrists.forEach(a=>handle(a));break;
     case 'dumbbells':p.wrists.forEach(dumbbell);break;
+    case 'horizontalgoblet':{
+     const a=mix(p.wrists[0],p.wrists[1],.5);beam(equipment,add(a,[-.19,0,0]),add(a,[.19,0,0]),.022);
+     for(const side of [-1,1]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(a,[side*.17,0,0]));o.scale.set(.09,.065,.09);o.rotation.z=Math.PI/2;}break;}
     case 'goblet':{
      const a=mix(p.wrists[0],p.wrists[1],.5);beam(equipment,add(a,[0,-.14,0]),add(a,[0,.08,0]),.02);
      for(let y of [-.15,.08]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(a,[0,y,0]));o.scale.set(.09,.07,.09);}break;}

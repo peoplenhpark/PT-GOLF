@@ -1,0 +1,56 @@
+{
+  "verifiedAt": "2026-10-04",
+  "exercise": "ht_lower_six",
+  "source": {
+    "youtubeId": "whDF33nt_Fo",
+    "title": "6 Exercises to Build Complete Legs",
+    "channel": "FitBurst",
+    "durationSeconds": 59,
+    "publishedAt": "2026-09-04",
+    "registeredAt": "2026-10-04T12:11:32.721+09:00",
+    "verifiedAt": "2026-10-04",
+    "evidence": "제목·채널·공개일·재생시간, 설명란의 6개 운동 목록과 각 시범 구간 화면을 확인했습니다. 자동자막은 배경음악 가사여서 운동 설명 근거로 사용하지 않았습니다. 설명과 시범의 스플릿 스쿼트 차이를 구분했습니다."
+  },
+  "supplement": {
+    "youtubeId": "8dN-DGm3hhg",
+    "title": "불가리안 스쿼트 · 발등 지지와 상체 기울기 보강",
+    "channel": "헬스걸스",
+    "durationSeconds": 33,
+    "publishedAt": "2026-05-09",
+    "registeredAt": "2026-10-04T12:11:32.721+09:00",
+    "verifiedAt": "2026-10-04",
+    "evidence": "원본 제목 「스쿼트보다 3배 효과 좋은 애플힙 운동」, 채널·공개일·재생시간 및 한국어 자동자막을 확인했습니다. 효과 배수·연골 손상·통증 예방에 대한 홍보성 주장은 검증된 사실로 채택하지 않았습니다. 개인 PT 처방과 구분합니다.",
+    "points": [
+      "벤치에 앉아 한쪽 다리를 뻗어 앞발 위치를 가늠하는 준비 방법을 소개합니다. 이는 개인에게 고정된 보폭을 정해 주는 기준은 아닙니다.",
+      "뒷발은 발가락 대신 발등을 벤치에 올리고, 두 발의 좌우 간격을 확보하는 설명을 기존 원본과 비교합니다.",
+      "상체를 세운 시범과 조금 앞으로 기울인 시범을 비교합니다. 벤치 높이·보폭·깊이는 개인 PT에서 따로 확인합니다."
+    ]
+  },
+  "movements": [
+    {
+      "name": "라잉 레그 컬",
+      "kind": "legcurl"
+    },
+    {
+      "name": "와이드 고블릿 스쿼트",
+      "kind": "htwidegoblet"
+    },
+    {
+      "name": "내로우 고블릿 스쿼트",
+      "kind": "htnarrowgoblet"
+    },
+    {
+      "name": "스플릿 스쿼트 · 바닥 지지",
+      "kind": "htfloorsplit"
+    },
+    {
+      "name": "덤벨 스티프레그 데드리프트",
+      "kind": "htstiffdeadlift"
+    },
+    {
+      "name": "레그 익스텐션 · 양발",
+      "kind": "htlegextension"
+    }
+  ],
+  "limitations": "Automatic music captions were excluded. No individual load, angle, repetitions or medical efficacy inferred."
+}

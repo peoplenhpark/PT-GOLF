@@ -110,22 +110,22 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const htId='ht_bulgarian_split_squat';
   await page.goto(base+'#home');await page.locator('.part.ht').waitFor();await page.locator('.part.ht').click();
   assert.match(page.url(),/#ht/);await page.reload();await page.locator('[data-open="'+htId+'"]').click();
-  await page.locator('.training-video').waitFor();assert.equal(await page.locator('.training-video iframe').count(),0,'video loads only on request');
-  assert.equal(await page.locator('.training-video a').getAttribute('href'),'https://www.youtube.com/shorts/xJXXLBGYO3c');
+  await page.locator('.training-video').first().waitFor();assert.equal(await page.locator('.training-video iframe').count(),0,'video loads only on request');
+  assert.equal(await page.locator('.training-video a').first().getAttribute('href'),'https://www.youtube.com/shorts/xJXXLBGYO3c');
   await page.locator('[data-act=fav]').click();await page.locator('[data-act=memo-edit]').first().click();
   await page.locator('#memo-input').fill('HT 브라우저 개인 메모');await page.locator('#memo-save').click();
   await page.locator('[data-act=edit]').click();assert.equal(await page.locator('#f-part').inputValue(),'ht');
   await page.locator('#f-name').fill('내 불가리안 스쿼트');await page.locator('[data-act=modal-save]').click();
-  await page.reload();await page.locator('.training-video').waitFor();assert.equal(await page.locator('.d-title').textContent(),'내 불가리안 스쿼트');
+  await page.reload();await page.locator('.training-video').first().waitFor();assert.equal(await page.locator('.d-title').textContent(),'내 불가리안 스쿼트');
   assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');assert.equal(await page.locator('.fav.on').count(),1);
   await page.locator('.training-related [data-open=pt_squat]').click();await page.locator('.training-related [data-open="'+htId+'"]').click();
   assert.match(page.url(),new RegExp('#exercise/'+htId));await page.locator('[data-nav=favorites]').click();await page.locator('[data-open="'+htId+'"]').click();
-  await page.goto(base+'#search?q='+encodeURIComponent('불가리안')+'&scope=ht');await page.locator('.search-result').waitFor();assert.equal(await page.locator('.search-result').count(),1);
-  await page.locator('.search-result').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),1);
+  await page.goto(base+'#search?q='+encodeURIComponent('불가리안')+'&scope=ht');await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').waitFor();assert.equal(await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').count(),1);
+  await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),2);
   await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-yes]').click();await page.locator('[data-part=ht]').waitFor();assert.equal(await page.locator('[data-open="'+htId+'"]').count(),0);
   await page.goto(base+'#exercise/pt_squat');await page.locator('.d-title').waitFor();assert.equal(await page.locator('.training-related [data-open="'+htId+'"]').count(),0);
   await page.goto(base+'#home');await page.locator('[data-delete-restore="del_exercise_'+htId+'"]').click();
-  await page.goto(base+'#exercise/'+htId);await page.locator('.training-video').waitFor();assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
+  await page.goto(base+'#exercise/'+htId);await page.locator('.training-video').first().waitFor();assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
 
   // HT preparation/action illustrations and its dedicated rear-foot-elevated 3D.
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
@@ -148,7 +148,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
   // Fulfill only the third-party embed in this isolated test; the original was separately checked.
   await page.route('https://www.youtube-nocookie.com/**',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><title>Video embed test</title>'}));
-  await page.locator('[data-act=training-play]').click();assert.match(await page.locator('.training-player iframe').getAttribute('src'),/embed\/xJXXLBGYO3c\?autoplay=1/);
+  await page.locator('[data-act=training-play]').first().click();assert.match(await page.locator('.training-player iframe').getAttribute('src'),/embed\/xJXXLBGYO3c\?autoplay=1/);
   await page.locator('#toast').waitFor({state:'hidden'});
   for(const width of [320,390,768]){
     await page.setViewportSize({width,height:844});
@@ -159,7 +159,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
       if(process.env.PTGOLF_SCREENSHOT_DIR && route!=='#exercise/pt_squat')await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht-'+route.replace(/[^a-z0-9]/gi,'_')+'-'+width+'.png'),fullPage:true});
     }
   }
-  await context.setOffline(true);await page.goto(base+'#ht');await page.locator('[data-open="'+htId+'"]').click();await page.locator('.training-video').waitFor();
+  await context.setOffline(true);await page.goto(base+'#ht');await page.locator('[data-open="'+htId+'"]').click();await page.locator('.training-video').first().waitFor();
   assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
   await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();
@@ -168,7 +168,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   // replace the old iframe and include every variant in the parent offline bundle.
   const collection='ht_upper_form',variants=[['ht_upper_lateral','htlateral'],['ht_upper_onearmrow','onearmrow'],['ht_upper_preacher','preachercurl'],['ht_upper_latpull','htlatpull'],['ht_upper_lyingextension','lyingextension'],['ht_upper_facepull','facepull']];
   for(const exerciseId of ['ht_wide_dumbbell',collection]){
-    await page.goto(base+'#exercise/'+exerciseId);await page.locator('.training-video').waitFor();
+    await page.goto(base+'#exercise/'+exerciseId);await page.locator('.training-video').first().waitFor();
     await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
   }
   await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('동작 선택 중 작성한 메모');
@@ -201,12 +201,40 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
     await page.locator('.exercise-3d summary').click();const frame=page.frameLocator('.exercise-3d-frame');await frame.locator('canvas[data-ready]').waitFor();
     assert.equal(await frame.locator('canvas').getAttribute('data-kind'),kind);
   }
-  await page.goto(base+'#exercise/ht_wide_dumbbell');await page.locator('.training-video').waitFor();
+  await page.goto(base+'#exercise/ht_wide_dumbbell');await page.locator('.training-video').first().waitFor();
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth===700));
   await page.locator('.exercise-3d summary').click();const lowerFrame=page.frameLocator('.exercise-3d-frame');await lowerFrame.locator('canvas[data-ready]').waitFor();
   assert.equal(await lowerFrame.locator('canvas').getAttribute('data-kind'),'sumodumbbell');
   await lowerFrame.locator('#progress').fill('500');await lowerFrame.locator('#progress').dispatchEvent('input');
   if(process.env.PTGOLF_SCREENSHOT_DIR)await lowerFrame.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_wide_dumbbell-3d.png')});
+  await context.setOffline(false);
+  // New supplemental video plays in its own card, and all six lower-body variants work offline.
+  await page.goto(base+'#exercise/ht_bulgarian_split_squat');await page.locator('.training-video').first().waitFor();
+  assert.equal(await page.locator('.training-video').count(),2);
+  await page.route('https://www.youtube-nocookie.com/**',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><title>isolated player</title>'}));
+  await page.locator('[data-video="8dN-DGm3hhg"]').click();
+  assert.match(await page.locator('.training-video').nth(1).locator('iframe').getAttribute('src'),/embed\/8dN-DGm3hhg\?autoplay=1/);
+  assert.equal(await page.locator('.training-video').first().locator('iframe').count(),0);
+  assert.equal(await page.locator('.memo-box').textContent(),'HT 브라우저 개인 메모');
+  await page.goto(base+'#exercise/ht_lower_six');await page.locator('#training-movement').waitFor();
+  await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
+  await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('하체 선택 중 메모 보존');
+  const lowerVariants=[['curl','legcurl'],['wide','htwidegoblet'],['narrow','htnarrowgoblet'],['split','htfloorsplit'],['stiff','htstiffdeadlift'],['extension','htlegextension']];
+  for(const [short,kind] of lowerVariants){
+   await page.locator('#training-movement').selectOption('ht_lower_'+short);
+   assert.equal(await page.locator('#memo-input').inputValue(),'하체 선택 중 메모 보존');
+   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+   await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
+   assert.equal(await f.locator('canvas').getAttribute('data-kind'),kind);assert.equal(await f.locator('#speed').inputValue(),'.5');
+   const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
+   await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
+   const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
+   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
+   if(process.env.PTGOLF_SCREENSHOT_DIR){await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_lower_'+short+'-3d.png')});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_lower_'+short+'-detail.png'),fullPage:true});}
+  }
+  await page.locator('#memo-save').click();await context.setOffline(true);await page.reload();await page.locator('#training-movement').waitFor();
+  assert.equal(await page.locator('.memo-box').textContent(),'하체 선택 중 메모 보존');
+  for(const [short,kind] of lowerVariants){await page.locator('#training-movement').selectOption('ht_lower_'+short);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();}
   await context.setOffline(false);
   assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.

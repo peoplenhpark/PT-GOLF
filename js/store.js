@@ -110,7 +110,7 @@ const Store = (() => {
       const focus = ex.focus || {};
       const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
         ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []),
-        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ex.sourceVideo?.title || '', ex.sourceVideo?.channel || '', ex.memo || ''].join(' ').toLowerCase();
+        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ...[ex.sourceVideo,...ex.supplementaryVideos||[]].filter(Boolean).flatMap(v=>[v.title,v.channel,...v.points||[]]), ex.memo || ''].join(' ').toLowerCase();
       return terms.every(term => text.includes(term));
     });
   }
@@ -129,6 +129,7 @@ const Store = (() => {
         if (original && !preserveLegacy && equal(value, original[field])) delete saved[field];
         else saved[field] = value;
       }
+      if (!persistence.validTrainingContent({ ...original, ...saved })) throw new Error('운동 영상 출처를 확인해 주세요.');
       saved.updated = todayStr();
       next.overrides[id] = saved;
       next.deleted = next.deleted.filter(item => item !== id);
