@@ -28,7 +28,7 @@ function setup(stored = null) {
 const s = setup();
 const c=s.ctx.window.GolfContent, hub=s.ctx.window.GolfHub;
 const evidenceCounts=c.videos.reduce((counts,v)=>{const kind=c.evidenceFor(v).kind;assert(['metadata','observation','source'].includes(kind));counts[kind]=(counts[kind]||0)+1;return counts;},{});
-assert.deepEqual(evidenceCounts,{metadata:31,observation:2,source:19});
+assert.deepEqual(evidenceCounts,{metadata:31,observation:7,source:19});
 const latest = Math.max(...c.videos.map(v=>Date.parse(v.addedAt)));
 assert(c.recentVideos(latest+7*86400000).length>0,'inclusive 168-hour boundary');
 assert.equal(c.recentVideos(latest+7*86400000+1).length,0,'expired videos leave recent only');
@@ -49,8 +49,8 @@ assert(s.app.innerHTML.includes('최근 등록 영상이 없습니다'));
 assert(!s.app.innerHTML.includes('아래 주제별 목록에도 표시됩니다'));
 assert(!s.app.innerHTML.includes('메모·레슨·집중 항목은 이 기기에 저장됩니다'));
 assert(!s.app.innerHTML.includes('g-mini-evidence'));
-assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,52);
-assert.equal((s.app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,52);
+assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,57);
+assert.equal((s.app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,57);
 for (const note of seed.exercises.filter(x=>x.part==='golf')) {
   const related = c.relatedFor(note);
   assert(related.length>0&&related.length<=5);

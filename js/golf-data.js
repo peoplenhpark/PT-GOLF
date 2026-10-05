@@ -1,19 +1,143 @@
-/* 사용자 지정 영상 52편. 2026-10-04 신규 6편·중복 4편 유지, 기본영상 1편 추가. 2026-10-03 발바닥 흐름·작은 백스윙 영상 2편 추가. 2026-10-03 신규 3편과 기본영상 「열리면 편해져」 추가. 2026-10-03 기본 영상 「레깅을 원하다」 추가. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
+/* 사용자 지정 영상 57편. 2026-10-05 백스윙·탑 5편과 첫 레슨 복습 연결 추가. 2026-10-04 신규 6편·중복 4편 유지, 기본영상 1편 추가. 2026-10-03 발바닥 흐름·작은 백스윙 영상 2편 추가. 2026-10-03 신규 3편과 기본영상 「열리면 편해져」 추가. 2026-10-03 기본 영상 「레깅을 원하다」 추가. 2026-09-30 Shorts 4편 중 신규 2편을 추가하고 중복 2편은 재생 화면 기반 요약을 보강. 2026-09-25 Shorts 7편의 제목·채널·길이 확인. 2026-09-23 추가 Shorts 3편의 제목·채널·길이 확인. 2026-09-23 Shorts 5편의 제목·채널·길이 확인. 2026-09-19 Shorts 5편의 제목·채널·길이 확인. 2026-09-15 새 영상 3편의 원본 메타데이터·재생 화면·설명란 확인.
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
-  version: 5,
-  featuredVideoId: '9YWDNMyTQy4',
-  featuredVideoIds: ['9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk'],
-  originalMaxSeconds: 180,
-  topics: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
-  noteTopics: {
-    golf_driver: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
-    golf_iron7: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
-    golf_iron5: ['준비·축', '체중이동', '회전·순서', '팔·타이밍'],
-    golf_ironp: ['준비·축', '체중이동', '회전·순서', '팔·타이밍']
+  "version": 5,
+  "featuredVideoId": "9YWDNMyTQy4",
+  "featuredVideoIds": [
+    "9YWDNMyTQy4",
+    "3kNb6TQN2T0",
+    "QsmMamIFMsE",
+    "EgdcUOkvJKk"
+  ],
+  "originalMaxSeconds": 180,
+  "topics": [
+    "준비·축",
+    "체중이동",
+    "회전·순서",
+    "팔·타이밍"
+  ],
+  "noteTopics": {
+    "golf_driver": [
+      "준비·축",
+      "체중이동",
+      "회전·순서",
+      "팔·타이밍"
+    ],
+    "golf_iron7": [
+      "준비·축",
+      "체중이동",
+      "회전·순서",
+      "팔·타이밍"
+    ],
+    "golf_iron5": [
+      "준비·축",
+      "체중이동",
+      "회전·순서",
+      "팔·타이밍"
+    ],
+    "golf_ironp": [
+      "준비·축",
+      "체중이동",
+      "회전·순서",
+      "팔·타이밍"
+    ]
   },
-  lessons: [],
-  videos:   [
+  "lessons": [
+    {
+      "id": "lesson_20261005_first",
+      "date": "2026-10-05",
+      "title": "첫 프로 레슨 · 힘 빼고 몸통으로 넓게 시작",
+      "coach": "",
+      "noteIds": [
+        "golf_iron7"
+      ],
+      "videoIds": [
+        "wwZFeiPAoMU",
+        "aaOw2sdp-io",
+        "0mNd_dCea4Q",
+        "X0IcCD0NT9I",
+        "QLJDoGT7-2U",
+        "DOf7sAtTJYw",
+        "iqK8wC0JFTg"
+      ],
+      "topics": [
+        "준비·축",
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "problem": "7번 아이언에서 오른팔이 벌어지고, 시작할 때 팔로 가파르게 들어 올리는 동작을 지적받음. 손·오른팔의 긴장이 반복해서 언급됨.",
+      "correction": "① 탑에서 뒤늦게 풀기보다 시작부터 오른팔·오른쪽 어깨의 힘을 뺀다.\n② 팔로 번쩍 들지 않고 몸통으로 낮고 넓게 백스윙을 시작한다.",
+      "homework": "이번 레슨의 두 가지를 우선해서 연습한다. 임팩트 순간에 골반·팔·어깨를 각각 조작하려는 생각을 줄이고 자연스럽게 지나가도록 한다. 탑의 기다림보다 먼저 힘을 빼는 데 집중한다. 아래 5구 기록은 앱에서 제안하는 복습 방식이며 프로가 지정한 횟수는 아니다.",
+      "difference": "이전의 ‘어깨를 고정하고 임팩트를 통제한다’는 개인 감각은 당분간 실행 지침으로 앞세우지 않는다. 오늘 지도에서는 다운스윙·임팩트를 순간적으로 만들려고 하면 보상 동작이 나올 수 있다고 설명했다. 원문 감각은 비교 기록으로 보존한다.",
+      "result": "사용자: 첫 레슨의 효과를 크게 느낌. 전사에서 편안함과 일관성이 좋아진 느낌을 언급함. 프로도 컨택과 템포를 긍정적으로 평가하는 발언을 반복함. 장기 유지 효과와 샷별 측정값은 아직 없음.",
+      "practiceCue": "오른팔 힘 빼고, 몸통으로 넓게 시작",
+      "practiceClubs": [
+        "7번 아이언"
+      ],
+      "practicePoints": [
+        "시작부터 오른팔·어깨 힘 빼기",
+        "팔로 들지 않고 몸통으로 낮고 넓게 시작"
+      ],
+      "scope": "확인된 주된 레슨 대상은 7번 아이언. 다른 아이언과 드라이버는 직접 확인이 더 필요하다는 발언이 있어 자동으로 확대 적용하지 않음.",
+      "sourceNote": "사용자 제공 자동 전사 ‘새로운 노트 (21).txt’ · 2026-10-05 15:41 · 22분 31초. 문맥상 반복된 지도 내용을 정리했으며 화자 번호 일부가 섞이고 시범을 가리키는 표현·오인식이 있음. 오디오/동작 영상은 확인하지 않음. 프로 성함 미기록.",
+      "evidence": [
+        {
+          "time": "00:59–01:56",
+          "text": "오른팔·어깨의 긴장을 풀고, 탑에서가 아니라 시작부터 힘이 빠져 있어야 한다는 지도. 이후 편해졌다는 반응."
+        },
+        {
+          "time": "03:23–07:32",
+          "text": "탑에서 기다림보다 힘 빼기가 우선. 팔로 가파르게 들지 말고 몸통으로 넓게 시작하라는 지도가 반복됨."
+        },
+        {
+          "time": "12:30–15:23",
+          "text": "어깨 고정·낙차를 의식하는 질문에 이어, 다운스윙과 임팩트를 세부적으로 조작하려는 생각을 줄이고 자연스럽게 지나가도록 설명."
+        },
+        {
+          "time": "17:16–18:19 / 21:31",
+          "text": "필드에서도 생각을 늘리지 말고 오늘의 두 가지에 집중하라는 지도. 다른 클럽은 추가 확인 필요."
+        },
+        {
+          "time": "16:34–17:08",
+          "text": "프로의 약 160 언급과 사용자의 125·130 언급이 함께 있음. 단위·캐리/총거리·샷별 계측이 명확하지 않아 개인 기준 거리로 확정하지 않음."
+        }
+      ],
+      "sensationReviews": {
+        "1001": "오른쪽 어깨를 덜 쓰는 느낌은 ‘힘 빼기’와 비교할 수 있음. 어깨 고정·양옆구리 조임을 추가 과제로 만들지는 않기.",
+        "1003": "조용한 움직임은 편안함의 체감으로 기록. 광배근·손가락 힘을 별도 조작하는 지침은 아직 미확인.",
+        "1004": "어깨 고정·임팩트 통제를 우선 과제로 삼는 것은 잠시 보류. 첫 레슨의 ‘시작부터 힘 빼고 몸통으로 넓게’와 비교해 기록.",
+        "0930": "‘기다림’은 참고하되 힘 빼기가 우선. ‘임팩트에 집중’은 오늘 지도와 비교해 다시 확인할 부분."
+      },
+      "followUpQuestions": [
+        "혼자 연습할 때 오른팔 긴장이 돌아온 것을 무엇으로 확인할까요?",
+        "몸통으로 낮고 넓게 시작하는 범위를 다시 확인하고 싶습니다.",
+        "견고한 그립과 손·오른팔 힘 빼기를 어떻게 함께 유지할까요?",
+        "오른팔의 모양을 직접 만드는 것과 힘을 빼니 위치가 달라지는 것은 같은 지도인가요?"
+      ],
+      "videoReasons": {
+        "wwZFeiPAoMU": "힘 빼기라는 공통 주제로 연결한 복습 후보",
+        "aaOw2sdp-io": "백스윙 시작을 관찰하기 위한 복습 후보",
+        "0mNd_dCea4Q": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교",
+        "X0IcCD0NT9I": "몸통으로 시작할 때 들림과 회전을 구분해 관찰",
+        "QLJDoGT7-2U": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교",
+        "DOf7sAtTJYw": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교",
+        "iqK8wC0JFTg": "오른팔 역할의 설명을 힘 빼기와 구분해 확인"
+      },
+      "videoCaution": "앱이 공통 주제로 연결한 보조 영상입니다. 프로가 추천하거나 함께 본 영상으로 확인된 것은 아닙니다. 레슨에 없는 교정 동작을 추가하기 전 프로에게 확인하세요.",
+      "videoCollection": {
+        "title": "10/5 레슨 복습 · 오른팔 힘 빼기·몸통으로 시작",
+        "groupId": "backswing-top",
+        "videoIds": [
+          "0mNd_dCea4Q",
+          "X0IcCD0NT9I",
+          "QLJDoGT7-2U",
+          "DOf7sAtTJYw",
+          "iqK8wC0JFTg"
+        ]
+      }
+    }
+  ],
+  "videos": [
     {
       "id": "9YWDNMyTQy4",
       "title": "7번 160m · 아래로 내려놓기",
@@ -1893,6 +2017,222 @@ window.GolfContent = {
         }
       ],
       "addedAt": "2026-10-04T12:14:00.371+09:00"
+    },
+    {
+      "id": "0mNd_dCea4Q",
+      "title": "백스윙에서 오른팔이 벌어진다면",
+      "originalTitle": "백스윙 때 오른팔이 벌어진다면? #골프레슨 #골프 #golf",
+      "channel": "강유정프로[골프미닛]",
+      "duration": "0:44",
+      "durationSeconds": 44,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "tags": [
+        "오른팔 위치·벌어짐"
+      ],
+      "lessonConnection": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교",
+      "lessonId": "lesson_20261005_first",
+      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
+      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 서로 다른 오른팔 위치를 보여 주는 백스윙 장면을 확인했습니다.",
+      "points": [
+        "서로 다른 오른팔 위치를 보여 주는 백스윙 장면을 확인했습니다.",
+        "팔과 몸통의 관계를 정면과 측면에서 비교하는 화면이 있습니다.",
+        "화면만으로 개인에게 맞는 팔꿈치 각도나 힘의 크기를 확정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 15,
+          "label": "0:15 · 대표 장면 1"
+        },
+        {
+          "s": 27,
+          "label": "0:27 · 대표 장면 2"
+        }
+      ],
+      "connection": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
+      "question": "제 오른팔은 위치를 직접 만들어야 하나요, 힘을 빼면 자연스럽게 달라지는지 먼저 확인할까요?",
+      "observationPractice": {
+        "action": "백스윙 시범 두 장면에서 오른팔과 몸통 사이의 공간이 어떻게 달라지는지 관찰하세요.",
+        "feel": "내 백스윙에서 오른팔 긴장을 덜었을 때 팔의 위치가 어떻게 달라지는지 기록하세요."
+      },
+      "publishedAt": "2024-07-17T22:00:00.000Z",
+      "addedAt": "2026-10-05T12:07:59.481Z"
+    },
+    {
+      "id": "X0IcCD0NT9I",
+      "title": "몸이 들리는 백스윙과 몸통 회전",
+      "originalTitle": "몸이 들리는 백스윙이 고민이라면! #골프레슨 #골프 #golf #골프스윙",
+      "channel": "강유정프로[골프미닛]",
+      "duration": "0:46",
+      "durationSeconds": 46,
+      "presentation": "original",
+      "topics": [
+        "준비·축",
+        "회전·순서"
+      ],
+      "tags": [
+        "몸통 회전·자세 유지"
+      ],
+      "lessonConnection": "몸통으로 시작할 때 들림과 회전을 구분해 관찰",
+      "lessonId": "lesson_20261005_first",
+      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
+      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 몸통 기울기와 오른팔 접힘을 설명하는 자막·장면을 확인했습니다.",
+      "points": [
+        "몸통 기울기와 오른팔 접힘을 설명하는 자막·장면을 확인했습니다.",
+        "클럽을 든 정면 시범과 몸통을 돌린 측면 시범이 있습니다.",
+        "레슨의 넓게 시작하는 감각과 같은 지도인지는 프로에게 확인할 항목입니다."
+      ],
+      "moments": [
+        {
+          "s": 16,
+          "label": "0:16 · 대표 장면 1"
+        },
+        {
+          "s": 36,
+          "label": "0:36 · 대표 장면 2"
+        }
+      ],
+      "connection": "몸통으로 시작할 때 들림과 회전을 구분해 관찰합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
+      "question": "몸통으로 넓게 시작할 때 제 몸의 들림과 자연스러운 기울기 변화는 어떻게 구분하나요?",
+      "observationPractice": {
+        "action": "몸통 기울기와 오른팔 접힘을 보여 주는 시범에서 회전과 들림을 나누어 관찰하세요.",
+        "feel": "내 영상에서 백스윙 중 몸통 기울기가 바뀌는 구간을 표시하고 긴장감도 함께 기록하세요."
+      },
+      "publishedAt": "2025-02-26T03:30:25.000Z",
+      "addedAt": "2026-10-05T12:07:59.481Z"
+    },
+    {
+      "id": "QLJDoGT7-2U",
+      "title": "오른팔 사용을 살펴보는 연습 드릴",
+      "originalTitle": "하루에 10번씩만 해보세요 오른팔을 쓸줄 알면 완전 골프가 쉬워집니다",
+      "channel": "스윙닥터김남기프로",
+      "duration": "0:55",
+      "durationSeconds": 55,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "tags": [
+        "오른팔 사용·연습 드릴"
+      ],
+      "lessonConnection": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교",
+      "lessonId": "lesson_20261005_first",
+      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
+      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른팔 부근의 원형 표시와 백스윙 시범 장면을 확인했습니다.",
+      "points": [
+        "오른팔 부근의 원형 표시와 백스윙 시범 장면을 확인했습니다.",
+        "팔을 따로 보여 주는 설명 장면과 전신 시범이 함께 있습니다.",
+        "제목의 하루 10회는 원본 표현이며 개인 레슨의 숙제로 등록하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 19,
+          "label": "0:19 · 대표 장면 1"
+        },
+        {
+          "s": 39,
+          "label": "0:39 · 대표 장면 2"
+        }
+      ],
+      "connection": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
+      "question": "이 오른팔 드릴이 지금 제 교정에 필요한가요, 시작부터 힘을 빼는 과제와 함께 해도 되나요?",
+      "observationPractice": {
+        "action": "팔 움직임을 강조한 화면 표시와 백스윙 시범을 보며 드릴이 다루는 구간을 확인하세요.",
+        "feel": "이 드릴을 보며 느낀 오른팔 사용감과 첫 레슨에서 힘을 뺐을 때의 느낌을 구분해 적으세요."
+      },
+      "publishedAt": "2024-06-16T09:19:19.000Z",
+      "addedAt": "2026-10-05T12:07:59.481Z"
+    },
+    {
+      "id": "DOf7sAtTJYw",
+      "title": "백스윙의 오른팔과 어깨 회전",
+      "originalTitle": "백스윙때 오른팔이 굉장히 중요합니다",
+      "channel": "골프튠 이프로",
+      "duration": "0:47",
+      "durationSeconds": 47,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "tags": [
+        "오른팔 위치·벌어짐",
+        "몸통 회전·자세 유지"
+      ],
+      "lessonConnection": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교",
+      "lessonId": "lesson_20261005_first",
+      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
+      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른손바닥과 클럽 방향을 보여 주는 시범을 확인했습니다.",
+      "points": [
+        "오른손바닥과 클럽 방향을 보여 주는 시범을 확인했습니다.",
+        "테이크백 뒤 어깨 회전을 설명하는 자막과 백스윙 장면이 있습니다.",
+        "손바닥 방향을 개인 교정으로 적용할지는 현재 레슨과 대조해 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 24,
+          "label": "0:24 · 대표 장면 1"
+        },
+        {
+          "s": 41,
+          "label": "0:41 · 대표 장면 2"
+        }
+      ],
+      "connection": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
+      "question": "영상의 오른손 방향과 어깨 회전 설명을 제 레슨의 몸통으로 넓게 시작하기와 어떻게 연결하나요?",
+      "observationPractice": {
+        "action": "테이크백의 오른손·클럽 방향 설명과 어깨 회전 이후의 백스윙 장면을 비교하세요.",
+        "feel": "내 테이크백에서 팔과 몸통이 움직이는 순서를 기록하고 첫 레슨의 편안한 시작과 비교하세요."
+      },
+      "publishedAt": "2023-10-30T10:30:04.000Z",
+      "addedAt": "2026-10-05T12:07:59.481Z"
+    },
+    {
+      "id": "iqK8wC0JFTg",
+      "title": "백스윙에서 오른팔 역할 보기",
+      "originalTitle": "[범스골프] 백스윙은 오른팔 #범스윙",
+      "channel": "범스골프",
+      "duration": "0:18",
+      "durationSeconds": 18,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "tags": [
+        "오른팔 위치·벌어짐"
+      ],
+      "lessonConnection": "오른팔 역할의 설명을 힘 빼기와 구분해 확인",
+      "lessonId": "lesson_20261005_first",
+      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
+      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른팔을 따로 움직이는 시범과 클럽을 잡은 장면을 확인했습니다.",
+      "points": [
+        "오른팔을 따로 움직이는 시범과 클럽을 잡은 장면을 확인했습니다.",
+        "오른팔 역할을 강조하는 제목·화면 문구가 있습니다.",
+        "부분 시범만으로 백스윙 탑의 최종 위치나 개인 처방을 확정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 3,
+          "label": "0:03 · 대표 장면 1"
+        },
+        {
+          "s": 9,
+          "label": "0:09 · 대표 장면 2"
+        }
+      ],
+      "connection": "오른팔 역할의 설명을 힘 빼기와 구분해 확인합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
+      "question": "이 영상의 오른팔 역할을 이해하면서도 첫 레슨에서 찾은 힘 빠진 느낌을 어떻게 유지하나요?",
+      "observationPractice": {
+        "action": "오른팔을 따로 움직이는 시범과 양손으로 클럽을 잡은 장면의 차이를 관찰하세요.",
+        "feel": "오른팔을 쓴다는 표현이 내게 힘을 더 주는 느낌으로 바뀌는지, 레슨의 이완감과 비교하세요."
+      },
+      "publishedAt": "2025-02-08T11:49:58.000Z",
+      "addedAt": "2026-10-05T12:07:59.481Z"
     }
   ]
 };
@@ -1913,13 +2253,15 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 window.GolfContent.videoGroups = [
   {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
   {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
+  {id:'backswing-top',title:'백스윙·탑',description:'첫 레슨의 오른팔 힘 빼기·몸통으로 시작하기와 비교할 참고 영상입니다. 태그로 관찰할 주제를 골라 보세요.',videoIds:["0mNd_dCea4Q","X0IcCD0NT9I","QLJDoGT7-2U","DOf7sAtTJYw","iqK8wC0JFTg"]},
   {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4','QsmMamIFMsE','jlqT_vNRcSI','zB5hFmVpisI','FnbyQ-UYjMI','lb2CrZl0FrA','q1P0eGWA8_s','EgdcUOkvJKk']},
   {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI','3kNb6TQN2T0','VGya7_OVLYo','jg52OubK_L0','unGNdzyt7kE','En79wtGEzs4']}
 ];
+window.GolfContent.videoTags = ["오른팔 위치·벌어짐","몸통 회전·자세 유지","오른팔 사용·연습 드릴"];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
-const golfObservationIds = new Set(['bfMsJtV61hM','-h77kU-fpjg']);
+const golfObservationIds = new Set(["0mNd_dCea4Q","X0IcCD0NT9I","QLJDoGT7-2U","DOf7sAtTJYw","iqK8wC0JFTg",'bfMsJtV61hM','-h77kU-fpjg']);
 const golfSourceContentIds = new Set(['jg52OubK_L0','lb2CrZl0FrA','En79wtGEzs4','EgdcUOkvJKk','Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
 const golfEvidenceKind = v => golfObservationIds.has(v.id) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
@@ -2151,7 +2493,7 @@ window.GolfContent.practicalFor = v => {
       caution:'현재 확인된 것은 제목·채널·길이입니다. 세부 동작은 원본을 보기 전에는 교정 지시로 사용하지 마세요.'
     };
   }
-  const item = golfReviewedPractice[v.id] || {action:v.summary,feel:v.connection};
+  const item = v.observationPractice || golfReviewedPractice[v.id] || {action:v.summary,feel:v.connection};
   return {
     kind, labels,
     action:item.action,

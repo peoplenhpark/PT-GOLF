@@ -220,7 +220,7 @@ const Theme = (() => {
   }
 
   function renderPart(part) {
-    if(part==='golf'){view={...view,name:'golf-hub',golfTab:'today',golfId:null};return renderGolf();}
+    if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
     const activeCat = view.cat && cats.includes(view.cat) ? view.cat : (cats[0] || null);
@@ -571,7 +571,7 @@ const Theme = (() => {
     const mode=opts.__historyMode||'push';opts={...opts};delete opts.__historyMode;
     const previous=view;view={...view,name,...opts};
     if(name==='pt'||name==='ht')view={name:'part',part:name,cat:previous.part===name?previous.cat:null};
-    if(name==='golf')view={name:'golf-hub',part:'golf',golfTab:'today',golfId:null};
+    if(name==='golf')view={name:'golf-hub',part:'golf',golfTab:'lessons',golfId:null};
     if(name==='home'||name==='favorites'||name==='calendar'){view.part=null;view.id=null;}
     if(name==='detail')view.part=Store.getById(view.id)?.part||view.part;
     navigation.write(view,mode);render();

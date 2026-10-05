@@ -831,5 +831,85 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "0mNd_dCea4Q": [
+    {
+      "src": "media/golf-frames/0mNd_dCea4Q-1.webp",
+      "time": 15.4,
+      "label": "장면 1",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/0mNd_dCea4Q-2.webp",
+      "time": 27.28,
+      "label": "장면 2",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "X0IcCD0NT9I": [
+    {
+      "src": "media/golf-frames/X0IcCD0NT9I-1.webp",
+      "time": 16.1,
+      "label": "장면 1",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/X0IcCD0NT9I-2.webp",
+      "time": 36.8,
+      "label": "장면 2",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "QLJDoGT7-2U": [
+    {
+      "src": "media/golf-frames/QLJDoGT7-2U-1.webp",
+      "time": 19.25,
+      "label": "장면 1",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/QLJDoGT7-2U-2.webp",
+      "time": 39.05,
+      "label": "장면 2",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "DOf7sAtTJYw": [
+    {
+      "src": "media/golf-frames/DOf7sAtTJYw-1.webp",
+      "time": 24.91,
+      "label": "장면 1",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/DOf7sAtTJYw-2.webp",
+      "time": 41.83,
+      "label": "장면 2",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "iqK8wC0JFTg": [
+    {
+      "src": "media/golf-frames/iqK8wC0JFTg-1.webp",
+      "time": 3.06,
+      "label": "장면 1",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/iqK8wC0JFTg-2.webp",
+      "time": 9.54,
+      "label": "장면 2",
+      "width": 360,
+      "height": 640
+    }
   ]
 };

@@ -1246,5 +1246,125 @@
     "source": "https://www.youtube.com/watch?v=EgdcUOkvJKk",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "0mNd_dCea4Q",
+    "title": "백스윙 때 오른팔이 벌어진다면? #골프레슨 #골프 #golf",
+    "frames": [
+      {
+        "src": "media/golf-frames/0mNd_dCea4Q-1.webp",
+        "time": 15.4,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/0mNd_dCea4Q-2.webp",
+        "time": 27.28,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 44,
+    "source": "https://www.youtube.com/watch?v=0mNd_dCea4Q",
+    "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "X0IcCD0NT9I",
+    "title": "몸이 들리는 백스윙이 고민이라면! #골프레슨 #골프 #golf #골프스윙",
+    "frames": [
+      {
+        "src": "media/golf-frames/X0IcCD0NT9I-1.webp",
+        "time": 16.1,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/X0IcCD0NT9I-2.webp",
+        "time": 36.8,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 46,
+    "source": "https://www.youtube.com/watch?v=X0IcCD0NT9I",
+    "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "QLJDoGT7-2U",
+    "title": "하루에 10번씩만 해보세요 오른팔을 쓸줄 알면 완전 골프가 쉬워집니다",
+    "frames": [
+      {
+        "src": "media/golf-frames/QLJDoGT7-2U-1.webp",
+        "time": 19.25,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/QLJDoGT7-2U-2.webp",
+        "time": 39.05,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 55,
+    "source": "https://www.youtube.com/watch?v=QLJDoGT7-2U",
+    "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "DOf7sAtTJYw",
+    "title": "백스윙때 오른팔이 굉장히 중요합니다",
+    "frames": [
+      {
+        "src": "media/golf-frames/DOf7sAtTJYw-1.webp",
+        "time": 24.91,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/DOf7sAtTJYw-2.webp",
+        "time": 41.83,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 47,
+    "source": "https://www.youtube.com/watch?v=DOf7sAtTJYw",
+    "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "iqK8wC0JFTg",
+    "title": "[범스골프] 백스윙은 오른팔 #범스윙",
+    "frames": [
+      {
+        "src": "media/golf-frames/iqK8wC0JFTg-1.webp",
+        "time": 3.06,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/iqK8wC0JFTg-2.webp",
+        "time": 9.54,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 18,
+    "source": "https://www.youtube.com/watch?v=iqK8wC0JFTg",
+    "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
+    "verifiedAt": "2026-10-05"
   }
 ]
