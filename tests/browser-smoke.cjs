@@ -52,7 +52,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('#search-input').fill('회귀 검사');
   await page.locator('.search-result').first().waitFor();await page.reload();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('.search-result').first().click();await page.locator('.d-title').waitFor();await page.locator('#history-back').click();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
-  await page.locator('[data-nav=golf]').click();await page.locator('.g-video-grid').first().waitFor();
+  await page.locator('[data-nav=golf]').click();await page.locator('.g-practice-entry').waitFor();assert.match(page.url(),/#golf\/today/);await page.locator('.g-tabs a[href="#golf/videos"]').click();await page.locator('.g-video-grid').first().waitFor();
   assert((await page.locator('.g-mini-takeaway').count())>0,'golf list shows practical takeaways');
   assert.equal(await page.locator('.g-mini-takeaway').first().evaluate(el=>!!el.textContent.trim()),true);
   assert.match(await page.locator('.g-recent-section').textContent(),/앱 등록일 기준/);
@@ -65,6 +65,35 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
   await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
+  await page.goto(base+'#golf');await page.locator('.g-practice-entry').waitFor();
+  assert.equal(await page.locator('.g-tabs a').count(),4);
+  await page.locator('.g-tabs a[href="#golf/notes"]').click();
+  await page.locator('.g-sensation-dates a[href="#golf/notes/0930"]').click();assert.match(await page.locator('.g-original').textContent(),/수지 낙하중요/);
+  await page.locator('.g-sensation-dates a[href="#golf/notes/1001"]').click();await page.locator('[data-practice=adopt]').click();
+  assert.match(await page.locator('.g-practice-hero h2').textContent(),/밟고, 버티고, 톡/);
+  await page.locator('.g-practice-entry>summary').click();
+  await page.locator('#g-practice-club').selectOption('7번 아이언');await page.locator('#g-practice-contact').fill('3');await page.locator('#g-practice-direction').fill('4');await page.locator('#g-practice-distance').selectOption('대체로 적정');await page.locator('#g-practice-feel').selectOption('비슷함');
+  await page.reload();await page.locator('.g-practice-entry').waitFor();assert.equal(await page.locator('#g-practice-contact').inputValue(),'3','practice draft survives reload');
+  const beforePractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
+  await page.evaluate(()=>{window.__oldStorageSet=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){if(k==='ptgolf_learning_v1')throw new DOMException('Test quota','QuotaExceededError');return window.__oldStorageSet.call(this,k,v);};});
+  await page.getByRole('button',{name:'5구 결과 저장',exact:true}).click();assert.equal(await page.locator('#g-practice-contact').inputValue(),'3','failed save retains input');
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')).practiceRecords?.length||0),0);
+  await page.evaluate(()=>{Storage.prototype.setItem=window.__oldStorageSet;delete window.__oldStorageSet;});
+  await page.getByRole('button',{name:'5구 결과 저장',exact:true}).click();await page.locator('.g-practice-result').waitFor();
+  await page.reload();await page.locator('.g-practice-result').waitFor();assert.match(await page.locator('.g-practice-result').textContent(),/중심 타점 3\/5/);
+  const afterPractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
+  assert.equal(afterPractice.practiceRecords.length,1);for(const k of ['lessons','questions','focus','videoNotes'])assert.deepEqual(afterPractice[k],beforePractice[k],k+' preserved by practice save');
+  assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
+  await page.goto(base+'#golf/videos');await page.locator('.g-frame').first().waitFor();
+  assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,104);
+  for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
+  for(const width of [320,390,768])for(const hash of ['#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
+    await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.g-tabs').waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+hash);
+  }
+  await page.setViewportSize({width:390,height:844});
+
+  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
   const originalGolfTitle=await page.locator('.g-title').textContent();
   await page.locator('[data-g=favorite-video]').click();assert.equal(await page.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-g=video-edit]').click();await page.locator('[data-g-form=video-edit]').waitFor();

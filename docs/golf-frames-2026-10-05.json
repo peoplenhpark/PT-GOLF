@@ -1,0 +1,1250 @@
+[
+  {
+    "id": "9YWDNMyTQy4",
+    "title": "7번 160m · 아래로 내려놓기",
+    "frames": [
+      {
+        "src": "media/golf-frames/9YWDNMyTQy4-1.webp",
+        "time": 1,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/9YWDNMyTQy4-2.webp",
+        "time": 3,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 18,
+    "source": "https://www.youtube.com/watch?v=9YWDNMyTQy4",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "ojzyFHAQWnw",
+    "title": "어깨 회전방향 체크",
+    "frames": [
+      {
+        "src": "media/golf-frames/ojzyFHAQWnw-1.webp",
+        "time": 2.16,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/ojzyFHAQWnw-2.webp",
+        "time": 8.16,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 12,
+    "source": "https://www.youtube.com/watch?v=ojzyFHAQWnw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "wBlnDaqkGi0",
+    "title": "오른팔은 이렇게 써야 제맛",
+    "frames": [
+      {
+        "src": "media/golf-frames/wBlnDaqkGi0-1.webp",
+        "time": 3.3,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/wBlnDaqkGi0-2.webp",
+        "time": 8.8,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 11,
+    "source": "https://www.youtube.com/watch?v=wBlnDaqkGi0",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "yv4KTSs8Riw",
+    "title": "헤드 가속을 쉽게 늘려주는 2가지",
+    "frames": [
+      {
+        "src": "media/golf-frames/yv4KTSs8Riw-1.webp",
+        "time": 12.9,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/yv4KTSs8Riw-2.webp",
+        "time": 29.24,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 43,
+    "source": "https://www.youtube.com/watch?v=yv4KTSs8Riw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "4ePhtleqZBA",
+    "title": "드라이버 · 단계별 연습으로 리셋하기",
+    "frames": [
+      {
+        "src": "media/golf-frames/4ePhtleqZBA-1.webp",
+        "time": 4.8,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/4ePhtleqZBA-2.webp",
+        "time": 10.88,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 16,
+    "source": "https://www.youtube.com/watch?v=4ePhtleqZBA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "bfMsJtV61hM",
+    "title": "김민지5 프로 · 정면·좌측면 슬로모션 스윙",
+    "frames": [
+      {
+        "src": "media/golf-frames/bfMsJtV61hM-1.webp",
+        "time": 5.58,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/bfMsJtV61hM-2.webp",
+        "time": 21.08,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 31,
+    "source": "https://www.youtube.com/watch?v=bfMsJtV61hM",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "-h77kU-fpjg",
+    "title": "헤드를 던지는 감각 · 드라이버 스윙 시범",
+    "frames": [
+      {
+        "src": "media/golf-frames/-h77kU-fpjg-1.webp",
+        "time": 3.96,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/-h77kU-fpjg-2.webp",
+        "time": 17.6,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 22,
+    "source": "https://www.youtube.com/watch?v=-h77kU-fpjg",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "Aj1UEMYPxBg",
+    "title": "클럽 가속을 위한 오른팔 핵심 포인트",
+    "frames": [
+      {
+        "src": "media/golf-frames/Aj1UEMYPxBg-1.webp",
+        "time": 15.9,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/Aj1UEMYPxBg-2.webp",
+        "time": 42.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 53,
+    "source": "https://www.youtube.com/watch?v=Aj1UEMYPxBg",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "xUgGGs2Rh3w",
+    "title": "일관된 스윙을 위한 오른쪽 어깨 사용",
+    "frames": [
+      {
+        "src": "media/golf-frames/xUgGGs2Rh3w-1.webp",
+        "time": 57.2,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/xUgGGs2Rh3w-2.webp",
+        "time": 83.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 104,
+    "source": "https://www.youtube.com/watch?v=xUgGGs2Rh3w",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "S3fxUFBzfBo",
+    "title": "팔로만 내리지 않고 몸 회전과 연결하기",
+    "frames": [
+      {
+        "src": "media/golf-frames/S3fxUFBzfBo-1.webp",
+        "time": 16.2,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/S3fxUFBzfBo-2.webp",
+        "time": 61.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 90,
+    "source": "https://www.youtube.com/watch?v=S3fxUFBzfBo",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "IsSS-GnQQyY",
+    "title": "어깨 회전으로 만드는 일관된 임팩트",
+    "frames": [
+      {
+        "src": "media/golf-frames/IsSS-GnQQyY-1.webp",
+        "time": 109.98,
+        "label": "장면 1",
+        "width": 360,
+        "height": 202
+      },
+      {
+        "src": "media/golf-frames/IsSS-GnQQyY-2.webp",
+        "time": 488.8,
+        "label": "장면 2",
+        "width": 360,
+        "height": 202
+      }
+    ],
+    "duration": 611,
+    "source": "https://www.youtube.com/watch?v=IsSS-GnQQyY",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "ULOLFCC-ly8",
+    "title": "내 스윙에 맞는 힘과 타이밍 찾기",
+    "frames": [
+      {
+        "src": "media/golf-frames/ULOLFCC-ly8-1.webp",
+        "time": 16.56,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/ULOLFCC-ly8-2.webp",
+        "time": 50.6,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 92,
+    "source": "https://www.youtube.com/watch?v=ULOLFCC-ly8",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "UA-HYcmiKTA",
+    "title": "티샷 에이밍과 셋업",
+    "frames": [
+      {
+        "src": "media/golf-frames/UA-HYcmiKTA-1.webp",
+        "time": 400.26,
+        "label": "장면 1",
+        "width": 360,
+        "height": 202
+      },
+      {
+        "src": "media/golf-frames/UA-HYcmiKTA-2.webp",
+        "time": 648.04,
+        "label": "장면 2",
+        "width": 360,
+        "height": 202
+      }
+    ],
+    "duration": 953,
+    "source": "https://www.youtube.com/watch?v=UA-HYcmiKTA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "CA-TZ7WQlHY",
+    "title": "체중이동 때 힘을 주고 빼는 순서",
+    "frames": [
+      {
+        "src": "media/golf-frames/CA-TZ7WQlHY-1.webp",
+        "time": 69.72,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/CA-TZ7WQlHY-2.webp",
+        "time": 132.8,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 166,
+    "source": "https://www.youtube.com/watch?v=CA-TZ7WQlHY",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "du58mmLNMnQ",
+    "title": "손목과 회전으로 만드는 단단한 임팩트",
+    "frames": [
+      {
+        "src": "media/golf-frames/du58mmLNMnQ-1.webp",
+        "time": 237.72,
+        "label": "장면 1",
+        "width": 360,
+        "height": 202
+      },
+      {
+        "src": "media/golf-frames/du58mmLNMnQ-2.webp",
+        "time": 384.88,
+        "label": "장면 2",
+        "width": 360,
+        "height": 202
+      }
+    ],
+    "duration": 566,
+    "source": "https://www.youtube.com/watch?v=du58mmLNMnQ",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "0EgzSDUsKvg",
+    "title": "상하체를 정확하게 쓰는 스윙 순서",
+    "frames": [
+      {
+        "src": "media/golf-frames/0EgzSDUsKvg-1.webp",
+        "time": 86.9,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/0EgzSDUsKvg-2.webp",
+        "time": 126.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 158,
+    "source": "https://www.youtube.com/watch?v=0EgzSDUsKvg",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "uvgnUl93Twg",
+    "title": "들린척추 완벽 세팅",
+    "frames": [
+      {
+        "src": "media/golf-frames/uvgnUl93Twg-1.webp",
+        "time": 3.78,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/uvgnUl93Twg-2.webp",
+        "time": 14.28,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 21,
+    "source": "https://www.youtube.com/watch?v=uvgnUl93Twg",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "RSbjGWhzEnQ",
+    "title": "팔은 이렇게 사용해야 합니다!",
+    "frames": [
+      {
+        "src": "media/golf-frames/RSbjGWhzEnQ-1.webp",
+        "time": 17.82,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/RSbjGWhzEnQ-2.webp",
+        "time": 79.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 99,
+    "source": "https://www.youtube.com/watch?v=RSbjGWhzEnQ",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "aaOw2sdp-io",
+    "title": "백스윙 핵심 포인트",
+    "frames": [
+      {
+        "src": "media/golf-frames/aaOw2sdp-io-1.webp",
+        "time": 48.4,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/aaOw2sdp-io-2.webp",
+        "time": 70.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 88,
+    "source": "https://www.youtube.com/watch?v=aaOw2sdp-io",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "5glZX2pq15o",
+    "title": "힘 없이 나는 훅 바꾸기",
+    "frames": [
+      {
+        "src": "media/golf-frames/5glZX2pq15o-1.webp",
+        "time": 24.0,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/5glZX2pq15o-2.webp",
+        "time": 44.0,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 80,
+    "source": "https://www.youtube.com/watch?v=5glZX2pq15o",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "U4nn7s20ACc",
+    "title": "종결급 스윙 레슨",
+    "frames": [
+      {
+        "src": "media/golf-frames/U4nn7s20ACc-1.webp",
+        "time": 45,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/U4nn7s20ACc-2.webp",
+        "time": 50,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 88,
+    "source": "https://www.youtube.com/watch?v=U4nn7s20ACc",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "4uQe-J5qM2c",
+    "title": "헤드 던지는 2가지 핵심",
+    "frames": [
+      {
+        "src": "media/golf-frames/4uQe-J5qM2c-1.webp",
+        "time": 20.58,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/4uQe-J5qM2c-2.webp",
+        "time": 39.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 49,
+    "source": "https://www.youtube.com/watch?v=4uQe-J5qM2c",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "7sNhk9PhBxc",
+    "title": "백스윙 쉬워지는 2가지 핵심",
+    "frames": [
+      {
+        "src": "media/golf-frames/7sNhk9PhBxc-1.webp",
+        "time": 7.92,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/7sNhk9PhBxc-2.webp",
+        "time": 29.92,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 44,
+    "source": "https://www.youtube.com/watch?v=7sNhk9PhBxc",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "Wlbi1o9fb2Q",
+    "title": "상체 힘이 아닌, 헤드를 던지는 스윙",
+    "frames": [
+      {
+        "src": "media/golf-frames/Wlbi1o9fb2Q-1.webp",
+        "time": 64.9,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/Wlbi1o9fb2Q-2.webp",
+        "time": 94.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 118,
+    "source": "https://www.youtube.com/watch?v=Wlbi1o9fb2Q",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "A_fu4ajV-_I",
+    "title": "골프스윙 · 유정환",
+    "frames": [
+      {
+        "src": "media/golf-frames/A_fu4ajV-_I-1.webp",
+        "time": 2.7,
+        "label": "장면 1",
+        "width": 360,
+        "height": 480
+      },
+      {
+        "src": "media/golf-frames/A_fu4ajV-_I-2.webp",
+        "time": 6.3,
+        "label": "장면 2",
+        "width": 360,
+        "height": 480
+      }
+    ],
+    "duration": 15,
+    "source": "https://www.youtube.com/watch?v=A_fu4ajV-_I",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "FjWulC87mzM",
+    "title": "헤드 무게와 브레이크의 의미",
+    "frames": [
+      {
+        "src": "media/golf-frames/FjWulC87mzM-1.webp",
+        "time": 37.38,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/FjWulC87mzM-2.webp",
+        "time": 71.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 89,
+    "source": "https://www.youtube.com/watch?v=FjWulC87mzM",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "dBsZdo7VEAA",
+    "title": "아이언·드라이버 핵심동작 익히기",
+    "frames": [
+      {
+        "src": "media/golf-frames/dBsZdo7VEAA-1.webp",
+        "time": 21.6,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/dBsZdo7VEAA-2.webp",
+        "time": 48.96,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 72,
+    "source": "https://www.youtube.com/watch?v=dBsZdo7VEAA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "WWtv4x3uz-M",
+    "title": "백스윙에서 지킬 2가지",
+    "frames": [
+      {
+        "src": "media/golf-frames/WWtv4x3uz-M-1.webp",
+        "time": 11.4,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/WWtv4x3uz-M-2.webp",
+        "time": 25.84,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 38,
+    "source": "https://www.youtube.com/watch?v=WWtv4x3uz-M",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "o4KqDhYXlTw",
+    "title": "오른손 올바르게 사용하기",
+    "frames": [
+      {
+        "src": "media/golf-frames/o4KqDhYXlTw-1.webp",
+        "time": 1.08,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/o4KqDhYXlTw-2.webp",
+        "time": 4.08,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 6,
+    "source": "https://www.youtube.com/watch?v=o4KqDhYXlTw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "ThwbClowjjU",
+    "title": "드라이버 · 세게 쳐도 비거리가 안 나는 이유",
+    "frames": [
+      {
+        "src": "media/golf-frames/ThwbClowjjU-1.webp",
+        "time": 19.8,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/ThwbClowjjU-2.webp",
+        "time": 46.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 110,
+    "source": "https://www.youtube.com/watch?v=ThwbClowjjU",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "XvPYFd-seNw",
+    "title": "헤드가 던져지는 감각",
+    "frames": [
+      {
+        "src": "media/golf-frames/XvPYFd-seNw-1.webp",
+        "time": 5.76,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/XvPYFd-seNw-2.webp",
+        "time": 13.44,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 32,
+    "source": "https://www.youtube.com/watch?v=XvPYFd-seNw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "mGYe7UjYXfo",
+    "title": "아이언 뒤땅·손목 풀림 드릴",
+    "frames": [
+      {
+        "src": "media/golf-frames/mGYe7UjYXfo-1.webp",
+        "time": 3.6,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/mGYe7UjYXfo-2.webp",
+        "time": 8.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 20,
+    "source": "https://www.youtube.com/watch?v=mGYe7UjYXfo",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "0lbtJgkzqWM",
+    "title": "비거리 늘리는 스윙 경로",
+    "frames": [
+      {
+        "src": "media/golf-frames/0lbtJgkzqWM-1.webp",
+        "time": 30.24,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/0lbtJgkzqWM-2.webp",
+        "time": 57.6,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 72,
+    "source": "https://www.youtube.com/watch?v=0lbtJgkzqWM",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "28HBEaS-G54",
+    "title": "옷 털듯이 임팩트하기",
+    "frames": [
+      {
+        "src": "media/golf-frames/28HBEaS-G54-1.webp",
+        "time": 25,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/28HBEaS-G54-2.webp",
+        "time": 32,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 72,
+    "source": "https://www.youtube.com/watch?v=28HBEaS-G54",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "wwZFeiPAoMU",
+    "title": "힘 빼는 방법",
+    "frames": [
+      {
+        "src": "media/golf-frames/wwZFeiPAoMU-1.webp",
+        "time": 16.38,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/wwZFeiPAoMU-2.webp",
+        "time": 26.52,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 39,
+    "source": "https://www.youtube.com/watch?v=wwZFeiPAoMU",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "t_9sQjrS2o4",
+    "title": "툭 쳐도 멀리 가는 임팩트 원리",
+    "frames": [
+      {
+        "src": "media/golf-frames/t_9sQjrS2o4-1.webp",
+        "time": 7.74,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/t_9sQjrS2o4-2.webp",
+        "time": 34.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 43,
+    "source": "https://www.youtube.com/watch?v=t_9sQjrS2o4",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "zT6zJCJ59js",
+    "title": "최경주 그립 레슨",
+    "frames": [
+      {
+        "src": "media/golf-frames/zT6zJCJ59js-1.webp",
+        "time": 9.9,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/zT6zJCJ59js-2.webp",
+        "time": 37.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 55,
+    "source": "https://www.youtube.com/watch?v=zT6zJCJ59js",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "cQiwXcbWZc4",
+    "title": "스윙 원리 간단히 보기",
+    "frames": [
+      {
+        "src": "media/golf-frames/cQiwXcbWZc4-1.webp",
+        "time": 1.5,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/cQiwXcbWZc4-2.webp",
+        "time": 4.0,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 5,
+    "source": "https://www.youtube.com/watch?v=cQiwXcbWZc4",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "ldkU0D_Ylms",
+    "title": "헤드를 툭 놓는 릴리스 타이밍",
+    "frames": [
+      {
+        "src": "media/golf-frames/ldkU0D_Ylms-1.webp",
+        "time": 6.48,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/ldkU0D_Ylms-2.webp",
+        "time": 28.8,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 36,
+    "source": "https://www.youtube.com/watch?v=ldkU0D_Ylms",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "M-ryH3IhUXI",
+    "title": "오른팔꿈치 궤도·릴리스 드릴",
+    "frames": [
+      {
+        "src": "media/golf-frames/M-ryH3IhUXI-1.webp",
+        "time": 4.5,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/M-ryH3IhUXI-2.webp",
+        "time": 12.0,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 15,
+    "source": "https://www.youtube.com/watch?v=M-ryH3IhUXI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "3kNb6TQN2T0",
+    "title": "레깅을 원하다",
+    "frames": [
+      {
+        "src": "media/golf-frames/3kNb6TQN2T0-1.webp",
+        "time": 2.7,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/3kNb6TQN2T0-2.webp",
+        "time": 4.95,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 9,
+    "source": "https://www.youtube.com/watch?v=3kNb6TQN2T0",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "VGya7_OVLYo",
+    "title": "클럽속도 폭발 · 눌러치기",
+    "frames": [
+      {
+        "src": "media/golf-frames/VGya7_OVLYo-1.webp",
+        "time": 7.38,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/VGya7_OVLYo-2.webp",
+        "time": 22.55,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 41,
+    "source": "https://www.youtube.com/watch?v=VGya7_OVLYo",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "QsmMamIFMsE",
+    "title": "열리면 편해져",
+    "frames": [
+      {
+        "src": "media/golf-frames/QsmMamIFMsE-1.webp",
+        "time": 3.42,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/QsmMamIFMsE-2.webp",
+        "time": 15.2,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 19,
+    "source": "https://www.youtube.com/watch?v=QsmMamIFMsE",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "jlqT_vNRcSI",
+    "title": "왼쪽 어깨가 들리는 이유",
+    "frames": [
+      {
+        "src": "media/golf-frames/jlqT_vNRcSI-1.webp",
+        "time": 3.78,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/jlqT_vNRcSI-2.webp",
+        "time": 8.82,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 21,
+    "source": "https://www.youtube.com/watch?v=jlqT_vNRcSI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "zB5hFmVpisI",
+    "title": "스윙은 발바닥부터 시작",
+    "frames": [
+      {
+        "src": "media/golf-frames/zB5hFmVpisI-1.webp",
+        "time": 1.44,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/zB5hFmVpisI-2.webp",
+        "time": 6.4,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 8,
+    "source": "https://www.youtube.com/watch?v=zB5hFmVpisI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "FnbyQ-UYjMI",
+    "title": "작은 백스윙과 회전 시범",
+    "frames": [
+      {
+        "src": "media/golf-frames/FnbyQ-UYjMI-1.webp",
+        "time": 3,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/FnbyQ-UYjMI-2.webp",
+        "time": 5,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 6,
+    "source": "https://www.youtube.com/watch?v=FnbyQ-UYjMI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "jg52OubK_L0",
+    "title": "던지기 전에 한 박자만 기다리세요",
+    "frames": [
+      {
+        "src": "media/golf-frames/jg52OubK_L0-1.webp",
+        "time": 4,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/jg52OubK_L0-2.webp",
+        "time": 5,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=jg52OubK_L0",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "lb2CrZl0FrA",
+    "title": "공에서 멀어지세요 · 뒤쪽 공간",
+    "frames": [
+      {
+        "src": "media/golf-frames/lb2CrZl0FrA-1.webp",
+        "time": 1.44,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/lb2CrZl0FrA-2.webp",
+        "time": 3.36,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 8,
+    "source": "https://www.youtube.com/watch?v=lb2CrZl0FrA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "q1P0eGWA8_s",
+    "title": "머리가 왜 나간다? · 축 이동 확인",
+    "frames": [
+      {
+        "src": "media/golf-frames/q1P0eGWA8_s-1.webp",
+        "time": 14.28,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/q1P0eGWA8_s-2.webp",
+        "time": 23.12,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 34,
+    "source": "https://www.youtube.com/watch?v=q1P0eGWA8_s",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "unGNdzyt7kE",
+    "title": "드라이버는 이 느낌으로 · 스윙 감각",
+    "frames": [
+      {
+        "src": "media/golf-frames/unGNdzyt7kE-1.webp",
+        "time": 7.98,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/unGNdzyt7kE-2.webp",
+        "time": 12.92,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 19,
+    "source": "https://www.youtube.com/watch?v=unGNdzyt7kE",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "En79wtGEzs4",
+    "title": "독학 골퍼를 위한 백스윙·다운스윙 순서",
+    "frames": [
+      {
+        "src": "media/golf-frames/En79wtGEzs4-1.webp",
+        "time": 43,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/En79wtGEzs4-2.webp",
+        "time": 46,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 60,
+    "source": "https://www.youtube.com/watch?v=En79wtGEzs4",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "EgdcUOkvJKk",
+    "title": "아이언 다운블로 · 체중이동으로 눌러 맞히기",
+    "frames": [
+      {
+        "src": "media/golf-frames/EgdcUOkvJKk-1.webp",
+        "time": 63,
+        "label": "장면 1",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/EgdcUOkvJKk-2.webp",
+        "time": 77,
+        "label": "장면 2",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 99,
+    "source": "https://www.youtube.com/watch?v=EgdcUOkvJKk",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-05"
+  }
+]

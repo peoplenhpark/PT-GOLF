@@ -13,6 +13,8 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   const store=vm.runInContext('Store',ctx);await store.init();
   assert.equal(typeof store.requestDeletion,'function','shared deletion contract must be loaded');
   ctx.window.AppDrafts={bind:()=>{},clear:()=>true,hasPending:()=>false};
+  vm.runInContext(read('js/golf-practice.js'),ctx);
+  vm.runInContext(read('js/golf-frames.js'),ctx);
   vm.runInContext(read('js/golf.js'),ctx);
   const hub=ctx.window.GolfHub,c=ctx.window.GolfContent;
   const latest=Math.max(...c.videos.map(v=>Date.parse(v.addedAt)));

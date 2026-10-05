@@ -153,7 +153,19 @@ window.Persistence = (() => {
   }
   const validCalendar = value => record(value) && Object.entries(value).every(([date, item]) => /^\d{4}-\d{2}-\d{2}$/.test(date) && record(item) &&
     ['scheduled', 'completed', 'rest'].every(k => item[k] === undefined || typeof item[k] === 'boolean') && (item.schedTime === undefined || item.schedTime === '' || (typeof item.schedTime === 'string' && /^(?:[01]?\d|2[0-3])$/.test(item.schedTime))));
-  const validGolf = value => record(value) && ['lessons', 'questions', 'focus'].every(key => keyed(value[key])) &&
+  const validPractice = value => value === undefined || (record(value) &&
+    (value.selected === undefined || ['0930','1001','1003','1004'].includes(value.selected)) &&
+    (value.club === undefined || ['7번 아이언','5번 아이언','P 아이언'].includes(value.club)));
+  const validPracticeRecords = value => value === undefined || (keyed(value) && value.every(item =>
+    requiredStringFields(item,['id','date','created','club','method','cueId','cueDate','cueText','distance','feel','measure']) &&
+    /^\d{4}-\d{2}-\d{2}$/.test(item.date) && Number.isFinite(Date.parse(item.created)) &&
+    ['7번 아이언','5번 아이언','P 아이언'].includes(item.club) && ['baseline','cue'].includes(item.method) &&
+    ['0930','1001','1003','1004'].includes(item.cueId) &&
+    [item.contact,item.direction].every(n=>Number.isInteger(n)&&n>=0&&n<=5) &&
+    ['대체로 짧음','대체로 적정','대체로 김','편차가 큼','미확인'].includes(item.distance) &&
+    ['평소보다 좋음','비슷함','평소보다 아쉬움'].includes(item.feel) &&
+    ['타감으로 판단','페이스 자국으로 확인'].includes(item.measure)));
+  const validGolf = value => record(value) && validPractice(value.practice) && validPracticeRecords(value.practiceRecords) && ['lessons', 'questions', 'focus'].every(key => keyed(value[key])) &&
     value.lessons.every(item => typeof item.date === 'string' && stringLists(item, ['noteIds', 'videoIds', 'topics'])) &&
     value.questions.every(item => stringFields(item, ['text', 'kind', 'sourceId', 'lessonId'])) &&
     value.focus.every(item => stringFields(item, ['text', 'noteId', 'kind', 'sourceId']) && (item.active === undefined || typeof item.active === 'boolean')) &&

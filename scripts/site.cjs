@@ -8,6 +8,7 @@ const context = {};
 vm.runInNewContext(fs.readFileSync(path.join(root, 'release-assets.js'), 'utf8'), context);
 const release = context.PTGolfRelease;
 const files = new Set([...release.shell, ...Object.values(release.exercises).flat(), 'sw.js', 'release.json',
+  ...fs.readdirSync(path.join(root,'media/golf-frames')).filter(f=>f.endsWith('.webp')).map(f=>'media/golf-frames/'+f),
   'samples/pushdown-3d/index.html', ...fs.readdirSync(path.join(root, 'media/golf3d')).filter(f=>f.endsWith('.html')).map(f=>'media/golf3d/'+f)]);
 fs.mkdirSync(dest, { recursive: true });
 const realRoot = fs.realpathSync(root);

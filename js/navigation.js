@@ -11,7 +11,7 @@ window.AppNavigation = (() => {
     if (v.name === 'search') { path='#search'; if(v.q) p.set('q',v.q); if(v.scope) p.set('scope',v.scope); }
     if (v.name === 'golf-hub') {
       path = v.golfGroup && v.golfTab==='videos' && !v.golfId ? '#golf/group/'+encode(v.golfGroup) :
-        '#golf/'+(v.golfTab || 'videos')+(v.golfId?'/'+encode(v.golfId):'');
+        '#golf/'+(v.golfTab || 'today')+(v.golfId?'/'+encode(v.golfId):'');
       for (const key of ['golfQuery','golfTopic','cat','sourceKind','sourceId']) if(v[key]) p.set(key,v[key]);
     }
     return path + (p.size ? '?' + p : '');
@@ -27,7 +27,7 @@ window.AppNavigation = (() => {
     if(a==='calendar') return {name:'calendar',calYear:p.has('year')?Number(p.get('year')):undefined,calMonth:p.has('month')?Number(p.get('month')):undefined};
     if(a==='search') return {name:'search',q:p.get('q')||'',scope:p.get('scope')||'all'};
     if(a==='golf') {
-      const v={name:'golf-hub',part:'golf',golfTab:b||'videos',golfId:c||null,golfGroup:null,golfQuery:'',golfTopic:null,cat:null,sourceKind:null,sourceId:null};
+      const v={name:'golf-hub',part:'golf',golfTab:b||'today',golfId:c||null,golfGroup:null,golfQuery:'',golfTopic:null,cat:null,sourceKind:null,sourceId:null};
       if(b==='group') Object.assign(v,{golfTab:'videos',golfId:null,golfGroup:c});
       for(const k of ['golfQuery','golfTopic','cat','sourceKind','sourceId']) if(p.has(k))v[k]=p.get(k);
       return v;

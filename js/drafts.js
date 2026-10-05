@@ -25,7 +25,7 @@ window.AppDrafts = (() => {
     fields(root).forEach(el=>{
       const form=el.closest('form'), container=form||root;
       const name=el.id||el.name+(['checkbox','radio'].includes(el.type)?':'+el.value:'');
-      const key=(scope||root.dataset?.draftKey||location.hash||'#home')+'|'+(form?.dataset.gForm||'')+'|'+name;
+      const key=(scope||form?.dataset.draftKey||root.dataset?.draftKey||location.hash||'#home')+'|'+(form?.dataset.gForm||'')+'|'+name;
       if(bound.has(el)&&metas.get(el)?.key===key&&!reset)return;
       const already=bound.has(el),meta={root:container,key,base:value(el)};metas.set(el,meta);bound.add(el);
       let saved;try{saved=store.read()[key];}catch{}

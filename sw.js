@@ -5,7 +5,7 @@ const CACHE = 'ptgolf-v' + RELEASE.version;
 const OWN_CACHE = /^ptgolf-v\d+$/;
 const BASE = new URL('./', self.location.href);
 const TIMEOUT_MS = 4000;
-const KNOWN_FILES = new Set([...RELEASE.shell, ...Object.values(RELEASE.exercises).flat()]);
+const KNOWN_FILES = new Set([...RELEASE.shell, ...Object.values(RELEASE.exercises).flat(), ...(RELEASE.gallery||[])]);
 const META_URL = new URL('__offline-prepared__', BASE).href;
 
 function localFile(value) {

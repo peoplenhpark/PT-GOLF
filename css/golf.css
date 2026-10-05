@@ -134,3 +134,35 @@
 .g-featured-video,.g-video-section{container-type:inline-size}
 @container(min-width:500px){.g-video-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:360px){.g-video-grid{gap:8px}.g-video-grid .g-video-mini{padding:8px}}
+
+/* Personal practice flow and two real source frames per video. */
+.g-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.g-tabs a{padding:12px 3px;text-align:center;font-size:14px;min-width:0;white-space:normal}
+.g-practice-hero,.g-sensations{background:var(--golf-bg);border:1px solid var(--golf-line);border-radius:16px;padding:18px;margin:16px 0 24px}
+.g-practice-hero h2,.g-cue{font-size:23px;line-height:1.5;color:var(--txt);word-break:keep-all;margin:12px 0}
+.g-practice-hero summary,.g-sensations summary,.g-practice-result summary,.g-practice-history summary{min-height:44px;padding:10px 0;color:var(--golf);cursor:pointer}
+.g-sensation-dates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:18px 0}
+.g-sensation-dates a{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--line);border-radius:9px;background:var(--card)}
+.g-sensation-dates a[aria-current]{border-color:var(--golf);font-weight:800}
+.g-original{font-size:15px;line-height:1.9;margin:16px 0;white-space:pre-wrap}
+.g-practice-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.g-practice-fields label{margin:0;min-width:0;font-size:13px}
+.g-practice-fields input,.g-practice-fields select{width:100%;min-width:0;box-sizing:border-box;font-size:16px}
+.g-practice-form>button{margin-top:18px;width:100%}
+.g-practice-result{padding:14px 0;border-top:1px solid var(--line)}
+.g-practice-result h3{font-size:15px;line-height:1.5}
+.g-practice-result p{margin:7px 0;font-size:14px}
+.g-frame-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:0 0 8px;grid-column:1/-1;width:100%;max-width:500px}
+.g-frame{display:block;min-width:0;overflow:hidden;border-radius:6px;background:var(--card);border:1px solid var(--line)}
+.g-frame img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;background:var(--bg)}
+.g-frame span{display:flex;align-items:center;justify-content:center;min-height:28px;font-size:12px;color:var(--golf);font-variant-numeric:tabular-nums}
+.g-video-grid .g-frame-pair{margin:0}
+.g-video-grid .g-video-mini{align-content:start}
+.g-video-grid .g-mini-detail{min-height:0}
+@media(max-width:360px){.g-practice-fields{grid-template-columns:minmax(0,1fr)}.g-tabs a{font-size:12px}.g-practice-hero,.g-sensations{padding:14px}}
+
+
+.g-practice-entry>summary{display:list-item;min-height:44px;padding:12px 16px;border:1px solid var(--golf-line);border-radius:10px;background:var(--golf-bg);color:var(--golf);cursor:pointer}
+.g-practice-entry form{margin-top:14px}
+.g-practice-related .g-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-practice-related .g-mini-takeaway,.g-practice-related .g-mini-date{display:none}

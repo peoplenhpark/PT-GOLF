@@ -16,6 +16,8 @@ function setup(stored = null) {
   vm.createContext(ctx);
   for (const file of ['js/persistence.js','js/golf-data.js']) vm.runInContext(read(file),ctx);
   ctx.window.AppDrafts = {bind:()=>{},clear:()=>{clears++;},hasPending:()=>false};
+  vm.runInContext(read('js/golf-practice.js'),ctx);
+  vm.runInContext(read('js/golf-frames.js'),ctx);
   vm.runInContext(read('js/golf.js'),ctx);
   const messages=[];
   const routes=[];
