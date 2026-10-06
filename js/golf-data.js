@@ -52,13 +52,16 @@ window.GolfContent = {
         "golf_iron7"
       ],
       "videoIds": [
-        "wwZFeiPAoMU",
         "aaOw2sdp-io",
+        "WWtv4x3uz-M",
+        "7sNhk9PhBxc",
+        "ojzyFHAQWnw",
         "0mNd_dCea4Q",
         "X0IcCD0NT9I",
         "QLJDoGT7-2U",
         "DOf7sAtTJYw",
-        "iqK8wC0JFTg"
+        "iqK8wC0JFTg",
+        "wwZFeiPAoMU"
       ],
       "topics": [
         "준비·축",
@@ -116,18 +119,25 @@ window.GolfContent = {
       ],
       "videoReasons": {
         "wwZFeiPAoMU": "힘 빼기라는 공통 주제로 연결한 복습 후보",
-        "aaOw2sdp-io": "백스윙 시작을 관찰하기 위한 복습 후보",
-        "0mNd_dCea4Q": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교",
-        "X0IcCD0NT9I": "몸통으로 시작할 때 들림과 회전을 구분해 관찰",
-        "QLJDoGT7-2U": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교",
-        "DOf7sAtTJYw": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교",
-        "iqK8wC0JFTg": "오른팔 역할의 설명을 힘 빼기와 구분해 확인"
+        "aaOw2sdp-io": "넓게 시작할 때 오른팔 위치와 몸통 회전을 함께 비교",
+        "0mNd_dCea4Q": "백스윙에서 오른팔이 벌어지는 위치를 비교",
+        "X0IcCD0NT9I": "백스윙에서 회전과 들림이 어떻게 다른지 비교",
+        "QLJDoGT7-2U": "하프 백스윙 이후 오른팔과 몸통의 관계를 비교",
+        "DOf7sAtTJYw": "테이크백 다음에 이어지는 백스윙 회전을 비교",
+        "iqK8wC0JFTg": "백스윙 초반 오른팔 경로와 접힘 시점을 비교",
+        "WWtv4x3uz-M": "백스윙의 회전과 오른팔 접힘을 나누어 비교",
+        "7sNhk9PhBxc": "백스윙 중 오른팔과 오른손의 방향을 비교",
+        "ojzyFHAQWnw": "백스윙의 몸통 회전과 상체 들림을 구분"
       },
       "videoCaution": "앱이 공통 주제로 연결한 보조 영상입니다. 프로가 추천하거나 함께 본 영상으로 확인된 것은 아닙니다. 레슨에 없는 교정 동작을 추가하기 전 프로에게 확인하세요.",
       "videoCollection": {
-        "title": "10/5 레슨 복습 · 오른팔 힘 빼기·몸통으로 시작",
+        "title": "백스윙 복습 · 오른팔 위치·몸통 회전",
         "groupId": "backswing-top",
         "videoIds": [
+          "aaOw2sdp-io",
+          "WWtv4x3uz-M",
+          "7sNhk9PhBxc",
+          "ojzyFHAQWnw",
           "0mNd_dCea4Q",
           "X0IcCD0NT9I",
           "QLJDoGT7-2U",
@@ -184,7 +194,7 @@ window.GolfContent = {
         "준비·축",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+      "evidence": "화면 문구·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
       "summary": "어깨 회전 방향을 확인하는 짧은 원본 영상입니다.",
       "points": [
         "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
@@ -204,7 +214,23 @@ window.GolfContent = {
         "IsSS-GnQQyY"
       ],
       "publishedAt": "2025-06-08T01:00:51-07:00",
-      "addedAt": "2026-09-19T18:25:07+09:00"
+      "addedAt": "2026-09-19T18:25:07+09:00",
+      "tags": [
+        "백스윙 시 몸통 회전"
+      ],
+      "scopeReview": {
+        "priority": "existing",
+        "range": "0.6–2.4초",
+        "reason": "백스윙에서 어깨가 도는 모습과 위로 들리는 모습을 나란히 비교하는 화면을 확인했습니다.",
+        "basis": "화면 문구·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      },
+      "lessonConnection": "백스윙의 몸통 회전과 상체 들림을 구분",
+      "lessonId": "lesson_20261005_first",
+      "observationPractice": {
+        "action": "백스윙에서 어깨가 도는 모습과 위로 들리는 모습을 나란히 비교하는 화면을 확인했습니다.",
+        "feel": "백스윙의 몸통 회전과 상체 들림을 구분하면서 내 스윙에서 관찰되는 차이를 기록하세요."
+      }
     },
     {
       "id": "wBlnDaqkGi0",
@@ -884,7 +910,7 @@ window.GolfContent = {
         "준비·축",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
       "summary": "백스윙 핵심 포인트를 주제로 한 원본 영상입니다.",
       "points": [
         "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
@@ -904,7 +930,24 @@ window.GolfContent = {
         "ojzyFHAQWnw"
       ],
       "publishedAt": "2026-04-16T02:00:02-07:00",
-      "addedAt": "2026-09-20T15:30:11+09:00"
+      "addedAt": "2026-09-20T15:30:11+09:00",
+      "tags": [
+        "백스윙 시 오른팔 위치",
+        "백스윙 시 몸통 회전"
+      ],
+      "scopeReview": {
+        "priority": "existing",
+        "range": "35–53초 · 66–84초",
+        "reason": "낮고 긴 백스윙과 몸통 회전, 오른팔꿈치가 향하는 방향을 함께 설명하는 화면 자막·시범을 확인했습니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      },
+      "lessonConnection": "넓게 시작할 때 오른팔 위치와 몸통 회전을 함께 비교",
+      "lessonId": "lesson_20261005_first",
+      "observationPractice": {
+        "action": "낮고 긴 백스윙과 몸통 회전, 오른팔꿈치가 향하는 방향을 함께 설명하는 화면 자막·시범을 확인했습니다.",
+        "feel": "넓게 시작할 때 오른팔 위치와 몸통 회전을 함께 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
+      }
     },
     {
       "id": "5glZX2pq15o",
@@ -1019,7 +1062,7 @@ window.GolfContent = {
         "준비·축",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
       "summary": "백스윙을 쉽게 하는 핵심 포인트를 주제로 한 원본 영상입니다.",
       "points": [
         "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
@@ -1039,7 +1082,23 @@ window.GolfContent = {
         "uvgnUl93Twg"
       ],
       "publishedAt": "2026-07-31T22:52:23-07:00",
-      "addedAt": "2026-09-20T15:30:11+09:00"
+      "addedAt": "2026-09-20T15:30:11+09:00",
+      "tags": [
+        "백스윙 시 오른팔 위치"
+      ],
+      "scopeReview": {
+        "priority": "existing",
+        "range": "22–39초",
+        "reason": "백스윙 중 오른팔·오른손이 움직이는 방향을 설명하는 자막과 시범을 기준으로 편성합니다. 앞부분의 기울기 설명은 몸통 회전의 근거로 사용하지 않습니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      },
+      "lessonConnection": "백스윙 중 오른팔과 오른손의 방향을 비교",
+      "lessonId": "lesson_20261005_first",
+      "observationPractice": {
+        "action": "백스윙 중 오른팔·오른손이 움직이는 방향을 설명하는 자막과 시범을 기준으로 편성합니다. 앞부분의 기울기 설명은 몸통 회전의 근거로 사용하지 않습니다.",
+        "feel": "내 백스윙의 같은 구간에서 오른팔과 오른손의 방향을 관찰해 기록하세요."
+      }
     },
     {
       "id": "Wlbi1o9fb2Q",
@@ -1186,7 +1245,7 @@ window.GolfContent = {
         "준비·축",
         "회전·순서"
       ],
-      "evidence": "원본 제목·채널·길이 확인. 아래 항목은 영상 요약이 아닌 비교 관찰 안내입니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
       "summary": "백스윙에서 지킬 두 가지를 주제로 한 원본 영상입니다.",
       "points": [
         "원본을 처음부터 보며 제목에서 말하는 동작을 확인합니다.",
@@ -1206,7 +1265,24 @@ window.GolfContent = {
         "aaOw2sdp-io"
       ],
       "publishedAt": "2026-04-28T01:40:18-07:00",
-      "addedAt": "2026-09-23T14:48:29+09:00"
+      "addedAt": "2026-09-23T14:48:29+09:00",
+      "tags": [
+        "백스윙 시 오른팔 위치",
+        "백스윙 시 몸통 회전"
+      ],
+      "scopeReview": {
+        "priority": "existing",
+        "range": "7–16초 · 19–34초",
+        "reason": "왼쪽이 낮아지며 도는 백스윙과 오른팔꿈치 접힘을 분리해 설명하는 자막·시범을 확인했습니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      },
+      "lessonConnection": "백스윙의 회전과 오른팔 접힘을 나누어 비교",
+      "lessonId": "lesson_20261005_first",
+      "observationPractice": {
+        "action": "왼쪽이 낮아지며 도는 백스윙과 오른팔꿈치 접힘을 분리해 설명하는 자막·시범을 확인했습니다.",
+        "feel": "백스윙의 회전과 오른팔 접힘을 나누어 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
+      }
     },
     {
       "id": "o4KqDhYXlTw",
@@ -2031,12 +2107,12 @@ window.GolfContent = {
         "회전·순서"
       ],
       "tags": [
-        "오른팔 위치·벌어짐"
+        "백스윙 시 오른팔 위치"
       ],
-      "lessonConnection": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교",
+      "lessonConnection": "백스윙에서 오른팔이 벌어지는 위치를 비교",
       "lessonId": "lesson_20261005_first",
-      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
-      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 서로 다른 오른팔 위치를 보여 주는 백스윙 장면을 확인했습니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
+      "summary": "테이크어웨이 후 오른팔을 접는 방향과 팔이 몸 앞에 놓이는 관계를 설명하는 자막·시범을 확인했습니다.",
       "points": [
         "서로 다른 오른팔 위치를 보여 주는 백스윙 장면을 확인했습니다.",
         "팔과 몸통의 관계를 정면과 측면에서 비교하는 화면이 있습니다.",
@@ -2055,11 +2131,18 @@ window.GolfContent = {
       "connection": "오른팔이 벌어지는 모습을 첫 레슨의 힘 빼기와 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
       "question": "제 오른팔은 위치를 직접 만들어야 하나요, 힘을 빼면 자연스럽게 달라지는지 먼저 확인할까요?",
       "observationPractice": {
-        "action": "백스윙 시범 두 장면에서 오른팔과 몸통 사이의 공간이 어떻게 달라지는지 관찰하세요.",
-        "feel": "내 백스윙에서 오른팔 긴장을 덜었을 때 팔의 위치가 어떻게 달라지는지 기록하세요."
+        "action": "테이크어웨이 후 오른팔을 접는 방향과 팔이 몸 앞에 놓이는 관계를 설명하는 자막·시범을 확인했습니다.",
+        "feel": "백스윙에서 오른팔이 벌어지는 위치를 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
       },
       "publishedAt": "2024-07-17T22:00:00.000Z",
-      "addedAt": "2026-10-05T12:07:59.481Z"
+      "addedAt": "2026-10-05T12:07:59.481Z",
+      "scopeReview": {
+        "priority": "additional",
+        "range": "18–33초",
+        "reason": "테이크어웨이 후 오른팔을 접는 방향과 팔이 몸 앞에 놓이는 관계를 설명하는 자막·시범을 확인했습니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      }
     },
     {
       "id": "X0IcCD0NT9I",
@@ -2074,12 +2157,12 @@ window.GolfContent = {
         "회전·순서"
       ],
       "tags": [
-        "몸통 회전·자세 유지"
+        "백스윙 시 몸통 회전"
       ],
-      "lessonConnection": "몸통으로 시작할 때 들림과 회전을 구분해 관찰",
+      "lessonConnection": "백스윙에서 회전과 들림이 어떻게 다른지 비교",
       "lessonId": "lesson_20261005_first",
-      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
-      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 몸통 기울기와 오른팔 접힘을 설명하는 자막·장면을 확인했습니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
+      "summary": "몸통의 회전과 오른팔 접힘을 함께 설명하며 백스윙에서 몸이 일어나는 동작을 비교합니다. 중심 주제는 몸통 회전과 들림의 구분입니다.",
       "points": [
         "몸통 기울기와 오른팔 접힘을 설명하는 자막·장면을 확인했습니다.",
         "클럽을 든 정면 시범과 몸통을 돌린 측면 시범이 있습니다.",
@@ -2098,15 +2181,22 @@ window.GolfContent = {
       "connection": "몸통으로 시작할 때 들림과 회전을 구분해 관찰합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
       "question": "몸통으로 넓게 시작할 때 제 몸의 들림과 자연스러운 기울기 변화는 어떻게 구분하나요?",
       "observationPractice": {
-        "action": "몸통 기울기와 오른팔 접힘을 보여 주는 시범에서 회전과 들림을 나누어 관찰하세요.",
-        "feel": "내 영상에서 백스윙 중 몸통 기울기가 바뀌는 구간을 표시하고 긴장감도 함께 기록하세요."
+        "action": "몸통의 회전과 오른팔 접힘을 함께 설명하며 백스윙에서 몸이 일어나는 동작을 비교합니다. 중심 주제는 몸통 회전과 들림의 구분입니다.",
+        "feel": "백스윙에서 회전과 들림이 어떻게 다른지 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
       },
       "publishedAt": "2025-02-26T03:30:25.000Z",
-      "addedAt": "2026-10-05T12:07:59.481Z"
+      "addedAt": "2026-10-05T12:07:59.481Z",
+      "scopeReview": {
+        "priority": "additional",
+        "range": "9–29초 · 34–44초",
+        "reason": "몸통의 회전과 오른팔 접힘을 함께 설명하며 백스윙에서 몸이 일어나는 동작을 비교합니다. 중심 주제는 몸통 회전과 들림의 구분입니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      }
     },
     {
       "id": "QLJDoGT7-2U",
-      "title": "오른팔 사용을 살펴보는 연습 드릴",
+      "title": "하프 백스윙부터 탑까지 오른팔·몸통 회전",
       "originalTitle": "하루에 10번씩만 해보세요 오른팔을 쓸줄 알면 완전 골프가 쉬워집니다",
       "channel": "스윙닥터김남기프로",
       "duration": "0:55",
@@ -2117,12 +2207,13 @@ window.GolfContent = {
         "회전·순서"
       ],
       "tags": [
-        "오른팔 사용·연습 드릴"
+        "백스윙 시 오른팔 위치",
+        "백스윙 시 몸통 회전"
       ],
-      "lessonConnection": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교",
+      "lessonConnection": "하프 백스윙 이후 오른팔과 몸통의 관계를 비교",
       "lessonId": "lesson_20261005_first",
-      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
-      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른팔 부근의 원형 표시와 백스윙 시범 장면을 확인했습니다.",
+      "evidence": "한국어 자동 자막 전체·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
+      "summary": "자동 자막에서 하프 백스윙 이후 탑까지 오른팔과 몸통이 함께 회전하는 설명을 확인했습니다. 뒤쪽의 다운스윙 설명은 이번 분류의 근거에서 제외합니다.",
       "points": [
         "오른팔 부근의 원형 표시와 백스윙 시범 장면을 확인했습니다.",
         "팔을 따로 보여 주는 설명 장면과 전신 시범이 함께 있습니다.",
@@ -2141,11 +2232,18 @@ window.GolfContent = {
       "connection": "오른팔 사용 드릴과 레슨의 긴장 풀기를 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
       "question": "이 오른팔 드릴이 지금 제 교정에 필요한가요, 시작부터 힘을 빼는 과제와 함께 해도 되나요?",
       "observationPractice": {
-        "action": "팔 움직임을 강조한 화면 표시와 백스윙 시범을 보며 드릴이 다루는 구간을 확인하세요.",
-        "feel": "이 드릴을 보며 느낀 오른팔 사용감과 첫 레슨에서 힘을 뺐을 때의 느낌을 구분해 적으세요."
+        "action": "자동 자막에서 하프 백스윙 이후 탑까지 오른팔과 몸통이 함께 회전하는 설명을 확인했습니다. 뒤쪽의 다운스윙 설명은 이번 분류의 근거에서 제외합니다.",
+        "feel": "하프 백스윙 이후 오른팔과 몸통의 관계를 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
       },
       "publishedAt": "2024-06-16T09:19:19.000Z",
-      "addedAt": "2026-10-05T12:07:59.481Z"
+      "addedAt": "2026-10-05T12:07:59.481Z",
+      "scopeReview": {
+        "priority": "additional",
+        "range": "7–21초 · 34–39초",
+        "reason": "자동 자막에서 하프 백스윙 이후 탑까지 오른팔과 몸통이 함께 회전하는 설명을 확인했습니다. 뒤쪽의 다운스윙 설명은 이번 분류의 근거에서 제외합니다.",
+        "basis": "한국어 자동 자막 전체·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      }
     },
     {
       "id": "DOf7sAtTJYw",
@@ -2160,13 +2258,12 @@ window.GolfContent = {
         "회전·순서"
       ],
       "tags": [
-        "오른팔 위치·벌어짐",
-        "몸통 회전·자세 유지"
+        "백스윙 시 몸통 회전"
       ],
-      "lessonConnection": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교",
+      "lessonConnection": "테이크백 다음에 이어지는 백스윙 회전을 비교",
       "lessonId": "lesson_20261005_first",
-      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
-      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른손바닥과 클럽 방향을 보여 주는 시범을 확인했습니다.",
+      "evidence": "화면 자막·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
+      "summary": "테이크백 이후 어깨 회전을 연결하는 설명과 시범이 확인됩니다. 제목에 오른팔이 있어도 탑의 팔꿈치 위치를 직접 설명하는 영상으로 분류하지 않습니다.",
       "points": [
         "오른손바닥과 클럽 방향을 보여 주는 시범을 확인했습니다.",
         "테이크백 뒤 어깨 회전을 설명하는 자막과 백스윙 장면이 있습니다.",
@@ -2185,15 +2282,22 @@ window.GolfContent = {
       "connection": "오른팔·클럽과 어깨 회전의 순서를 레슨과 비교합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
       "question": "영상의 오른손 방향과 어깨 회전 설명을 제 레슨의 몸통으로 넓게 시작하기와 어떻게 연결하나요?",
       "observationPractice": {
-        "action": "테이크백의 오른손·클럽 방향 설명과 어깨 회전 이후의 백스윙 장면을 비교하세요.",
-        "feel": "내 테이크백에서 팔과 몸통이 움직이는 순서를 기록하고 첫 레슨의 편안한 시작과 비교하세요."
+        "action": "테이크백 이후 어깨 회전을 연결하는 설명과 시범이 확인됩니다. 제목에 오른팔이 있어도 탑의 팔꿈치 위치를 직접 설명하는 영상으로 분류하지 않습니다.",
+        "feel": "테이크백 다음에 이어지는 백스윙 회전을 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
       },
       "publishedAt": "2023-10-30T10:30:04.000Z",
-      "addedAt": "2026-10-05T12:07:59.481Z"
+      "addedAt": "2026-10-05T12:07:59.481Z",
+      "scopeReview": {
+        "priority": "additional",
+        "range": "28–38초",
+        "reason": "테이크백 이후 어깨 회전을 연결하는 설명과 시범이 확인됩니다. 제목에 오른팔이 있어도 탑의 팔꿈치 위치를 직접 설명하는 영상으로 분류하지 않습니다.",
+        "basis": "화면 자막·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      }
     },
     {
       "id": "iqK8wC0JFTg",
-      "title": "백스윙에서 오른팔 역할 보기",
+      "title": "백스윙 초반 오른팔 경로와 접힘 시점",
       "originalTitle": "[범스골프] 백스윙은 오른팔 #범스윙",
       "channel": "범스골프",
       "duration": "0:18",
@@ -2204,12 +2308,12 @@ window.GolfContent = {
         "회전·순서"
       ],
       "tags": [
-        "오른팔 위치·벌어짐"
+        "백스윙 시 오른팔 위치"
       ],
-      "lessonConnection": "오른팔 역할의 설명을 힘 빼기와 구분해 확인",
+      "lessonConnection": "백스윙 초반 오른팔 경로와 접힘 시점을 비교",
       "lessonId": "lesson_20261005_first",
-      "evidence": "공개 제목·채널·길이·공개일과 대표 장면 10개를 확인. 전체 음성 전사는 미확인이며, 아래는 화면 관찰과 레슨 연결 제안입니다.",
-      "summary": "백스윙·탑을 첫 프로 레슨과 비교하기 위한 참고 영상입니다. 오른팔을 따로 움직이는 시범과 클럽을 잡은 장면을 확인했습니다.",
+      "evidence": "한국어 자동 자막 전체·20개 표본 장면로 백스윙 구간을 확인. 자동 자막은 오인식 가능성이 있으며 개인 교정의 적합성은 별도 확인합니다.",
+      "summary": "자동 자막과 시범에서 백스윙 초반 오른팔의 낮은 경로와 늦게 접히는 시점을 설명합니다. 탑의 최종 팔꿈치 위치를 설명한 영상으로 표시하지 않습니다.",
       "points": [
         "오른팔을 따로 움직이는 시범과 클럽을 잡은 장면을 확인했습니다.",
         "오른팔 역할을 강조하는 제목·화면 문구가 있습니다.",
@@ -2228,11 +2332,18 @@ window.GolfContent = {
       "connection": "오른팔 역할의 설명을 힘 빼기와 구분해 확인합니다. 첫 레슨의 두 가지 과제를 기준으로 비교하고, 추가 교정 여부는 질문으로 남깁니다.",
       "question": "이 영상의 오른팔 역할을 이해하면서도 첫 레슨에서 찾은 힘 빠진 느낌을 어떻게 유지하나요?",
       "observationPractice": {
-        "action": "오른팔을 따로 움직이는 시범과 양손으로 클럽을 잡은 장면의 차이를 관찰하세요.",
-        "feel": "오른팔을 쓴다는 표현이 내게 힘을 더 주는 느낌으로 바뀌는지, 레슨의 이완감과 비교하세요."
+        "action": "자동 자막과 시범에서 백스윙 초반 오른팔의 낮은 경로와 늦게 접히는 시점을 설명합니다. 탑의 최종 팔꿈치 위치를 설명한 영상으로 표시하지 않습니다.",
+        "feel": "백스윙 초반 오른팔 경로와 접힘 시점을 비교하면서 내 스윙에서 관찰되는 차이를 기록하세요."
       },
       "publishedAt": "2025-02-08T11:49:58.000Z",
-      "addedAt": "2026-10-05T12:07:59.481Z"
+      "addedAt": "2026-10-05T12:07:59.481Z",
+      "scopeReview": {
+        "priority": "additional",
+        "range": "6–18초",
+        "reason": "자동 자막과 시범에서 백스윙 초반 오른팔의 낮은 경로와 늦게 접히는 시점을 설명합니다. 탑의 최종 팔꿈치 위치를 설명한 영상으로 표시하지 않습니다.",
+        "basis": "한국어 자동 자막 전체·20개 표본 장면",
+        "reviewedAt": "2026-10-06"
+      }
     }
   ]
 };
@@ -2251,21 +2362,109 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 
 // Primary groups are separate from cross-cutting topic tags: each video appears once.
 window.GolfContent.videoGroups = [
-  {id:'pro-swings',title:'프로 스윙 시범',description:'정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.',videoIds:['bfMsJtV61hM','-h77kU-fpjg']},
-  {id:'setup',title:'준비·자세',description:'공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.',videoIds:['4ePhtleqZBA','UA-HYcmiKTA','uvgnUl93Twg','zT6zJCJ59js']},
-  {id:'backswing-top',title:'백스윙·탑',description:'첫 레슨의 오른팔 힘 빼기·몸통으로 시작하기와 비교할 참고 영상입니다. 태그로 관찰할 주제를 골라 보세요.',videoIds:["0mNd_dCea4Q","X0IcCD0NT9I","QLJDoGT7-2U","DOf7sAtTJYw","iqK8wC0JFTg"]},
-  {id:'rotation',title:'회전·체중이동',description:'체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.',videoIds:['ojzyFHAQWnw','xUgGGs2Rh3w','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','0EgzSDUsKvg','aaOw2sdp-io','U4nn7s20ACc','7sNhk9PhBxc','A_fu4ajV-_I','dBsZdo7VEAA','WWtv4x3uz-M','0lbtJgkzqWM','cQiwXcbWZc4','QsmMamIFMsE','jlqT_vNRcSI','zB5hFmVpisI','FnbyQ-UYjMI','lb2CrZl0FrA','q1P0eGWA8_s','EgdcUOkvJKk']},
-  {id:'arms-impact',title:'팔·임팩트',description:'허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.',videoIds:['9YWDNMyTQy4','wBlnDaqkGi0','yv4KTSs8Riw','Aj1UEMYPxBg','S3fxUFBzfBo','du58mmLNMnQ','RSbjGWhzEnQ','5glZX2pq15o','4uQe-J5qM2c','Wlbi1o9fb2Q','FjWulC87mzM','o4KqDhYXlTw','ThwbClowjjU','XvPYFd-seNw','mGYe7UjYXfo','28HBEaS-G54','wwZFeiPAoMU','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI','3kNb6TQN2T0','VGya7_OVLYo','jg52OubK_L0','unGNdzyt7kE','En79wtGEzs4']}
+  {
+    "id": "pro-swings",
+    "title": "프로 스윙 시범",
+    "description": "정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.",
+    "videoIds": [
+      "bfMsJtV61hM",
+      "-h77kU-fpjg"
+    ]
+  },
+  {
+    "id": "setup",
+    "title": "준비·자세",
+    "description": "공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.",
+    "videoIds": [
+      "4ePhtleqZBA",
+      "UA-HYcmiKTA",
+      "uvgnUl93Twg",
+      "zT6zJCJ59js"
+    ]
+  },
+  {
+    "id": "backswing-top",
+    "title": "백스윙",
+    "description": "백스윙 시 오른팔 위치와 백스윙 시 몸통 회전. 기존 영상 4편을 먼저 보고, 추가 참고 5편을 비교하세요.",
+    "videoIds": [
+      "aaOw2sdp-io",
+      "WWtv4x3uz-M",
+      "7sNhk9PhBxc",
+      "ojzyFHAQWnw",
+      "0mNd_dCea4Q",
+      "X0IcCD0NT9I",
+      "QLJDoGT7-2U",
+      "DOf7sAtTJYw",
+      "iqK8wC0JFTg"
+    ]
+  },
+  {
+    "id": "rotation",
+    "title": "회전·체중이동",
+    "description": "체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.",
+    "videoIds": [
+      "xUgGGs2Rh3w",
+      "IsSS-GnQQyY",
+      "ULOLFCC-ly8",
+      "CA-TZ7WQlHY",
+      "0EgzSDUsKvg",
+      "U4nn7s20ACc",
+      "A_fu4ajV-_I",
+      "dBsZdo7VEAA",
+      "0lbtJgkzqWM",
+      "cQiwXcbWZc4",
+      "QsmMamIFMsE",
+      "jlqT_vNRcSI",
+      "zB5hFmVpisI",
+      "FnbyQ-UYjMI",
+      "lb2CrZl0FrA",
+      "q1P0eGWA8_s",
+      "EgdcUOkvJKk"
+    ]
+  },
+  {
+    "id": "arms-impact",
+    "title": "팔·임팩트",
+    "description": "허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.",
+    "videoIds": [
+      "9YWDNMyTQy4",
+      "wBlnDaqkGi0",
+      "yv4KTSs8Riw",
+      "Aj1UEMYPxBg",
+      "S3fxUFBzfBo",
+      "du58mmLNMnQ",
+      "RSbjGWhzEnQ",
+      "5glZX2pq15o",
+      "4uQe-J5qM2c",
+      "Wlbi1o9fb2Q",
+      "FjWulC87mzM",
+      "o4KqDhYXlTw",
+      "ThwbClowjjU",
+      "XvPYFd-seNw",
+      "mGYe7UjYXfo",
+      "28HBEaS-G54",
+      "wwZFeiPAoMU",
+      "t_9sQjrS2o4",
+      "ldkU0D_Ylms",
+      "M-ryH3IhUXI",
+      "3kNb6TQN2T0",
+      "VGya7_OVLYo",
+      "jg52OubK_L0",
+      "unGNdzyt7kE",
+      "En79wtGEzs4"
+    ]
+  }
 ];
-window.GolfContent.videoTags = ["오른팔 위치·벌어짐","몸통 회전·자세 유지","오른팔 사용·연습 드릴"];
+window.GolfContent.videoTags = ["백스윙 시 오른팔 위치","백스윙 시 몸통 회전"];
 window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g.videoIds.includes(v.id));
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
 const golfObservationIds = new Set(["0mNd_dCea4Q","X0IcCD0NT9I","QLJDoGT7-2U","DOf7sAtTJYw","iqK8wC0JFTg",'bfMsJtV61hM','-h77kU-fpjg']);
 const golfSourceContentIds = new Set(['jg52OubK_L0','lb2CrZl0FrA','En79wtGEzs4','EgdcUOkvJKk','Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
-const golfEvidenceKind = v => golfObservationIds.has(v.id) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
+const golfEvidenceKind = v => (v.scopeReview || golfObservationIds.has(v.id)) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
   const kind = golfEvidenceKind(v);
+  if(v.scopeReview)return {kind,label:'백스윙 구간 확인',heading:'분류 근거와 확인 구간'};
   if (kind === 'metadata') return {kind,label:'제목·메타데이터 확인',heading:'확인된 범위와 관찰 포인트'};
   if (kind === 'observation') return {kind,label:'시범 화면 확인',heading:'편집자의 관찰 포인트'};
   return {kind,label:'자막·화면 기반 정리',heading:'원본 내용 정리'};

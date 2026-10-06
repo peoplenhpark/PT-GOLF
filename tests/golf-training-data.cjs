@@ -19,9 +19,9 @@ for(const v of c.videos){
 const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
 const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
 const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
-assert.equal(metadataRows.length,31);assert.equal(reviewedRows.length,26);
-assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,31,'metadata comparisons must be title-specific');
-assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,31,'metadata questions must be title-specific');
+assert.equal(metadataRows.length,27);assert.equal(reviewedRows.length,30);
+assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,27,'metadata comparisons must be title-specific');
+assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,27,'metadata questions must be title-specific');
 for(const {video,practical} of metadataRows){
  assert(!/적용하세요|무너지는 하나/.test(practical.action),video.id+' must not prescribe an unreviewed cue');
  assert(!practical.feel.includes('바로 교정 동작으로 바꾸세요'),video.id+' must keep comparison observational');
@@ -31,7 +31,7 @@ assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
 assert.equal(c.videoGroups.length,5);assert.equal(new Set(grouped).size,57);assert.equal(grouped.length,57);
-assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,4,5,21,25]);
+assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,4,9,17,25]);
 for(const v of c.videos)assert(c.videoGroupFor(v));
 const seed=JSON.parse(read('data/seed.json'));
 const ptIds=seed.exercises.filter(e=>e.part==='pt').map(e=>e.id).sort();

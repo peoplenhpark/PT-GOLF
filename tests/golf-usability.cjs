@@ -28,7 +28,7 @@ function setup(stored = null) {
 const s = setup();
 const c=s.ctx.window.GolfContent, hub=s.ctx.window.GolfHub;
 const evidenceCounts=c.videos.reduce((counts,v)=>{const kind=c.evidenceFor(v).kind;assert(['metadata','observation','source'].includes(kind));counts[kind]=(counts[kind]||0)+1;return counts;},{});
-assert.deepEqual(evidenceCounts,{metadata:31,observation:7,source:19});
+assert.deepEqual(evidenceCounts,{metadata:27,observation:11,source:19});
 const latest = Math.max(...c.videos.map(v=>Date.parse(v.addedAt)));
 assert(c.recentVideos(latest+7*86400000).length>0,'inclusive 168-hour boundary');
 assert.equal(c.recentVideos(latest+7*86400000+1).length,0,'expired videos leave recent only');

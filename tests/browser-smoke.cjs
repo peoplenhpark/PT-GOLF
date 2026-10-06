@@ -91,16 +91,17 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-top').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),5);
-  await page.locator('.g-video-section>.g-tags a').filter({hasText:'몸통 회전·자세 유지'}).click();
-  await page.getByRole('heading',{name:'몸통 회전·자세 유지',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),2);
-  await page.goto(base+'#golf/videos/DOf7sAtTJYw');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
+  assert.equal(await page.locator('.g-video-mini').count(),9);
+  assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,4).map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','WWtv4x3uz-M','7sNhk9PhBxc','ojzyFHAQWnw']);
+  await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).click();
+  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),6);
+  await page.goto(base+'#golf/videos/QLJDoGT7-2U');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
   await page.locator('#g-video-status').selectOption('프로에게 질문');await page.locator('#g-video-memo').fill('검증: 편안함은 좋음, 타점 4/5. 오른팔 위치 질문');await page.locator('[data-g-form=video] button').click();
   await page.reload();await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'프로에게 질문');assert.match(await page.locator('#g-video-memo').inputValue(),/타점 4\/5/);
-  await page.goto(base+'#golf/topic/'+encodeURIComponent('오른팔 위치·벌어짐'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),3);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
-  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),5);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
+  await page.goto(base+'#golf/topic/'+encodeURIComponent('백스윙 시 오른팔 위치'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),6);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
+  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),9);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
   const afterBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));for(const key of ['lessons','questions','focus','practiceRecords'])assert.deepEqual(afterBackswing[key],beforeBackswing[key]);for(const [id,note]of Object.entries(beforeBackswing.videoNotes))assert.deepEqual(afterBackswing.videoNotes[id],note);
-  for(const width of [320,390,768])for(const hash of ['#golf/group/backswing-top','#golf/topic/'+encodeURIComponent('몸통 회전·자세 유지'),'#golf/videos/DOf7sAtTJYw','#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
+  for(const width of [320,390,768])for(const hash of ['#golf/group/backswing-top','#golf/topic/'+encodeURIComponent('백스윙 시 몸통 회전'),'#golf/videos/DOf7sAtTJYw','#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
     await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.g-tabs').waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+hash);
   }
   await page.setViewportSize({width:390,height:844});

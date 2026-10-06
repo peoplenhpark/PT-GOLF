@@ -98,6 +98,7 @@ window.GolfHub = (() => {
   }
   function sourceDetail(v) {
     const evidence=content.evidenceFor(v);
+    if(v.scopeReview)return '<details class="g-source-detail"><summary>분류 근거와 확인 구간 보기</summary><p>'+e(v.scopeReview.reason)+'</p><p class="g-meta">'+e(v.scopeReview.range)+' · '+e(v.scopeReview.basis)+'</p><p class="g-meta">주제 적합성을 확인한 기록입니다. 프로가 개인 교정으로 승인한 의미는 아닙니다.</p></details>';
     const body=evidence.kind==='metadata'
       ? paras(v.summary)
       : paras(v.summary)+`<ul>${v.points.map(point=>`<li>${e(point)}</li>`).join('')}</ul>`;
@@ -127,7 +128,7 @@ window.GolfHub = (() => {
   }
   function groupedVideos(list,selected) {
     return videoGroups().filter(g=>!selected||g.id===selected).map(g=>{
-      const items=list.filter(v=>g.videoIds.includes(v.id));
+      const items=g.videoIds.map(id=>list.find(v=>v.id===id)).filter(Boolean);
       if(!items.length)return '';
       return `<section class="g-video-section" aria-labelledby="g-group-${e(g.id)}"><header><h2 id="g-group-${e(g.id)}">${e(g.title)} <span>${items.length}편</span></h2>${!selected?`<a href="${groupHref(g.id)}">이 그룹만 보기 ›</a>`:''}</header><p class="g-meta">${e(g.description)}</p>${chips([...new Set(items.flatMap(v=>v.tags||[]))])}<div class="g-video-grid">${items.map(compactCard).join('')}</div></section>`;
     }).join('')||'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>';
@@ -144,7 +145,7 @@ window.GolfHub = (() => {
   function videoReview(v) {
     if(!v.tags?.length)return '';
     const n=videoNote(v.id);
-    return '<div class="g-video-review">'+chips(v.tags)+'<p class="g-meta">확인 상태 · '+e(videoStatus(v))+'</p>'+(n.memo?'<p class="g-review-memo"><b>내 기록</b> '+e(n.memo.slice(0,100))+(n.memo.length>100?'…':'')+'</p>':'')+'<a class="g-review-edit" href="'+href('videos',v.id)+'">확인 상태·내 기록 관리 ›</a></div>';
+    return '<div class="g-video-review">'+(v.scopeReview?'<span class="g-source-priority">'+(v.scopeReview.priority==='existing'?'기존 영상 · 먼저 보기':'추가 참고')+'</span>':'')+chips(v.tags)+'<p class="g-meta">확인 상태 · '+e(videoStatus(v))+'</p>'+(n.memo?'<p class="g-review-memo"><b>내 기록</b> '+e(n.memo.slice(0,100))+(n.memo.length>100?'…':'')+'</p>':'')+'<a class="g-review-edit" href="'+href('videos',v.id)+'">확인 상태·내 기록 관리 ›</a></div>';
   }
   function lessonConnection(v) {return v.lessonConnection?'<p class="g-video-connection"><b>레슨과 연결</b> '+e(v.lessonConnection)+'</p>':'';}
   function card(v) {
@@ -326,7 +327,9 @@ window.GolfHub = (() => {
     layout(`<a class="back" href="${href(kind,id)}">‹ ${e(sourceTitle(kind,id))}</a><h2>지금 집중할 것</h2><p class="g-intro">직접 적용할 한 가지를 적고 연결할 클럽을 고르세요.</p><form class="g-editor" data-g-form="adopt" data-kind="${e(kind)}" data-source="${e(id)}"><label for="g-noteId">연결할 스윙 노트</label><select name="noteId" id="g-noteId" required>${notes().map(n=>`<option value="${e(n.id)}" ${n.id===(kind==='lessons'?s.noteIds?.[0]:id)?'selected':''}>${e(n.name)}</option>`).join('')}</select>${field('text','내 연습 핵심',defaultText,'textarea',true)}<p class="g-meta">출처와 반영 이력을 남깁니다. 현재 집중 항목은 최대 3개입니다.</p><button class="g-btn g-primary">집중 항목으로 저장</button></form>`,'notes');
   }
   function topicPage(t) {
-    if((content.videoTags||[]).includes(t))return layout('<a class="back" href="#golf/group/backswing-top">‹ 백스윙·탑</a><h2>'+e(t)+'</h2><section class="g-video-section"><div class="g-video-grid">'+videos().filter(v=>(v.tags||[]).includes(t)).map(compactCard).join('')+'</div></section>','videos');
+    const legacy={'오른팔 위치·벌어짐':'백스윙 시 오른팔 위치','몸통 회전·자세 유지':'백스윙 시 몸통 회전','오른팔 사용·연습 드릴':'백스윙 시 오른팔 위치'};
+    if(legacy[t])return go('topic',legacy[t]);
+    if((content.videoTags||[]).includes(t))return layout('<a class="back" href="#golf/group/backswing-top">‹ 백스윙</a><h2>'+e(t)+'</h2><section class="g-video-section"><div class="g-video-grid">'+(content.videoGroups.find(g=>g.id==='backswing-top')?.videoIds||[]).map(video).filter(v=>v&&(v.tags||[]).includes(t)).map(compactCard).join('')+'</div></section>','videos');
     if(!content.topics.includes(t)) return go();
     layout(`<a class="back" href="#golf/notes">‹ 스윙 노트</a><h2>${e(t)}</h2>${block('스윙 노트',noteLinks(notes().filter(n=>topics(n.id).includes(t)).map(n=>n.id)))}${block('개인 레슨',lessons().filter(l=>(l.topics||[]).includes(t)).map(lessonRow).join('')||'<p class="g-muted">이 주제의 개인 레슨은 아직 없습니다.</p>')}${block('참고 영상',videos().filter(v=>v.topics.includes(t)).map(card).join(''))}`);
   }
