@@ -86,15 +86,15 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/videos');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,114);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,138);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-top').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),9);
+  assert.equal(await page.locator('.g-video-mini').count(),10);
   assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,4).map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','WWtv4x3uz-M','7sNhk9PhBxc','ojzyFHAQWnw']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).click();
-  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),6);
+  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),7);
   await page.goto(base+'#golf/videos/QLJDoGT7-2U');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
   await page.locator('#g-video-status').selectOption('프로에게 질문');await page.locator('#g-video-memo').fill('검증: 편안함은 좋음, 타점 4/5. 오른팔 위치 질문');await page.locator('[data-g-form=video] button').click();
   await page.reload();await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'프로에게 질문');assert.match(await page.locator('#g-video-memo').inputValue(),/타점 4\/5/);
@@ -297,6 +297,33 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const [short,kind] of lowerVariants){await page.locator('#training-movement').selectOption('ht_lower_'+short);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();}
   await context.setOffline(false);
   assert.deepEqual(errors,[]);
+  // PT reinforcement: five source placements, notes preserved across selection, offline media.
+  await page.goto(base+'#exercise/ht_legpress_positions');await page.locator('#training-movement').waitFor();
+  assert.equal(await page.locator('#training-movement option').count(),5);
+  assert(await page.locator('a[href="#exercise/pt_legpress"]').count());
+  await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
+  await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('레그프레스 비교 메모 유지');
+  for(const key of ['wide','narrow','standard','high','low']){
+   await page.locator('#training-movement').selectOption('ht_legpress_'+key);
+   assert.equal(await page.locator('#memo-input').inputValue(),'레그프레스 비교 메모 유지');
+   assert.equal(await page.locator('.exercise-3d-frame').count(),0);
+   await page.waitForFunction(()=>document.querySelectorAll('.guide-shot img').length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+   await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
+   assert.equal(await f.locator('canvas').getAttribute('data-kind'),'htlegpress'+key);assert.equal(await f.locator('#speed').inputValue(),'.5');
+   const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
+   await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
+   const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
+   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
+   if(process.env.PTGOLF_SCREENSHOT_DIR)await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_legpress_'+key+'-3d.png')});
+  }
+  await page.locator('#memo-save').click();await page.goto(base+'#exercise/pt_legpress');await page.locator('a[href="#exercise/ht_legpress_positions"]').waitFor();
+  await page.locator('a[href="#exercise/ht_legpress_positions"]').click();await page.locator('#training-movement').waitFor();
+  await context.setOffline(true);await page.reload();await page.locator('#training-movement').waitFor();assert.equal(await page.locator('.memo-box').textContent(),'레그프레스 비교 메모 유지');
+  for(const key of ['wide','narrow','standard','high','low']){
+   await page.locator('#training-movement').selectOption('ht_legpress_'+key);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+   await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();
+  }
+  await context.setOffline(false);assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
   console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');

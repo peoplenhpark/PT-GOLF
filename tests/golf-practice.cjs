@@ -20,17 +20,17 @@ const next={...old,practice:{selected:'1004',club:'7번 아이언'},practiceReco
 for(const bad of [{contact:6},{direction:1.5},{club:'arbitrary'},{method:'invalid'},{cueId:'unknown'}])assert(!valid({...next,practiceRecords:[{...record,...bad}]}));
 assert(!valid({...next,practiceRecords:[record,record]}));
 assert.deepEqual(next.videoNotes,old.videoNotes);
-console.log('PASS: 57 source videos / 114 distinct frames, exact personal notes, backward-compatible practice validation.');
+console.log('PASS: 69 source videos / 138 distinct frames, exact personal notes, backward-compatible practice validation.');
 
 const first=GolfContent.lessons.find(l=>l.id==='lesson_20261005_first');assert(first);assert.deepEqual(Array.from(first.practiceClubs),['7번 아이언']);assert.equal(first.practicePoints.length,2);assert.equal(first.evidence.length,5);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004'}}).id,first.id);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004',sourceKind:'sensation'}}).kind,'sensation');assert(valid({...old,practice:{sourceKind:'lesson',lessonId:first.id},practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:first.id,comfort:'편안함'}]}));assert(!valid({...old,practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:'wrong'}]}));console.log('PASS: lesson priority, explicit sensation comparison, lesson scope, source linkage and legacy records.');
 
 const added=['0mNd_dCea4Q','X0IcCD0NT9I','QLJDoGT7-2U','DOf7sAtTJYw','iqK8wC0JFTg'];
 const prioritized=['aaOw2sdp-io','WWtv4x3uz-M','7sNhk9PhBxc','ojzyFHAQWnw',...added];
-assert.deepEqual(Array.from(GolfContent.videoGroups.find(g=>g.id==='backswing-top').videoIds),prioritized);
+assert.deepEqual(Array.from(GolfContent.videoGroups.find(g=>g.id==='backswing-top').videoIds),[...prioritized,'IMjI_VqsQsg']);
 assert.deepEqual(Array.from(first.videoCollection.videoIds),prioritized);
 for(const id of added){const v=GolfContent.videos.find(v=>v.id===id);assert(first.videoIds.includes(id));assert(v.tags.every(t=>GolfContent.videoTags.includes(t)));assert(v.lessonConnection);assert.equal(GolfContent.evidenceFor(v).kind,'observation');assert.equal(GolfFrames[id].length,2);}
 assert.equal(GolfContent.videos.filter(v=>v.tags?.includes('백스윙 시 오른팔 위치')).length,6);
-assert.equal(GolfContent.videos.filter(v=>v.tags?.includes('백스윙 시 몸통 회전')).length,6);
+assert.equal(GolfContent.videos.filter(v=>v.tags?.includes('백스윙 시 몸통 회전')).length,7);
 assert.deepEqual(Array.from(GolfContent.videoTags),['백스윙 시 오른팔 위치','백스윙 시 몸통 회전']);
 for(const id of ['wBlnDaqkGi0','jlqT_vNRcSI','FnbyQ-UYjMI']){assert(!prioritized.includes(id));assert(GolfContent.videos.some(v=>v.id===id));}
 for(const id of prioritized.slice(0,4))assert.equal(GolfContent.videos.find(v=>v.id===id).scopeReview.priority,'existing');

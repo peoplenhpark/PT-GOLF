@@ -5,7 +5,7 @@ try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
  const variant=params.get('variant');
  const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=108#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=109#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -87,7 +87,10 @@ try{
    const planted=['bridge','benchpress','dumbbellpress','smithincline','lyingextension'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=p.footDirections?.[i]|| (planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1]);
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
-   foot.quaternion.setFromUnitVectors(Z,new THREE.Vector3(...direction));
+   if(p.footNormals?.[i]){
+    const normal=p.footNormals[i],right=unit(cross(normal,direction));
+    foot.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(...right),new THREE.Vector3(...normal),new THREE.Vector3(...direction)));
+   }else foot.quaternion.setFromUnitVectors(Z,new THREE.Vector3(...direction));
   }
  }
  function handle(at,vertical=false){beam(equipment,add(at,vertical?[0,-.06,0]:[-.06,0,0]),add(at,vertical?[0,.06,0]:[.06,0,0]),.017,rubber);}
@@ -254,6 +257,16 @@ try{
     case 'legextension':beam(equipment,add(p.ankles[0],[-.08,.02,.04]),add(p.ankles[0],[.38,.02,.04]),.067,rubber);beam(equipment,[.29,.54,.38],add(p.ankles[0],[.42,0,0]),.027);break;
     case 'legcurl':beam(equipment,add(p.ankles[0],[0,.055,0]),add(p.ankles[1],[0,.055,0]),.065,rubber);break;
     case 'adduction':for(let i=0;i<2;i++){block(equipment,add(p.knees[i],[i?-.06:.06,.05,-.02]),[.08,.22,.15]);beam(equipment,[0,.35,.17],p.knees[i],.025);}break;
+    case 'htlegpress':{
+     block(equipment,e.center,[.94,.66,.07],rubber,e.up);
+     // Back pad lies behind the fixed trunk; the sled travels on fixed rails.
+     block(equipment,add(add(p.hip,mul(p.up,.27)),mul(p.front,-.115)),[.48,.78,.10],rubber,p.up);
+     block(equipment,add(p.hip,[0,-.13,0]),[.46,.10,.36]);
+     for(let s of [-1,1]){
+      beam(equipment,[s*.52,.45,.05],[s*.52,1.40,1.00],.035);
+      beam(equipment,[s*.23,.04,-.2],[s*.23,.36,-.2],.035);
+      handle(p.wrists[s<0?0:1]);
+     }break;}
     case 'legpress':{
      const foot=mix(p.ankles[0],p.ankles[1],.5);block(equipment,add(foot,[0,0,.06]),[.95,.60,.07],rubber,[0,.7,-.7]);
      block(equipment,[0,.49,-.28],[.52,.7,.10],rubber,[0,.77,-.64]);

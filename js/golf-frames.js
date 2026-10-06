@@ -911,5 +911,197 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "1lD1Lhk-2Lc": [
+    {
+      "src": "media/golf-frames/1lD1Lhk-2Lc-1.webp",
+      "time": 20.3,
+      "label": "어깨를 내리는 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1lD1Lhk-2Lc-2.webp",
+      "time": 35.96,
+      "label": "어깨와 손 위치 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "JhE2A-kCaLI": [
+    {
+      "src": "media/golf-frames/JhE2A-kCaLI-1.webp",
+      "time": 4.94,
+      "label": "스윙 폭 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/JhE2A-kCaLI-2.webp",
+      "time": 13.49,
+      "label": "몸과 클럽 통과",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "2UR4UFtx1R0": [
+    {
+      "src": "media/golf-frames/2UR4UFtx1R0-1.webp",
+      "time": 7.82,
+      "label": "검지와 그립 접촉",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/2UR4UFtx1R0-2.webp",
+      "time": 28.52,
+      "label": "클럽 방향 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "va8Oz-nSxcI": [
+    {
+      "src": "media/golf-frames/va8Oz-nSxcI-1.webp",
+      "time": 3.08,
+      "label": "팔 간격 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/va8Oz-nSxcI-2.webp",
+      "time": 4.97,
+      "label": "다운스윙 경로",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "bTA5HW-hU_Y": [
+    {
+      "src": "media/golf-frames/bTA5HW-hU_Y-1.webp",
+      "time": 267.28,
+      "label": "팔과 몸의 움직임",
+      "width": 720,
+      "height": 405
+    },
+    {
+      "src": "media/golf-frames/bTA5HW-hU_Y-2.webp",
+      "time": 822.4,
+      "label": "힘 빼기 설명 구간",
+      "width": 720,
+      "height": 405
+    }
+  ],
+  "UlRsR8hnZGs": [
+    {
+      "src": "media/golf-frames/UlRsR8hnZGs-1.webp",
+      "time": 83.81,
+      "label": "손목 움직임 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/UlRsR8hnZGs-2.webp",
+      "time": 261.29,
+      "label": "클럽을 잡은 시범",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "YD9lLDhvy8c": [
+    {
+      "src": "media/golf-frames/YD9lLDhvy8c-1.webp",
+      "time": 8.4,
+      "label": "한 손으로 경로 확인",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/YD9lLDhvy8c-2.webp",
+      "time": 17.04,
+      "label": "양손을 연결한 통과",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "0HjpF1MOwAw": [
+    {
+      "src": "media/golf-frames/0HjpF1MOwAw-1.webp",
+      "time": 2.64,
+      "label": "팔꿈치와 옆구리",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/0HjpF1MOwAw-2.webp",
+      "time": 4.8,
+      "label": "임팩트 손목 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "IMjI_VqsQsg": [
+    {
+      "src": "media/golf-frames/IMjI_VqsQsg-1.webp",
+      "time": 24.91,
+      "label": "오른발 지지 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/IMjI_VqsQsg-2.webp",
+      "time": 41.83,
+      "label": "몸통을 돌린 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "2CplOC4flsA": [
+    {
+      "src": "media/golf-frames/2CplOC4flsA-1.webp",
+      "time": 4.24,
+      "label": "전환과 손목",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/2CplOC4flsA-2.webp",
+      "time": 6.4,
+      "label": "팔꿈치와 회전",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "Fk_3CjorpVA": [
+    {
+      "src": "media/golf-frames/Fk_3CjorpVA-1.webp",
+      "time": 4.55,
+      "label": "오른발 쪽 공 위치",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/Fk_3CjorpVA-2.webp",
+      "time": 8.06,
+      "label": "왼발 쪽 공 위치",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "g2AXYPKdCik": [
+    {
+      "src": "media/golf-frames/g2AXYPKdCik-1.webp",
+      "time": 3.96,
+      "label": "백스윙 왼쪽 겨드랑이",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/g2AXYPKdCik-2.webp",
+      "time": 5.58,
+      "label": "다운스윙 오른쪽 겨드랑이",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

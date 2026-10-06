@@ -1366,5 +1366,293 @@
     "source": "https://www.youtube.com/watch?v=iqK8wC0JFTg",
     "method": "Original video frame extraction; resize only; selected from 10 visually reviewed candidate frames. Full audio transcript not reviewed.",
     "verifiedAt": "2026-10-05"
+  },
+  {
+    "id": "1lD1Lhk-2Lc",
+    "title": "다운스윙 · 오른어깨와 손의 경로",
+    "frames": [
+      {
+        "src": "media/golf-frames/1lD1Lhk-2Lc-1.webp",
+        "time": 20.3,
+        "label": "어깨를 내리는 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1lD1Lhk-2Lc-2.webp",
+        "time": 35.96,
+        "label": "어깨와 손 위치 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 58,
+    "source": "https://www.youtube.com/watch?v=1lD1Lhk-2Lc",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "JhE2A-kCaLI",
+    "title": "스윙 폭·오른어깨·통과 경로 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/JhE2A-kCaLI-1.webp",
+        "time": 4.94,
+        "label": "스윙 폭 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/JhE2A-kCaLI-2.webp",
+        "time": 13.49,
+        "label": "몸과 클럽 통과",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 19,
+    "source": "https://www.youtube.com/watch?v=JhE2A-kCaLI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "2UR4UFtx1R0",
+    "title": "그립 · 오른손 검지 접촉 위치",
+    "frames": [
+      {
+        "src": "media/golf-frames/2UR4UFtx1R0-1.webp",
+        "time": 7.82,
+        "label": "검지와 그립 접촉",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/2UR4UFtx1R0-2.webp",
+        "time": 28.52,
+        "label": "클럽 방향 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 46,
+    "source": "https://www.youtube.com/watch?v=2UR4UFtx1R0",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "va8Oz-nSxcI",
+    "title": "아이언 · 팔 하강과 임팩트 경로",
+    "frames": [
+      {
+        "src": "media/golf-frames/va8Oz-nSxcI-1.webp",
+        "time": 3.08,
+        "label": "팔 간격 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/va8Oz-nSxcI-2.webp",
+        "time": 4.97,
+        "label": "다운스윙 경로",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=va8Oz-nSxcI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "bTA5HW-hU_Y",
+    "title": "힘 빼기 · 그립과 큰 근육의 회전",
+    "frames": [
+      {
+        "src": "media/golf-frames/bTA5HW-hU_Y-1.webp",
+        "time": 267.28,
+        "label": "팔과 몸의 움직임",
+        "width": 720,
+        "height": 405
+      },
+      {
+        "src": "media/golf-frames/bTA5HW-hU_Y-2.webp",
+        "time": 822.4,
+        "label": "힘 빼기 설명 구간",
+        "width": 720,
+        "height": 405
+      }
+    ],
+    "duration": 1028,
+    "source": "https://www.youtube.com/watch?v=bTA5HW-hU_Y",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "UlRsR8hnZGs",
+    "title": "손목 · 코킹과 힌지 구분",
+    "frames": [
+      {
+        "src": "media/golf-frames/UlRsR8hnZGs-1.webp",
+        "time": 83.81,
+        "label": "손목 움직임 설명",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/UlRsR8hnZGs-2.webp",
+        "time": 261.29,
+        "label": "클럽을 잡은 시범",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 493,
+    "source": "https://www.youtube.com/watch?v=UlRsR8hnZGs",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "YD9lLDhvy8c",
+    "title": "릴리스 · 손을 연결해 앞으로 보내는 시범",
+    "frames": [
+      {
+        "src": "media/golf-frames/YD9lLDhvy8c-1.webp",
+        "time": 8.4,
+        "label": "한 손으로 경로 확인",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/YD9lLDhvy8c-2.webp",
+        "time": 17.04,
+        "label": "양손을 연결한 통과",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 24,
+    "source": "https://www.youtube.com/watch?v=YD9lLDhvy8c",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "0HjpF1MOwAw",
+    "title": "임팩트 · 오른팔꿈치와 오른손 스냅",
+    "frames": [
+      {
+        "src": "media/golf-frames/0HjpF1MOwAw-1.webp",
+        "time": 2.64,
+        "label": "팔꿈치와 옆구리",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/0HjpF1MOwAw-2.webp",
+        "time": 4.8,
+        "label": "임팩트 손목 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 6,
+    "source": "https://www.youtube.com/watch?v=0HjpF1MOwAw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "IMjI_VqsQsg",
+    "title": "백스윙 · 오른발 지지와 몸통 회전",
+    "frames": [
+      {
+        "src": "media/golf-frames/IMjI_VqsQsg-1.webp",
+        "time": 24.91,
+        "label": "오른발 지지 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/IMjI_VqsQsg-2.webp",
+        "time": 41.83,
+        "label": "몸통을 돌린 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 47,
+    "source": "https://www.youtube.com/watch?v=IMjI_VqsQsg",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "2CplOC4flsA",
+    "title": "전환 · 오른손 힌지와 팔꿈치·몸통 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/2CplOC4flsA-1.webp",
+        "time": 4.24,
+        "label": "전환과 손목",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/2CplOC4flsA-2.webp",
+        "time": 6.4,
+        "label": "팔꿈치와 회전",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 8,
+    "source": "https://www.youtube.com/watch?v=2CplOC4flsA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "Fk_3CjorpVA",
+    "title": "어프로치 · 공 위치와 탄도 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/Fk_3CjorpVA-1.webp",
+        "time": 4.55,
+        "label": "오른발 쪽 공 위치",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/Fk_3CjorpVA-2.webp",
+        "time": 8.06,
+        "label": "왼발 쪽 공 위치",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 13,
+    "source": "https://www.youtube.com/watch?v=Fk_3CjorpVA",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "g2AXYPKdCik",
+    "title": "백스윙·다운스윙의 겨드랑이 연결 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/g2AXYPKdCik-1.webp",
+        "time": 3.96,
+        "label": "백스윙 왼쪽 겨드랑이",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/g2AXYPKdCik-2.webp",
+        "time": 5.58,
+        "label": "다운스윙 오른쪽 겨드랑이",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 9,
+    "source": "https://www.youtube.com/watch?v=g2AXYPKdCik",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
   }
 ]

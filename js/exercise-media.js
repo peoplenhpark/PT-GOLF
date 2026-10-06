@@ -1543,5 +1543,156 @@ window.ExerciseMedia = {
         "viewer": "media/3d/viewer.html?exercise=ht_lower_six&variant=ht_lower_extension"
       }
     ]
+  },
+  "ht_legpress_positions": {
+    "name": "레그프레스 발 위치 5가지 · PT 보강",
+    "kind": "htlegpresswide",
+    "target": "quads",
+    "captions": [
+      "와이드 스탠스 · 지지 위치 확인",
+      "와이드 스탠스 · 무릎을 굽힌 시범"
+    ],
+    "notes": [
+      "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+      "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+    ],
+    "focus": {
+      "muscle": "허벅지·둔근",
+      "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+      "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+    },
+    "visualNote": "원본 영상 2초·4초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+    "images": [
+      "docs/images/guides/ht_legpress_wide-start.webp",
+      "docs/images/guides/ht_legpress_wide-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions",
+    "variants": [
+      {
+        "id": "ht_legpress_wide",
+        "name": "와이드 스탠스",
+        "kind": "htlegpresswide",
+        "target": "quads",
+        "captions": [
+          "와이드 스탠스 · 지지 위치 확인",
+          "와이드 스탠스 · 무릎을 굽힌 시범"
+        ],
+        "notes": [
+          "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+          "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+          "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+        },
+        "visualNote": "원본 영상 2초·4초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+        "images": [
+          "docs/images/guides/ht_legpress_wide-start.webp",
+          "docs/images/guides/ht_legpress_wide-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_wide"
+      },
+      {
+        "id": "ht_legpress_narrow",
+        "name": "내로우 스탠스",
+        "kind": "htlegpressnarrow",
+        "target": "quads",
+        "captions": [
+          "내로우 스탠스 · 지지 위치 확인",
+          "내로우 스탠스 · 무릎을 굽힌 시범"
+        ],
+        "notes": [
+          "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+          "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+          "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+        },
+        "visualNote": "원본 영상 20초·22초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+        "images": [
+          "docs/images/guides/ht_legpress_narrow-start.webp",
+          "docs/images/guides/ht_legpress_narrow-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_narrow"
+      },
+      {
+        "id": "ht_legpress_standard",
+        "name": "기본 스탠스",
+        "kind": "htlegpressstandard",
+        "target": "quads",
+        "captions": [
+          "기본 스탠스 · 지지 위치 확인",
+          "기본 스탠스 · 무릎을 굽힌 시범"
+        ],
+        "notes": [
+          "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+          "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+          "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+        },
+        "visualNote": "원본 영상 28초·30초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+        "images": [
+          "docs/images/guides/ht_legpress_standard-start.webp",
+          "docs/images/guides/ht_legpress_standard-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_standard"
+      },
+      {
+        "id": "ht_legpress_high",
+        "name": "발판 높은 위치",
+        "kind": "htlegpresshigh",
+        "target": "quads",
+        "captions": [
+          "발판 높은 위치 · 지지 위치 확인",
+          "발판 높은 위치 · 무릎을 굽힌 시범"
+        ],
+        "notes": [
+          "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+          "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+          "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+        },
+        "visualNote": "원본 영상 42초·44초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+        "images": [
+          "docs/images/guides/ht_legpress_high-start.webp",
+          "docs/images/guides/ht_legpress_high-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_high"
+      },
+      {
+        "id": "ht_legpress_low",
+        "name": "발판 낮은 위치",
+        "kind": "htlegpresslow",
+        "target": "quads",
+        "captions": [
+          "발판 낮은 위치 · 지지 위치 확인",
+          "발판 낮은 위치 · 무릎을 굽힌 시범"
+        ],
+        "notes": [
+          "등과 골반을 등받이에 지지한 원본 장면에서 발 위치를 확인합니다.",
+          "발 위치를 유지하며 무릎을 굽혔다 펴는 두 장면을 비교합니다."
+        ],
+        "focus": {
+          "muscle": "허벅지·둔근",
+          "move": "등·골반 지지와 양발 위치를 유지한 채 무릎을 굽혔다 펴는 시범입니다.",
+          "feel": "기존 PT에서 배운 발바닥 지지와 비교하세요. 새로운 발 위치·중량·깊이는 개인 처방으로 확정하지 않습니다."
+        },
+        "visualNote": "원본 영상 51초·53초를 추출했습니다. 근육 강조 그림은 원본 제작자 설명이며 3D의 기구 크기·간격·깊이는 예시입니다.",
+        "images": [
+          "docs/images/guides/ht_legpress_low-start.webp",
+          "docs/images/guides/ht_legpress_low-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_low"
+      }
+    ]
   }
 };

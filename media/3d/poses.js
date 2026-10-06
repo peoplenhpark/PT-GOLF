@@ -243,6 +243,19 @@ function pose(kind,t,id){
    p.equipment.push({type:'adduction'});
   }
   arms(p,S.map(s=>[s*.27,.53,.06]));
+ }else if(kind.startsWith('htlegpress')){
+  // Five source-demonstrated placements on one sled. Dimensions are illustrative.
+  const variant=kind.slice('htlegpress'.length),width=variant==='wide'?.27:['narrow','high','low'].includes(variant)?.08:.16;
+  const offset=variant==='high'?.11:variant==='low'?-.11:0;
+  const normal=unit([0,1,1]),up=unit([0,1,-1]),distance=.73-.23*q;
+  p=base([0,.48,0],-.70);
+  const center=add(p.hip,mul(normal,distance));
+  legs(p,S.map(s=>add(center,add([s*width,0,0],mul(up,offset)))),S.map(s=>[s*.25,1,-1]));
+  arms(p,S.map(s=>[s*.28,.45,-.02]),S.map(s=>[s,0,-1]));
+  p.footDirections=S.map(s=>unit(add(up,[variant==='wide'?s*.18:0,0,0])));
+  p.footNormals=S.map(()=>mul(normal,-1));
+  p.equipment=[{type:'htlegpress',center:add(center,add(mul(up,.05),mul(normal,.08))),normal,up}];
+  p.target=[0,.83,.05];p.distance=4.1;
  }else if(kind==='legpress'){
   p=base([0,.48,0],-.70);p.target=[0,.75,.2];
   const dist=.46+.33*q;

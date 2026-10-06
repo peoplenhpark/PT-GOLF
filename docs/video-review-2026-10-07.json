@@ -1,0 +1,229 @@
+{
+  "reviewedAt": "2026-10-07",
+  "submittedLinks": 14,
+  "uniqueLinks": 13,
+  "duplicate": "1lD1Lhk-2Lc",
+  "reviewScope": "Public metadata, descriptions, sampled source frames and visible captions; not a full audio transcript. Existing coaching, lessons and video dates preserved.",
+  "golf": [
+    {
+      "id": "1lD1Lhk-2Lc",
+      "title": "다운스윙 · 오른어깨와 손의 경로",
+      "group": "rotation",
+      "times": [
+        20.3,
+        35.96
+      ],
+      "labels": [
+        "어깨를 내리는 시범",
+        "어깨와 손 위치 비교"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "클럽을 어깨에 댄 시범으로 다운스윙에서 오른어깨와 손이 이동하는 방향을 비교합니다."
+    },
+    {
+      "id": "JhE2A-kCaLI",
+      "title": "스윙 폭·오른어깨·통과 경로 비교",
+      "group": "rotation",
+      "times": [
+        4.94,
+        13.49
+      ],
+      "labels": [
+        "스윙 폭 시범",
+        "몸과 클럽 통과"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "여러 짧은 시범에서 스윙 폭, 오른어깨의 높이, 공을 통과하는 몸과 클럽의 관계를 비교합니다."
+    },
+    {
+      "id": "2UR4UFtx1R0",
+      "title": "그립 · 오른손 검지 접촉 위치",
+      "group": "setup",
+      "times": [
+        7.82,
+        28.52
+      ],
+      "labels": [
+        "검지와 그립 접촉",
+        "클럽 방향 비교"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "오른손 검지를 가까이 보여 주는 장면과 클럽을 기울이는 시범에서 손가락과 그립의 접촉 위치를 관찰합니다."
+    },
+    {
+      "id": "va8Oz-nSxcI",
+      "title": "아이언 · 팔 하강과 임팩트 경로",
+      "group": "arms-impact",
+      "times": [
+        3.08,
+        4.97
+      ],
+      "labels": [
+        "팔 간격 비교",
+        "다운스윙 경로"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "팔 간격과 클럽이 내려오는 경로를 대비한 짧은 시범입니다. 주된 비교 대상은 다운스윙에서 임팩트로 이어지는 구간입니다."
+    },
+    {
+      "id": "bTA5HW-hU_Y",
+      "title": "힘 빼기 · 그립과 큰 근육의 회전",
+      "group": "rotation",
+      "times": [
+        267.28,
+        822.4
+      ],
+      "labels": [
+        "팔과 몸의 움직임",
+        "힘 빼기 설명 구간"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "설명란은 그립의 불필요한 힘, 큰 근육의 회전, 벽 연습과 호흡을 다룹니다. 확인한 표본 장면의 팔·몸통 시범을 첫 레슨의 힘 빼기와 비교할 참고 자료로 둡니다."
+    },
+    {
+      "id": "UlRsR8hnZGs",
+      "title": "손목 · 코킹과 힌지 구분",
+      "group": "arms-impact",
+      "times": [
+        83.81,
+        261.29
+      ],
+      "labels": [
+        "손목 움직임 설명",
+        "클럽을 잡은 시범"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "코킹과 힌지를 구분하는 설명 영상입니다. 손목을 따로 보여 주는 장면과 클럽을 잡은 시범의 차이를 관찰합니다."
+    },
+    {
+      "id": "YD9lLDhvy8c",
+      "title": "릴리스 · 손을 연결해 앞으로 보내는 시범",
+      "group": "arms-impact",
+      "times": [
+        8.4,
+        17.04
+      ],
+      "labels": [
+        "한 손으로 경로 확인",
+        "양손을 연결한 통과"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "한 손으로 동작을 보여 준 뒤 양손을 연결해 클럽을 앞으로 보내는 시범입니다. 손을 놓아주는 장면과 통과 방향을 비교합니다."
+    },
+    {
+      "id": "0HjpF1MOwAw",
+      "title": "임팩트 · 오른팔꿈치와 오른손 스냅",
+      "group": "arms-impact",
+      "times": [
+        2.64,
+        4.8
+      ],
+      "labels": [
+        "팔꿈치와 옆구리",
+        "임팩트 손목 시범"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "짧은 반복 시범과 화면 자막은 임팩트 구간의 오른팔꿈치·옆구리 관계와 오른손 스냅을 설명합니다."
+    },
+    {
+      "id": "IMjI_VqsQsg",
+      "title": "백스윙 · 오른발 지지와 몸통 회전",
+      "group": "backswing-top",
+      "times": [
+        24.91,
+        41.83
+      ],
+      "labels": [
+        "오른발 지지 설명",
+        "몸통을 돌린 시범"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "백스윙에서 오른발 안쪽을 강하게 버티다가 몸이 밀리는 예와, 발바닥을 비비듯 회전을 허용하는 예를 비교합니다."
+    },
+    {
+      "id": "2CplOC4flsA",
+      "title": "전환 · 오른손 힌지와 팔꿈치·몸통 연결",
+      "group": "arms-impact",
+      "times": [
+        4.24,
+        6.4
+      ],
+      "labels": [
+        "전환과 손목",
+        "팔꿈치와 회전"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "화면 자막과 시범은 다운스윙 전환에서 손목 힌지, 오른팔꿈치, 몸통 회전을 연결해 보여 줍니다."
+    },
+    {
+      "id": "Fk_3CjorpVA",
+      "title": "어프로치 · 공 위치와 탄도 비교",
+      "group": "short-game",
+      "times": [
+        4.55,
+        8.06
+      ],
+      "labels": [
+        "오른발 쪽 공 위치",
+        "왼발 쪽 공 위치"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "공을 가운데, 오른발 쪽, 왼발 쪽에 두는 시범으로 어프로치의 구름과 높이 차이를 설명합니다."
+    },
+    {
+      "id": "g2AXYPKdCik",
+      "title": "백스윙·다운스윙의 겨드랑이 연결 비교",
+      "group": "arms-impact",
+      "times": [
+        3.96,
+        5.58
+      ],
+      "labels": [
+        "백스윙 왼쪽 겨드랑이",
+        "다운스윙 오른쪽 겨드랑이"
+      ],
+      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
+      "reason": "화면 자막은 백스윙의 왼쪽 겨드랑이와 다운스윙의 오른쪽 겨드랑이를 나누어 설명합니다. 양팔을 계속 몸에 붙이라는 하나의 지시로 합치지 않습니다."
+    }
+  ],
+  "ht": {
+    "id": "ht_legpress_positions",
+    "source": {
+      "id": "Qlkuoj6OMkY",
+      "title": "🔸5 leg press foot positions complete lower body workout🔥 #legs #gymworkout #workoutroutine",
+      "channel": "FitBurst",
+      "duration": 58,
+      "upload_date": "20260927",
+      "timestamp": 1790510406,
+      "description": "1. wide-stance leg press\n- glutes & adductors\n2. close-stance leg press\n- quadriceps\n3. standard-stance leg press\n- legs overall\n4. high-stance leg press\n- hamstrings, glutes & quadriceps\n5. low-stance leg press\n- quadriceps\n\n#legpress  #legworkout  #lowerbodyworkout  #legday  #gymtips"
+    },
+    "frames": [
+      [
+        "wide",
+        2,
+        4
+      ],
+      [
+        "narrow",
+        20,
+        22
+      ],
+      [
+        "standard",
+        28,
+        30
+      ],
+      [
+        "high",
+        42,
+        44
+      ],
+      [
+        "low",
+        51,
+        53
+      ]
+    ],
+    "method": "Original frame extraction, resize only; no image generation."
+  }
+}
