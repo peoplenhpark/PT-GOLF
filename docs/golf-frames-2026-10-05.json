@@ -648,30 +648,6 @@
     "verifiedAt": "2026-10-05"
   },
   {
-    "id": "WWtv4x3uz-M",
-    "title": "백스윙에서 지킬 2가지",
-    "frames": [
-      {
-        "src": "media/golf-frames/WWtv4x3uz-M-1.webp",
-        "time": 11.4,
-        "label": "장면 1",
-        "width": 360,
-        "height": 640
-      },
-      {
-        "src": "media/golf-frames/WWtv4x3uz-M-2.webp",
-        "time": 25.84,
-        "label": "장면 2",
-        "width": 360,
-        "height": 640
-      }
-    ],
-    "duration": 38,
-    "source": "https://www.youtube.com/watch?v=WWtv4x3uz-M",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-05"
-  },
-  {
     "id": "o4KqDhYXlTw",
     "title": "오른손 올바르게 사용하기",
     "frames": [
@@ -1652,6 +1628,246 @@
     ],
     "duration": 9,
     "source": "https://www.youtube.com/watch?v=g2AXYPKdCik",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "sKcgYjwimd8",
+    "title": "스윙 구간을 나누어 반복하는 연습",
+    "frames": [
+      {
+        "src": "media/golf-frames/sKcgYjwimd8-1.webp",
+        "time": 6.24,
+        "label": "내려오는 위치 확인",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/sKcgYjwimd8-2.webp",
+        "time": 17.04,
+        "label": "통과 구간 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 24,
+    "source": "https://www.youtube.com/watch?v=sKcgYjwimd8",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "ZBYKvzsKbyU",
+    "title": "슬로모션 스윙 · 두 촬영 각도 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/ZBYKvzsKbyU-1.webp",
+        "time": 10.14,
+        "label": "앞쪽 각도에서 본 스윙",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/ZBYKvzsKbyU-2.webp",
+        "time": 27.69,
+        "label": "뒤쪽 각도에서 본 스윙",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 39,
+    "source": "https://www.youtube.com/watch?v=ZBYKvzsKbyU",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "5vL6-Dwahsw",
+    "title": "오른발 지지 · 백스윙과 체중이동",
+    "frames": [
+      {
+        "src": "media/golf-frames/5vL6-Dwahsw-1.webp",
+        "time": 10.71,
+        "label": "클럽과 몸의 준비",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/5vL6-Dwahsw-2.webp",
+        "time": 39.06,
+        "label": "지지와 회전 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 63,
+    "source": "https://www.youtube.com/watch?v=5vL6-Dwahsw",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "9ELCrrtWqwM",
+    "title": "손목 힌지 · 손가락과 클럽 방향",
+    "frames": [
+      {
+        "src": "media/golf-frames/9ELCrrtWqwM-1.webp",
+        "time": 14.96,
+        "label": "손과 그립 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/9ELCrrtWqwM-2.webp",
+        "time": 62.48,
+        "label": "클럽을 잡은 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 88,
+    "source": "https://www.youtube.com/watch?v=9ELCrrtWqwM",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "1x_iiruwFTU",
+    "title": "힘 빼기 · 골반과 상체의 연속 움직임",
+    "frames": [
+      {
+        "src": "media/golf-frames/1x_iiruwFTU-1.webp",
+        "time": 0.85,
+        "label": "되돌아가는 몸통",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1x_iiruwFTU-2.webp",
+        "time": 3.1,
+        "label": "이어지는 스윙",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 5,
+    "source": "https://www.youtube.com/watch?v=1x_iiruwFTU",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "ZVyCmpxNXa4",
+    "title": "다운스윙 · 클럽 하강과 몸의 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/ZVyCmpxNXa4-1.webp",
+        "time": 7.65,
+        "label": "클럽이 내려오는 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/ZVyCmpxNXa4-2.webp",
+        "time": 19.8,
+        "label": "체중이동과 하강",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 45,
+    "source": "https://www.youtube.com/watch?v=ZVyCmpxNXa4",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "xys5zZWka6M",
+    "title": "릴리스 감각 · 수건 시범",
+    "frames": [
+      {
+        "src": "media/golf-frames/xys5zZWka6M-1.webp",
+        "time": 1.19,
+        "label": "수건을 이용한 흐름",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/xys5zZWka6M-2.webp",
+        "time": 4.97,
+        "label": "클럽 시범과 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=xys5zZWka6M",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "XgPPBzZKzNM",
+    "title": "릴리스 · 끌고 온 뒤 클럽을 보내기",
+    "frames": [
+      {
+        "src": "media/golf-frames/XgPPBzZKzNM-1.webp",
+        "time": 5.46,
+        "label": "내려온 팔과 클럽",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/XgPPBzZKzNM-2.webp",
+        "time": 14.91,
+        "label": "클럽을 보내는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 21,
+    "source": "https://www.youtube.com/watch?v=XgPPBzZKzNM",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "LEv6sXi98Z0",
+    "title": "드라이버 · 야구 스윙과 골프 궤도 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/LEv6sXi98Z0-1.webp",
+        "time": 17.04,
+        "label": "야구처럼 휘두르는 비교 장면",
+        "width": 360,
+        "height": 480
+      },
+      {
+        "src": "media/golf-frames/LEv6sXi98Z0-2.webp",
+        "time": 21.36,
+        "label": "골프 스윙 시범",
+        "width": 360,
+        "height": 480
+      }
+    ],
+    "duration": 24,
+    "source": "https://www.youtube.com/watch?v=LEv6sXi98Z0",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "BvnGOkOMo68",
+    "title": "헤드 무게 · 손·팔로 당기는 동작 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/BvnGOkOMo68-1.webp",
+        "time": 12.24,
+        "label": "클럽과 손의 위치 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/BvnGOkOMo68-2.webp",
+        "time": 31.68,
+        "label": "무게가 느껴지는 시범 설명",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 72,
+    "source": "https://www.youtube.com/watch?v=BvnGOkOMo68",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-07"
   }

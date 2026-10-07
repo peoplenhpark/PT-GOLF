@@ -1,3 +1,10 @@
 {
-  "approvals": []
+  "approvals": [
+    {
+      "issue": 1,
+      "kind": "video",
+      "id": "WWtv4x3uz-M",
+      "approvedAt": "2026-10-07T11:36:07.921Z"
+    }
+  ]
 }

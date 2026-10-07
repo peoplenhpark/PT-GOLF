@@ -432,22 +432,6 @@ window.GolfFrames = {
       "height": 640
     }
   ],
-  "WWtv4x3uz-M": [
-    {
-      "src": "media/golf-frames/WWtv4x3uz-M-1.webp",
-      "time": 11.4,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/WWtv4x3uz-M-2.webp",
-      "time": 25.84,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
   "o4KqDhYXlTw": [
     {
       "src": "media/golf-frames/o4KqDhYXlTw-1.webp",
@@ -1100,6 +1084,166 @@ window.GolfFrames = {
       "src": "media/golf-frames/g2AXYPKdCik-2.webp",
       "time": 5.58,
       "label": "다운스윙 오른쪽 겨드랑이",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "sKcgYjwimd8": [
+    {
+      "src": "media/golf-frames/sKcgYjwimd8-1.webp",
+      "time": 6.24,
+      "label": "내려오는 위치 확인",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/sKcgYjwimd8-2.webp",
+      "time": 17.04,
+      "label": "통과 구간 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ZBYKvzsKbyU": [
+    {
+      "src": "media/golf-frames/ZBYKvzsKbyU-1.webp",
+      "time": 10.14,
+      "label": "앞쪽 각도에서 본 스윙",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ZBYKvzsKbyU-2.webp",
+      "time": 27.69,
+      "label": "뒤쪽 각도에서 본 스윙",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "5vL6-Dwahsw": [
+    {
+      "src": "media/golf-frames/5vL6-Dwahsw-1.webp",
+      "time": 10.71,
+      "label": "클럽과 몸의 준비",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/5vL6-Dwahsw-2.webp",
+      "time": 39.06,
+      "label": "지지와 회전 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "9ELCrrtWqwM": [
+    {
+      "src": "media/golf-frames/9ELCrrtWqwM-1.webp",
+      "time": 14.96,
+      "label": "손과 그립 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/9ELCrrtWqwM-2.webp",
+      "time": 62.48,
+      "label": "클럽을 잡은 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "1x_iiruwFTU": [
+    {
+      "src": "media/golf-frames/1x_iiruwFTU-1.webp",
+      "time": 0.85,
+      "label": "되돌아가는 몸통",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1x_iiruwFTU-2.webp",
+      "time": 3.1,
+      "label": "이어지는 스윙",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ZVyCmpxNXa4": [
+    {
+      "src": "media/golf-frames/ZVyCmpxNXa4-1.webp",
+      "time": 7.65,
+      "label": "클럽이 내려오는 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ZVyCmpxNXa4-2.webp",
+      "time": 19.8,
+      "label": "체중이동과 하강",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "xys5zZWka6M": [
+    {
+      "src": "media/golf-frames/xys5zZWka6M-1.webp",
+      "time": 1.19,
+      "label": "수건을 이용한 흐름",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/xys5zZWka6M-2.webp",
+      "time": 4.97,
+      "label": "클럽 시범과 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "XgPPBzZKzNM": [
+    {
+      "src": "media/golf-frames/XgPPBzZKzNM-1.webp",
+      "time": 5.46,
+      "label": "내려온 팔과 클럽",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/XgPPBzZKzNM-2.webp",
+      "time": 14.91,
+      "label": "클럽을 보내는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "LEv6sXi98Z0": [
+    {
+      "src": "media/golf-frames/LEv6sXi98Z0-1.webp",
+      "time": 17.04,
+      "label": "야구처럼 휘두르는 비교 장면",
+      "width": 360,
+      "height": 480
+    },
+    {
+      "src": "media/golf-frames/LEv6sXi98Z0-2.webp",
+      "time": 21.36,
+      "label": "골프 스윙 시범",
+      "width": 360,
+      "height": 480
+    }
+  ],
+  "BvnGOkOMo68": [
+    {
+      "src": "media/golf-frames/BvnGOkOMo68-1.webp",
+      "time": 12.24,
+      "label": "클럽과 손의 위치 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/BvnGOkOMo68-2.webp",
+      "time": 31.68,
+      "label": "무게가 느껴지는 시범 설명",
       "width": 240,
       "height": 426
     }

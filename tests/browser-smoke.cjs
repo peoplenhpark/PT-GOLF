@@ -62,9 +62,9 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert(registeredRecent.includes('t_9sQjrS2o4'),'older YouTube video is recent by app registration');
   assert.equal(await page.locator('.g-mini-detail').first().getAttribute('aria-label'),null,'takeaway remains in the link accessible text after duplicate badges are removed');
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
-  const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-groups a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
+  const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-shortcuts a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
-  await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
+  await page.locator('.g-video-shortcuts a[href="#golf/group/all"]').click();await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
   await page.goto(base+'#golf');await page.locator('.g-lesson-anchor').waitFor();
   assert.equal(await page.locator('.g-tabs a').count(),4);
   await page.locator('.g-tabs a[href="#golf/notes"]').click();
@@ -84,22 +84,22 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const afterPractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
   assert.equal(afterPractice.practiceRecords.length,1);for(const k of ['lessons','questions','focus','videoNotes'])assert.deepEqual(afterPractice[k],beforePractice[k],k+' preserved by practice save');
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
-  await page.goto(base+'#golf/videos');await page.locator('.g-frame').first().waitFor();
+  await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,138);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,156);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-top').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),10);
-  assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,4).map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','WWtv4x3uz-M','7sNhk9PhBxc','ojzyFHAQWnw']);
+  assert.equal(await page.locator('.g-video-mini').count(),9);
+  assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','7sNhk9PhBxc','ojzyFHAQWnw']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).click();
-  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),7);
+  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),6);
   await page.goto(base+'#golf/videos/QLJDoGT7-2U');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
   await page.locator('#g-video-status').selectOption('프로에게 질문');await page.locator('#g-video-memo').fill('검증: 편안함은 좋음, 타점 4/5. 오른팔 위치 질문');await page.locator('[data-g-form=video] button').click();
   await page.reload();await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'프로에게 질문');assert.match(await page.locator('#g-video-memo').inputValue(),/타점 4\/5/);
-  await page.goto(base+'#golf/topic/'+encodeURIComponent('백스윙 시 오른팔 위치'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),6);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
-  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),9);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
+  await page.goto(base+'#golf/topic/'+encodeURIComponent('백스윙 시 오른팔 위치'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),5);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
+  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),8);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
   const afterBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));for(const key of ['lessons','questions','focus','practiceRecords'])assert.deepEqual(afterBackswing[key],beforeBackswing[key]);for(const [id,note]of Object.entries(beforeBackswing.videoNotes))assert.deepEqual(afterBackswing.videoNotes[id],note);
   for(const width of [320,390,768])for(const hash of ['#golf/group/backswing-top','#golf/topic/'+encodeURIComponent('백스윙 시 몸통 회전'),'#golf/videos/DOf7sAtTJYw','#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
     await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.g-tabs').waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+hash);
@@ -181,7 +181,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('.training-related [data-open=pt_squat]').click();await page.locator('.training-related [data-open="'+htId+'"]').click();
   assert.match(page.url(),new RegExp('#exercise/'+htId));await page.locator('[data-nav=favorites]').click();await page.locator('[data-open="'+htId+'"]').click();
   await page.goto(base+'#search?q='+encodeURIComponent('불가리안')+'&scope=ht');await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').waitFor();assert.equal(await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').count(),1);
-  await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),2);
+  await page.locator('.search-result[href="#exercise/ht_bulgarian_split_squat"]').click();await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-no]').click();assert.equal(await page.locator('.training-video').count(),3);
   await page.locator('[data-act=delete]').click();await page.locator('[data-act=confirm-yes]').click();await page.locator('[data-part=ht]').waitFor();assert.equal(await page.locator('[data-open="'+htId+'"]').count(),0);
   await page.goto(base+'#exercise/pt_squat');await page.locator('.d-title').waitFor();assert.equal(await page.locator('.training-related [data-open="'+htId+'"]').count(),0);
   await page.goto(base+'#home');await page.locator('[data-delete-restore="del_exercise_'+htId+'"]').click();
@@ -270,7 +270,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await context.setOffline(false);
   // New supplemental video plays in its own card, and all six lower-body variants work offline.
   await page.goto(base+'#exercise/ht_bulgarian_split_squat');await page.locator('.training-video').first().waitFor();
-  assert.equal(await page.locator('.training-video').count(),2);
+  assert.equal(await page.locator('.training-video').count(),3);
   await page.route('https://www.youtube-nocookie.com/**',r=>r.fulfill({contentType:'text/html',body:'<!doctype html><title>isolated player</title>'}));
   await page.locator('[data-video="8dN-DGm3hhg"]').click();
   assert.match(await page.locator('.training-video').nth(1).locator('iframe').getAttribute('src'),/embed\/8dN-DGm3hhg\?autoplay=1/);
@@ -340,6 +340,43 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await context.setOffline(true);await page.reload();await page.locator('.d-title').waitFor();assert.match(await page.locator('.pt-session-note').innerText(),/2026-10-07/);assert.equal(await page.locator('.memo-box').innerText(),'런지 개인 메모 보존');await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();await context.setOffline(false);
   for(const width of [320,390,768])for(const hash of ['#pt','#exercise/pt_hip_openclose_stretch','#exercise/pt_pullup']){await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.pt-session-note').first().waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await page.goto(base+'#exercise/pt_lunge');await page.locator('[data-act=edit]').click();for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.locator('#modal .modal-card').evaluate(e=>e.scrollWidth<=e.clientWidth));}await page.keyboard.press('Escape');assert.deepEqual(errors,[]);
+  // HT references preserve PT coaching and work across all source-demonstrated variants.
+  const supplementIds=['ht_latpulldown_reference','ht_upper_elbows','ht_chest_six'];
+  for(const id of supplementIds){
+   await page.goto(base+'#exercise/'+id);await page.locator('.training-video').waitFor();
+   await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
+   await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('PT 보강 비교 메모 '+id);
+   const choices=await page.locator('#training-movement option').evaluateAll(es=>es.map(e=>e.value));
+   for(const choice of choices.length?choices:[null]){
+    if(choice)await page.locator('#training-movement').selectOption(choice);
+    assert.equal(await page.locator('#memo-input').inputValue(),'PT 보강 비교 메모 '+id);
+    await page.waitForFunction(()=>document.querySelectorAll('.guide-shot img').length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
+    await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
+    assert.equal(await f.locator('#speed').inputValue(),'.5');
+    const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
+    await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
+    const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
+    for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
+    if(process.env.PTGOLF_SCREENSHOT_DIR)for(const t of ['0','500']){await f.locator('#progress').fill(t);await f.locator('#progress').dispatchEvent('input');await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,(choice||id)+'-'+t+'.png')});}
+   }
+   await page.locator('#memo-save').click();await context.setOffline(true);await page.reload();await page.locator('.training-video').waitFor();
+   assert.equal(await page.locator('.memo-box').innerText(),'PT 보강 비교 메모 '+id);
+   for(const choice of choices.length?choices:[null]){if(choice)await page.locator('#training-movement').selectOption(choice);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();}
+   await context.setOffline(false);
+  }
+  for(const [pt,ht] of [['pt_latpulldown','ht_latpulldown_reference'],['pt_seatedrow','ht_upper_elbows'],['pt_dumbbell_press','ht_chest_six'],['pt_lunge','ht_bulgarian_split_squat']]){await page.goto(base+'#exercise/'+pt);await page.locator('a[href="#exercise/'+ht+'"]').waitFor();await page.locator('a[href="#exercise/'+ht+'"]').click();await page.locator('a[href="#exercise/'+pt+'"]').waitFor();}
+  await page.goto(base+'#golf/videos');await page.locator('.g-video-groups').waitFor();assert.equal(await page.locator('a[href="#golf/videos/WWtv4x3uz-M"]').count(),0);assert.deepEqual(errors,[]);
+  await page.goto(base+'#golf/group/fundamentals');await page.getByRole('heading',{name:'기초동작 2편',exact:true}).waitFor();
+  assert.equal(await page.locator('.g-video-mini').count(),2);
+  for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+  for(const id of ['LEv6sXi98Z0','BvnGOkOMo68']){await page.goto(base+'#golf/videos/'+id);await page.locator('.g-frame img').first().waitFor();await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));assert(await page.locator('a[href="#golf/group/fundamentals"]').count());}
+  // Visible library hierarchy, keyboard navigation and readable light/dark menus.
+  await page.goto(base+'#golf/videos');await page.locator('.g-library-cards').waitFor();assert.equal(await page.locator('.g-library-cards>a').count(),4);assert.equal(await page.locator('.g-recent-section .g-video-card').count(),3);assert.equal(await page.locator('.g-featured-video .g-video-card').count(),4);
+  await page.locator('.g-library-cards a[href="#golf/group/stages"]').click();await page.locator('.g-subsections').waitFor();assert.equal(await page.locator('.g-subsections a').count(),5);
+  await page.locator('.g-subsections a[href="#golf/group/rotation"]').focus();await page.keyboard.press('Enter');await page.locator('#g-group-rotation').waitFor();assert.equal(await page.locator('.g-subsections a[aria-current=page]').getAttribute('href'),'#golf/group/rotation');assert.equal(await page.locator('.g-video-groups a[aria-current=location]').getAttribute('href'),'#golf/group/stages');
+  for(const theme of ['light','dark'])for(const width of [320,390,768]){await page.evaluate(theme=>document.documentElement.setAttribute('data-theme',theme),theme);await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.locator('.g-video-groups').evaluate(e=>e.scrollWidth<=e.clientWidth));assert(await page.locator('.g-video-groups a').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)));await page.evaluate(()=>scrollTo(0,1000));const tabs=await page.locator('.g-tabs').boundingBox(),themeButton=await page.locator('#theme-btn').boundingBox();assert(tabs.y>=themeButton.y+themeButton.height&&tabs.y<80,'sticky menu clears theme control');}
+  await page.goto(base+'#golf/group/shots');await page.locator('#g-group-short-game').waitFor();assert.equal(await page.locator('.g-video-card').count(),1);
+  await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
   console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');

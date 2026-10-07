@@ -5,7 +5,7 @@ try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
  const variant=params.get('variant');
  const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=110#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=113#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -84,7 +84,7 @@ try{
    ell(body,add(mix(k,f,.42),mul(p.front,-.014)),[.049,.105,.045],skin,sub(f,k));
    // Feet follow shin on floor exercises; standing feet point forward.
    const floorType=['legcurl','bridge','deadbug','slr','quadset','legraise','hamstring','clamshell','sslr','openbook','foam','birddog','plank','benchpress','pullover'];
-   const planted=['bridge','benchpress','dumbbellpress','smithincline','lyingextension'].includes(p.kind)||(p.kind==='slr'&&i===1);
+   const planted=['bridge','benchpress','dumbbellpress','smithincline','lyingextension','htsmithflat','htdumbbellfly','htsqueezepress','htbenchpullover'].includes(p.kind)||(p.kind==='slr'&&i===1);
    const direction=p.footDirections?.[i]|| (planted?[0,0,1]:p.kind==='latpull'?[0,-.6,.8]:floorType.includes(p.kind)?unit(add(mul(p.front,.8),mul(unit(sub(f,k)),.2))):[0,0,1]);
    const foot=ell(body,add(f,mul(direction,.050)),[.053,.045,.113],cloth);
    if(p.footNormals?.[i]){
@@ -243,6 +243,16 @@ try{
      beam(equipment,[-.70,1.63,.46],[.70,1.63,.46],.040);
      break;
     }
+    case 'htbackpad':
+     block(equipment,add(add(p.hip,mul(p.up,.28)),mul(p.front,-.12)),[.43,.65,.10],rubber,p.up);break;
+    case 'htvcable':{
+     tower(1.15);const center=mix(p.wrists[0],p.wrists[1],.5),tip=add(center,[0,0,.11]);
+     cable([0,.84,1.15],tip);for(const a of p.wrists){beam(equipment,tip,a,.018,steel);handle(a,true);}break;}
+    case 'htneutraldumbbells':{
+     for(const a of p.wrists){
+      beam(equipment,add(a,[0,0,-.15]),add(a,[0,0,.15]),.018,steel);
+      for(const z of [-.14,.14]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(a,[0,0,z]));o.scale.set(.075,.055,.075);o.rotation.x=Math.PI/2;}
+     }break;}
     case 'lowcable':tower(1.15);for(const a of p.wrists){cable([0,.84,1.15],a);handle(a,true);}break;
     case 'footplate':block(equipment,[0,.24,.64],[.55,.07,.24]);break;
     case 'chestpad':block(equipment,[0,1.0,.145],[.25,.28,.1]);beam(equipment,[0,.2,.7],[0,1.0,.2],.035);break;

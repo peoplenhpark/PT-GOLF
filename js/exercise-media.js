@@ -1718,5 +1718,331 @@ window.ExerciseMedia = {
       "docs/images/guides/pt_lunge-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_lunge"
+  },
+  "ht_latpulldown_reference": {
+    "name": "랫풀다운 자세 · PT 보강",
+    "kind": "htlatpull",
+    "target": "back",
+    "captions": [
+      "팔을 올린 준비",
+      "팔꿈치를 내린 동작"
+    ],
+    "notes": [
+      "랫풀다운의 원본 준비·지지 자세를 확인합니다.",
+      "허벅지와 몸통을 지지하며 팔꿈치가 아래로 내려오는 경로를 비교합니다."
+    ],
+    "focus": {
+      "muscle": "광배근·견갑 주변",
+      "move": "허벅지와 몸통을 지지하며 팔꿈치가 아래로 내려오는 경로를 비교합니다.",
+      "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+    },
+    "visualNote": "2컷은 원본 12초·13.35초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+    "images": [
+      "docs/images/guides/ht_latpulldown_reference_latpull-start.webp",
+      "docs/images/guides/ht_latpulldown_reference_latpull-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_latpulldown_reference"
+  },
+  "ht_upper_elbows": {
+    "name": "상체 4종 · 팔꿈치 경로 비교",
+    "kind": "htlatpull",
+    "target": "back",
+    "captions": [
+      "팔을 뻗은 준비",
+      "팔꿈치를 내린 동작"
+    ],
+    "notes": [
+      "랫풀다운의 원본 준비·지지 자세를 확인합니다.",
+      "팔꿈치를 뒤로 과하게 빼는 예와 아래로 내리는 예를 비교합니다."
+    ],
+    "focus": {
+      "muscle": "등·광배근",
+      "move": "팔꿈치를 뒤로 과하게 빼는 예와 아래로 내리는 예를 비교합니다.",
+      "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+    },
+    "visualNote": "2컷은 원본 3초·2.1초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+    "images": [
+      "docs/images/guides/ht_upper_elbows_latpull-start.webp",
+      "docs/images/guides/ht_upper_elbows_latpull-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_upper_elbows",
+    "variants": [
+      {
+        "id": "ht_upper_elbows_latpull",
+        "name": "랫풀다운",
+        "kind": "htlatpull",
+        "target": "back",
+        "captions": [
+          "팔을 뻗은 준비",
+          "팔꿈치를 내린 동작"
+        ],
+        "notes": [
+          "랫풀다운의 원본 준비·지지 자세를 확인합니다.",
+          "팔꿈치를 뒤로 과하게 빼는 예와 아래로 내리는 예를 비교합니다."
+        ],
+        "focus": {
+          "muscle": "등·광배근",
+          "move": "팔꿈치를 뒤로 과하게 빼는 예와 아래로 내리는 예를 비교합니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 3초·2.1초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_elbows_latpull-start.webp",
+          "docs/images/guides/ht_upper_elbows_latpull-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_elbows&variant=ht_upper_elbows_latpull"
+      },
+      {
+        "id": "ht_upper_elbows_row",
+        "name": "V 핸들 케이블 로우",
+        "kind": "htvrow",
+        "target": "back",
+        "captions": [
+          "팔을 뻗은 준비",
+          "몸 가까이 당기기"
+        ],
+        "notes": [
+          "V 핸들 케이블 로우의 원본 준비·지지 자세를 확인합니다.",
+          "중립 그립에서 팔꿈치가 몸 가까이 뒤로 이동하는 경로를 비교합니다."
+        ],
+        "focus": {
+          "muscle": "등·견갑 주변",
+          "move": "중립 그립에서 팔꿈치가 몸 가까이 뒤로 이동하는 경로를 비교합니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 6.3초·5.1초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_elbows_row-start.webp",
+          "docs/images/guides/ht_upper_elbows_row-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_elbows&variant=ht_upper_elbows_row"
+      },
+      {
+        "id": "ht_upper_elbows_shoulder",
+        "name": "시티드 덤벨 숄더프레스",
+        "kind": "htshoulderpress",
+        "target": "shoulders",
+        "captions": [
+          "덤벨을 받친 준비",
+          "위로 밀어 올리기"
+        ],
+        "notes": [
+          "시티드 덤벨 숄더프레스의 원본 준비·지지 자세를 확인합니다.",
+          "등을 지지하고 팔꿈치를 몸통보다 약간 앞에 두어 덤벨을 위로 미는 시범입니다."
+        ],
+        "focus": {
+          "muscle": "어깨·삼두",
+          "move": "등을 지지하고 팔꿈치를 몸통보다 약간 앞에 두어 덤벨을 위로 미는 시범입니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 9.3초·10.2초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_elbows_shoulder-start.webp",
+          "docs/images/guides/ht_upper_elbows_shoulder-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_elbows&variant=ht_upper_elbows_shoulder"
+      },
+      {
+        "id": "ht_upper_elbows_chest",
+        "name": "덤벨 체스트프레스",
+        "kind": "dumbbellpress",
+        "target": "chest",
+        "captions": [
+          "덤벨을 내린 준비",
+          "양팔로 밀기"
+        ],
+        "notes": [
+          "덤벨 체스트프레스의 원본 준비·지지 자세를 확인합니다.",
+          "가슴을 지지하며 팔꿈치가 지나치게 옆으로 벌어지는 예와 몸통 쪽으로 모이는 예를 비교합니다."
+        ],
+        "focus": {
+          "muscle": "가슴·어깨·삼두",
+          "move": "가슴을 지지하며 팔꿈치가 지나치게 옆으로 벌어지는 예와 몸통 쪽으로 모이는 예를 비교합니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 12.6초·13.5초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_upper_elbows_chest-start.webp",
+          "docs/images/guides/ht_upper_elbows_chest-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_upper_elbows&variant=ht_upper_elbows_chest"
+      }
+    ]
+  },
+  "ht_chest_six": {
+    "name": "가슴 운동 6종 · PT 보강",
+    "kind": "htbenchpullover",
+    "target": "back",
+    "captions": [
+      "덤벨을 위에 받친 준비",
+      "머리 뒤로 넘기기"
+    ],
+    "notes": [
+      "덤벨 풀오버 · 발 바닥 지지의 원본 준비·지지 자세를 확인합니다.",
+      "발을 바닥에 두고 벤치에 누워 덤벨 한 개를 양손으로 받쳐 머리 뒤로 넘깁니다."
+    ],
+    "focus": {
+      "muscle": "가슴·광배근·어깨 주변",
+      "move": "발을 바닥에 두고 벤치에 누워 덤벨 한 개를 양손으로 받쳐 머리 뒤로 넘깁니다.",
+      "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+    },
+    "visualNote": "2컷은 원본 4초·7초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+    "images": [
+      "docs/images/guides/ht_chest_six_pullover-start.webp",
+      "docs/images/guides/ht_chest_six_pullover-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_chest_six",
+    "variants": [
+      {
+        "id": "ht_chest_six_pullover",
+        "name": "덤벨 풀오버 · 발 바닥 지지",
+        "kind": "htbenchpullover",
+        "target": "back",
+        "captions": [
+          "덤벨을 위에 받친 준비",
+          "머리 뒤로 넘기기"
+        ],
+        "notes": [
+          "덤벨 풀오버 · 발 바닥 지지의 원본 준비·지지 자세를 확인합니다.",
+          "발을 바닥에 두고 벤치에 누워 덤벨 한 개를 양손으로 받쳐 머리 뒤로 넘깁니다."
+        ],
+        "focus": {
+          "muscle": "가슴·광배근·어깨 주변",
+          "move": "발을 바닥에 두고 벤치에 누워 덤벨 한 개를 양손으로 받쳐 머리 뒤로 넘깁니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 4초·7초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_pullover-start.webp",
+          "docs/images/guides/ht_chest_six_pullover-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_pullover"
+      },
+      {
+        "id": "ht_chest_six_fly",
+        "name": "덤벨 플라이",
+        "kind": "htdumbbellfly",
+        "target": "chest",
+        "captions": [
+          "덤벨을 위에 모으기",
+          "양팔을 벌린 동작"
+        ],
+        "notes": [
+          "덤벨 플라이의 원본 준비·지지 자세를 확인합니다.",
+          "팔꿈치를 약간 굽힌 채 덤벨을 양옆으로 벌렸다 가슴 위로 모읍니다."
+        ],
+        "focus": {
+          "muscle": "가슴·어깨 주변",
+          "move": "팔꿈치를 약간 굽힌 채 덤벨을 양옆으로 벌렸다 가슴 위로 모읍니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 10초·13초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_fly-start.webp",
+          "docs/images/guides/ht_chest_six_fly-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_fly"
+      },
+      {
+        "id": "ht_chest_six_incline",
+        "name": "인클라인 스미스 프레스",
+        "kind": "smithincline",
+        "target": "chest",
+        "captions": [
+          "바를 받친 준비",
+          "레일을 따라 밀기"
+        ],
+        "notes": [
+          "인클라인 스미스 프레스의 원본 준비·지지 자세를 확인합니다.",
+          "경사진 벤치에 지지하고 스미스 바를 레일을 따라 내렸다 밀어 올립니다."
+        ],
+        "focus": {
+          "muscle": "윗가슴·어깨·삼두",
+          "move": "경사진 벤치에 지지하고 스미스 바를 레일을 따라 내렸다 밀어 올립니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 22초·25초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_incline-start.webp",
+          "docs/images/guides/ht_chest_six_incline-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_incline"
+      },
+      {
+        "id": "ht_chest_six_flat",
+        "name": "플랫 스미스 프레스",
+        "kind": "htsmithflat",
+        "target": "chest",
+        "captions": [
+          "바를 받친 준비",
+          "수직으로 밀기"
+        ],
+        "notes": [
+          "플랫 스미스 프레스의 원본 준비·지지 자세를 확인합니다.",
+          "평평한 벤치에서 스미스 바를 정해진 레일을 따라 내렸다 밀어 올립니다."
+        ],
+        "focus": {
+          "muscle": "가슴·어깨·삼두",
+          "move": "평평한 벤치에서 스미스 바를 정해진 레일을 따라 내렸다 밀어 올립니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 31초·32초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_flat-start.webp",
+          "docs/images/guides/ht_chest_six_flat-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_flat"
+      },
+      {
+        "id": "ht_chest_six_press",
+        "name": "덤벨 체스트프레스",
+        "kind": "dumbbellpress",
+        "target": "chest",
+        "captions": [
+          "덤벨을 받친 준비",
+          "양팔로 밀기"
+        ],
+        "notes": [
+          "덤벨 체스트프레스의 원본 준비·지지 자세를 확인합니다.",
+          "양손의 덤벨을 천천히 받았다 가슴 위로 밀어 올리는 경로를 비교합니다."
+        ],
+        "focus": {
+          "muscle": "가슴·어깨·삼두",
+          "move": "양손의 덤벨을 천천히 받았다 가슴 위로 밀어 올리는 경로를 비교합니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 39초·40초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_press-start.webp",
+          "docs/images/guides/ht_chest_six_press-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_press"
+      },
+      {
+        "id": "ht_chest_six_squeeze",
+        "name": "덤벨 모아 밀기",
+        "kind": "htsqueezepress",
+        "target": "chest",
+        "captions": [
+          "덤벨을 모은 준비",
+          "모은 채 위로 밀기"
+        ],
+        "notes": [
+          "덤벨 모아 밀기의 원본 준비·지지 자세를 확인합니다.",
+          "가슴 위에서 두 덤벨을 가까이 모은 채 내렸다 밀어 올리는 시범입니다."
+        ],
+        "focus": {
+          "muscle": "가슴·어깨·삼두",
+          "move": "가슴 위에서 두 덤벨을 가까이 모은 채 내렸다 밀어 올리는 시범입니다.",
+          "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
+        },
+        "visualNote": "2컷은 원본 47초·49초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_chest_six_squeeze-start.webp",
+          "docs/images/guides/ht_chest_six_squeeze-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_squeeze"
+      }
+    ]
   }
 };

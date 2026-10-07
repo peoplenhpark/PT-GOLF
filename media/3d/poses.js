@@ -202,7 +202,27 @@ function pose(kind,t,id){
   arms(p,[[-.27,2.13,.08],[.27,2.13,.08]],[[ -1,-1,.3],[1,-1,.3]]);
   legs(p,S.map(s=>[s*.12,.30+.33*q,-.24]));
   p.equipment.push({type:'pullup'});p.target=[0,1.2,0];p.distance=4.5;
+ }else if(kind==='htshoulderpress'){
+  p=seat();
+  arms(p,S.map(s=>[s*(.43-.16*q),1.20+.39*q,.15]),S.map(s=>[s,-1,.3]));
+  p.equipment=[{type:'seat'},{type:'htbackpad'},{type:'dumbbells'}];
+  p.target=[0,.97,.05];p.distance=4.1;
+ }else if(kind==='htvrow'){
+  p=seat();legs(p,S.map(s=>[s*.15,.20,.68]));
+  arms(p,S.map(s=>[s*.095,.91,.50-.35*q]),S.map(s=>[s*.3,-1,-1]));
+  p.equipment=[{type:'seat'},{type:'htvcable'},{type:'footplate'}];
+ }else if(kind==='htdumbbellfly'){
+  p=supine(.62);legs(p,S.map(s=>[s*.28,.065,.43]));
+  const angle=-.12+1.37*q;
+  p.elbows=p.shoulders.map((a,i)=>add(a,mul(unit([S[i]*Math.sin(angle),Math.cos(angle),.025]),.29)));
+  p.wrists=p.elbows.map((a,i)=>add(a,mul(unit([S[i]*Math.sin(angle-.18),Math.cos(angle-.18),.035]),.285)));
+  p.equipment=[{type:'bench'},{type:'dumbbells'}];p.target=[0,.80,-.1];p.distance=3.8;
+ }else if(kind==='htsqueezepress'){
+  p=supine(.62);legs(p,S.map(s=>[s*.28,.065,.43]));
+  arms(p,S.map(s=>[s*.08,.86+.29*q,-.31-.10*q]),S.map(s=>[s*.15,-.3,.5]));
+  p.equipment=[{type:'bench'},{type:'htneutraldumbbells'}];p.target=[0,.80,-.1];p.distance=3.8;
  }else if(['latpull','htlatpull','row','machinerow','chestpress','pecdeck'].includes(kind)){
+
   p=seat();
   if(['latpull','htlatpull'].includes(kind)){
    if(kind==='latpull')p.ankles=p.ankles.map(a=>[a[0],.10,a[2]]);
@@ -275,10 +295,10 @@ function pose(kind,t,id){
   p.ankles=p.knees.map(a=>add(a,[0,.425*Math.sin(q*1.85),-.425*Math.cos(q*1.85)]));
   arms(p,S.map(s=>[s*.27,.46,.61]));
   p.equipment.push({type:'pronebench'},{type:'legcurl'});p.target=[0,.6,0];p.distance=3.5;
- }else if(['dumbbellpress','smithincline'].includes(kind)){
+ }else if(['dumbbellpress','smithincline','htsmithflat'].includes(kind)){
   // Example setups, not measured personal bench angles or training loads.
-  const smith=kind==='smithincline';
-  p=smith?base([0,.62,0],-Math.PI/3):supine(.62);
+  const smith=['smithincline','htsmithflat'].includes(kind);
+  p=kind==='smithincline'?base([0,.62,0],-Math.PI/3):supine(.62);
   legs(p,S.map(s=>[s*.28,.065,.43]),S.map(s=>[s*.15,0,1]));
   if(smith){
    const shoulder=p.shoulders[1],dz=.20,drop=.065;
@@ -286,7 +306,7 @@ function pose(kind,t,id){
    const barZ=shoulder[2]+dz;
    // Fixed width and depth: collars move only vertically on the rails.
    arms(p,S.map(s=>[s*grip,shoulder[1]+.22+.265*q,barZ]),S.map(s=>[s*(grip-.215),-drop,dz]));
-   p.equipment=[{type:'inclinebench'},{type:'smith',barZ}];
+   p.equipment=[{type:kind==='smithincline'?'inclinebench':'bench'},{type:'smith',barZ}];
    p.target=[0,.99,-.10];p.distance=4.7;
   }else{
    const dz=.17,drop=.02,spread=Math.sqrt(.29*.29-dz*dz-drop*drop);
@@ -294,16 +314,17 @@ function pose(kind,t,id){
    p.equipment=[{type:'bench'},{type:'dumbbells'}];
    p.target=[0,.80,-.1];p.distance=3.8;
   }
- }else if(['benchpress','pullover'].includes(kind)){
+ }else if(['benchpress','pullover','htbenchpullover'].includes(kind)){
   p=supine(.62);p.equipment=[{type:'bench'}];p.target=[0,.78,-.1];p.distance=3.8;
   if(kind==='benchpress'){
    legs(p,S.map(s=>[s*.28,.065,.43]));
    arms(p,S.map(s=>[s*.27,.83+.42*q,-.38]),S.map(s=>[s,0,.3]));
    p.equipment.push({type:'bar'});
   }else{
-   p.knees=S.map(s=>[s*.105,1.02,-.16]);p.ankles=S.map(s=>[s*.105,.83,.22]);
+   if(kind==='htbenchpullover')legs(p,S.map(s=>[s*.28,.065,.43]));
+   else {p.knees=S.map(s=>[s*.105,1.02,-.16]);p.ankles=S.map(s=>[s*.105,.83,.22]);}
    const a=q*1.55;
-   arms(p,S.map(s=>[s*.045,.65+.55*Math.cos(a),-.46-.55*Math.sin(a)]),S.map(s=>[s,0,.3]));
+   arms(p,S.map(s=>kind==='htbenchpullover'?[s*.045,.62+.52*Math.cos(a),-.47-.52*Math.sin(a)]:[s*.045,.65+.55*Math.cos(a),-.46-.55*Math.sin(a)]),S.map(s=>[s,0,.3]));
    p.equipment.push({type:'goblet'});
   }
  }else if(['bridge','deadbug','slr','quadset','legraise','hamstring'].includes(kind)){

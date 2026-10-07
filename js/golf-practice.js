@@ -87,7 +87,7 @@ window.GolfPractice = (() => {
   function lessonBridge(s,tab,id){
     const n=practiceSource(s),l=n.lesson||lessonList()[0];if(!l)return '';
     if(tab==='notes')return `<aside class="g-lesson-bridge"><b>레슨을 기준으로 감각 다시 보기</b><p>${esc(l.sensationReviews?.[id]||'예전 원문은 보존하고, 현재 레슨과 비교해 확인합니다.')}</p>${lessonLink(l)}</aside>`;
-    if(tab==='videos')return `<aside class="g-lesson-bridge"><b>현재 레슨의 보조 자료</b><p>${esc(l.practiceCue||l.correction)}</p><div class="g-actions">${(l.videoIds||[]).filter(id=>!ctx?.isVideoDeleted?.(id)).map(id=>`<a href="#golf/videos/${encodeURIComponent(id)}">${esc(window.GolfContent.videos.find(v=>v.id===id)?.title||'연결 영상')} ›</a>`).join('')}</div><p class="g-meta">${esc(l.videoCaution||'레슨 복습에 연결한 참고 영상입니다.')}</p>${lessonLink(l)}</aside>`;
+    if(tab==='videos')return `<aside class="g-lesson-bridge" aria-labelledby="g-current-lesson"><h2 id="g-current-lesson">현재 레슨과 연결</h2><p>${esc(l.practiceCue||l.correction)}</p><a class="g-link" href="#golf/lessons/${encodeURIComponent(l.id)}">레슨과 복습 영상 ${(l.videoIds||[]).filter(id=>!ctx?.isVideoDeleted?.(id)).length}편 보기 ›</a></aside>`;
     return '';
   }
   function lessonQuestions(list){

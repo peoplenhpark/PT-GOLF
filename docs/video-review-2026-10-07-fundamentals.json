@@ -1,0 +1,52 @@
+{
+  "reviewedAt": "2026-10-07",
+  "scope": "Original metadata, descriptions, ten sampled frames and visible captions per video; not a full audio transcript. User explicitly selected these as fundamentals. Full library regrouping is proposed, not applied.",
+  "golf": [
+    {
+      "id": "LEv6sXi98Z0",
+      "title": "드라이버 · 야구 스윙과 골프 궤도 비교",
+      "times": [
+        17.04,
+        21.36
+      ],
+      "labels": [
+        "야구처럼 휘두르는 비교 장면",
+        "골프 스윙 시범"
+      ],
+      "source": {
+        "id": "LEv6sXi98Z0",
+        "title": "골프스윙 golf @katie_seo #golfswing 골프 #골프레슨 #j82golf #제이82 비거리 ゴルフ #golflesson golftips",
+        "channel": "유정환",
+        "duration": 24,
+        "upload_date": "20261006",
+        "timestamp": 1791260823,
+        "description": ""
+      },
+      "group": "fundamentals",
+      "review": "드라이버를 야구처럼 휘두르는 예와 골프 스윙을 대비하는 영상입니다. 몸통 기울기와 클럽이 지나가는 방향을 기초 비교 자료로 봅니다."
+    },
+    {
+      "id": "BvnGOkOMo68",
+      "title": "헤드 무게 · 손·팔로 당기는 동작 비교",
+      "times": [
+        12.24,
+        31.68
+      ],
+      "labels": [
+        "클럽과 손의 위치 비교",
+        "무게가 느껴지는 시범 설명"
+      ],
+      "source": {
+        "id": "BvnGOkOMo68",
+        "title": "다들 '헤드 무게'를 죽어라 강조하는 이유입니다",
+        "channel": "골프의 모든것 [All about Golf]",
+        "duration": 72,
+        "upload_date": "20260929",
+        "timestamp": 1790650811,
+        "description": "#골프 #골프스윙 #골프레슨 #골프연습 #골프독학 #골프팁 #골프꿀팁 #백스윙 #아이언 #아이언스윙 #드라이버 #드라이버스윙"
+      },
+      "group": "fundamentals",
+      "review": "헤드 무게가 느껴지는지에 따라 손·클럽을 움직이는 모습을 비교하는 설명 영상입니다. 손으로 당기는 모습과 도구의 무게를 느끼는 감각을 구별해 관찰합니다."
+    }
+  ]
+}
