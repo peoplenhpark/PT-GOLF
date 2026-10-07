@@ -20,10 +20,6 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - name: Check pending deletion requests
-        run: npm run deletions:check
-        env:
-          GH_TOKEN: ${{ github.token }}
       - run: npm run validate
       - run: npx playwright install --with-deps chromium
       - run: npm run build:site
@@ -51,10 +47,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Recheck requests immediately before deployment
-        run: node scripts/deletion-requests.cjs check
-        env:
-          GH_TOKEN: ${{ github.token }}
       - name: Deploy verified site
         id: deployment
         uses: actions/deploy-pages@v4

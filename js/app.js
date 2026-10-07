@@ -122,7 +122,7 @@ const Theme = (() => {
     if (!requests.length) return '';
     return `<section class="deletion-queue" aria-labelledby="deletion-queue-title">
       <h2 id="deletion-queue-title">삭제 요청 <span>${requests.length}건</span></h2>
-      <p>현재 기기에서는 숨겨졌습니다. 삭제만을 위한 새 버전은 만들지 않으며, GitHub에 등록한 요청은 다음 배포 전에 항목명과 ID를 다시 확인합니다.</p>
+      <p>현재 기기에서는 숨겨졌습니다. 삭제만을 위한 새 버전은 만들지 않으며, 삭제 건을 대화에서 알려주시면 지정한 대상을 반영합니다.</p>
       ${requests.map(request => {
         const localOnly = request.source === 'local' || (request.kind === 'exercise' && request.contentId.startsWith('usr_'));
         return `<article class="deletion-request"><div><strong>${request.kind === 'video' ? '영상' : '동작'} · ${esc(request.title)}</strong><small>ID ${esc(request.contentId)}</small></div>
@@ -136,7 +136,7 @@ const Theme = (() => {
     const localOnly = item.source === 'local' || (item.kind === 'exercise' && item.contentId.startsWith('usr_'));
     const next = localOnly
       ? '이 기기에서 숨깁니다. 개인 추가 동작은 배포 원본에 없으므로 중앙 요청은 만들지 않습니다.'
-      : '이 기기에서 먼저 숨기고 GitHub 삭제 요청 화면을 엽니다. 삭제만을 위한 새 버전은 만들지 않으며, 다음 배포 전에 항목명과 ID를 다시 확인한 뒤 원본에서 삭제합니다.';
+      : '이 기기에서 먼저 숨기고 GitHub 삭제 요청 화면을 엽니다. 삭제만을 위한 새 버전은 만들지 않으며, 삭제 건을 대화에서 알려주시면 지정한 대상을 원본에 반영합니다.';
     askConfirm(`「${item.title}」을 삭제 요청할까요? ${next}`, onConfirm, localOnly ? '이 기기에서 숨기기' : '숨기고 요청');
   }
 
@@ -219,6 +219,13 @@ const Theme = (() => {
       ${tabbar('home')}`;
   }
 
+  function ptSessionItemHtml(item) {
+    return '<article class="pt-session-item"><h3>'+esc(item.title)+'</h3><p class="g-meta">수업 '+esc(item.range)+'</p><ul>'+item.points.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><p class="g-meta">'+esc(item.uncertainty)+'</p>'+(item.exerciseId?'<a class="btn ghost" href="#exercise/'+esc(item.exerciseId)+'">동작·이미지·3D 보기 ›</a>':'<span class="tag">동작 종류 확인 대기</span>')+'</article>';
+  }
+  function ptSessionHtml(id) {
+    if(id)return (Store.getExerciseSessions?.(id)||[]).map(s=>'<section class="pt-session-note"><h2>'+esc(s.date)+' PT 수업 보강</h2>'+ptSessionItemHtml({...s.item,exerciseId:null}).replace('<span class="tag">동작 종류 확인 대기</span>','')+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></section>').join('');
+    return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note" open><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>').join('')+'</div>'+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></details>').join('');
+  }
   function renderPart(part) {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
@@ -239,6 +246,7 @@ const Theme = (() => {
         <button class="back" data-nav="home">‹ 홈</button>
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
+        ${part==='pt'?ptSessionHtml():''}
         ${cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
@@ -406,7 +414,7 @@ const Theme = (() => {
     if(selector)selector.addEventListener('change',()=>{
       selectedTrainingMedia.set(id,selector.value);
       const e=Store.getById(id),media=currentExerciseMedia(id);
-      app.querySelector('.training-media-content').innerHTML=focusHtml({...e,focus:media.focus})+exerciseMediaHtml(e);
+      app.querySelector('.training-media-content').innerHTML=focusHtml({...e,focus:e.focus||media.focus})+exerciseMediaHtml(e);
       bindExercise3D(id);
     });
   }
@@ -503,12 +511,13 @@ const Theme = (() => {
           ${e.updated ? `<span class="tag">갱신 ${esc(e.updated.slice(5).replace('-', '/'))}</span>` : ''}
           <div class="d-actions">
             <button class="icon-btn fav ${e.favorite ? 'on' : ''}" data-act="fav" title="즐겨찾기">${e.favorite ? '★' : '☆'}</button>
-            <button class="icon-btn" data-act="edit" title="수정">✏️</button>
+            <button class="icon-btn edit-text" data-act="edit" title="수정" aria-label="동작 수정">✏️ 수정</button>
           </div>
         </div>
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
+        ${e.part==='pt'?ptSessionHtml(e.id):''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
 
@@ -717,6 +726,7 @@ const Theme = (() => {
         frame.referrerPolicy='strict-origin-when-cross-origin';host.replaceChildren(frame);break;
       }
       case 'add': openEditor(null); break;
+      case 'copy-edit': copyEditorChange(); break;
       case 'edit': openEditor(Store.getById(view.id)); break;
       case 'fav':
         Store.toggleFavorite(view.id);
@@ -758,7 +768,7 @@ const Theme = (() => {
   }
 
   // ============ 추가/수정 모달 ============
-  let editingId = null;
+  let editingId = null, editingExtra = null;
   function openEditor(ex) {
     editingId = ex ? ex.id : null;
     document.getElementById('modal-title').textContent = ex ? '동작 수정' : '동작 추가';
@@ -767,6 +777,12 @@ const Theme = (() => {
     val('f-category', ex ? ex.category : (view.cat || ''));
     val('f-name', ex ? ex.name : '');
     val('f-spec', ex ? ex.spec : '');
+    val('f-prep', ex ? (ex.prep || []).join('\n') : '');
+    val('f-steps', ex ? (ex.steps || []).join('\n') : '');
+    const focus=ex?.focus || window.ExerciseMedia?.[ex?.id]?.focus || {};
+    for(const key of ['muscle','move','feel'])val('f-focus-'+key,focus[key]||'');
+    editingExtra={prep:ex?.prep||[],steps:ex?.steps||[],focus:{muscle:focus.muscle||'',move:focus.move||'',feel:focus.feel||''}};
+    document.querySelector('[data-act="copy-edit"]').hidden=!ex;
     val('f-cues', ex ? (ex.cues || []).join('\n') : '');
     val('f-reminders', ex ? (ex.reminders || []).join('\n') : '');
     refreshCatList(part);
@@ -779,6 +795,13 @@ const Theme = (() => {
     const dl = document.getElementById('cat-list');
     dl.innerHTML = Store.getCategories(part).map(c => `<option value="${esc(c)}">`).join('');
   }
+  async function copyEditorChange() {
+    if(!editingId)return;
+    const fields=[['파트',getSeg('f-part')],['카테고리',val('f-category')],['이름',val('f-name')],['핵심',val('f-spec')],['준비',val('f-prep')],['동작 순서',val('f-steps')],['부위',val('f-focus-muscle')],['움직임',val('f-focus-move')],['느낌',val('f-focus-feel')],['자세 체크',val('f-cues')],['잊지 말 것',val('f-reminders')]];
+    const text='PT-GOLF 수정 요청\nID: '+editingId+'\n'+fields.map(([k,v])=>k+': '+v).join('\n');
+    try{await navigator.clipboard.writeText(text);toast('수정 내용을 복사했습니다. 대화에 붙여 넣어 주세요.');}
+    catch{toast('복사하지 못했습니다. 수정할 항목과 내용을 대화에 알려주세요.');}
+  }
   function saveEditor() {
     const part = getSeg('f-part');
     const name = val('f-name').trim();
@@ -789,9 +812,13 @@ const Theme = (() => {
       category: val('f-category').trim() || '기타',
       name,
       spec: val('f-spec').trim(),
+      prep: linesOf('f-prep'),
+      steps: linesOf('f-steps'),
+      focus: Object.fromEntries(['muscle','move','feel'].map(k=>[k,val('f-focus-'+k).trim()])),
       cues: linesOf('f-cues'),
       reminders: linesOf('f-reminders'),
     };
+    if(editingId)for(const key of ['prep','steps','focus'])if(JSON.stringify(data[key])===JSON.stringify(editingExtra[key]))delete data[key];
     if (editingId) { const cur = Store.getById(editingId); data.memo = cur.memo; data.favorite = cur.favorite; }
     const saved=Store.upsert(data);
     AppDrafts.clear(modal);

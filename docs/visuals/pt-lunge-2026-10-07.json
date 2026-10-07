@@ -1,0 +1,15 @@
+{
+  "source": "media/3d/poses.js: ptlunge + media/3d/viewer.js",
+  "method": "Native Three.js render; no generative image model or external image. Preparation/action use exactly the interactive model.",
+  "phases": [
+    0,
+    0.5
+  ],
+  "viewport": [
+    900,
+    1100
+  ],
+  "outputWidth": 700,
+  "basis": "2026-10-07 PT transcript; user confirmed non-rotating lunge. Stance, depth and arm position are illustrative; sponge dimensions unconfirmed.",
+  "prompt": null
+}

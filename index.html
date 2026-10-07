@@ -10,8 +10,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon.svg">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=109">
-<link rel="stylesheet" href="css/golf.css?v=109">
+<link rel="stylesheet" href="css/style.css?v=110">
+<link rel="stylesheet" href="css/golf.css?v=110">
 <title>PT노트</title>
 <!-- 저장된 테마를 CSS 로드 직후 즉시 적용 — 다크↔라이트 깜빡임 방지 -->
 <script>(function(){try{var t=localStorage.getItem('ptgolf_theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})()</script>
@@ -41,6 +41,14 @@
         <label for="f-spec">스펙 / 한 줄 핵심 <span class="hint">(무게·그립·목표 등)</span></label>
         <input id="f-spec" placeholder="예: 60kg · 언더그립 위주">
 
+        <p class="hint">저장은 이 기기에 적용됩니다. 공개 사이트에도 반영하려면 ‘수정 내용 복사’ 후 대화에 알려주세요.</p>
+        <label for="f-prep">준비 자세 <span class="hint">(한 줄에 하나씩)</span></label>
+        <textarea id="f-prep" rows="3"></textarea>
+        <label for="f-steps">동작 순서 <span class="hint">(한 줄에 하나씩)</span></label>
+        <textarea id="f-steps" rows="2"></textarea>
+        <label for="f-focus-muscle">집중 부위</label><input id="f-focus-muscle">
+        <label for="f-focus-move">움직임</label><textarea id="f-focus-move" rows="2"></textarea>
+        <label for="f-focus-feel">느낌</label><textarea id="f-focus-feel" rows="2"></textarea>
         <label for="f-cues">자세 체크리스트 <span class="hint">(한 줄에 하나씩)</span></label>
         <textarea id="f-cues" rows="5" placeholder="가슴이 먼저 출발&#10;어깨 으쓱 X&#10;..."></textarea>
 
@@ -49,6 +57,7 @@
       </div>
       <div class="modal-foot">
         <button class="btn ghost" data-act="modal-close">취소</button>
+        <button class="btn ghost" data-act="copy-edit" hidden>수정 내용 복사</button>
         <button class="btn primary" data-act="modal-save">저장</button>
       </div>
     </div>
@@ -110,21 +119,21 @@
 
   <div id="toast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="release-assets.js?v=109"></script>
-  <script src="js/persistence.js?v=109"></script>
-  <script src="js/deletion-flow.js?v=109"></script>
-  <script src="js/store.js?v=109"></script>
-  <script src="js/exercise-media.js?v=109"></script>
-  <script src="js/golf-data.js?v=109"></script>
-  <script src="js/golf-practice.js?v=109"></script>
-  <script src="js/golf-frames.js?v=109"></script>
-  <script src="js/golf.js?v=109"></script>
-  <script src="js/navigation.js?v=109"></script>
-  <script src="js/drafts.js?v=109"></script>
-  <script src="js/dialogs.js?v=109"></script>
-  <script src="js/search.js?v=109"></script>
-  <script src="js/offline.js?v=109"></script>
-  <script src="js/update.js?v=109"></script>
-  <script src="js/app.js?v=109"></script>
+  <script src="release-assets.js?v=110"></script>
+  <script src="js/persistence.js?v=110"></script>
+  <script src="js/deletion-flow.js?v=110"></script>
+  <script src="js/store.js?v=110"></script>
+  <script src="js/exercise-media.js?v=110"></script>
+  <script src="js/golf-data.js?v=110"></script>
+  <script src="js/golf-practice.js?v=110"></script>
+  <script src="js/golf-frames.js?v=110"></script>
+  <script src="js/golf.js?v=110"></script>
+  <script src="js/navigation.js?v=110"></script>
+  <script src="js/drafts.js?v=110"></script>
+  <script src="js/dialogs.js?v=110"></script>
+  <script src="js/search.js?v=110"></script>
+  <script src="js/offline.js?v=110"></script>
+  <script src="js/update.js?v=110"></script>
+  <script src="js/app.js?v=110"></script>
 </body>
 </html>

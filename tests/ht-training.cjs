@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),read=f=>fs.readFileSync(path.join(root,f
 const seed=JSON.parse(read('data/seed.json')),clone=x=>JSON.parse(JSON.stringify(x)),id='ht_bulgarian_split_squat';
 const ht=seed.exercises.find(e=>e.id===id);
 assert.equal(ht.part,'ht');assert.equal(ht.sourceVideo.youtubeId,'xJXXLBGYO3c');
-assert.equal(seed.exercises.filter(e=>e.part==='pt').length,50);
+assert.equal(seed.exercises.filter(e=>e.part==='pt').length,51);
 const videoIds=seed.exercises.flatMap(e=>[e.sourceVideo,...e.supplementaryVideos||[]].filter(Boolean).map(v=>v.youtubeId));
 assert.equal(new Set(videoIds).size,videoIds.length,'original videos must not be duplicated');
 for(const ex of seed.exercises)for(const link of ex.relatedExercises||[])assert(seed.exercises.some(other=>other.id===link.id),'related IDs exist');

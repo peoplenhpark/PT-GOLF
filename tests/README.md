@@ -12,7 +12,7 @@
 
 - HT 섹션·PT 기본 분류·PT/HT 양방향 연동·영상 검색·개인 기록 보존·숨김/복원·삭제 요청 게이트: `ht-training.cjs`. 실제 UI와 모바일·오프라인은 `browser-smoke.cjs`에서 함께 확인한다.
 
-- 중앙 삭제 요청 파싱·사용자 승인과 원본 제거 동시 조건·GitHub 조회 실패 차단: `deletion-requests.cjs` (모의 API, 네트워크 호출 없음)
+- 선언된 삭제 건을 수동 처리할 때 쓰는 도구의 파싱·승인 기록·원본 제거 조건·API 실패 처리: `deletion-requests.cjs` (모의 API, 네트워크 호출 없음)
 
 - 골프 영상 ID·그룹·앱 최초 등록일·최근 등록 정렬·영상 즐겨찾기·로컬 수정·렌더 및 과거 주소 연결: `golf-training-data.cjs`, `golf-usability.cjs`
 - PT 이미지 등록·개인 코칭 자세·3D 자동 재생 및 느린 기본 속도: `pt-press-media.cjs`, `pt-*-pose.cjs`, `pt-viewer-defaults.cjs`
@@ -35,3 +35,5 @@
 - v108 백스윙 주제 정정: 기존 영상 우선 순서·두 주제의 중복 태그·다운스윙 중심 자료 제외·원본 보존을 `golf-practice.cjs`와 `browser-smoke.cjs`에서 검사한다.
 
 - v109: ht-legpress.cjs는 5가지 발 위치·5,005포즈의 관절 길이/지지/발판 접촉·이미지 차이·PT 연결·골프 주제/중복을 검사한다. browser-smoke.cjs는 HT 5개 선택의 모바일·이미지/3D·오프라인·메모 초안·PT 왕복 연결을 검사한다.
+
+- v110: pt-session-lunge.cjs는 사용자 확인을 반영한 PT 수업 4항목, 일반 런지 1,001프레임의 고정 발·회전 없는 몸통·관절 길이, 준비/동작 이미지, 매 배포 삭제 조회 제거를 검사한다. browser-smoke.cjs는 준비·순서·움직임·느낌 편집/새로고침·복사 시 메모 제외·즐겨찾기 보존·런지 3D와 오프라인·320/390/768px 화면을 검사한다.

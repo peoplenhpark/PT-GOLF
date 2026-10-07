@@ -66,7 +66,7 @@ window.GolfHub = (() => {
   function pendingDeletions() {
     const pending=deletionRequests();
     if(!pending.length)return '';
-    return `<section class="g-deletion-panel" aria-labelledby="g-deletion-title"><h2 id="g-deletion-title">삭제 요청 관리 <span>${pending.length}건</span></h2><p>이 기기에서는 숨겼습니다. 삭제만을 위한 새 버전은 만들지 않고, 다음 배포 때 GitHub 요청을 확인해 전체 목록에 반영합니다. 메모는 보존됩니다.</p>${pending.map(request=>`<article class="g-deletion-item"><h3>${e(request.title)}</h3><p class="g-meta">요청 초안 보관됨 · 사이트 반영 여부는 GitHub에서 확인하세요.</p><div class="g-actions"><button type="button" class="g-btn" data-g="restore-video" data-id="${e(request.contentId)}">요청 취소 · 이 기기에 복원</button><button type="button" class="g-btn" data-g="resubmit-deletion" data-id="${e(request.id)}">GitHub 요청 열기 ↗</button></div></article>`).join('')}<p class="g-meta">이미 GitHub에 등록한 요청은 취소 버튼으로 닫히지 않습니다. 해당 요청도 직접 취소해 주세요.</p></section>`;
+    return `<section class="g-deletion-panel" aria-labelledby="g-deletion-title"><h2 id="g-deletion-title">삭제 요청 관리 <span>${pending.length}건</span></h2><p>이 기기에서는 숨겼습니다. 삭제만을 위한 새 버전은 만들지 않고, 삭제 건을 대화에서 알려주시면 지정한 대상을 전체 목록에 반영합니다. 메모는 보존됩니다.</p>${pending.map(request=>`<article class="g-deletion-item"><h3>${e(request.title)}</h3><p class="g-meta">요청 초안 보관됨 · 사이트 반영 여부는 GitHub에서 확인하세요.</p><div class="g-actions"><button type="button" class="g-btn" data-g="restore-video" data-id="${e(request.contentId)}">요청 취소 · 이 기기에 복원</button><button type="button" class="g-btn" data-g="resubmit-deletion" data-id="${e(request.id)}">GitHub 요청 열기 ↗</button></div></article>`).join('')}<p class="g-meta">이미 GitHub에 등록한 요청은 취소 버튼으로 닫히지 않습니다. 해당 요청도 직접 취소해 주세요.</p></section>`;
   }
   function requestVideoDeletion(id) {
     const v=video(id); if(!v)return;
@@ -257,7 +257,7 @@ window.GolfHub = (() => {
     const backHref=group?groupHref(group.id):'#golf/videos';
     const backLabel=group?group.title:'유튜브 목록';
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
-    layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}</div><div class="g-title-row"><h2 class="g-title">${e(v.title)}</h2><div class="d-actions">${favoriteButton(v)}<button type="button" class="icon-btn" data-g="video-edit" data-id="${e(id)}" title="수정" aria-label="${e(v.title)} · 수정">✏️</button></div></div>${chips(v.topics)}${chips(v.tags||[])}${lessonConnection(v)}${v.lessonId?link('lessons',v.lessonId,'첫 레슨 복습 기준 보기'):''}${frames(v)}
+    layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}</div><div class="g-title-row"><h2 class="g-title">${e(v.title)}</h2><div class="d-actions">${favoriteButton(v)}<button type="button" class="icon-btn edit-text" data-g="video-edit" data-id="${e(id)}" title="수정" aria-label="${e(v.title)} · 수정">✏️ 수정</button></div></div>${chips(v.topics)}${chips(v.tags||[])}${lessonConnection(v)}${v.lessonId?link('lessons',v.lessonId,'첫 레슨 복습 기준 보기'):''}${frames(v)}
       ${practicalSummary(v)}
       <div class="g-actions">${deleteButton(v)}</div>${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱에서 재생',`data-id="${e(id)}"`)}</div>

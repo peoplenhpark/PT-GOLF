@@ -39,6 +39,7 @@ const Store = (() => {
 
   function validateSeed(data) {
     if (!data || !Array.isArray(data.parts) || !Array.isArray(data.principles) || !Array.isArray(data.exercises)) return false;
+    if(data.ptSessions!==undefined && (!Array.isArray(data.ptSessions)||!data.ptSessions.every(s=>s&&typeof s.id==='string'&&typeof s.date==='string'&&typeof s.title==='string'&&typeof s.source==='string'&&typeof s.evidence==='string'&&Array.isArray(s.items)&&s.items.every(i=>i&&typeof i.title==='string'&&typeof i.range==='string'&&typeof i.uncertainty==='string'&&Array.isArray(i.points)&&i.points.every(p=>typeof p==='string')&&(i.exerciseId===null||data.exercises.some(e=>e.id===i.exerciseId&&e.part==='pt'))))))return false;
     const ids = new Set();
     return data.exercises.every(ex => {
       if (!ex || typeof ex.id !== 'string' || !ex.id || ['__proto__', 'constructor', 'prototype'].includes(ex.id) || ids.has(ex.id) || typeof ex.name !== 'string' || typeof ex.part !== 'string') return false;
@@ -65,6 +66,10 @@ const Store = (() => {
     next.legacyIds ||= [];
     return next;
   }
+  function getPTSessions() {
+    return (seed.ptSessions || []).map(s=>({...s,items:s.items.filter(i=>!i.exerciseId||!!getById(i.exerciseId))}));
+  }
+  function getExerciseSessions(id) {return getPTSessions().flatMap(s=>s.items.filter(i=>i.exerciseId===id).map(item=>({...s,item})));}
   function getParts() { return seed.parts || []; }
   function getPrinciple(part, category) {
     const list = (seed.principles || []).filter(item => item.part === part);
@@ -110,7 +115,7 @@ const Store = (() => {
       const focus = ex.focus || {};
       const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
         ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []),
-        ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ...[ex.sourceVideo,...ex.supplementaryVideos||[]].filter(Boolean).flatMap(v=>[v.title,v.channel,...v.points||[]]), ex.memo || ''].join(' ').toLowerCase();
+        ...getExerciseSessions(ex.id).flatMap(s=>[s.date,s.item.title,...s.item.points,s.item.uncertainty]), ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ...[ex.sourceVideo,...ex.supplementaryVideos||[]].filter(Boolean).flatMap(v=>[v.title,v.channel,...v.points||[]]), ex.memo || ''].join(' ').toLowerCase();
       return terms.every(term => text.includes(term));
     });
   }
@@ -268,7 +273,7 @@ const Store = (() => {
     return { overlay: overlayHandle.status(), calendar: calendarHandle.status(), deletions: deletionHandle.status(),
       legacyIds: local.schemaVersion === 2 ? (local.legacyIds || []).slice() : Object.keys(local.overrides) };
   }
-  return { init, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getRelatedExercises, getCategories, search,
+  return { init, getPTSessions, getExerciseSessions, getParts, getPrinciple, getAll, getByPart, getById, getFavorites, getRelatedExercises, getCategories, search,
     upsert, remove, patch, setMemo, toggleFavorite, exportData, importData, resetOverlay, hasLocalChanges,
     todayStr, getRecentSessions, getCalendar, setCalEntry, getCalEntry, reload, getStatus, isSeed,
     requestDeletion, restoreDeleted, getDeletionRequests, getAllDeletionRequests, isDeleted, markDeletionRequest, clearDeletionRequest,

@@ -62,6 +62,13 @@ function pose(kind,t,id){
   arms(p,S.map(s=>add(p.chest,[s*.14,.09,.20])),S.map(s=>[s,-1,0]));
   p.footDirections=S.map(s=>[wide?s*.24:0,0,wide?Math.sqrt(1-.24*.24):1]);
   p.equipment=[{type:'horizontalgoblet'}];p.target=[0,.82,0];p.distance=3.9;
+ }else if(kind==='ptlunge'){
+  // Non-rotating, fixed split stance. Front support and vertical lowering are illustrative.
+  p=base([0,.80-.26*q,.10+.02*q],.12);
+  legs(p,[[-.12,.065,.42],[.12,.115,-.36]],[[0,0,1],[0,-1,.3]]);
+  arms(p,S.map(s=>add(p.hip,[s*.20,.07,.02])),S.map(s=>[s,0,-1]));
+  p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
+  p.target=[0,.80,.03];p.distance=3.9;
  }else if(kind==='htfloorsplit'){
   p=base([0,.76-.24*q,0],.08+.12*q);
   legs(p,[[-.12,.065,.40],[.12,.11,-.39]],[[0,0,1],[0,0,1]]);

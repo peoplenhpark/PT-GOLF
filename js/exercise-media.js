@@ -1694,5 +1694,29 @@ window.ExerciseMedia = {
         "viewer": "media/3d/viewer.html?exercise=ht_legpress_positions&variant=ht_legpress_low"
       }
     ]
+  },
+  "pt_lunge": {
+    "name": "일반 런지 · 앞다리 지지",
+    "kind": "ptlunge",
+    "target": "glutes",
+    "captions": [
+      "앞발로 지지하며 준비",
+      "회전 없이 엉덩이를 내려 앉기"
+    ],
+    "notes": [
+      "앞뒤로 발을 나누고 앞발 전체로 지면을 지지합니다. 뒷다리는 균형을 돕습니다.",
+      "몸통을 돌리지 않고 엉덩이를 내려 앉았다가 앞발로 지면을 밟으며 일어납니다."
+    ],
+    "focus": {
+      "muscle": "앞다리 허벅지·둔근",
+      "move": "몸통을 돌리지 않고 엉덩이를 내려 앉았다가 앞발로 지면을 밟으며 일어납니다.",
+      "feel": "앞다리와 엉덩이가 몸을 받쳐 올리고, 뒷다리는 중심을 거드는 느낌"
+    },
+    "visualNote": "10월 7일 수업의 앞다리 지지·회전 없는 런지를 설명하는 3D 예시에서 준비/동작 2컷을 만들었습니다. 보폭·깊이·팔 위치는 개인 실측값이 아닙니다.",
+    "images": [
+      "docs/images/guides/pt_lunge-start.webp",
+      "docs/images/guides/pt_lunge-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_lunge"
   }
 };

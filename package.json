@@ -11,7 +11,7 @@
     "build:site": "node scripts/site.cjs",
     "deletions:list": "node scripts/deletion-requests.cjs list",
     "deletions:check": "node scripts/deletion-requests.cjs check",
-    "release:preflight": "node scripts/deletion-requests.cjs check && node scripts/validate.cjs"
+    "release:preflight": "node scripts/validate.cjs"
   },
   "engines": {
     "node": ">=20"
