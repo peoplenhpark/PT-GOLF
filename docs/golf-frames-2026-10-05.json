@@ -1870,5 +1870,149 @@
     "source": "https://www.youtube.com/watch?v=BvnGOkOMo68",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-07"
+  },
+  {
+    "id": "DYtWZFKkKas",
+    "title": "몸통 회전 · 오른손을 샤프트에 대고 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/DYtWZFKkKas-1.webp",
+        "time": 4.42,
+        "label": "오른손을 샤프트 중간에 댄 장면",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/DYtWZFKkKas-2.webp",
+        "time": 9.01,
+        "label": "반대쪽으로 회전하는 장면",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 17,
+    "source": "https://www.youtube.com/watch?v=DYtWZFKkKas",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
+  },
+  {
+    "id": "te5CN12g0Mc",
+    "title": "우드 · 헤드 무게와 내려놓는 느낌",
+    "frames": [
+      {
+        "src": "media/golf-frames/te5CN12g0Mc-1.webp",
+        "time": 26.66,
+        "label": "설명 중 들어 올린 우드",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/te5CN12g0Mc-2.webp",
+        "time": 38.27,
+        "label": "헤드를 내려놓는 설명 장면",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 43,
+    "source": "https://www.youtube.com/watch?v=te5CN12g0Mc",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
+  },
+  {
+    "id": "eRSTJTcMFjE",
+    "title": "다운스윙 · 샤프트를 내리는 비교 동작",
+    "frames": [
+      {
+        "src": "media/golf-frames/eRSTJTcMFjE-1.webp",
+        "time": 1.19,
+        "label": "원본이 X로 표시한 비교 동작",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/eRSTJTcMFjE-2.webp",
+        "time": 3.71,
+        "label": "샤프트를 아래로 내리는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=eRSTJTcMFjE",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
+  },
+  {
+    "id": "qVHPT2eU5gY",
+    "title": "임팩트 · 손목과 클럽의 통과 구간",
+    "frames": [
+      {
+        "src": "media/golf-frames/qVHPT2eU5gY-1.webp",
+        "time": 6.24,
+        "label": "임팩트 전 손·클럽 위치",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/qVHPT2eU5gY-2.webp",
+        "time": 14.88,
+        "label": "임팩트 후 클럽 통과 위치",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 24,
+    "source": "https://www.youtube.com/watch?v=qVHPT2eU5gY",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
+  },
+  {
+    "id": "qQbCq_QXB0A",
+    "title": "체중이동 · 바닥을 쓸어 보는 연습",
+    "frames": [
+      {
+        "src": "media/golf-frames/qQbCq_QXB0A-1.webp",
+        "time": 1.4,
+        "label": "체중이동 뒤 바닥을 쓸어 보는 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/qQbCq_QXB0A-2.webp",
+        "time": 3.2,
+        "label": "옆에서 본 타격 구간",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 4,
+    "source": "https://www.youtube.com/watch?v=qQbCq_QXB0A",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
+  },
+  {
+    "id": "G6VjK_afBng",
+    "title": "스윙 시범 · FEEL과 REAL 슬로모션",
+    "frames": [
+      {
+        "src": "media/golf-frames/G6VjK_afBng-1.webp",
+        "time": 9.1,
+        "label": "FEEL로 표시된 연습 장면",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/G6VjK_afBng-2.webp",
+        "time": 18.46,
+        "label": "REAL로 표시된 실제 스윙 장면",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 26,
+    "source": "https://www.youtube.com/watch?v=G6VjK_afBng",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-09"
   }
 ]

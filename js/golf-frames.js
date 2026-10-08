@@ -1247,5 +1247,101 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "DYtWZFKkKas": [
+    {
+      "src": "media/golf-frames/DYtWZFKkKas-1.webp",
+      "time": 4.42,
+      "label": "오른손을 샤프트 중간에 댄 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/DYtWZFKkKas-2.webp",
+      "time": 9.01,
+      "label": "반대쪽으로 회전하는 장면",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "te5CN12g0Mc": [
+    {
+      "src": "media/golf-frames/te5CN12g0Mc-1.webp",
+      "time": 26.66,
+      "label": "설명 중 들어 올린 우드",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/te5CN12g0Mc-2.webp",
+      "time": 38.27,
+      "label": "헤드를 내려놓는 설명 장면",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "eRSTJTcMFjE": [
+    {
+      "src": "media/golf-frames/eRSTJTcMFjE-1.webp",
+      "time": 1.19,
+      "label": "원본이 X로 표시한 비교 동작",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/eRSTJTcMFjE-2.webp",
+      "time": 3.71,
+      "label": "샤프트를 아래로 내리는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "qVHPT2eU5gY": [
+    {
+      "src": "media/golf-frames/qVHPT2eU5gY-1.webp",
+      "time": 6.24,
+      "label": "임팩트 전 손·클럽 위치",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/qVHPT2eU5gY-2.webp",
+      "time": 14.88,
+      "label": "임팩트 후 클럽 통과 위치",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "qQbCq_QXB0A": [
+    {
+      "src": "media/golf-frames/qQbCq_QXB0A-1.webp",
+      "time": 1.4,
+      "label": "체중이동 뒤 바닥을 쓸어 보는 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/qQbCq_QXB0A-2.webp",
+      "time": 3.2,
+      "label": "옆에서 본 타격 구간",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "G6VjK_afBng": [
+    {
+      "src": "media/golf-frames/G6VjK_afBng-1.webp",
+      "time": 9.1,
+      "label": "FEEL로 표시된 연습 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/G6VjK_afBng-2.webp",
+      "time": 18.46,
+      "label": "REAL로 표시된 실제 스윙 장면",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

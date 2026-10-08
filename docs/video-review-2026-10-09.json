@@ -1,0 +1,168 @@
+{
+  "reviewedAt": "2026-10-09",
+  "scope": "Original metadata, empty descriptions, ten sampled frames and visible captions per new video; not a full audio transcript.",
+  "submitted": [
+    "DYtWZFKkKas",
+    "te5CN12g0Mc",
+    "eRSTJTcMFjE",
+    "qVHPT2eU5gY",
+    "qQbCq_QXB0A",
+    "G6VjK_afBng",
+    "LEv6sXi98Z0",
+    "BvnGOkOMo68"
+  ],
+  "preservedExisting": [
+    {
+      "id": "LEv6sXi98Z0",
+      "title": "드라이버 · 야구 스윙과 골프 궤도 비교",
+      "addedAt": "2026-10-07T12:55:01.520Z",
+      "group": "fundamentals"
+    },
+    {
+      "id": "BvnGOkOMo68",
+      "title": "헤드 무게 · 손·팔로 당기는 동작 비교",
+      "addedAt": "2026-10-07T12:55:01.520Z",
+      "group": "fundamentals"
+    }
+  ],
+  "golf": [
+    {
+      "id": "DYtWZFKkKas",
+      "title": "몸통 회전 · 오른손을 샤프트에 대고 비교",
+      "group": "rotation",
+      "times": [
+        4.42,
+        9.01
+      ],
+      "labels": [
+        "오른손을 샤프트 중간에 댄 장면",
+        "반대쪽으로 회전하는 장면"
+      ],
+      "source": {
+        "id": "DYtWZFKkKas",
+        "title": "이걸 더 빨리 알았어야 합니다",
+        "channel": "티업 TeeUp",
+        "duration": 17,
+        "upload_date": "20260907",
+        "timestamp": 1788786022,
+        "description": ""
+      },
+      "review": "오른손을 샤프트 중간에 대고 양쪽으로 몸을 돌리는 연습을 보여 줍니다. 손으로 조작하는 모습과 몸의 회전으로 클럽을 움직이는 감각을 비교하는 자료입니다."
+    },
+    {
+      "id": "te5CN12g0Mc",
+      "title": "우드 · 헤드 무게와 내려놓는 느낌",
+      "group": "wood",
+      "times": [
+        26.66,
+        38.27
+      ],
+      "labels": [
+        "설명 중 들어 올린 우드",
+        "헤드를 내려놓는 설명 장면"
+      ],
+      "source": {
+        "id": "te5CN12g0Mc",
+        "title": "필드에서 자신감 있게 우드 치는 방법 #골프 #golf #ゴルフ",
+        "channel": "몽땅골프",
+        "duration": 43,
+        "upload_date": "20261006",
+        "timestamp": 1791278110,
+        "description": ""
+      },
+      "review": "필드에서 우드를 치는 방법을 설명하며 클럽을 들어 올린 자세와 헤드를 내려놓는 모습을 비교합니다. 우드의 헤드 무게를 느끼는 설명을 실전 샷 참고 자료로 모았습니다."
+    },
+    {
+      "id": "eRSTJTcMFjE",
+      "title": "다운스윙 · 샤프트를 내리는 비교 동작",
+      "group": "arms-impact",
+      "times": [
+        1.19,
+        3.71
+      ],
+      "labels": [
+        "원본이 X로 표시한 비교 동작",
+        "샤프트를 아래로 내리는 시범"
+      ],
+      "source": {
+        "id": "eRSTJTcMFjE",
+        "title": "제대로 던져질 수 밖에 없는 방법",
+        "channel": "티업 TeeUp",
+        "duration": 7,
+        "upload_date": "20261005",
+        "timestamp": 1791241227,
+        "description": ""
+      },
+      "review": "백스윙에서 내려오는 구간을 X·체크 표시로 비교하고, 오른쪽 어깨 쪽에서 샤프트를 아래로 내리는 이미지를 보여 줍니다. 다운스윙 전환과 팔·클럽 움직임을 관찰하는 짧은 자료입니다."
+    },
+    {
+      "id": "qVHPT2eU5gY",
+      "title": "임팩트 · 손목과 클럽의 통과 구간",
+      "group": "arms-impact",
+      "times": [
+        6.24,
+        14.88
+      ],
+      "labels": [
+        "임팩트 전 손·클럽 위치",
+        "임팩트 후 클럽 통과 위치"
+      ],
+      "source": {
+        "id": "qVHPT2eU5gY",
+        "title": "임팩트 구간 손목 움직임 #골프 #골프숏츠 #골프스윙 #golf #golfswing #golfshorts #shorts",
+        "channel": "홍홍tube",
+        "duration": 24,
+        "upload_date": "20261007",
+        "timestamp": 1791410412,
+        "description": ""
+      },
+      "review": "스윙을 느리게 반복하며 임팩트 전후 손목과 클럽 위치를 선으로 표시한 영상입니다. 같은 촬영 각도에서 타격 전후의 변화를 관찰하는 자료로 사용합니다."
+    },
+    {
+      "id": "qQbCq_QXB0A",
+      "title": "체중이동 · 바닥을 쓸어 보는 연습",
+      "group": "rotation",
+      "times": [
+        1.4,
+        3.2
+      ],
+      "labels": [
+        "체중이동 뒤 바닥을 쓸어 보는 설명",
+        "옆에서 본 타격 구간"
+      ],
+      "source": {
+        "id": "qQbCq_QXB0A",
+        "title": "이게 되면 제대로 신세계 경험합니다",
+        "channel": "티업 TeeUp",
+        "duration": 4,
+        "upload_date": "20261007",
+        "timestamp": 1791414008,
+        "description": ""
+      },
+      "review": "체중이동 후 바닥을 쓸어 보라는 화면 문구와 짧은 스윙 시범이 이어집니다. 체중이동과 클럽의 지면 통과를 함께 관찰하는 참고 자료입니다."
+    },
+    {
+      "id": "G6VjK_afBng",
+      "title": "스윙 시범 · FEEL과 REAL 슬로모션",
+      "group": "pro-swings",
+      "times": [
+        9.1,
+        18.46
+      ],
+      "labels": [
+        "FEEL로 표시된 연습 장면",
+        "REAL로 표시된 실제 스윙 장면"
+      ],
+      "source": {
+        "id": "G6VjK_afBng",
+        "title": "가볍게멀리 290M필링 /리얼 #슬로우모션",
+        "channel": "임팩몬스터",
+        "duration": 26,
+        "upload_date": "20260902",
+        "timestamp": 1788353530,
+        "description": ""
+      },
+      "review": "화면의 FEEL과 REAL 표시로 연습 감각과 실제 스윙을 나누어 보여 주는 슬로모션 시범입니다. 느끼는 동작과 촬영된 움직임의 차이를 비교하는 자료입니다."
+    }
+  ]
+}

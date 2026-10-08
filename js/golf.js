@@ -124,7 +124,7 @@ window.GolfHub = (() => {
   const librarySections = [
     {id:'fundamentals',title:'기초동작',description:'스윙 궤도와 헤드 무게 이해',groups:['fundamentals']},
     {id:'stages',title:'스윙 단계별',description:'준비 → 백스윙 → 회전 → 임팩트',groups:['setup','backswing-top','rotation','arms-impact']},
-    {id:'shots',title:'실전 샷',description:'어프로치와 상황별 샷',groups:['short-game']},
+    {id:'shots',title:'실전 샷',description:'우드·어프로치와 상황별 샷',groups:['short-game','wood']},
     {id:'pro-swings',title:'스윙 시범',description:'전체 흐름과 슬로모션 비교',groups:['pro-swings']}
   ];
   const libraryPages=['all','recent','stages','shots'];
@@ -139,7 +139,7 @@ window.GolfHub = (() => {
       '<nav class="g-video-shortcuts" aria-label="영상 바로가기"><a href="#golf/videos" '+(home?'aria-current="page"':'')+'>영상 홈</a><a href="#golf/group/all" '+(selected==='all'?'aria-current="page"':'')+'>전체 '+videos().length+'편</a><a href="#golf/video-favorites" '+(selected==='favorites'?'aria-current="page"':'')+'>★ 즐겨찾기</a><a href="#golf/group/recent" '+(selected==='recent'?'aria-current="page"':'')+'>최근 등록</a></nav>'+
       '<nav class="g-video-groups '+(home?'g-library-cards':'g-library-compact')+'" aria-label="영상 큰 그룹">'+librarySections.map(section=>'<a href="'+groupHref(section.id)+'" '+(parent?.id===section.id?'aria-current="'+(section.id===selected?'page':'location')+'"':'')+'>'+(home?'<h3>':'<strong>')+e(section.title)+(home?'</h3>':'</strong>')+'<span>'+groupCount(section.groups)+'편</span>'+(home?'<small>'+e(section.description)+'</small>':'')+'</a>').join('')+'</nav>'+
       (home?'':'<nav class="g-breadcrumb" aria-label="현재 영상 위치"><a href="#golf/videos">영상</a><span aria-hidden="true">›</span><a href="'+(parent?groupHref(parent.id):selected==='favorites'?'#golf/video-favorites':groupHref(selected))+'">'+e(title)+'</a>'+(parent&&parent.id!==selected?'<span aria-hidden="true">›</span><span aria-current="page">'+e(videoGroups().find(g=>g.id===selected)?.title||'')+'</span>':'')+'</nav>')+
-      (subgroups.length?'<nav class="g-subsections" aria-label="스윙 단계 하위 섹션"><a href="'+groupHref(parent.id)+'" '+(parent.id===selected?'aria-current="page"':'')+'>모든 단계</a>'+subgroups.map((g,i)=>'<a href="'+groupHref(g.id)+'" '+(g.id===selected?'aria-current="page"':'')+'><span class="g-step-number">'+(i+1)+'</span>'+e(g.title)+' <small>'+groupCount([g.id])+'편</small></a>').join('')+'</nav>':'');
+      (subgroups.length?'<nav class="g-subsections" aria-label="'+(parent.id==='stages'?'스윙 단계':'실전 샷')+' 하위 섹션"><a href="'+groupHref(parent.id)+'" '+(parent.id===selected?'aria-current="page"':'')+'>'+ (parent.id==='stages'?'모든 단계':'모든 샷')+'</a>'+subgroups.map((g,i)=>'<a href="'+groupHref(g.id)+'" '+(g.id===selected?'aria-current="page"':'')+'>'+(parent.id==='stages'?'<span class="g-step-number">'+(i+1)+'</span>':'')+e(g.title)+' <small>'+groupCount([g.id])+'편</small></a>').join('')+'</nav>':'');
   }
   function groupedVideos(list,selected) {
     return videoGroups().filter(g=>!selected||['all','recent'].includes(selected)||groupIdsFor(selected).includes(g.id)).map(g=>{
@@ -235,7 +235,7 @@ window.GolfHub = (() => {
       if(isAllVideos)body+=window.GolfPractice.lessonBridge(state,'videos');
       body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">자주 보는 영상</h2><p class="g-meta">기존에 기본 영상으로 지정한 4편</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
     }else {
-      if(tab==='notes')body+='<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><p>백스윙(몸통) <span aria-hidden="true">→</span> 골반 회전, 타격자세 만들기 <span aria-hidden="true">→</span> 순간 멈춤 <span aria-hidden="true">→</span> 임팩트</p></section>';
+      if(tab==='notes')body+='<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><ol><li>백스윙(일정구간 낮게 끌고 몸통 회전)</li><li>골반 회전(체중이동 + 타격자세 만들기)</li><li>순간 멈춤(버티기) 후 자연스러운 템포</li><li>임팩트에 집중</li></ol></section>';
       body+=filters(view);
     }
     if (tab==='notes') {

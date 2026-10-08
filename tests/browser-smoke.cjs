@@ -86,7 +86,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,156);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,168);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
@@ -375,7 +375,10 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('.g-library-cards a[href="#golf/group/stages"]').click();await page.locator('.g-subsections').waitFor();assert.equal(await page.locator('.g-subsections a').count(),5);
   await page.locator('.g-subsections a[href="#golf/group/rotation"]').focus();await page.keyboard.press('Enter');await page.locator('#g-group-rotation').waitFor();assert.equal(await page.locator('.g-subsections a[aria-current=page]').getAttribute('href'),'#golf/group/rotation');assert.equal(await page.locator('.g-video-groups a[aria-current=location]').getAttribute('href'),'#golf/group/stages');
   for(const theme of ['light','dark'])for(const width of [320,390,768]){await page.evaluate(theme=>document.documentElement.setAttribute('data-theme',theme),theme);await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.locator('.g-video-groups').evaluate(e=>e.scrollWidth<=e.clientWidth));assert(await page.locator('.g-video-groups a').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)));await page.evaluate(()=>scrollTo(0,1000));const tabs=await page.locator('.g-tabs').boundingBox(),themeButton=await page.locator('#theme-btn').boundingBox();assert(tabs.y>=themeButton.y+themeButton.height&&tabs.y<80,'sticky menu clears theme control');}
-  await page.goto(base+'#golf/group/shots');await page.locator('#g-group-short-game').waitFor();assert.equal(await page.locator('.g-video-card').count(),1);
+  await page.goto(base+'#golf/group/shots');await page.locator('#g-group-short-game').waitFor();assert.equal(await page.locator('.g-video-card').count(),2);
+  await page.getByRole('navigation',{name:'실전 샷 하위 섹션'}).getByRole('link',{name:'우드 1편',exact:true}).click();await page.locator('#g-group-wood').waitFor();assert.equal(await page.locator('.g-video-card').count(),1);
+  assert(await page.locator('.g-breadcrumb').innerText().then(t=>t.includes('실전 샷')&&t.includes('우드')));
+  for(const id of ["DYtWZFKkKas","te5CN12g0Mc","eRSTJTcMFjE","qVHPT2eU5gY","qQbCq_QXB0A","G6VjK_afBng"]){await page.goto(base+'#golf/videos/'+id);await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));}
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();

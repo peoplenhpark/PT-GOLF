@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);vm.runInContext(read('js/exercise-media.js'),ctx);
 const c=ctx.window.GolfContent,media=ctx.window.ExerciseMedia;
-assert.equal(c.videos.length,78);assert.equal(new Set(c.videos.map(v=>v.id)).size,78);
+assert.equal(c.videos.length,84);assert.equal(new Set(c.videos.map(v=>v.id)).size,84);
 assert.equal(c.videos[0].id,'9YWDNMyTQy4');
 for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
 for(const v of c.videos){
@@ -19,7 +19,7 @@ for(const v of c.videos){
 const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
 const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
 const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
-assert.equal(metadataRows.length,27);assert.equal(reviewedRows.length,51);
+assert.equal(metadataRows.length,27);assert.equal(reviewedRows.length,57);
 assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,27,'metadata comparisons must be title-specific');
 assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,27,'metadata questions must be title-specific');
 for(const {video,practical} of metadataRows){
@@ -30,8 +30,8 @@ for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.q
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,7);assert.equal(new Set(grouped).size,78);assert.equal(grouped.length,78);
-assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,3,5,9,22,36,1]);
+assert.equal(c.videoGroups.length,8);assert.equal(new Set(grouped).size,84);assert.equal(grouped.length,84);
+assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[2,4,5,9,24,38,1,1]);
 for(const v of c.videos)assert(c.videoGroupFor(v));
 const seed=JSON.parse(read('data/seed.json'));
 const ptIds=seed.exercises.filter(e=>e.part==='pt').map(e=>e.id).sort();
@@ -92,4 +92,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 78 originals, 7 groups, no golf 3D UI/cache, 51 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 84 originals, 8 groups, no golf 3D UI/cache, 51 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');

@@ -20,7 +20,7 @@ const next={...old,practice:{selected:'1004',club:'7번 아이언'},practiceReco
 for(const bad of [{contact:6},{direction:1.5},{club:'arbitrary'},{method:'invalid'},{cueId:'unknown'}])assert(!valid({...next,practiceRecords:[{...record,...bad}]}));
 assert(!valid({...next,practiceRecords:[record,record]}));
 assert.deepEqual(next.videoNotes,old.videoNotes);
-console.log('PASS: 78 source videos / 156 distinct frames, exact personal notes, backward-compatible practice validation.');
+console.log('PASS: 84 source videos / 168 distinct frames, exact personal notes, backward-compatible practice validation.');
 
 const first=GolfContent.lessons.find(l=>l.id==='lesson_20261005_first');assert(first);assert.deepEqual(Array.from(first.practiceClubs),['7번 아이언']);assert.equal(first.practicePoints.length,2);assert.equal(first.evidence.length,5);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004'}}).id,first.id);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004',sourceKind:'sensation'}}).kind,'sensation');assert(valid({...old,practice:{sourceKind:'lesson',lessonId:first.id},practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:first.id,comfort:'편안함'}]}));assert(!valid({...old,practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:'wrong'}]}));console.log('PASS: lesson priority, explicit sensation comparison, lesson scope, source linkage and legacy records.');
 
