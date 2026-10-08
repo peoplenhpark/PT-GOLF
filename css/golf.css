@@ -1,4 +1,15 @@
 /* 골프 학습 허브 — 기존 테마 변수와 모바일 규격 사용 */
+.g-pinned-sequence{margin:0 0 22px;padding:18px;border:1px solid #8a7146;border-left:4px solid #f1cf83;border-radius:12px;background:#252117}
+.g-pinned-sequence-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.g-hub .g-pinned-sequence h2{margin:0;font-size:22px;color:#f2d391}
+.g-pinned-sequence-head>span{font-size:12px;color:#d8c8aa;font-weight:600}
+.g-hub .g-pinned-sequence>p{margin:0;font-size:18px;font-weight:750;line-height:1.9;color:#fff4dc;word-break:keep-all;overflow-wrap:break-word}
+.g-pinned-sequence p>span{color:#f1cf83;padding:0 3px}
+[data-theme="light"] .g-pinned-sequence{background:#fff8e7;border-color:#987123}
+[data-theme="light"] .g-hub .g-pinned-sequence h2{color:#795214}
+[data-theme="light"] .g-pinned-sequence-head>span{color:#6c5938}
+[data-theme="light"] .g-hub .g-pinned-sequence>p{color:#392c16}
+[data-theme="light"] .g-pinned-sequence p>span{color:#795214}
 .g-hub h2,.g-related h2{font-size:18px;font-weight:800;margin:0 0 12px;color:var(--txt)}
 .g-hub h3{font-size:17px;margin-bottom:8px}
 .g-hub p,.g-related p{font-size:14px;line-height:1.75;font-weight:500}

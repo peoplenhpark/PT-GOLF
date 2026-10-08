@@ -234,7 +234,10 @@ window.GolfHub = (() => {
       body+=videoGroupNav(favoriteOnly?'favorites':selectedGroup);
       if(isAllVideos)body+=window.GolfPractice.lessonBridge(state,'videos');
       body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">자주 보는 영상</h2><p class="g-meta">기존에 기본 영상으로 지정한 4편</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
-    }else body+=filters(view);
+    }else {
+      if(tab==='notes')body+='<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><p>백스윙(몸통) <span aria-hidden="true">→</span> 골반 회전, 타격자세 만들기 <span aria-hidden="true">→</span> 순간 멈춤 <span aria-hidden="true">→</span> 임팩트</p></section>';
+      body+=filters(view);
+    }
     if (tab==='notes') {
       body+=window.GolfPractice.timeline(state,id);
       const fs=activeFocus();
