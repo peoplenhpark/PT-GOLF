@@ -5,6 +5,7 @@ window.AppNavigation = (() => {
     let path = '#home';
     const p = new URLSearchParams();
     if (v.name === 'part') { path = '#' + v.part; if(v.cat) p.set('cat',v.cat); }
+    if(v.name==='coach'){path='#'+v.part+'/'+(v.coachTab||'now');if(v.coachId)p.set('criterion',v.coachId);if(v.coachSource)p.set('source',v.coachSource);if(v.coachRecord)p.set('record',v.coachRecord);}
     if (v.name === 'detail') path = '#exercise/' + encode(v.id);
     if (v.name === 'favorites') path = '#favorites';
     if (v.name === 'calendar') { path='#calendar'; if(Number.isInteger(v.calYear)) p.set('year',v.calYear); if(Number.isInteger(v.calMonth)) p.set('month',v.calMonth); }
@@ -21,6 +22,8 @@ window.AppNavigation = (() => {
     const p = new URLSearchParams(query || '');
     let parts; try { parts=raw.slice(1).split('/').map(decodeURIComponent); } catch { return {name:'home'}; }
     const [a,b,c] = parts;
+    if(['pt','golf'].includes(a)&&['now','standards'].includes(b))return {name:'coach',part:a,coachTab:b,coachId:p.get('criterion'),coachSource:p.get('source'),coachRecord:p.get('record')};
+    if(a==='golf'&&!b)return {name:'coach',part:'golf',coachTab:'now'};
     if(a==='exercise' && b) return {name:'detail',id:b};
     if(a==='pt'||a==='ht') return {name:'part',part:a,cat:p.get('cat')};
     if(a==='favorites') return {name:'favorites'};

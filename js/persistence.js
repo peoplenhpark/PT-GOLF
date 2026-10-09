@@ -5,9 +5,10 @@ window.Persistence = (() => {
   const KEYS = Object.freeze({
     overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1',
     golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme',
-    deletions: 'ptgolf_deletion_requests_v1'
+    deletions: 'ptgolf_deletion_requests_v1', coaching: 'ptgolf_coaching_v1'
   });
-  const V90_KEYS = Object.values(KEYS).filter(key => key !== KEYS.deletions);
+  const V2_KEYS = Object.values(KEYS).filter(key => key !== KEYS.coaching);
+  const V90_KEYS = V2_KEYS.filter(key => key !== KEYS.deletions);
   const JOURNAL = 'ptgolf_restore_journal_v1';
   const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
   const listeners = new Set();
@@ -181,10 +182,12 @@ window.Persistence = (() => {
     typeof item.title === 'string' && typeof item.requestedAt === 'string' && Number.isFinite(Date.parse(item.requestedAt)) &&
     ['pending', 'completed', 'cancelled'].includes(item.status) && (item.source === undefined || ['seed', 'local'].includes(item.source)) &&
     stringFields(item, ['deviceId', 'resolvedAt']));
-  const validators = { [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts, [KEYS.deletions]: validDeletions };
+  const validCriterion = item => record(item) && requiredStringFields(item,['id','part','sourceKey','title','cue','check','setup','caution','club','referenceId','created','updated']) && ['pt','golf'].includes(item.part) && !!item.id && !!item.sourceKey && !!item.cue.trim() && !!item.check.trim() && typeof item.confirmed==='boolean' && Number.isFinite(Date.parse(item.created)) && Number.isFinite(Date.parse(item.updated));
+  const validCoaching = value => record(value) && value.schemaVersion===1 && keyed(value.criteria) && value.criteria.every(validCriterion) && record(value.active) && Object.entries(value.active).every(([part,id])=>['pt','golf'].includes(part) && typeof id==='string' && value.criteria.some(c=>c.id===id&&c.part===part)) && keyed(value.records) && value.records.every(r=>record(r) && requiredStringFields(r,['id','part','criterionId','created','date','result','memo','question','answer']) && ['pt','golf'].includes(r.part) && value.criteria.some(c=>c.id===r.criterionId&&c.part===r.part) && ['도움 됨','판단 어려움','다시 확인'].includes(r.result) && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && Number.isFinite(Date.parse(r.created)) && validCriterion(r.snapshot) && r.snapshot.id===r.criterionId && r.snapshot.part===r.part) && keyed(value.revisions) && value.revisions.every(r=>typeof r.at==='string' && Number.isFinite(Date.parse(r.at)) && validCriterion(r.snapshot));
+  const validators = { [KEYS.coaching]: validCoaching, [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts, [KEYS.deletions]: validDeletions };
   function validateBackup(data) {
-    if (!record(data) || data.format !== 'ptgolf-backup' || ![1, 2].includes(data.schemaVersion) || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
-    const expected = data.schemaVersion === 1 ? V90_KEYS : Object.values(KEYS);
+    if (!record(data) || data.format !== 'ptgolf-backup' || ![1, 2, 3].includes(data.schemaVersion) || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
+    const expected = data.schemaVersion === 1 ? V90_KEYS : data.schemaVersion === 2 ? V2_KEYS : Object.values(KEYS);
     if (Object.keys(data.stores).length !== expected.length || !expected.every(key => Object.hasOwn(data.stores, key))) throw failure('INVALID_BACKUP', '일부 기록이 빠진 백업입니다. 모든 저장소가 포함되어야 합니다.');
     expected.forEach(key => {
       const value = data.stores[key];
@@ -201,11 +204,11 @@ window.Persistence = (() => {
       if (key === KEYS.theme || raw === null) stores[key] = raw;
       else { try { stores[key] = JSON.parse(raw); } catch { throw failure('CORRUPT', '손상된 기록이 있어 일반 백업 대신 원본 복구 사본이 필요합니다.', key); } }
     }
-    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 2, createdAt: new Date().toISOString(), stores });
+    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 3, createdAt: new Date().toISOString(), stores });
   }
   function recoveryCopy() {
     const rawStores = {}; Object.values(KEYS).forEach(key => { rawStores[key] = rawRead(key); });
-    return { format: 'ptgolf-recovery-copy', schemaVersion: 2, createdAt: new Date().toISOString(), rawStores };
+    return { format: 'ptgolf-recovery-copy', schemaVersion: 3, createdAt: new Date().toISOString(), rawStores };
   }
   function reloadHandles(keys) { handles.forEach(item => { if (keys.includes(item.key)) item.handle.reload(); }); }
   function applyRawStores(rawStores) {

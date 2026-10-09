@@ -1,6 +1,6 @@
 window.AppSearch = (() => {
   const terms=q=>(q||'').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-  const labels={pt:'PT',ht:'HT',note:'내 노트',video:'골프 영상',lesson:'레슨'};
+  const labels={pt:'PT',ht:'HT',note:'내 노트',video:'골프 영상',lesson:'레슨',criterion:'내 기준',practice:'연습 기록'};
   function records(q,scope='all') {
     if(!terms(q).length)return [];
     const exercises=Store.search(q).map(e=>{
@@ -12,7 +12,7 @@ window.AppSearch = (() => {
     });
     const sessions=(Store.getPTSessions?.()||[]).flatMap(s=>s.items.filter(i=>!i.exerciseId).map((item,n)=>({id:s.id+'_'+n,type:'pt',title:item.title,href:'#pt',excerpt:[s.date,...item.points,item.uncertainty].join(' '),matchedFields:['수업 기록']}))).filter(r=>terms(q).every(t=>(r.title+' '+r.excerpt).toLowerCase().includes(t)));
     let golf=[];try{golf=window.GolfHub?.searchRecords?.(q)||[];}catch{}
-    const unique=[...new Map([...exercises,...sessions,...golf].map(r=>[r.type+':'+r.id,r])).values()];
+    const unique=[...new Map([...exercises,...sessions,...golf,...(window.CoachDesk?.searchRecords(q)||[])].map(r=>[r.type+':'+r.id,r])).values()];
     return unique.filter(r=>scope==='all'||r.type===scope);
   }
   return {records,labels};

@@ -1,0 +1,35 @@
+.coach-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 20px}
+.coach-tabs a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px;border:1px solid var(--line);border-radius:12px;color:var(--txt);text-decoration:none;font-size:16px}
+.coach-tabs a[aria-current=page]{background:var(--pt-bg);border-color:var(--pt);color:var(--pt)}
+[data-part=golf] .coach-tabs a[aria-current=page]{background:var(--golf-bg);border-color:var(--golf);color:var(--golf)}
+.coach-desk{font-weight:500}.coach-desk h2{font-size:18px;margin:18px 0 10px}.coach-desk p{font-size:15px;line-height:1.7;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.coach-current{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:16px}.coach-current h2{font-size:21px;line-height:1.6;margin:12px 0}
+.coach-meta,.coach-intro{color:var(--sub)}.coach-desk .coach-meta{font-size:12px}.coach-check b{display:block;color:var(--pt);font-size:13px}.coach-caution{border-top:1px solid var(--line);padding-top:10px}
+.coach-fold{margin:14px 0;border:1px solid var(--line);border-radius:12px;padding:12px}.coach-fold summary{cursor:pointer;min-height:36px;align-content:center;font-size:15px;font-weight:700}.coach-fold[open]>summary{margin-bottom:12px}
+.coach-desk label{display:block;font-size:14px;margin:12px 0}.coach-desk textarea,.coach-desk input:not([type=checkbox]),.coach-desk select{width:100%;min-width:0;display:block;margin-top:6px;background:var(--bg);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit;font-size:15px;min-height:44px}.coach-desk textarea{resize:vertical}
+.coach-desk .coach-checkbox{display:flex;align-items:flex-start;gap:10px;min-height:44px}.coach-checkbox input{width:20px;height:20px;flex-shrink:0;margin-top:2px}
+.coach-desk .btn{min-height:44px;white-space:normal}.coach-desk a{color:var(--pt)}[data-part=golf].coach-desk a{color:var(--golf)}.coach-actions,.coach-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.coach-actions a,.coach-shortcuts a{padding:10px;min-height:44px;border:1px solid var(--line);border-radius:8px;font-size:14px}
+.coach-source{display:block;margin:8px 0;padding:10px 0;min-height:44px}.coach-mini-shots{display:grid;grid-template-columns:1fr 1fr;gap:8px}.coach-mini-shots img{width:100%;height:130px;object-fit:contain;background:var(--bg)}.coach-mini-shots span{display:block;font-size:12px;text-align:center}
+.coach-criteria article,.coach-record{padding:12px 0;border-bottom:1px solid var(--line)}.coach-criteria article>a{display:block;min-height:44px;margin-bottom:8px}.coach-criteria span{display:block;font-size:13px;font-weight:500;margin-top:6px;color:var(--sub)}.coach-record summary{font-size:13px}.coach-record p{font-size:14px}
+.coach-library{display:grid;grid-template-columns:1fr 1fr;gap:8px}.coach-library a{border:1px solid var(--line);border-radius:8px;padding:12px;min-height:48px;font-size:14px}
+.coach-desk :focus-visible,.coach-tabs a:focus-visible{outline:3px solid var(--golf);outline-offset:3px}.coach-desk h2 small{font-size:13px;color:var(--sub)}
+
+/* Legible action colors: anchor rules must not override filled buttons. */
+.coach-desk .btn.primary{background:#285d39;color:#fff;border-color:#285d39}
+.coach-desk[data-part=golf],.g-hub[data-part=golf]{--bg:#101923;--card:#1c2a38;--card2:#26384a;--txt:#f3f6fa;--sub:#c3cfdc;--faint:#acbed0;--line:#5a7187;--golf:#8bd8ff;--golf-bg:#17394f;--golf-line:#658ea8;background:var(--bg);color:var(--txt)}
+[data-theme=light] .coach-desk[data-part=golf],[data-theme=light] .g-hub[data-part=golf]{--bg:#f2f6fa;--card:#fff;--card2:#e8f0f7;--txt:#172b3d;--sub:#43576a;--faint:#53687b;--line:#8198ab;--golf:#075985;--golf-bg:#dfedf7;--golf-line:#5e819b}
+.coach-desk[data-part=golf] .btn.primary{background:#075985;color:#fff;border-color:#075985}
+.coach-desk[data-part=golf] .coach-check b{color:var(--golf)}
+.coach-desk[data-part=golf] .coach-check{background:var(--golf-bg);border-left:3px solid var(--golf);padding:12px;border-radius:4px}
+.coach-desk[data-part=golf] .coach-fold{background:var(--card)}
+.coach-desk[data-part=golf] .coach-tabs a{background:var(--card);color:var(--txt);font-weight:700}
+.coach-desk[data-part=golf] .coach-tabs a[aria-current=page]{background:var(--golf-bg);color:var(--golf);border-width:2px}
+.coach-desk[data-part=golf] .coach-meta{font-size:13px}
+.coach-desk[data-part=golf] :is(input,textarea)::placeholder{color:var(--sub);opacity:1}
+.coach-recent-pt{margin-bottom:22px}.coach-recent-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:10px}.coach-recent-heading h2{margin:0}.coach-recent-heading time{font-size:13px;color:var(--sub)}
+.coach-recent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.coach-recent-grid>a,.coach-recent-grid>div{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid var(--pt-line);background:var(--card);border-radius:12px;text-decoration:none;min-width:0}.coach-recent-grid strong{font-size:16px;line-height:1.5;color:var(--txt);overflow-wrap:anywhere}.coach-recent-grid span{font-size:13px;line-height:1.65;font-weight:500;color:var(--sub)}.coach-recent-grid small{font-size:12px;margin-top:auto;color:var(--pt)}
+.coach-plan{margin-top:20px;padding:14px;border:1px dashed var(--line);border-radius:12px;background:var(--card)}.coach-plan h2{font-size:16px;margin:0 0 8px}.coach-plan p{font-size:14px;color:var(--sub)}.coach-plan summary{min-height:44px;align-content:center;font-size:14px;cursor:pointer}
+
+.coach-recent-golf{padding:16px;margin-bottom:16px;border:1px solid var(--golf-line);border-radius:14px;background:var(--card)}
+.coach-recent-golf h3{font-size:18px;line-height:1.6;overflow-wrap:anywhere}.coach-recent-golf .coach-source{margin-bottom:0;padding-bottom:0}
+.coach-desk .g-pinned-sequence{padding:16px}.coach-desk .g-pinned-sequence h2{font-size:20px}.coach-desk .g-pinned-sequence>ol{font-size:16px;line-height:1.7}

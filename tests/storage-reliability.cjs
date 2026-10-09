@@ -6,7 +6,7 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const persistenceCode = fs.readFileSync(path.join(root, 'js/persistence.js'), 'utf8');
 const storeCode = fs.readFileSync(path.join(root, 'js/store.js'), 'utf8') + '\nglobalThis.Store = Store;';
-const K = { overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1', golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme', deletions: 'ptgolf_deletion_requests_v1' };
+const K = { overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1', golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme', deletions: 'ptgolf_deletion_requests_v1', coaching: 'ptgolf_coaching_v1' };
 const JOURNAL = 'ptgolf_restore_journal_v1';
 const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
 const plain = value => JSON.parse(JSON.stringify(value));
@@ -116,7 +116,7 @@ async function test(name, fn) { await fn(); checks++; }
     const t = await tab(); t.s.setMemo('a', 'memo'); t.s.setCalEntry('2026-09-27', { rest: true });
     t.storage.map.set(K.golf, JSON.stringify({ ...emptyGolf(), videoNotes: { v: { memo: 'golf' } } }));
     t.storage.map.set(K.drafts, JSON.stringify({ screen: { value: 'unfinished', updated: '2026-09-27T00:00:00.000Z' } })); t.storage.map.set(K.theme, 'light');
-    const backup = t.s.exportData(); assert.equal(backup.format, 'ptgolf-backup'); assert.equal(Object.keys(backup.stores).length, 6);
+    const backup = t.s.exportData(); assert.equal(backup.format, 'ptgolf-backup'); assert.equal(Object.keys(backup.stores).length, 7);
     assert.equal(backup.stores[K.golf].videoNotes.v.memo, 'golf'); assert.equal(backup.stores[K.drafts].screen.value, 'unfinished');
     const invalid = plain(backup); delete invalid.stores[K.golf]; const before = ownData(t.storage), count = t.storage.writes();
     assert.throws(() => t.s.importData(invalid), code('INVALID_BACKUP')); assert.deepEqual(ownData(t.storage), before); assert.equal(t.storage.writes(), count);
@@ -199,12 +199,12 @@ async function test(name, fn) { await fn(); checks++; }
   });
   await test('deletion requests round-trip through complete backup and restore', async () => {
     const source = await tab(); source.s.requestDeletion('a'); source.s.requestDeletion({ kind: 'video', contentId: 'v', title: 'V' });
-    const backup = source.s.exportData(); assert.equal(backup.schemaVersion, 2); assert.equal(backup.stores[K.deletions].requests.length, 2);
+    const backup = source.s.exportData(); assert.equal(backup.schemaVersion, 3); assert.equal(backup.stores[K.deletions].requests.length, 2);
     const dest = await tab(); dest.s.importData(backup); assert.equal(dest.s.getById('a'), null); assert.equal(dest.s.isDeleted('video', 'v'), true);
     dest.s.restoreDeleted('a'); assert.equal(dest.s.getById('a').name, 'Original A');
   });
   await test('v90 five-store backups preserve current deletion requests', async () => {
-    const t = await tab(); const legacy = t.s.exportData(); legacy.schemaVersion = 1; delete legacy.stores[K.deletions];
+    const t = await tab(); const legacy = t.s.exportData(); legacy.schemaVersion = 1; delete legacy.stores[K.deletions]; delete legacy.stores[K.coaching];
     t.s.requestDeletion('a'); const queue = t.storage.map.get(K.deletions); t.s.importData(legacy);
     assert.equal(t.storage.map.get(K.deletions), queue); assert.equal(t.s.isDeleted('exercise', 'a'), true);
     const legacyBefore = ownData(t.storage); delete legacyBefore[K.deletions];

@@ -56,6 +56,7 @@ const Theme = (() => {
 
   // ============ 렌더 ============
   function renderScreen() {
+    if(view.name==='coach')return window.CoachDesk.render(view,golfConfig());
     if(view.name==='golf-hub')return renderGolf();
     if (view.name === 'home') return renderHome();
     if (view.name === 'part') return renderPart(view.part);
@@ -184,7 +185,7 @@ const Theme = (() => {
     }).join('');
 
     return `
-      <div class="sec-t">🗓️ 최근 일주일 세션</div>
+      <div class="sec-t">🗓️ 최근 자료 갱신</div>
       <div class="chips recent-chips">${chips}</div>
       <div id="recent-list">${sel.exercises.map(e => exRow(e, null, true, '🗓️')).join('')}</div>`;
   }
@@ -224,7 +225,7 @@ const Theme = (() => {
   }
   function ptSessionHtml(id) {
     if(id)return (Store.getExerciseSessions?.(id)||[]).map(s=>'<section class="pt-session-note"><h2>'+esc(s.date)+' PT 수업 보강</h2>'+ptSessionItemHtml({...s.item,exerciseId:null}).replace('<span class="tag">동작 종류 확인 대기</span>','')+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></section>').join('');
-    return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note" open><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>').join('')+'</div>'+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></details>').join('');
+    return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note"><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>').join('')+'</div>'+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></details>').join('');
   }
   function renderPart(part) {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
@@ -246,7 +247,7 @@ const Theme = (() => {
         <button class="back" data-nav="home">‹ 홈</button>
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
-        ${part==='pt'?ptSessionHtml():''}
+        ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">내 기준</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
         ${cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
@@ -517,6 +518,7 @@ const Theme = (() => {
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
+        ${e.part==='pt'?'<nav class="coach-shortcuts"><a href="#pt/standards?source=pt:'+encodeURIComponent(e.id)+'">이 동작으로 내 기준 만들기</a><button class="btn ghost" data-act="memo-top">메모 바로 쓰기</button></nav>':''}
         ${e.part==='pt'?ptSessionHtml(e.id):''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
@@ -579,8 +581,9 @@ const Theme = (() => {
   function go(name,opts={}) {
     const mode=opts.__historyMode||'push';opts={...opts};delete opts.__historyMode;
     const previous=view;view={...view,name,...opts};
-    if(name==='pt'||name==='ht')view={name:'part',part:name,cat:previous.part===name?previous.cat:null};
-    if(name==='golf')view={name:'golf-hub',part:'golf',golfTab:'lessons',golfId:null};
+    if(name==='ht')view={name:'part',part:name,cat:previous.part===name?previous.cat:null};
+    if(name==='pt')view={name:'coach',part:'pt',coachTab:'now'};
+    if(name==='golf')view={name:'coach',part:'golf',coachTab:'now'};
     if(name==='home'||name==='favorites'||name==='calendar'){view.part=null;view.id=null;}
     if(name==='detail')view.part=Store.getById(view.id)?.part||view.part;
     navigation.write(view,mode);render();
@@ -733,6 +736,7 @@ const Theme = (() => {
         toast(Store.getById(view.id).favorite ? '⭐ 즐겨찾기 추가' : '즐겨찾기 해제');
         renderPreserving(); break;
       case 'reset-cues': checks[view.id] = new Set(); renderPreserving(); break;
+      case 'memo-top': openMemoEditor();document.getElementById('memo-input')?.scrollIntoView({block:'center'});break;
       case 'memo-edit': openMemoEditor(); break;
       case 'delete':
         requestExerciseDeletion(view.id); break;

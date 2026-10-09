@@ -12,7 +12,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
   await page.goto(base);await page.locator('.part.pt').waitFor();
-  await page.locator('[data-nav=pt]').click();assert.match(page.url(),/#pt/);
+  await page.locator('[data-nav=pt]').click();await page.locator('.coach-tabs').waitFor();assert.match(page.url(),/#pt\/now/);await page.goto(base+'#pt');
   await page.reload();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator('[data-delete-ex]').count(),0,'exercise lists do not show delete actions');
   const firstId=await page.locator('.ex').first().getAttribute('data-open');
   await page.locator('.ex').first().click();await page.locator('.d-title').waitFor();assert.match(page.url(),/#exercise/);assert.equal(await page.locator('[data-act=delete]').count(),1,'exercise detail has one delete action');
@@ -30,13 +30,13 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('#f-spec').fill('수정 초안');await page.keyboard.press('Escape');await page.locator('[data-act=edit]').click();assert.equal(await page.locator('#f-spec').inputValue(),'수정 초안');await page.keyboard.press('Escape');
   assert.equal(await page.locator('.fab').count(),0,'floating add button is intentionally removed');
   await page.locator('[data-act=delete]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('.d-title').count(),1,'exercise remains visible until confirmation');
-  await page.locator('[data-act=confirm-yes]').click();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator(`[data-open="${firstId}"]`).count(),0,'confirmed exercise is hidden on this device');
+  await page.locator('[data-act=confirm-yes]').click();await page.locator('.coach-tabs').waitFor();await page.goto(base+'#pt');await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator(`[data-open="${firstId}"]`).count(),0,'confirmed exercise is hidden on this device');
   const exerciseDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
   assert(exerciseDeletion.queue.includes(firstId));assert(!exerciseDeletion.queue.includes('회귀 검사 개인 메모'),'private exercise memo must not enter deletion queue');
   {const issue=new URL(exerciseDeletion.url);assert.equal(issue.searchParams.get('template'),'content-removal.md');assert.equal(issue.searchParams.get('labels'),'deletion-request');assert.match(issue.searchParams.get('body'),/<!-- pt-golf-deletion-request:v1 -->/);assert.match(issue.searchParams.get('body'),/<!-- \/pt-golf-deletion-request -->/);assert.match(issue.searchParams.get('body'),new RegExp('content-id: '+firstId));assert(!issue.searchParams.get('body').includes('회귀 검사 개인 메모'));}
   await page.locator('.tab[data-nav=home]').click();await page.locator('.deletion-queue').waitFor();assert.match(await page.locator('.deletion-queue').textContent(),/삭제만을 위한 새 버전은 만들지 않/);
   await page.locator(`[data-delete-restore="del_exercise_${firstId}"]`).click();assert.equal(await page.locator('.deletion-queue').count(),0);
-  await page.locator('[data-nav=pt]').click();await page.locator(`[data-open="${firstId}"]`).waitFor();
+  await page.locator('[data-nav=pt]').click();await page.goto(base+'#pt');await page.locator(`[data-open="${firstId}"]`).waitFor();
   await page.goto(base+'#exercise/pt_latpulldown');await page.locator('.grip-guide').waitFor();
   assert.equal(await page.locator('.grip-card').count(),3,'lat pulldown shows three width cards');
   assert.equal(await page.locator('.grip-card.is-session').count(),1,'current PT grip is distinguished');
@@ -52,7 +52,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('#search-input').fill('회귀 검사');
   await page.locator('.search-result').first().waitFor();await page.reload();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
   await page.locator('.search-result').first().click();await page.locator('.d-title').waitFor();await page.locator('#history-back').click();await page.locator('#search-input').waitFor();assert.equal(await page.locator('#search-input').inputValue(),'회귀 검사');
-  await page.locator('[data-nav=golf]').click();await page.locator('.g-lesson-anchor').waitFor();assert.match(page.url(),/#golf\/lessons/);await page.locator('.g-tabs a[href="#golf/videos"]').click();await page.locator('.g-video-grid').first().waitFor();
+  await page.locator('[data-nav=golf]').click();await page.locator('.coach-tabs').waitFor();assert.match(page.url(),/#golf\/now/);await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();await page.locator('.g-tabs a[href="#golf/videos"]').click();await page.locator('.g-video-grid').first().waitFor();
   assert((await page.locator('.g-mini-takeaway').count())>0,'golf list shows practical takeaways');
   assert.equal(await page.locator('.g-mini-takeaway').first().evaluate(el=>!!el.textContent.trim()),true);
   assert.match(await page.locator('.g-recent-section').textContent(),/앱 등록일 기준/);
@@ -65,7 +65,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-shortcuts a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
   await page.locator('.g-video-shortcuts a[href="#golf/group/all"]').click();await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
-  await page.goto(base+'#golf');await page.locator('.g-lesson-anchor').waitFor();
+  await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();
   assert.equal(await page.locator('.g-tabs a').count(),4);
   await page.locator('.g-tabs a[href="#golf/notes"]').click();
   await page.locator('.g-sensation-dates a[href="#golf/notes/0930"]').click();assert.match(await page.locator('.g-original').textContent(),/수지 낙하중요/);
@@ -325,7 +325,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   }
   await context.setOffline(false);assert.deepEqual(errors,[]);
   // October PT session and expanded editing are verified only in this isolated context.
-  await page.goto(base+'#pt');await page.locator('.pt-session-links').waitFor();assert.equal(await page.locator('.pt-session-links a').count(),4);
+  await page.goto(base+'#pt');await page.locator('.coach-fold>summary').click();await page.locator('.pt-session-note>summary').click();await page.locator('.pt-session-links').waitFor();assert.equal(await page.locator('.pt-session-links a').count(),4);
   await page.locator('.pt-session-links a[href="#exercise/pt_lunge"]').click();await page.locator('.d-title').waitFor();assert.match(await page.locator('.pt-session-note').innerText(),/회전 없는 일반 런지/);
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth===700));
   await page.locator('[data-act=fav]').click();await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('런지 개인 메모 보존');await page.locator('#memo-save').click();
@@ -338,7 +338,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const lp=await lf.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await lf.locator('canvas').getAttribute('data-phase'),lp);await lf.locator('#progress').fill('500');await lf.locator('#progress').dispatchEvent('input');assert.equal(await lf.locator('#play').innerText(),'재생');const ly=await lf.locator('canvas').getAttribute('data-yaw');await lf.locator('canvas').press('ArrowLeft');assert.notEqual(await lf.locator('canvas').getAttribute('data-yaw'),ly);
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await context.setOffline(true);await page.reload();await page.locator('.d-title').waitFor();assert.match(await page.locator('.pt-session-note').innerText(),/2026-10-07/);assert.equal(await page.locator('.memo-box').innerText(),'런지 개인 메모 보존');await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();await context.setOffline(false);
-  for(const width of [320,390,768])for(const hash of ['#pt','#exercise/pt_hip_openclose_stretch','#exercise/pt_pullup']){await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.pt-session-note').first().waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+  for(const width of [320,390,768])for(const hash of ['#pt','#exercise/pt_hip_openclose_stretch','#exercise/pt_pullup']){await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.pt-session-note').first().waitFor({state:'attached'});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await page.goto(base+'#exercise/pt_lunge');await page.locator('[data-act=edit]').click();for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.locator('#modal .modal-card').evaluate(e=>e.scrollWidth<=e.clientWidth));}await page.keyboard.press('Escape');assert.deepEqual(errors,[]);
   // HT references preserve PT coaching and work across all source-demonstrated variants.
   const supplementIds=['ht_latpulldown_reference','ht_upper_elbows','ht_chest_six'];
@@ -380,6 +380,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert(await page.locator('.g-breadcrumb').innerText().then(t=>t.includes('실전 샷')&&t.includes('우드')));
   for(const id of ["DYtWZFKkKas","te5CN12g0Mc","eRSTJTcMFjE","qVHPT2eU5gY","qQbCq_QXB0A","G6VjK_afBng"]){await page.goto(base+'#golf/videos/'+id);await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));}
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
+  await require('./helpers/coach-browser.cjs')(browser,base);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
   console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');
