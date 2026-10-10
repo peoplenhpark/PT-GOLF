@@ -42,3 +42,11 @@
   .coach-desk .g-pinned-sequence h2{font-size:18px}
   .coach-recent-grid strong{font-size:14.5px}
 }
+/* Single-line mobile review content; preserve full text and native pinch zoom. */
+@media(max-width:560px){
+  .coach-desk .g-pinned-sequence>ol,
+  .coach-desk[data-part=golf] .coach-recent-golf :is(h3,p,.coach-source){
+    font-size:clamp(9px,2.8vw,15px);
+    line-height:1.7;
+  }
+}
