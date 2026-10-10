@@ -283,7 +283,7 @@ window.GolfHub = (() => {
     const backLabel=group?group.title:'유튜브 목록';
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
     layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}</div><div class="g-title-row"><h2 class="g-title">${e(v.title)}</h2><div class="d-actions">${favoriteButton(v)}<button type="button" class="icon-btn edit-text" data-g="video-edit" data-id="${e(id)}" title="수정" aria-label="${e(v.title)} · 수정">✏️ 수정</button></div></div>${chips(v.topics)}${chips(v.tags||[])}${lessonConnection(v)}${v.lessonId?link('lessons',v.lessonId,'첫 레슨 복습 기준 보기'):''}${frames(v)}
-      ${practicalSummary(v)}<a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>
+      ${window.GolfQuestions?.videoConnections(id)||''}${practicalSummary(v)}<a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>
       <div class="g-actions">${deleteButton(v)}</div>${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱에서 재생',`data-id="${e(id)}"`)}</div>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>

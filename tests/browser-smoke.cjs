@@ -381,6 +381,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const id of ["DYtWZFKkKas","te5CN12g0Mc","eRSTJTcMFjE","qVHPT2eU5gY","qQbCq_QXB0A","G6VjK_afBng"]){await page.goto(base+'#golf/videos/'+id);await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));}
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
   await require('./helpers/coach-browser.cjs')(browser,base);
+  await require('./helpers/golf-questions-browser.cjs')(browser,base);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
   console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');
