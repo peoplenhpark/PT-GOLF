@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver1.9 (내부 릴리스 v122, 2026-10-10 22:43 KST 공개 확인). 코드 커밋 9ec2a96a1ab445ba94ca853c5403fc06c7e51d88. GitHub Actions 실행 38056509104의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=122#golf/now . 공개 release.json v122 / displayVersion 1.9. 신규 골프 4편·대표 이미지 8컷, 스윙 순서 → 최근 레슨, PT 최근 수업 4동작과 모바일 제목 크기를 확인했다. PT 51개·HT 8개·골프 88편/176컷. 밝은/어두운 테마 320·390·560·768px 가로 넘침·브라우저 오류 없음.
-- 배포 준비: 내부 v123 / 표시 ver1.9 유지. 사용자 요청으로 골프 첫 화면의 스윙 순서·최근 레슨 카드 본문을 모바일 한 줄 표시로 조정했다. 공개 검증 후 완료 상태를 기록한다.
+- 현재 공개 버전: ver1.9 (내부 릴리스 v123, 2026-10-10 23:52 KST 공개 확인). 사용자 요청으로 표시 버전을 유지했다. 코드 커밋 1aa935dc13e24edc4889d1ce1d0f0e217a641091. GitHub Actions 실행 38061038592의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=123#golf/now . 공개 release.json v123 / displayVersion 1.9. 스윙 4단계와 최근 레슨 제목·요약·메타·상세 링크를 320/360/375/390/414/560px 모바일 밝은/어두운 테마에서 각각 한 줄로 확인했다. 문구 생략·가로 넘침·브라우저 오류 없음. 수동 확대와 레슨 상세 이동 유지.
+- 다음 배포 대기: 없음. v123은 동일 ver1.9로 게시 완료했다. 아래 이전 배포 준비 기록은 완료 상태로 대체된다.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -56,6 +56,11 @@
 - `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## v123 / ver1.9 동일 버전 배포 완료 · 2026-10-10
+
+- 스윙 순서와 최근 레슨 · 빠른 복습 아래 내용을 모바일에서 각각 한 줄로 표시하도록 글자 크기를 조정했다. 전체 문구와 핀치 확대를 유지한다.
+- 사용자 지시로 표시 ver1.9 유지. 캐시용 내부 v123. Node 25개·문법 20개와 GitHub 전체 브라우저 검사·Pages 게시 성공 후 2026-10-10 23:52 KST 공개 검증 완료. https://github.com/peoplenhpark/PT-GOLF/actions/runs/38061038592 . 격리된 브라우저만 사용했다.
 
 ## v123 동일 버전 배포 준비 · 2026-10-10 골프 상단 본문
 
