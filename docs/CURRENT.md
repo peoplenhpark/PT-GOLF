@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver1.8 (내부 릴리스 v120, 2026-10-10 02:53 KST 공개 확인). 사용자 버전 업 배포 요청을 반영했다. 코드 커밋 48c9313b9cf97adbc170bf9827345265dc15a8fb. GitHub Actions 실행 37968976262의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=120#golf/now . 공개 release.json v120 / displayVersion 1.8. 스윙 순서 → 최근 레슨 · 빠른 복습, PT 최근 수업 4동작, 주 4회 코치 협의 예정 안내와 내 기준 경로를 확인했다. 320·390·768px 밝은/어두운 테마 가로 넘침·브라우저 오류 없음. PT 51개·HT 8개·골프 84편 유지.
-- 다음 배포 대기: 내부 v122. 2026-10-10 골프 신규 영상 4편의 분류·관찰 요약·질문과 원본 대표 이미지 8컷을 추가했다. 모바일 큰 제목·메뉴 크기 최적화를 포함한다. 사용자 배포 요청으로 ver1.9 준비 중이며, 공개 검증 후 완료 상태를 기록한다.
+- 현재 공개 버전: ver1.9 (내부 릴리스 v122, 2026-10-10 22:43 KST 공개 확인). 코드 커밋 9ec2a96a1ab445ba94ca853c5403fc06c7e51d88. GitHub Actions 실행 38056509104의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=122#golf/now . 공개 release.json v122 / displayVersion 1.9. 신규 골프 4편·대표 이미지 8컷, 스윙 순서 → 최근 레슨, PT 최근 수업 4동작과 모바일 제목 크기를 확인했다. PT 51개·HT 8개·골프 88편/176컷. 밝은/어두운 테마 320·390·560·768px 가로 넘침·브라우저 오류 없음.
+- 다음 배포 대기: 없음. v121~v122 작업은 ver1.9에 게시 완료했다. 아래 이전 배포 대기 기록은 이 완료 상태로 대체된다.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -56,6 +56,12 @@
 - `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## v122 / ver1.9 배포 완료 · 2026-10-10
+
+- 신규 골프 4편의 분류·관찰 요약·확인 질문과 원본 대표 이미지 8컷을 게시했다. 기존 84편과 레슨·개인 데이터 연결은 보존한다.
+- 모바일에서는 큰 제목·섹션명·주요 메뉴만 최적화하며 설명 글자·기존 터치 영역·수동 확대 설정은 유지했다.
+- 표시 버전 1.8 → 1.9, 내부 v122. Node 25개·문법 20개 및 GitHub 전체 브라우저 검증과 Pages 배포 통과. https://github.com/peoplenhpark/PT-GOLF/actions/runs/38056509104 . 2026-10-10 22:43 KST 공개 검증 완료. 격리된 브라우저만 사용했다.
 
 ## v122 배포 대기 · 2026-10-10 모바일 제목 크기
 
