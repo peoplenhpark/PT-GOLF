@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver1.9 (내부 릴리스 v123, 2026-10-10 23:52 KST 공개 확인). 사용자 요청으로 표시 버전을 유지했다. 코드 커밋 1aa935dc13e24edc4889d1ce1d0f0e217a641091. GitHub Actions 실행 38061038592의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=123#golf/now . 공개 release.json v123 / displayVersion 1.9. 스윙 4단계와 최근 레슨 제목·요약·메타·상세 링크를 320/360/375/390/414/560px 모바일 밝은/어두운 테마에서 각각 한 줄로 확인했다. 문구 생략·가로 넘침·브라우저 오류 없음. 수동 확대와 레슨 상세 이동 유지.
-- 다음 배포 대기: 사용자 승인에 따라 v124 세 질문 운영 화면을 ver2.0으로 배포 준비 중이다. 배포 완료 확인 전 공개 버전은 v123/ver1.9이다.
+- 현재 공개 버전: ver2.0 (내부 릴리스 v124, 2026-10-11 08:42 KST 공개 확인). 코드 커밋 89152684fd41ebaea167b4cae22683e7fb931ad7. GitHub Actions 실행 38095756444의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=124#golf/now . 공개 release.json v124 / displayVersion 2.0 및 홈 ver2.0 확인. 세 질문·날짜별 초점·다른 묶음 기록·초안·답변·검색·영상 왕복·모바일 두 테마·오프라인을 격리 브라우저에서 확인했다.
+- 다음 배포 대기: 없음. 사용자 버전업 배포 요청으로 v124/ver2.0 게시 완료.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -57,6 +57,11 @@
 - `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## v124 / ver2.0 배포 완료 · 2026-10-11
+
+- 사용자 요청으로 표시 버전 1.9 → 2.0, 내부 v124 유지. Node 26개·문법 21개 및 GitHub 전체 브라우저 검증·Pages 배포 성공. https://github.com/peoplenhpark/PT-GOLF/actions/runs/38095756444 .
+- 2026-10-11 08:42 KST 공개 사이트 버전과 신규 질문 운영 기능 검증 완료. 실제 사용자 저장소에 테스트 자료를 쓰지 않았다. 코드 커밋 89152684fd41ebaea167b4cae22683e7fb931ad7.
 
 ## v124 구현 · 2026-10-11 세 질문과 골프 목표
 
@@ -371,7 +376,7 @@
 - 코드: `87f80ee343c4b5ddb36fc8a6470b102b120c6a63`. 실행: https://github.com/peoplenhpark/PT-GOLF/actions/runs/37125856942 . verify/deploy 성공.
 - 게시 대상 _site 187개 런타임 파일. 로컬 19개 Node 검사와 게시 폴더 대상 전체 브라우저 검사 통과. CI에서도 검증 후 배포했다. 배포 전 구조화된 삭제 요청은 0건이었다.
 - 전체 브라우저 검사에 남아 있던 이전 모바일 1열 기대값을 사용자 요청인 섹션 폭 500px 미만 2열/이상 3열 기준으로 갱신했다.
-- 공개 확인: 홈 ver1.0, 골프 46편/기본 3편, 390px 2열/560px 3열, HT 총 3개/상체 선택 6개, 2컷 이미지와 원암 로우 WebGL 정상, 브라우저 오류 없음.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=124#golf/now . 공개 release.json v124 / displayVersion 2.0 및 홈 ver2.0 확인. 세 질문·날짜별 초점·다른 묶음 기록·초안·답변·검색·영상 왕복·모바일 두 테마·오프라인을 격리 브라우저에서 확인했다.
 - 위 v98~v103 배포 대기 기록은 작업 이력이며 모두 이번 ver1.0 배포에 포함되었다.
 
 ## 2026-10-04 로컬 반영
