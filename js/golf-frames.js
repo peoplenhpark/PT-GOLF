@@ -1343,5 +1343,69 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "Ks-9y9yLols": [
+    {
+      "src": "media/golf-frames/Ks-9y9yLols-1.webp",
+      "time": 3.64,
+      "label": "X 표시 · 팔이 몸에서 멀어지는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/Ks-9y9yLols-2.webp",
+      "time": 8.68,
+      "label": "왼어깨를 아래로 움직이는 설명",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "rvrwwVdyM68": [
+    {
+      "src": "media/golf-frames/rvrwwVdyM68-1.webp",
+      "time": 3.06,
+      "label": "왼손 방향을 짚는 설명 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/rvrwwVdyM68-2.webp",
+      "time": 12.78,
+      "label": "내려오는 구간의 왼손 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "u_Td1XU3JKo": [
+    {
+      "src": "media/golf-frames/u_Td1XU3JKo-1.webp",
+      "time": 6.24,
+      "label": "손으로 들어 올린 백스윙 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/u_Td1XU3JKo-2.webp",
+      "time": 17.04,
+      "label": "왼어깨를 턱 아래로 보내는 회전 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "eOxiYC684K0": [
+    {
+      "src": "media/golf-frames/eOxiYC684K0-1.webp",
+      "time": 1.75,
+      "label": "좌우 회전 방향 비교 · 내려오기",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/eOxiYC684K0-2.webp",
+      "time": 2.65,
+      "label": "왼쪽 O 시범 · 타격 후 회전",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

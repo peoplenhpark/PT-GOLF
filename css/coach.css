@@ -33,3 +33,12 @@
 .coach-recent-golf{padding:16px;margin-bottom:16px;border:1px solid var(--golf-line);border-radius:14px;background:var(--card)}
 .coach-recent-golf h3{font-size:18px;line-height:1.6;overflow-wrap:anywhere}.coach-recent-golf .coach-source{margin-bottom:0;padding-bottom:0}
 .coach-desk .g-pinned-sequence{padding:16px}.coach-desk .g-pinned-sequence h2{font-size:20px}.coach-desk .g-pinned-sequence>ol{font-size:16px;line-height:1.7}
+
+@media(max-width:560px){
+  .coach-tabs a{font-size:15px}
+  .coach-desk h2{font-size:16px}
+  .coach-desk .coach-current h2{font-size:18px;line-height:1.5}
+  .coach-desk .coach-recent-golf h3{font-size:16px;line-height:1.5}
+  .coach-desk .g-pinned-sequence h2{font-size:18px}
+  .coach-recent-grid strong{font-size:14.5px}
+}

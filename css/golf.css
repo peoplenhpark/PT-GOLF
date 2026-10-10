@@ -241,3 +241,17 @@
 [data-theme="light"] .g-hub .g-video-section h2 span{color:#475569}
 [data-theme="light"] .g-hub .g-video-section>header,[data-theme="light"] .g-hub .g-featured-video>h2{border-left-color:#987123}
 [data-theme="light"] .g-hub :is(a,button,input,select,summary):focus-visible{outline-color:#854d0e}
+
+/* Keep explanatory text at its current size; reduce prominent mobile headings. */
+@media(max-width:560px){
+  .g-hub h2,.g-related h2{font-size:16px}
+  .g-hub h3{font-size:16px}
+  .g-title{font-size:19px!important}
+  .g-library-heading h2{font-size:21px}
+  .g-hub .g-video-section h2,.g-hub .g-featured-video>h2,.g-hub .g-section>h2{font-size:18px}
+  .g-hub .g-video-groups h3{font-size:16px}
+  .g-hub .g-video-groups strong{font-size:14.5px}
+  .g-practice-hero h2,.g-cue{font-size:20px}
+  .g-lesson-anchor h2,.g-lesson-anchor .g-cue{font-size:18px}
+  .g-hub .g-pinned-sequence h2{font-size:18px}
+}
