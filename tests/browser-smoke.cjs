@@ -86,7 +86,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,176);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,182);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));

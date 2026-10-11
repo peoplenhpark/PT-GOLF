@@ -2110,5 +2110,77 @@
     "source": "https://www.youtube.com/watch?v=eOxiYC684K0",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-10"
+  },
+  {
+    "id": "-8gKh-1h6Hs",
+    "title": "트랜지션 · 골반 움직임과 밴드 측면 기울기",
+    "frames": [
+      {
+        "src": "media/golf-frames/-8gKh-1h6Hs-1.webp",
+        "time": 2.4,
+        "label": "골반 움직임을 표시한 전환 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/-8gKh-1h6Hs-2.webp",
+        "time": 8.8,
+        "label": "밴드로 측면 기울기를 비교하는 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 16,
+    "source": "https://www.youtube.com/watch?v=-8gKh-1h6Hs",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-11"
+  },
+  {
+    "id": "nkfEfaa4CFs",
+    "title": "아이언 반복성 · 왼손목과 내려오는 동작 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/nkfEfaa4CFs-1.webp",
+        "time": 8.1,
+        "label": "손·클럽 위치의 O·X 비교",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/nkfEfaa4CFs-2.webp",
+        "time": 15.3,
+        "label": "아래로 내려오는 구간의 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 18,
+    "source": "https://www.youtube.com/watch?v=nkfEfaa4CFs",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-11"
+  },
+  {
+    "id": "clEQKV7hWrY",
+    "title": "아이언 회전 · 왼골반과 어깨 높이 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/clEQKV7hWrY-1.webp",
+        "time": 10.85,
+        "label": "왼골반과 어깨가 들리는 관계 설명",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/clEQKV7hWrY-2.webp",
+        "time": 20.15,
+        "label": "왼골반 높이를 짚으며 회전하는 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 31,
+    "source": "https://www.youtube.com/watch?v=clEQKV7hWrY",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-11"
   }
 ]

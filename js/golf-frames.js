@@ -1407,5 +1407,53 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "-8gKh-1h6Hs": [
+    {
+      "src": "media/golf-frames/-8gKh-1h6Hs-1.webp",
+      "time": 2.4,
+      "label": "골반 움직임을 표시한 전환 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/-8gKh-1h6Hs-2.webp",
+      "time": 8.8,
+      "label": "밴드로 측면 기울기를 비교하는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "nkfEfaa4CFs": [
+    {
+      "src": "media/golf-frames/nkfEfaa4CFs-1.webp",
+      "time": 8.1,
+      "label": "손·클럽 위치의 O·X 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/nkfEfaa4CFs-2.webp",
+      "time": 15.3,
+      "label": "아래로 내려오는 구간의 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "clEQKV7hWrY": [
+    {
+      "src": "media/golf-frames/clEQKV7hWrY-1.webp",
+      "time": 10.85,
+      "label": "왼골반과 어깨가 들리는 관계 설명",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/clEQKV7hWrY-2.webp",
+      "time": 20.15,
+      "label": "왼골반 높이를 짚으며 회전하는 시범",
+      "width": 360,
+      "height": 640
+    }
   ]
 };
