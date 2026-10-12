@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver2.0 (내부 릴리스 v127, 2026-10-11 17:30 KST 공개 확인). 사용자 지시로 표시 버전 유지. 코드 커밋 4fa2b5d07d7eca4eddc827afba9bfa9ee29f01da. GitHub Actions 실행 38124734871의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=127#golf/now . release.json v127 / displayVersion 2.0 및 홈 ver2.0 확인. 골프 91편·중복 1편 보존·신규 원본 6컷 로딩·세 질문 연결·320/390/768px 모바일 가로 넘침 없음 확인.
-- 배포 진행: 사용자 2026-10-12 지시로 내부 v128 / 표시 ver2.0을 유지해 게시한다. 신규 골프 영상 4편·원본 대표 이미지 8컷, 총 95편·190컷. 공개 성공 확인 전까지 마지막 확인 버전은 v127이다.
+- 현재 공개 버전: ver2.0 (내부 릴리스 v128, 2026-10-12 14:13 KST 공개 확인). 사용자 지시로 표시 버전 유지. 코드 커밋 cb4724ad100d74671fe1808e65f14ad805a4c270. GitHub Actions 실행 38206731847의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=128#golf/group/recent . release.json v128 / displayVersion 2.0 및 홈 ver2.0 확인. 골프 95편·기존 91개 객체 보존·신규 원본 8컷 로딩·세 질문 연결·320/390/768px 모바일 가로 넘침 없음 확인.
+- 다음 배포 대기: 없음. 신규 골프 영상 4편·원본 대표 이미지 8컷을 표시 ver2.0과 내부 v128 유지로 배포 완료했다. 전체 95편·190컷.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -58,6 +58,10 @@
 - `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## v128 / ver2.0 동일 버전 배포 완료 · 2026-10-12
+
+- 2026-10-12 14:13 KST 공개 검증 완료. GitHub Actions https://github.com/peoplenhpark/PT-GOLF/actions/runs/38206731847 의 verify/deploy 모두 성공했다. 공개 사이트의 ver2.0 표시·95편·신규 8컷·질문 연결 및 모바일 320/390/768px을 격리 브라우저에서 확인했다. 사용자 저장소에는 테스트 자료를 쓰지 않았다.
 
 ## v128 골프 영상 중복 확인·추가 · 2026-10-12
 
