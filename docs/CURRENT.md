@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver2.0 (내부 릴리스 v128, 2026-10-12 14:13 KST 공개 확인). 사용자 지시로 표시 버전 유지. 코드 커밋 cb4724ad100d74671fe1808e65f14ad805a4c270. GitHub Actions 실행 38206731847의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=128#golf/group/recent . release.json v128 / displayVersion 2.0 및 홈 ver2.0 확인. 골프 95편·기존 91개 객체 보존·신규 원본 8컷 로딩·세 질문 연결·320/390/768px 모바일 가로 넘침 없음 확인.
-- 배포 준비: 사용자 승인으로 내부 v132 / 표시 ver2.1 배포를 진행한다. 2026-10-12 반복 레슨·고정 스윙 순서·백스윙 복습 묶음·지정 영상 1편 삭제 및 검색한 몸통 백스윙/피니시 보완 영상 5편을 포함한다. 공개 완료 확인 전까지 직전 공개 버전은 v128이다. 골프 영상은 99편·198컷. Node 26개·문법 21개 검증 통과, v132의 전체 격리 브라우저 회귀와 신규 이미지·모바일 확인 완료.
+- 현재 공개 버전: ver2.1 (내부 릴리스 v132, 2026-10-12 23:13 KST 공개 확인). 배포 기준 표시 버전을 0.1 올렸다. 코드 커밋 ce310a3eb1ce1e01fe90d199d6710005964273a6. GitHub Actions 실행 38260806785의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=132#golf/lessons/lesson_20261012_review . release.json v132 / displayVersion 2.1 및 홈 ver2.1 확인. 골프 99편·198컷, 기존 94개 영상 객체 보존, 신규 5편·원본 10컷 포함 레슨 24컷 로딩·질문 연결·320/390/768px 모바일 가로 넘침 없음 확인.
+- 배포 대기 변경 없음. 반복 레슨·고정 스윙 순서·백스윙 복습 묶음·지정 영상 LEv6sXi98Z0 삭제·몸통 백스윙/피니시 보완 영상 5편 모두 공개 반영했다. Node 26개·문법 21개 및 전체 격리 브라우저 회귀 통과. 사용자 저장소에는 테스트 자료를 쓰지 않았다.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
@@ -59,6 +59,10 @@
 - `docs/PT_GOLF_VER1_5_HANDOFF.md`는 새 세션 진입용 스냅샷이며 이 문서가 항상 우선한다. `docs/AGENT_HANDOFF.md`, `docs/PT_GOLF_VER1_3_HANDOFF.md`, 루트와 docs의 `HANDOFF.md`는 역사 자료이다. 맨 위의 현행 아님 안내를 유지한다.
 - 현행 Node 게이트와 브라우저 검사의 범위는 `tests/README.md`를 따른다.
 - 골프 퇴역 엔진과 관련 테스트는 Git에서 보존하되 현행 배포·필수 검사에 포함하지 않는다. 과거 주소를 위한 HTML redirect는 게시한다.
+
+## v132 / ver2.1 배포 완료 · 2026-10-12
+
+- 사용자 배포 승인에 따라 ver2.0에서 ver2.1로 갱신했다. GitHub Actions https://github.com/peoplenhpark/PT-GOLF/actions/runs/38260806785 의 검증·배포 성공 및 23:13 KST 공개 확인 완료. 공개 사이트에서도 신규 5편의 질문 연결·레슨 12편의 원본 24컷 로딩·기존 94개 객체 보존·지정 삭제 대상 부재와 모바일 표시를 확인했다.
 
 ## v132 몸통 백스윙·힘 뺀 피니시 보완 · 2026-10-12
 
