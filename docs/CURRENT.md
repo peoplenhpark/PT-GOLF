@@ -4,9 +4,9 @@
 
 ## 상태
 
-- 현재 공개 버전: ver2.1 (내부 릴리스 v132, 2026-10-12 23:13 KST 공개 확인). 배포 기준 표시 버전을 0.1 올렸다. 코드 커밋 ce310a3eb1ce1e01fe90d199d6710005964273a6. GitHub Actions 실행 38260806785의 verify/deploy 모두 성공했다.
-- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=132#golf/lessons/lesson_20261012_review . release.json v132 / displayVersion 2.1 및 홈 ver2.1 확인. 골프 99편·198컷, 기존 94개 영상 객체 보존, 신규 5편·원본 10컷 포함 레슨 24컷 로딩·질문 연결·320/390/768px 모바일 가로 넘침 없음 확인.
-- 배포 준비: 내부 v134 / 표시 ver2.2. 2026-10-13 지정 영상 3편 삭제에 이어 백스윙 10편을 ‘기준·방법·확인’ 관점에서 재검토했다. 기존 3편 유지·6편 삭제·1편 준비/자세 이동, 하와이골프 2편 추가로 백스윙 묶음은 5편이다. 전체 로컬 골프 영상은 92편·184컷. 사용자 배포 요청에 따라 공개 검증을 진행한다.
+- 현재 공개 버전: ver2.2 (내부 릴리스 v134, 2026-10-13 01:57 KST 공개 확인). 배포 기준 표시 버전을 0.1 올렸다. 코드 커밋 d12d4d13e6b6ff5a1e224b1815ec47efa4066c59. GitHub Actions 실행 38280425484의 verify/deploy 모두 성공했다.
+- 공개 확인: https://peoplenhpark.github.io/PT-GOLF/?v=134#golf/group/backswing-top . release.json v134 / displayVersion 2.2 및 홈 ver2.2 확인. 골프 92편·184컷, 백스윙 5편·원본 10컷 로딩, 기준·방법·확인 안내, 질문 연결, 최근 레슨 9편 연결, 기존 등록일·개인 메모 보존 및 320/390/768px 모바일 가로 넘침 없음 확인. 필수 Node 26개·구문 21개 및 GitHub 전체 브라우저 검사 통과.
+- 배포 반영: 지정 영상 3편 삭제에 이어 백스윙 10편을 ‘기준·방법·확인’ 관점에서 재검토했다. 기존 3편 유지·6편 삭제·1편 준비/자세 이동, 하와이골프 2편 추가로 백스윙 묶음은 5편이다. 미배포 변경 없음.
 - 새 세션 시작 문서: `docs/PT_GOLF_VER1_5_HANDOFF.md`. **VER1.5는 대화 세션 이름**이며 세션 준비만으로 앱·seed 버전을 바꾸지 않는다.
 - 런타임: 빌드 도구가 필요 없는 HTML/CSS/JavaScript PWA, GitHub Pages 정적 호스팅.
 - 릴리스 버전의 유일한 원본: `release.json`. `release-assets.js`와 URL 버전은 `node scripts/release.cjs`로 생성한다.
