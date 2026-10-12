@@ -1455,5 +1455,69 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "MIx8BbSocFI": [
+    {
+      "src": "media/golf-frames/MIx8BbSocFI-1.webp",
+      "time": 29.25,
+      "label": "옆에서 확인하는 어드레스 자세",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/MIx8BbSocFI-2.webp",
+      "time": 64.35,
+      "label": "백스윙에서 팔·몸통 위치 설명",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "lnzbSVSBevs": [
+    {
+      "src": "media/golf-frames/lnzbSVSBevs-1.webp",
+      "time": 2.75,
+      "label": "엉덩이 각도를 유지하며 골반을 여는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/lnzbSVSBevs-2.webp",
+      "time": 8.25,
+      "label": "골반이 앞으로 밀리는 X 비교",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "Q_kYNFcYL0o": [
+    {
+      "src": "media/golf-frames/Q_kYNFcYL0o-1.webp",
+      "time": 11.7,
+      "label": "아래로 숙여지는 동작의 비교 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/Q_kYNFcYL0o-2.webp",
+      "time": 19.5,
+      "label": "앉았다 일어나는 다리 리듬 설명",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "qJRYOqhK-2c": [
+    {
+      "src": "media/golf-frames/qJRYOqhK-2c-1.webp",
+      "time": 13.35,
+      "label": "한 팔로 회전과 분리 감각을 설명하는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/qJRYOqhK-2c-2.webp",
+      "time": 75.65,
+      "label": "클럽을 보내는 릴리스 비교 시범",
+      "width": 360,
+      "height": 640
+    }
   ]
 };

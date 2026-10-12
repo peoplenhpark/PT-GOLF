@@ -2182,5 +2182,101 @@
     "source": "https://www.youtube.com/watch?v=clEQKV7hWrY",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-11"
+  },
+  {
+    "id": "MIx8BbSocFI",
+    "title": "어드레스부터 백스윙 · 셋업과 손목·몸통 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/MIx8BbSocFI-1.webp",
+        "time": 29.25,
+        "label": "옆에서 확인하는 어드레스 자세",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/MIx8BbSocFI-2.webp",
+        "time": 64.35,
+        "label": "백스윙에서 팔·몸통 위치 설명",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 117,
+    "source": "https://www.youtube.com/watch?v=MIx8BbSocFI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-12"
+  },
+  {
+    "id": "lnzbSVSBevs",
+    "title": "골반 회전 · 힙 힌지 유지와 앞으로 밀림 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/lnzbSVSBevs-1.webp",
+        "time": 2.75,
+        "label": "엉덩이 각도를 유지하며 골반을 여는 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/lnzbSVSBevs-2.webp",
+        "time": 8.25,
+        "label": "골반이 앞으로 밀리는 X 비교",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 11,
+    "source": "https://www.youtube.com/watch?v=lnzbSVSBevs",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-12"
+  },
+  {
+    "id": "Q_kYNFcYL0o",
+    "title": "뒤땅 비교 · 숙임과 다리의 높낮이 리듬",
+    "frames": [
+      {
+        "src": "media/golf-frames/Q_kYNFcYL0o-1.webp",
+        "time": 11.7,
+        "label": "아래로 숙여지는 동작의 비교 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/Q_kYNFcYL0o-2.webp",
+        "time": 19.5,
+        "label": "앉았다 일어나는 다리 리듬 설명",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 26,
+    "source": "https://www.youtube.com/watch?v=Q_kYNFcYL0o",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-12"
+  },
+  {
+    "id": "qJRYOqhK-2c",
+    "title": "릴리스 · 팔·어깨 분리와 클럽 보내는 감각",
+    "frames": [
+      {
+        "src": "media/golf-frames/qJRYOqhK-2c-1.webp",
+        "time": 13.35,
+        "label": "한 팔로 회전과 분리 감각을 설명하는 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/qJRYOqhK-2c-2.webp",
+        "time": 75.65,
+        "label": "클럽을 보내는 릴리스 비교 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 89,
+    "source": "https://www.youtube.com/watch?v=qJRYOqhK-2c",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-12"
   }
 ]
