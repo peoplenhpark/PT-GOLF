@@ -1216,22 +1216,6 @@ window.GolfFrames = {
       "height": 426
     }
   ],
-  "LEv6sXi98Z0": [
-    {
-      "src": "media/golf-frames/LEv6sXi98Z0-1.webp",
-      "time": 17.04,
-      "label": "야구처럼 휘두르는 비교 장면",
-      "width": 360,
-      "height": 480
-    },
-    {
-      "src": "media/golf-frames/LEv6sXi98Z0-2.webp",
-      "time": 21.36,
-      "label": "골프 스윙 시범",
-      "width": 360,
-      "height": 480
-    }
-  ],
   "BvnGOkOMo68": [
     {
       "src": "media/golf-frames/BvnGOkOMo68-1.webp",
@@ -1518,6 +1502,86 @@ window.GolfFrames = {
       "label": "클럽을 보내는 릴리스 비교 시범",
       "width": 360,
       "height": 640
+    }
+  ],
+  "iX_ZnUodsRQ": [
+    {
+      "src": "media/golf-frames/iX_ZnUodsRQ-1.webp",
+      "time": 92.05,
+      "label": "채와 함께 돌아가는 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/iX_ZnUodsRQ-2.webp",
+      "time": 282.87,
+      "label": "회전 후 백스윙 위치",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "7C4pkhts4yk": [
+    {
+      "src": "media/golf-frames/7C4pkhts4yk-1.webp",
+      "time": 6.24,
+      "label": "오른쪽 겨드랑이 헤드커버 준비",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/7C4pkhts4yk-2.webp",
+      "time": 19.5,
+      "label": "스윙 후 피니시 시범",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "WQbV4r6m2Ww": [
+    {
+      "src": "media/golf-frames/WQbV4r6m2Ww-1.webp",
+      "time": 22.33,
+      "label": "클럽을 휘두르는 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/WQbV4r6m2Ww-2.webp",
+      "time": 28.88,
+      "label": "힘을 빼고 샤프트를 등 쪽으로",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "x0PzoVHk9gg": [
+    {
+      "src": "media/golf-frames/x0PzoVHk9gg-1.webp",
+      "time": 107.42,
+      "label": "어깨 쪽으로 이어진 피니시",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/x0PzoVHk9gg-2.webp",
+      "time": 285.58,
+      "label": "아래로 털어서 걸쳐진다는 설명",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "yHVIKXd_Ss8": [
+    {
+      "src": "media/golf-frames/yHVIKXd_Ss8-1.webp",
+      "time": 94.83,
+      "label": "피니시 팔 모양 비교",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/yHVIKXd_Ss8-2.webp",
+      "time": 153.99,
+      "label": "피니시 다리 자세 비교",
+      "width": 640,
+      "height": 360
     }
   ]
 };

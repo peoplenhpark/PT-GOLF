@@ -35,7 +35,7 @@ window.GolfHub = (() => {
   const dateLabel = value => Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).format(new Date(value)) : '날짜 미확인';
   const publishedLabel = v => `<time datetime="${e(v.publishedAt||'')}" title="YouTube 공개일 · 한국 시간">공개 ${e(dateLabel(v.publishedAt))}</time>`;
   const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="앱 최초 등록일 · 한국 시간">등록 ${e(dateLabel(v.addedAt))}</time>`;
-  function pinnedSequence(){return '<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><ol><li>백스윙(일정구간 낮게 끌고 몸통 회전)</li><li>골반 회전(체중이동 + 타격자세 만들기)</li><li>순간 멈춤(버티기) 후 자연스러운 템포</li><li>임팩트에 집중</li></ol></section>';}
+  function pinnedSequence(){return '<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><ol><li>백스윙(일정구간 낮게 끌고 몸통 회전, 오른쪽 옆구리 밀착 여부 체크)</li><li>골반 회전(체중이동 + 타격자세 만들기)</li><li>임팩트에 집중</li><li>피니시 시에 채가 어깨 위를 넘기도록 힘 빼기(빈스윙으로 체크)</li></ol></section>';}
   function change(fn) {
     if (loadError) { api.toast('저장된 골프 기록을 읽지 못했습니다. 기존 기록을 보호하기 위해 저장을 멈췄습니다.'); return false; }
     try {
@@ -309,14 +309,22 @@ window.GolfHub = (() => {
   }
   function lessonVideoSection(l) {
     const collection=l.videoCollection, primary=(collection?.videoIds||l.videoIds||[]).filter(id=>(l.videoIds||[]).includes(id)).map(video).filter(Boolean), other=(collection?(l.videoIds||[]).filter(id=>!collection.videoIds.includes(id)):[]).map(video).filter(Boolean);
+    if(collection?.placement==='top'){
+      const card=v=>compactCard(v).replace('</article>',(l.videoReasons?.[v.id]?'<p class="g-lesson-video-reason">'+e(l.videoReasons[v.id])+'</p>':'')+'</article>');
+      const seen=new Set(primary.map(v=>v.id));
+      const groups=(collection.groups||[]).map(g=>{const items=(g.videoIds||[]).filter(id=>(l.videoIds||[]).includes(id)&&!seen.has(id)).map(video).filter(Boolean);items.forEach(v=>seen.add(v.id));return items.length?'<details class="g-lesson-video-more"><summary>'+e(g.title)+' · '+items.length+'편</summary><div class="g-video-grid">'+items.map(card).join('')+'</div></details>':'';}).join('');
+      const remaining=other.filter(v=>!seen.has(v.id));
+      return '<section class="g-video-section g-lesson-videos"><header><h2>'+e(collection.title)+'</h2></header><p>'+e(collection.intro||'')+'</p><div class="g-video-grid">'+(primary.map(card).join('')||'<p class="g-muted">연결한 영상이 없습니다.</p>')+'</div>'+groups+(remaining.length?'<details><summary>함께 연결한 보조 영상</summary><div class="g-video-grid">'+remaining.map(card).join('')+'</div></details>':'')+'<p class="g-meta">'+e(collection.footer||'')+'</p></section>';
+    }
     return '<section class="g-video-section g-lesson-videos"><header><h2>'+e(collection?.title||'레슨 복습용 보조 영상')+'</h2></header><div class="g-video-grid">'+(primary.map(compactCard).join('')||'<p class="g-muted">연결한 영상이 없습니다.</p>')+'</div>'+(other.length?'<details><summary>함께 연결한 보조 영상 '+other.length+'편</summary><div class="g-video-grid">'+other.map(compactCard).join('')+'</div></details>':'')+'</section>';
   }
   function lessonDetail(id) {
     const l=lesson(id); if(!l) return layout('<p>찾을 수 없는 레슨입니다.</p>','lessons');
     layout(`<a class="back" href="#golf/lessons">‹ 레슨 목록</a><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><h2 class="g-title">${e(l.title)}</h2>${chips(l.topics||[])}
+      ${l.videoCollection?.placement==='top'?lessonVideoSection(l):''}
       ${[['발견한 문제',l.problem],['코치의 교정·느껴야 할 감각',l.correction],['연습 방법·숙제',l.homework],['기존 설명과 달라진 점',l.difference],['내 연습 결과',l.result]].filter(([,s])=>s).map(([t,s])=>block(t,paras(s))).join('')}
       <div class="g-actions">${button('lesson-edit','레슨 수정',`data-id="${e(id)}"`)}</div>
-      ${window.GolfPractice.lessonEvidence(l,state)}${block('연결된 스윙 노트',noteLinks(l.noteIds||[]))}${lessonVideoSection(l)}
+      ${window.GolfPractice.lessonEvidence(l,state)}${block('연결된 스윙 노트',noteLinks(l.noteIds||[]))}${l.videoCollection?.placement==='top'?'':lessonVideoSection(l)}
       ${l.videoCaution?paras(l.videoCaution):''}${state.questions.some(q=>q.lessonId===id)?block('이 레슨에서 확인한 질문',questionRows(state.questions.filter(q=>q.lessonId===id))):''}`,'lessons');
   }
   function field(name,label,value='',type='textarea',required=false) {

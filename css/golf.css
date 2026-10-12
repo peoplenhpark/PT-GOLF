@@ -255,3 +255,6 @@
   .g-lesson-anchor h2,.g-lesson-anchor .g-cue{font-size:18px}
   .g-hub .g-pinned-sequence h2{font-size:18px}
 }
+/* Lesson-specific review cues remain beside their original video cards. */
+.g-lesson-video-reason{padding:10px 12px;margin:0;line-height:1.7;border-top:1px solid var(--golf-line);font-size:14px;overflow-wrap:anywhere}
+.g-lesson-video-more{margin:14px 0}.g-lesson-video-more>summary{padding:12px 0;min-height:44px;font-weight:700}.g-lesson-video-more>.g-video-grid{margin-top:12px}

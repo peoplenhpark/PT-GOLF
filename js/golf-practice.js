@@ -63,7 +63,7 @@ window.GolfPractice = (() => {
       }
     });
   }
-  const lessonList=()=>ctx?.lessons?.()||window.GolfContent.lessons;
+  const lessonList=()=>ctx?.lessons?.()||[...window.GolfContent.lessons].sort((a,b)=>b.date.localeCompare(a.date));
   const lessonById=id=>lessonList().find(l=>l.id===id);
   const lessonLink=l=>`<a href="#golf/lessons/${encodeURIComponent(l.id)}">${esc(l.date)} 레슨 보기 ›</a>`;
   function practiceSource(s){
@@ -73,7 +73,7 @@ window.GolfPractice = (() => {
   }
   function lessonHero(l){
     if(!l)return '';
-    return `<section class="g-lesson-anchor"><p class="g-meta">이번 레슨부터 복습 · ${esc(l.date)}</p><h2>${esc(l.title)}</h2><p class="g-cue">${esc(l.practiceCue||l.correction)}</p>${(l.practicePoints||[]).length?`<ol>${l.practicePoints.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`:''}<p class="g-meta">${esc((l.practiceClubs||[]).join(' · '))}</p><div class="g-actions"><button class="g-btn g-primary" type="button" data-practice="lesson" data-id="${esc(l.id)}">이 레슨으로 오늘 연습</button>${lessonLink(l)}</div>${l.videoCollection?`<p><a href="#golf/group/${esc(l.videoCollection.groupId)}">첫 레슨 복습 영상 ${l.videoCollection.videoIds.length}편 ›</a></p>`:''}<p class="g-meta">레슨 → 연습 결과 → 내 감각·보조 영상 → 다음 레슨 질문</p></section>`;
+    return `<section class="g-lesson-anchor"><p class="g-meta">이번 레슨부터 복습 · ${esc(l.date)}</p><h2>${esc(l.title)}</h2><p class="g-cue">${esc(l.practiceCue||l.correction)}</p>${(l.practicePoints||[]).length?`<ol>${l.practicePoints.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`:''}<p class="g-meta">${esc((l.practiceClubs||[]).join(' · '))}</p><div class="g-actions"><button class="g-btn g-primary" type="button" data-practice="lesson" data-id="${esc(l.id)}">이 레슨으로 오늘 연습</button>${lessonLink(l)}</div>${l.videoCollection?.groupId?`<p><a href="#golf/group/${esc(l.videoCollection.groupId)}">첫 레슨 복습 영상 ${l.videoCollection.videoIds.length}편 ›</a></p>`:''}<p class="g-meta">레슨 → 연습 결과 → 내 감각·보조 영상 → 다음 레슨 질문</p></section>`;
   }
   function lessonHome(s,list){
     const l=list[0];if(!l)return '';
