@@ -86,22 +86,22 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,198);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,184);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-top').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),13);
-  assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','7sNhk9PhBxc','ojzyFHAQWnw']);
+  assert.equal(await page.locator('.g-video-mini').count(),5);
+  assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['T2FBx83DXvg','iX_ZnUodsRQ','NYY2HRNojPc']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).click();
-  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),7);
-  await page.goto(base+'#golf/videos/QLJDoGT7-2U');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
+  await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),5);
+  await page.goto(base+'#golf/videos/aaOw2sdp-io');await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'참고 중');
   await page.locator('#g-video-status').selectOption('프로에게 질문');await page.locator('#g-video-memo').fill('검증: 편안함은 좋음, 타점 4/5. 오른팔 위치 질문');await page.locator('[data-g-form=video] button').click();
   await page.reload();await page.locator('#g-video-status').waitFor();assert.equal(await page.locator('#g-video-status').inputValue(),'프로에게 질문');assert.match(await page.locator('#g-video-memo').inputValue(),/타점 4\/5/);
-  await page.goto(base+'#golf/topic/'+encodeURIComponent('백스윙 시 오른팔 위치'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),5);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
-  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),8);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
+  await page.goto(base+'#golf/topic/'+encodeURIComponent('백스윙 시 오른팔 위치'));await page.locator('.g-video-mini').first().waitFor();assert.equal(await page.locator('.g-video-mini').count(),2);assert.match(await page.locator('.g-review-memo').textContent(),/타점 4\/5/);
+  await page.goto(base+'#golf/lessons/lesson_20261005_first');await page.locator('.g-lesson-videos').waitFor();assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-mini').count(),1);assert.match(await page.locator('.g-lesson-videos').innerText(),/프로에게 질문/);
   const afterBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));for(const key of ['lessons','questions','focus','practiceRecords'])assert.deepEqual(afterBackswing[key],beforeBackswing[key]);for(const [id,note]of Object.entries(beforeBackswing.videoNotes))assert.deepEqual(afterBackswing.videoNotes[id],note);
-  for(const width of [320,390,768])for(const hash of ['#golf/group/backswing-top','#golf/topic/'+encodeURIComponent('백스윙 시 몸통 회전'),'#golf/videos/DOf7sAtTJYw','#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
+  for(const width of [320,390,768])for(const hash of ['#golf/group/backswing-top','#golf/topic/'+encodeURIComponent('백스윙 시 몸통 회전'),'#golf/videos/NYY2HRNojPc','#golf/today','#golf/notes/1004','#golf/lessons','#golf/videos']){
     await page.setViewportSize({width,height:844});await page.goto(base+hash);await page.locator('.g-tabs').waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+hash);
   }
   await page.setViewportSize({width:390,height:844});
@@ -119,10 +119,10 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(lessonRecords.length,2);assert.deepEqual(lessonRecords[0],afterPractice.practiceRecords[0]);assert.equal(lessonRecords[1].lessonId,'lesson_20261012_review');assert.equal(lessonRecords[1].comfort,'편안함');
   await page.goto(base+'#golf/lessons/lesson_20261012_review');await page.locator('.g-lesson-evidence').waitFor();assert.match(await page.locator('.g-hub').innerText(),/연결된 기록 1묶음 · 5구/);
   assert.equal(await page.locator('.g-lesson-videos>.g-video-grid>.g-video-card').count(),3);
-  assert.deepEqual(await page.locator('.g-lesson-videos>.g-video-grid .g-mini-detail').evaluateAll(es=>es.map(e=>e.getAttribute('href').split('/').at(-1))),['aaOw2sdp-io','u_Td1XU3JKo','0mNd_dCea4Q']);
-  assert.equal(await page.locator('.g-lesson-video-reason').count(),12);
-  assert.equal(await page.locator('.g-lesson-video-more:not([open])').count(),3);
-  await page.locator('.g-lesson-video-more summary').first().click();assert.equal(await page.locator('.g-lesson-video-more[open] .g-video-card').count(),3);
+  assert.deepEqual(await page.locator('.g-lesson-videos>.g-video-grid .g-mini-detail').evaluateAll(es=>es.map(e=>e.getAttribute('href').split('/').at(-1))),['T2FBx83DXvg','NYY2HRNojPc','aaOw2sdp-io']);
+  assert.equal(await page.locator('.g-lesson-video-reason').count(),9);
+  assert.equal(await page.locator('.g-lesson-video-more:not([open])').count(),2);
+  await page.locator('.g-lesson-video-more summary').first().click();assert.equal(await page.locator('.g-lesson-video-more[open] .g-video-card').count(),2);
   assert.match(await page.locator('.g-hub').innerText(),/추천하거나 함께 본 영상으로 확인된 것은 아닙니다/);
   await page.goto(base+'#golf/notes/1004');await page.locator('.g-lesson-bridge').waitFor();assert.match(await page.locator('.g-original').textContent(),/양 어깨는 거의 고정/);assert.match(await page.locator('.g-lesson-bridge').textContent(),/잠시 보류/);
   await page.goto(base+'#golf/lessons');await page.locator('[data-g=lesson-new]').click();await page.locator('[data-g-form=lesson]').waitFor();

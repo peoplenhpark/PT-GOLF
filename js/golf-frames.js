@@ -16,22 +16,6 @@ window.GolfFrames = {
       "height": 640
     }
   ],
-  "ojzyFHAQWnw": [
-    {
-      "src": "media/golf-frames/ojzyFHAQWnw-1.webp",
-      "time": 2.16,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/ojzyFHAQWnw-2.webp",
-      "time": 8.16,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
   "wBlnDaqkGi0": [
     {
       "src": "media/golf-frames/wBlnDaqkGi0-1.webp",
@@ -347,22 +331,6 @@ window.GolfFrames = {
     {
       "src": "media/golf-frames/4uQe-J5qM2c-2.webp",
       "time": 39.2,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "7sNhk9PhBxc": [
-    {
-      "src": "media/golf-frames/7sNhk9PhBxc-1.webp",
-      "time": 7.92,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/7sNhk9PhBxc-2.webp",
-      "time": 29.92,
       "label": "장면 2",
       "width": 360,
       "height": 640
@@ -811,86 +779,6 @@ window.GolfFrames = {
     {
       "src": "media/golf-frames/EgdcUOkvJKk-2.webp",
       "time": 77,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "0mNd_dCea4Q": [
-    {
-      "src": "media/golf-frames/0mNd_dCea4Q-1.webp",
-      "time": 15.4,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/0mNd_dCea4Q-2.webp",
-      "time": 27.28,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "X0IcCD0NT9I": [
-    {
-      "src": "media/golf-frames/X0IcCD0NT9I-1.webp",
-      "time": 16.1,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/X0IcCD0NT9I-2.webp",
-      "time": 36.8,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "QLJDoGT7-2U": [
-    {
-      "src": "media/golf-frames/QLJDoGT7-2U-1.webp",
-      "time": 19.25,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/QLJDoGT7-2U-2.webp",
-      "time": 39.05,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "DOf7sAtTJYw": [
-    {
-      "src": "media/golf-frames/DOf7sAtTJYw-1.webp",
-      "time": 24.91,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/DOf7sAtTJYw-2.webp",
-      "time": 41.83,
-      "label": "장면 2",
-      "width": 360,
-      "height": 640
-    }
-  ],
-  "iqK8wC0JFTg": [
-    {
-      "src": "media/golf-frames/iqK8wC0JFTg-1.webp",
-      "time": 3.06,
-      "label": "장면 1",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/iqK8wC0JFTg-2.webp",
-      "time": 9.54,
       "label": "장면 2",
       "width": 360,
       "height": 640
@@ -1360,22 +1248,6 @@ window.GolfFrames = {
       "height": 426
     }
   ],
-  "u_Td1XU3JKo": [
-    {
-      "src": "media/golf-frames/u_Td1XU3JKo-1.webp",
-      "time": 6.24,
-      "label": "손으로 들어 올린 백스윙 비교",
-      "width": 240,
-      "height": 426
-    },
-    {
-      "src": "media/golf-frames/u_Td1XU3JKo-2.webp",
-      "time": 17.04,
-      "label": "왼어깨를 턱 아래로 보내는 회전 시범",
-      "width": 240,
-      "height": 426
-    }
-  ],
   "eOxiYC684K0": [
     {
       "src": "media/golf-frames/eOxiYC684K0-1.webp",
@@ -1520,22 +1392,6 @@ window.GolfFrames = {
       "height": 360
     }
   ],
-  "7C4pkhts4yk": [
-    {
-      "src": "media/golf-frames/7C4pkhts4yk-1.webp",
-      "time": 6.24,
-      "label": "오른쪽 겨드랑이 헤드커버 준비",
-      "width": 640,
-      "height": 360
-    },
-    {
-      "src": "media/golf-frames/7C4pkhts4yk-2.webp",
-      "time": 19.5,
-      "label": "스윙 후 피니시 시범",
-      "width": 640,
-      "height": 360
-    }
-  ],
   "WQbV4r6m2Ww": [
     {
       "src": "media/golf-frames/WQbV4r6m2Ww-1.webp",
@@ -1582,6 +1438,38 @@ window.GolfFrames = {
       "label": "피니시 다리 자세 비교",
       "width": 640,
       "height": 360
+    }
+  ],
+  "T2FBx83DXvg": [
+    {
+      "src": "media/golf-frames/T2FBx83DXvg-1.webp",
+      "time": 383,
+      "label": "헤드 뒤 공으로 출발 준비",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/T2FBx83DXvg-2.webp",
+      "time": 384,
+      "label": "공을 굴린 뒤 백스윙",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "NYY2HRNojPc": [
+    {
+      "src": "media/golf-frames/NYY2HRNojPc-1.webp",
+      "time": 76.86,
+      "label": "팔을 모으기보다 공간 확인",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/NYY2HRNojPc-2.webp",
+      "time": 107.97,
+      "label": "탑에서 어깨 높이 비교",
+      "width": 360,
+      "height": 640
     }
   ]
 };

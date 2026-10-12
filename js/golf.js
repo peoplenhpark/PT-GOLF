@@ -90,11 +90,11 @@ window.GolfHub = (() => {
   };
   function practicalSummary(v) {
     const p=practical(v);
-    const rows=[[p.labels[0],p.action],[p.labels[1],p.feel],[p.labels[2],p.check]];
+    const rows=v.backswingGuide?[['좋은 기준',v.backswingGuide.criterion],['해보는 방법',p.action],['스스로 확인',p.feel],['레슨에서 확인',p.check]]:[[p.labels[0],p.action],[p.labels[1],p.feel],[p.labels[2],p.check]];
     return `<section class="g-practical-summary" aria-label="${e(v.title)} 적용 요약">
       <div class="g-practical-head"><h2>한눈에 적용</h2><span>${e(content.evidenceFor(v).label)}</span></div>
       <dl>${rows.map(([label,text])=>`<div><dt>${e(label)}</dt><dd>${e(text)}</dd></div>`).join('')}</dl>
-      <p class="g-practical-caution">${e(p.caution)}</p>
+      <p class="g-practical-caution">${e(v.backswingGuide?.caution||p.caution)}</p>
     </section>`;
   }
   function sourceDetail(v) {
@@ -169,10 +169,15 @@ window.GolfHub = (() => {
     const p=practical(v);
     return `<article class="g-video-card">${frames(v)}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}${n.status ? ' · '+ e(n.status) : ''}</div><a class="g-card-title" href="${href('videos',v.id)}">${n.favorite?'<span class="g-favorite-indicator" aria-label="즐겨찾기">★</span> ':''}${e(videoTitle(v))} <span>›</span></a><p class="g-card-takeaway"><strong>${e(p.labels[0])}</strong>${e(p.action)}</p>${lessonConnection(v)}${videoReview(v)}${chips(v.topics)}${viewOptions(displayVideo(v),true)}</article>`;
   }
+  function backswingGuide(v) {
+    if(!v.backswingGuide)return '';
+    const p=practical(v),g=v.backswingGuide;
+    return '<details class="g-backswing-guide"><summary>기준 · 방법 · 확인</summary><dl>'+[['좋은 기준',g.criterion],['해보는 방법',p.action],['스스로 확인',p.feel]].map(([label,text])=>'<div><dt>'+e(label)+'</dt><dd>'+e(text)+'</dd></div>').join('')+'</dl><p class="g-meta">'+e(g.range)+'</p><p class="g-meta">'+e(g.caution)+'</p></details>';
+  }
   function compactCard(v) {
     const n = state.videoNotes[v.id] || {};
     const p=practical(v);
-    return `<article class="g-video-card g-video-mini">${frames(v)}<a class="g-mini-detail" href="${href('videos',v.id)}"><span class="g-mini-title">${n.favorite?'<span class="g-favorite-indicator" aria-label="즐겨찾기">★</span> ':''}${e(videoTitle(v))} <span aria-hidden="true">›</span></span><span class="g-mini-takeaway"><b>${e(v.lessonConnection?'레슨과 연결':p.labels[0])}</b>${e(v.lessonConnection||p.action)}</span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${addedLabel(v)} · ${publishedLabel(v)}</span></a>${videoReview(v)}<a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(videoTitle(v))} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
+    return `<article class="g-video-card g-video-mini">${frames(v)}<a class="g-mini-detail" href="${href('videos',v.id)}"><span class="g-mini-title">${n.favorite?'<span class="g-favorite-indicator" aria-label="즐겨찾기">★</span> ':''}${e(videoTitle(v))} <span aria-hidden="true">›</span></span><span class="g-mini-takeaway"><b>${e(v.backswingGuide?.role||(v.lessonConnection?'레슨과 연결':p.labels[0]))}</b>${e(v.backswingGuide?p.action:(v.lessonConnection||p.action))}</span><span class="g-mini-meta">${e(v.channel)} · ${e(v.duration)}${n.status?' · '+e(n.status):''}</span><span class="g-mini-date">${addedLabel(v)} · ${publishedLabel(v)}</span></a>${backswingGuide(v)}${videoReview(v)}<a class="g-mini-play" href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer" aria-label="${e(videoTitle(v))} · YouTube 원본 재생 (새 탭)"><span aria-hidden="true">▶</span><span>원본 ↗</span></a></article>`;
   }
   function lessonRow(l) { return `<article class="g-lesson-row"><div class="g-meta">${e(l.date)}${l.coach?' · '+e(l.coach):''}</div><a class="g-card-title" href="${href('lessons',l.id)}">${e(l.title)} ›</a><p>${e(l.correction || l.problem || '')}</p>${chips(l.topics || [])}</article>`; }
   function questionRows(list) {
