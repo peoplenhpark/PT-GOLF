@@ -2044,5 +2044,53 @@ window.ExerciseMedia = {
         "viewer": "media/3d/viewer.html?exercise=ht_chest_six&variant=ht_chest_six_squeeze"
       }
     ]
+  },
+  "pt_lunge_ball_rotation": {
+    "name": "런지 자세 공 들고 몸통 회전",
+    "kind": "ptlungerotation",
+    "target": "core",
+    "captions": [
+      "런지 자세 · 공 양손 지지",
+      "몸통과 공을 함께 회전"
+    ],
+    "notes": [
+      "런지 자세에서 몸의 지지를 잡고 양손으로 공을 듭니다.",
+      "런지 자세를 유지하며 공과 몸통을 함께 회전합니다."
+    ],
+    "focus": {
+      "muscle": "몸통 회전·코어 + 하체 자세 지지",
+      "move": "런지 자세를 유지한 채 양손의 공과 몸통을 좌우로 회전",
+      "feel": "하체의 지지는 유지되고 몸통의 회전은 통제되는 느낌"
+    },
+    "visualNote": "사용자 확인 동작을 재구성한 예시입니다. 실제 공 무게·높이·회전 각도·뒷무릎 접촉 여부는 미확인입니다. 3D는 좌우 방향을 보여주며 수업 반복은 왼쪽 15회·오른쪽 15회입니다.",
+    "images": [
+      "docs/images/guides/pt_lunge_ball_rotation-start.webp",
+      "docs/images/guides/pt_lunge_ball_rotation-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_lunge_ball_rotation"
+  },
+  "pt_low_cable_curl": {
+    "name": "로우 케이블 컬 (이두 · 언더그립)",
+    "kind": "ptlowcablecurl",
+    "target": "biceps",
+    "captions": [
+      "아래쪽 케이블 · 언더그립",
+      "이두로 당겨 올리기"
+    ],
+    "notes": [
+      "케이블 고정쇠를 아래쪽에 두고 손바닥이 위로 향하는 언더그립으로 잡습니다.",
+      "손잡이를 손끝에 걸치기보다 두툼하게 잡는 느낌을 유지합니다."
+    ],
+    "focus": {
+      "muscle": "상완 이두",
+      "move": "아래쪽 케이블을 언더그립으로 잡고 팔꿈치를 접어 당긴 뒤 통제해 내리기",
+      "feel": "손목이 꺾이거나 어깨가 말리지 않은 상태에서 이두가 수축·이완하는 느낌"
+    },
+    "visualNote": "아래쪽 고정쇠·15kg·언더그립은 이번 수업 확인값입니다. 손잡이 모양은 미확인이라 단순 바로 표시했습니다. 팔 궤적·기구 치수는 예시이며 중량판 그림은 15kg 실측을 나타내지 않습니다.",
+    "images": [
+      "docs/images/guides/pt_low_cable_curl-start.webp",
+      "docs/images/guides/pt_low_cable_curl-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=pt_low_cable_curl"
   }
 };

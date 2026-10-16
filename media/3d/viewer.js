@@ -5,7 +5,7 @@ try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
  const variant=params.get('variant');
  const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=134#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=136#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -56,7 +56,7 @@ try{
   torsoEll(p,at(p.hip,0,.10,0),[.153,.17,.104]);
   torsoEll(p,p.chest,[.207,.177,.119]);
   torsoEll(p,at(p.hip,0,.22,.013),[.14,.16,.10]);
-  torsoEll(p,p.hip,[.17,.13,.125],cloth);
+  torsoEll(p.pelvisFrame||p,p.hip,[.17,.13,.125],cloth);
   limb(p.neck,p.head,.053);torsoEll(p,p.head,[.09,.112,.09]);
   torsoEll(p,at(p.head,0,-.035,.060),[.062,.056,.047]);
   torsoEll(p,at(p.head,0,0,.091),[.016,.025,.024]);
@@ -71,8 +71,17 @@ try{
    const bicep=add(mix(a,b,.52),mul(p.front,.035));ell(body,bicep,[.037,.084,.032],targetMat('biceps'),sub(b,a));
    if(entry.target==='triceps')ell(body,add(mix(a,b,.5),mul(p.front,-.04)),[.040,.09,.036],red,sub(b,a));
    ell(body,b,[.034,.036,.034],joint);limb(b,c,.034);
-   ell(body,c,[.038,.047,.025],skin,sub(c,b));
-   for(let n=0;n<4;n++)ell(body,add(c,add(mul(unit(sub(c,b)),.039),mul(p.right,(n-1.5)*.014))),[.006,.028,.008],skin,sub(c,b));
+   if(p.palmNormals?.[i]){
+    // Supinated palm has its own frame; fingers wrap the horizontal example handle.
+    const along=unit(sub(c,b)),normal=p.palmNormals[i],across=unit(cross(along,normal));
+    const hand=ell(body,add(c,mul(normal,-.014)),[.038,.042,.019],skin);
+    hand.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3(...across),new THREE.Vector3(...along),new THREE.Vector3(...normal)));
+    for(let n=0;n<4;n++)ell(body,add(c,add(mul(across,(n-1.5)*.014),mul(normal,.014))),[.006,.020,.009],skin,along);
+    ell(body,add(c,add(mul(across,-s*.042),mul(normal,.005))),[.012,.025,.012],skin,along);
+   }else{
+    ell(body,c,[.038,.047,.025],skin,sub(c,b));
+    for(let n=0;n<4;n++)ell(body,add(c,add(mul(unit(sub(c,b)),.039),mul(p.right,(n-1.5)*.014))),[.006,.028,.008],skin,sub(c,b));
+   }
    limb(h,k,.084);ell(body,mix(h,k,.16),[.10,.125,.108],cloth,sub(k,h));
    const thigh=unit(sub(k,h)),forward=unit(sub(p.front,mul(thigh,P.len(cross(thigh,p.front))<.01?1:0)));
    ell(body,add(mix(h,k,.58),mul(forward,.042)),[.060,.130,.040],targetMat('quads'),sub(k,h));
@@ -253,6 +262,13 @@ try{
       beam(equipment,add(a,[0,0,-.15]),add(a,[0,0,.15]),.018,steel);
       for(const z of [-.14,.14]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(a,[0,0,z]));o.scale.set(.075,.055,.075);o.rotation.x=Math.PI/2;}
      }break;}
+    case 'ptcurlcable':{
+     tower(e.pulley[2]);
+     const pulley=mesh(equipment,cylinder,accent);pulley.position.set(...e.pulley);pulley.scale.set(.065,.055,.065);pulley.rotation.z=Math.PI/2;
+     cable(e.pulley,e.handle);
+     beam(equipment,add(p.wrists[0],[-.06,0,0]),add(p.wrists[1],[.06,0,0]),.016,steel);
+     break;
+    }
     case 'lowcable':tower(1.15);for(const a of p.wrists){cable([0,.84,1.15],a);handle(a,true);}break;
     case 'footplate':block(equipment,[0,.24,.64],[.55,.07,.24]);break;
     case 'chestpad':block(equipment,[0,1.0,.145],[.25,.28,.1]);beam(equipment,[0,.2,.7],[0,1.0,.2],.035);break;

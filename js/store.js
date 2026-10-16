@@ -39,6 +39,7 @@ const Store = (() => {
 
   function validateSeed(data) {
     if (!data || !Array.isArray(data.parts) || !Array.isArray(data.principles) || !Array.isArray(data.exercises)) return false;
+    if(Array.isArray(data.ptSessions)&&data.ptSessions.some(s=>s?.summary!==undefined&&(!Array.isArray(s.summary)||!s.summary.every(x=>typeof x==='string'))))return false;
     if(data.ptSessions!==undefined && (!Array.isArray(data.ptSessions)||!data.ptSessions.every(s=>s&&typeof s.id==='string'&&typeof s.date==='string'&&typeof s.title==='string'&&typeof s.source==='string'&&typeof s.evidence==='string'&&Array.isArray(s.items)&&s.items.every(i=>i&&typeof i.title==='string'&&typeof i.range==='string'&&typeof i.uncertainty==='string'&&Array.isArray(i.points)&&i.points.every(p=>typeof p==='string')&&(i.exerciseId===null||data.exercises.some(e=>e.id===i.exerciseId&&e.part==='pt'))))))return false;
     const ids = new Set();
     return data.exercises.every(ex => {

@@ -330,7 +330,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   }
   await context.setOffline(false);assert.deepEqual(errors,[]);
   // October PT session and expanded editing are verified only in this isolated context.
-  await page.goto(base+'#pt');await page.locator('.coach-fold>summary').click();await page.locator('.pt-session-note>summary').click();await page.locator('.pt-session-links').waitFor();assert.equal(await page.locator('.pt-session-links a').count(),4);
+  await page.goto(base+'#pt');await page.getByText('PT 수업 기록',{exact:true}).click();const october7=page.locator('.pt-session-note').filter({has:page.locator('summary strong').filter({hasText:'2026-10-07'})});await october7.locator(':scope > summary').click();await october7.locator('.pt-session-links').waitFor();assert.equal(await october7.locator('.pt-session-links a').count(),4);
   await page.locator('.pt-session-links a[href="#exercise/pt_lunge"]').click();await page.locator('.d-title').waitFor();assert.match(await page.locator('.pt-session-note').innerText(),/회전 없는 일반 런지/);
   await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth===700));
   await page.locator('[data-act=fav]').click();await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('런지 개인 메모 보존');await page.locator('#memo-save').click();

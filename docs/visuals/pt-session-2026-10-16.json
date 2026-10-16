@@ -1,0 +1,33 @@
+{
+  "source": "media/3d/poses.js + media/3d/viewer.js; confirmed 2026-10-16 user descriptions and supplied transcript",
+  "method": "Native Three.js render of the same interactive model. No external images or generative image model.",
+  "prompt": null,
+  "renderScript": "C:/Users/peopl/render-pt-1016.cjs",
+  "viewport": [
+    900,
+    1100
+  ],
+  "outputWidth": 700,
+  "items": [
+    {
+      "id": "pt_lunge_ball_rotation",
+      "kind": "ptlungerotation",
+      "phases": [
+        0,
+        0.25
+      ],
+      "confirmed": "Lunge stance held with a ball in both hands; left 15 repetitions, right 15 repetitions.",
+      "illustrative": "Ball mass/height, stance depth/width, rear knee contact and rotation angle unconfirmed. Pelvis and feet fixed; thorax and ball rotate. Animation demonstrates both directions rather than prescribing alternating repetitions."
+    },
+    {
+      "id": "pt_low_cable_curl",
+      "kind": "ptlowcablecurl",
+      "phases": [
+        0,
+        0.5
+      ],
+      "confirmed": "Low cable anchor; 15 kg; underhand grip; biceps movement.",
+      "illustrative": "Handle shape unconfirmed: a simple straight handle is illustrative. Arm path and machine dimensions not measured. Weight stack illustration is not a calibrated 15 kg model."
+    }
+  ]
+}

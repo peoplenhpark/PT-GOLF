@@ -225,7 +225,7 @@ const Theme = (() => {
   }
   function ptSessionHtml(id) {
     if(id)return (Store.getExerciseSessions?.(id)||[]).map(s=>'<section class="pt-session-note"><h2>'+esc(s.date)+' PT 수업 보강</h2>'+ptSessionItemHtml({...s.item,exerciseId:null}).replace('<span class="tag">동작 종류 확인 대기</span>','')+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></section>').join('');
-    return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note"><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>').join('')+'</div>'+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></details>').join('');
+    return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note"><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>item.exerciseId?'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>':'<div><strong>'+esc(item.title)+'</strong><small>명칭 확인 대기 · 수업 정리에서 내용 보기</small></div>').join('')+'</div>'+window.CoachDesk.sessionDetails(s)+'</details>').join('');
   }
   function renderPart(part) {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}

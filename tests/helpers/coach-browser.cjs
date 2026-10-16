@@ -3,6 +3,18 @@ module.exports=async(browser,base)=>{
  const context=await browser.newContext({viewport:{width:390,height:844}}),p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
  try{
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);
+  const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
+  assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),0,'confirmed movements link to their own exercises');
+  await recent.locator('.coach-session-details').first().locator('summary').click();
+  assert.match(await recent.locator('.coach-session-details').first().innerText(),/25:32–27:03/);
+  assert.match(await recent.locator('.coach-session-details').first().innerText(),/아래쪽 고정쇠·15kg·언더그립/);
+  assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
+  await p.goto(base+'#pt');await p.getByText('PT 수업 기록',{exact:true}).click();await p.locator('.pt-session-note').first().locator(':scope > summary').click();
+  assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),5);
+  assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
+  await p.locator('.pt-session-note').first().locator('.coach-session-details > summary').click();
+  assert.match(await p.locator('.pt-session-note').first().innerText(),/처음부터 버티며 내리고/);
+  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();
   await p.getByRole('link',{name:'첫 기준 고르기'}).click();await p.locator('[data-coach-source]').selectOption('pt:pt_hip_openclose_stretch');
   const form=p.locator('[data-coach-form=criterion]');await form.locator('[name=cue]').fill('발 지지와 몸 전체 회전');await form.locator('[name=check]').fill('골반과 가슴이 함께 움직이는지 확인');
   await p.reload();await form.waitFor();assert.equal(await form.locator('[name=cue]').inputValue(),'발 지지와 몸 전체 회전','criterion draft survives reload');

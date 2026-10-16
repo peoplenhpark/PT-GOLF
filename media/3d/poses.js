@@ -69,6 +69,25 @@ function pose(kind,t,id){
   arms(p,S.map(s=>add(p.hip,[s*.20,.07,.02])),S.map(s=>[s,0,-1]));
   p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
   p.target=[0,.80,.03];p.distance=3.9;
+ }else if(kind==='ptlungerotation'){
+  // Fixed split stance/pelvis; the thorax carries a ball. Angles are illustrative.
+  const h=(t*2)%1,r=h<.12?0:h<.46?smooth((h-.12)/.34):h<.60?1:1-smooth((h-.60)/.40);
+  const turn=(t<.5?1:-1)*.60*r,lower=base([0,.66,.02]);
+  p=base([0,.66,.02],0,turn);p.hips=lower.hips;p.pelvisFrame=lower;
+  legs(p,[[-.14,.065,.44],[.14,.12,-.40]],[[0,0,1],[0,-1,.4]]);
+  const ball=add(p.chest,add(mul(p.up,.025),mul(p.front,.34)));
+  arms(p,S.map(s=>add(ball,mul(p.right,s*.12))),S.map(s=>add(mul(p.right,s),[0,-1,0])));
+  p.equipment=[{type:'ball',at:ball}];p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
+  p.target=[0,.78,.02];p.distance=3.9;stage=r<.01?0:1;
+ }else if(kind==='ptlowcablecurl'){
+  p=base([0,.90,0]);legs(p,S.map(s=>[s*.15,.065,.02]));
+  const upper=.08+1.02*q,fore=.25+2.55*q;
+  p.elbows=p.shoulders.map(a=>add(a,[0,-.29*Math.cos(upper),.29*Math.sin(upper)]));
+  p.wrists=p.elbows.map(a=>add(a,[0,-.285*Math.cos(fore),.285*Math.sin(fore)]));
+  p.palmNormals=S.map(()=>[0,Math.sin(fore),Math.cos(fore)]);
+  const handle=mix(p.wrists[0],p.wrists[1],.5);
+  p.equipment=[{type:'ptcurlcable',pulley:[0,.14,1.10],handle}];
+  p.target=[0,.88,.35];p.distance=4.5;
  }else if(kind==='htfloorsplit'){
   p=base([0,.76-.24*q,0],.08+.12*q);
   legs(p,[[-.12,.065,.40],[.12,.11,-.39]],[[0,0,1],[0,0,1]]);
