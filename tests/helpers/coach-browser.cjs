@@ -13,7 +13,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),5);
   assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
   await p.locator('.pt-session-note').first().locator('.coach-session-details > summary').click();
-  assert.match(await p.locator('.pt-session-note').first().innerText(),/처음부터 버티며 내리고/);
+  assert.match(await p.locator('.pt-session-note').first().innerText(),/가슴이 유지되는 깊이까지만/);
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();
   await p.getByRole('link',{name:'첫 기준 고르기'}).click();await p.locator('[data-coach-source]').selectOption('pt:pt_hip_openclose_stretch');
   const form=p.locator('[data-coach-form=criterion]');await form.locator('[name=cue]').fill('발 지지와 몸 전체 회전');await form.locator('[name=check]').fill('골반과 가슴이 함께 움직이는지 확인');

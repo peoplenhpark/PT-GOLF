@@ -39,6 +39,7 @@ const Store = (() => {
 
   function validateSeed(data) {
     if (!data || !Array.isArray(data.parts) || !Array.isArray(data.principles) || !Array.isArray(data.exercises)) return false;
+    if(data.removedExerciseIds!==undefined&&(!Array.isArray(data.removedExerciseIds)||!data.removedExerciseIds.every(id=>typeof id==='string'&&id&&!data.exercises.some(e=>e.id===id))))return false;
     if(Array.isArray(data.ptSessions)&&data.ptSessions.some(s=>s?.summary!==undefined&&(!Array.isArray(s.summary)||!s.summary.every(x=>typeof x==='string'))))return false;
     if(data.ptSessions!==undefined && (!Array.isArray(data.ptSessions)||!data.ptSessions.every(s=>s&&typeof s.id==='string'&&typeof s.date==='string'&&typeof s.title==='string'&&typeof s.source==='string'&&typeof s.evidence==='string'&&Array.isArray(s.items)&&s.items.every(i=>i&&typeof i.title==='string'&&typeof i.range==='string'&&typeof i.uncertainty==='string'&&Array.isArray(i.points)&&i.points.every(p=>typeof p==='string')&&(i.exerciseId===null||data.exercises.some(e=>e.id===i.exerciseId&&e.part==='pt'))))))return false;
     const ids = new Set();
@@ -77,7 +78,7 @@ const Store = (() => {
     return list.find(item => item.scope === category) || list.find(item => item.scope === '*') || null;
   }
   function getAll() {
-    const local = overlay(), deleted = new Set([...local.deleted, ...getAllDeletionRequests().filter(item => item.kind === 'exercise' && item.status !== 'cancelled').map(item => item.contentId)]), seen = new Set();
+    const local = overlay(), deleted = new Set([...(seed.removedExerciseIds||[]), ...local.deleted, ...getAllDeletionRequests().filter(item => item.kind === 'exercise' && item.status !== 'cancelled').map(item => item.contentId)]), seen = new Set();
     const result = [];
     for (const ex of seed.exercises) {
       seen.add(ex.id);

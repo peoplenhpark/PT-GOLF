@@ -36,7 +36,7 @@ for(const v of c.videos)assert(c.videoGroupFor(v));
 const seed=JSON.parse(read('data/seed.json'));
 const ptIds=seed.exercises.filter(e=>e.part==='pt').map(e=>e.id).sort();
 const mediaIds=Object.keys(media).sort();
-assert.equal(ptIds.length,53);
+assert.equal(ptIds.length,52);
 assert.deepEqual(mediaIds,seed.exercises.filter(e=>['pt','ht'].includes(e.part)).map(e=>e.id).sort());
 for(const [id,m] of Object.entries(media)){
  if(m.pending){
@@ -92,4 +92,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 92 originals, 8 groups, no golf 3D UI/cache, 53 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 92 originals, 8 groups, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
