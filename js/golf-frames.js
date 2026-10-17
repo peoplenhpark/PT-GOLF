@@ -1471,5 +1471,149 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "WqKgbsWnDxE": [
+    {
+      "src": "media/golf-frames/WqKgbsWnDxE-1.webp",
+      "time": 4.96,
+      "label": "클럽을 밀어 올릴 때 팔꿈치가 벌어지는 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/WqKgbsWnDxE-2.webp",
+      "time": 12.16,
+      "label": "물건을 집어 올리는 감각을 연결한 백스윙",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "RBJllwVPFEM": [
+    {
+      "src": "media/golf-frames/RBJllwVPFEM-1.webp",
+      "time": 1.04,
+      "label": "팔이 급한 동작을 보여 주는 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/RBJllwVPFEM-2.webp",
+      "time": 3.2,
+      "label": "팔의 속도를 줄이며 헤드 통과를 보여 주는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "soj_dt1_PAg": [
+    {
+      "src": "media/golf-frames/soj_dt1_PAg-1.webp",
+      "time": 146.2,
+      "label": "손을 돌리며 시작해 클럽이 뒤로 빠지는 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/soj_dt1_PAg-2.webp",
+      "time": 152.7,
+      "label": "오른손바닥을 아래로 향하는 느낌으로 시작하기",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "v3CFS-0sO_I": [
+    {
+      "src": "media/golf-frames/v3CFS-0sO_I-1.webp",
+      "time": 0.78,
+      "label": "몸부터 급하게 도는 X 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/v3CFS-0sO_I-2.webp",
+      "time": 4.02,
+      "label": "헤드를 보내며 회전을 연결하는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "2tam4sbJQtM": [
+    {
+      "src": "media/golf-frames/2tam4sbJQtM-1.webp",
+      "time": 7.8,
+      "label": "어드레스에서 오른팔꿈치 방향 설명",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/2tam4sbJQtM-2.webp",
+      "time": 45.6,
+      "label": "오른어깨 라인으로 클럽을 올리는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "dtnFgYXYfBE": [
+    {
+      "src": "media/golf-frames/dtnFgYXYfBE-1.webp",
+      "time": 4.18,
+      "label": "테이크어웨이의 좌우 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/dtnFgYXYfBE-2.webp",
+      "time": 14.44,
+      "label": "팔로스루에서 팔과 클럽 경로 비교",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "aCyFCVz85ss": [
+    {
+      "src": "media/golf-frames/aCyFCVz85ss-1.webp",
+      "time": 11.88,
+      "label": "오른손 날이 앞서고 페이스가 열리는 비교",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/aCyFCVz85ss-2.webp",
+      "time": 36.18,
+      "label": "셋업의 오른손바닥 방향으로 풀어 주는 설명",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "3X4O4uMa_Bc": [
+    {
+      "src": "media/golf-frames/3X4O4uMa_Bc-1.webp",
+      "time": 49,
+      "label": "먼저 몸통을 돌려 등을 보이는 테이크백",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/3X4O4uMa_Bc-2.webp",
+      "time": 58,
+      "label": "몸통 회전 뒤 코킹으로 올라가는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "oEVbWjzZl0E": [
+    {
+      "src": "media/golf-frames/oEVbWjzZl0E-1.webp",
+      "time": 38.72,
+      "label": "탑에서 힘을 줄여 클럽이 내려오는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/oEVbWjzZl0E-2.webp",
+      "time": 133.76,
+      "label": "헤드 무게가 떨어지는 타이밍을 반복 확인",
+      "width": 360,
+      "height": 640
+    }
   ]
 };
