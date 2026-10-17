@@ -259,3 +259,19 @@
 .g-lesson-video-reason{padding:10px 12px;margin:0;line-height:1.7;border-top:1px solid var(--golf-line);font-size:14px;overflow-wrap:anywhere}
 .g-lesson-video-more{margin:14px 0}.g-lesson-video-more>summary{padding:12px 0;min-height:44px;font-weight:700}.g-lesson-video-more>.g-video-grid{margin-top:12px}
 .g-backswing-guide{padding:0 12px 10px;overflow-wrap:anywhere}.g-backswing-guide summary{min-height:44px;padding:10px 0;font-weight:700;cursor:pointer}.g-backswing-guide dl{margin:0}.g-backswing-guide dt{font-weight:700;margin:10px 0 4px}.g-backswing-guide dd{margin:0;line-height:1.65;font-size:14px}
+
+/* The pinned video's practice reference stays visible, including on mobile. */
+.g-video-grid>.g-solo-card{grid-column:1/-1}
+.g-solo-practice{margin:14px 0;padding:16px;border:1px solid var(--golf-line);border-radius:12px;background:var(--golf-bg);color:var(--txt);min-width:0;overflow-wrap:break-word}
+.g-solo-card>.g-solo-practice{margin:0 12px 12px}
+.g-solo-practice h3{margin:0 0 8px;font-size:16px;color:var(--txt)}
+.g-solo-practice h4{margin:16px 0 8px;font-size:14px;color:var(--txt)}
+.g-hub .g-solo-practice p{margin:8px 0;font-size:14px;line-height:1.65;color:var(--txt)}
+.g-hub .g-solo-practice .g-solo-cue{font-weight:750;color:var(--golf)}
+.g-solo-steps{margin:14px 0;padding-left:22px;line-height:1.65;font-size:14px}
+.g-solo-steps li+li{margin-top:12px}
+.g-solo-steps b{display:block;color:var(--golf)}
+.g-solo-practice ul{margin:0;padding-left:20px;font-size:14px;line-height:1.7}
+.g-solo-practice li+li{margin-top:7px}
+.g-solo-practice .g-solo-goal{padding-top:10px;border-top:1px solid var(--golf-line);font-weight:700}
+.g-solo-practice small{display:block;color:var(--sub);font-size:12px;line-height:1.6}
