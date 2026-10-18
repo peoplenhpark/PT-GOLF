@@ -389,6 +389,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/golf-taxonomy-browser.cjs')(browser,base);
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
+  await require('./helpers/exercise-navigation-browser.cjs')(browser,base);
   await require('./helpers/golf-questions-browser.cjs')(browser,base);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();

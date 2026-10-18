@@ -85,6 +85,11 @@ const Theme = (() => {
   function renderPreserving(){navigation.saveScroll();render();}
   function saveError(error){toast(error.code==='CONFLICT'?'다른 탭에서 같은 기록이 변경됐습니다. 입력 내용을 보관하고 다시 확인해 주세요.':error.code==='CORRUPT'?'저장된 기록을 읽지 못해 원본을 보호하고 있습니다.':'저장하지 못했습니다. 입력 내용은 그대로 두었습니다.');}
   function tabbar(active) {
+    const exerciseGroups = ['pt', 'ht'].map(part => {
+      const list = Store.getByPart(part);
+      const link = (cat, label, count) => `<a href="#${part}?cat=${encodeURIComponent(cat)}"${view.name === 'part' && view.part === part && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
+      return `<section><h3>${part.toUpperCase()}</h3><div class="exercise-quicklinks">${link('all', '전체', list.length)}${Store.getCategories(part).map(cat => link(cat, cat, list.filter(e => e.category === cat).length)).join('')}</div></section>`;
+    }).join('');
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
     return `<nav class="tabbar">
@@ -94,6 +99,11 @@ const Theme = (() => {
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
+      <details class="exercise-quicknav">
+        <summary>부위별 운동 <span aria-hidden="true">⌃</span></summary>
+        <div class="exercise-quickpanel" aria-label="전체 부위별 운동">${exerciseGroups}</div>
+      </details>
+      <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 <span aria-hidden="true">⌕</span></button>
       <div class="history-controls" aria-label="화면 이동">
         <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${navigation.index <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
         <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${navigation.index >= navigation.max ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
@@ -231,15 +241,15 @@ const Theme = (() => {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
-    const activeCat = view.cat && cats.includes(view.cat) ? view.cat : (cats[0] || null);
+    const activeCat = view.cat === 'all' || cats.includes(view.cat) ? view.cat : (cats[0] || null);
     view.cat = activeCat;
 
-    const chips = cats.map(c =>
+    const chips = `<button class="chip ${activeCat === 'all' ? 'on' : ''}" data-cat="all">전체 ${list.length}</button>` + cats.map(c =>
       `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c).split(' · ').join('<br>')}</button>`).join('');
 
-    const inCat = list.filter(e => e.category === activeCat);
+    const inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
     const rows = inCat.length
-      ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i)).join('')}</div>`
+      ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i, activeCat === 'all')).join('')}</div>`
       : `<div class="empty">아직 표시할 동작이 없어요.<br>숨긴 동작은 홈의 삭제 요청에서 복원할 수 있어요.</div>`;
 
     app.innerHTML = `
@@ -598,8 +608,18 @@ const Theme = (() => {
   }
 
   // ============ 이벤트 (위임) ============
+  document.addEventListener('keydown', ev => {
+    const menu = app.querySelector('.exercise-quicknav[open]');
+    if (ev.key === 'Escape' && menu) {
+      menu.open = false;
+      menu.querySelector('summary').focus();
+      ev.preventDefault();
+    }
+  });
   document.body.addEventListener('click', (ev) => {
     try {
+    const menu = app.querySelector('.exercise-quicknav[open]');
+    if (menu && !menu.contains(ev.target)) menu.open = false;
     if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
     const scopeButton=ev.target.closest('[data-scope]');
     if(scopeButton){view.scope=scopeButton.dataset.scope;navigation.sync(view);render();return;}
@@ -716,6 +736,7 @@ const Theme = (() => {
 
   function handleAct(act,btn) {
     switch (act) {
+      case 'exercise-search':
       case 'search-focus': go('search',{q:'',scope:'all'});document.getElementById('search-input')?.focus();break;
       case 'reload': location.reload();break;
       case 'recovery-copy':{const blob=new Blob([JSON.stringify(Persistence.recoveryCopy(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='ptgolf-recovery-'+Store.todayStr()+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);break;}
@@ -778,7 +799,7 @@ const Theme = (() => {
     document.getElementById('modal-title').textContent = ex ? '동작 수정' : '동작 추가';
     const part = ex ? ex.part : 'pt';
     setSeg('f-part', part);
-    val('f-category', ex ? ex.category : (view.cat || ''));
+    val('f-category', ex ? ex.category : (view.cat === 'all' ? '' : (view.cat || '')));
     val('f-name', ex ? ex.name : '');
     val('f-spec', ex ? ex.spec : '');
     val('f-prep', ex ? (ex.prep || []).join('\n') : '');

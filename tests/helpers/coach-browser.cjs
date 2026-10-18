@@ -4,6 +4,12 @@ module.exports=async(browser,base)=>{
  try{
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
+  const recentCards=recent.locator('.coach-recent-grid').first();
+  assert.equal(await recentCards.locator('a').count(),5);
+  assert.match(await recentCards.locator('[href="#exercise/pt_chestpress"]').innerText(),/가슴이 유지되는 깊이까지만/);
+  assert.match(await recentCards.locator('[href="#exercise/pt_seatedrow"]').innerText(),/어깨가 들리지 않는 범위/);
+  assert.equal(await recent.locator('.coach-solo-keys li:visible').count(),2);
+  assert.match(await p.locator('.coach-plan').innerText(),/코치와 협의 예정/);
   assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),0,'confirmed movements link to their own exercises');
   await recent.locator('.coach-session-details').first().locator('summary').click();
   assert.match(await recent.locator('.coach-session-details').first().innerText(),/25:32–27:03/);
