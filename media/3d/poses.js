@@ -55,6 +55,18 @@ function pose(kind,t,id){
   }else arms(p,S.map(s=>add(p.chest,[s*.20,-.06,.43])),S.map(s=>[s,-1,0]));
   if(kind==='heelsquat')p.equipment.push({type:'heelpad'});
   if(v)p.equipment.push({type:'vsquat'});
+ }else if(['htsquatupright','htsquathip','htsquatwide'].includes(kind)){
+  // Three source comparison panels: chest-held, hip-back low hold, wide low hold.
+  // Illustrative angles/depths only; feet stay planted and IK preserves limb lengths.
+  const hipBack=kind==='htsquathip',wide=kind==='htsquatwide';
+  const width=wide?.30:hipBack?.19:.16;
+  p=base([0,(wide?.86:.89)-(hipBack?.34:.35)*q,-(hipBack?.32:wide?.12:.10)*q],
+    hipBack?.38+.40*q:wide?.08+.16*q:.06+.20*q);
+  legs(p,S.map(s=>[s*width,.065,0]),S.map(s=>[s*(wide?.6:.1),0,1]));
+  const grip=hipBack||wide?add(mix(p.shoulders[0],p.shoulders[1],.5),[0,-.52,.04]):add(p.chest,add(mul(p.up,.03),mul(p.front,.20)));
+  arms(p,S.map(s=>add(grip,[s*.055,0,0])),S.map(s=>[s*.5,-1,.2]));
+  p.footDirections=S.map(s=>[wide?s*.3:s*.1,0,Math.sqrt(1-(wide?.3:.1)**2)]);
+  p.equipment=[{type:'goblet'}];p.target=[0,.80,0];p.distance=3.9;
  }else if(['htwidegoblet','htnarrowgoblet'].includes(kind)){
   const wide=kind==='htwidegoblet',width=wide?.29:.12;
   p=base([0,.87-.34*q,-.15*q],.06+.25*q);

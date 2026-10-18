@@ -1,0 +1,65 @@
+{
+  "id": "ht_squat_comparison",
+  "reviewedAt": "2026-10-18",
+  "source": {
+    "youtubeId": "zJ5tzToG9PM",
+    "title": "똑같은 스쿼트는 이제 그만! 자세별 타겟 근육 총정리",
+    "channel": "헬린업",
+    "durationSeconds": 4,
+    "publishedAt": "2026-10-06",
+    "registeredAt": "2026-10-18T12:56:51.948573+00:00",
+    "verifiedAt": "2026-10-18",
+    "evidence": "4초 원본의 표본 12장·화면 문구 확인. 별도 음성 지시·정확한 보폭·깊이·중량은 확인하지 않았습니다.",
+    "points": [
+      "가슴 앞 덤벨·상체를 비교적 세운 자세",
+      "덤벨을 아래로 들고 엉덩이를 뒤로 보내는 자세",
+      "보폭을 넓히고 덤벨을 중앙 아래에 두는 자세"
+    ]
+  },
+  "media": [
+    {
+      "variant": "ht_squat_comparison_upright",
+      "source": "https://www.youtube.com/shorts/zJ5tzToG9PM",
+      "sourceTimes": [
+        0.14,
+        1.84
+      ],
+      "panel": 1,
+      "images": [
+        "docs/images/guides/ht_squat_comparison-start.webp",
+        "docs/images/guides/ht_squat_comparison-end.webp"
+      ],
+      "method": "Original complete three-panel source frames, no crop; panel identified in caption. Avoid cutting overlapping body silhouettes. No generative prompt. Three dedicated 3D squat variants with fixed feet and constant limb lengths."
+    },
+    {
+      "variant": "ht_squat_comparison_hip",
+      "source": "https://www.youtube.com/shorts/zJ5tzToG9PM",
+      "sourceTimes": [
+        0.14,
+        1.84
+      ],
+      "panel": 2,
+      "images": [
+        "docs/images/guides/ht_squat_comparison-start.webp",
+        "docs/images/guides/ht_squat_comparison-end.webp"
+      ],
+      "method": "Original complete three-panel source frames, no crop; panel identified in caption. Avoid cutting overlapping body silhouettes. No generative prompt. Three dedicated 3D squat variants with fixed feet and constant limb lengths."
+    },
+    {
+      "variant": "ht_squat_comparison_wide",
+      "source": "https://www.youtube.com/shorts/zJ5tzToG9PM",
+      "sourceTimes": [
+        0.14,
+        1.84
+      ],
+      "panel": 3,
+      "images": [
+        "docs/images/guides/ht_squat_comparison-start.webp",
+        "docs/images/guides/ht_squat_comparison-end.webp"
+      ],
+      "method": "Original complete three-panel source frames, no crop; panel identified in caption. Avoid cutting overlapping body silhouettes. No generative prompt. Three dedicated 3D squat variants with fixed feet and constant limb lengths."
+    }
+  ],
+  "duplicateReview": "No existing sourceVideo/supplementaryVideos with this YouTube ID. Existing goblet/wide squat concepts linked; this source compares torso/hip/dumbbell placements simultaneously.",
+  "scope": "HT supplement only, not added to personal selected 16 or a new workout prescription."
+}

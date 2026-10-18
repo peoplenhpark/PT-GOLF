@@ -2069,5 +2069,106 @@ window.ExerciseMedia = {
       "docs/images/guides/pt_low_cable_curl-end.webp"
     ],
     "viewer": "media/3d/viewer.html?exercise=pt_low_cable_curl"
+  },
+  "ht_squat_comparison": {
+    "name": "덤벨 스쿼트 자세 3가지 · PT 보강",
+    "kind": "htsquatupright",
+    "target": "quads",
+    "captions": [
+      "준비 · 원본 왼쪽",
+      "하강 · 원본 왼쪽"
+    ],
+    "notes": [
+      "원본 준비 자세에서 발 지지와 덤벨 위치를 확인합니다.",
+      "덤벨을 가슴 앞에 지지하고 상체를 비교적 세운 채 무릎·골반을 굽혔다 폅니다."
+    ],
+    "focus": {
+      "muscle": "하체·몸통 지지 (원본의 강조 부위와 구분)",
+      "move": "덤벨을 가슴 앞에 지지하고 상체를 비교적 세운 채 무릎·골반을 굽혔다 폅니다.",
+      "feel": "기존 PT의 편안한 범위에서 발 지지·골반 이동·상체 기울기를 비교합니다."
+    },
+    "visualNote": "원본 0.14초·1.84초의 전체 비교 화면입니다. 왼쪽 자세를 보세요. 3D는 자세 차이의 예시로 보폭·기울기·깊이·중량은 개인 처방이 아닙니다.",
+    "images": [
+      "docs/images/guides/ht_squat_comparison-start.webp",
+      "docs/images/guides/ht_squat_comparison-end.webp"
+    ],
+    "viewer": "media/3d/viewer.html?exercise=ht_squat_comparison&variant=ht_squat_comparison_upright",
+    "variants": [
+      {
+        "id": "ht_squat_comparison_upright",
+        "name": "가슴 앞 덤벨 · 상체 세우기",
+        "kind": "htsquatupright",
+        "target": "quads",
+        "captions": [
+          "준비 · 원본 왼쪽",
+          "하강 · 원본 왼쪽"
+        ],
+        "notes": [
+          "원본 준비 자세에서 발 지지와 덤벨 위치를 확인합니다.",
+          "덤벨을 가슴 앞에 지지하고 상체를 비교적 세운 채 무릎·골반을 굽혔다 폅니다."
+        ],
+        "focus": {
+          "muscle": "하체·몸통 지지 (원본의 강조 부위와 구분)",
+          "move": "덤벨을 가슴 앞에 지지하고 상체를 비교적 세운 채 무릎·골반을 굽혔다 폅니다.",
+          "feel": "기존 PT의 편안한 범위에서 발 지지·골반 이동·상체 기울기를 비교합니다."
+        },
+        "visualNote": "원본 0.14초·1.84초의 전체 비교 화면입니다. 왼쪽 자세를 보세요. 3D는 자세 차이의 예시로 보폭·기울기·깊이·중량은 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_squat_comparison-start.webp",
+          "docs/images/guides/ht_squat_comparison-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_squat_comparison&variant=ht_squat_comparison_upright"
+      },
+      {
+        "id": "ht_squat_comparison_hip",
+        "name": "아래 덤벨 · 엉덩이 뒤로",
+        "kind": "htsquathip",
+        "target": "glutes",
+        "captions": [
+          "준비 · 원본 가운데",
+          "하강 · 원본 가운데"
+        ],
+        "notes": [
+          "원본 준비 자세에서 발 지지와 덤벨 위치를 확인합니다.",
+          "덤벨을 아래로 들고 상체 기울기와 엉덩이 뒤로 이동을 함께 비교합니다."
+        ],
+        "focus": {
+          "muscle": "하체·몸통 지지 (원본의 강조 부위와 구분)",
+          "move": "덤벨을 아래로 들고 상체 기울기와 엉덩이 뒤로 이동을 함께 비교합니다.",
+          "feel": "기존 PT의 편안한 범위에서 발 지지·골반 이동·상체 기울기를 비교합니다."
+        },
+        "visualNote": "원본 0.14초·1.84초의 전체 비교 화면입니다. 가운데 자세를 보세요. 3D는 자세 차이의 예시로 보폭·기울기·깊이·중량은 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_squat_comparison-start.webp",
+          "docs/images/guides/ht_squat_comparison-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_squat_comparison&variant=ht_squat_comparison_hip"
+      },
+      {
+        "id": "ht_squat_comparison_wide",
+        "name": "넓은 보폭 · 중앙 덤벨",
+        "kind": "htsquatwide",
+        "target": "adductors",
+        "captions": [
+          "준비 · 원본 오른쪽",
+          "하강 · 원본 오른쪽"
+        ],
+        "notes": [
+          "원본 준비 자세에서 발 지지와 덤벨 위치를 확인합니다.",
+          "넓힌 보폭에서 덤벨을 중앙 아래에 두고 무릎과 골반이 함께 내려갔다 올라옵니다."
+        ],
+        "focus": {
+          "muscle": "하체·몸통 지지 (원본의 강조 부위와 구분)",
+          "move": "넓힌 보폭에서 덤벨을 중앙 아래에 두고 무릎과 골반이 함께 내려갔다 올라옵니다.",
+          "feel": "기존 PT의 편안한 범위에서 발 지지·골반 이동·상체 기울기를 비교합니다."
+        },
+        "visualNote": "원본 0.14초·1.84초의 전체 비교 화면입니다. 오른쪽 자세를 보세요. 3D는 자세 차이의 예시로 보폭·기울기·깊이·중량은 개인 처방이 아닙니다.",
+        "images": [
+          "docs/images/guides/ht_squat_comparison-start.webp",
+          "docs/images/guides/ht_squat_comparison-end.webp"
+        ],
+        "viewer": "media/3d/viewer.html?exercise=ht_squat_comparison&variant=ht_squat_comparison_wide"
+      }
+    ]
   }
 };

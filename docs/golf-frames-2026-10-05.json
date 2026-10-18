@@ -2374,5 +2374,77 @@
     "source": "https://www.youtube.com/watch?v=oEVbWjzZl0E",
     "method": "Original video frame extraction; resize only; sampled scenes and selected frames visually reviewed.",
     "verifiedAt": "2026-10-17"
+  },
+  {
+    "id": "4DyoF3OQKww",
+    "title": "릴리스 방향 · 아래로 풀기와 옆으로 보내기 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/4DyoF3OQKww-1.webp",
+        "time": 1.2,
+        "label": "아래로 푸는 비교 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/4DyoF3OQKww-2.webp",
+        "time": 6.3,
+        "label": "옆으로 보내는 비교 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 10,
+    "source": "https://www.youtube.com/watch?v=4DyoF3OQKww",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-18"
+  },
+  {
+    "id": "j1USTUwFnRI",
+    "title": "양손 간격 드릴 · 몸통 회전과 체중이동 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/j1USTUwFnRI-1.webp",
+        "time": 4.93,
+        "label": "오른손을 샤프트 중간에 내려 잡기",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/j1USTUwFnRI-2.webp",
+        "time": 12.16,
+        "label": "회전·왼발 이동을 함께 비교",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 17,
+    "source": "https://www.youtube.com/watch?v=j1USTUwFnRI",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-18"
+  },
+  {
+    "id": "4Eof_tmI0Ag",
+    "title": "클럽별 릴리스 · 드라이버와 아이언의 상체 위치 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/4Eof_tmI0Ag-1.webp",
+        "time": 2.32,
+        "label": "드라이버 · 상체를 뒤에 남기는 시범",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "src": "media/golf-frames/4Eof_tmI0Ag-2.webp",
+        "time": 5.04,
+        "label": "아이언 · 정면과 왼발 쪽 통과 시범",
+        "width": 360,
+        "height": 640
+      }
+    ],
+    "duration": 8,
+    "source": "https://www.youtube.com/watch?v=4Eof_tmI0Ag",
+    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
+    "verifiedAt": "2026-10-18"
   }
 ]

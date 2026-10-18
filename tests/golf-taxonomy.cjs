@@ -3,7 +3,7 @@ const read=p=>fs.readFileSync(path.join(__dirname,'..',p),'utf8'),ctx={window:{}
 vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);
 const c=ctx.window.GolfContent,ids=c.videoGroups.flatMap(g=>Array.from(g.videoIds));
 assert.deepEqual(Array.from(c.videoSections,s=>s.id),['backswing','downswing','impact','follow-through']);
-assert.equal(new Set(ids).size,99);assert.equal(ids.length,99);
+assert.equal(new Set(ids).size,102);assert.equal(ids.length,102);
 assert.deepEqual([...ids].sort(),Array.from(c.videos,v=>v.id).sort());
 assert.equal(c.videoGroups.find(g=>g.id==='review').videoIds.length,0);
 const practiceGroups=c.videoGroups.filter(g=>g.practice);
@@ -36,7 +36,7 @@ for(const [tag,count] of [['백스윙 시 몸통 회전',7],['백스윙 시 오�
 hidden.add('2tam4sbJQtM');hub.render({golfTab:'videos',golfGroup:'backswing'},api);
 assert(!app.innerHTML.includes('href="#golf/videos/2tam4sbJQtM"'));assert.equal(hub.pinnedPractice(),'');
 assert(hub.stagePractice().includes('#golf/group/follow-through'));
-console.log('PASS: 4 sections, 12 practice/check guides, 99 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
+console.log('PASS: 4 sections, 12 practice/check guides, 102 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
 
 for(const id of ['U4nn7s20ACc','cQiwXcbWZc4']){
  assert(!c.videos.some(v=>v.id===id));assert(!ctx.window.GolfFrames[id]);
@@ -47,7 +47,7 @@ const shared=c.videos.find(v=>v.id==='dBsZdo7VEAA');assert.equal(c.videoGroupFor
 assert.deepEqual(Array.from(shared.sharedSections),['impact','follow-through']);
 for(const selected of ['common','all']){hub.render({golfTab:'videos',golfGroup:selected},api);assert.equal((app.innerHTML.match(/class="g-mini-detail" href="#golf\/videos\/dBsZdo7VEAA"/g)||[]).length,1);}
 for(const selected of ['impact','follow-through','impact-release','follow-flow']){hub.render({golfTab:'videos',golfGroup:selected},api);assert(app.innerHTML.includes('class="g-shared-references"'));assert(app.innerHTML.includes('href="#golf/videos/dBsZdo7VEAA"'));assert(!app.innerHTML.includes('class="g-mini-detail" href="#golf/videos/dBsZdo7VEAA"'));}
-hub.render({golfTab:'videos',golfGroup:'backswing'},api);assert(!app.innerHTML.includes('class="g-shared-references"'));
+hub.render({golfTab:'videos',golfGroup:'backswing'},api);assert(app.innerHTML.includes('href="#golf/videos/j1USTUwFnRI"'));assert(!app.innerHTML.includes('href="#golf/videos/dBsZdo7VEAA"'));
 hub.render({golfTab:'videos',golfGroup:'review'},api);assert(app.innerHTML.includes('현재 미분류 영상이 없습니다.'));assert(!app.innerHTML.includes('>미분류 0편'));
 hidden.add(shared.id);hub.render({golfTab:'videos',golfGroup:'impact'},api);assert(!app.innerHTML.includes('href="#golf/videos/dBsZdo7VEAA"'));assert(!app.innerHTML.includes('>공통 0편'));hidden.delete(shared.id);
 for(const [id,group] of [['A_fu4ajV-_I','downswing-tempo'],['unGNdzyt7kE','impact-release']]){const v=c.videos.find(v=>v.id===id);assert.equal(c.videoGroupFor(v).id,group);assert.equal(v.classificationReview.status,'classified');assert.equal(c.evidenceFor(v).kind,'observation');assert.equal(c.practicalFor(v).caution,v.practiceCaution);}

@@ -1,0 +1,87 @@
+{
+  "reviewedAt": "2026-10-18",
+  "submittedGolfIds": [
+    "4DyoF3OQKww",
+    "3xsgQurjqtI",
+    "j1USTUwFnRI",
+    "4Eof_tmI0Ag"
+  ],
+  "duplicates": [
+    {
+      "submittedId": "3xsgQurjqtI",
+      "retainedId": "nkfEfaa4CFs",
+      "type": "same-demonstration-reedit",
+      "reason": "같은 보라색 모자·셔츠, 초록 매트·노란 집 배경과 헤드 지면/안쪽 테이크백/왼손목/내려오기 네 비교 장면이 일치한다. 기존 18초 영상과 새 17초 영상의 표본 컷을 비교했다. 제목·채널·자막은 다른 재편집으로 기존 ID·등록일·개인 기록을 유지한다."
+    }
+  ],
+  "added": [
+    {
+      "id": "4DyoF3OQKww",
+      "group": "impact-release",
+      "basis": "원본 설명·표본 11장·화면 자막 확인. 전체 음성을 직접 청취하지 않음.",
+      "sampleTimes": [
+        0.35,
+        1.2,
+        2.05,
+        2.9,
+        3.75,
+        4.6,
+        5.45,
+        6.3,
+        7.15,
+        8.0,
+        8.85
+      ],
+      "relatedIds": [
+        "qJRYOqhK-2c",
+        "XgPPBzZKzNM"
+      ]
+    },
+    {
+      "id": "j1USTUwFnRI",
+      "group": "common",
+      "basis": "원본 표본 12장·화면 문구·한국어 자동 자막 확인. 전체 음성을 직접 청취하지 않음.",
+      "sampleTimes": [
+        0.6,
+        2.04,
+        3.49,
+        4.93,
+        6.38,
+        7.82,
+        9.27,
+        10.71,
+        12.16,
+        13.6,
+        15.05,
+        16.49
+      ],
+      "relatedIds": [
+        "DYtWZFKkKas",
+        "CA-TZ7WQlHY"
+      ]
+    },
+    {
+      "id": "4Eof_tmI0Ag",
+      "group": "impact-release",
+      "basis": "원본 설명·표본 11장·화면 자막 확인. 전체 음성을 직접 청취하지 않음.",
+      "sampleTimes": [
+        0.28,
+        0.96,
+        1.64,
+        2.32,
+        3.0,
+        3.68,
+        4.36,
+        5.04,
+        5.72,
+        6.4,
+        7.08
+      ],
+      "relatedIds": [
+        "unGNdzyt7kE",
+        "EgdcUOkvJKk"
+      ]
+    }
+  ],
+  "limitations": "원본 설명·표본 장면·화면 자막을 확인했다. j1USTUwFnRI 한국어 자동 자막도 확인. 나머지 전체 음성은 청취하지 않았으며 개인 교정 효과는 검증하지 않았다."
+}

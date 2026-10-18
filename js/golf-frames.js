@@ -1583,5 +1583,53 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "4DyoF3OQKww": [
+    {
+      "src": "media/golf-frames/4DyoF3OQKww-1.webp",
+      "time": 1.2,
+      "label": "아래로 푸는 비교 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/4DyoF3OQKww-2.webp",
+      "time": 6.3,
+      "label": "옆으로 보내는 비교 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "j1USTUwFnRI": [
+    {
+      "src": "media/golf-frames/j1USTUwFnRI-1.webp",
+      "time": 4.93,
+      "label": "오른손을 샤프트 중간에 내려 잡기",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/j1USTUwFnRI-2.webp",
+      "time": 12.16,
+      "label": "회전·왼발 이동을 함께 비교",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "4Eof_tmI0Ag": [
+    {
+      "src": "media/golf-frames/4Eof_tmI0Ag-1.webp",
+      "time": 2.32,
+      "label": "드라이버 · 상체를 뒤에 남기는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/4Eof_tmI0Ag-2.webp",
+      "time": 5.04,
+      "label": "아이언 · 정면과 왼발 쪽 통과 시범",
+      "width": 360,
+      "height": 640
+    }
   ]
 };
