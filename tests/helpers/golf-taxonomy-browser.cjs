@@ -5,7 +5,9 @@ module.exports=async(browser,base,screenshot)=>{
   await p.addInitScript(()=>{if(!localStorage.getItem('ptgolf_learning_v1'))localStorage.setItem('ptgolf_learning_v1',JSON.stringify({lessons:[],questions:[],focus:[],videoNotes:{dBsZdo7VEAA:{memo:'공통 이동 전 개인 메모',favorite:true,title:'내 공통 영상'},U4nn7s20ACc:{memo:'삭제 후에도 보존할 메모',favorite:true}}}));});
   await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
   assert.equal(await p.locator('.g-common-practice').count(),1);
-  assert.equal(await p.locator('.g-practice-focus:visible').count(),4);
+  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),4);
+  assert.equal(await p.locator('.g-recent-practice .g-practice-focus:visible').count(),3);
+  assert.deepEqual(await p.locator('.g-recent-practice a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))),['#golf/videos/j1USTUwFnRI','#golf/videos/4DyoF3OQKww','#golf/videos/4Eof_tmI0Ag']);
   assert.equal(await p.locator('details.g-practice-guide').count(),0);
   assert.equal(await p.locator('.g-stage-practice .g-practice-columns ol li:visible').count(),9);
   assert.equal(await p.locator('.g-stage-practice .g-practice-columns ul li:visible').count(),9);
