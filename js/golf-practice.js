@@ -41,7 +41,7 @@ window.GolfPractice = (() => {
   let ctx, bound;
   function timeline(s,id){
     const key=notes[id]?id:selected(s),n=notes[key];
-    return lessonBridge(s,'notes',key)+`<section class="g-sensations"><h2>아이언 감각의 변화</h2><p class="g-meta">개인 연습 감각 · 최근 기록도 비교할 후보입니다.</p><nav class="g-sensation-dates" aria-label="감각 날짜">${['1004','1003','1001','0930'].map(k=>`<a href="#golf/notes/${k}" ${k===key?'aria-current="page"':''}>${notes[k].date}</a>`).join('')}</nav><h3>${esc(n.title)}</h3><p class="g-meta">2026년 ${n.date} · 아이언 공통 후보</p><div class="g-pre g-original">${esc(n.original)}</div><p class="g-meta">연습용 한 문장 · 정리 제안</p><p class="g-cue">${esc(n.cue)}</p><button type="button" class="g-btn" data-practice="adopt" data-id="${key}">이전 감각으로 비교 기록</button><details><summary>레슨에서 확인할 점</summary><p>${esc(n.question)}</p></details></section>`;
+    return lessonBridge(s,'notes',key)+`<section class="g-sensations"><h2>아이언 감각의 변화</h2><p class="g-meta">개인 연습 감각 · 원문 보존, 현재 레슨과 비교</p><nav class="g-sensation-dates" aria-label="감각 날짜">${['1004','1003','1001','0930'].map(k=>`<a href="#golf/notes/${k}" ${k===key?'aria-current="page"':''}>${notes[k].date}</a>`).join('')}</nav><h3>${esc(n.title)}</h3><p class="g-meta">2026년 ${n.date} · 아이언 공통 후보</p><div class="g-pre g-original">${esc(n.original)}</div><p class="g-meta">연습용 한 문장 · 정리 제안</p><p class="g-cue">${esc(n.cue)}</p><button type="button" class="g-btn" data-practice="adopt" data-id="${key}">이전 감각으로 비교 기록</button><details><summary>레슨에서 확인할 점</summary><p>${esc(n.question)}</p></details></section>`;
   }
   function questions(){return `<section class="g-section"><h2>감각에서 이어진 질문</h2>${[['1004','어깨가 고정되는 느낌과 실제 어깨 움직임은 어떻게 다른가요?'],['1004','왼쪽 축이 만들어졌다는 것을 무엇으로 확인하면 좋을까요?'],['1003','오른손가락 힘은 언제 필요하고, 과하게 힘을 주는 것과 어떻게 구분하나요?']].map(([id,q])=>`<div class="g-question"><p>${q}</p><a href="#golf/notes/${id}">${notes[id].date} 감각 원문 보기 ›</a></div>`).join('')}</section>`;}
   function render(s,card,videos){
@@ -73,12 +73,12 @@ window.GolfPractice = (() => {
   }
   function lessonHero(l){
     if(!l)return '';
-    return `<section class="g-lesson-anchor"><p class="g-meta">이번 레슨부터 복습 · ${esc(l.date)}</p><h2>${esc(l.title)}</h2><p class="g-cue">${esc(l.practiceCue||l.correction)}</p>${(l.practicePoints||[]).length?`<ol>${l.practicePoints.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`:''}<p class="g-meta">${esc((l.practiceClubs||[]).join(' · '))}</p><div class="g-actions"><button class="g-btn g-primary" type="button" data-practice="lesson" data-id="${esc(l.id)}">이 레슨으로 오늘 연습</button>${lessonLink(l)}</div>${l.videoCollection?.groupId?`<p><a href="#golf/group/${esc(l.videoCollection.groupId)}">첫 레슨 복습 영상 ${l.videoCollection.videoIds.length}편 ›</a></p>`:''}<p class="g-meta">레슨 → 연습 결과 → 내 감각·보조 영상 → 다음 레슨 질문</p></section>`;
+    return `<section class="g-lesson-anchor"><p class="g-meta">이번 레슨부터 복습 · ${esc(l.date)}</p><h2>${esc(l.title)}</h2>${(l.practicePoints||[]).length?`<ol>${l.practicePoints.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>`:`<p class="g-cue">${esc(l.practiceCue||l.correction)}</p>`}<p class="g-meta">${esc((l.practiceClubs||[]).join(' · '))}</p><div class="g-actions"><button class="g-btn g-primary" type="button" data-practice="lesson" data-id="${esc(l.id)}">이 레슨으로 오늘 연습</button>${lessonLink(l)}</div>${l.videoCollection?.groupId?`<p><a href="#golf/group/${esc(l.videoCollection.groupId)}">첫 레슨 복습 영상 ${l.videoCollection.videoIds.length}편 ›</a></p>`:''}</section>`;
   }
   function lessonHome(s,list){
     const l=list[0];if(!l)return '';
     const records=(s.practiceRecords||[]).filter(r=>r.lessonId===l.id);
-    return lessonHero(l)+`<section class="g-section g-lesson-recap"><h2>레슨 이후의 기록</h2><p>${records.length?records.length+'묶음 · '+records.length*5+'구 기록':'아직 연결된 연습 결과가 없습니다.'}</p><div class="g-actions"><a href="#golf/today">오늘 연습·결과 보기 ›</a><a href="#golf/notes">이전 감각 다시 보기 ›</a><a href="#golf/videos">보조 영상 보기 ›</a></div>${l.result?`<p class="g-meta">${esc(l.result)}</p>`:''}</section>`;
+    return lessonHero(l)+`<section class="g-section g-lesson-recap"><h2>레슨 이후의 기록</h2><p>${records.length?records.length+'묶음 · '+records.length*5+'구 기록':'아직 연결된 연습 결과가 없습니다.'}</p><div class="g-actions"><a href="#golf/today">오늘 연습·결과 보기 ›</a><a href="#golf/notes">이전 감각 다시 보기 ›</a><a href="#golf/videos">보조 영상 보기 ›</a></div></section>`;
   }
   function lessonEvidence(l,s){
     const records=(s.practiceRecords||[]).filter(r=>r.lessonId===l.id);
