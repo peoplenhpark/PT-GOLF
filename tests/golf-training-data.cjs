@@ -30,8 +30,9 @@ for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.q
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,8);assert.equal(new Set(grouped).size,101);assert.equal(grouped.length,101);
-assert.deepEqual(Array.from(c.videoGroups,g=>g.videoIds.length),[1,5,6,9,32,46,1,1]);
+assert.equal(c.videoGroups.length,13);assert.equal(new Set(grouped).size,101);assert.equal(grouped.length,101);
+assert.equal(c.videoSections.length,4);
+assert(c.videoSections.every(s=>s.groups.length===3));
 for(const v of c.videos)assert(c.videoGroupFor(v));
 const seed=JSON.parse(read('data/seed.json'));
 const ptIds=seed.exercises.filter(e=>e.part==='pt').map(e=>e.id).sort();
@@ -76,7 +77,7 @@ assert.equal((featuredHtml.match(/class="g-video-card/g)||[]).length,4);
 assert(app.innerHTML.indexOf('g-video-groups')<app.innerHTML.indexOf('g-featured-video'));
 assert.equal((app.innerHTML.match(/href="#golf\/videos\/9YWDNMyTQy4"/g)||[]).length,1);
 ctx.window.GolfHub.render({golfTab:'videos',golfQuery:'어깨'},api);assert(!app.innerHTML.includes('g-featured-video'));assert(!app.innerHTML.includes('watch?v=9YWDNMyTQy4'));
-ctx.window.GolfHub.render({golfTab:'videos',golfGroup:'arms-impact'},api);assert(app.innerHTML.includes('watch?v=9YWDNMyTQy4'));assert(!app.innerHTML.includes('g-featured-video'));
+ctx.window.GolfHub.render({golfTab:'videos',golfGroup:'downswing-path'},api);assert(app.innerHTML.includes('watch?v=9YWDNMyTQy4'));assert(!app.innerHTML.includes('g-featured-video'));
 for(const tab of ['notes','lessons']){ctx.window.GolfHub.render({golfTab:tab},api);check();}
 const driver=seed.exercises.find(e=>e.id==='golf_driver');driver.practicalSummary={action:'검증용 오늘 동작',feel:'검증용 개인 감각'};
 ctx.window.GolfHub.render({golfTab:'notes'},api);assert(app.innerHTML.includes('검증용 오늘 동작'));assert(app.innerHTML.includes('검증용 개인 감각'));delete driver.practicalSummary;
@@ -92,4 +93,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 101 originals, 8 groups, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 101 originals, 12 subsections + review, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');

@@ -25,13 +25,16 @@ console.log('PASS: 101 source videos / 202 distinct frames, exact personal notes
 const first=GolfContent.lessons.find(l=>l.id==='lesson_20261005_first');assert(first);assert.deepEqual(Array.from(first.practiceClubs),['7번 아이언']);assert.equal(first.practicePoints.length,2);assert.equal(first.evidence.length,5);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004'}}).id,'lesson_20261012_review');assert.equal(GolfPractice.practiceSource({practice:{sourceKind:'lesson',lessonId:first.id}}).id,first.id);assert.equal(GolfPractice.practiceSource({practice:{selected:'1004',sourceKind:'sensation'}}).kind,'sensation');assert(valid({...old,practice:{sourceKind:'lesson',lessonId:first.id},practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:first.id,comfort:'편안함'}]}));assert(!valid({...old,practiceRecords:[{...record,cueId:first.id,sourceKind:'lesson',lessonId:'wrong'}]}));console.log('PASS: lesson priority, explicit sensation comparison, lesson scope, source linkage and legacy records.');
 
 const selected=['2tam4sbJQtM','T2FBx83DXvg','iX_ZnUodsRQ','NYY2HRNojPc','aaOw2sdp-io','IMjI_VqsQsg','WqKgbsWnDxE','soj_dt1_PAg','3X4O4uMa_Bc'];
-assert.deepEqual(Array.from(GolfContent.videoGroups.find(g=>g.id==='backswing-top').videoIds),selected);
+const backswingGroups=GolfContent.videoSections.find(s=>s.id==='backswing').groups.map(id=>GolfContent.videoGroups.find(g=>g.id===id));
+assert.equal(backswingGroups[0].videoIds[0],'2tam4sbJQtM');
+for(const id of selected)assert(backswingGroups.some(g=>g.videoIds.includes(id)));
+assert.equal(GolfContent.groupAliases['backswing-top'],'backswing');
 assert.deepEqual(Array.from(first.videoCollection.videoIds),['aaOw2sdp-io']);
 for(const id of selected){const v=GolfContent.videos.find(v=>v.id===id);assert(v.backswingGuide.criterion.length>20);assert(v.observationPractice.action.length>20);assert(v.observationPractice.feel.length>20);assert.equal(GolfFrames[id].length,2);assert.equal(GolfContent.evidenceFor(v).kind,'observation');}
 assert.equal(GolfContent.videos.filter(v=>v.tags?.includes('백스윙 시 오른팔 위치')).length,4);
 assert.equal(GolfContent.videos.filter(v=>v.tags?.includes('백스윙 시 몸통 회전')).length,7);
 assert.deepEqual(Array.from(GolfContent.videoTags),['백스윙 시 오른팔 위치','백스윙 시 몸통 회전']);
-assert(GolfContent.videoGroups.find(g=>g.id==='setup').videoIds.includes('MIx8BbSocFI'));
+assert(GolfContent.videoGroups.find(g=>g.id==='backswing-setup').videoIds.includes('MIx8BbSocFI'));
 const removed=['0mNd_dCea4Q','u_Td1XU3JKo','QLJDoGT7-2U','7sNhk9PhBxc','ojzyFHAQWnw','X0IcCD0NT9I','DOf7sAtTJYw','iqK8wC0JFTg','7C4pkhts4yk'];
 for(const id of removed){assert(!GolfContent.videos.some(v=>v.id===id));assert(!GolfFrames[id]);assert(!fs.existsSync(path.join(root,'media/golf-frames/'+id+'-1.webp')));}
 for(const lesson of GolfContent.lessons){for(const id of lesson.videoIds||[])assert(GolfContent.videos.some(v=>v.id===id));}

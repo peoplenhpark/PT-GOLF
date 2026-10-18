@@ -54,7 +54,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   render({golfTab:'videos',golfId:recentId});click('delete-video',recentId);confirmations.at(-1).callback();render({golfTab:'videos'});
   assert(app.innerHTML.includes(`7일 · ${priorRecent-1}편`));
   assert(!app.innerHTML.includes(`href="#golf/videos/${recentId}"`));
-  render({golfTab:'videos',golfGroup:'arms-impact'});
+  render({golfTab:'videos',golfGroup:'downswing-path'});
   assert(!app.innerHTML.includes('href="#golf/videos/9YWDNMyTQy4"'));
   store.requestDeletion({kind:'exercise',contentId:'golf_driver',title:'드라이버'});
   const lessonForm={dataset:{gForm:'lesson',id:'lesson1'},values:{date:'2026-09-27',title:'기존 레슨',correction:'수정 교정',noteIds:['golf_iron7'],videoIds:[],topics:[],questionIds:[]}};

@@ -30,5 +30,6 @@ assert(!fs.existsSync(path.join(root,'media/golf-frames/'+deleted+'-1.webp')));
 const {evaluateRequests,readSources}=require('../scripts/deletion-requests.cjs'),sources=readSources(root);
 assert.equal(evaluateRequests([{issue:1,kind:'video',id:deleted}],sources.approvals,sources.sourceIds)[0].blocked,false);
 assert.equal(seed.exercises.find(e=>e.id==='ht_bulgarian_split_squat').supplementaryVideos.at(-1).youtubeId,'XZ_PZQ12_DA');
-for(const g of audit.golf)assert.equal(c.window.GolfContent.videoGroupFor(c.window.GolfContent.videos.find(v=>v.id===g.id)).id,g.group);
+const currentGroups={sKcgYjwimd8:'downswing-tempo',ZBYKvzsKbyU:'follow-balance','5vL6-Dwahsw':'backswing-takeaway','9ELCrrtWqwM':'backswing-arm','1x_iiruwFTU':'downswing-tempo',ZVyCmpxNXa4:'downswing-path',xys5zZWka6M:'impact-release',XgPPBzZKzNM:'impact-release'};
+for(const g of audit.golf)assert.equal(c.window.GolfContent.videoGroupFor(c.window.GolfContent.videos.find(v=>v.id===g.id)).id,currentGroups[g.id]);
 console.log('PASS: 3 HT supplements, 11 distinct source pairs, 6006 poses with fixed supports/limbs, matching equipment, exact declared deletion and golf categories.');

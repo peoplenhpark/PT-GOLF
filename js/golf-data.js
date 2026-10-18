@@ -4095,15 +4095,18 @@ window.GolfContent = {
         "steps": [
           {
             "title": "준비",
-            "text": "어깨 힘을 빼고 팔을 자연스럽게 늘어뜨립니다. 그립 끝은 벨트 쪽, 오른팔꿈치는 몸 안쪽을 향하되 겨드랑이를 세게 조이지 않습니다."
+            "text": "어깨 힘을 빼고 팔을 자연스럽게 늘어뜨립니다. 그립 끝은 벨트 쪽, 오른팔꿈치는 몸 안쪽을 향하되 겨드랑이를 세게 조이지 않습니다.",
+            "short": "팔·어깨 힘을 빼고, 그립 끝은 벨트 쪽으로. 겨드랑이를 세게 조이지 않기."
           },
           {
             "title": "시작",
-            "text": "손으로 번쩍 들기보다 몸통을 돌리며 테이크백합니다. 상체 기울기를 유지하고, 오른쪽 옆구리가 펴지며 몸이 일어서지 않는지 봅니다."
+            "text": "손으로 번쩍 들기보다 몸통을 돌리며 테이크백합니다. 상체 기울기를 유지하고, 오른쪽 옆구리가 펴지며 몸이 일어서지 않는지 봅니다.",
+            "short": "상체 기울기를 유지하며 몸통으로 시작. 손만 번쩍 들거나 몸이 일어서지 않기."
           },
           {
             "title": "올리기",
-            "text": "클럽이 오른어깨 선 쪽으로 올라가도록 회전을 이어갑니다. 높은 탑을 만들려고 팔을 더 들지 말고 편하게 연결되는 범위를 찾습니다."
+            "text": "클럽이 오른어깨 선 쪽으로 올라가도록 회전을 이어갑니다. 높은 탑을 만들려고 팔을 더 들지 말고 편하게 연결되는 범위를 찾습니다.",
+            "short": "오른어깨 선으로 자연스럽게 올리기. 높은 탑보다 편하게 연결되는 범위 찾기."
           }
         ],
         "checks": [
@@ -4321,163 +4324,515 @@ window.GolfContent.recentVideos = (now = Date.now()) => {
 };
 
 // Primary groups are separate from cross-cutting topic tags: each video appears once.
+window.GolfContent.videoSections = [
+  {
+    "id": "backswing",
+    "title": "백스윙",
+    "description": "편하게 준비하고 몸통으로 시작",
+    "groups": [
+      "backswing-setup",
+      "backswing-takeaway",
+      "backswing-arm"
+    ],
+    "practiceGroup": "backswing-setup"
+  },
+  {
+    "id": "downswing",
+    "title": "다운스윙",
+    "description": "지지 이동 → 하강과 회전 → 템포",
+    "groups": [
+      "downswing-shift",
+      "downswing-path",
+      "downswing-tempo"
+    ],
+    "practiceGroup": "downswing-shift"
+  },
+  {
+    "id": "impact",
+    "title": "임팩트",
+    "description": "타점·방향·자연스러운 헤드 통과",
+    "groups": [
+      "impact-contact",
+      "impact-face",
+      "impact-release"
+    ],
+    "practiceGroup": "impact-contact"
+  },
+  {
+    "id": "follow-through",
+    "title": "팔로우·피니시",
+    "description": "흐름을 이어 편한 균형으로 마무리",
+    "groups": [
+      "follow-flow",
+      "follow-relax",
+      "follow-balance"
+    ],
+    "practiceGroup": "follow-relax"
+  }
+];
+window.GolfContent.groupAliases = {
+  "backswing-top": "backswing",
+  "setup": "backswing-setup",
+  "rotation": "downswing",
+  "arms-impact": "impact",
+  "fundamentals": "impact-release",
+  "stages": "all"
+};
+window.GolfContent.videoCollections = {
+  "shots": [
+    "Fk_3CjorpVA",
+    "te5CN12g0Mc"
+  ],
+  "short-game": [
+    "Fk_3CjorpVA"
+  ],
+  "wood": [
+    "te5CN12g0Mc"
+  ],
+  "pro-swings": [
+    "bfMsJtV61hM",
+    "-h77kU-fpjg",
+    "ZBYKvzsKbyU",
+    "G6VjK_afBng",
+    "dtnFgYXYfBE"
+  ]
+};
 window.GolfContent.videoGroups = [
   {
-    "id": "fundamentals",
-    "title": "기초동작",
-    "description": "헤드 무게와 손·팔로 당기는 동작을 비교하는 기초 자료입니다. 적용 클럽과 비교용 동작을 구분해 보고, 현재 레슨 과제와 연결하세요.",
-    "videoIds": [
-      "BvnGOkOMo68"
-    ]
-  },
-  {
-    "id": "pro-swings",
-    "title": "스윙 시범",
-    "description": "정면·측면에서 축·템포·피니시 중 한 가지만 골라 내 영상과 비교합니다.",
-    "videoIds": [
-      "bfMsJtV61hM",
-      "-h77kU-fpjg",
-      "ZBYKvzsKbyU",
-      "G6VjK_afBng",
-      "dtnFgYXYfBE"
-    ]
-  },
-  {
-    "id": "setup",
-    "title": "준비·자세",
-    "description": "공을 치기 전에 페이스·정렬·척추 기울기 중 하나를 맞추고 시작 방향을 기록합니다.",
-    "videoIds": [
-      "4ePhtleqZBA",
-      "UA-HYcmiKTA",
-      "uvgnUl93Twg",
-      "zT6zJCJ59js",
-      "2UR4UFtx1R0",
-      "MIx8BbSocFI"
-    ]
-  },
-  {
-    "id": "backswing-top",
-    "title": "백스윙 · 기준과 방법",
-    "description": "사용자 지정 상단 고정: 백스윙 준비 · 팔 늘어뜨리기와 어깨선으로 올리기. 기존 기준 5편에 구체적인 방법 4편을 보완한 9편입니다. 기준 → 방법 → 확인을 함께 보고 필요한 한 편만 선택합니다. 드라이버 시범은 아이언 레슨과 구분합니다.",
+    "id": "backswing-setup",
+    "title": "준비·힘 빼기",
+    "description": "팔과 어깨의 긴장을 줄이고, 편한 시작 자세를 먼저 만듭니다.",
     "videoIds": [
       "2tam4sbJQtM",
-      "T2FBx83DXvg",
-      "iX_ZnUodsRQ",
-      "NYY2HRNojPc",
-      "aaOw2sdp-io",
-      "IMjI_VqsQsg",
-      "WqKgbsWnDxE",
-      "soj_dt1_PAg",
-      "3X4O4uMa_Bc"
+      "UA-HYcmiKTA",
+      "MIx8BbSocFI",
+      "zT6zJCJ59js",
+      "2UR4UFtx1R0",
+      "bTA5HW-hU_Y",
+      "wwZFeiPAoMU",
+      "4ePhtleqZBA"
+    ],
+    "practice": {
+      "cue": "팔과 어깨의 긴장을 줄이고, 편한 시작 자세를 먼저 만듭니다.",
+      "steps": [
+        "공 없이 팔을 자연스럽게 늘어뜨립니다.",
+        "준비한 상체 기울기에서 몸통을 작게 돌려 봅니다.",
+        "같은 준비 자세로 돌아와 힘이 덜 드는 시작을 반복합니다."
+      ],
+      "checks": [
+        "어깨가 올라가거나 겨드랑이를 세게 조였나?",
+        "몸이 일어서지 않고 시작했나?",
+        "같은 시작을 편하게 반복할 수 있나?"
+      ],
+      "sourceIds": [
+        "2tam4sbJQtM"
+      ]
+    },
+    "relatedGroups": [
+      "backswing-takeaway"
     ]
   },
   {
-    "id": "rotation",
-    "title": "회전·체중이동",
-    "description": "체중이동 → 회전 순서를 하나씩 확인하고 타점·시작 방향·피니시 균형 중 하나를 기록합니다.",
+    "id": "backswing-takeaway",
+    "title": "테이크백·몸통 회전",
+    "description": "손만 들기보다 그립 끝과 몸통이 함께 출발하는지 봅니다.",
     "videoIds": [
-      "xUgGGs2Rh3w",
-      "IsSS-GnQQyY",
-      "ULOLFCC-ly8",
+      "T2FBx83DXvg",
+      "iX_ZnUodsRQ",
+      "aaOw2sdp-io",
+      "IMjI_VqsQsg",
+      "FnbyQ-UYjMI",
+      "5vL6-Dwahsw",
+      "DYtWZFKkKas"
+    ],
+    "practice": {
+      "cue": "손만 들기보다 그립 끝과 몸통이 함께 출발하는지 봅니다.",
+      "steps": [
+        "헤드 뒤 공을 굴리는 원본의 초반 움직임을 봅니다.",
+        "공 없이 낮고 작은 테이크백에서 몸통과 그립 끝을 함께 움직여 봅니다.",
+        "같은 크기로 시작한 뒤 편한 범위까지 자연스럽게 연결합니다."
+      ],
+      "checks": [
+        "손으로 클럽을 번쩍 들었나?",
+        "몸이 옆으로 밀렸나, 제자리에서 돌았나?",
+        "오른발을 꽉 버티느라 회전이 막혔나?"
+      ],
+      "sourceIds": [
+        "T2FBx83DXvg",
+        "iX_ZnUodsRQ",
+        "IMjI_VqsQsg"
+      ]
+    },
+    "relatedGroups": [
+      "backswing-arm"
+    ]
+  },
+  {
+    "id": "backswing-arm",
+    "title": "오른팔·손목·탑",
+    "description": "탑 높이보다 팔을 조이지 않고 손과 몸 사이 공간을 남깁니다.",
+    "videoIds": [
+      "NYY2HRNojPc",
+      "WqKgbsWnDxE",
+      "soj_dt1_PAg",
+      "3X4O4uMa_Bc",
+      "UlRsR8hnZGs",
+      "9ELCrrtWqwM",
+      "g2AXYPKdCik",
+      "En79wtGEzs4"
+    ],
+    "practice": {
+      "cue": "탑 높이보다 팔을 조이지 않고 손과 몸 사이 공간을 남깁니다.",
+      "steps": [
+        "느린 백스윙으로 손과 몸 사이 공간을 거울에서 봅니다.",
+        "팔을 억지로 붙이지 않고 회전하며 손목이 서서히 받쳐지는 구간을 비교합니다.",
+        "편하게 올라가는 범위를 찾고 시작부터 탑까지 연결합니다."
+      ],
+      "checks": [
+        "겨드랑이를 조여 공간이 사라졌나?",
+        "몸통보다 손부터 급히 올렸나?",
+        "같은 탑까지 무리 없이 반복되는가?"
+      ],
+      "sourceIds": [
+        "NYY2HRNojPc",
+        "soj_dt1_PAg",
+        "WqKgbsWnDxE"
+      ]
+    },
+    "relatedGroups": [
+      "downswing-path"
+    ]
+  },
+  {
+    "id": "downswing-shift",
+    "title": "전환·체중이동",
+    "description": "전환에서 크게 돌기 전에 지지를 옮기는 순서를 확인합니다.",
+    "videoIds": [
       "CA-TZ7WQlHY",
       "0EgzSDUsKvg",
+      "uvgnUl93Twg",
+      "lb2CrZl0FrA",
+      "zB5hFmVpisI",
+      "q1P0eGWA8_s",
+      "-8gKh-1h6Hs",
+      "lnzbSVSBevs",
+      "clEQKV7hWrY"
+    ],
+    "practice": {
+      "cue": "전환에서 크게 돌기 전에 지지를 옮기는 순서를 확인합니다.",
+      "steps": [
+        "작은 백스윙에서 왼발 쪽으로 지지를 옮기는 시범을 봅니다.",
+        "공 없이 작은 시프트 다음 골반 회전을 구분해 느껴 봅니다.",
+        "익숙해지면 실제 스윙에서 멈추지 않고 이어 봅니다."
+      ],
+      "checks": [
+        "상체가 먼저 급하게 열렸나?",
+        "골반이 공 쪽으로 밀리며 몸이 일어섰나?",
+        "이동과 회전이 끊기지 않고 연결됐나?"
+      ],
+      "sourceIds": [
+        "CA-TZ7WQlHY",
+        "0EgzSDUsKvg",
+        "uvgnUl93Twg"
+      ]
+    },
+    "relatedGroups": [
+      "downswing-path"
+    ]
+  },
+  {
+    "id": "downswing-path",
+    "title": "팔·클럽 하강과 회전",
+    "description": "팔만 잡아당기는지, 몸 회전 속에서 클럽이 내려오는지 비교합니다.",
+    "videoIds": [
+      "S3fxUFBzfBo",
+      "Aj1UEMYPxBg",
+      "RSbjGWhzEnQ",
+      "xUgGGs2Rh3w",
+      "1lD1Lhk-2Lc",
+      "va8Oz-nSxcI",
+      "2CplOC4flsA",
+      "ZVyCmpxNXa4",
+      "eRSTJTcMFjE",
+      "Ks-9y9yLols",
+      "9YWDNMyTQy4",
+      "3kNb6TQN2T0",
+      "wBlnDaqkGi0",
+      "0lbtJgkzqWM",
+      "jlqT_vNRcSI",
+      "QsmMamIFMsE",
+      "v3CFS-0sO_I"
+    ],
+    "practice": {
+      "cue": "팔만 잡아당기는지, 몸 회전 속에서 클럽이 내려오는지 비교합니다.",
+      "steps": [
+        "원본의 벽 연습에서 클럽헤드가 내려오는 경로를 봅니다.",
+        "공 없이 작은 범위에서 팔과 몸통을 느리게 연결합니다.",
+        "같은 각도로 촬영해 팔만 급히 내려오는 구간이 있는지 비교합니다."
+      ],
+      "checks": [
+        "손과 어깨로 먼저 달려들었나?",
+        "회전 대신 몸을 옆으로 더 구부렸나?",
+        "팔·몸통·클럽이 하나의 흐름으로 이어졌나?"
+      ],
+      "sourceIds": [
+        "S3fxUFBzfBo",
+        "RSbjGWhzEnQ",
+        "xUgGGs2Rh3w"
+      ]
+    },
+    "relatedGroups": [
+      "downswing-tempo"
+    ]
+  },
+  {
+    "id": "downswing-tempo",
+    "title": "서두름 줄이기·템포",
+    "description": "헤드 무게가 내려올 여유를 주되 실제 스윙을 일부러 멈추지 않습니다.",
+    "videoIds": [
+      "oEVbWjzZl0E",
+      "jg52OubK_L0",
+      "ldkU0D_Ylms",
+      "ULOLFCC-ly8",
+      "1x_iiruwFTU",
+      "FjWulC87mzM",
+      "sKcgYjwimd8"
+    ],
+    "practice": {
+      "cue": "헤드 무게가 내려올 여유를 주되 실제 스윙을 일부러 멈추지 않습니다.",
+      "steps": [
+        "팔로 급히 내리는 모습과 헤드 무게를 기다리는 시범을 비교합니다.",
+        "작은 빈스윙에서 내려오는 흐름에 회전을 이어 봅니다.",
+        "동작 구분을 없애고 편한 속도로 한 번에 연결합니다."
+      ],
+      "checks": [
+        "탑에서 팔이나 몸을 먼저 서둘렀나?",
+        "기다림이 어깨를 굳히거나 완전히 멈추는 동작이 됐나?",
+        "속도를 낮춰도 같은 흐름이 반복되는가?"
+      ],
+      "sourceIds": [
+        "oEVbWjzZl0E",
+        "jg52OubK_L0",
+        "ldkU0D_Ylms"
+      ]
+    },
+    "relatedGroups": [
+      "impact-release"
+    ]
+  },
+  {
+    "id": "impact-contact",
+    "title": "타점·공과의 접촉",
+    "description": "세게 누르기보다 작은 스윙의 타점과 접촉을 먼저 확인합니다.",
+    "videoIds": [
+      "EgdcUOkvJKk",
+      "t_9sQjrS2o4",
+      "du58mmLNMnQ",
+      "mGYe7UjYXfo",
+      "Q_kYNFcYL0o",
+      "qQbCq_QXB0A",
+      "Fk_3CjorpVA",
+      "ThwbClowjjU"
+    ],
+    "practice": {
+      "cue": "세게 누르기보다 작은 스윙의 타점과 접촉을 먼저 확인합니다.",
+      "steps": [
+        "현재 레슨의 아이언과 같은 조건으로 작은 스윙을 준비합니다.",
+        "체중이동과 회전을 연결하며 공을 통과합니다.",
+        "타점과 시작 방향을 기록하고 한 가지만 바꿔 비교합니다."
+      ],
+      "checks": [
+        "공보다 뒤를 먼저 맞혔나?",
+        "손으로 억지로 누르거나 몸이 쏠렸나?",
+        "같은 크기에서 접촉이 반복되는가?"
+      ],
+      "sourceIds": [
+        "EgdcUOkvJKk",
+        "t_9sQjrS2o4"
+      ]
+    },
+    "relatedGroups": [
+      "impact-face"
+    ]
+  },
+  {
+    "id": "impact-face",
+    "title": "페이스·방향",
+    "description": "페이스 모양만 따라 하기보다 시작 방향과 몸의 흐름을 함께 봅니다.",
+    "videoIds": [
+      "IsSS-GnQQyY",
+      "aCyFCVz85ss",
+      "nkfEfaa4CFs",
+      "rvrwwVdyM68",
+      "5glZX2pq15o",
+      "eOxiYC684K0"
+    ],
+    "practice": {
+      "cue": "페이스 모양만 따라 하기보다 시작 방향과 몸의 흐름을 함께 봅니다.",
+      "steps": [
+        "작은 스윙에서 페이스가 통과하는 원본 장면을 봅니다.",
+        "같은 클럽과 정렬로 시작 방향을 관찰합니다.",
+        "손만 급히 돌리지 않았는지 내 영상과 결과를 함께 비교합니다."
+      ],
+      "checks": [
+        "공은 어느 방향으로 출발했나?",
+        "방향을 맞추려 손목을 잠그거나 급히 감았나?",
+        "같은 조건에서 방향과 타점이 비슷했나?"
+      ],
+      "sourceIds": [
+        "IsSS-GnQQyY"
+      ]
+    },
+    "relatedGroups": [
+      "impact-release"
+    ]
+  },
+  {
+    "id": "impact-release",
+    "title": "릴리스·헤드 통과",
+    "description": "손으로 끝까지 끌기보다 몸의 흐름 속에서 헤드가 통과하는지 봅니다.",
+    "videoIds": [
+      "BvnGOkOMo68",
+      "4uQe-J5qM2c",
+      "RBJllwVPFEM",
+      "qJRYOqhK-2c",
+      "qVHPT2eU5gY",
+      "M-ryH3IhUXI",
+      "0HjpF1MOwAw",
+      "XgPPBzZKzNM",
+      "xys5zZWka6M",
+      "VGya7_OVLYo",
+      "yv4KTSs8Riw",
+      "o4KqDhYXlTw",
+      "28HBEaS-G54",
+      "XvPYFd-seNw",
+      "Wlbi1o9fb2Q",
+      "te5CN12g0Mc"
+    ],
+    "practice": {
+      "cue": "손으로 끝까지 끌기보다 몸의 흐름 속에서 헤드가 통과하는지 봅니다.",
+      "steps": [
+        "헤드 무게를 느끼는 시범과 손으로 당기는 시범을 구분합니다.",
+        "공 없이 작은 스윙에서 몸의 회전을 이어 헤드를 보냅니다.",
+        "같은 각도로 손과 헤드의 통과 순서를 비교합니다."
+      ],
+      "checks": [
+        "손·팔만 급히 지나갔나?",
+        "헤드를 보내려 손목만 일찍 풀었나?",
+        "가슴 회전과 헤드 통과가 연결됐나?"
+      ],
+      "sourceIds": [
+        "BvnGOkOMo68",
+        "4uQe-J5qM2c",
+        "RBJllwVPFEM"
+      ]
+    },
+    "relatedGroups": [
+      "follow-flow"
+    ]
+  },
+  {
+    "id": "follow-flow",
+    "title": "팔·클럽의 흐름",
+    "description": "공을 맞힌 뒤에도 팔과 클럽이 지나가는 흐름을 봅니다.",
+    "videoIds": [
+      "YD9lLDhvy8c",
+      "-h77kU-fpjg",
+      "JhE2A-kCaLI",
+      "dtnFgYXYfBE"
+    ],
+    "practice": {
+      "cue": "공을 맞힌 뒤에도 팔과 클럽이 지나가는 흐름을 봅니다.",
+      "steps": [
+        "임팩트 전후 손목과 클럽 위치를 원본에서 천천히 봅니다.",
+        "공 없는 작은 스윙에서 타격 지점 뒤까지 연결합니다.",
+        "내 영상의 같은 구간을 비교하고 끝까지 붙잡는 지점을 기록합니다."
+      ],
+      "checks": [
+        "맞히는 순간 팔·클럽 흐름이 끊겼나?",
+        "손으로 억지로 앞으로 밀었나?",
+        "임팩트 이후에도 편하게 회전이 이어졌나?"
+      ],
+      "sourceIds": [
+        "qVHPT2eU5gY",
+        "YD9lLDhvy8c"
+      ]
+    },
+    "relatedGroups": [
+      "follow-relax"
+    ]
+  },
+  {
+    "id": "follow-relax",
+    "title": "힘 빼고 어깨 위로",
+    "description": "피니시 모양을 억지로 만들기보다 힘이 빠져 클럽이 넘어가게 합니다.",
+    "videoIds": [
+      "WQbV4r6m2Ww",
+      "x0PzoVHk9gg"
+    ],
+    "practice": {
+      "cue": "피니시 모양을 억지로 만들기보다 힘이 빠져 클럽이 넘어가게 합니다.",
+      "steps": [
+        "원본의 샤프트가 등 쪽으로 넘어가는 장면을 봅니다.",
+        "느린 빈스윙에서 팔의 긴장을 줄여 어깨 위로 이어 봅니다.",
+        "백스윙부터 피니시까지 중간에 끊지 않고 연결합니다."
+      ],
+      "checks": [
+        "팔·어깨에 힘이 들어 클럽이 멈췄나?",
+        "어깨에 닿게 하려고 억지로 꺾었나?",
+        "같은 흐름으로 편하게 마무리됐나?"
+      ],
+      "sourceIds": [
+        "WQbV4r6m2Ww",
+        "x0PzoVHk9gg"
+      ]
+    },
+    "relatedGroups": [
+      "follow-balance"
+    ]
+  },
+  {
+    "id": "follow-balance",
+    "title": "균형·편안한 마무리",
+    "description": "프로와 같은 모양보다 편한 균형과 반복성을 기준으로 봅니다.",
+    "videoIds": [
+      "yHVIKXd_Ss8",
+      "bfMsJtV61hM",
+      "ZBYKvzsKbyU",
+      "G6VjK_afBng"
+    ],
+    "practice": {
+      "cue": "프로와 같은 모양보다 편한 균형과 반복성을 기준으로 봅니다.",
+      "steps": [
+        "편한 팔 모양과 다리 자세를 비교하는 원본을 봅니다.",
+        "무리하지 않는 속도로 스윙하고 마무리 균형을 느껴 봅니다.",
+        "같은 클럽과 촬영 각도에서 여러 번의 마무리를 비교합니다."
+      ],
+      "checks": [
+        "끝에서 중심을 잃거나 발을 급히 옮겼나?",
+        "모양을 맞추려 팔·어깨에 힘을 줬나?",
+        "편안함과 균형이 반복됐나?"
+      ],
+      "sourceIds": [
+        "yHVIKXd_Ss8"
+      ]
+    },
+    "relatedGroups": [
+      "backswing-setup"
+    ]
+  },
+  {
+    "id": "review",
+    "title": "분류 확인 대기",
+    "description": "제목만으로 연습 구간을 특정하기 어려운 기존 자료입니다. 원본 확인 전에는 대표 연습으로 사용하지 않습니다.",
+    "videoIds": [
       "U4nn7s20ACc",
       "A_fu4ajV-_I",
       "dBsZdo7VEAA",
-      "0lbtJgkzqWM",
       "cQiwXcbWZc4",
-      "QsmMamIFMsE",
-      "jlqT_vNRcSI",
-      "zB5hFmVpisI",
-      "FnbyQ-UYjMI",
-      "lb2CrZl0FrA",
-      "q1P0eGWA8_s",
-      "EgdcUOkvJKk",
-      "1lD1Lhk-2Lc",
-      "JhE2A-kCaLI",
-      "bTA5HW-hU_Y",
-      "5vL6-Dwahsw",
-      "1x_iiruwFTU",
-      "DYtWZFKkKas",
-      "qQbCq_QXB0A",
-      "Ks-9y9yLols",
-      "eOxiYC684K0",
-      "-8gKh-1h6Hs",
-      "clEQKV7hWrY",
-      "lnzbSVSBevs",
-      "Q_kYNFcYL0o",
-      "v3CFS-0sO_I",
-      "oEVbWjzZl0E"
-    ]
-  },
-  {
-    "id": "arms-impact",
-    "title": "팔·임팩트",
-    "description": "허리 높이 작은 스윙에서 팔·손의 한 가지 동작만 적용하고 타점과 시작 방향을 비교합니다.",
-    "videoIds": [
-      "9YWDNMyTQy4",
-      "wBlnDaqkGi0",
-      "yv4KTSs8Riw",
-      "Aj1UEMYPxBg",
-      "S3fxUFBzfBo",
-      "du58mmLNMnQ",
-      "RSbjGWhzEnQ",
-      "5glZX2pq15o",
-      "4uQe-J5qM2c",
-      "Wlbi1o9fb2Q",
-      "FjWulC87mzM",
-      "o4KqDhYXlTw",
-      "ThwbClowjjU",
-      "XvPYFd-seNw",
-      "mGYe7UjYXfo",
-      "28HBEaS-G54",
-      "wwZFeiPAoMU",
-      "t_9sQjrS2o4",
-      "ldkU0D_Ylms",
-      "M-ryH3IhUXI",
-      "3kNb6TQN2T0",
-      "VGya7_OVLYo",
-      "jg52OubK_L0",
-      "unGNdzyt7kE",
-      "En79wtGEzs4",
-      "va8Oz-nSxcI",
-      "UlRsR8hnZGs",
-      "YD9lLDhvy8c",
-      "0HjpF1MOwAw",
-      "2CplOC4flsA",
-      "g2AXYPKdCik",
-      "sKcgYjwimd8",
-      "9ELCrrtWqwM",
-      "ZVyCmpxNXa4",
-      "xys5zZWka6M",
-      "XgPPBzZKzNM",
-      "eRSTJTcMFjE",
-      "qVHPT2eU5gY",
-      "rvrwwVdyM68",
-      "nkfEfaa4CFs",
-      "qJRYOqhK-2c",
-      "WQbV4r6m2Ww",
-      "x0PzoVHk9gg",
-      "yHVIKXd_Ss8",
-      "RBJllwVPFEM",
-      "aCyFCVz85ss"
-    ]
-  },
-  {
-    "id": "short-game",
-    "title": "어프로치",
-    "description": "공 위치와 탄도·구름을 비교하고 클럽과 라이에 따른 차이를 레슨에서 확인합니다.",
-    "videoIds": [
-      "Fk_3CjorpVA"
-    ]
-  },
-  {
-    "id": "wood",
-    "title": "우드",
-    "description": "우드의 헤드 무게와 지면 통과를 살펴보는 실전 샷 참고 자료입니다. 아이언 레슨과 적용 조건을 구분해 확인하세요.",
-    "videoIds": [
-      "te5CN12g0Mc"
-    ]
+      "unGNdzyt7kE"
+    ],
+    "relatedGroups": []
   }
 ];
 window.GolfContent.videoTags = ["백스윙 시 오른팔 위치","백스윙 시 몸통 회전"];

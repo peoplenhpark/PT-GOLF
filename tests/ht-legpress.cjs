@@ -22,6 +22,8 @@ for(const v of m.variants){
  assert(dist(P.pose(v.kind,0).ankles[0],P.pose(v.kind,.5).ankles[0])>.22);
 }
 const c=ctx.window.GolfContent;assert.equal(c.videos.filter(v=>v.id==='1lD1Lhk-2Lc').length,1);
-assert.equal(c.videoGroupFor(c.videos.find(v=>v.id==='Fk_3CjorpVA')).id,'short-game');
-for(const id of ['1lD1Lhk-2Lc','va8Oz-nSxcI','0HjpF1MOwAw','2CplOC4flsA','g2AXYPKdCik'])assert.notEqual(c.videoGroupFor(c.videos.find(v=>v.id===id)).id,'backswing-top');
+assert.equal(c.videoGroupFor(c.videos.find(v=>v.id==='Fk_3CjorpVA')).id,'impact-contact');
+assert(c.videoCollections['short-game'].includes('Fk_3CjorpVA'));
+for(const id of ['1lD1Lhk-2Lc','va8Oz-nSxcI','0HjpF1MOwAw','2CplOC4flsA'])assert(!c.videoGroupFor(c.videos.find(v=>v.id===id)).id.startsWith('backswing-'));
+assert.equal(c.videoGroupFor(c.videos.find(v=>v.id==='g2AXYPKdCik')).id,'backswing-arm');
 console.log('PASS: five HT leg-press placements, 5005 poses, constant limbs, supported trunk, sled/sole contact, source cuts, PT link and golf scope/deduplication.');
