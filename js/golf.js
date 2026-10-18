@@ -211,6 +211,19 @@ window.GolfHub = (() => {
     const v=video('2tam4sbJQtM');
     return v?.soloPractice?soloPractice(v,true).replace('<ol class="g-solo-steps">',practiceFocus(content.videoGroupFor(v))+'<ol class="g-solo-steps">'):'';
   }
+  function recentPractice() {
+    // Reviewed v150 additions: optional references, never adopted as personal criteria automatically.
+    const references=[
+      {id:'j1USTUwFnRI',title:'편한 연결 · 양손 간격 드릴',action:'공 없이 오른손을 내려 잡고 작게 회전한 뒤, 평소 그립으로 연결합니다.',check:'몸통과 클럽이 함께 움직이고, 옆구리를 억지로 꺾지 않아도 편한가요?'},
+      {id:'4DyoF3OQKww',title:'편한 통과 · 릴리스 방향',action:'작은 빈스윙에서 아래로 급히 풀 때와 옆으로 보내는 감각을 비교합니다.',check:'손목을 억지로 꺾거나 몸통을 멈추지 않고 통과하나요?'},
+      {id:'4Eof_tmI0Ag',title:'일관된 조건 · 클럽 구분',action:'사용할 클럽을 정하고, 영상에서 아이언 또는 드라이버 장면만 참고합니다.',check:'드라이버의 뒤에 남는 감각을 아이언에 그대로 옮기지 않았나요?'}
+    ].map(r=>({...r,video:video(r.id)})).filter(r=>r.video);
+    if(!references.length)return '';
+    return `<section class="g-recent-practice" aria-labelledby="g-recent-practice-title"><h2 id="g-recent-practice-title">새 영상 · 편안함과 일관성</h2><p class="g-meta">현재 레슨을 우선하고, 필요한 한 가지만 참고하세요.</p><div class="g-recent-practice-grid">${references.map(r=>{
+      const custom=videoNote(r.id),action=custom.action?.trim()?custom.action:r.action,check=custom.feel?.trim()?custom.feel:r.check;
+      return `<article><h3>${e(r.title)}</h3><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(action)}</dd></div><div><dt>확인할 것</dt><dd>${e(check)}</dd></div></dl><a class="g-link" href="${href('videos',r.id)}" aria-label="${e(videoTitle(r.video))} · 영상과 내 기록 보기">영상과 내 기록 보기 ›</a></article>`;
+    }).join('')}</div><small>영상 기반 보조 참고 · 효과는 직접 비교하고, 다음 레슨에서 확인합니다.</small></section>`;
+  }
   function backswingGuide(v) {
     if(!v.backswingGuide)return '';
     const p=practical(v),g=v.backswingGuide;
@@ -536,5 +549,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink,searchRecords,pinnedSequence,pinnedPractice,stagePractice,commonPractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,openLink,searchRecords,pinnedSequence,pinnedPractice,recentPractice,stagePractice,commonPractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

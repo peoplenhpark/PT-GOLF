@@ -311,4 +311,13 @@
 .g-video-mini>nav[aria-label="이 공통 영상의 관련 구간"] a{font-size:13px;padding:10px 0}
 .g-placement{display:flex;flex-wrap:wrap;gap:5px 12px;margin:10px 12px;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
 .g-placement span{color:var(--sub)}.g-placement a{color:var(--golf)}
+.g-recent-practice{margin:18px 0;color:var(--txt)}
+.g-recent-practice h2{font-size:18px;margin:0 0 8px}
+.g-recent-practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.g-recent-practice-grid article{display:flex;flex-direction:column;min-width:0;padding:14px;border:1px solid var(--golf-line);border-radius:12px;background:var(--card);overflow-wrap:anywhere}
+.g-recent-practice-grid h3{font-size:15px;line-height:1.5;margin:0 0 8px;color:var(--txt)}
+.g-recent-practice-grid .g-practice-focus{margin:0 0 8px}
+.g-recent-practice-grid .g-link{margin-top:auto;min-height:44px;display:flex;align-items:center}
+.g-recent-practice>small{display:block;margin-top:8px;font-size:12px;line-height:1.6;color:var(--sub)}
+@media(max-width:700px){.g-recent-practice-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.g-practice-columns{grid-template-columns:minmax(0,1fr);gap:12px}.g-stage-links strong{font-size:15px}.g-practice-guide{padding:13px}.g-stage-links a{padding:12px 10px}}
