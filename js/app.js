@@ -46,6 +46,19 @@ const Theme = (() => {
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const partLabel = p => (Store.getParts().find(x => x.id === p) || {}).label || p;
   const partIcon = p => (Store.getParts().find(x => x.id === p) || {}).icon || '';
+  // User-selected exercises (2026-10-16); selection only, not a prescribed routine.
+  const personalPT = [
+    {key:'basic',label:'기본운동',ids:['pt_tailbone_raise','pt_lunge_ball_rotation','pt_hip_openclose_stretch','pt_openbook','pt_wide_sidelunge_stretch']},
+    {key:'chest',label:'가슴',ids:['pt_chestpress','pt_pecdeck']},
+    {key:'back',label:'등',ids:['pt_seatedrow','pt_latpulldown','pt_pullup']},
+    {key:'arms',label:'팔',ids:['pt_pushdown','pt_low_cable_curl']},
+    {key:'legs',label:'다리',ids:['pt_legcurl','pt_adduction','pt_legextension','pt_legpress']}
+  ];
+  function personalGroups() {
+    const byId = new Map(Store.getByPart('pt').map(e => [e.id,e]));
+    return personalPT.map(g => ({...g,exercises:g.ids.map(id=>byId.get(id)).filter(Boolean)}));
+  }
+  const personalCat = cat => cat === 'personal' || personalPT.some(g => cat === 'personal:'+g.key);
 
   function toast(msg) {
     toastEl.textContent = msg;
@@ -85,10 +98,13 @@ const Theme = (() => {
   function renderPreserving(){navigation.saveScroll();render();}
   function saveError(error){toast(error.code==='CONFLICT'?'다른 탭에서 같은 기록이 변경됐습니다. 입력 내용을 보관하고 다시 확인해 주세요.':error.code==='CORRUPT'?'저장된 기록을 읽지 못해 원본을 보호하고 있습니다.':'저장하지 못했습니다. 입력 내용은 그대로 두었습니다.');}
   function tabbar(active) {
+    const personal = personalGroups();
+    const personalLink = (cat,label,count) => `<a href="#pt?cat=${encodeURIComponent(cat)}"${view.name === 'part' && view.part === 'pt' && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
+    const personalMenu = `<section class="exercise-personal-menu"><h3>내 개인운동</h3><div class="exercise-quicklinks">${personalLink('personal','지정 종목 전체',personal.reduce((n,g)=>n+g.exercises.length,0))}${personal.map(g=>personalLink('personal:'+g.key,g.label,g.exercises.length)).join('')}</div></section>`;
     const exerciseGroups = ['pt', 'ht'].map(part => {
       const list = Store.getByPart(part);
       const link = (cat, label, count) => `<a href="#${part}?cat=${encodeURIComponent(cat)}"${view.name === 'part' && view.part === part && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
-      return `<section><h3>${part.toUpperCase()}</h3><div class="exercise-quicklinks">${link('all', '전체', list.length)}${Store.getCategories(part).map(cat => link(cat, cat, list.filter(e => e.category === cat).length)).join('')}</div></section>`;
+      return `<section><h3>${part.toUpperCase()} 전체 운동</h3><div class="exercise-quicklinks">${link('all', '전체', list.length)}${Store.getCategories(part).map(cat => link(cat, cat, list.filter(e => e.category === cat).length)).join('')}</div></section>`;
     }).join('');
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
@@ -101,7 +117,7 @@ const Theme = (() => {
       ${t('calendar', '🗓️', '캘린더')}
       <details class="exercise-quicknav">
         <summary>부위별 운동 <span aria-hidden="true">⌃</span></summary>
-        <div class="exercise-quickpanel" aria-label="전체 부위별 운동">${exerciseGroups}</div>
+        <div class="exercise-quickpanel" aria-label="전체 부위별 운동">${personalMenu}${exerciseGroups}</div>
       </details>
       <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 <span aria-hidden="true">⌕</span></button>
       <div class="history-controls" aria-label="화면 이동">
@@ -241,14 +257,19 @@ const Theme = (() => {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
     const cats = Store.getCategories(part);
-    const activeCat = view.cat === 'all' || cats.includes(view.cat) ? view.cat : (cats[0] || null);
+    const activeCat = view.cat === 'all' || cats.includes(view.cat) || (part === 'pt' && personalCat(view.cat)) ? view.cat : (cats[0] || null);
     view.cat = activeCat;
+    const personal = personalGroups(), isPersonal = part === 'pt' && personalCat(activeCat);
+    const personalCount = personal.reduce((n,g)=>n+g.exercises.length,0);
+    const personalChip = part === 'pt' ? `<button class="chip ${isPersonal ? 'on' : ''}" data-cat="personal">내 개인운동 ${personalCount}</button>` : '';
 
-    const chips = `<button class="chip ${activeCat === 'all' ? 'on' : ''}" data-cat="all">전체 ${list.length}</button>` + cats.map(c =>
+    const chips = personalChip + `<button class="chip ${activeCat === 'all' ? 'on' : ''}" data-cat="all">전체 ${list.length}</button>` + cats.map(c =>
       `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c).split(' · ').join('<br>')}</button>`).join('');
 
     const inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
-    const rows = inCat.length
+    const rows = isPersonal
+      ? `<section class="personal-exercises"><h2>내 개인운동</h2><p class="personal-plan-note">지정한 종목 모음 · 주 4회 일정은 코치와 협의 예정</p><div class="chips"><button class="chip ${activeCat === 'personal' ? 'on' : ''}" data-cat="personal">전체 ${personalCount}</button>${personal.map(g=>`<button class="chip ${activeCat === 'personal:'+g.key ? 'on' : ''}" data-cat="personal:${g.key}">${g.label} ${g.exercises.length}</button>`).join('')}</div>${personal.filter(g=>activeCat==='personal'||activeCat==='personal:'+g.key).map(g=>`<section class="personal-exercise-group"><h3>${g.label} <small>${g.exercises.length}</small></h3>${g.exercises.length ? `<div class="pt-exercise-grid">${g.exercises.map((e,i)=>exRow(e,i)).join('')}</div>` : '<p class="personal-plan-note">현재 표시할 지정 종목이 없습니다. 전체 운동에서 다른 종목을 찾아보세요.</p>'}</section>`).join('')}</section>`
+      : inCat.length
       ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i, activeCat === 'all')).join('')}</div>`
       : `<div class="empty">아직 표시할 동작이 없어요.<br>숨긴 동작은 홈의 삭제 요청에서 복원할 수 있어요.</div>`;
 
@@ -258,7 +279,7 @@ const Theme = (() => {
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">내 기준</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
-        ${cats.length ? `<div class="chips">${chips}</div>` : ''}
+        ${isPersonal ? `<a class="personal-all-link" href="#pt?cat=all">PT 전체 운동 ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
       ${tabbar(part)}`;
@@ -799,7 +820,7 @@ const Theme = (() => {
     document.getElementById('modal-title').textContent = ex ? '동작 수정' : '동작 추가';
     const part = ex ? ex.part : 'pt';
     setSeg('f-part', part);
-    val('f-category', ex ? ex.category : (view.cat === 'all' ? '' : (view.cat || '')));
+    val('f-category', ex ? ex.category : (view.cat === 'all' || personalCat(view.cat) ? '' : (view.cat || '')));
     val('f-name', ex ? ex.name : '');
     val('f-spec', ex ? ex.spec : '');
     val('f-prep', ex ? (ex.prep || []).join('\n') : '');

@@ -553,6 +553,14 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
  .exercise-quickpanel{position:absolute;bottom:calc(100% + 8px);left:8px;right:8px;padding:16px;max-height:min(60dvh,420px);overflow-y:auto;overscroll-behavior:contain;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 30px #0004;color:var(--txt)}
  .exercise-quickpanel section+section{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
  .exercise-quickpanel h3{font-size:14px;margin:0 0 8px}
+ .exercise-personal-menu h3{color:var(--pt)}
+ .exercise-personal-menu .exercise-quicklinks a{border-color:var(--pt-line);background:var(--pt-bg)}
+ .personal-exercises h2{font-size:20px;margin:16px 0 6px}
+ .personal-plan-note{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:12px}
+ .personal-exercise-group{margin:18px 0}
+ .personal-exercise-group h3{font-size:16px;margin-bottom:10px}
+ .personal-exercise-group h3 small{font-size:12px;color:var(--sub);margin-left:4px}
+ .personal-all-link{display:flex;align-items:center;min-height:44px;color:var(--pt);font-size:14px;text-underline-offset:3px}
  .exercise-quicklinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
  .exercise-quicklinks a{display:flex;align-items:center;justify-content:space-between;gap:4px;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:10px;color:var(--txt);text-decoration:none;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
  .exercise-quicklinks small{color:var(--sub);font-size:11px;flex-shrink:0}
