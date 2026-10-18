@@ -456,30 +456,6 @@
     "verifiedAt": "2026-10-05"
   },
   {
-    "id": "U4nn7s20ACc",
-    "title": "종결급 스윙 레슨",
-    "frames": [
-      {
-        "src": "media/golf-frames/U4nn7s20ACc-1.webp",
-        "time": 45,
-        "label": "장면 1",
-        "width": 360,
-        "height": 640
-      },
-      {
-        "src": "media/golf-frames/U4nn7s20ACc-2.webp",
-        "time": 50,
-        "label": "장면 2",
-        "width": 360,
-        "height": 640
-      }
-    ],
-    "duration": 88,
-    "source": "https://www.youtube.com/watch?v=U4nn7s20ACc",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-05"
-  },
-  {
     "id": "4uQe-J5qM2c",
     "title": "헤드 던지는 2가지 핵심",
     "frames": [
@@ -812,30 +788,6 @@
     ],
     "duration": 55,
     "source": "https://www.youtube.com/watch?v=zT6zJCJ59js",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-05"
-  },
-  {
-    "id": "cQiwXcbWZc4",
-    "title": "스윙 원리 간단히 보기",
-    "frames": [
-      {
-        "src": "media/golf-frames/cQiwXcbWZc4-1.webp",
-        "time": 1.5,
-        "label": "장면 1",
-        "width": 360,
-        "height": 640
-      },
-      {
-        "src": "media/golf-frames/cQiwXcbWZc4-2.webp",
-        "time": 4.0,
-        "label": "장면 2",
-        "width": 360,
-        "height": 640
-      }
-    ],
-    "duration": 5,
-    "source": "https://www.youtube.com/watch?v=cQiwXcbWZc4",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-05"
   },

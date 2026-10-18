@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);vm.runInContext(read('js/exercise-media.js'),ctx);
 const c=ctx.window.GolfContent,media=ctx.window.ExerciseMedia;
-assert.equal(c.videos.length,101);assert.equal(new Set(c.videos.map(v=>v.id)).size,101);
+assert.equal(c.videos.length,99);assert.equal(new Set(c.videos.map(v=>v.id)).size,99);
 assert.equal(c.videos[0].id,'9YWDNMyTQy4');
 for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
 for(const v of c.videos){
@@ -19,9 +19,9 @@ for(const v of c.videos){
 const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
 const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
 const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
-assert.equal(metadataRows.length,27);assert.equal(reviewedRows.length,74);
-assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,27,'metadata comparisons must be title-specific');
-assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,27,'metadata questions must be title-specific');
+assert.equal(metadataRows.length,22);assert.equal(reviewedRows.length,77);
+assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,22,'metadata comparisons must be title-specific');
+assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,22,'metadata questions must be title-specific');
 for(const {video,practical} of metadataRows){
  assert(!/적용하세요|무너지는 하나/.test(practical.action),video.id+' must not prescribe an unreviewed cue');
  assert(!practical.feel.includes('바로 교정 동작으로 바꾸세요'),video.id+' must keep comparison observational');
@@ -30,7 +30,7 @@ for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.q
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,13);assert.equal(new Set(grouped).size,101);assert.equal(grouped.length,101);
+assert.equal(c.videoGroups.length,14);assert.equal(new Set(grouped).size,99);assert.equal(grouped.length,99);
 assert.equal(c.videoSections.length,4);
 assert(c.videoSections.every(s=>s.groups.length===3));
 for(const v of c.videos)assert(c.videoGroupFor(v));
@@ -81,7 +81,7 @@ ctx.window.GolfHub.render({golfTab:'videos',golfGroup:'downswing-path'},api);ass
 for(const tab of ['notes','lessons']){ctx.window.GolfHub.render({golfTab:tab},api);check();}
 const driver=seed.exercises.find(e=>e.id==='golf_driver');driver.practicalSummary={action:'검증용 오늘 동작',feel:'검증용 개인 감각'};
 ctx.window.GolfHub.render({golfTab:'notes'},api);assert(app.innerHTML.includes('검증용 오늘 동작'));assert(app.innerHTML.includes('검증용 개인 감각'));delete driver.practicalSummary;
-const metadataQuestion=c.videos.find(v=>v.id==='cQiwXcbWZc4');ctx.window.GolfHub.render({golfTab:'question-edit',sourceKind:'videos',sourceId:metadataQuestion.id},api);assert(app.innerHTML.includes(c.practicalFor(metadataQuestion).check));
+const metadataQuestion=c.videos.find(v=>v.id==='5glZX2pq15o');ctx.window.GolfHub.render({golfTab:'question-edit',sourceKind:'videos',sourceId:metadataQuestion.id},api);assert(app.innerHTML.includes(c.practicalFor(metadataQuestion).check));
 assert.equal(writes,0);
 // Old URLs redirect to valid source/notes, including unsafe or unknown query values.
 for(const [file,query,suffix] of [
@@ -93,4 +93,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 101 originals, 12 subsections + review, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 99 originals, 12 subsections + common + review, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');

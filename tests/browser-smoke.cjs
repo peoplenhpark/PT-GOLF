@@ -64,7 +64,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
   const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-shortcuts a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
-  await page.locator('.g-video-shortcuts a[href="#golf/group/all"]').click();await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').first().click();await page.locator('[data-g-form=video]').waitFor();
+  await page.locator('.g-video-shortcuts a[href="#golf/group/all"]').click();await page.locator('a[href="#golf/videos/5glZX2pq15o"]').first().click();await page.locator('[data-g-form=video]').waitFor();
   await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();
   assert.equal(await page.locator('.g-tabs a').count(),4);
   await page.locator('.g-tabs a[href="#golf/notes"]').click();
@@ -86,7 +86,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,202);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,198);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
@@ -106,7 +106,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   }
   await page.setViewportSize({width:390,height:844});
 
-  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
+  await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
   await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();
   await page.locator('.g-lesson-anchor [data-practice=lesson]').click();await page.locator('.g-practice-entry').waitFor();
   assert.match(await page.locator('.g-practice-hero h2').textContent(),/몸통으로 낮게 시작하고, 힘 빼고 피니시까지/);
@@ -129,7 +129,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('#g-date').fill('2026-10-12');await page.locator('#g-title').fill('검증용 두 번째 레슨');await page.locator('input[name=noteIds][value=golf_iron7]').check();await page.locator('#g-correction').fill('검증용 교정');await page.locator('#g-practiceCue').fill('검증용 다음 연습');await page.getByRole('button',{name:'레슨 저장',exact:true}).click();await page.locator('.g-title').waitFor();
   await page.goto(base+'#golf/today');await page.locator('.g-practice-hero').waitFor();assert.match(await page.locator('.g-practice-hero h2').textContent(),/검증용 다음 연습/);
 
-  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
+  await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
   const originalGolfTitle=await page.locator('.g-title').textContent();
   await page.locator('[data-g=favorite-video]').click();assert.equal(await page.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-g=video-edit]').click();await page.locator('[data-g-form=video-edit]').waitFor();
@@ -137,21 +137,22 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal((await page.locator('.g-title').textContent()).trim(),'브라우저 검사 영상 이름');
   await page.locator('[data-g=video-edit]').click();await page.locator('[data-g=video-reset]').click();await page.locator('[data-g-form=video]').waitFor();
   assert.equal((await page.locator('.g-title').textContent()).trim(),originalGolfTitle.trim());assert.equal(await page.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');
-  await page.goto(base+'#golf/video-favorites');await page.getByRole('heading',{name:/즐겨찾기/}).waitFor();assert.equal(await page.locator('a[href="#golf/videos/cQiwXcbWZc4"]').count(),1);
-  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
+  await page.goto(base+'#golf/video-favorites');await page.getByRole('heading',{name:/즐겨찾기/}).waitFor();assert.equal(await page.locator('a[href="#golf/videos/5glZX2pq15o"]').count(),1);
+  await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
   assert.equal(await page.locator('.g-practical-summary dl>div').count(),3,'video detail shows three practical summary rows');
   assert.match(await page.locator('.g-practical-summary').textContent(),/원본에서 볼 것/);
   assert.match(await page.locator('.g-practical-caution').textContent(),/제목·채널·길이/);
-  await page.locator('[data-g=ask]').click();assert.match(await page.getByLabel('확인하고 싶은 내용').inputValue(),/레슨에서 먼저 확인/);
-  await page.goto(base+'#golf/videos/cQiwXcbWZc4');await page.locator('[data-g-form=video]').waitFor();
+  const sourceQuestion=await page.evaluate(()=>GolfContent.practicalFor(GolfContent.videos.find(v=>v.id==='5glZX2pq15o')).check);
+  await page.locator('[data-g=ask]').click();assert.equal(await page.getByLabel('확인하고 싶은 내용').inputValue(),sourceQuestion);
+  await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
   await page.locator('[data-g-form=video] textarea').fill('골프 영상 초안');
   await page.reload();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안');
   await page.locator('[data-g-form=video] button').click();assert.match(await page.locator('[data-draft-status]').first().textContent(),/저장/);
-  assert.equal(await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').count(),1,'video detail has one delete action');await page.locator('.g-delete-video[data-id="cQiwXcbWZc4"]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
+  assert.equal(await page.locator('.g-delete-video[data-id="5glZX2pq15o"]').count(),1,'video detail has one delete action');await page.locator('.g-delete-video[data-id="5glZX2pq15o"]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
   await page.locator('[data-act=confirm-yes]').click();await page.getByRole('heading',{name:'이 기기에서 삭제 요청한 영상입니다'}).waitFor();
   const videoDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
-  assert(videoDeletion.queue.includes('cQiwXcbWZc4'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');
-  {const issue=new URL(videoDeletion.url);assert.match(issue.searchParams.get('body'),/content-kind: video/);assert.match(issue.searchParams.get('body'),/content-id: cQiwXcbWZc4/);assert(!issue.searchParams.get('body').includes('골프 영상 초안'));}
+  assert(videoDeletion.queue.includes('5glZX2pq15o'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');
+  {const issue=new URL(videoDeletion.url);assert.match(issue.searchParams.get('body'),/content-kind: video/);assert.match(issue.searchParams.get('body'),/content-id: 5glZX2pq15o/);assert(!issue.searchParams.get('body').includes('골프 영상 초안'));}
   await page.locator('[data-g=restore-video]').first().click();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안','restoring a video preserves its memo');
   await page.goto(base+'#golf/notes');assert.equal(await page.locator('.g-note-summary').count(),4);await page.locator('[data-open]').first().click();await page.locator('.personal-note-label').waitFor();assert.match(await page.locator('.personal-note-label').textContent(),/개인 연습 감각/);
   for(const width of [320,390,768]){

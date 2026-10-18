@@ -287,6 +287,11 @@
 .g-practice-guide{margin:12px 0 18px;padding:14px;border:1px solid var(--golf-line);border-radius:12px;background:var(--golf-bg);color:var(--txt);overflow-wrap:break-word}
 .g-practice-guide>summary,.g-supplement>summary,.g-practice-sources>summary{cursor:pointer;font-weight:700;min-height:44px;padding:10px 0;line-height:1.65;font-size:14px}
 .g-practice-guide .g-solo-cue{font-weight:700;font-size:15px;line-height:1.65;margin:0 0 12px}
+.g-practice-title{font-size:17px;margin:0 0 12px}
+.g-practice-focus{margin:14px 0;padding:12px 14px;border-left:3px solid var(--golf);background:var(--card);border-radius:8px;color:var(--txt);font-size:14px;line-height:1.7;overflow-wrap:break-word}
+.g-practice-focus>div+div{margin-top:10px}.g-practice-focus dt{font-weight:700;color:var(--golf)}.g-practice-focus dd{margin:2px 0 0}
+.g-common-practice{margin:22px 0;padding:16px;border:1px solid var(--golf-line);border-radius:12px;background:var(--golf-bg);color:var(--txt);font-size:14px;line-height:1.7;overflow-wrap:break-word}
+.g-common-practice h2{font-size:18px;margin:0 0 10px}.g-common-sequence{font-weight:700}.g-common-practice summary{cursor:pointer;padding:10px 0;min-height:44px}
 .g-practice-columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .g-practice-columns h3{font-size:15px;color:var(--golf);margin:10px 0}
 .g-practice-columns ol,.g-practice-columns ul{padding-left:22px;margin:0;font-size:14px;line-height:1.75}
@@ -298,6 +303,12 @@
 .g-representative .g-frame-pair{max-width:500px;margin-left:auto;margin-right:auto}
 .g-supplement{margin-top:12px}.g-supplement>.g-video-grid{margin-top:12px}
 .g-related-groups a{display:block;padding:14px 0;min-height:44px;font-size:14px}
+.g-shared-references{margin-top:24px;padding:16px;border:1px solid var(--line);border-radius:14px}
+.g-shared-references h2{margin:0;font-size:17px}
+.g-video-section:has(#g-group-common) .g-video-grid>.g-video-mini:only-child{grid-column:1 / -1}
+.g-video-section:has(#g-group-common) .g-frame-pair{max-width:500px;margin-inline:auto}
+.g-video-mini>nav[aria-label="이 공통 영상의 관련 구간"]{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 12px}
+.g-video-mini>nav[aria-label="이 공통 영상의 관련 구간"] a{font-size:13px;padding:10px 0}
 .g-placement{display:flex;flex-wrap:wrap;gap:5px 12px;margin:10px 12px;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
 .g-placement span{color:var(--sub)}.g-placement a{color:var(--golf)}
 @media(max-width:600px){.g-practice-columns{grid-template-columns:minmax(0,1fr);gap:12px}.g-stage-links strong{font-size:15px}.g-practice-guide{padding:13px}.g-stage-links a{padding:12px 10px}}
