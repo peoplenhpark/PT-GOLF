@@ -4461,6 +4461,161 @@ window.GolfContent = {
         "group": "impact-release",
         "reason": "드라이버와 아이언에서 상체 위치와 클럽을 보내는 시점을 짧게 대비합니다. 서로 다른 클럽의 감각을 같은 지시로 합치지 않고 비교합니다."
       }
+    },
+    {
+      "id": "WxoZPlRhSvY",
+      "title": "다운스윙 들림 비교 · 팔을 당기지 않고 아래로 길게",
+      "summary": "몸이 일어나며 팔을 당기는 경우를 대상으로, 몸통 회전과 손의 하강을 연결하는 교정 감각을 설명합니다.",
+      "points": [
+        "초반은 몸이 일어나며 팔을 잡아당기는 동작과 손을 공 쪽 아래로 보내며 팔이 길어지는 느낌을 대비합니다.",
+        "중반은 몸통 회전과 저점 이동을 설명하고, 후반은 단상 위에서 낮은 매트를 향해 스윙하는 비교 드릴을 보여 줍니다.",
+        "숙이면 뒤땅을 걱정하지 않아도 된다는 설명은 원본 주장입니다. 무조건 더 숙이기·땅을 세게 찍기로 적용하지 않으며, 단상 드릴은 코치와 조건을 확인합니다."
+      ],
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "question": "제게 몸 들림·팔 당김이 실제로 있나요? 기존 ‘팔로만 내리지 않기’와 이 아래로 보내는 감각을 언제 구분해 써야 하나요?",
+      "connection": "기존 같은 프로의 S3fxUFBzfBo는 팔만 내리지 않고 회전과 연결하기입니다. 이번 영상은 몸이 일어나며 잡아당기는 경우를 다루므로, 두 감각을 동시에 강제하지 않고 현재 레슨에서 필요한 쪽을 확인합니다.",
+      "originalTitle": "손을 밑으로 밀어 주세요!⬇️ #golflesson #golfswing #golftips #golfpro #골프연습 #골프레슨 #골프스윙 #골프팁 #골프프로 #이석영프로 #아이언",
+      "channel": "이석영프로 [열정골프🔥]",
+      "duration": "1:00",
+      "durationSeconds": 60,
+      "presentation": "original",
+      "relatedVideoIds": [
+        "S3fxUFBzfBo",
+        "9YWDNMyTQy4",
+        "EgdcUOkvJKk"
+      ],
+      "evidence": "2026-10-19 원본 설명·표본 12장·화면 자막 확인. 자동 자막은 429 제한으로 확인하지 못함. 전체 음성을 직접 청취하지 않음.",
+      "moments": [
+        {
+          "s": 11.4,
+          "label": "회전과 함께 팔이 아래로 길어지는 시범"
+        },
+        {
+          "s": 40.2,
+          "label": "단상과 낮은 매트를 이용한 비교 시범"
+        }
+      ],
+      "observationPractice": {
+        "action": "평지에서 작은 빈스윙을 하며 몸이 일어나고 팔이 몸 쪽으로 당겨지는지 봅니다. 회전 속에서 팔이 아래로 길어지는 느낌만 비교합니다.",
+        "feel": "상체 들림과 팔 당김이 줄면서도 회전이 이어지고 편한가요? 더 숙이거나 손으로 강하게 누르는 보상이 생기는지 확인합니다."
+      },
+      "addedAt": "2026-10-18T20:22:49.215929+00:00",
+      "publishedAt": "2026-10-16T19:40:41+00:00",
+      "classificationReview": {
+        "date": "2026-10-19",
+        "status": "classified",
+        "group": "downswing-path",
+        "reason": "몸이 일어나며 팔을 당기는 경우를 대상으로, 몸통 회전과 손의 하강을 연결하는 교정 감각을 설명합니다."
+      }
+    },
+    {
+      "id": "CAZ9oUoGRIg",
+      "title": "손목 여유 · 과한 꺾임과 억지 래깅 줄이기",
+      "summary": "백스윙에서 손목을 끝까지 꺾지 않고 여유를 두는 감각과 오른손 한 손 스윙으로 내려오기·릴리스를 연결하는 시범입니다.",
+      "points": [
+        "12–22초의 ‘절반만 꺾기’는 원본의 감각 표현입니다. 정확한 각도나 모든 사람에게 같은 범위를 처방하는 기준이 아닙니다.",
+        "24–38초는 왼손을 등 뒤에 두고 오른손만으로 움직이며 손목각을 억지로 버티지 않는 시범입니다.",
+        "프로 장면과 각도 표시는 설명용 비교입니다. 볼 압착·비거리 효과를 개인 결과로 확정하거나 손목을 강제로 꺾어 맞추지 않습니다."
+      ],
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "question": "제 백스윙 손목이 과하게 꺾이나요? 각도를 억지로 유지하지 않으면서 일찍 풀리지 않는 범위와 타이밍을 확인해 주세요.",
+      "connection": "선호 채널의 soj_dt1_PAg는 백스윙 시작에서 서서히 받치기, 이번 자료는 과도한 꺾임·유지 힘 줄이기를 비교합니다. 기존 기준을 우선하고 다른 느낌은 코치에게 확인합니다.",
+      "originalTitle": "프로들의  볼 압착 비밀! #golf #골프스윙 #손목힌지#골프래깅#아이언눌러치기#버디웨이",
+      "channel": "버디웨이",
+      "duration": "1:03",
+      "durationSeconds": 63,
+      "presentation": "original",
+      "relatedVideoIds": [
+        "soj_dt1_PAg",
+        "UlRsR8hnZGs",
+        "5vL6-Dwahsw"
+      ],
+      "evidence": "2026-10-19 원본 표본 12장·8–38초 추가 16장·화면 자막 확인. 제공된 한국어 자막 트랙이 없어 음성 전사는 확인하지 못함. 전체 음성을 직접 청취하지 않음.",
+      "moments": [
+        {
+          "s": 17.01,
+          "label": "백스윙에서 손목을 가볍게 꺾는 시범"
+        },
+        {
+          "s": 32.13,
+          "label": "오른손 한 손으로 내려오는 시범"
+        }
+      ],
+      "observationPractice": {
+        "action": "작은 빈스윙에서 손목을 끝까지 꺾거나 각도를 붙잡으려는 힘을 줄여 봅니다. 원본의 한 손 시범을 참고한 뒤 평소 양손 그립으로 연결합니다.",
+        "feel": "손목·전완의 긴장이 줄고 같은 크기와 템포로 반복되나요? 일찍 던지거나 힘으로 풀어버리는 동작으로 바뀌지 않는지 확인합니다."
+      },
+      "addedAt": "2026-10-18T20:22:49.215929+00:00",
+      "publishedAt": "2026-10-14T12:49:40+00:00",
+      "classificationReview": {
+        "date": "2026-10-19",
+        "status": "common",
+        "group": "common",
+        "reason": "백스윙에서 손목을 끝까지 꺾지 않고 여유를 두는 감각과 오른손 한 손 스윙으로 내려오기·릴리스를 연결하는 시범입니다."
+      },
+      "sharedSections": [
+        "backswing",
+        "impact"
+      ],
+      "sharedGroups": [
+        "backswing-arm",
+        "impact-release"
+      ]
+    },
+    {
+      "id": "JoUx0gIzdng",
+      "title": "드라이버 하강 · 사이드암 감각과 어깨 순서",
+      "originalTitle": "사이드암 투수 느낌으로 내려오세요 #golf #골프 #golftips",
+      "channel": "공맞는순간",
+      "duration": "0:10",
+      "durationSeconds": 10,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "드라이버에서 왼어깨를 급히 열지 않고 오른어깨가 아래로 움직이며 옆으로 던지는 감각을 짧게 보여 줍니다.",
+      "points": [
+        "0–2초는 드라이버 스윙과 옆으로 던지는 감각을 소개합니다.",
+        "2–7초는 한 손으로 세운 클럽을 지지하며 왼어깨를 급하게 열지 않고 오른어깨가 아래로 움직이는 시범입니다.",
+        "드라이버의 교정 감각입니다. 어깨를 강제로 누르거나 몸의 회전을 멈추라는 뜻으로 적용하지 않으며 아이언의 하강 방향과 구분합니다."
+      ],
+      "moments": [
+        {
+          "s": 3.5,
+          "label": "왼어깨를 급히 열지 않는 비교 시범"
+        },
+        {
+          "s": 5.1,
+          "label": "오른어깨와 옆으로 보내는 감각"
+        }
+      ],
+      "relatedVideoIds": [
+        "1lD1Lhk-2Lc",
+        "jg52OubK_L0",
+        "4Eof_tmI0Ag"
+      ],
+      "evidence": "2026-10-19 원본 표본 12장·화면 자막·제공된 한국어 자동 자막 일부(0.1–3.8초) 확인. 전체 음성을 직접 청취하지 않음.",
+      "connection": "기존 1lD1Lhk-2Lc는 오른어깨만 아래로 떨어뜨릴 때의 문제를 설명합니다. 이번 드라이버의 사이드암 감각과 같은 처방으로 합치지 말고, 어깨·손·회전이 연결되는지 코치에게 확인합니다.",
+      "question": "제 드라이버에서 왼어깨가 급히 열리나요? 오른어깨만 떨어뜨려 뒤땅이 나는 동작과 이 사이드암 감각을 어떻게 구분하나요?",
+      "observationPractice": {
+        "action": "드라이버의 작은 빈스윙에서 왼어깨부터 급히 열리는지 관찰한 뒤, 옆으로 보내는 감각으로 부드럽게 연결해 봅니다.",
+        "feel": "어깨만 아래로 눌리거나 몸이 옆으로 무너지지 않고 팔·클럽·회전이 함께 이어지나요? 같은 템포와 균형으로 반복되는지 확인합니다."
+      },
+      "addedAt": "2026-10-19T02:53:40.624568+00:00",
+      "publishedAt": "2026-09-27T23:00:21+00:00",
+      "classificationReview": {
+        "date": "2026-10-19",
+        "status": "classified",
+        "group": "downswing-path",
+        "reason": "드라이버 전환 이후 어깨와 팔·클럽 하강 방향을 보여 주는 시범."
+      }
     }
   ]
 };
@@ -4723,7 +4878,9 @@ window.GolfContent.videoGroups = [
       "0lbtJgkzqWM",
       "jlqT_vNRcSI",
       "QsmMamIFMsE",
-      "v3CFS-0sO_I"
+      "v3CFS-0sO_I",
+      "WxoZPlRhSvY",
+      "JoUx0gIzdng"
     ],
     "practice": {
       "cue": "팔만 잡아당기는지, 몸 회전 속에서 클럽이 내려오는지 비교합니다.",
@@ -5005,11 +5162,12 @@ window.GolfContent.videoGroups = [
   },
   {
     "id": "common",
-    "title": "공통 · 구간 연결",
+    "title": "여러 구간 연결",
     "description": "여러 구간의 연결을 함께 다루는 영상입니다. 한 곳에 모으고 관련 구간에서 연결해 봅니다. 내용이 불명확한 미분류 자료와는 구분합니다.",
     "videoIds": [
       "dBsZdo7VEAA",
-      "j1USTUwFnRI"
+      "j1USTUwFnRI",
+      "CAZ9oUoGRIg"
     ],
     "relatedGroups": []
   },
@@ -5264,3 +5422,79 @@ window.GolfContent.relatedFor = (note, options = {}) => {
     return {video,reason,score,index};
   }).filter(x => x.score > 0).sort((a,b) => b.score-a.score || a.index-b.index).slice(0,5).map(({video,reason}) => ({video,reason}));
 };
+
+// Explicit application reviews; titles, personal edits and multi-stage membership never infer a club.
+window.GolfContent.clubLabels = {iron:"아이언",driver:"드라이버",both:"공통 적용",unknown:"확인 필요"};
+window.GolfContent.clubReviews = {
+  "9YWDNMyTQy4": {
+    "value": "iron",
+    "reason": "원본 화면에 7번 아이언을 명시한 내려놓기 시범. 다른 클럽으로 적용 범위를 넓히지 않습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "EgdcUOkvJKk": {
+    "value": "iron",
+    "reason": "아이언 다운블로 레슨의 원본 제목·한국어 자동 자막을 검토한 기록에 근거합니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "va8Oz-nSxcI": {
+    "value": "iron",
+    "reason": "원본 아이언 시범과 팔 하강·임팩트 경로 장면을 확인한 범위입니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "WxoZPlRhSvY": {
+    "value": "iron",
+    "reason": "아이언을 명시한 원본 설명과 공 쪽 하강·낮은 매트 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "JoUx0gIzdng": {
+    "value": "driver",
+    "reason": "원본 0.1초부터 드라이버라고 명시한 사이드암 감각입니다. 아이언에 그대로 적용하지 않습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "unGNdzyt7kE": {
+    "value": "driver",
+    "reason": "원본 드라이버 릴리스 비교 장면·화면 문구를 확인했습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "aCyFCVz85ss": {
+    "value": "driver",
+    "reason": "드라이버의 페이스 열림 비교·릴리스 리허설을 원본 장면과 자동 자막으로 확인했습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "3X4O4uMa_Bc": {
+    "value": "driver",
+    "reason": "원본 드라이버 시범에서 몸통 회전과 코킹 순서를 확인했습니다. 아이언 적용은 별도 확인합니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "A_fu4ajV-_I": {
+    "value": "driver",
+    "reason": "드라이버 전환 때 클럽 무게가 실리는 시점에 관한 원본 장면·자동 자막 검토 기록입니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "-h77kU-fpjg": {
+    "value": "driver",
+    "reason": "원본 드라이버 티샷 시범을 확인한 범위입니다. 시범의 감각을 개인 처방으로 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "dBsZdo7VEAA": {
+    "value": "both",
+    "reason": "원본 0:00–0:06 자동 자막에서 아이언과 드라이버 모두의 손 통과를 명시합니다. 공통 핵심에 한정하며 셋업·타격 조건까지 같다는 뜻은 아닙니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "CAZ9oUoGRIg": {
+    "value": "unknown",
+    "reason": "손목 여유·한 손 시범은 확인했지만 아이언·드라이버 모두에 적용된다는 설명은 확인하지 못했습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "4Eof_tmI0Ag": {
+    "value": "unknown",
+    "reason": "아이언과 드라이버의 차이를 비교하는 영상입니다. 두 클럽이 등장한다고 같은 동작의 공통 적용으로 분류하지 않습니다.",
+    "reviewedAt": "2026-10-19"
+  },
+  "2tam4sbJQtM": {
+    "value": "unknown",
+    "reason": "고정 백스윙 연습 기준은 유지합니다. 두 클럽에 같은 방식으로 적용하는 범위는 별도 확인이 필요합니다.",
+    "reviewedAt": "2026-10-19"
+  }
+};
+window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

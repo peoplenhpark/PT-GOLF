@@ -1,0 +1,105 @@
+{
+  "reviewedAt": "2026-10-19",
+  "added": [
+    {
+      "id": "WxoZPlRhSvY",
+      "group": "downswing-path",
+      "basis": "원본 설명·표본 12장·화면 자막 확인. 자동 자막은 429 제한으로 확인하지 못함. 전체 음성을 직접 청취하지 않음.",
+      "sampleTimes": [
+        1.8,
+        6.6,
+        11.4,
+        16.2,
+        21.0,
+        25.8,
+        30.6,
+        35.4,
+        40.2,
+        45.0,
+        49.8,
+        54.6
+      ],
+      "extraSampleTimes": [],
+      "relatedIds": [
+        "S3fxUFBzfBo",
+        "9YWDNMyTQy4",
+        "EgdcUOkvJKk"
+      ],
+      "duplicateReview": "No matching ID among 102 registered videos. Related source frames compared: different footage and instructional focus; topic overlap linked without replacing existing items."
+    },
+    {
+      "id": "CAZ9oUoGRIg",
+      "group": "common",
+      "basis": "원본 표본 12장·8–38초 추가 16장·화면 자막 확인. 제공된 한국어 자막 트랙이 없어 음성 전사는 확인하지 못함. 전체 음성을 직접 청취하지 않음.",
+      "sampleTimes": [
+        1.89,
+        6.93,
+        11.97,
+        17.01,
+        22.05,
+        27.09,
+        32.13,
+        37.17,
+        42.21,
+        47.25,
+        52.29,
+        57.33
+      ],
+      "extraSampleTimes": [
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38
+      ],
+      "relatedIds": [
+        "soj_dt1_PAg",
+        "UlRsR8hnZGs",
+        "5vL6-Dwahsw"
+      ],
+      "duplicateReview": "No matching ID among 102 registered videos. Related source frames compared: different footage and instructional focus; topic overlap linked without replacing existing items."
+    }
+  ],
+  "comparedSourceIds": [
+    "S3fxUFBzfBo",
+    "5vL6-Dwahsw",
+    "mGYe7UjYXfo",
+    "9YWDNMyTQy4",
+    "va8Oz-nSxcI",
+    "du58mmLNMnQ",
+    "EgdcUOkvJKk",
+    "soj_dt1_PAg",
+    "2CplOC4flsA",
+    "9ELCrrtWqwM"
+  ],
+  "scope": "Two supplementary references only. Existing 102 objects, lesson representatives, pinned backswing and personal criteria unchanged.",
+  "followup": {
+    "requestedIds": [
+      "CAZ9oUoGRIg",
+      "JoUx0gIzdng"
+    ],
+    "retainedId": "CAZ9oUoGRIg",
+    "retainedReason": "Already registered in v152. Existing object, frames, first addedAt and personal records unchanged.",
+    "addedId": "JoUx0gIzdng",
+    "group": "downswing-path",
+    "comparedSourceIds": [
+      "-h77kU-fpjg",
+      "jg52OubK_L0",
+      "1lD1Lhk-2Lc"
+    ],
+    "duplicateReview": "No matching ID in 104 registered videos; compared related original frames show different filming and demonstration.",
+    "basis": "2026-10-19 원본 표본 12장·화면 자막·제공된 한국어 자동 자막 일부(0.1–3.8초) 확인. 전체 음성을 직접 청취하지 않음.",
+    "comparison": "CAZ9oUoGRIg: wrist tension/over-hinging; JoUx0gIzdng: driver shoulder/arm path. Do not combine as universal iron instructions."
+  }
+}

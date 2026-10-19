@@ -1631,5 +1631,53 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "WxoZPlRhSvY": [
+    {
+      "src": "media/golf-frames/WxoZPlRhSvY-1.webp",
+      "time": 11.4,
+      "label": "회전과 함께 팔이 아래로 길어지는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/WxoZPlRhSvY-2.webp",
+      "time": 40.2,
+      "label": "단상과 낮은 매트를 이용한 비교 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "CAZ9oUoGRIg": [
+    {
+      "src": "media/golf-frames/CAZ9oUoGRIg-1.webp",
+      "time": 17.01,
+      "label": "백스윙에서 손목을 가볍게 꺾는 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/CAZ9oUoGRIg-2.webp",
+      "time": 32.13,
+      "label": "오른손 한 손으로 내려오는 시범",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "JoUx0gIzdng": [
+    {
+      "src": "media/golf-frames/JoUx0gIzdng-1.webp",
+      "time": 3.5,
+      "label": "왼어깨를 급히 열지 않는 비교 시범",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/JoUx0gIzdng-2.webp",
+      "time": 5.1,
+      "label": "오른어깨와 옆으로 보내는 감각",
+      "width": 360,
+      "height": 640
+    }
   ]
 };

@@ -3,7 +3,7 @@ const read=p=>fs.readFileSync(path.join(__dirname,'..',p),'utf8'),ctx={window:{}
 vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);
 const c=ctx.window.GolfContent,ids=c.videoGroups.flatMap(g=>Array.from(g.videoIds));
 assert.deepEqual(Array.from(c.videoSections,s=>s.id),['backswing','downswing','impact','follow-through']);
-assert.equal(new Set(ids).size,102);assert.equal(ids.length,102);
+assert.equal(new Set(ids).size,105);assert.equal(ids.length,105);
 assert.deepEqual([...ids].sort(),Array.from(c.videos,v=>v.id).sort());
 assert.equal(c.videoGroups.find(g=>g.id==='review').videoIds.length,0);
 const practiceGroups=c.videoGroups.filter(g=>g.practice);
@@ -36,7 +36,7 @@ for(const [tag,count] of [['백스윙 시 몸통 회전',7],['백스윙 시 오�
 hidden.add('2tam4sbJQtM');hub.render({golfTab:'videos',golfGroup:'backswing'},api);
 assert(!app.innerHTML.includes('href="#golf/videos/2tam4sbJQtM"'));assert.equal(hub.pinnedPractice(),'');
 assert(hub.stagePractice().includes('#golf/group/follow-through'));
-console.log('PASS: 4 sections, 12 practice/check guides, 102 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
+console.log('PASS: 4 sections, 12 practice/check guides, 105 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
 
 for(const id of ['U4nn7s20ACc','cQiwXcbWZc4']){
  assert(!c.videos.some(v=>v.id===id));assert(!ctx.window.GolfFrames[id]);

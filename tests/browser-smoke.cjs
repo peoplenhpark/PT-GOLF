@@ -62,9 +62,9 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert(registeredRecent.includes('t_9sQjrS2o4'),'older YouTube video is recent by app registration');
   assert.equal(await page.locator('.g-mini-detail').first().getAttribute('aria-label'),null,'takeaway remains in the link accessible text after duplicate badges are removed');
   await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));await page.evaluate(()=>window.scrollTo(0,600));await page.reload();await page.locator('.g-video-grid').first().waitFor();await page.waitForFunction(()=>Math.abs(window.scrollY-600)<10);
-  const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-video-shortcuts a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
+  const group=page.locator('.g-video-groups a[href*="/group/"]').first();await group.click();await page.locator('.g-tabs a[href="#golf/videos"]').click();assert.equal(new URL(page.url()).hash,'#golf/videos');
   assert.equal(await page.locator('.g-video-card .g-delete-video').count(),0,'video lists do not show delete actions');
-  await page.locator('.g-video-shortcuts a[href="#golf/group/all"]').click();await page.locator('a[href="#golf/videos/5glZX2pq15o"]').first().click();await page.locator('[data-g-form=video]').waitFor();
+  await page.locator('.g-club-filters a[data-g-club=""]').click();await page.locator('a[href="#golf/videos/5glZX2pq15o"]').first().click();await page.locator('[data-g-form=video]').waitFor();
   await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();
   assert.equal(await page.locator('.g-tabs a').count(),4);
   await page.locator('.g-tabs a[href="#golf/notes"]').click();
@@ -86,7 +86,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,204);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,210);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
@@ -387,6 +387,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const id of ["DYtWZFKkKas","te5CN12g0Mc","eRSTJTcMFjE","qVHPT2eU5gY","qQbCq_QXB0A","G6VjK_afBng"]){await page.goto(base+'#golf/videos/'+id);await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));}
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
   await require('./helpers/golf-taxonomy-browser.cjs')(browser,base);
+  await require('./helpers/golf-clubs-browser.cjs')(browser,base);
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);
