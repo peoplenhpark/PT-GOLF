@@ -32,7 +32,10 @@ module.exports=async(browser,base,screenshot)=>{
    await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }
   await p.goto(base+'#golf/videos?golfClub=unknown');await p.locator('.g-club-filters').waitFor();assert.equal(await p.locator('.g-mini-detail').count(),counts.unknown);
-  assert.equal(await p.locator('.g-solo-card .g-mini-detail').first().getAttribute('href'),'#golf/videos/2tam4sbJQtM?golfClub=unknown');
+  assert.equal(await p.locator('.g-solo-card .g-mini-detail[href*="2tam4sbJQtM"]').count(),0);
+  await p.goto(base+'#golf/videos?golfClub=iron');await p.locator('.g-club-filters').waitFor();assert.equal(await p.locator('.g-mini-detail').count(),counts.iron);
+  assert.equal(await p.locator('.g-solo-card .g-mini-detail').first().getAttribute('href'),'#golf/videos/2tam4sbJQtM?golfClub=iron');
+  await p.goto(base+'#golf/group/backswing');await p.locator('.g-club-filters').waitFor();assert.equal(await p.locator('.g-solo-card .g-mini-detail').first().getAttribute('href'),'#golf/videos/2tam4sbJQtM');
   if(screenshot){await p.setViewportSize({width:390,height:844});await p.evaluate(()=>document.documentElement.setAttribute('data-theme','light'));await p.screenshot({path:screenshot});}
   await p.goto(base+'#golf/group/recent?golfClub=iron');await p.locator('.g-club-filters').waitFor();assert(await p.locator('.g-video-mini .g-club-badge').evaluateAll(es=>es.every(e=>e.dataset.club==='iron')));
   await p.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await p.reload();await p.locator('.g-club-filters').waitFor();assert.equal(await p.locator('[data-g-club=iron]').getAttribute('aria-current'),'page');await context.setOffline(false);

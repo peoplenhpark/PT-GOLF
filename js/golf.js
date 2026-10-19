@@ -36,7 +36,7 @@ window.GolfHub = (() => {
       const params=[['golfQuery',view.golfQuery],['golfTopic',view.golfTopic],['golfClub',value]].filter(([,v])=>v).map(([k,v])=>k+'='+encodeURIComponent(v)).join('&');
       const count=value?list.filter(v=>content.clubFor(v).value===value).length:list.length;
       return `<a data-g-club="${value}" href="${e(path+(params?'?'+params:''))}" ${selectedClub()===value?'aria-current="page"':''}>${label} <small>${count}</small></a>`;
-    }).join('')}</nav><p class="g-club-help">영상의 적용 범위입니다. 공통 적용은 두 클럽에 같은 핵심을 설명한 경우만 표시합니다. 시범 클럽만으로는 확정하지 않습니다.</p>`;
+    }).join('')}</nav><p class="g-club-help">아이언·드라이버는 확인한 설명·시범의 범위입니다. 공통 적용은 같은 핵심을 두 클럽에 설명한 경우입니다.</p>`;
   }
   function preserveClubLinks(html) {
     if(!selectedClub())return html;

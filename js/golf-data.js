@@ -5482,19 +5482,568 @@ window.GolfContent.clubReviews = {
     "reviewedAt": "2026-10-19"
   },
   "CAZ9oUoGRIg": {
-    "value": "unknown",
-    "reason": "손목 여유·한 손 시범은 확인했지만 아이언·드라이버 모두에 적용된다는 설명은 확인하지 못했습니다.",
-    "reviewedAt": "2026-10-19"
+    "value": "iron",
+    "reason": "아이언으로 손목 꺾임·한 손 스윙·타격을 비교하는 장면을 재확인했습니다. 아이언 시범 범위로 분류하며 드라이버에도 같다고 확장하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
   },
   "4Eof_tmI0Ag": {
     "value": "unknown",
-    "reason": "아이언과 드라이버의 차이를 비교하는 영상입니다. 두 클럽이 등장한다고 같은 동작의 공통 적용으로 분류하지 않습니다.",
-    "reviewedAt": "2026-10-19"
+    "reason": "아이언과 드라이버의 타격 조건 차이를 설명하는 영상입니다. 두 클럽 등장 자체를 같은 핵심의 공통 적용으로 분류하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
   },
   "2tam4sbJQtM": {
+    "value": "iron",
+    "reason": "후반의 아이언 어드레스·백스윙·타격 시범과 확보한 자막을 확인했습니다. 상단 고정과 기존 연습 핵심은 유지하며 드라이버 공통 적용으로 확대하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "wBlnDaqkGi0": {
+    "value": "iron",
+    "reason": "아이언을 든 오른팔 단독 동작과 양손 스윙 비교 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "yv4KTSs8Riw": {
+    "value": "driver",
+    "reason": "큰 드라이버 헤드로 가속과 어깨 움직임을 설명하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "4ePhtleqZBA": {
+    "value": "driver",
+    "reason": "화면에 드라이버 단계별 연습을 명시하고 해당 클럽의 단계별 시범을 보여 줍니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "bfMsJtV61hM": {
     "value": "unknown",
-    "reason": "고정 백스윙 연습 기준은 유지합니다. 두 클럽에 같은 방식으로 적용하는 범위는 별도 확인이 필요합니다.",
-    "reviewedAt": "2026-10-19"
+    "reason": "정면·측면 스윙은 확인했지만 확보한 장면에서 클럽 종류와 적용 범위를 명확히 판별하기 어렵습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "Aj1UEMYPxBg": {
+    "value": "unknown",
+    "reason": "오른팔 가속 설명에 원형 헤드의 연습도구가 사용됩니다. 이를 드라이버나 아이언으로 단정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "xUgGGs2Rh3w": {
+    "value": "iron",
+    "reason": "아이언을 지면의 공에 맞춰 놓고 오른어깨와 팔의 연결을 교정하는 레슨 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "S3fxUFBzfBo": {
+    "value": "iron",
+    "reason": "아이언을 든 하강·회전 비교와 벽 앞 리허설을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "IsSS-GnQQyY": {
+    "value": "iron",
+    "reason": "아이언을 든 어깨 회전·임팩트 레슨 시범을 확인했습니다. 드라이버 적용까지 확대하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "ULOLFCC-ly8": {
+    "value": "iron",
+    "reason": "지면의 공과 아이언으로 힘의 크기를 비교하는 레슨 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "UA-HYcmiKTA": {
+    "value": "driver",
+    "reason": "티잉 구역에서 드라이버를 놓고 방향과 셋업을 설명하는 레슨 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "CA-TZ7WQlHY": {
+    "value": "iron",
+    "reason": "아이언을 사용하는 체중이동·힘 쓰는 시점의 레슨과 타격 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "du58mmLNMnQ": {
+    "value": "iron",
+    "reason": "아이언을 든 손목·몸통 회전 레슨 장면을 확인했습니다. 두 클럽 공통이라는 설명은 확인하지 못했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "0EgzSDUsKvg": {
+    "value": "iron",
+    "reason": "아이언을 사용하는 수강생에게 상하체 순서를 설명하는 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "uvgnUl93Twg": {
+    "value": "iron",
+    "reason": "아이언과 지면의 공을 기준으로 골반·척추 유지 동작을 비교하는 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "RSbjGWhzEnQ": {
+    "value": "iron",
+    "reason": "아이언으로 팔 하강과 회전 순서를 시범 보이는 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "aaOw2sdp-io": {
+    "value": "iron",
+    "reason": "아이언으로 작은 백스윙과 몸통 회전을 보여 줍니다. 확보한 자막도 같은 시범의 설명이며 드라이버까지 일반화하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "5glZX2pq15o": {
+    "value": "iron",
+    "reason": "아이언의 지면 공 타격과 손목·힘 빼기 비교를 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "4uQe-J5qM2c": {
+    "value": "unknown",
+    "reason": "헤드를 보내는 비교 동작은 확인했지만 확보한 장면에서 사용 클럽과 두 클럽 적용 설명이 명확하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "Wlbi1o9fb2Q": {
+    "value": "unknown",
+    "reason": "아이언 레슨과 다른 클럽을 이용한 보조 장면이 섞여 있습니다. 같은 핵심의 두 클럽 적용 범위를 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "FjWulC87mzM": {
+    "value": "driver",
+    "reason": "드라이버를 든 헤드 무게·브레이크 설명과 스윙 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "o4KqDhYXlTw": {
+    "value": "iron",
+    "reason": "아이언을 사용해 오른손·오른팔의 두 동작을 나란히 비교한 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "ThwbClowjjU": {
+    "value": "driver",
+    "reason": "원본 제목이 드라이버 비거리 문제를 명시하고 같은 레슨의 힘·회전 비교 장면을 확인했습니다. 아이언용 처방으로 바꾸지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "XvPYFd-seNw": {
+    "value": "unknown",
+    "reason": "짧은 연습도구로 헤드 던지는 감각을 보여 줍니다. 적용 클럽을 특정하거나 두 클럽 공통으로 볼 설명이 부족합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "mGYe7UjYXfo": {
+    "value": "iron",
+    "reason": "아이언 뒤땅·손목 풀림 드릴의 아이언 시범과 지면 통과 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "0lbtJgkzqWM": {
+    "value": "unknown",
+    "reason": "비거리·스윙 경로 시범은 확인했지만 사용 클럽 구분이 선명하지 않습니다. 비거리 수치만으로 드라이버로 분류하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "28HBEaS-G54": {
+    "value": "iron",
+    "reason": "아이언을 든 임팩트 비교와 지면 공을 향한 스윙 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "wwZFeiPAoMU": {
+    "value": "iron",
+    "reason": "아이언을 들고 야외에서 힘을 빼는 동작을 설명하는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "t_9sQjrS2o4": {
+    "value": "iron",
+    "reason": "원본 화면에 7번을 명시하고 아이언 압축 임팩트·왼손 리드 시범을 보여 줍니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "zT6zJCJ59js": {
+    "value": "unknown",
+    "reason": "그립 접촉과 손가락 설명은 확인했지만 적용 클럽 범위를 따로 명시하지 않습니다. 일반적인 그립 주제만으로 공통 적용을 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "ldkU0D_Ylms": {
+    "value": "iron",
+    "reason": "아이언으로 팔 하강 뒤 헤드를 놓고 지면을 통과하는 리허설을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "M-ryH3IhUXI": {
+    "value": "iron",
+    "reason": "아이언을 사용한 팔꿈치 경로·오른손 놓기 드릴을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "3kNb6TQN2T0": {
+    "value": "iron",
+    "reason": "아이언으로 초보·숙련 동작의 레깅 시점을 비교하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "VGya7_OVLYo": {
+    "value": "iron",
+    "reason": "아이언을 든 헤드 가속·임팩트 시범을 확인했습니다. 화면의 거리 수치를 효과 보장으로 해석하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "QsmMamIFMsE": {
+    "value": "iron",
+    "reason": "아이언으로 몸이 막히는 동작과 회전이 이어지는 동작을 비교하는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "jlqT_vNRcSI": {
+    "value": "iron",
+    "reason": "아이언을 들고 왼팔과 왼어깨의 움직임을 비교하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "zB5hFmVpisI": {
+    "value": "iron",
+    "reason": "아이언을 사용해 발바닥부터 좌우 스윙 흐름을 만드는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "FnbyQ-UYjMI": {
+    "value": "driver",
+    "reason": "원본 시작 장면에서 드라이버와 티 위 공이 확인되는 짧은 백스윙 타격 시범입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "jg52OubK_L0": {
+    "value": "iron",
+    "reason": "아이언을 사용해 전환의 기다림과 헤드 무게를 비교하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "lb2CrZl0FrA": {
+    "value": "unknown",
+    "reason": "공과 몸 사이 공간 비교는 확인했지만 클럽헤드가 충분히 보이지 않아 종류를 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "q1P0eGWA8_s": {
+    "value": "iron",
+    "reason": "아이언과 보조 막대를 이용해 축 이동을 비교하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "En79wtGEzs4": {
+    "value": "iron",
+    "reason": "아이언으로 백스윙·다운스윙 순서를 설명하고 타격하는 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "1lD1Lhk-2Lc": {
+    "value": "iron",
+    "reason": "아이언을 어깨에 대거나 들어 오른어깨와 손의 경로를 설명합니다. 채널 소개의 드라이버 커리큘럼은 이 영상의 공통 적용 근거로 쓰지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "JhE2A-kCaLI": {
+    "value": "unknown",
+    "reason": "여러 사람·여러 촬영의 스윙 팁이 편집되어 있습니다. 동일한 적용 클럽이나 공통 지침의 범위가 명확하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "2UR4UFtx1R0": {
+    "value": "unknown",
+    "reason": "오른손 검지와 그립 접촉을 가까이 보여 주지만 두 클럽에 같은 방식으로 적용한다는 설명은 확인되지 않았습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "bTA5HW-hU_Y": {
+    "value": "both",
+    "reason": "원본 11:35–13:45에서 아이언·드라이버를 함께 설명하며 힘 빼기·몸통 움직임의 공통 원리를 다룹니다. 공 위치와 클럽 길이에 따른 타격 차이까지 같다는 뜻은 아닙니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "shared-instruction"
+  },
+  "UlRsR8hnZGs": {
+    "value": "iron",
+    "reason": "아이언을 든 코킹·힌지 설명과 스윙 시범을 확인했습니다. 드라이버에 대한 동일 적용 설명은 별도 확인이 필요합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "YD9lLDhvy8c": {
+    "value": "iron",
+    "reason": "야외 아이언 시범에서 손 연결과 앞으로 보내는 릴리스를 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "0HjpF1MOwAw": {
+    "value": "unknown",
+    "reason": "막대를 든 팔꿈치·손목 시범이며 실제 클럽별 타격 조건과 적용 범위가 확인되지 않았습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "IMjI_VqsQsg": {
+    "value": "iron",
+    "reason": "아이언을 이용해 오른발 지지와 회전 막힘을 비교하는 원본 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "2CplOC4flsA": {
+    "value": "driver",
+    "reason": "원본 화면에 드라이버 스윙을 명시하고 티샷·큰 헤드의 전환 동작을 보여 줍니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "Fk_3CjorpVA": {
+    "value": "unknown",
+    "reason": "웨지 어프로치의 공 위치·탄도 비교입니다. 현재 아이언 풀스윙·드라이버·공통 적용 중 하나로 억지 편성하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "g2AXYPKdCik": {
+    "value": "iron",
+    "reason": "아이언으로 백스윙·다운스윙의 겨드랑이 연결을 비교하는 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "sKcgYjwimd8": {
+    "value": "iron",
+    "reason": "아이언과 지면의 공을 기준으로 스윙을 나누어 반복하는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "ZBYKvzsKbyU": {
+    "value": "unknown",
+    "reason": "드라이버 티샷과 다른 클럽의 스윙 장면이 함께 있습니다. 시범 모음만으로 두 클럽에 같은 지침을 적용한다고 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "5vL6-Dwahsw": {
+    "value": "unknown",
+    "reason": "다른 클럽을 든 시범이 섞여 있습니다. 오른발 지지라는 주제만으로 두 클럽의 적용 조건이 같다고 보지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "9ELCrrtWqwM": {
+    "value": "iron",
+    "reason": "아이언을 놓은 어드레스와 손목 힌지 비교 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "1x_iiruwFTU": {
+    "value": "iron",
+    "reason": "잔디 위 아이언 타격에서 골반과 상체가 이어지는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "ZVyCmpxNXa4": {
+    "value": "iron",
+    "reason": "원본 초반 화면에서 아이언을 명시하고 아이언 하강·타격 시범을 보여 줍니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "xys5zZWka6M": {
+    "value": "unknown",
+    "reason": "수건을 이용한 릴리스 감각 시범입니다. 아이언·드라이버의 적용 조건을 확인할 설명이 부족합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "XgPPBzZKzNM": {
+    "value": "iron",
+    "reason": "아이언을 사용해 끌고 오는 동작과 헤드를 보내는 동작을 비교합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "BvnGOkOMo68": {
+    "value": "driver",
+    "reason": "드라이버의 큰 헤드와 티샷 준비 장면에서 손·팔로 당기기와 헤드 무게를 비교합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "DYtWZFKkKas": {
+    "value": "iron",
+    "reason": "아이언 샤프트를 내려잡고 몸통 회전·왼쪽 압력 이동을 연습하는 원본 시범입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "te5CN12g0Mc": {
+    "value": "unknown",
+    "reason": "원본이 우드샷 레슨을 명시합니다. 우드를 드라이버나 아이언으로 바꾸어 분류하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "eRSTJTcMFjE": {
+    "value": "unknown",
+    "reason": "드라이버 하강 시범 뒤 다른 실내 시범이 이어지는 편집 영상입니다. 같은 동작을 두 클럽에 적용하는 설명은 충분히 확인되지 않았습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "qVHPT2eU5gY": {
+    "value": "driver",
+    "reason": "큰 드라이버 헤드가 확인되는 타격 장면에서 손목과 클럽 통과를 표시한 시범입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "qQbCq_QXB0A": {
+    "value": "iron",
+    "reason": "아이언으로 체중이동 뒤 바닥을 쓸고 타격하는 짧은 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "G6VjK_afBng": {
+    "value": "driver",
+    "reason": "드라이버 티샷의 FEEL·REAL 비교와 큰 헤드의 스윙 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "Ks-9y9yLols": {
+    "value": "iron",
+    "reason": "원본 화면에 7번을 명시하고 아이언으로 왼팔·왼어깨 움직임을 비교합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "rvrwwVdyM68": {
+    "value": "iron",
+    "reason": "아이언으로 왼손과 손등 방향·하강 흐름을 보여 주는 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "eOxiYC684K0": {
+    "value": "unknown",
+    "reason": "어깨 회전 비교는 확인했지만 확보한 장면에서 클럽헤드와 적용 클럽 설명이 충분히 보이지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "-8gKh-1h6Hs": {
+    "value": "unknown",
+    "reason": "몸통·골반과 밴드를 이용한 운동 시범입니다. 특정 클럽이나 두 클럽 공통 적용을 확인할 설명은 부족합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "nkfEfaa4CFs": {
+    "value": "iron",
+    "reason": "원본 화면의 7번 아이언 명시와 왼손목·하강 비교 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "clEQKV7hWrY": {
+    "value": "iron",
+    "reason": "원본 시작 문구에 아이언을 명시하고 왼골반·어깨 높이의 아이언 시범을 보여 줍니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "MIx8BbSocFI": {
+    "value": "unknown",
+    "reason": "어드레스·손목을 가까이 보여 주는 장면으로 클럽헤드와 적용 범위를 확인하기 어렵습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "lnzbSVSBevs": {
+    "value": "unknown",
+    "reason": "클럽 없이 힙 힌지·골반 움직임을 비교하는 시범입니다. 공통 주제라는 이유만으로 공통 적용으로 확정하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "Q_kYNFcYL0o": {
+    "value": "iron",
+    "reason": "아이언과 지면의 공으로 뒤땅·숙임·다리 높낮이 리듬을 비교하는 시범입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "qJRYOqhK-2c": {
+    "value": "iron",
+    "reason": "아이언을 사용해 팔·어깨 분리와 릴리스를 비교하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "iX_ZnUodsRQ": {
+    "value": "both",
+    "reason": "원본 0:38 이후 아이언 시범 뒤 5:21–5:36에 드라이버도 마찬가지라고 설명하고 같은 명치·그립 끝의 출발을 시범 보입니다. 공통 범위는 백스윙 시작 방법입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "shared-instruction"
+  },
+  "WQbV4r6m2Ww": {
+    "value": "unknown",
+    "reason": "피니시 힘 빼기 레슨은 확인했지만 확보한 장면에서 시범 클럽과 두 클럽 적용 범위를 명확히 구분하지 못했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "x0PzoVHk9gg": {
+    "value": "iron",
+    "reason": "아이언으로 클럽을 어깨에 걸치는 피니시와 타격을 보여 주는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "yHVIKXd_Ss8": {
+    "value": "iron",
+    "reason": "아이언을 사용한 피니시 팔·다리 자세와 균형 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "T2FBx83DXvg": {
+    "value": "iron",
+    "reason": "아이언 헤드 뒤 공을 굴리는 테이크백과 아이언 스윙 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "NYY2HRNojPc": {
+    "value": "driver",
+    "reason": "큰 드라이버 헤드와 티 위 공을 두고 탑의 손·몸 사이 공간을 설명하는 원본 시범입니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "WqKgbsWnDxE": {
+    "value": "iron",
+    "reason": "아이언을 든 오른팔·클럽 들어 올리기 비교 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "RBJllwVPFEM": {
+    "value": "iron",
+    "reason": "아이언으로 팔의 속도와 헤드 통과를 비교하는 장면을 확인했습니다. 두 클럽 공통이라는 설명은 확인하지 못했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "soj_dt1_PAg": {
+    "value": "iron",
+    "reason": "아이언으로 페이스와 힌지·서서히 받치는 동작을 보여 주는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "v3CFS-0sO_I": {
+    "value": "unknown",
+    "reason": "전환 비교는 확인했지만 250m라는 문구만으로 드라이버 적용을 단정할 수 없습니다. 시범과 클럽별 적용 설명을 더 확인해야 합니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
+  },
+  "dtnFgYXYfBE": {
+    "value": "iron",
+    "reason": "아이언을 사용하는 두 동작의 테이크백·체중이동·팔로스루 비교를 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "oEVbWjzZl0E": {
+    "value": "iron",
+    "reason": "아이언으로 헤드 무게와 몸통 회전의 시점을 설명하는 원본 장면을 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "4DyoF3OQKww": {
+    "value": "iron",
+    "reason": "아이언을 든 릴리스 방향·지면 공 타격 비교를 확인했습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "source-explanation-or-demonstration"
+  },
+  "j1USTUwFnRI": {
+    "value": "unknown",
+    "reason": "드라이버 양손 간격 드릴과 다른 클럽의 마무리 시범이 함께 있습니다. 확보한 자막은 효용을 나열하지만 클럽별 적용 범위는 명시하지 않습니다.",
+    "reviewedAt": "2026-10-19",
+    "basis": "unresolved"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

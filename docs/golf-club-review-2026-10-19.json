@@ -1,0 +1,2145 @@
+{
+  "reviewedAt": "2026-10-19",
+  "scope": "v155에서 확인 필요였던 94편 전수 재검토. 기존 확정 11편은 유지.",
+  "method": "각 영상의 저장된 원본 대표 2컷과 시간 간격 표본 6컷을 재검토했다. 확보된 원본 자막·설명·기존 검토 기록을 보조로 사용하고, 공통 적용 후보 두 편은 해당 구간을 추가 추출해 확인했다. 전체 영상 음성을 전수 청취한 검토는 아니다.",
+  "policy": [
+    "아이언·드라이버는 원본의 명시적 설명 또는 식별 가능한 해당 클럽의 실제 레슨·타격 시범 범위로 제한한다. 다른 클럽에 효과가 없다는 뜻은 아니다.",
+    "시범 클럽·일반 주제·채널 소개·거리 숫자만으로 공통 적용을 추론하지 않는다. 같은 핵심을 두 클럽에 설명한 근거가 필요하다.",
+    "우드·어프로치 전용, 클럽/도구 식별 곤란, 여러 시범의 혼합과 클럽별 비교는 적용 범위가 불명확하면 확인 필요로 보존한다.",
+    "영상·레슨·소속·대표 컷·최초 등록일·개인 기록·상단 고정은 변경하지 않는다."
+  ],
+  "entries": [
+    {
+      "id": "wBlnDaqkGi0",
+      "title": "오른팔은 이렇게 써야 제맛",
+      "sourceUrl": "https://www.youtube.com/watch?v=wBlnDaqkGi0",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 오른팔 단독 동작과 양손 스윙 비교 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/wBlnDaqkGi0-1.webp",
+        "media/golf-frames/wBlnDaqkGi0-2.webp"
+      ],
+      "sampleFiles": [
+        "scope-review/wBlnDaqkGi0-0.0.jpg",
+        "scope-review/wBlnDaqkGi0-1.1.jpg",
+        "scope-review/wBlnDaqkGi0-3.3.jpg",
+        "scope-review/wBlnDaqkGi0-6.05.jpg",
+        "scope-review/wBlnDaqkGi0-8.25.jpg",
+        "scope-review/wBlnDaqkGi0-10.45.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "yv4KTSs8Riw",
+      "title": "헤드 가속을 쉽게 늘려주는 2가지",
+      "sourceUrl": "https://www.youtube.com/watch?v=yv4KTSs8Riw",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "큰 드라이버 헤드로 가속과 어깨 움직임을 설명하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/yv4KTSs8Riw-1.webp",
+        "media/golf-frames/yv4KTSs8Riw-2.webp"
+      ],
+      "sampleFiles": [
+        "yv4KTSs8Riw-7.74.jpg",
+        "yv4KTSs8Riw-12.9.jpg",
+        "yv4KTSs8Riw-18.06.jpg",
+        "yv4KTSs8Riw-23.65.jpg",
+        "yv4KTSs8Riw-29.24.jpg",
+        "yv4KTSs8Riw-34.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "4ePhtleqZBA",
+      "title": "드라이버 · 단계별 연습으로 리셋하기",
+      "sourceUrl": "https://www.youtube.com/watch?v=4ePhtleqZBA",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "화면에 드라이버 단계별 연습을 명시하고 해당 클럽의 단계별 시범을 보여 줍니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/4ePhtleqZBA-1.webp",
+        "media/golf-frames/4ePhtleqZBA-2.webp"
+      ],
+      "sampleFiles": [
+        "4ePhtleqZBA-2.88.jpg",
+        "4ePhtleqZBA-4.8.jpg",
+        "4ePhtleqZBA-6.72.jpg",
+        "4ePhtleqZBA-8.8.jpg",
+        "4ePhtleqZBA-10.88.jpg",
+        "4ePhtleqZBA-12.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "bfMsJtV61hM",
+      "title": "김민지5 프로 · 정면·좌측면 슬로모션 스윙",
+      "sourceUrl": "https://www.youtube.com/watch?v=bfMsJtV61hM",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "정면·측면 스윙은 확인했지만 확보한 장면에서 클럽 종류와 적용 범위를 명확히 판별하기 어렵습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/bfMsJtV61hM-1.webp",
+        "media/golf-frames/bfMsJtV61hM-2.webp"
+      ],
+      "sampleFiles": [
+        "bfMsJtV61hM-5.58.jpg",
+        "bfMsJtV61hM-9.3.jpg",
+        "bfMsJtV61hM-13.02.jpg",
+        "bfMsJtV61hM-17.05.jpg",
+        "bfMsJtV61hM-21.08.jpg",
+        "bfMsJtV61hM-24.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "Aj1UEMYPxBg",
+      "title": "클럽 가속을 위한 오른팔 핵심 포인트",
+      "sourceUrl": "https://www.youtube.com/watch?v=Aj1UEMYPxBg",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "오른팔 가속 설명에 원형 헤드의 연습도구가 사용됩니다. 이를 드라이버나 아이언으로 단정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/Aj1UEMYPxBg-1.webp",
+        "media/golf-frames/Aj1UEMYPxBg-2.webp"
+      ],
+      "sampleFiles": [
+        "Aj1UEMYPxBg-9.54.jpg",
+        "Aj1UEMYPxBg-15.9.jpg",
+        "Aj1UEMYPxBg-22.26.jpg",
+        "Aj1UEMYPxBg-29.15.jpg",
+        "Aj1UEMYPxBg-36.04.jpg",
+        "Aj1UEMYPxBg-42.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "xUgGGs2Rh3w",
+      "title": "일관된 스윙을 위한 오른쪽 어깨 사용",
+      "sourceUrl": "https://www.youtube.com/watch?v=xUgGGs2Rh3w",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 지면의 공에 맞춰 놓고 오른어깨와 팔의 연결을 교정하는 레슨 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/xUgGGs2Rh3w-1.webp",
+        "media/golf-frames/xUgGGs2Rh3w-2.webp"
+      ],
+      "sampleFiles": [
+        "xUgGGs2Rh3w-18.72.jpg",
+        "xUgGGs2Rh3w-31.2.jpg",
+        "xUgGGs2Rh3w-43.68.jpg",
+        "xUgGGs2Rh3w-57.2.jpg",
+        "xUgGGs2Rh3w-70.72.jpg",
+        "xUgGGs2Rh3w-83.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "S3fxUFBzfBo",
+      "title": "팔로만 내리지 않고 몸 회전과 연결하기",
+      "sourceUrl": "https://www.youtube.com/watch?v=S3fxUFBzfBo",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 하강·회전 비교와 벽 앞 리허설을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/S3fxUFBzfBo-1.webp",
+        "media/golf-frames/S3fxUFBzfBo-2.webp"
+      ],
+      "sampleFiles": [
+        "S3fxUFBzfBo-16.2.jpg",
+        "S3fxUFBzfBo-27.0.jpg",
+        "S3fxUFBzfBo-37.8.jpg",
+        "S3fxUFBzfBo-49.5.jpg",
+        "S3fxUFBzfBo-61.2.jpg",
+        "S3fxUFBzfBo-72.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "IsSS-GnQQyY",
+      "title": "어깨 회전으로 만드는 일관된 임팩트",
+      "sourceUrl": "https://www.youtube.com/watch?v=IsSS-GnQQyY",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 어깨 회전·임팩트 레슨 시범을 확인했습니다. 드라이버 적용까지 확대하지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/IsSS-GnQQyY-1.webp",
+        "media/golf-frames/IsSS-GnQQyY-2.webp"
+      ],
+      "sampleFiles": [
+        "IsSS-GnQQyY-109.98.jpg",
+        "IsSS-GnQQyY-183.3.jpg",
+        "IsSS-GnQQyY-256.62.jpg",
+        "IsSS-GnQQyY-336.05.jpg",
+        "IsSS-GnQQyY-415.48.jpg",
+        "IsSS-GnQQyY-488.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "ULOLFCC-ly8",
+      "title": "내 스윙에 맞는 힘과 타이밍 찾기",
+      "sourceUrl": "https://www.youtube.com/watch?v=ULOLFCC-ly8",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "지면의 공과 아이언으로 힘의 크기를 비교하는 레슨 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/ULOLFCC-ly8-1.webp",
+        "media/golf-frames/ULOLFCC-ly8-2.webp"
+      ],
+      "sampleFiles": [
+        "ULOLFCC-ly8-16.56.jpg",
+        "ULOLFCC-ly8-27.6.jpg",
+        "ULOLFCC-ly8-38.64.jpg",
+        "ULOLFCC-ly8-50.6.jpg",
+        "ULOLFCC-ly8-62.56.jpg",
+        "ULOLFCC-ly8-73.6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "UA-HYcmiKTA",
+      "title": "티샷 에이밍과 셋업",
+      "sourceUrl": "https://www.youtube.com/watch?v=UA-HYcmiKTA",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "티잉 구역에서 드라이버를 놓고 방향과 셋업을 설명하는 레슨 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/UA-HYcmiKTA-1.webp",
+        "media/golf-frames/UA-HYcmiKTA-2.webp"
+      ],
+      "sampleFiles": [
+        "UA-HYcmiKTA-171.54.jpg",
+        "UA-HYcmiKTA-285.9.jpg",
+        "UA-HYcmiKTA-400.26.jpg",
+        "UA-HYcmiKTA-524.15.jpg",
+        "UA-HYcmiKTA-648.04.jpg",
+        "UA-HYcmiKTA-762.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "CA-TZ7WQlHY",
+      "title": "체중이동 때 힘을 주고 빼는 순서",
+      "sourceUrl": "https://www.youtube.com/watch?v=CA-TZ7WQlHY",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용하는 체중이동·힘 쓰는 시점의 레슨과 타격 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/CA-TZ7WQlHY-1.webp",
+        "media/golf-frames/CA-TZ7WQlHY-2.webp"
+      ],
+      "sampleFiles": [
+        "CA-TZ7WQlHY-29.88.jpg",
+        "CA-TZ7WQlHY-49.8.jpg",
+        "CA-TZ7WQlHY-69.72.jpg",
+        "CA-TZ7WQlHY-91.85.jpg",
+        "CA-TZ7WQlHY-113.56.jpg",
+        "CA-TZ7WQlHY-133.6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "du58mmLNMnQ",
+      "title": "손목과 회전으로 만드는 단단한 임팩트",
+      "sourceUrl": "https://www.youtube.com/watch?v=du58mmLNMnQ",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 손목·몸통 회전 레슨 장면을 확인했습니다. 두 클럽 공통이라는 설명은 확인하지 못했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/du58mmLNMnQ-1.webp",
+        "media/golf-frames/du58mmLNMnQ-2.webp"
+      ],
+      "sampleFiles": [
+        "du58mmLNMnQ-101.88.jpg",
+        "du58mmLNMnQ-169.8.jpg",
+        "du58mmLNMnQ-237.72.jpg",
+        "du58mmLNMnQ-311.3.jpg",
+        "du58mmLNMnQ-384.88.jpg",
+        "du58mmLNMnQ-452.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "0EgzSDUsKvg",
+      "title": "상하체를 정확하게 쓰는 스윙 순서",
+      "sourceUrl": "https://www.youtube.com/watch?v=0EgzSDUsKvg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용하는 수강생에게 상하체 순서를 설명하는 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/0EgzSDUsKvg-1.webp",
+        "media/golf-frames/0EgzSDUsKvg-2.webp"
+      ],
+      "sampleFiles": [
+        "0EgzSDUsKvg-28.44.jpg",
+        "0EgzSDUsKvg-47.4.jpg",
+        "0EgzSDUsKvg-66.36.jpg",
+        "0EgzSDUsKvg-86.9.jpg",
+        "0EgzSDUsKvg-107.44.jpg",
+        "0EgzSDUsKvg-126.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "uvgnUl93Twg",
+      "title": "들린척추 완벽 세팅",
+      "sourceUrl": "https://www.youtube.com/watch?v=uvgnUl93Twg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언과 지면의 공을 기준으로 골반·척추 유지 동작을 비교하는 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/uvgnUl93Twg-1.webp",
+        "media/golf-frames/uvgnUl93Twg-2.webp"
+      ],
+      "sampleFiles": [
+        "uvgnUl93Twg-3.78.jpg",
+        "uvgnUl93Twg-6.3.jpg",
+        "uvgnUl93Twg-8.82.jpg",
+        "uvgnUl93Twg-11.55.jpg",
+        "uvgnUl93Twg-14.28.jpg",
+        "uvgnUl93Twg-16.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "RSbjGWhzEnQ",
+      "title": "팔은 이렇게 사용해야 합니다!",
+      "sourceUrl": "https://www.youtube.com/watch?v=RSbjGWhzEnQ",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 팔 하강과 회전 순서를 시범 보이는 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/RSbjGWhzEnQ-1.webp",
+        "media/golf-frames/RSbjGWhzEnQ-2.webp"
+      ],
+      "sampleFiles": [
+        "RSbjGWhzEnQ-17.82.jpg",
+        "RSbjGWhzEnQ-29.7.jpg",
+        "RSbjGWhzEnQ-41.58.jpg",
+        "RSbjGWhzEnQ-54.45.jpg",
+        "RSbjGWhzEnQ-67.32.jpg",
+        "RSbjGWhzEnQ-79.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "aaOw2sdp-io",
+      "title": "낮고 넓게 · 작은 백스윙에서 회전 만들기",
+      "sourceUrl": "https://www.youtube.com/watch?v=aaOw2sdp-io",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 작은 백스윙과 몸통 회전을 보여 줍니다. 확보한 자막도 같은 시범의 설명이며 드라이버까지 일반화하지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/aaOw2sdp-io-1.webp",
+        "media/golf-frames/aaOw2sdp-io-2.webp"
+      ],
+      "sampleFiles": [
+        "scope-review/aaOw2sdp-io-0.0.jpg",
+        "scope-review/aaOw2sdp-io-8.8.jpg",
+        "scope-review/aaOw2sdp-io-26.4.jpg",
+        "scope-review/aaOw2sdp-io-48.4.jpg",
+        "scope-review/aaOw2sdp-io-66.0.jpg",
+        "scope-review/aaOw2sdp-io-83.6.jpg"
+      ],
+      "availableCaptionFiles": [
+        "backswing-20261013/aaOw2sdp-io-transcript.txt"
+      ]
+    },
+    {
+      "id": "5glZX2pq15o",
+      "title": "힘 없이 나는 훅 바꾸기",
+      "sourceUrl": "https://www.youtube.com/watch?v=5glZX2pq15o",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언의 지면 공 타격과 손목·힘 빼기 비교를 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/5glZX2pq15o-1.webp",
+        "media/golf-frames/5glZX2pq15o-2.webp"
+      ],
+      "sampleFiles": [
+        "5glZX2pq15o-14.4.jpg",
+        "5glZX2pq15o-24.0.jpg",
+        "5glZX2pq15o-33.6.jpg",
+        "5glZX2pq15o-44.0.jpg",
+        "5glZX2pq15o-54.4.jpg",
+        "5glZX2pq15o-64.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "4uQe-J5qM2c",
+      "title": "헤드 던지는 2가지 핵심",
+      "sourceUrl": "https://www.youtube.com/watch?v=4uQe-J5qM2c",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "헤드를 보내는 비교 동작은 확인했지만 확보한 장면에서 사용 클럽과 두 클럽 적용 설명이 명확하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/4uQe-J5qM2c-1.webp",
+        "media/golf-frames/4uQe-J5qM2c-2.webp"
+      ],
+      "sampleFiles": [
+        "4uQe-J5qM2c-8.82.jpg",
+        "4uQe-J5qM2c-14.7.jpg",
+        "4uQe-J5qM2c-20.58.jpg",
+        "4uQe-J5qM2c-26.95.jpg",
+        "4uQe-J5qM2c-33.32.jpg",
+        "4uQe-J5qM2c-39.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "Wlbi1o9fb2Q",
+      "title": "상체 힘이 아닌, 헤드를 던지는 스윙",
+      "sourceUrl": "https://www.youtube.com/watch?v=Wlbi1o9fb2Q",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "아이언 레슨과 다른 클럽을 이용한 보조 장면이 섞여 있습니다. 같은 핵심의 두 클럽 적용 범위를 확정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/Wlbi1o9fb2Q-1.webp",
+        "media/golf-frames/Wlbi1o9fb2Q-2.webp"
+      ],
+      "sampleFiles": [
+        "Wlbi1o9fb2Q-21.24.jpg",
+        "Wlbi1o9fb2Q-35.4.jpg",
+        "Wlbi1o9fb2Q-49.56.jpg",
+        "Wlbi1o9fb2Q-64.9.jpg",
+        "Wlbi1o9fb2Q-80.24.jpg",
+        "Wlbi1o9fb2Q-94.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "FjWulC87mzM",
+      "title": "헤드 무게와 브레이크의 의미",
+      "sourceUrl": "https://www.youtube.com/watch?v=FjWulC87mzM",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "드라이버를 든 헤드 무게·브레이크 설명과 스윙 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/FjWulC87mzM-1.webp",
+        "media/golf-frames/FjWulC87mzM-2.webp"
+      ],
+      "sampleFiles": [
+        "FjWulC87mzM-16.02.jpg",
+        "FjWulC87mzM-26.7.jpg",
+        "FjWulC87mzM-37.38.jpg",
+        "FjWulC87mzM-48.95.jpg",
+        "FjWulC87mzM-60.52.jpg",
+        "FjWulC87mzM-71.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "o4KqDhYXlTw",
+      "title": "오른손 올바르게 사용하기",
+      "sourceUrl": "https://www.youtube.com/watch?v=o4KqDhYXlTw",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용해 오른손·오른팔의 두 동작을 나란히 비교한 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/o4KqDhYXlTw-1.webp",
+        "media/golf-frames/o4KqDhYXlTw-2.webp"
+      ],
+      "sampleFiles": [
+        "o4KqDhYXlTw-1.08.jpg",
+        "o4KqDhYXlTw-1.8.jpg",
+        "o4KqDhYXlTw-2.52.jpg",
+        "o4KqDhYXlTw-3.3.jpg",
+        "o4KqDhYXlTw-4.08.jpg",
+        "o4KqDhYXlTw-4.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "ThwbClowjjU",
+      "title": "드라이버 · 세게 쳐도 비거리가 안 나는 이유",
+      "sourceUrl": "https://www.youtube.com/watch?v=ThwbClowjjU",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "원본 제목이 드라이버 비거리 문제를 명시하고 같은 레슨의 힘·회전 비교 장면을 확인했습니다. 아이언용 처방으로 바꾸지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/ThwbClowjjU-1.webp",
+        "media/golf-frames/ThwbClowjjU-2.webp"
+      ],
+      "sampleFiles": [
+        "ThwbClowjjU-19.8.jpg",
+        "ThwbClowjjU-33.0.jpg",
+        "ThwbClowjjU-46.2.jpg",
+        "ThwbClowjjU-60.5.jpg",
+        "ThwbClowjjU-74.8.jpg",
+        "ThwbClowjjU-88.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "XvPYFd-seNw",
+      "title": "헤드가 던져지는 감각",
+      "sourceUrl": "https://www.youtube.com/watch?v=XvPYFd-seNw",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "짧은 연습도구로 헤드 던지는 감각을 보여 줍니다. 적용 클럽을 특정하거나 두 클럽 공통으로 볼 설명이 부족합니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/XvPYFd-seNw-1.webp",
+        "media/golf-frames/XvPYFd-seNw-2.webp"
+      ],
+      "sampleFiles": [
+        "XvPYFd-seNw-5.76.jpg",
+        "XvPYFd-seNw-9.6.jpg",
+        "XvPYFd-seNw-13.44.jpg",
+        "XvPYFd-seNw-17.6.jpg",
+        "XvPYFd-seNw-21.76.jpg",
+        "XvPYFd-seNw-25.6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "mGYe7UjYXfo",
+      "title": "아이언 뒤땅·손목 풀림 드릴",
+      "sourceUrl": "https://www.youtube.com/watch?v=mGYe7UjYXfo",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언 뒤땅·손목 풀림 드릴의 아이언 시범과 지면 통과 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/mGYe7UjYXfo-1.webp",
+        "media/golf-frames/mGYe7UjYXfo-2.webp"
+      ],
+      "sampleFiles": [
+        "mGYe7UjYXfo-3.6.jpg",
+        "mGYe7UjYXfo-6.0.jpg",
+        "mGYe7UjYXfo-8.4.jpg",
+        "mGYe7UjYXfo-11.0.jpg",
+        "mGYe7UjYXfo-13.6.jpg",
+        "mGYe7UjYXfo-16.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "0lbtJgkzqWM",
+      "title": "비거리 늘리는 스윙 경로",
+      "sourceUrl": "https://www.youtube.com/watch?v=0lbtJgkzqWM",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "비거리·스윙 경로 시범은 확인했지만 사용 클럽 구분이 선명하지 않습니다. 비거리 수치만으로 드라이버로 분류하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/0lbtJgkzqWM-1.webp",
+        "media/golf-frames/0lbtJgkzqWM-2.webp"
+      ],
+      "sampleFiles": [
+        "0lbtJgkzqWM-12.96.jpg",
+        "0lbtJgkzqWM-21.6.jpg",
+        "0lbtJgkzqWM-30.24.jpg",
+        "0lbtJgkzqWM-39.6.jpg",
+        "0lbtJgkzqWM-48.96.jpg",
+        "0lbtJgkzqWM-57.6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "28HBEaS-G54",
+      "title": "옷 털듯이 임팩트하기",
+      "sourceUrl": "https://www.youtube.com/watch?v=28HBEaS-G54",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 임팩트 비교와 지면 공을 향한 스윙 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/28HBEaS-G54-1.webp",
+        "media/golf-frames/28HBEaS-G54-2.webp"
+      ],
+      "sampleFiles": [
+        "28HBEaS-G54-6.jpg",
+        "28HBEaS-G54-12.96.jpg",
+        "28HBEaS-G54-25.jpg",
+        "28HBEaS-G54-39.6.jpg",
+        "28HBEaS-G54-48.96.jpg",
+        "28HBEaS-G54-57.6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "wwZFeiPAoMU",
+      "title": "힘 빼는 방법",
+      "sourceUrl": "https://www.youtube.com/watch?v=wwZFeiPAoMU",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 들고 야외에서 힘을 빼는 동작을 설명하는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/wwZFeiPAoMU-1.webp",
+        "media/golf-frames/wwZFeiPAoMU-2.webp"
+      ],
+      "sampleFiles": [
+        "wwZFeiPAoMU-7.02.jpg",
+        "wwZFeiPAoMU-11.7.jpg",
+        "wwZFeiPAoMU-16.38.jpg",
+        "wwZFeiPAoMU-21.45.jpg",
+        "wwZFeiPAoMU-26.52.jpg",
+        "wwZFeiPAoMU-31.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "t_9sQjrS2o4",
+      "title": "툭 쳐도 멀리 가는 임팩트 원리",
+      "sourceUrl": "https://www.youtube.com/watch?v=t_9sQjrS2o4",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "원본 화면에 7번을 명시하고 아이언 압축 임팩트·왼손 리드 시범을 보여 줍니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/t_9sQjrS2o4-1.webp",
+        "media/golf-frames/t_9sQjrS2o4-2.webp"
+      ],
+      "sampleFiles": [
+        "t_9sQjrS2o4-7.74.jpg",
+        "t_9sQjrS2o4-12.9.jpg",
+        "t_9sQjrS2o4-18.06.jpg",
+        "t_9sQjrS2o4-23.65.jpg",
+        "t_9sQjrS2o4-29.24.jpg",
+        "t_9sQjrS2o4-34.4.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "zT6zJCJ59js",
+      "title": "최경주 그립 레슨",
+      "sourceUrl": "https://www.youtube.com/watch?v=zT6zJCJ59js",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "그립 접촉과 손가락 설명은 확인했지만 적용 클럽 범위를 따로 명시하지 않습니다. 일반적인 그립 주제만으로 공통 적용을 확정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/zT6zJCJ59js-1.webp",
+        "media/golf-frames/zT6zJCJ59js-2.webp"
+      ],
+      "sampleFiles": [
+        "zT6zJCJ59js-9.9.jpg",
+        "zT6zJCJ59js-16.5.jpg",
+        "zT6zJCJ59js-23.1.jpg",
+        "zT6zJCJ59js-30.25.jpg",
+        "zT6zJCJ59js-37.4.jpg",
+        "zT6zJCJ59js-44.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "ldkU0D_Ylms",
+      "title": "헤드를 툭 놓는 릴리스 타이밍",
+      "sourceUrl": "https://www.youtube.com/watch?v=ldkU0D_Ylms",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 팔 하강 뒤 헤드를 놓고 지면을 통과하는 리허설을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/ldkU0D_Ylms-1.webp",
+        "media/golf-frames/ldkU0D_Ylms-2.webp"
+      ],
+      "sampleFiles": [
+        "ldkU0D_Ylms-6.48.jpg",
+        "ldkU0D_Ylms-10.8.jpg",
+        "ldkU0D_Ylms-15.12.jpg",
+        "ldkU0D_Ylms-19.8.jpg",
+        "ldkU0D_Ylms-24.48.jpg",
+        "ldkU0D_Ylms-28.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "M-ryH3IhUXI",
+      "title": "오른팔꿈치 궤도·릴리스 드릴",
+      "sourceUrl": "https://www.youtube.com/watch?v=M-ryH3IhUXI",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용한 팔꿈치 경로·오른손 놓기 드릴을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/M-ryH3IhUXI-1.webp",
+        "media/golf-frames/M-ryH3IhUXI-2.webp"
+      ],
+      "sampleFiles": [
+        "M-ryH3IhUXI-2.7.jpg",
+        "M-ryH3IhUXI-4.5.jpg",
+        "M-ryH3IhUXI-6.3.jpg",
+        "M-ryH3IhUXI-8.25.jpg",
+        "M-ryH3IhUXI-10.2.jpg",
+        "M-ryH3IhUXI-12.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "3kNb6TQN2T0",
+      "title": "레깅을 원하다",
+      "sourceUrl": "https://www.youtube.com/watch?v=3kNb6TQN2T0",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 초보·숙련 동작의 레깅 시점을 비교하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/3kNb6TQN2T0-1.webp",
+        "media/golf-frames/3kNb6TQN2T0-2.webp"
+      ],
+      "sampleFiles": [
+        "3kNb6TQN2T0-1.62.jpg",
+        "3kNb6TQN2T0-2.7.jpg",
+        "3kNb6TQN2T0-3.78.jpg",
+        "3kNb6TQN2T0-4.95.jpg",
+        "3kNb6TQN2T0-6.12.jpg",
+        "3kNb6TQN2T0-7.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "VGya7_OVLYo",
+      "title": "클럽속도 폭발 · 눌러치기",
+      "sourceUrl": "https://www.youtube.com/watch?v=VGya7_OVLYo",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 헤드 가속·임팩트 시범을 확인했습니다. 화면의 거리 수치를 효과 보장으로 해석하지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/VGya7_OVLYo-1.webp",
+        "media/golf-frames/VGya7_OVLYo-2.webp"
+      ],
+      "sampleFiles": [
+        "VGya7_OVLYo-7.38.jpg",
+        "VGya7_OVLYo-12.3.jpg",
+        "VGya7_OVLYo-17.22.jpg",
+        "VGya7_OVLYo-22.55.jpg",
+        "VGya7_OVLYo-27.88.jpg",
+        "VGya7_OVLYo-32.8.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "QsmMamIFMsE",
+      "title": "열리면 편해져",
+      "sourceUrl": "https://www.youtube.com/watch?v=QsmMamIFMsE",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 몸이 막히는 동작과 회전이 이어지는 동작을 비교하는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/QsmMamIFMsE-1.webp",
+        "media/golf-frames/QsmMamIFMsE-2.webp"
+      ],
+      "sampleFiles": [
+        "QsmMamIFMsE-3.42.jpg",
+        "QsmMamIFMsE-5.7.jpg",
+        "QsmMamIFMsE-7.98.jpg",
+        "QsmMamIFMsE-10.45.jpg",
+        "QsmMamIFMsE-12.92.jpg",
+        "QsmMamIFMsE-15.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "jlqT_vNRcSI",
+      "title": "왼쪽 어깨가 들리는 이유",
+      "sourceUrl": "https://www.youtube.com/watch?v=jlqT_vNRcSI",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 들고 왼팔과 왼어깨의 움직임을 비교하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/jlqT_vNRcSI-1.webp",
+        "media/golf-frames/jlqT_vNRcSI-2.webp"
+      ],
+      "sampleFiles": [
+        "scope-review/jlqT_vNRcSI-0.0.jpg",
+        "scope-review/jlqT_vNRcSI-2.1.jpg",
+        "scope-review/jlqT_vNRcSI-6.3.jpg",
+        "scope-review/jlqT_vNRcSI-11.55.jpg",
+        "scope-review/jlqT_vNRcSI-15.75.jpg",
+        "scope-review/jlqT_vNRcSI-19.95.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "zB5hFmVpisI",
+      "title": "스윙은 발바닥부터 시작",
+      "sourceUrl": "https://www.youtube.com/watch?v=zB5hFmVpisI",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용해 발바닥부터 좌우 스윙 흐름을 만드는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/zB5hFmVpisI-1.webp",
+        "media/golf-frames/zB5hFmVpisI-2.webp"
+      ],
+      "sampleFiles": [
+        "zB5hFmVpisI-1.44.jpg",
+        "zB5hFmVpisI-2.4.jpg",
+        "zB5hFmVpisI-3.36.jpg",
+        "zB5hFmVpisI-4.95.jpg",
+        "zB5hFmVpisI-6.12.jpg",
+        "zB5hFmVpisI-7.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "FnbyQ-UYjMI",
+      "title": "작은 백스윙과 회전 시범",
+      "sourceUrl": "https://www.youtube.com/watch?v=FnbyQ-UYjMI",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "원본 시작 장면에서 드라이버와 티 위 공이 확인되는 짧은 백스윙 타격 시범입니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/FnbyQ-UYjMI-1.webp",
+        "media/golf-frames/FnbyQ-UYjMI-2.webp"
+      ],
+      "sampleFiles": [
+        "scope-review/FnbyQ-UYjMI-0.0.jpg",
+        "scope-review/FnbyQ-UYjMI-0.9.jpg",
+        "scope-review/FnbyQ-UYjMI-1.8.jpg",
+        "scope-review/FnbyQ-UYjMI-3.3.jpg",
+        "scope-review/FnbyQ-UYjMI-4.5.jpg",
+        "scope-review/FnbyQ-UYjMI-5.7.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "jg52OubK_L0",
+      "title": "던지기 전에 한 박자만 기다리세요",
+      "sourceUrl": "https://www.youtube.com/watch?v=jg52OubK_L0",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용해 전환의 기다림과 헤드 무게를 비교하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/jg52OubK_L0-1.webp",
+        "media/golf-frames/jg52OubK_L0-2.webp"
+      ],
+      "sampleFiles": [
+        "jg52OubK_L0-1.jpg",
+        "jg52OubK_L0-2.jpg",
+        "jg52OubK_L0-3.jpg",
+        "jg52OubK_L0-4.jpg",
+        "jg52OubK_L0-5.jpg",
+        "jg52OubK_L0-6.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "lb2CrZl0FrA",
+      "title": "공에서 멀어지세요 · 뒤쪽 공간",
+      "sourceUrl": "https://www.youtube.com/watch?v=lb2CrZl0FrA",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "공과 몸 사이 공간 비교는 확인했지만 클럽헤드가 충분히 보이지 않아 종류를 확정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/lb2CrZl0FrA-1.webp",
+        "media/golf-frames/lb2CrZl0FrA-2.webp"
+      ],
+      "sampleFiles": [
+        "lb2CrZl0FrA-1.44.jpg",
+        "lb2CrZl0FrA-2.4.jpg",
+        "lb2CrZl0FrA-3.36.jpg",
+        "lb2CrZl0FrA-4.95.jpg",
+        "lb2CrZl0FrA-6.12.jpg",
+        "lb2CrZl0FrA-7.2.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "q1P0eGWA8_s",
+      "title": "머리가 왜 나간다? · 축 이동 확인",
+      "sourceUrl": "https://www.youtube.com/watch?v=q1P0eGWA8_s",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언과 보조 막대를 이용해 축 이동을 비교하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/q1P0eGWA8_s-1.webp",
+        "media/golf-frames/q1P0eGWA8_s-2.webp"
+      ],
+      "sampleFiles": [
+        "q1P0eGWA8_s-6.12.jpg",
+        "q1P0eGWA8_s-10.2.jpg",
+        "q1P0eGWA8_s-14.28.jpg",
+        "q1P0eGWA8_s-19.25.jpg",
+        "q1P0eGWA8_s-23.8.jpg",
+        "q1P0eGWA8_s-28.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "En79wtGEzs4",
+      "title": "독학 골퍼를 위한 백스윙·다운스윙 순서",
+      "sourceUrl": "https://www.youtube.com/watch?v=En79wtGEzs4",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 백스윙·다운스윙 순서를 설명하고 타격하는 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/En79wtGEzs4-1.webp",
+        "media/golf-frames/En79wtGEzs4-2.webp"
+      ],
+      "sampleFiles": [
+        "scope-review/En79wtGEzs4-0.0.jpg",
+        "scope-review/En79wtGEzs4-6.0.jpg",
+        "scope-review/En79wtGEzs4-18.0.jpg",
+        "scope-review/En79wtGEzs4-33.0.jpg",
+        "scope-review/En79wtGEzs4-45.0.jpg",
+        "scope-review/En79wtGEzs4-57.0.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "1lD1Lhk-2Lc",
+      "title": "다운스윙 · 오른어깨와 손의 경로",
+      "sourceUrl": "https://www.youtube.com/watch?v=1lD1Lhk-2Lc",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 어깨에 대거나 들어 오른어깨와 손의 경로를 설명합니다. 채널 소개의 드라이버 커리큘럼은 이 영상의 공통 적용 근거로 쓰지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/1lD1Lhk-2Lc-1.webp",
+        "media/golf-frames/1lD1Lhk-2Lc-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/1lD1Lhk-2Lc-4.64.jpg",
+        "oct07/1lD1Lhk-2Lc-15.08.jpg",
+        "oct07/1lD1Lhk-2Lc-25.52.jpg",
+        "oct07/1lD1Lhk-2Lc-30.74.jpg",
+        "oct07/1lD1Lhk-2Lc-41.18.jpg",
+        "oct07/1lD1Lhk-2Lc-51.62.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "JhE2A-kCaLI",
+      "title": "스윙 폭·오른어깨·통과 경로 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=JhE2A-kCaLI",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "여러 사람·여러 촬영의 스윙 팁이 편집되어 있습니다. 동일한 적용 클럽이나 공통 지침의 범위가 명확하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/JhE2A-kCaLI-1.webp",
+        "media/golf-frames/JhE2A-kCaLI-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/JhE2A-kCaLI-1.52.jpg",
+        "oct07/JhE2A-kCaLI-4.94.jpg",
+        "oct07/JhE2A-kCaLI-8.36.jpg",
+        "oct07/JhE2A-kCaLI-10.07.jpg",
+        "oct07/JhE2A-kCaLI-13.49.jpg",
+        "oct07/JhE2A-kCaLI-16.91.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "2UR4UFtx1R0",
+      "title": "그립 · 오른손 검지 접촉 위치",
+      "sourceUrl": "https://www.youtube.com/watch?v=2UR4UFtx1R0",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "오른손 검지와 그립 접촉을 가까이 보여 주지만 두 클럽에 같은 방식으로 적용한다는 설명은 확인되지 않았습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/2UR4UFtx1R0-1.webp",
+        "media/golf-frames/2UR4UFtx1R0-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/2UR4UFtx1R0-3.68.jpg",
+        "oct07/2UR4UFtx1R0-11.96.jpg",
+        "oct07/2UR4UFtx1R0-20.24.jpg",
+        "oct07/2UR4UFtx1R0-24.38.jpg",
+        "oct07/2UR4UFtx1R0-32.66.jpg",
+        "oct07/2UR4UFtx1R0-40.94.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "bTA5HW-hU_Y",
+      "title": "힘 빼기 · 그립과 큰 근육의 회전",
+      "sourceUrl": "https://www.youtube.com/watch?v=bTA5HW-hU_Y",
+      "previous": "unknown",
+      "value": "both",
+      "reason": "원본 11:35–13:45에서 아이언·드라이버를 함께 설명하며 힘 빼기·몸통 움직임의 공통 원리를 다룹니다. 공 위치와 클럽 길이에 따른 타격 차이까지 같다는 뜻은 아닙니다.",
+      "basis": "shared-instruction",
+      "representativeFrames": [
+        "media/golf-frames/bTA5HW-hU_Y-1.webp",
+        "media/golf-frames/bTA5HW-hU_Y-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/bTA5HW-hU_Y-82.24.jpg",
+        "oct07/bTA5HW-hU_Y-267.28.jpg",
+        "oct07/bTA5HW-hU_Y-452.32.jpg",
+        "oct07/bTA5HW-hU_Y-544.84.jpg",
+        "oct07/bTA5HW-hU_Y-729.88.jpg",
+        "oct07/bTA5HW-hU_Y-914.92.jpg"
+      ],
+      "availableCaptionFiles": [],
+      "sharedEvidence": {
+        "times": [
+          695,
+          705,
+          715,
+          725,
+          735,
+          745,
+          755,
+          765,
+          775,
+          785,
+          795,
+          805,
+          815,
+          825
+        ],
+        "description": "원본 설명의 드라이버·아이언 적용 및 11:35 비교 장. 채널 소개·해시태그가 아닌 해당 영상 설명.",
+        "scope": "힘 빼기·큰 근육의 움직임. 공 위치·클럽 길이에 따른 타격 조건 차이는 보존"
+      }
+    },
+    {
+      "id": "UlRsR8hnZGs",
+      "title": "손목 · 코킹과 힌지 구분",
+      "sourceUrl": "https://www.youtube.com/watch?v=UlRsR8hnZGs",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 코킹·힌지 설명과 스윙 시범을 확인했습니다. 드라이버에 대한 동일 적용 설명은 별도 확인이 필요합니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/UlRsR8hnZGs-1.webp",
+        "media/golf-frames/UlRsR8hnZGs-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/UlRsR8hnZGs-39.44.jpg",
+        "oct07/UlRsR8hnZGs-128.18.jpg",
+        "oct07/UlRsR8hnZGs-216.92.jpg",
+        "oct07/UlRsR8hnZGs-261.29.jpg",
+        "oct07/UlRsR8hnZGs-350.03.jpg",
+        "oct07/UlRsR8hnZGs-438.77.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "YD9lLDhvy8c",
+      "title": "릴리스 · 손을 연결해 앞으로 보내는 시범",
+      "sourceUrl": "https://www.youtube.com/watch?v=YD9lLDhvy8c",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "야외 아이언 시범에서 손 연결과 앞으로 보내는 릴리스를 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/YD9lLDhvy8c-1.webp",
+        "media/golf-frames/YD9lLDhvy8c-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/YD9lLDhvy8c-1.92.jpg",
+        "oct07/YD9lLDhvy8c-6.24.jpg",
+        "oct07/YD9lLDhvy8c-10.56.jpg",
+        "oct07/YD9lLDhvy8c-12.72.jpg",
+        "oct07/YD9lLDhvy8c-17.04.jpg",
+        "oct07/YD9lLDhvy8c-21.36.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "0HjpF1MOwAw",
+      "title": "임팩트 · 오른팔꿈치와 오른손 스냅",
+      "sourceUrl": "https://www.youtube.com/watch?v=0HjpF1MOwAw",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "막대를 든 팔꿈치·손목 시범이며 실제 클럽별 타격 조건과 적용 범위가 확인되지 않았습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/0HjpF1MOwAw-1.webp",
+        "media/golf-frames/0HjpF1MOwAw-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/0HjpF1MOwAw-0.48.jpg",
+        "oct07/0HjpF1MOwAw-1.56.jpg",
+        "oct07/0HjpF1MOwAw-2.64.jpg",
+        "oct07/0HjpF1MOwAw-3.18.jpg",
+        "oct07/0HjpF1MOwAw-4.26.jpg",
+        "oct07/0HjpF1MOwAw-5.34.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "IMjI_VqsQsg",
+      "title": "회전 막힘 점검 · 오른발을 꽉 버티지 않기",
+      "sourceUrl": "https://www.youtube.com/watch?v=IMjI_VqsQsg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 이용해 오른발 지지와 회전 막힘을 비교하는 원본 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/IMjI_VqsQsg-1.webp",
+        "media/golf-frames/IMjI_VqsQsg-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/IMjI_VqsQsg-3.76.jpg",
+        "oct07/IMjI_VqsQsg-12.22.jpg",
+        "oct07/IMjI_VqsQsg-20.68.jpg",
+        "oct07/IMjI_VqsQsg-24.91.jpg",
+        "oct07/IMjI_VqsQsg-33.37.jpg",
+        "oct07/IMjI_VqsQsg-41.83.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "2CplOC4flsA",
+      "title": "전환 · 오른손 힌지와 팔꿈치·몸통 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=2CplOC4flsA",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "원본 화면에 드라이버 스윙을 명시하고 티샷·큰 헤드의 전환 동작을 보여 줍니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/2CplOC4flsA-1.webp",
+        "media/golf-frames/2CplOC4flsA-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/2CplOC4flsA-0.64.jpg",
+        "oct07/2CplOC4flsA-2.08.jpg",
+        "oct07/2CplOC4flsA-3.52.jpg",
+        "oct07/2CplOC4flsA-4.24.jpg",
+        "oct07/2CplOC4flsA-5.68.jpg",
+        "oct07/2CplOC4flsA-7.12.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "Fk_3CjorpVA",
+      "title": "어프로치 · 공 위치와 탄도 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=Fk_3CjorpVA",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "웨지 어프로치의 공 위치·탄도 비교입니다. 현재 아이언 풀스윙·드라이버·공통 적용 중 하나로 억지 편성하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/Fk_3CjorpVA-1.webp",
+        "media/golf-frames/Fk_3CjorpVA-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/Fk_3CjorpVA-1.04.jpg",
+        "oct07/Fk_3CjorpVA-3.38.jpg",
+        "oct07/Fk_3CjorpVA-5.72.jpg",
+        "oct07/Fk_3CjorpVA-6.89.jpg",
+        "oct07/Fk_3CjorpVA-9.23.jpg",
+        "oct07/Fk_3CjorpVA-11.57.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "g2AXYPKdCik",
+      "title": "백스윙·다운스윙의 겨드랑이 연결 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=g2AXYPKdCik",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 백스윙·다운스윙의 겨드랑이 연결을 비교하는 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/g2AXYPKdCik-1.webp",
+        "media/golf-frames/g2AXYPKdCik-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07/g2AXYPKdCik-0.72.jpg",
+        "oct07/g2AXYPKdCik-2.34.jpg",
+        "oct07/g2AXYPKdCik-3.96.jpg",
+        "oct07/g2AXYPKdCik-4.77.jpg",
+        "oct07/g2AXYPKdCik-6.39.jpg",
+        "oct07/g2AXYPKdCik-8.01.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "sKcgYjwimd8",
+      "title": "스윙 구간을 나누어 반복하는 연습",
+      "sourceUrl": "https://www.youtube.com/watch?v=sKcgYjwimd8",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언과 지면의 공을 기준으로 스윙을 나누어 반복하는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/sKcgYjwimd8-1.webp",
+        "media/golf-frames/sKcgYjwimd8-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/sKcgYjwimd8-1.92.jpg",
+        "oct07b/sKcgYjwimd8-6.24.jpg",
+        "oct07b/sKcgYjwimd8-10.56.jpg",
+        "oct07b/sKcgYjwimd8-12.72.jpg",
+        "oct07b/sKcgYjwimd8-17.04.jpg",
+        "oct07b/sKcgYjwimd8-21.36.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "ZBYKvzsKbyU",
+      "title": "슬로모션 스윙 · 두 촬영 각도 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZBYKvzsKbyU",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "드라이버 티샷과 다른 클럽의 스윙 장면이 함께 있습니다. 시범 모음만으로 두 클럽에 같은 지침을 적용한다고 확정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/ZBYKvzsKbyU-1.webp",
+        "media/golf-frames/ZBYKvzsKbyU-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/ZBYKvzsKbyU-3.12.jpg",
+        "oct07b/ZBYKvzsKbyU-10.14.jpg",
+        "oct07b/ZBYKvzsKbyU-17.16.jpg",
+        "oct07b/ZBYKvzsKbyU-20.67.jpg",
+        "oct07b/ZBYKvzsKbyU-27.69.jpg",
+        "oct07b/ZBYKvzsKbyU-34.71.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "5vL6-Dwahsw",
+      "title": "오른발 지지 · 백스윙과 체중이동",
+      "sourceUrl": "https://www.youtube.com/watch?v=5vL6-Dwahsw",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "다른 클럽을 든 시범이 섞여 있습니다. 오른발 지지라는 주제만으로 두 클럽의 적용 조건이 같다고 보지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/5vL6-Dwahsw-1.webp",
+        "media/golf-frames/5vL6-Dwahsw-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/5vL6-Dwahsw-5.04.jpg",
+        "oct07b/5vL6-Dwahsw-16.38.jpg",
+        "oct07b/5vL6-Dwahsw-27.72.jpg",
+        "oct07b/5vL6-Dwahsw-33.39.jpg",
+        "oct07b/5vL6-Dwahsw-44.73.jpg",
+        "oct07b/5vL6-Dwahsw-56.07.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "9ELCrrtWqwM",
+      "title": "손목 힌지 · 손가락과 클럽 방향",
+      "sourceUrl": "https://www.youtube.com/watch?v=9ELCrrtWqwM",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 놓은 어드레스와 손목 힌지 비교 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/9ELCrrtWqwM-1.webp",
+        "media/golf-frames/9ELCrrtWqwM-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/9ELCrrtWqwM-7.04.jpg",
+        "oct07b/9ELCrrtWqwM-22.88.jpg",
+        "oct07b/9ELCrrtWqwM-38.72.jpg",
+        "oct07b/9ELCrrtWqwM-46.64.jpg",
+        "oct07b/9ELCrrtWqwM-62.48.jpg",
+        "oct07b/9ELCrrtWqwM-78.32.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "1x_iiruwFTU",
+      "title": "힘 빼기 · 골반과 상체의 연속 움직임",
+      "sourceUrl": "https://www.youtube.com/watch?v=1x_iiruwFTU",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "잔디 위 아이언 타격에서 골반과 상체가 이어지는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/1x_iiruwFTU-1.webp",
+        "media/golf-frames/1x_iiruwFTU-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/1x_iiruwFTU-0.4.jpg",
+        "oct07b/1x_iiruwFTU-1.3.jpg",
+        "oct07b/1x_iiruwFTU-2.2.jpg",
+        "oct07b/1x_iiruwFTU-2.65.jpg",
+        "oct07b/1x_iiruwFTU-3.55.jpg",
+        "oct07b/1x_iiruwFTU-4.45.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "ZVyCmpxNXa4",
+      "title": "다운스윙 · 클럽 하강과 몸의 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=ZVyCmpxNXa4",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "원본 초반 화면에서 아이언을 명시하고 아이언 하강·타격 시범을 보여 줍니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/ZVyCmpxNXa4-1.webp",
+        "media/golf-frames/ZVyCmpxNXa4-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/ZVyCmpxNXa4-3.6.jpg",
+        "oct07b/ZVyCmpxNXa4-11.7.jpg",
+        "oct07b/ZVyCmpxNXa4-19.8.jpg",
+        "oct07b/ZVyCmpxNXa4-23.85.jpg",
+        "oct07b/ZVyCmpxNXa4-31.95.jpg",
+        "oct07b/ZVyCmpxNXa4-40.05.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "xys5zZWka6M",
+      "title": "릴리스 감각 · 수건 시범",
+      "sourceUrl": "https://www.youtube.com/watch?v=xys5zZWka6M",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "수건을 이용한 릴리스 감각 시범입니다. 아이언·드라이버의 적용 조건을 확인할 설명이 부족합니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/xys5zZWka6M-1.webp",
+        "media/golf-frames/xys5zZWka6M-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/xys5zZWka6M-0.56.jpg",
+        "oct07b/xys5zZWka6M-1.82.jpg",
+        "oct07b/xys5zZWka6M-3.08.jpg",
+        "oct07b/xys5zZWka6M-3.71.jpg",
+        "oct07b/xys5zZWka6M-4.97.jpg",
+        "oct07b/xys5zZWka6M-6.23.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "XgPPBzZKzNM",
+      "title": "릴리스 · 끌고 온 뒤 클럽을 보내기",
+      "sourceUrl": "https://www.youtube.com/watch?v=XgPPBzZKzNM",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용해 끌고 오는 동작과 헤드를 보내는 동작을 비교합니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/XgPPBzZKzNM-1.webp",
+        "media/golf-frames/XgPPBzZKzNM-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07b/XgPPBzZKzNM-1.68.jpg",
+        "oct07b/XgPPBzZKzNM-5.46.jpg",
+        "oct07b/XgPPBzZKzNM-9.24.jpg",
+        "oct07b/XgPPBzZKzNM-11.13.jpg",
+        "oct07b/XgPPBzZKzNM-14.91.jpg",
+        "oct07b/XgPPBzZKzNM-18.69.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "BvnGOkOMo68",
+      "title": "헤드 무게 · 손·팔로 당기는 동작 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=BvnGOkOMo68",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "드라이버의 큰 헤드와 티샷 준비 장면에서 손·팔로 당기기와 헤드 무게를 비교합니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/BvnGOkOMo68-1.webp",
+        "media/golf-frames/BvnGOkOMo68-2.webp"
+      ],
+      "sampleFiles": [
+        "oct07c/BvnGOkOMo68-5.76.jpg",
+        "oct07c/BvnGOkOMo68-18.72.jpg",
+        "oct07c/BvnGOkOMo68-31.68.jpg",
+        "oct07c/BvnGOkOMo68-38.16.jpg",
+        "oct07c/BvnGOkOMo68-51.12.jpg",
+        "oct07c/BvnGOkOMo68-64.08.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "DYtWZFKkKas",
+      "title": "몸통 회전 · 오른손을 샤프트에 대고 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=DYtWZFKkKas",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언 샤프트를 내려잡고 몸통 회전·왼쪽 압력 이동을 연습하는 원본 시범입니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/DYtWZFKkKas-1.webp",
+        "media/golf-frames/DYtWZFKkKas-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/DYtWZFKkKas-1.36.jpg",
+        "oct09/DYtWZFKkKas-4.42.jpg",
+        "oct09/DYtWZFKkKas-7.48.jpg",
+        "oct09/DYtWZFKkKas-9.01.jpg",
+        "oct09/DYtWZFKkKas-12.07.jpg",
+        "oct09/DYtWZFKkKas-15.13.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "te5CN12g0Mc",
+      "title": "우드 · 헤드 무게와 내려놓는 느낌",
+      "sourceUrl": "https://www.youtube.com/watch?v=te5CN12g0Mc",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "원본이 우드샷 레슨을 명시합니다. 우드를 드라이버나 아이언으로 바꾸어 분류하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/te5CN12g0Mc-1.webp",
+        "media/golf-frames/te5CN12g0Mc-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/te5CN12g0Mc-3.44.jpg",
+        "oct09/te5CN12g0Mc-11.18.jpg",
+        "oct09/te5CN12g0Mc-18.92.jpg",
+        "oct09/te5CN12g0Mc-22.79.jpg",
+        "oct09/te5CN12g0Mc-30.53.jpg",
+        "oct09/te5CN12g0Mc-38.27.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "eRSTJTcMFjE",
+      "title": "다운스윙 · 샤프트를 내리는 비교 동작",
+      "sourceUrl": "https://www.youtube.com/watch?v=eRSTJTcMFjE",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "드라이버 하강 시범 뒤 다른 실내 시범이 이어지는 편집 영상입니다. 같은 동작을 두 클럽에 적용하는 설명은 충분히 확인되지 않았습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/eRSTJTcMFjE-1.webp",
+        "media/golf-frames/eRSTJTcMFjE-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/eRSTJTcMFjE-0.56.jpg",
+        "oct09/eRSTJTcMFjE-1.82.jpg",
+        "oct09/eRSTJTcMFjE-3.08.jpg",
+        "oct09/eRSTJTcMFjE-3.71.jpg",
+        "oct09/eRSTJTcMFjE-4.97.jpg",
+        "oct09/eRSTJTcMFjE-6.23.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "qVHPT2eU5gY",
+      "title": "임팩트 · 손목과 클럽의 통과 구간",
+      "sourceUrl": "https://www.youtube.com/watch?v=qVHPT2eU5gY",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "큰 드라이버 헤드가 확인되는 타격 장면에서 손목과 클럽 통과를 표시한 시범입니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/qVHPT2eU5gY-1.webp",
+        "media/golf-frames/qVHPT2eU5gY-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/qVHPT2eU5gY-1.92.jpg",
+        "oct09/qVHPT2eU5gY-6.24.jpg",
+        "oct09/qVHPT2eU5gY-10.56.jpg",
+        "oct09/qVHPT2eU5gY-12.72.jpg",
+        "oct09/qVHPT2eU5gY-17.04.jpg",
+        "oct09/qVHPT2eU5gY-21.36.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "qQbCq_QXB0A",
+      "title": "체중이동 · 바닥을 쓸어 보는 연습",
+      "sourceUrl": "https://www.youtube.com/watch?v=qQbCq_QXB0A",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 체중이동 뒤 바닥을 쓸고 타격하는 짧은 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/qQbCq_QXB0A-1.webp",
+        "media/golf-frames/qQbCq_QXB0A-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/qQbCq_QXB0A-0.32.jpg",
+        "oct09/qQbCq_QXB0A-1.04.jpg",
+        "oct09/qQbCq_QXB0A-1.76.jpg",
+        "oct09/qQbCq_QXB0A-2.12.jpg",
+        "oct09/qQbCq_QXB0A-2.84.jpg",
+        "oct09/qQbCq_QXB0A-3.56.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "G6VjK_afBng",
+      "title": "스윙 시범 · FEEL과 REAL 슬로모션",
+      "sourceUrl": "https://www.youtube.com/watch?v=G6VjK_afBng",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "드라이버 티샷의 FEEL·REAL 비교와 큰 헤드의 스윙 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/G6VjK_afBng-1.webp",
+        "media/golf-frames/G6VjK_afBng-2.webp"
+      ],
+      "sampleFiles": [
+        "oct09/G6VjK_afBng-2.08.jpg",
+        "oct09/G6VjK_afBng-6.76.jpg",
+        "oct09/G6VjK_afBng-11.44.jpg",
+        "oct09/G6VjK_afBng-13.78.jpg",
+        "oct09/G6VjK_afBng-18.46.jpg",
+        "oct09/G6VjK_afBng-23.14.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "Ks-9y9yLols",
+      "title": "다운스윙 · 왼팔과 왼어깨 움직임 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=Ks-9y9yLols",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "원본 화면에 7번을 명시하고 아이언으로 왼팔·왼어깨 움직임을 비교합니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/Ks-9y9yLols-1.webp",
+        "media/golf-frames/Ks-9y9yLols-2.webp"
+      ],
+      "sampleFiles": [
+        "oct10/Ks-9y9yLols-1.12.jpg",
+        "oct10/Ks-9y9yLols-3.64.jpg",
+        "oct10/Ks-9y9yLols-6.16.jpg",
+        "oct10/Ks-9y9yLols-7.42.jpg",
+        "oct10/Ks-9y9yLols-9.94.jpg",
+        "oct10/Ks-9y9yLols-12.46.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "rvrwwVdyM68",
+      "title": "왼손 사용 · 손등 방향과 내려오는 흐름",
+      "sourceUrl": "https://www.youtube.com/watch?v=rvrwwVdyM68",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 왼손과 손등 방향·하강 흐름을 보여 주는 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/rvrwwVdyM68-1.webp",
+        "media/golf-frames/rvrwwVdyM68-2.webp"
+      ],
+      "sampleFiles": [
+        "oct10/rvrwwVdyM68-1.44.jpg",
+        "oct10/rvrwwVdyM68-4.68.jpg",
+        "oct10/rvrwwVdyM68-7.92.jpg",
+        "oct10/rvrwwVdyM68-9.54.jpg",
+        "oct10/rvrwwVdyM68-12.78.jpg",
+        "oct10/rvrwwVdyM68-16.02.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "eOxiYC684K0",
+      "title": "왼어깨 회전 · 몸이 막히는 동작 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=eOxiYC684K0",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "어깨 회전 비교는 확인했지만 확보한 장면에서 클럽헤드와 적용 클럽 설명이 충분히 보이지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/eOxiYC684K0-1.webp",
+        "media/golf-frames/eOxiYC684K0-2.webp"
+      ],
+      "sampleFiles": [
+        "oct10/eOxiYC684K0-0.4.jpg",
+        "oct10/eOxiYC684K0-1.3.jpg",
+        "oct10/eOxiYC684K0-2.2.jpg",
+        "oct10/eOxiYC684K0-2.65.jpg",
+        "oct10/eOxiYC684K0-3.55.jpg",
+        "oct10/eOxiYC684K0-4.45.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "-8gKh-1h6Hs",
+      "title": "트랜지션 · 골반 움직임과 밴드 측면 기울기",
+      "sourceUrl": "https://www.youtube.com/watch?v=-8gKh-1h6Hs",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "몸통·골반과 밴드를 이용한 운동 시범입니다. 특정 클럽이나 두 클럽 공통 적용을 확인할 설명은 부족합니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/-8gKh-1h6Hs-1.webp",
+        "media/golf-frames/-8gKh-1h6Hs-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261011/-8gKh-1h6Hs-0.jpg",
+        "review-20261011/-8gKh-1h6Hs-2.jpg",
+        "review-20261011/-8gKh-1h6Hs-4.jpg",
+        "review-20261011/-8gKh-1h6Hs-5.jpg",
+        "review-20261011/-8gKh-1h6Hs-7.jpg",
+        "review-20261011/-8gKh-1h6Hs-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "nkfEfaa4CFs",
+      "title": "아이언 반복성 · 왼손목과 내려오는 동작 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=nkfEfaa4CFs",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "원본 화면의 7번 아이언 명시와 왼손목·하강 비교 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/nkfEfaa4CFs-1.webp",
+        "media/golf-frames/nkfEfaa4CFs-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261011/nkfEfaa4CFs-0.jpg",
+        "review-20261011/nkfEfaa4CFs-2.jpg",
+        "review-20261011/nkfEfaa4CFs-4.jpg",
+        "review-20261011/nkfEfaa4CFs-5.jpg",
+        "review-20261011/nkfEfaa4CFs-7.jpg",
+        "review-20261011/nkfEfaa4CFs-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "clEQKV7hWrY",
+      "title": "아이언 회전 · 왼골반과 어깨 높이 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=clEQKV7hWrY",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "원본 시작 문구에 아이언을 명시하고 왼골반·어깨 높이의 아이언 시범을 보여 줍니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/clEQKV7hWrY-1.webp",
+        "media/golf-frames/clEQKV7hWrY-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261011/clEQKV7hWrY-0.jpg",
+        "review-20261011/clEQKV7hWrY-2.jpg",
+        "review-20261011/clEQKV7hWrY-4.jpg",
+        "review-20261011/clEQKV7hWrY-5.jpg",
+        "review-20261011/clEQKV7hWrY-7.jpg",
+        "review-20261011/clEQKV7hWrY-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "MIx8BbSocFI",
+      "title": "어드레스부터 백스윙 · 셋업과 손목·몸통 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=MIx8BbSocFI",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "어드레스·손목을 가까이 보여 주는 장면으로 클럽헤드와 적용 범위를 확인하기 어렵습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/MIx8BbSocFI-1.webp",
+        "media/golf-frames/MIx8BbSocFI-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261012/MIx8BbSocFI-0.jpg",
+        "review-20261012/MIx8BbSocFI-2.jpg",
+        "review-20261012/MIx8BbSocFI-4.jpg",
+        "review-20261012/MIx8BbSocFI-5.jpg",
+        "review-20261012/MIx8BbSocFI-7.jpg",
+        "review-20261012/MIx8BbSocFI-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "lnzbSVSBevs",
+      "title": "골반 회전 · 힙 힌지 유지와 앞으로 밀림 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=lnzbSVSBevs",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "클럽 없이 힙 힌지·골반 움직임을 비교하는 시범입니다. 공통 주제라는 이유만으로 공통 적용으로 확정하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/lnzbSVSBevs-1.webp",
+        "media/golf-frames/lnzbSVSBevs-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261012/lnzbSVSBevs-0.jpg",
+        "review-20261012/lnzbSVSBevs-2.jpg",
+        "review-20261012/lnzbSVSBevs-4.jpg",
+        "review-20261012/lnzbSVSBevs-5.jpg",
+        "review-20261012/lnzbSVSBevs-7.jpg",
+        "review-20261012/lnzbSVSBevs-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "Q_kYNFcYL0o",
+      "title": "뒤땅 비교 · 숙임과 다리의 높낮이 리듬",
+      "sourceUrl": "https://www.youtube.com/watch?v=Q_kYNFcYL0o",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언과 지면의 공으로 뒤땅·숙임·다리 높낮이 리듬을 비교하는 시범입니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/Q_kYNFcYL0o-1.webp",
+        "media/golf-frames/Q_kYNFcYL0o-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261012/Q_kYNFcYL0o-0.jpg",
+        "review-20261012/Q_kYNFcYL0o-2.jpg",
+        "review-20261012/Q_kYNFcYL0o-4.jpg",
+        "review-20261012/Q_kYNFcYL0o-5.jpg",
+        "review-20261012/Q_kYNFcYL0o-7.jpg",
+        "review-20261012/Q_kYNFcYL0o-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "qJRYOqhK-2c",
+      "title": "릴리스 · 팔·어깨 분리와 클럽 보내는 감각",
+      "sourceUrl": "https://www.youtube.com/watch?v=qJRYOqhK-2c",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용해 팔·어깨 분리와 릴리스를 비교하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/qJRYOqhK-2c-1.webp",
+        "media/golf-frames/qJRYOqhK-2c-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261012/qJRYOqhK-2c-0.jpg",
+        "review-20261012/qJRYOqhK-2c-2.jpg",
+        "review-20261012/qJRYOqhK-2c-4.jpg",
+        "review-20261012/qJRYOqhK-2c-5.jpg",
+        "review-20261012/qJRYOqhK-2c-7.jpg",
+        "review-20261012/qJRYOqhK-2c-9.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "iX_ZnUodsRQ",
+      "title": "회전 연결 · 명치와 그립 끝을 함께 돌리기",
+      "sourceUrl": "https://www.youtube.com/watch?v=iX_ZnUodsRQ",
+      "previous": "unknown",
+      "value": "both",
+      "reason": "원본 0:38 이후 아이언 시범 뒤 5:21–5:36에 드라이버도 마찬가지라고 설명하고 같은 명치·그립 끝의 출발을 시범 보입니다. 공통 범위는 백스윙 시작 방법입니다.",
+      "basis": "shared-instruction",
+      "representativeFrames": [
+        "media/golf-frames/iX_ZnUodsRQ-1.webp",
+        "media/golf-frames/iX_ZnUodsRQ-2.webp"
+      ],
+      "sampleFiles": [
+        "supplements-20261012/iX_ZnUodsRQ-0.jpg",
+        "supplements-20261012/iX_ZnUodsRQ-2.jpg",
+        "supplements-20261012/iX_ZnUodsRQ-4.jpg",
+        "supplements-20261012/iX_ZnUodsRQ-7.jpg",
+        "supplements-20261012/iX_ZnUodsRQ-9.jpg",
+        "supplements-20261012/iX_ZnUodsRQ-11.jpg"
+      ],
+      "availableCaptionFiles": [
+        "backswing-20261013/iX_ZnUodsRQ-transcript.txt"
+      ],
+      "sharedEvidence": {
+        "times": [
+          38,
+          85,
+          260,
+          325,
+          335,
+          347
+        ],
+        "captionRange": "321.1–336.8초: 아이언 설명 후 드라이버도 마찬가지라는 전환과 명치·그립 끝의 출발 방법",
+        "scope": "백스윙 시작의 회전 연결"
+      }
+    },
+    {
+      "id": "WQbV4r6m2Ww",
+      "title": "힘 뺀 피니시 · 샤프트가 등 쪽으로 넘어가기",
+      "sourceUrl": "https://www.youtube.com/watch?v=WQbV4r6m2Ww",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "피니시 힘 빼기 레슨은 확인했지만 확보한 장면에서 시범 클럽과 두 클럽 적용 범위를 명확히 구분하지 못했습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/WQbV4r6m2Ww-1.webp",
+        "media/golf-frames/WQbV4r6m2Ww-2.webp"
+      ],
+      "sampleFiles": [
+        "supplements-20261012/WQbV4r6m2Ww-0.jpg",
+        "supplements-20261012/WQbV4r6m2Ww-2.jpg",
+        "supplements-20261012/WQbV4r6m2Ww-4.jpg",
+        "supplements-20261012/WQbV4r6m2Ww-7.jpg",
+        "supplements-20261012/WQbV4r6m2Ww-9.jpg",
+        "supplements-20261012/WQbV4r6m2Ww-11.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "x0PzoVHk9gg",
+      "title": "편한 피니시 · 클럽이 어깨에 걸쳐지는 흐름",
+      "sourceUrl": "https://www.youtube.com/watch?v=x0PzoVHk9gg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 클럽을 어깨에 걸치는 피니시와 타격을 보여 주는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/x0PzoVHk9gg-1.webp",
+        "media/golf-frames/x0PzoVHk9gg-2.webp"
+      ],
+      "sampleFiles": [
+        "supplements-20261012/x0PzoVHk9gg-0.jpg",
+        "supplements-20261012/x0PzoVHk9gg-2.jpg",
+        "supplements-20261012/x0PzoVHk9gg-4.jpg",
+        "supplements-20261012/x0PzoVHk9gg-7.jpg",
+        "supplements-20261012/x0PzoVHk9gg-9.jpg",
+        "supplements-20261012/x0PzoVHk9gg-11.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "yHVIKXd_Ss8",
+      "title": "피니시 균형 · 편한 팔 모양과 다리 자세",
+      "sourceUrl": "https://www.youtube.com/watch?v=yHVIKXd_Ss8",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용한 피니시 팔·다리 자세와 균형 시범을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/yHVIKXd_Ss8-1.webp",
+        "media/golf-frames/yHVIKXd_Ss8-2.webp"
+      ],
+      "sampleFiles": [
+        "supplements-20261012/yHVIKXd_Ss8-0.jpg",
+        "supplements-20261012/yHVIKXd_Ss8-2.jpg",
+        "supplements-20261012/yHVIKXd_Ss8-4.jpg",
+        "supplements-20261012/yHVIKXd_Ss8-7.jpg",
+        "supplements-20261012/yHVIKXd_Ss8-9.jpg",
+        "supplements-20261012/yHVIKXd_Ss8-11.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "T2FBx83DXvg",
+      "title": "시작 드릴 · 헤드 뒤 공을 굴리는 테이크백",
+      "sourceUrl": "https://www.youtube.com/watch?v=T2FBx83DXvg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언 헤드 뒤 공을 굴리는 테이크백과 아이언 스윙 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/T2FBx83DXvg-1.webp",
+        "media/golf-frames/T2FBx83DXvg-2.webp"
+      ],
+      "sampleFiles": [
+        "backswing-20261013/T2FBx83DXvg-0.jpg",
+        "backswing-20261013/T2FBx83DXvg-2.jpg",
+        "backswing-20261013/T2FBx83DXvg-4.jpg",
+        "backswing-20261013/T2FBx83DXvg-7.jpg",
+        "backswing-20261013/T2FBx83DXvg-9.jpg",
+        "backswing-20261013/T2FBx83DXvg-11.jpg"
+      ],
+      "availableCaptionFiles": [
+        "backswing-20261013/T2FBx83DXvg-transcript.txt"
+      ]
+    },
+    {
+      "id": "NYY2HRNojPc",
+      "title": "탑 점검 · 팔을 조이기보다 손과 몸 사이 공간",
+      "sourceUrl": "https://www.youtube.com/watch?v=NYY2HRNojPc",
+      "previous": "unknown",
+      "value": "driver",
+      "reason": "큰 드라이버 헤드와 티 위 공을 두고 탑의 손·몸 사이 공간을 설명하는 원본 시범입니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/NYY2HRNojPc-1.webp",
+        "media/golf-frames/NYY2HRNojPc-2.webp"
+      ],
+      "sampleFiles": [
+        "backswing-20261013/NYY2HRNojPc-0.jpg",
+        "backswing-20261013/NYY2HRNojPc-2.jpg",
+        "backswing-20261013/NYY2HRNojPc-4.jpg",
+        "backswing-20261013/NYY2HRNojPc-7.jpg",
+        "backswing-20261013/NYY2HRNojPc-9.jpg",
+        "backswing-20261013/NYY2HRNojPc-11.jpg"
+      ],
+      "availableCaptionFiles": [
+        "backswing-20261013/NYY2HRNojPc-transcript.txt",
+        "review-20261017/NYY2HRNojPc-transcript.txt"
+      ]
+    },
+    {
+      "id": "WqKgbsWnDxE",
+      "title": "백스윙 오른팔 · 물건을 집어 올리는 감각",
+      "sourceUrl": "https://www.youtube.com/watch?v=WqKgbsWnDxE",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 오른팔·클럽 들어 올리기 비교 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/WqKgbsWnDxE-1.webp",
+        "media/golf-frames/WqKgbsWnDxE-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/WqKgbsWnDxE-0.jpg",
+        "review-20261017/WqKgbsWnDxE-2.jpg",
+        "review-20261017/WqKgbsWnDxE-4.jpg",
+        "review-20261017/WqKgbsWnDxE-6.jpg",
+        "review-20261017/WqKgbsWnDxE-8.jpg",
+        "review-20261017/WqKgbsWnDxE-10.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "RBJllwVPFEM",
+      "title": "릴리스 비교 · 팔의 서두름과 헤드 통과",
+      "sourceUrl": "https://www.youtube.com/watch?v=RBJllwVPFEM",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 팔의 속도와 헤드 통과를 비교하는 장면을 확인했습니다. 두 클럽 공통이라는 설명은 확인하지 못했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/RBJllwVPFEM-1.webp",
+        "media/golf-frames/RBJllwVPFEM-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/RBJllwVPFEM-0.jpg",
+        "review-20261017/RBJllwVPFEM-2.jpg",
+        "review-20261017/RBJllwVPFEM-4.jpg",
+        "review-20261017/RBJllwVPFEM-6.jpg",
+        "review-20261017/RBJllwVPFEM-8.jpg",
+        "review-20261017/RBJllwVPFEM-10.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-20261017/RBJllwVPFEM-transcript.txt"
+      ]
+    },
+    {
+      "id": "soj_dt1_PAg",
+      "title": "백스윙 힌지 · 페이스를 열지 않고 서서히 받치기",
+      "sourceUrl": "https://www.youtube.com/watch?v=soj_dt1_PAg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 페이스와 힌지·서서히 받치는 동작을 보여 주는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/soj_dt1_PAg-1.webp",
+        "media/golf-frames/soj_dt1_PAg-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/soj_dt1_PAg-0.jpg",
+        "review-20261017/soj_dt1_PAg-2.jpg",
+        "review-20261017/soj_dt1_PAg-4.jpg",
+        "review-20261017/soj_dt1_PAg-6.jpg",
+        "review-20261017/soj_dt1_PAg-8.jpg",
+        "review-20261017/soj_dt1_PAg-10.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-20261017/soj_dt1_PAg-transcript.txt"
+      ]
+    },
+    {
+      "id": "v3CFS-0sO_I",
+      "title": "전환 비교 · 내려오는 방향과 회전 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=v3CFS-0sO_I",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "전환 비교는 확인했지만 250m라는 문구만으로 드라이버 적용을 단정할 수 없습니다. 시범과 클럽별 적용 설명을 더 확인해야 합니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/v3CFS-0sO_I-1.webp",
+        "media/golf-frames/v3CFS-0sO_I-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/v3CFS-0sO_I-0.jpg",
+        "review-20261017/v3CFS-0sO_I-2.jpg",
+        "review-20261017/v3CFS-0sO_I-4.jpg",
+        "review-20261017/v3CFS-0sO_I-6.jpg",
+        "review-20261017/v3CFS-0sO_I-8.jpg",
+        "review-20261017/v3CFS-0sO_I-10.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-20261017/v3CFS-0sO_I-transcript.txt"
+      ]
+    },
+    {
+      "id": "2tam4sbJQtM",
+      "title": "백스윙 준비 · 팔 늘어뜨리기와 어깨선으로 올리기",
+      "sourceUrl": "https://www.youtube.com/watch?v=2tam4sbJQtM",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "후반의 아이언 어드레스·백스윙·타격 시범과 확보한 자막을 확인했습니다. 상단 고정과 기존 연습 핵심은 유지하며 드라이버 공통 적용으로 확대하지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/2tam4sbJQtM-1.webp",
+        "media/golf-frames/2tam4sbJQtM-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/2tam4sbJQtM-0.jpg",
+        "review-20261017/2tam4sbJQtM-2.jpg",
+        "review-20261017/2tam4sbJQtM-4.jpg",
+        "review-20261017/2tam4sbJQtM-6.jpg",
+        "review-20261017/2tam4sbJQtM-8.jpg",
+        "review-20261017/2tam4sbJQtM-10.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-20261017/2tam4sbJQtM-transcript.txt"
+      ]
+    },
+    {
+      "id": "dtnFgYXYfBE",
+      "title": "스윙 비교 · 테이크백·체중이동·팔로스루",
+      "sourceUrl": "https://www.youtube.com/watch?v=dtnFgYXYfBE",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 사용하는 두 동작의 테이크백·체중이동·팔로스루 비교를 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/dtnFgYXYfBE-1.webp",
+        "media/golf-frames/dtnFgYXYfBE-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/dtnFgYXYfBE-0.jpg",
+        "review-20261017/dtnFgYXYfBE-2.jpg",
+        "review-20261017/dtnFgYXYfBE-4.jpg",
+        "review-20261017/dtnFgYXYfBE-6.jpg",
+        "review-20261017/dtnFgYXYfBE-8.jpg",
+        "review-20261017/dtnFgYXYfBE-10.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "oEVbWjzZl0E",
+      "title": "전환 타이밍 · 헤드 무게와 몸통 회전 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=oEVbWjzZl0E",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 헤드 무게와 몸통 회전의 시점을 설명하는 원본 장면을 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/oEVbWjzZl0E-1.webp",
+        "media/golf-frames/oEVbWjzZl0E-2.webp"
+      ],
+      "sampleFiles": [
+        "review-20261017/oEVbWjzZl0E-0.jpg",
+        "review-20261017/oEVbWjzZl0E-2.jpg",
+        "review-20261017/oEVbWjzZl0E-4.jpg",
+        "review-20261017/oEVbWjzZl0E-6.jpg",
+        "review-20261017/oEVbWjzZl0E-8.jpg",
+        "review-20261017/oEVbWjzZl0E-10.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-20261017/oEVbWjzZl0E-transcript.txt"
+      ]
+    },
+    {
+      "id": "4DyoF3OQKww",
+      "title": "릴리스 방향 · 아래로 풀기와 옆으로 보내기 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=4DyoF3OQKww",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언을 든 릴리스 방향·지면 공 타격 비교를 확인했습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/4DyoF3OQKww-1.webp",
+        "media/golf-frames/4DyoF3OQKww-2.webp"
+      ],
+      "sampleFiles": [
+        "review-new-20261018/4DyoF3OQKww-0.jpg",
+        "review-new-20261018/4DyoF3OQKww-2.jpg",
+        "review-new-20261018/4DyoF3OQKww-4.jpg",
+        "review-new-20261018/4DyoF3OQKww-6.jpg",
+        "review-new-20261018/4DyoF3OQKww-8.jpg",
+        "review-new-20261018/4DyoF3OQKww-10.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "j1USTUwFnRI",
+      "title": "양손 간격 드릴 · 몸통 회전과 체중이동 연결",
+      "sourceUrl": "https://www.youtube.com/watch?v=j1USTUwFnRI",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "드라이버 양손 간격 드릴과 다른 클럽의 마무리 시범이 함께 있습니다. 확보한 자막은 효용을 나열하지만 클럽별 적용 범위는 명시하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/j1USTUwFnRI-1.webp",
+        "media/golf-frames/j1USTUwFnRI-2.webp"
+      ],
+      "sampleFiles": [
+        "review-new-20261018/j1USTUwFnRI-0.jpg",
+        "review-new-20261018/j1USTUwFnRI-2.jpg",
+        "review-new-20261018/j1USTUwFnRI-4.jpg",
+        "review-new-20261018/j1USTUwFnRI-7.jpg",
+        "review-new-20261018/j1USTUwFnRI-9.jpg",
+        "review-new-20261018/j1USTUwFnRI-11.jpg"
+      ],
+      "availableCaptionFiles": [
+        "review-new-20261018/j1USTUwFnRI-transcript.txt"
+      ]
+    },
+    {
+      "id": "4Eof_tmI0Ag",
+      "title": "클럽별 릴리스 · 드라이버와 아이언의 상체 위치 비교",
+      "sourceUrl": "https://www.youtube.com/watch?v=4Eof_tmI0Ag",
+      "previous": "unknown",
+      "value": "unknown",
+      "reason": "아이언과 드라이버의 타격 조건 차이를 설명하는 영상입니다. 두 클럽 등장 자체를 같은 핵심의 공통 적용으로 분류하지 않습니다.",
+      "basis": "unresolved",
+      "representativeFrames": [
+        "media/golf-frames/4Eof_tmI0Ag-1.webp",
+        "media/golf-frames/4Eof_tmI0Ag-2.webp"
+      ],
+      "sampleFiles": [
+        "review-new-20261018/4Eof_tmI0Ag-0.jpg",
+        "review-new-20261018/4Eof_tmI0Ag-2.jpg",
+        "review-new-20261018/4Eof_tmI0Ag-4.jpg",
+        "review-new-20261018/4Eof_tmI0Ag-6.jpg",
+        "review-new-20261018/4Eof_tmI0Ag-8.jpg",
+        "review-new-20261018/4Eof_tmI0Ag-10.jpg"
+      ],
+      "availableCaptionFiles": []
+    },
+    {
+      "id": "CAZ9oUoGRIg",
+      "title": "손목 여유 · 과한 꺾임과 억지 래깅 줄이기",
+      "sourceUrl": "https://www.youtube.com/watch?v=CAZ9oUoGRIg",
+      "previous": "unknown",
+      "value": "iron",
+      "reason": "아이언으로 손목 꺾임·한 손 스윙·타격을 비교하는 장면을 재확인했습니다. 아이언 시범 범위로 분류하며 드라이버에도 같다고 확장하지 않습니다.",
+      "basis": "source-explanation-or-demonstration",
+      "representativeFrames": [
+        "media/golf-frames/CAZ9oUoGRIg-1.webp",
+        "media/golf-frames/CAZ9oUoGRIg-2.webp"
+      ],
+      "sampleFiles": [
+        "review-new-20261019/CAZ9oUoGRIg-0.jpg",
+        "review-new-20261019/CAZ9oUoGRIg-2.jpg",
+        "review-new-20261019/CAZ9oUoGRIg-4.jpg",
+        "review-new-20261019/CAZ9oUoGRIg-7.jpg",
+        "review-new-20261019/CAZ9oUoGRIg-9.jpg",
+        "review-new-20261019/CAZ9oUoGRIg-11.jpg"
+      ],
+      "availableCaptionFiles": []
+    }
+  ],
+  "counts": {
+    "reviewed": 94,
+    "newlyClassified": 69,
+    "remainingUnknown": 25,
+    "total": {
+      "iron": 60,
+      "driver": 17,
+      "unknown": 25,
+      "both": 3
+    }
+  }
+}
