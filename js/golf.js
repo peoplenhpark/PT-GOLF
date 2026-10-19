@@ -389,7 +389,7 @@ window.GolfHub = (() => {
   }
   function lessonVideoSection(l) {
     const collection=l.videoCollection, primary=(collection?.videoIds||l.videoIds||[]).filter(id=>(l.videoIds||[]).includes(id)).map(video).filter(Boolean), other=(collection?(l.videoIds||[]).filter(id=>!collection.videoIds.includes(id)):[]).map(video).filter(Boolean);
-    if(collection?.placement==='top'){
+    if(collection?.placement==='top'||collection?.groups?.length){
       const card=v=>compactCard(v).replace('</article>',(l.videoReasons?.[v.id]?'<p class="g-lesson-video-reason">'+e(l.videoReasons[v.id])+'</p>':'')+'</article>');
       const seen=new Set(primary.map(v=>v.id));
       const groups=(collection.groups||[]).map(g=>{const items=(g.videoIds||[]).filter(id=>(l.videoIds||[]).includes(id)&&!seen.has(id)).map(video).filter(Boolean);items.forEach(v=>seen.add(v.id));return items.length?'<details class="g-lesson-video-more"><summary>'+e(g.title)+' · '+items.length+'편</summary><div class="g-video-grid">'+items.map(card).join('')+'</div></details>':'';}).join('');

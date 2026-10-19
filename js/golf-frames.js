@@ -1679,5 +1679,85 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "bgI9M3DIuX4": [
+    {
+      "src": "media/golf-frames/bgI9M3DIuX4-1.webp",
+      "time": 206.4,
+      "label": "아이언의 어깨 회전과 헤드 진행 비교",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/bgI9M3DIuX4-2.webp",
+      "time": 352.6,
+      "label": "그린 주변 어프로치 · 바운스 사용 설명",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "SboFZ1M4mIg": [
+    {
+      "src": "media/golf-frames/SboFZ1M4mIg-1.webp",
+      "time": 76.0,
+      "label": "왼어깨가 턱 아래로 돌아오는 시작",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/SboFZ1M4mIg-2.webp",
+      "time": 228.0,
+      "label": "오른골반을 접으며 회전하는 연결",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "HGzIDHi2e84": [
+    {
+      "src": "media/golf-frames/HGzIDHi2e84-1.webp",
+      "time": 200.5,
+      "label": "몸을 열어 팔이 지나갈 공간 만들기",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/HGzIDHi2e84-2.webp",
+      "time": 232.0,
+      "label": "회전과 손목 사용의 관계 설명",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "hjWtaLgNEO0": [
+    {
+      "src": "media/golf-frames/hjWtaLgNEO0-1.webp",
+      "time": 20.9,
+      "label": "영상의 어프로치 체중 분배 설명",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/hjWtaLgNEO0-2.webp",
+      "time": 34.8,
+      "label": "척추 기울기 유지 · 타점 점검",
+      "width": 360,
+      "height": 640
+    }
+  ],
+  "HkpYH7RoWxw": [
+    {
+      "src": "media/golf-frames/HkpYH7RoWxw-1.webp",
+      "time": 11.8,
+      "label": "샌드웨지 백스윙 · 손바닥 방향의 느낌",
+      "width": 360,
+      "height": 640
+    },
+    {
+      "src": "media/golf-frames/HkpYH7RoWxw-2.webp",
+      "time": 40.1,
+      "label": "7번 아이언 · 자연스러운 헤드 회전 비교",
+      "width": 360,
+      "height": 640
+    }
   ]
 };

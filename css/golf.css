@@ -338,3 +338,6 @@
 .coach-desk .g-recent-practice-grid h3{margin-bottom:4px}
 .coach-desk .g-recent-practice-grid .g-practice-focus{padding:0;border:0;background:none;margin-bottom:4px}
 .coach-desk .g-recent-practice-grid .g-practice-focus>div{margin:4px 0}
+
+/* A single lesson reference uses the available mobile width. */
+@media(max-width:600px){.g-lesson-videos>.g-video-grid>.g-video-card:only-child{grid-column:1/-1}}
