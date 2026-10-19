@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');
 module.exports=async(browser,base)=>{
  const context=await browser.newContext({viewport:{width:390,height:844}}),p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
  try{
-  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);
+  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
   const recentCards=recent.locator('.coach-recent-grid').first();
   assert.equal(await recentCards.locator('a').count(),5);

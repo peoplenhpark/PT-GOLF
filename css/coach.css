@@ -61,3 +61,7 @@
   .coach-desk[data-part=golf] .coach-recent-golf h3{font-size:16px;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
   .coach-desk[data-part=golf] .coach-recent-golf .coach-meta{font-size:13px}
 }
+
+/* v157: selection first; full practice guides and records stay available. */
+.gq-hub .gq-goal{padding:8px 12px;margin:8px 0}.gq-hub .gq-goal b{display:inline;margin-right:8px}
+.gq-hub .coach-actions{margin-bottom:0}.gq-records{margin:18px 0}.gq-records [data-gq-form]{scroll-margin-top:16px}

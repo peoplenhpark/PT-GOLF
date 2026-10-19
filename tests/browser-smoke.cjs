@@ -107,8 +107,8 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.setViewportSize({width:390,height:844});
 
   await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
-  await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-anchor').waitFor();
-  await page.locator('.g-lesson-anchor [data-practice=lesson]').click();await page.locator('.g-practice-entry').waitFor();
+  await page.goto(base+'#golf/lessons/lesson_20261012_review');await page.locator('.g-lesson-evidence').waitFor();
+  await page.locator('[data-practice=lesson]').click();await page.locator('.g-practice-entry').waitFor();
   assert.match(await page.locator('.g-practice-hero h2').textContent(),/몸통으로 낮게 시작하고, 힘 빼고 피니시까지/);
   await page.locator('.g-practice-entry>summary').click();
   assert.deepEqual(await page.locator('#g-practice-club option').allTextContents(),['선택하세요','7번 아이언','5번 아이언']);

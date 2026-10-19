@@ -4,6 +4,8 @@ module.exports=async(browser,base)=>{
  try{
   await p.goto(base+'#golf/now');await p.locator('.gq-hub').waitFor();assert.match(await p.locator('.gq-goal').innerText(),/편한 스윙과 일관성 있는 스윙/);assert.equal(await p.locator('.gq-topic').count(),3);assert.equal(await p.locator('[data-gq-focus][aria-pressed=true]').count(),0);
   await p.locator('[data-gq-focus=start]').click();assert.equal(await p.locator('[data-gq-focus][aria-pressed=true]').count(),1);
+  const focusSnapshot=await p.evaluate(()=>localStorage.getItem('ptgolf_coaching_v1'));await p.locator('[data-gq-jump]').click();assert(await p.locator('#gq-start [name=club]').evaluate(e=>e===document.activeElement));assert.equal(await p.evaluate(()=>localStorage.getItem('ptgolf_coaching_v1')),focusSnapshot,'record shortcut does not change focus or records');
+  assert(await p.evaluate(()=>document.querySelector('#gq-start [data-gq-form]').compareDocumentPosition(document.querySelector('#gq-start .gq-frames'))&Node.DOCUMENT_POSITION_FOLLOWING));
   await p.locator('#gq-impact>summary').click();await p.locator('#gq-impact summary').filter({hasText:'이 질문에 기록 남기기'}).click();const form=p.locator('[data-gq-form=result][data-topic=impact]');
   await form.locator('[name=club]').fill('7번 아이언');await form.locator('[name=comfort]').selectOption('편했음');await form.locator('[name=consistency]').selectOption('들쭉날쭉했음');await form.locator('[name=memo]').fill('편한데 타점이 달랐음');await form.locator('[name=question]').fill('임팩트 질문 보존');
   await form.locator('[data-gq-suggest]').click();assert.equal(await form.locator('[name=question]').inputValue(),'임팩트 질문 보존');

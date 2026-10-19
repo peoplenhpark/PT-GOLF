@@ -363,15 +363,15 @@ window.GolfHub = (() => {
     const backLabel=group?group.title:'유튜브 목록';
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
     layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}</div><div class="g-title-row"><h2 class="g-title">${e(v.title)}</h2><div class="d-actions">${favoriteButton(v)}<button type="button" class="icon-btn edit-text" data-g="video-edit" data-id="${e(id)}" title="수정" aria-label="${e(v.title)} · 수정">✏️ 수정</button></div></div>${placement(v)}${chips(v.topics)}${chips(v.tags||[])}${lessonConnection(v)}${v.lessonId?link('lessons',v.lessonId,'첫 레슨 복습 기준 보기'):''}${frames(v)}
-      ${window.GolfQuestions?.videoConnections(id)||''}${soloPractice(v)}${practicalSummary(v)}<a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>
+      ${window.GolfQuestions?.videoConnections(id)||''}${soloPractice(v)}${practicalSummary(v)}<div class="g-actions g-video-primary-actions"><a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>${button('memo-jump','메모 남기기')}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
+      ${block('내 적용 메모',`<form data-g-form="video" data-id="${id}"><label for="g-video-status">확인 상태</label><select id="g-video-status" name="status">${[...new Set(['참고 중','프로에게 질문','레슨에서 확인',...(n.status?[n.status]:[])])].map(s=>`<option ${videoStatus(v)===s?'selected':''}>${e(s)}</option>`).join('')}</select><label for="g-video-memo">느낀 점·결과</label><textarea id="g-video-memo" name="memo" rows="4" placeholder="편안함·오른팔 긴장·타점 변화와 프로에게 확인할 점">${e(n.memo||'')}</textarea><button class="g-btn g-primary">메모 저장</button></form>`)}
+      <details class="g-history"><summary>기존 감각 노트에 연결</summary>${button('adopt','내 연습에 반영',`data-kind="videos" data-id="${id}"`)}</details>
       <div class="g-actions">${deleteButton(v)}</div>${viewOptions(v)}
       <div class="g-player" id="g-player">${button('play','앱에서 재생',`data-id="${e(id)}"`)}</div>
       <div class="g-moments">${v.moments.map(m=>`<a href="https://www.youtube.com/watch?v=${id}&t=${m.s}s" target="_blank" rel="noopener noreferrer">${e(m.label)} ↗</a>`).join('')}</div>
       ${sourceDetail(v)}
       ${block('내 스윙과 연결',paras(v.connection)+noteLinks(relatedIds))}
-      ${v.relatedVideoIds?block('다음 동작으로 연결',v.relatedVideoIds.map(video).filter(Boolean).map(card).join('')):''}
-      <div class="g-actions">${button('adopt','내 연습에 반영',`data-kind="videos" data-id="${id}"`)}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
-      ${block('내 적용 메모',`<form data-g-form="video" data-id="${id}"><label for="g-video-status">확인 상태</label><select id="g-video-status" name="status">${[...new Set(['참고 중','프로에게 질문','레슨에서 확인',...(n.status?[n.status]:[])])].map(s=>`<option ${videoStatus(v)===s?'selected':''}>${e(s)}</option>`).join('')}</select><label for="g-video-memo">느낀 점·결과</label><textarea id="g-video-memo" name="memo" rows="4" placeholder="편안함·오른팔 긴장·타점 변화와 프로에게 확인할 점">${e(n.memo||'')}</textarea><button class="g-btn g-primary">메모 저장</button></form>`)}
+      ${v.relatedVideoIds?block('다음 동작으로 연결','<div class="g-related-video-links">'+v.relatedVideoIds.map(video).filter(Boolean).map(item=>'<a class="g-link" href="'+href('videos',item.id)+'"><strong>'+e(videoTitle(item))+'</strong><small>'+e(item.backswingGuide?.role||content.videoGroupFor(item)?.title||'관련 영상')+' · '+e(content.clubLabels[content.clubFor(item).value])+'</small></a>').join('')+'</div>'):''}
       ${block('연결된 레슨',lessons().filter(l=>(l.videoIds||[]).includes(id)).map(lessonRow).join('')||'<p class="g-muted">이 영상을 참고한 레슨을 기록하면 여기에 연결됩니다.</p>')}
       ${state.questions.some(q=>q.sourceId===id)?block('이 영상에서 남긴 질문',questionRows(state.questions.filter(q=>q.sourceId===id))):''}
       <details class="g-history"><summary>원본 제목</summary><p>${e(v.originalTitle)}</p></details>`,'videos');
@@ -464,6 +464,7 @@ window.GolfHub = (() => {
     api.app.addEventListener('click', ev=>{
       const b=ev.target.closest('[data-g]'); if(!b) return;
       ev.preventDefault(); ev.stopPropagation(); const id=b.dataset.id,kind=b.dataset.kind;
+      if(b.dataset.g==='memo-jump'){const field=api.app.querySelector('#g-video-memo');field?.focus({preventScroll:true});field?.scrollIntoView({block:'center'});return;}
       if(b.dataset.g==='delete-video')return requestVideoDeletion(id);
       if(b.dataset.g==='favorite-video') {
         const v=video(id); if(!v)return;
