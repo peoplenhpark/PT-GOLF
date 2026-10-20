@@ -1759,5 +1759,21 @@ window.GolfFrames = {
       "width": 360,
       "height": 640
     }
+  ],
+  "F7HIFtSR7Fo": [
+    {
+      "src": "media/golf-frames/F7HIFtSR7Fo-1.webp",
+      "time": 145.5,
+      "label": "2:25 · 정면 백스윙과 L자 형태",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/F7HIFtSR7Fo-2.webp",
+      "time": 179.8,
+      "label": "2:59 · 팔로우와 몸 회전 연결",
+      "width": 640,
+      "height": 360
+    }
   ]
 };

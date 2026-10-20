@@ -325,6 +325,15 @@ window.GolfContent = {
             ]
           }
         ]
+      },
+      "quickReview": {
+        "title": "피칭 · 작은 피니시",
+        "club": "P 아이언",
+        "action": "손의 힘을 빼고 몸을 돌려, 손이 명치 높이에 오는 작은 피니시.",
+        "check": "손목을 일부러 돌리거나 풀지 않았는지, 오른손에 힘이 더 들어가지 않았는지.",
+        "videoId": "HGzIDHi2e84",
+        "videoStart": 198,
+        "videoLabel": "칩샷 참고 · 회전 설명 3:18 ↗"
       }
     }
   ],
@@ -4956,6 +4965,74 @@ window.GolfContent = {
         "group": "backswing-takeaway",
         "reason": "클럽 길이에 따른 백스윙과 손바닥 방향의 느낌을 비교합니다. 의도적인 롤링과 자연스럽게 생기는 회전을 구분하는 보조 자료이며 피칭의 작은 피니시 설명은 아닙니다."
       }
+    },
+    {
+      "id": "F7HIFtSR7Fo",
+      "title": "100m 피칭웨지 · 몸 회전과 L자 스윙 연결",
+      "originalTitle": "100미터 피칭웨지. 숏게임을 잘 할 수 있는 핵심 Tip!!",
+      "channel": "박주욱골프 어드바이져",
+      "duration": "3:34",
+      "durationSeconds": 214,
+      "presentation": "original",
+      "topics": [
+        "준비·축",
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "sharedSections": [
+        "backswing",
+        "downswing",
+        "follow-through"
+      ],
+      "sharedGroups": [
+        "backswing-setup",
+        "downswing-shift",
+        "follow-flow"
+      ],
+      "summary": "100m 피칭웨지에서 준비한 팔 위치를 회전과 연결하고, 백스윙과 팔로우의 L자 형태를 비교하는 설명입니다. 현재 레슨의 명치 높이 작은 피니시와는 연습 크기를 구분합니다.",
+      "points": [
+        "0:00–2:05 측면에서 준비한 팔꿈치·샤프트 방향과 어깨 회전을 연결하고, 팔꿈치가 뒤로 빠지거나 벌어지는 모습을 비교합니다.",
+        "2:05–3:04 정면에서 백스윙의 코킹, 골반 회전과 임팩트, 팔을 지나치게 앞으로 뻗지 않는 팔로우를 설명합니다.",
+        "3:22–끝 L자 형태와 허리 회전을 함께 연결하는 연습을 제시합니다. 100m는 영상의 조건이며 개인 목표 거리로 지정하지 않습니다.",
+        "원본의 겨드랑이 조임·견고하게 잡기·코킹은 현재 코치의 힘 빼기·의도적 손목 풀기 금지와 동일 지시가 아닙니다. 오늘 연습에는 작은 피니시를 유지하고 이 차이는 코치에게 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 145.5,
+          "label": "2:25 · 정면 백스윙과 L자 형태"
+        },
+        {
+          "s": 179.8,
+          "label": "2:59 · 팔로우와 몸 회전 연결"
+        }
+      ],
+      "alternateSources": [
+        {
+          "id": "vT_BPBeyYB8",
+          "label": "정면 설명 쇼츠 · 같은 원본의 발췌·재편집"
+        }
+      ],
+      "relatedVideoIds": [
+        "HGzIDHi2e84",
+        "dBsZdo7VEAA",
+        "g2AXYPKdCik"
+      ],
+      "evidence": "2026-10-20 두 영상 전체 오디오(3:33.5·0:53.8)를 자동 전사하고 원본 표본 화면·화면 문구를 대조했습니다. 쇼츠의 정면 설명·시범은 긴 영상 후반과 겹치며 별도 카드로 중복 등록하지 않았습니다.",
+      "connection": "기존 하와이골프의 몸 회전·통과 공간 설명과, 겨드랑이 연결 및 팔의 통과 자료를 비교할 수 있습니다. 현재 피칭 레슨의 작은 피니시를 L자 모양이나 100m 샷으로 바꾸지 않습니다.",
+      "question": "이 영상의 L자·코킹·겨드랑이 조임은 현재 배우는 힘 뺀 작은 피칭과 어떤 조건에서 구분해야 하나요?",
+      "observationPractice": {
+        "action": "현재 레슨의 작은 스윙을 유지하며 팔로만 휘두르지 않고 몸 회전과 함께 이어지는지 비교합니다. L자 모양이나 100m를 새 목표로 만들지 않습니다.",
+        "feel": "팔꿈치가 뒤로 빠지거나 팔만 앞으로 뻗지 않는지, 연결을 만든다고 겨드랑이·손에 힘을 더 주지 않았는지 확인합니다."
+      },
+      "practiceCaution": "100m 피칭웨지 참고입니다. 현재 레슨의 명치 높이 작은 피니시를 우선하고, 조임·코킹·피니시 크기의 차이는 코치에게 확인합니다.",
+      "addedAt": "2026-10-19T16:20:25.599104+00:00",
+      "publishedAt": "2018-03-26T05:06:21+00:00",
+      "classificationReview": {
+        "date": "2026-10-20",
+        "status": "classified",
+        "group": "common",
+        "reason": "준비·백스윙·골반 회전·임팩트·팔로우의 연결을 함께 다루므로 여러 구간 연결에 한 번만 편성합니다."
+      }
     }
   ]
 };
@@ -5512,7 +5589,8 @@ window.GolfContent.videoGroups = [
       "dBsZdo7VEAA",
       "j1USTUwFnRI",
       "CAZ9oUoGRIg",
-      "bgI9M3DIuX4"
+      "bgI9M3DIuX4",
+      "F7HIFtSR7Fo"
     ],
     "relatedGroups": []
   },
@@ -6419,6 +6497,12 @@ window.GolfContent.clubReviews = {
     "reason": "샌드웨지와 7번 아이언의 차이를 비교하는 자료입니다. 동일한 교정의 공통 적용이 아니며 피칭 전용 지침으로도 확정하지 않습니다.",
     "reviewedAt": "2026-10-19",
     "basis": "full audio ASR and original frames"
+  },
+  "F7HIFtSR7Fo": {
+    "value": "iron",
+    "reason": "원본 제목과 전 구간 시범의 100m 피칭웨지 조건을 확인했습니다. 웨지/아이언 참고이며 드라이버 공통 적용이나 현재 레슨의 작은 피니시로 확대하지 않습니다.",
+    "reviewedAt": "2026-10-20",
+    "basis": "full audio ASR and original video frames"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

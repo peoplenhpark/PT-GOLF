@@ -2638,5 +2638,29 @@
     "source": "https://www.youtube.com/watch?v=HkpYH7RoWxw",
     "method": "Original source frame extraction; resize only. Full audio ASR and on-screen text reviewed.",
     "verifiedAt": "2026-10-19"
+  },
+  {
+    "id": "F7HIFtSR7Fo",
+    "title": "100m 피칭웨지 · 몸 회전과 L자 스윙 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/F7HIFtSR7Fo-1.webp",
+        "time": 145.5,
+        "label": "2:25 · 정면 백스윙과 L자 형태",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/F7HIFtSR7Fo-2.webp",
+        "time": 179.8,
+        "label": "2:59 · 팔로우와 몸 회전 연결",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 214,
+    "source": "https://www.youtube.com/watch?v=F7HIFtSR7Fo",
+    "method": "Original source extraction; resize only. Full audio ASR and sampled frames reviewed.",
+    "verifiedAt": "2026-10-20"
   }
 ]

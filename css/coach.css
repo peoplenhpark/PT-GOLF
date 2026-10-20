@@ -65,3 +65,7 @@
 /* v157: selection first; full practice guides and records stay available. */
 .gq-hub .gq-goal{padding:8px 12px;margin:8px 0}.gq-hub .gq-goal b{display:inline;margin-right:8px}
 .gq-hub .coach-actions{margin-bottom:0}.gq-records{margin:18px 0}.gq-records [data-gq-form]{scroll-margin-top:16px}
+
+/* Recent lesson recap replaces the repeated long cue. */
+.coach-lesson-recap{margin:12px 0;display:grid;gap:10px}.coach-lesson-recap>div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:8px}.coach-lesson-recap dt{font-size:14px;font-weight:700;color:var(--golf);line-height:1.65}.coach-lesson-recap dd{margin:0;font-size:15px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}.coach-lesson-links{display:flex;flex-wrap:wrap;column-gap:16px}.coach-lesson-links .coach-source{display:flex;align-items:center;min-height:44px;margin-top:0;padding:4px 0}
+@media(max-width:560px){.coach-lesson-recap>div{grid-template-columns:64px minmax(0,1fr);gap:6px}.coach-lesson-recap dd{font-size:clamp(14px,3.8vw,15px)}}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-20",
+  "requestedIds": [
+    "F7HIFtSR7Fo",
+    "vT_BPBeyYB8"
+  ],
+  "addedIds": [
+    "F7HIFtSR7Fo"
+  ],
+  "duplicate": {
+    "id": "vT_BPBeyYB8",
+    "retained": "F7HIFtSR7Fo",
+    "basis": "Matching frontal camera, outfit, background, gestures and spoken explanation. Short covers long 125–184s and 202–213s with cuts and captions; long also includes side-view setup. Short is linked under source detail."
+  },
+  "group": "common",
+  "club": "iron",
+  "reviewedExisting": [
+    "HGzIDHi2e84",
+    "dBsZdo7VEAA",
+    "g2AXYPKdCik"
+  ],
+  "existingComparison": "Same themes but different coach/source/100m PW conditions; no existing source ID or source-scene match found.",
+  "audioReview": {
+    "method": "faster-whisper small CPU int8 on entire waveform; on-screen comparison; automatic transcription is not error-free",
+    "seconds": {
+      "F7HIFtSR7Fo": 213.5306875,
+      "vT_BPBeyYB8": 53.7774375
+    }
+  },
+  "scope": "100m PW demonstration. Keep current lesson small finish, relaxed hands and no deliberate wrist roll/release; do not import squeezing or L shapes as a new task.",
+  "preserved": "All existing 110 video objects, lessons and quickReview, pinned guide and personal storage."
+}

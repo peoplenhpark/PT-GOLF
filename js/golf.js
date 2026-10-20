@@ -125,7 +125,7 @@ window.GolfHub = (() => {
     const body=evidence.kind==='metadata'
       ? paras(v.summary)
       : paras(v.summary)+`<ul>${v.points.map(point=>`<li>${e(point)}</li>`).join('')}</ul>`;
-    return `<details class="g-source-detail"><summary>${e(evidence.heading)} 보기</summary><div>${body}${v.classificationReview?`<p class="g-meta">${e(v.evidence)}</p>`:''}</div></details>`;
+    return `<details class="g-source-detail"><summary>${e(evidence.heading)} 보기</summary><div>${body}${(v.alternateSources||[]).filter(x=>/^[A-Za-z0-9_-]{11}$/.test(x.id)).map(x=>`<p><a href="https://www.youtube.com/watch?v=${x.id}" target="_blank" rel="noopener noreferrer">${e(x.label)} ↗</a></p>`).join('')}${v.classificationReview?`<p class="g-meta">${e(v.evidence)}</p>`:''}</div></details>`;
   }
   function noteSummary(note) {
     const summary=note.practicalSummary||{};
