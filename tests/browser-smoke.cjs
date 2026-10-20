@@ -303,33 +303,16 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const [short,kind] of lowerVariants){await page.locator('#training-movement').selectOption('ht_lower_'+short);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();}
   await context.setOffline(false);
   assert.deepEqual(errors,[]);
-  // PT reinforcement: five source placements, notes preserved across selection, offline media.
-  await page.goto(base+'#exercise/ht_legpress_positions');await page.locator('#training-movement').waitFor();
-  assert.equal(await page.locator('#training-movement option').count(),5);
-  assert(await page.locator('a[href="#exercise/pt_legpress"]').count());
-  await page.locator('[data-offline]').click();await page.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
-  await page.locator('[data-act=memo-edit]').first().click();await page.locator('#memo-input').fill('레그프레스 비교 메모 유지');
-  for(const key of ['wide','narrow','standard','high','low']){
-   await page.locator('#training-movement').selectOption('ht_legpress_'+key);
-   assert.equal(await page.locator('#memo-input').inputValue(),'레그프레스 비교 메모 유지');
-   assert.equal(await page.locator('.exercise-3d-frame').count(),0);
-   await page.waitForFunction(()=>document.querySelectorAll('.guide-shot img').length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
-   await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
-   assert.equal(await f.locator('canvas').getAttribute('data-kind'),'htlegpress'+key);assert.equal(await f.locator('#speed').inputValue(),'.5');
-   const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
-   await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
-   const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
-   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
-   if(process.env.PTGOLF_SCREENSHOT_DIR)await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_legpress_'+key+'-3d.png')});
-  }
-  await page.locator('#memo-save').click();await page.goto(base+'#exercise/pt_legpress');await page.locator('a[href="#exercise/ht_legpress_positions"]').waitFor();
-  await page.locator('a[href="#exercise/ht_legpress_positions"]').click();await page.locator('#training-movement').waitFor();
-  await context.setOffline(true);await page.reload();await page.locator('#training-movement').waitFor();assert.equal(await page.locator('.memo-box').textContent(),'레그프레스 비교 메모 유지');
-  for(const key of ['wide','narrow','standard','high','low']){
-   await page.locator('#training-movement').selectOption('ht_legpress_'+key);await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
-   await page.locator('.exercise-3d summary').click();await page.frameLocator('.exercise-3d-frame').locator('canvas[data-ready]').waitFor();
-  }
-  await context.setOffline(false);assert.deepEqual(errors,[]);
+  // Requested HT removal must not affect the selected PT exercise or the routine.
+  await page.goto(base+'#exercise/ht_legpress_positions');await page.locator('.parts').waitFor();
+  assert.equal(new URL(page.url()).hash,'#home');
+  await page.goto(base+'#exercise/pt_legpress');await page.locator('.d-title').waitFor();
+  assert.equal(await page.locator('a[href="#exercise/ht_legpress_positions"]').count(),0);
+  await page.goto(base+'#ht');await page.locator('#ht-routine').waitFor();
+  assert.equal(await page.locator('a[href="#exercise/ht_legpress_positions"]').count(),0);
+  assert.deepEqual(await page.locator('.ht-routine-basic a').evaluateAll(es=>es.map(e=>e.getAttribute('href'))),['#exercise/pt_openbook','#exercise/pt_tailbone_raise','#exercise/pt_hip_openclose_stretch','#exercise/pt_wide_sidelunge_stretch','#exercise/pt_lunge_ball_rotation']);
+  await page.locator('[data-ht-day="tue"]').click();assert.equal(await page.locator('#ht-routine-day a[href="#exercise/pt_legpress"]').count(),1);
+  assert.deepEqual(errors,[]);
   // October PT session and expanded editing are verified only in this isolated context.
   await page.goto(base+'#pt');await page.getByText('PT 수업 기록',{exact:true}).click();const october7=page.locator('.pt-session-note').filter({has:page.locator('summary strong').filter({hasText:'2026-10-07'})});await october7.locator(':scope > summary').click();await october7.locator('.pt-session-links').waitFor();assert.equal(await october7.locator('.pt-session-links a').count(),4);
   await page.locator('.pt-session-links a[href="#exercise/pt_lunge"]').click();await page.locator('.d-title').waitFor();assert.match(await page.locator('.pt-session-note').innerText(),/회전 없는 일반 런지/);

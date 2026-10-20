@@ -263,9 +263,9 @@ const Theme = (() => {
   ];
   const htRoutineBasic = [
     ['pt_openbook','오픈북','3–6분','좌우 각 3–5회','팔만 벌리지 않고 가슴 회전'],
-    ['pt_hip_openclose_stretch','고관절 오픈·클로즈','6–9분','좌우 각 8–10회','배운 지지 자세 유지'],
-    ['pt_wide_sidelunge_stretch','와이드 사이드 런지','9–12분','좌우 각 6–8회','발바닥 지지 · 편한 범위'],
-    ['pt_tailbone_raise','레그레이즈','12–16분','8–12회 × 1–2세트','꼬리뼈·골반 통제 유지'],
+    ['pt_tailbone_raise','레그레이즈','6–10분','8–12회 × 1–2세트','꼬리뼈·골반 통제 유지'],
+    ['pt_hip_openclose_stretch','고관절 오픈·클로즈','10–13분','좌우 각 8–10회','배운 지지 자세 유지'],
+    ['pt_wide_sidelunge_stretch','와이드 사이드 런지','13–16분','좌우 각 6–8회','발바닥 지지 · 편한 범위'],
     ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','하체 지지 · 팔로만 휘두르지 않기']
   ];
   const htRoutineStrength = {
