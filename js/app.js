@@ -253,6 +253,69 @@ const Theme = (() => {
     if(id)return (Store.getExerciseSessions?.(id)||[]).map(s=>'<section class="pt-session-note"><h2>'+esc(s.date)+' PT 수업 보강</h2>'+ptSessionItemHtml({...s.item,exerciseId:null}).replace('<span class="tag">동작 종류 확인 대기</span>','')+'<details><summary>수업 근거</summary><p>'+esc(s.source)+'</p><p>'+esc(s.evidence)+'</p></details></section>').join('');
     return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note"><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>item.exerciseId?'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>':'<div><strong>'+esc(item.title)+'</strong><small>명칭 확인 대기 · 수업 정리에서 내용 보기</small></div>').join('')+'</div>'+window.CoachDesk.sessionDetails(s)+'</details>').join('');
   }
+  // Reviewed transition plan (2026-10-20). Links keep the existing PT IDs and records.
+  let htRoutineDay = 'mon';
+  const htRoutineDays = [
+    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
+    {id:'tue',label:'화 · 하체',title:'하체 A · 자세 익히기',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']},
+    {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
+    {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']}
+  ];
+  const htRoutineBasic = [
+    ['pt_openbook','오픈북','3–6분','좌우 각 3–5회','팔만 벌리지 않고 가슴 회전'],
+    ['pt_hip_openclose_stretch','고관절 오픈·클로즈','6–9분','좌우 각 8–10회','배운 지지 자세 유지'],
+    ['pt_wide_sidelunge_stretch','와이드 사이드 런지','9–12분','좌우 각 6–8회','발바닥 지지 · 편한 범위'],
+    ['pt_tailbone_raise','레그레이즈','12–16분','8–12회 × 1–2세트','꼬리뼈·골반 통제 유지'],
+    ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','하체 지지 · 팔로만 휘두르지 않기']
+  ];
+  const htRoutineStrength = {
+    pt_chestpress:['체스트 프레스','10–15회','가슴이 유지되고 어깨가 말리지 않는 깊이까지만'],
+    pt_seatedrow:['시티드로우','10–15회','뻗고 당길 때 어깨가 들리지 않는 범위'],
+    pt_latpulldown:['랫풀다운','10–15회','가슴부터 세팅 · 몸을 뒤로 젖혀 당기지 않기'],
+    pt_pullup:['보조 풀업','6–10회','자세를 지킬 수 있는 보조량 · 어깨 들림 전 종료'],
+    pt_pecdeck:['펙덱 플라이','12–15회','가슴·어깨 위치 유지 · 과하게 벌리지 않기'],
+    pt_pushdown:['케이블 푸시다운','10–15회','팔꿈치 위치 유지 · 몸무게로 누르지 않기'],
+    pt_low_cable_curl:['로우 케이블 컬','10–15회','낮은 풀리·언더그립 · 몸통 반동 없이'],
+    pt_legpress:['레그 프레스','15–20회','배운 와이드 스탠스 · 골반이 말리기 전까지'],
+    pt_legcurl:['라잉 레그 컬','10–15회','골반을 패드에 유지 · 허리 꺾지 않기'],
+    pt_legextension:['레그 익스텐션','좌우 각 10–15회','배운 원레그 방식 · 좌우 완료가 1세트'],
+    pt_adduction:['이너타이','12–15회','반동 없이 모으고 천천히 벌리기']
+  };
+  function htRoutineLink(id,label) {
+    return Store.getById(id) ? '<a href="#exercise/'+encodeURIComponent(id)+'">'+esc(label)+' ›</a>' : '<span>'+esc(label)+' · 현재 목록에서 제외됨</span>';
+  }
+  function htRoutineHtml() {
+    const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
+    const lower=day.ids.length===4;
+    const times=lower?['25–35분','35–43분','43–51분','51–56분']:['20–28분','28–35분','35–42분','42–47분','47–52분','52–57분'];
+    return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
+      <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
+      <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
+      <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day">${d.label}</button>`).join('')}</div>
+      <div id="ht-routine-day"><h3>${day.title} <small>20–60분</small></h3>
+      <p class="ht-routine-note">첫 2주: 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
+      ${lower?'<p class="ht-routine-note">20–25분: 레그 프레스 준비세트 1–2회</p>':''}
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id];return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${item[1]} × 2세트</strong><p>${item[2]}</p></li>`;}).join('')}</ol>
+      <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p></div>
+      <div class="ht-routine-basic"><h3>매일 기본운동 <small>0–20분</small></h3>
+      <p class="ht-routine-note">0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.</p>
+      <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
+      <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
+      <li><b>휴식:</b> 체스트·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
+      <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
+      <li><b>증량:</b> 같은 운동 2회 연속 모든 세트를 반복 범위 상단까지 같은 자세·여유로 완료하면 최소 단위로 올립니다. 풀업은 보조량을 줄입니다.</li>
+      <li><b>회복:</b> 수·토·일 휴식 또는 가벼운 걷기. PT 수업이 있는 주에는 해당 부위 개인운동을 대체·감량합니다.</li></ul></div>
+      <div class="ht-routine-checks"><h3>혼자 할 때 확인 3가지</h3><ol><li>기구와 중량을 혼자 설정했는가?</li><li>어깨 들림·가슴 무너짐·골반 들림 전에 멈췄는가?</li><li>중량·반복·자세 메모 한 줄과 다음 질문을 남겼는가?</li></ol><p class="ht-routine-note">관절 통증이 생기면 해당 운동을 멈춥니다. 각 운동을 누르면 기존 자세 설명·메모로 연결됩니다.</p></div>
+      <details class="ht-routine-reference"><summary>분량 조절·참고 자료</summary>
+      <p>기본운동은 기존 수업 기록을 바꾸지 않고 주 4회 준비용으로 낮춘 분량입니다. 미리 지치면 반복을 줄이세요. 기구 대기로 늦어지면 마지막 보조운동의 2번째 세트를 줄이고 휴식을 억지로 줄이지 않습니다.</p>
+      <p>3주 차 이후 회복과 시간 여유가 있으면 레그 프레스·레그 컬만 3세트로 늘릴 수 있습니다. 중량 증가와 동시에 하지 않습니다. 코치에게 시작 중량·풀업 보조량과 어깨·종아리·고관절 펴기 운동의 추가 필요성을 확인하세요.</p>
+      <p><a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener noreferrer">ACSM 2026 지침</a> · 꾸준한 주 2회 부위 훈련, 매번 실패까지 할 필요 없음. 정확한 시간·세트는 사용자의 조건에 맞춘 제안입니다.</p>
+      <p><a href="https://www.youtube.com/watch?v=_Toaey7nA3A" target="_blank" rel="noopener noreferrer">Jeff Nippard · 상체 구성</a> · <a href="https://jeffnippard.com/products/upper-lower-size-and-strength-program" target="_blank" rel="noopener noreferrer">공식 설명</a>의 상·하체 분할 참고. 중·상급자 훈련량은 그대로 적용하지 않습니다.</p>
+      <p><a href="https://www.youtube.com/watch?v=_95-vz83X4M" target="_blank" rel="noopener noreferrer">E3 Rehab · 레그 익스텐션</a> · <a href="https://e3rehab.com/how-to-perform-leg-extensions/" target="_blank" rel="noopener noreferrer">제작자 설명문</a>의 기구 설정·반동 없는 동작 참고. 기존 PT 자세·범위를 우선합니다.</p>
+      <p>2026-10-20 검토 · 공식 문서·영상 공개 정보 확인. 전체 음성 검토는 아닙니다.</p></details>
+    </section>`;
+  }
+
   function renderPart(part) {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
     const list = Store.getByPart(part);
@@ -279,6 +342,7 @@ const Theme = (() => {
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">내 기준</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
+        ${part==='ht'?htRoutineHtml()+'<h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 운동 모아보기</h2>':''}
         ${isPersonal ? `<a class="personal-all-link" href="#pt?cat=all">PT 전체 운동 ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
@@ -642,6 +706,13 @@ const Theme = (() => {
     const menu = app.querySelector('.exercise-quicknav[open]');
     if (menu && !menu.contains(ev.target)) menu.open = false;
     if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
+    const routineButton=ev.target.closest('[data-ht-day]');
+    if(routineButton&&htRoutineDays.some(d=>d.id===routineButton.dataset.htDay)){
+      htRoutineDay=routineButton.dataset.htDay;
+      app.querySelector('#ht-routine').outerHTML=htRoutineHtml();
+      app.querySelector('[data-ht-day="'+htRoutineDay+'"]').focus({preventScroll:true});return;
+    }
+    if(ev.target.closest('[data-ht-library]')){ev.preventDefault();const title=app.querySelector('#ht-library-title');title?.focus({preventScroll:true});title?.scrollIntoView({block:'start'});return;}
     const scopeButton=ev.target.closest('[data-scope]');
     if(scopeButton){view.scope=scopeButton.dataset.scope;navigation.sync(view);render();return;}
     const link=ev.target.closest('a[href^="#"]');

@@ -595,3 +595,22 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
   .modal-head{font-size:16px}
   .cal-month-lbl{font-size:16px}
 }
+
+/* Reviewed weekly routine at the HT entry; existing exercise records stay in PT. */
+.ht-routine{border:1px solid var(--ht-line);border-radius:16px;padding:16px;background:var(--card);margin:0 0 24px;min-width:0}
+.ht-routine-heading{display:flex;flex-wrap:wrap;gap:6px 12px;justify-content:space-between;align-items:center}
+.ht-routine h2{font-size:18px;line-height:1.45}.ht-routine h3{font-size:16px;margin:16px 0 8px}.ht-routine h3 small{font-size:13px;color:var(--sub);font-weight:500}
+.ht-routine a{color:var(--ht);text-underline-offset:3px;overflow-wrap:anywhere}.ht-routine-heading>a{font-size:13px;min-height:32px;display:inline-flex;align-items:center}
+.ht-routine-note,.ht-routine-reference p{font-size:13px;color:var(--sub);font-weight:500;line-height:1.65;margin:8px 0}
+.ht-routine-days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:14px 0}
+.ht-routine-days button{min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--txt);font:inherit;font-size:13px;cursor:pointer}
+.ht-routine-days button[aria-pressed="true"]{background:var(--ht-bg);border-color:var(--ht-line);color:var(--ht)}
+.ht-routine :focus-visible{outline:2px solid var(--ht);outline-offset:3px}
+.ht-routine-list{list-style:none;padding:0}.ht-routine-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6}
+.ht-routine-list li>div{display:flex;gap:8px;align-items:baseline}.ht-routine-time{font-size:12px;color:var(--sub);flex:0 0 62px;font-weight:500}
+.ht-routine-list strong{display:block;font-size:13px;margin-top:3px}.ht-routine-list p{font-size:13px;color:var(--sub);font-weight:500;margin-top:3px}
+.ht-routine-basic,.ht-routine-rules,.ht-routine-checks{border-top:1px solid var(--line);margin-top:16px}
+.ht-routine-rules ul,.ht-routine-checks ol{padding-left:20px;font-size:14px;font-weight:500;line-height:1.65}.ht-routine-rules li,.ht-routine-checks li{margin:8px 0}
+.ht-routine-reference{margin-top:16px;font-size:13px}.ht-routine-reference summary{min-height:44px;cursor:pointer;display:list-item;padding:10px 0}
+.ht-library-title{font-size:18px;margin-bottom:12px;scroll-margin-top:70px}
+@media(max-width:360px){.ht-routine{padding:12px}.ht-routine-days{gap:4px}.ht-routine-days button{font-size:12px}.ht-routine h2{font-size:17px}}
