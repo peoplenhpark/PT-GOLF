@@ -291,15 +291,15 @@ const Theme = (() => {
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
+      <div class="ht-routine-basic"><h3>매일 기본운동 <small>0–20분</small></h3>
+      <p class="ht-routine-note">0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.</p>
+      <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day">${d.label}</button>`).join('')}</div>
       <div id="ht-routine-day"><h3>${day.title} <small>20–60분</small></h3>
       <p class="ht-routine-note">첫 2주: 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       ${lower?'<p class="ht-routine-note">20–25분: 레그 프레스 준비세트 1–2회</p>':''}
       <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id];return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${item[1]} × 2세트</strong><p>${item[2]}</p></li>`;}).join('')}</ol>
       <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p></div>
-      <div class="ht-routine-basic"><h3>매일 기본운동 <small>0–20분</small></h3>
-      <p class="ht-routine-note">0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.</p>
-      <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
       <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
