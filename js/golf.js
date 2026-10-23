@@ -229,7 +229,7 @@ window.GolfHub = (() => {
   function dailyPracticePin(compact=false) {
     const pin=content.practicePin,v=pin&&video(pin.id);
     if(!v||(compact&&!clubMatches(v)))return '';
-    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':`<div class="g-practice-columns"><div><h3>연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(pin.basis)}</p>`}</section>`;
+    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':`<div class="g-practice-columns"><div><h3>우선할 감각 · 연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(pin.basis)}</p>`}</section>`;
   }
   function pinnedPractice() {
     const v=video('2tam4sbJQtM');
