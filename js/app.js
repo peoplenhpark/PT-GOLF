@@ -254,12 +254,31 @@ const Theme = (() => {
     return (Store.getPTSessions?.()||[]).map(s=>'<details class="pt-session-note"><summary><strong>'+esc(s.date)+' PT 수업 · '+esc(s.title)+'</strong></summary>'+'<div class="pt-session-links">'+s.items.map(item=>item.exerciseId?'<a href="#exercise/'+esc(item.exerciseId)+'"><strong>'+esc(item.title)+'</strong><small>'+esc(item.points[0])+'</small></a>':'<div><strong>'+esc(item.title)+'</strong><small>명칭 확인 대기 · 수업 정리에서 내용 보기</small></div>').join('')+'</div>'+window.CoachDesk.sessionDetails(s)+'</details>').join('');
   }
   // Reviewed transition plan (2026-10-20). Links keep the existing PT IDs and records.
-  let htRoutineDay = 'mon';
+  let htRoutineDay = null, htRoutineDate = '';
+  function htRoutineToday() {
+    const now=new Date();
+    const date=[now.getFullYear(),now.getMonth(),now.getDate()].join('-');
+    const id=['sun','mon','tue','wed','thu','fri','sat'][now.getDay()];
+    if(date!==htRoutineDate){htRoutineDate=date;htRoutineDay=id;}
+    return id;
+  }
+  // Refresh on return after midnight; same-day manual selections stay selected.
+  function refreshHtRoutineDate() {
+    const previous=htRoutineDate;
+    htRoutineToday();
+    const section=app.querySelector('#ht-routine');
+    if(section&&previous!==htRoutineDate)section.outerHTML=htRoutineHtml();
+  }
+  window.addEventListener('focus',refreshHtRoutineDate);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
   const htRoutineDays = [
     {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
     {id:'tue',label:'화 · 하체',title:'하체 A · 자세 익히기',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']},
+    {id:'wed',label:'수 · 휴식',title:'수요일 · 휴식일',rest:true,ids:[]},
     {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
-    {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']}
+    {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']},
+    {id:'sat',label:'토 · 휴식',title:'토요일 · 휴식일',rest:true,ids:[]},
+    {id:'sun',label:'일 · 휴식',title:'일요일 · 휴식일',rest:true,ids:[]}
   ];
   const htRoutineBasic = [
     ['pt_openbook','오픈북','3–6분','좌우 각 3–5회','팔만 벌리지 않고 가슴 회전'],
@@ -285,21 +304,24 @@ const Theme = (() => {
     return Store.getById(id) ? '<a href="#exercise/'+encodeURIComponent(id)+'">'+esc(label)+' ›</a>' : '<span>'+esc(label)+' · 현재 목록에서 제외됨</span>';
   }
   function htRoutineHtml() {
+    const today=htRoutineToday();
+    const todayLabel=htRoutineDays.find(d=>d.id===today).label;
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.ids.length===4;
     const times=lower?['25–35분','35–43분','43–51분','51–56분']:['20–28분','28–35분','35–42분','42–47분','47–52분','52–57분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
-      <div class="ht-routine-basic"><h3>매일 기본운동 <small>0–20분</small></h3>
-      <p class="ht-routine-note">0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.</p>
+      <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
+      <div class="ht-routine-basic"><h3>운동일 기본운동 <small>0–20분</small></h3>
+      <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
-      <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day">${d.label}</button>`).join('')}</div>
-      <div id="ht-routine-day"><h3>${day.title} <small>20–60분</small></h3>
+      <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
+      <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
       <p class="ht-routine-note">첫 2주: 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       ${lower?'<p class="ht-routine-note">20–25분: 레그 프레스 준비세트 1–2회</p>':''}
       <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id];return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${item[1]} × 2세트</strong><p>${item[2]}</p></li>`;}).join('')}</ol>
-      <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p></div>
+      <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
       <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
@@ -708,9 +730,10 @@ const Theme = (() => {
     if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
     const routineButton=ev.target.closest('[data-ht-day]');
     if(routineButton&&htRoutineDays.some(d=>d.id===routineButton.dataset.htDay)){
+      htRoutineToday();
       htRoutineDay=routineButton.dataset.htDay;
       app.querySelector('#ht-routine').outerHTML=htRoutineHtml();
-      app.querySelector('[data-ht-day="'+htRoutineDay+'"]').focus({preventScroll:true});return;
+      app.querySelector('.ht-routine-days [data-ht-day="'+htRoutineDay+'"]').focus({preventScroll:true});return;
     }
     if(ev.target.closest('[data-ht-library]')){ev.preventDefault();const title=app.querySelector('#ht-library-title');title?.focus({preventScroll:true});title?.scrollIntoView({block:'start'});return;}
     const scopeButton=ev.target.closest('[data-scope]');

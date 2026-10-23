@@ -86,7 +86,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert.equal(await page.locator('#g-practice-method').inputValue(),'cue');
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,222);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,236);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
@@ -374,8 +374,10 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);
+  await require('./helpers/ht-routine-browser.cjs')(browser,base);
   await require('./helpers/new-media-1018-browser.cjs')(browser,base);
   await require('./helpers/golf-questions-browser.cjs')(browser,base);
+  await require('./helpers/golf-pin-browser.cjs')(browser,base);
   // Golf data failure must leave the independent PT area available.
   const isolated=await browser.newContext({serviceWorkers:'block'}),fallback=await isolated.newPage();await fallback.route('**/js/golf-data.js*',r=>r.abort());await fallback.goto(base+'#pt');await fallback.locator('.pt-exercise-grid').waitFor();await isolated.close();
   console.log('PASS: fresh boot, PT/hash/history reload, confirmed exercise/video deletion and restore, private memo isolation, drafts, search restoration, golf group reset, mobile widths, offline image+3D, isolated golf failure, HT/PT links, HT personal records/deletion/search/offline and mobile navigation. Isolated browser data only.');

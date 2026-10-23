@@ -3,7 +3,7 @@ const read=p=>fs.readFileSync(path.join(__dirname,'..',p),'utf8'),ctx={window:{}
 vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);
 const c=ctx.window.GolfContent,ids=c.videoGroups.flatMap(g=>Array.from(g.videoIds));
 assert.deepEqual(Array.from(c.videoSections,s=>s.id),['backswing','downswing','impact','follow-through']);
-assert.equal(new Set(ids).size,111);assert.equal(ids.length,111);
+assert.equal(new Set(ids).size,118);assert.equal(ids.length,118);
 assert.deepEqual([...ids].sort(),Array.from(c.videos,v=>v.id).sort());
 assert.equal(c.videoGroups.find(g=>g.id==='review').videoIds.length,0);
 const practiceGroups=c.videoGroups.filter(g=>g.practice);
@@ -36,7 +36,7 @@ for(const [tag,count] of [['백스윙 시 몸통 회전',8],['백스윙 시 오�
 hidden.add('2tam4sbJQtM');hub.render({golfTab:'videos',golfGroup:'backswing'},api);
 assert(!app.innerHTML.includes('href="#golf/videos/2tam4sbJQtM"'));assert.equal(hub.pinnedPractice(),'');
 assert(hub.stagePractice().includes('#golf/group/follow-through'));
-console.log('PASS: 4 sections, 12 practice/check guides, 111 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
+console.log('PASS: 4 sections, 12 practice/check guides, 118 unique placements, reviewed representatives, legacy backswing route, hidden video filtering, no storage writes.');
 
 for(const id of ['U4nn7s20ACc','cQiwXcbWZc4']){
  assert(!c.videos.some(v=>v.id===id));assert(!ctx.window.GolfFrames[id]);
@@ -52,3 +52,9 @@ hub.render({golfTab:'videos',golfGroup:'review'},api);assert(app.innerHTML.inclu
 hidden.add(shared.id);hub.render({golfTab:'videos',golfGroup:'impact'},api);assert(!app.innerHTML.includes('href="#golf/videos/dBsZdo7VEAA"'));assert(!app.innerHTML.includes('>공통 0편'));hidden.delete(shared.id);
 for(const [id,group] of [['A_fu4ajV-_I','downswing-tempo'],['unGNdzyt7kE','impact-release']]){const v=c.videos.find(v=>v.id===id);assert.equal(c.videoGroupFor(v).id,group);assert.equal(v.classificationReview.status,'classified');assert.equal(c.evidenceFor(v).kind,'observation');assert.equal(c.practicalFor(v).caution,v.practiceCaution);}
 console.log('PASS: 2 requested deletions, common single placement + related links, empty review route and hidden source filtering.');
+
+assert.equal(c.practicePin.id,'hxXJnJRKKcE');
+assert.equal(c.practicePin.steps.length,3);assert.equal(c.practicePin.checks.length,3);
+assert.equal(c.videoGroups.find(g=>g.id==='common').videoIds[0],c.practicePin.id);
+assert(hub.dailyPracticePin().includes('연습 3단계'));assert(!hub.dailyPracticePin().includes('<details'));
+hidden.add(c.practicePin.id);assert.equal(hub.dailyPracticePin(),'');hidden.delete(c.practicePin.id);

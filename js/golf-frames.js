@@ -1775,5 +1775,117 @@ window.GolfFrames = {
       "width": 640,
       "height": 360
     }
+  ],
+  "TYq-Fge2LSA": [
+    {
+      "src": "media/golf-frames/TYq-Fge2LSA-1.webp",
+      "time": 2.43,
+      "label": "아이언 · 내려오는 구간",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/TYq-Fge2LSA-2.webp",
+      "time": 8.19,
+      "label": "드라이버 · 통과 구간",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "uEEjRPwQ2Vo": [
+    {
+      "src": "media/golf-frames/uEEjRPwQ2Vo-1.webp",
+      "time": 1.9,
+      "label": "몸 회전과 팔 위치 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/uEEjRPwQ2Vo-2.webp",
+      "time": 5.9,
+      "label": "팔이 내려오는 방향 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "daQLQ1rAzs0": [
+    {
+      "src": "media/golf-frames/daQLQ1rAzs0-1.webp",
+      "time": 33.63,
+      "label": "그립을 끌어당기는 동작 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/daQLQ1rAzs0-2.webp",
+      "time": 42.75,
+      "label": "헤드 끝의 무게를 가리키는 설명",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "f4in6LXwJfs": [
+    {
+      "src": "media/golf-frames/f4in6LXwJfs-1.webp",
+      "time": 30.6,
+      "label": "팔 하강과 낮은 통과 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/f4in6LXwJfs-2.webp",
+      "time": 45.0,
+      "label": "공 두 개를 놓고 통과하는 드릴",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "LO9ASFC3I78": [
+    {
+      "src": "media/golf-frames/LO9ASFC3I78-1.webp",
+      "time": 4.3,
+      "label": "짧게 올리고 내리는 반복",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/LO9ASFC3I78-2.webp",
+      "time": 8.3,
+      "label": "익힌 경로에 회전을 연결",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "hxXJnJRKKcE": [
+    {
+      "src": "media/golf-frames/hxXJnJRKKcE-1.webp",
+      "time": 178.2,
+      "label": "백스윙의 양손 지렛대 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/hxXJnJRKKcE-2.webp",
+      "time": 442.2,
+      "label": "다운스윙 원운동과 손의 움직임",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "LpMjAU9OnlI": [
+    {
+      "src": "media/golf-frames/LpMjAU9OnlI-1.webp",
+      "time": 22.79,
+      "label": "왼발로 이동하며 내려오는 연습",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/LpMjAU9OnlI-2.webp",
+      "time": 31.27,
+      "label": "오른팔꿈치와 벨트 고리 위치 확인",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

@@ -5033,8 +5033,386 @@ window.GolfContent = {
         "group": "common",
         "reason": "준비·백스윙·골반 회전·임팩트·팔로우의 연결을 함께 다루므로 여러 구간 연결에 한 번만 편성합니다."
       }
+    },
+    {
+      "id": "TYq-Fge2LSA",
+      "title": "아이언·드라이버 비교 · 내려오는 구간과 클럽 통과",
+      "originalTitle": "✅이거 알아야 20m 늘어요✅",
+      "channel": "성빈프로",
+      "duration": "0:09",
+      "durationSeconds": 9,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "아이언과 드라이버의 정면 시범을 위아래로 대비한 짧은 영상입니다. 두 클럽의 움직임 차이를 관찰하는 자료로 둡니다.",
+      "points": [
+        "화면의 Iron/Driver 구분에 따라 준비·내려오기·통과 장면을 따로 봅니다.",
+        "두 시범의 재생 시점이 다르므로 같은 순간의 자세처럼 단순 비교하지 않습니다.",
+        "20m 증가나 화면의 160m·280m는 개인에게 확인된 효과나 목표가 아닙니다."
+      ],
+      "moments": [
+        {
+          "s": 2.43,
+          "label": "아이언 · 내려오는 구간"
+        },
+        {
+          "s": 8.19,
+          "label": "드라이버 · 통과 구간"
+        }
+      ],
+      "relatedVideoIds": [
+        "4Eof_tmI0Ag",
+        "bgI9M3DIuX4"
+      ],
+      "evidence": "2026-10-23 · 원본 12개 표본 화면의 Iron/Driver 표시와 동작 대조. 자동 전사의 음악 구간 문구는 코칭 근거로 사용하지 않음.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "이 영상에서 보이는 클럽별 차이 중 제 아이언 연습에 해당하는 것은 무엇인가요?",
+      "observationPractice": {
+        "action": "내가 연습하는 클럽의 장면만 골라, 같은 촬영 각도에서 내려오는 구간과 통과를 비교합니다.",
+        "feel": "다른 클럽의 상체 위치·타격 감각을 섞지 않았는지, 힘을 더 쓰며 거리를 좇지 않는지 확인합니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-09-24T00:45:06+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "common",
+        "group": "common",
+        "reason": "아이언과 드라이버의 정면 시범을 위아래로 대비한 짧은 영상입니다. 두 클럽의 움직임 차이를 관찰하는 자료로 둡니다."
+      },
+      "sharedSections": [
+        "downswing",
+        "impact"
+      ],
+      "sharedGroups": [
+        "downswing-path",
+        "impact-release"
+      ]
+    },
+    {
+      "id": "uEEjRPwQ2Vo",
+      "title": "드라이버 전환 · 몸 회전과 팔 하강 비교",
+      "originalTitle": "trening 💕회전 문제가 있나요?🙄🔥 Instagram@kimminjunpro #골프",
+      "channel": "SWINGIGOLFTV",
+      "duration": "0:10",
+      "durationSeconds": 10,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "좌우 드라이버 시범에 회전·하강 방향을 표시해 비교합니다. 거리 숫자보다 몸과 팔이 움직이는 순서를 관찰합니다.",
+      "points": [
+        "티 위 공과 큰 드라이버 헤드가 보이는 좌우 시범입니다.",
+        "화면의 골반 회전 표시와 팔 하강 화살표를 따라 전환 구간을 비교합니다.",
+        "195m·260m 표시는 영상의 비교 문구입니다. 이 장면만으로 원인이나 개인의 거리 향상을 확정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 1.9,
+          "label": "몸 회전과 팔 위치 비교"
+        },
+        {
+          "s": 5.9,
+          "label": "팔이 내려오는 방향 비교"
+        }
+      ],
+      "relatedVideoIds": [
+        "JoUx0gIzdng",
+        "1lD1Lhk-2Lc"
+      ],
+      "evidence": "2026-10-23 · 원본 12개 표본 화면·화살표 확인. 음악에 대한 자동 전사 문구는 동작 설명으로 사용하지 않음.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "저는 몸이 먼저 열리는 편인가요, 팔이 늦는 편인가요? 이 비교가 제 전환에 맞나요?",
+      "observationPractice": {
+        "action": "드라이버 전환을 천천히 촬영해 몸만 먼저 돌아가고 팔이 뒤에 남는 모습인지 비교합니다.",
+        "feel": "팔을 급히 잡아당기거나 회전을 일부러 멈추지 않았는지, 같은 템포로 연결되는지 봅니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-10-06T10:26:48+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "classified",
+        "group": "downswing-path",
+        "reason": "좌우 드라이버 시범에 회전·하강 방향을 표시해 비교합니다. 거리 숫자보다 몸과 팔이 움직이는 순서를 관찰합니다."
+      }
+    },
+    {
+      "id": "daQLQ1rAzs0",
+      "title": "드라이버 릴리스 · 그립 당기기와 헤드 무게 비교",
+      "originalTitle": "힘을 빼도 드라이버 거리 늘어나는 이유",
+      "channel": "스윙닥터김남기프로",
+      "duration": "0:57",
+      "durationSeconds": 57,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "그립 끝을 몸 쪽으로 잡아당기는 동작과 헤드 끝의 무게를 느끼는 감각을 비교합니다. 샤프트 탄성과 헤드 통과를 설명하는 드라이버 자료입니다.",
+      "points": [
+        "9–26초 샤프트가 휘고 헤드가 통과하는 설명을 드라이버 시범과 연결합니다.",
+        "26–38초 그립을 끌어당길 때 헤드가 지나갈 여유가 줄어드는 모습을 비교합니다.",
+        "39초 이후 헤드 끝을 무게추로 생각하는 감각을 제시합니다. 강하게 당기라는 표현을 현재의 힘 빼기 목표에 그대로 대입하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 33.63,
+          "label": "그립을 끌어당기는 동작 비교"
+        },
+        {
+          "s": 42.75,
+          "label": "헤드 끝의 무게를 가리키는 설명"
+        }
+      ],
+      "relatedVideoIds": [
+        "unGNdzyt7kE",
+        "ThwbClowjjU"
+      ],
+      "evidence": "2026-10-23 · 전체 57초 오디오 자동 전사와 원본 표본 화면 대조.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "제 경우 그립을 잡아당기는 문제가 있나요? 헤드 무게를 느끼는 감각을 어떻게 적용하면 좋을까요?",
+      "observationPractice": {
+        "action": "작은 드라이버 빈스윙에서 그립만 몸 쪽으로 당기지 않고 헤드 무게가 이어지는지 비교합니다.",
+        "feel": "헤드를 느끼려다가 손·어깨에 힘을 더 주지 않았는지, 헤드가 지나갈 여유가 있는지 봅니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-10-18T00:35:39+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "classified",
+        "group": "impact-release",
+        "reason": "그립 끝을 몸 쪽으로 잡아당기는 동작과 헤드 끝의 무게를 느끼는 감각을 비교합니다. 샤프트 탄성과 헤드 통과를 설명하는 드라이버 자료입니다."
+      }
+    },
+    {
+      "id": "f4in6LXwJfs",
+      "title": "치킨윙 보완 · 억지로 팔 펴기보다 낮은 손 통과",
+      "originalTitle": "치킨윙은 이렇게!🍗 #golflesson  #golfswing #golftips #golfpro #골프연습 #골프레슨 #골프스윙 #골프팁 #골프프로 #이석영프로 #아이언스윙",
+      "channel": "이석영프로 [열정골프🔥]",
+      "duration": "1:00",
+      "durationSeconds": 60,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "왼팔을 억지로 펴며 어깨가 굳는 경우를 비교하고, 임팩트 이후 손이 낮게 이어지는 감각과 공 두 개 드릴을 제시합니다.",
+      "points": [
+        "팔을 강하게 뻗어 치킨윙을 막으려 하면 어깨가 경직되고 손이 빨리 높아지는 상황을 설명합니다.",
+        "팔이 자연스럽게 내려온 뒤 임팩트·릴리스 구간에서 손이 낮게 이어지는 시범입니다.",
+        "후반의 공 두 개 드릴은 낮은 통과 감각용 참고입니다. 현재 작은 피칭 피니시를 강제로 낮추거나 손목을 누르는 지시로 바꾸지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 30.6,
+          "label": "팔 하강과 낮은 통과 시범"
+        },
+        {
+          "s": 45.0,
+          "label": "공 두 개를 놓고 통과하는 드릴"
+        }
+      ],
+      "relatedVideoIds": [
+        "WxoZPlRhSvY",
+        "dBsZdo7VEAA"
+      ],
+      "evidence": "2026-10-23 · 제작자 설명란 전체 및 원본 12개 표본의 화면 코칭 문구 대조. 배경음 자동 전사는 코칭 근거에서 제외.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "제 팔로우에는 이 낮은 손 통과 감각이 필요한가요? 현재 작은 피니시와 어떻게 구분하나요?",
+      "observationPractice": {
+        "action": "작은 아이언 스윙에서 왼팔을 억지로 펴지 않고 팔 하강과 몸 회전을 함께 이어 봅니다.",
+        "feel": "임팩트 직후 어깨가 굳고 손이 급히 들리는지, 낮게 보내려다 지면을 찍거나 손목을 누르는지 확인합니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-10-20T21:20:12+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "classified",
+        "group": "follow-flow",
+        "reason": "왼팔을 억지로 펴며 어깨가 굳는 경우를 비교하고, 임팩트 이후 손이 낮게 이어지는 감각과 공 두 개 드릴을 제시합니다."
+      }
+    },
+    {
+      "id": "LO9ASFC3I78",
+      "title": "다운스윙 경로 · 짧게 올리고 내린 뒤 회전 연결",
+      "originalTitle": "클럽도 길을 알아야 잘 내려옵니다 #golf #골프 #golftips",
+      "channel": "공맞는순간",
+      "duration": "0:10",
+      "durationSeconds": 10,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "공을 치기 전 클럽을 짧게 올렸다 내리며 경로를 익히고, 마지막에 몸 회전을 더해 한 번에 스윙하는 순서입니다.",
+      "points": [
+        "공을 바로 치지 않고 작은 올림·내림을 반복합니다.",
+        "3–7초 내려오는 경로를 익힌 뒤 7초 이후 몸 회전을 연결합니다.",
+        "분리 연습을 실제 타격 중 멈춰 서는 동작으로 고정하지 않습니다. 클럽별 공통 적용 범위는 명시되지 않았습니다."
+      ],
+      "moments": [
+        {
+          "s": 4.3,
+          "label": "짧게 올리고 내리는 반복"
+        },
+        {
+          "s": 8.3,
+          "label": "익힌 경로에 회전을 연결"
+        }
+      ],
+      "relatedVideoIds": [
+        "jg52OubK_L0",
+        "eRSTJTcMFjE"
+      ],
+      "evidence": "2026-10-23 · 전체 10초 오디오 자동 전사와 화면 지시·동작 대조.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "이 작은 올림·내림 연습이 제 다운스윙 경로에 맞나요? 회전은 어느 시점에 연결하면 좋을까요?",
+      "observationPractice": {
+        "action": "공 없이 클럽을 짧게 올렸다 내려 경로를 확인한 뒤, 몸 회전을 연결해 작은 빈스윙을 합니다.",
+        "feel": "팔을 세게 끌어내리거나 중간에 멈추는 습관이 생기지 않았는지, 마지막에는 편하게 이어지는지 봅니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-10-19T09:00:36+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "classified",
+        "group": "downswing-path",
+        "reason": "공을 치기 전 클럽을 짧게 올렸다 내리며 경로를 익히고, 마지막에 몸 회전을 더해 한 번에 스윙하는 순서입니다."
+      }
+    },
+    {
+      "id": "hxXJnJRKKcE",
+      "title": "스윙 원리 비교 · 클럽의 원운동과 몸의 반응",
+      "originalTitle": "돌지 마세요. 과학적으로 증명된 ‘이 원리’ 제발 외우세요!!┃골프초보┃골프기초┃비거리┃골프잘치는법┃골프기본",
+      "channel": "골프민즈Golfminz",
+      "duration": "11:00",
+      "durationSeconds": 660,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "클럽의 원운동과 양손의 지렛대를 중심으로 백스윙·다운스윙·몸의 반응을 연결해 설명하는 자료입니다. 현재 레슨과 비교할 원리 설명으로 둡니다.",
+      "points": [
+        "백스윙에서 클럽의 움직임·옆구리의 늘어남·양손 역할을 연결합니다.",
+        "4:43 이후 몸을 먼저 돌리기보다 클럽의 원운동을 우선하는 관점을 설명합니다. 오른팔 밀기·왼손 당기기는 현재 코치의 처방과 구분합니다.",
+        "‘돌지 마세요’는 몸을 고정하라는 뜻으로 옮기지 않습니다. 영상의 과학·비거리 표현을 검증된 개인 효과로 단정하지 않고 현재 몸 회전 레슨과 적용 차이를 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 178.2,
+          "label": "백스윙의 양손 지렛대 설명"
+        },
+        {
+          "s": 442.2,
+          "label": "다운스윙 원운동과 손의 움직임"
+        }
+      ],
+      "relatedVideoIds": [
+        "SboFZ1M4mIg",
+        "oEVbWjzZl0E",
+        "FjWulC87mzM"
+      ],
+      "evidence": "2026-10-23 · 전체 660초 오디오 자동 전사와 제작자 설명·구간 안내·원본 12개 표본 화면 대조.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "클럽 움직임을 우선하는 이 감각과 현재 몸 회전 레슨을 제 스윙에서는 어떻게 연결하면 좋을까요?",
+      "observationPractice": {
+        "action": "가벼운 빈스윙에서 클럽이 이어 움직일 때 몸도 편하게 반응하는지 현재 레슨과 비교합니다.",
+        "feel": "몸을 일부러 고정하거나 손으로만 클럽을 조작하지 않는지, 회전과 팔의 연결이 편안한지 확인합니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-10-17T04:00:21+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "common",
+        "group": "common",
+        "reason": "클럽의 원운동과 양손의 지렛대를 중심으로 백스윙·다운스윙·몸의 반응을 연결해 설명하는 자료입니다. 현재 레슨과 비교할 원리 설명으로 둡니다."
+      },
+      "sharedSections": [
+        "backswing",
+        "downswing",
+        "impact"
+      ],
+      "sharedGroups": [
+        "backswing-takeaway",
+        "downswing-path",
+        "impact-release"
+      ]
+    },
+    {
+      "id": "LpMjAU9OnlI",
+      "title": "아이언 타점 · 왼발 이동과 펌프 드릴",
+      "originalTitle": "연습장에서 ‘쩍!’ 소리 내는 사람들, 비밀은 이겁니다 #shorts #골프 #골프레슨 #골프스윙 #아이언 #아이언잘치는법 #golf #golf swing #golf lesson",
+      "channel": "뚜까골프",
+      "duration": "0:53",
+      "durationSeconds": 53,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "작은 스윙에서 왼발 쪽으로 이동하고 팔과 클럽이 내려오는 펌프 드릴을 보여 줍니다. 임팩트 소리보다 타점·방향·편안함을 함께 확인합니다.",
+      "points": [
+        "백스윙을 9시 정도까지만 올린 뒤 왼발 쪽으로 이동하며 작은 펌프 동작을 반복합니다.",
+        "내려올 때 오른팔꿈치를 오른쪽 벨트 고리 앞에 두는 설명입니다. 영상의 체중 80–90%·골반 45도는 개인 수치 목표로 지정하지 않습니다.",
+        "래그를 유지한다는 말을 손목을 억지로 잠그는 동작으로 옮기지 않습니다. 타격음만으로 좋은 임팩트를 판정하지 않습니다.",
+        "후반의 의도적 손목 풀기·팔 뻗기 감각은 현재 피칭 레슨의 작은 피니시와 구분해 코치에게 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 22.79,
+          "label": "왼발로 이동하며 내려오는 연습"
+        },
+        {
+          "s": 31.27,
+          "label": "오른팔꿈치와 벨트 고리 위치 확인"
+        }
+      ],
+      "relatedVideoIds": [
+        "EgdcUOkvJKk",
+        "CAZ9oUoGRIg"
+      ],
+      "evidence": "2026-10-23 · 전체 53초 오디오 자동 전사·화면 자막·제작자 설명 대조. 공개 oEmbed 채널명은 뚜까골프, player 메타데이터는 play golf로 반환되어 oEmbed 이름을 표시합니다.",
+      "connection": "관련 기존 영상과 같은 주제를 비교하되 현재 레슨의 한 가지 초점을 유지합니다.",
+      "question": "저에게는 왼발 이동과 손·몸 연결 중 무엇을 먼저 확인하는 것이 도움이 되나요?",
+      "observationPractice": {
+        "action": "작은 아이언 빈스윙에서 왼발 쪽으로 이동하며 팔과 클럽이 내려오는 흐름을 확인합니다.",
+        "feel": "상체가 뒤로 빠지거나 들리는지, 손목을 고정하려고 힘이 늘어나는지 타점·방향과 함께 봅니다."
+      },
+      "practiceCaution": "현재 레슨을 우선합니다. 영상의 비거리·힘·손목 감각을 새로운 개인 처방으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-23T00:00:00+09:00",
+      "publishedAt": "2026-09-01T21:00:24+00:00",
+      "classificationReview": {
+        "date": "2026-10-23",
+        "status": "classified",
+        "group": "impact-contact",
+        "reason": "작은 스윙에서 왼발 쪽으로 이동하고 팔과 클럽이 내려오는 펌프 드릴을 보여 줍니다. 임팩트 소리보다 타점·방향·편안함을 함께 확인합니다."
+      }
     }
-  ]
+  ],
+  "practicePin": {
+    "id": "hxXJnJRKKcE",
+    "title": "상시 연습 · 클럽의 흐름",
+    "steps": [
+      "작은 빈스윙으로 클럽이 그리는 원을 느낍니다.",
+      "클럽의 흐름에 몸이 편하게 따라 움직이는지 봅니다.",
+      "같은 크기·템포로 3번 이어서 반복합니다."
+    ],
+    "checks": [
+      "몸을 일부러 고정하거나 먼저 급히 돌리지 않았나요?",
+      "손으로 세게 조작하지 않아도 클럽이 이어지나요?",
+      "세 번의 템포·균형·편안함이 비슷한가요?"
+    ],
+    "basis": "영상 이해를 돕는 앱의 연습 요약입니다. 현재 레슨을 우선하며 강한 팔 펴기·손 당기기를 새 과제로 추가하지 않습니다."
+  }
 };
 
 // Every golf video is available as its original with editorial notes.
@@ -5299,7 +5677,9 @@ window.GolfContent.videoGroups = [
       "QsmMamIFMsE",
       "v3CFS-0sO_I",
       "WxoZPlRhSvY",
-      "JoUx0gIzdng"
+      "JoUx0gIzdng",
+      "uEEjRPwQ2Vo",
+      "LO9ASFC3I78"
     ],
     "practice": {
       "cue": "팔만 잡아당기는지, 몸 회전 속에서 클럽이 내려오는지 비교합니다.",
@@ -5376,7 +5756,8 @@ window.GolfContent.videoGroups = [
       "qQbCq_QXB0A",
       "Fk_3CjorpVA",
       "ThwbClowjjU",
-      "hjWtaLgNEO0"
+      "hjWtaLgNEO0",
+      "LpMjAU9OnlI"
     ],
     "practice": {
       "cue": "세게 누르기보다 작은 스윙의 타점과 접촉을 먼저 확인합니다.",
@@ -5459,7 +5840,8 @@ window.GolfContent.videoGroups = [
       "unGNdzyt7kE",
       "4DyoF3OQKww",
       "4Eof_tmI0Ag",
-      "HGzIDHi2e84"
+      "HGzIDHi2e84",
+      "daQLQ1rAzs0"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌기보다 몸의 흐름 속에서 헤드가 통과하는지 봅니다.",
@@ -5493,7 +5875,8 @@ window.GolfContent.videoGroups = [
       "YD9lLDhvy8c",
       "-h77kU-fpjg",
       "JhE2A-kCaLI",
-      "dtnFgYXYfBE"
+      "dtnFgYXYfBE",
+      "f4in6LXwJfs"
     ],
     "practice": {
       "cue": "공을 맞힌 뒤에도 팔과 클럽이 지나가는 흐름을 봅니다.",
@@ -5586,11 +5969,13 @@ window.GolfContent.videoGroups = [
     "title": "여러 구간 연결",
     "description": "여러 구간의 연결을 함께 다루는 영상입니다. 한 곳에 모으고 관련 구간에서 연결해 봅니다. 내용이 불명확한 미분류 자료와는 구분합니다.",
     "videoIds": [
+      "hxXJnJRKKcE",
       "dBsZdo7VEAA",
       "j1USTUwFnRI",
       "CAZ9oUoGRIg",
       "bgI9M3DIuX4",
-      "F7HIFtSR7Fo"
+      "F7HIFtSR7Fo",
+      "TYq-Fge2LSA"
     ],
     "relatedGroups": []
   },
@@ -6503,6 +6888,48 @@ window.GolfContent.clubReviews = {
     "reason": "원본 제목과 전 구간 시범의 100m 피칭웨지 조건을 확인했습니다. 웨지/아이언 참고이며 드라이버 공통 적용이나 현재 레슨의 작은 피니시로 확대하지 않습니다.",
     "reviewedAt": "2026-10-20",
     "basis": "full audio ASR and original video frames"
+  },
+  "TYq-Fge2LSA": {
+    "value": "unknown",
+    "reason": "두 클럽의 서로 다른 시범을 비교합니다. 동일 교정의 공통 적용이라는 근거는 없어 확인 필요로 둡니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "uEEjRPwQ2Vo": {
+    "value": "driver",
+    "reason": "원본에서 티 위 공과 드라이버 헤드를 사용하는 정면 비교를 확인했습니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "daQLQ1rAzs0": {
+    "value": "driver",
+    "reason": "제목·전체 설명·티 위 공을 치는 드라이버 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "f4in6LXwJfs": {
+    "value": "iron",
+    "reason": "제작자 설명·아이언 해시태그·아이언 시범과 공 두 개 드릴을 확인했습니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "LO9ASFC3I78": {
+    "value": "unknown",
+    "reason": "짧은 측면 장면으로 구체적인 클럽 적용 범위를 확정하기 어려워 확인 필요로 유지합니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "hxXJnJRKKcE": {
+    "value": "driver",
+    "reason": "0:00 및 6:55 부근에 드라이버의 어려움과 일관성을 명시하며 설명합니다. 아이언까지 같은 교정을 적용하는 것으로 확대하지 않습니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "LpMjAU9OnlI": {
+    "value": "iron",
+    "reason": "아이언 제목·제작자 설명과 지면 공을 치는 아이언 시범을 확인했습니다.",
+    "reviewedAt": "2026-10-23",
+    "basis": "source audio/on-screen text and original sampled frames"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

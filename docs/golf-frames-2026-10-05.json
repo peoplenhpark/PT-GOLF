@@ -2662,5 +2662,173 @@
     "source": "https://www.youtube.com/watch?v=F7HIFtSR7Fo",
     "method": "Original source extraction; resize only. Full audio ASR and sampled frames reviewed.",
     "verifiedAt": "2026-10-20"
+  },
+  {
+    "id": "TYq-Fge2LSA",
+    "title": "아이언·드라이버 비교 · 내려오는 구간과 클럽 통과",
+    "frames": [
+      {
+        "src": "media/golf-frames/TYq-Fge2LSA-1.webp",
+        "time": 2.43,
+        "label": "아이언 · 내려오는 구간",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/TYq-Fge2LSA-2.webp",
+        "time": 8.19,
+        "label": "드라이버 · 통과 구간",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 9,
+    "source": "https://www.youtube.com/watch?v=TYq-Fge2LSA",
+    "method": "Original source frame extraction; resize only; no scene alteration. 원본 12개 표본 화면의 Iron/Driver 표시와 동작 대조. 자동 전사의 음악 구간 문구는 코칭 근거로 사용하지 않음.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "uEEjRPwQ2Vo",
+    "title": "드라이버 전환 · 몸 회전과 팔 하강 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/uEEjRPwQ2Vo-1.webp",
+        "time": 1.9,
+        "label": "몸 회전과 팔 위치 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/uEEjRPwQ2Vo-2.webp",
+        "time": 5.9,
+        "label": "팔이 내려오는 방향 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 10,
+    "source": "https://www.youtube.com/watch?v=uEEjRPwQ2Vo",
+    "method": "Original source frame extraction; resize only; no scene alteration. 원본 12개 표본 화면·화살표 확인. 음악에 대한 자동 전사 문구는 동작 설명으로 사용하지 않음.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "daQLQ1rAzs0",
+    "title": "드라이버 릴리스 · 그립 당기기와 헤드 무게 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/daQLQ1rAzs0-1.webp",
+        "time": 33.63,
+        "label": "그립을 끌어당기는 동작 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/daQLQ1rAzs0-2.webp",
+        "time": 42.75,
+        "label": "헤드 끝의 무게를 가리키는 설명",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 57,
+    "source": "https://www.youtube.com/watch?v=daQLQ1rAzs0",
+    "method": "Original source frame extraction; resize only; no scene alteration. 전체 57초 오디오 자동 전사와 원본 표본 화면 대조.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "f4in6LXwJfs",
+    "title": "치킨윙 보완 · 억지로 팔 펴기보다 낮은 손 통과",
+    "frames": [
+      {
+        "src": "media/golf-frames/f4in6LXwJfs-1.webp",
+        "time": 30.6,
+        "label": "팔 하강과 낮은 통과 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/f4in6LXwJfs-2.webp",
+        "time": 45.0,
+        "label": "공 두 개를 놓고 통과하는 드릴",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 60,
+    "source": "https://www.youtube.com/watch?v=f4in6LXwJfs",
+    "method": "Original source frame extraction; resize only; no scene alteration. 제작자 설명란 전체 및 원본 12개 표본의 화면 코칭 문구 대조. 배경음 자동 전사는 코칭 근거에서 제외.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "LO9ASFC3I78",
+    "title": "다운스윙 경로 · 짧게 올리고 내린 뒤 회전 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/LO9ASFC3I78-1.webp",
+        "time": 4.3,
+        "label": "짧게 올리고 내리는 반복",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/LO9ASFC3I78-2.webp",
+        "time": 8.3,
+        "label": "익힌 경로에 회전을 연결",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 10,
+    "source": "https://www.youtube.com/watch?v=LO9ASFC3I78",
+    "method": "Original source frame extraction; resize only; no scene alteration. 전체 10초 오디오 자동 전사와 화면 지시·동작 대조.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "hxXJnJRKKcE",
+    "title": "스윙 원리 비교 · 클럽의 원운동과 몸의 반응",
+    "frames": [
+      {
+        "src": "media/golf-frames/hxXJnJRKKcE-1.webp",
+        "time": 178.2,
+        "label": "백스윙의 양손 지렛대 설명",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/hxXJnJRKKcE-2.webp",
+        "time": 442.2,
+        "label": "다운스윙 원운동과 손의 움직임",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 660,
+    "source": "https://www.youtube.com/watch?v=hxXJnJRKKcE",
+    "method": "Original source frame extraction; resize only; no scene alteration. 전체 660초 오디오 자동 전사와 제작자 설명·구간 안내·원본 12개 표본 화면 대조.",
+    "verifiedAt": "2026-10-23"
+  },
+  {
+    "id": "LpMjAU9OnlI",
+    "title": "아이언 타점 · 왼발 이동과 펌프 드릴",
+    "frames": [
+      {
+        "src": "media/golf-frames/LpMjAU9OnlI-1.webp",
+        "time": 22.79,
+        "label": "왼발로 이동하며 내려오는 연습",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/LpMjAU9OnlI-2.webp",
+        "time": 31.27,
+        "label": "오른팔꿈치와 벨트 고리 위치 확인",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 53,
+    "source": "https://www.youtube.com/watch?v=LpMjAU9OnlI",
+    "method": "Original source frame extraction; resize only; no scene alteration. 전체 53초 오디오 자동 전사·화면 자막·제작자 설명 대조.",
+    "verifiedAt": "2026-10-23"
   }
 ]

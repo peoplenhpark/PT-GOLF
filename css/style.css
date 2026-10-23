@@ -602,8 +602,8 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-routine h2{font-size:18px;line-height:1.45}.ht-routine h3{font-size:16px;margin:16px 0 8px}.ht-routine h3 small{font-size:13px;color:var(--sub);font-weight:500}
 .ht-routine a{color:var(--ht);text-underline-offset:3px;overflow-wrap:anywhere}.ht-routine-heading>a{font-size:13px;min-height:32px;display:inline-flex;align-items:center}
 .ht-routine-note,.ht-routine-reference p{font-size:13px;color:var(--sub);font-weight:500;line-height:1.65;margin:8px 0}
-.ht-routine-days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:14px 0}
-.ht-routine-days button{min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--txt);font:inherit;font-size:13px;cursor:pointer}
+.ht-routine-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:14px 0}
+.ht-routine-days button{position:relative;min-width:0;min-height:56px;padding:6px 1px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--txt);font:inherit;font-size:13px;cursor:pointer}
 .ht-routine-days button[aria-pressed="true"]{background:var(--ht-bg);border-color:var(--ht-line);color:var(--ht)}
 .ht-routine :focus-visible{outline:2px solid var(--ht);outline-offset:3px}
 .ht-routine-list{list-style:none;padding:0}.ht-routine-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6}
@@ -614,3 +614,11 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-routine-reference{margin-top:16px;font-size:13px}.ht-routine-reference summary{min-height:44px;cursor:pointer;display:list-item;padding:10px 0}
 .ht-library-title{font-size:18px;margin-bottom:12px;scroll-margin-top:70px}
 @media(max-width:360px){.ht-routine{padding:12px}.ht-routine-days{gap:4px}.ht-routine-days button{font-size:12px}.ht-routine h2{font-size:17px}}
+
+/* Today remains distinct from a manually selected routine day. */
+.ht-routine-today{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:700;color:var(--ht);margin:8px 0}
+.ht-routine-today button{font:inherit;font-size:13px;color:var(--ht);background:var(--card);border:1px solid var(--ht-line);border-radius:8px;min-height:44px;padding:6px 10px;cursor:pointer}
+.ht-routine-weekday,.ht-routine-kind{display:block;white-space:nowrap;line-height:1.5}
+.ht-routine-weekday{font-weight:700}
+.ht-routine-days button[aria-current="date"] .ht-routine-weekday{text-decoration:underline;text-underline-offset:3px}
+.ht-routine-days button[aria-current="date"]::after{content:"";position:absolute;top:4px;right:4px;width:4px;height:4px;border-radius:50%;background:var(--ht)}

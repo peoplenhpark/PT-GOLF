@@ -5,7 +5,7 @@ module.exports=async(browser,base,screenshot)=>{
   await p.addInitScript(()=>{if(!localStorage.getItem('ptgolf_learning_v1'))localStorage.setItem('ptgolf_learning_v1',JSON.stringify({lessons:[],questions:[],focus:[],videoNotes:{dBsZdo7VEAA:{memo:'공통 이동 전 개인 메모',favorite:true,title:'내 공통 영상'},U4nn7s20ACc:{memo:'삭제 후에도 보존할 메모',favorite:true}}}));});
   await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
   assert.equal(await p.locator('.g-common-practice').count(),1);
-  assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY<1200),'today selection precedes long practice material');
+  assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-(document.querySelector('.g-daily-pin')?.getBoundingClientRect().height||0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
   assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),4);
   assert.equal(await p.locator('.g-recent-practice .g-practice-focus:visible').count(),3);
   assert.deepEqual(await p.locator('.g-recent-practice a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))),['#golf/videos/j1USTUwFnRI','#golf/videos/4DyoF3OQKww','#golf/videos/4Eof_tmI0Ag']);
@@ -49,7 +49,7 @@ module.exports=async(browser,base,screenshot)=>{
   }
   await p.goto(base+'#golf/group/review');await p.locator('#g-group-review').waitFor();assert.equal(await p.locator('.g-mini-detail').count(),0);assert.equal(await p.locator('.g-practice-guide').count(),0);
   assert.equal(await p.locator('.g-video-shortcuts a[href="#golf/group/review"]').count(),0);
-  await p.goto(base+'#golf/group/common');await p.locator('#g-group-common').waitFor();assert.equal(await p.locator('.g-video-groups>a').count(),4);assert.equal(await p.locator('.g-mini-detail').count(),5);assert.match(await p.locator('.g-mini-detail[href="#golf/videos/dBsZdo7VEAA"] .g-mini-title').innerText(),/내 공통 영상/);
+  await p.goto(base+'#golf/group/common');await p.locator('#g-group-common').waitFor();assert.equal(await p.locator('.g-video-groups>a').count(),4);assert.equal(await p.locator('.g-mini-detail').count(),7);assert.match(await p.locator('.g-mini-detail[href="#golf/videos/dBsZdo7VEAA"] .g-mini-title').innerText(),/내 공통 영상/);
   for(const theme of ['light','dark'])for(const width of [320,390,768]){await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);await p.setViewportSize({width,height:844});assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'common '+theme+' '+width);}
   await p.goto(base+'#golf/group/all');await p.locator('#g-group-common').waitFor();assert.equal(await p.locator('.g-mini-detail[href="#golf/videos/dBsZdo7VEAA"]').count(),1);
   await p.goto(base+'#golf/group/impact');await p.locator('.g-shared-references a[href="#golf/videos/dBsZdo7VEAA"]').click();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'공통 이동 전 개인 메모');assert.equal(await p.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');await p.reload();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'공통 이동 전 개인 메모');
