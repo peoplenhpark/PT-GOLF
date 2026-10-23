@@ -110,13 +110,14 @@ window.GolfHub = (() => {
   function practicalSummary(v) {
     const p=practical(v);
     const custom=videoNote(v.id);
-    const rows=v.soloPractice?
+    const pinned=v.id===content.practicePin?.id;
+    const rows=(v.soloPractice||pinned)?
       [...['action','feel'].filter(key=>typeof custom[key]==='string'&&custom[key].trim()).map(key=>[key==='action'?'내가 수정한 방법':'내가 수정한 확인점',p[key]]),['레슨에서 확인',p.check]]:
       v.backswingGuide?[['좋은 기준',v.backswingGuide.criterion],['해보는 방법',p.action],['스스로 확인',p.feel],['레슨에서 확인',p.check]]:[[p.labels[0],p.action],[p.labels[1],p.feel],[p.labels[2],p.check]];
     return `<section class="g-practical-summary" aria-label="${e(v.title)} 적용 요약">
-      <div class="g-practical-head"><h2>한눈에 적용</h2><span>${e(content.evidenceFor(v).label)}</span></div>
+      <div class="g-practical-head"><h2>${pinned?'내 적용·레슨 질문':'한눈에 적용'}</h2><span>${e(content.evidenceFor(v).label)}</span></div>
       <dl>${rows.map(([label,text])=>`<div><dt>${e(label)}</dt><dd>${e(text)}</dd></div>`).join('')}</dl>
-      <p class="g-practical-caution">${e(v.backswingGuide?.caution||p.caution)}</p>
+      ${pinned?'':`<p class="g-practical-caution">${e(v.backswingGuide?.caution||p.caution)}</p>`}
     </section>`;
   }
   function sourceDetail(v) {
@@ -226,10 +227,18 @@ window.GolfHub = (() => {
     if(!s)return '';
     return `<section class="g-solo-practice" aria-label="혼자 연습 · 순서와 확인"><h3>${compact?'백스윙 · 혼자 연습 핵심':'혼자 연습 · 바로 참고'}</h3><p>${e(compact?"공 없이 느리게 익힌 뒤, 멈추지 않고 연결합니다.":s.tip)}</p><ol class="g-solo-steps">${s.steps.map(step=>`<li><b>${e(step.title)}</b><span>${e(compact?(step.short||step.text):step.text)}</span></li>`).join('')}</ol><h4>확인할 세 가지</h4><ul>${s.checks.map(check=>`<li>${e(check)}</li>`).join('')}</ul><small>${e(s.basis)}</small>${compact?`<a class="g-link" href="${href('videos',v.id)}">상단 고정 영상 · 자세한 방법 보기 ›</a>`:''}</section>`;
   }
+  function dailyPracticeContent() {
+    const pin=content.practicePin;
+    return `<div class="g-practice-columns"><div><h3>우선할 감각 · 연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(pin.basis)}</p>`;
+  }
   function dailyPracticePin(compact=false) {
     const pin=content.practicePin,v=pin&&video(pin.id);
     if(!v||(compact&&!clubMatches(v)))return '';
-    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':`<div class="g-practice-columns"><div><h3>우선할 감각 · 연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(pin.basis)}</p>`}</section>`;
+    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':dailyPracticeContent()}</section>`;
+  }
+  function dailyPracticeDetail(v) {
+    if(v.id!==content.practicePin?.id)return '';
+    return `<section class="g-daily-pin g-daily-detail" aria-label="상시 연습 핵심"><h2>지금 할 것 · 연습 핵심</h2>${dailyPracticeContent()}<a class="g-link" href="#golf/now">지금 할 것에서 보기 ›</a></section>`;
   }
   function pinnedPractice() {
     const v=video('2tam4sbJQtM');
@@ -369,7 +378,7 @@ window.GolfHub = (() => {
     const backLabel=group?group.title:'유튜브 목록';
     const relatedIds=notes().filter(x=>v.topics.some(t=>topics(x.id).includes(t))).map(x=>x.id);
     layout(`<a class="back" href="${backHref}">‹ ${e(backLabel)}</a>${group?'<a class="g-all-videos" href="#golf/videos">전체 영상 보기</a>':''}<div class="g-meta">${e(v.channel)} · ${e(v.duration)} · ${addedLabel(v)} · ${publishedLabel(v)}</div><div class="g-title-row"><h2 class="g-title">${e(v.title)}</h2><div class="d-actions">${favoriteButton(v)}<button type="button" class="icon-btn edit-text" data-g="video-edit" data-id="${e(id)}" title="수정" aria-label="${e(v.title)} · 수정">✏️ 수정</button></div></div>${placement(v)}${chips(v.topics)}${chips(v.tags||[])}${lessonConnection(v)}${v.lessonId?link('lessons',v.lessonId,'첫 레슨 복습 기준 보기'):''}${frames(v)}
-      ${window.GolfQuestions?.videoConnections(id)||''}${soloPractice(v)}${practicalSummary(v)}<div class="g-actions g-video-primary-actions"><a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>${button('memo-jump','메모 남기기')}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
+      ${dailyPracticeDetail(v)}${window.GolfQuestions?.videoConnections(id)||''}${soloPractice(v)}${practicalSummary(v)}<div class="g-actions g-video-primary-actions"><a class="g-link" href="#golf/standards?source=video:${encodeURIComponent(id)}">이 영상으로 내 기준 만들기 ›</a>${button('memo-jump','메모 남기기')}${button('ask','레슨에서 질문',`data-kind="videos" data-id="${id}"`)}</div>
       ${block('내 적용 메모',`<form data-g-form="video" data-id="${id}"><label for="g-video-status">확인 상태</label><select id="g-video-status" name="status">${[...new Set(['참고 중','프로에게 질문','레슨에서 확인',...(n.status?[n.status]:[])])].map(s=>`<option ${videoStatus(v)===s?'selected':''}>${e(s)}</option>`).join('')}</select><label for="g-video-memo">느낀 점·결과</label><textarea id="g-video-memo" name="memo" rows="4" placeholder="편안함·오른팔 긴장·타점 변화와 프로에게 확인할 점">${e(n.memo||'')}</textarea><button class="g-btn g-primary">메모 저장</button></form>`)}
       <details class="g-history"><summary>기존 감각 노트에 연결</summary>${button('adopt','내 연습에 반영',`data-kind="videos" data-id="${id}"`)}</details>
       <div class="g-actions">${deleteButton(v)}</div>${viewOptions(v)}

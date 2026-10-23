@@ -12,7 +12,12 @@ module.exports=async(browser,base)=>{
    await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }
+  const practiceText=await p.locator('.g-daily-pin .g-practice-columns').innerText();
   await p.locator('.g-daily-title').click();await p.locator('#g-video-memo').waitFor();assert(p.url().includes('hxXJnJRKKcE'));
+  assert.equal(await p.locator('.g-daily-detail .g-practice-columns').innerText(),practiceText);
+  assert.equal(await p.locator('.g-daily-detail ol li:visible').count(),3);assert.equal(await p.locator('.g-daily-detail ul li:visible').count(),3);
+  assert.equal(await p.locator('.g-practical-summary dl>div').count(),1);
+  assert(await p.locator('.g-daily-detail a[href="#golf/now"]').isVisible());
   await p.locator('#g-video-memo').fill('상시 연습 메모');await p.getByRole('button',{name:'메모 저장',exact:true}).click();await p.reload();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'상시 연습 메모');
   for(const route of ['golf/videos','golf/group/all','golf/group/recent','golf/group/common']){
    await p.goto(base+'#'+route);await p.locator('.g-daily-pin').waitFor();assert(await p.locator('.g-daily-actions a[href="#golf/now"]').isVisible());
