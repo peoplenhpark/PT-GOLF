@@ -6,7 +6,8 @@ module.exports=async(browser,base,screenshot)=>{
   await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
   assert.equal(await p.locator('.g-common-practice').count(),1);
   assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-(document.querySelector('.g-daily-pin')?.getBoundingClientRect().height||0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
-  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),3);
+  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),0);
+  assert.equal(await p.locator('.g-stage-practice .g-practice-cue:visible').count(),3);
   assert.equal(await p.locator('.g-recent-practice .g-practice-focus:visible').count(),3);
   assert.deepEqual(await p.locator('.g-recent-practice a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))),['#golf/videos/j1USTUwFnRI','#golf/videos/4DyoF3OQKww','#golf/videos/4Eof_tmI0Ag']);
   assert.equal(await p.locator('details.g-practice-guide').count(),0);
@@ -24,7 +25,8 @@ module.exports=async(browser,base,screenshot)=>{
    assert.equal(await p.locator('.g-subsections a').count(),4);
    assert.equal(await p.locator('.g-video-section').count(),3);
    assert.equal(await p.locator('.g-common-practice').count(),0);
-   assert.equal(await p.locator('.g-practice-focus:visible').count(),3);
+   assert.equal(await p.locator('.g-practice-focus:visible').count(),section.id==='backswing'?3:0);
+   assert.equal(await p.locator('.g-practice-cue:visible').count(),section.id==='backswing'?0:3);
    assert.equal(await p.locator('details.g-practice-guide').count(),0);
    assert.equal(await p.locator('.g-practice-columns ol li:visible, .g-solo-steps li:visible').count(),9);
    assert.equal(await p.locator('.g-practice-columns ul li:visible, .g-solo-practice ul li:visible').count(),9);
@@ -37,8 +39,9 @@ module.exports=async(browser,base,screenshot)=>{
    for(const id of section.groups){
     await p.goto(base+'#golf/group/'+id);await p.locator('#g-group-'+id).waitFor();
     const guide=p.locator('section.g-practice-guide, .g-solo-practice').first();await guide.waitFor();
-    assert.equal(await p.locator('.g-practice-focus:visible').count(),1);
-    assert.equal(await p.locator('.g-practice-focus dt').allTextContents().then(x=>x.join('·')),'오늘 할 것·확인할 것');
+    assert.equal(await p.locator('.g-practice-focus:visible').count(),section.id==='backswing'?1:0);
+    if(section.id==='backswing')assert.equal(await p.locator('.g-practice-focus dt').allTextContents().then(x=>x.join('·')),'오늘 할 것·확인할 것');
+    else assert.equal(await p.locator('.g-practice-cue:visible').count(),1);
     assert.equal(await guide.locator('ol li').count(),3);assert.equal(await guide.locator('ul li').count(),3);
     for(const theme of ['light','dark'])for(const width of [320,390,768]){
      await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);await p.setViewportSize({width,height:844});

@@ -26,7 +26,8 @@ const hub=ctx.window.GolfHub,app={innerHTML:'',querySelector:()=>null},api={app,
 for(const s of c.videoSections){
  hub.render({golfTab:'videos',golfGroup:s.id},api);
  assert.equal((app.innerHTML.match(/class="g-representative-label"/g)||[]).length,3);
- assert.equal((app.innerHTML.match(/class="g-practice-focus"/g)||[]).length,3);
+ assert.equal((app.innerHTML.match(/class="g-practice-focus"/g)||[]).length,s.id==='backswing'?3:0);
+ assert.equal((app.innerHTML.match(/class="g-practice-cue"/g)||[]).length,s.id==='backswing'?0:3);
  assert(!app.innerHTML.includes('<details class="g-practice-guide"'));
  for(const g of s.groups){hub.render({golfTab:'videos',golfGroup:g},api);assert(app.innerHTML.includes('확인 3가지')||app.innerHTML.includes('확인할 세 가지'));}
 }

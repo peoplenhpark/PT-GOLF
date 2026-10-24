@@ -168,15 +168,15 @@ window.GolfHub = (() => {
     const p=g?.practice;if(!p?.today||!p?.check)return '';
     return `<dl class="g-practice-focus"><div><dt>오늘 할 것</dt><dd>${e(p.today)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.check)}</dd></div></dl>`;
   }
-  function practiceGuide(g,withTitle=false) {
+  function practiceGuide(g,withTitle=false,title='') {
     const p=g?.practice;if(!p)return '';
     const sources=p.sourceIds.map(video).filter(Boolean);
     if(!sources.length)return '';
     const body=`<div class="g-practice-columns"><div><h3>연습 3단계</h3><ol>${p.steps.map(t=>`<li>${e(t)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${p.checks.map(t=>`<li>${e(t)}</li>`).join('')}</ul></div></div><details class="g-practice-sources"><summary>안내 근거 영상 ${sources.length}편</summary>${sources.map(v=>link('videos',v.id)).join('')}</details>`;
-    return `<section class="g-practice-guide" aria-label="${e(g.title)} 연습과 확인">${withTitle?`<h3 class="g-practice-title">${e(g.title)}</h3>`:''}${practiceFocus(g)}${body}</section>`;
+    return `<section class="g-practice-guide" aria-label="${e(g.title)} 연습과 확인">${withTitle?`<h3 class="g-practice-title">${e(title||g.title)}</h3>`:''}${p.compact?`<p class="g-practice-cue"><b>우선할 감각</b> · ${e(p.cue)}</p>${p.scope?`<p class="g-meta">${e(p.scope)}</p>`:''}`:practiceFocus(g)}${body}</section>`;
   }
   function stagePractice() {
-    return `<section class="g-stage-practice" aria-label="스윙 네 구간"><h2>구간별 연습 · 확인</h2><nav class="g-stage-links" aria-label="구간별 자료">${librarySections.map(s=>`<a href="${groupHref(s.id)}"><strong>${e(s.title)}</strong><span>${e(s.description)}</span></a>`).join('')}</nav>${librarySections.filter(s=>s.id!=='backswing').map(s=>practiceGuide(videoGroups().find(g=>g.id===s.practiceGroup),true)).join('')}</section>`;
+    return `<section class="g-stage-practice" aria-label="스윙 네 구간"><h2>구간별 연습 · 확인</h2><nav class="g-stage-links" aria-label="구간별 자료">${librarySections.map(s=>`<a href="${groupHref(s.id)}"><strong>${e(s.title)}</strong><span>${e(s.description)}</span></a>`).join('')}</nav>${librarySections.filter(s=>s.id!=='backswing').map(s=>practiceGuide(videoGroups().find(g=>g.id===s.practiceGroup),true,s.title)).join('')}</section>`;
   }
   function placement(v,compact=false) {
     const g=content.videoGroupFor(v);if(!g)return '';
