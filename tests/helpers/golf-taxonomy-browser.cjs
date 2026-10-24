@@ -6,7 +6,7 @@ module.exports=async(browser,base,screenshot)=>{
   await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
   assert.equal(await p.locator('.g-common-practice').count(),1);
   assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-(document.querySelector('.g-daily-pin')?.getBoundingClientRect().height||0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
-  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),4);
+  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),3);
   assert.equal(await p.locator('.g-recent-practice .g-practice-focus:visible').count(),3);
   assert.deepEqual(await p.locator('.g-recent-practice a').evaluateAll(links=>links.map(a=>a.getAttribute('href'))),['#golf/videos/j1USTUwFnRI','#golf/videos/4DyoF3OQKww','#golf/videos/4Eof_tmI0Ag']);
   assert.equal(await p.locator('details.g-practice-guide').count(),0);
