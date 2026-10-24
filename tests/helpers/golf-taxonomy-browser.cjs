@@ -5,6 +5,9 @@ module.exports=async(browser,base,screenshot)=>{
   await p.addInitScript(()=>{if(!localStorage.getItem('ptgolf_learning_v1'))localStorage.setItem('ptgolf_learning_v1',JSON.stringify({lessons:[],questions:[],focus:[],videoNotes:{dBsZdo7VEAA:{memo:'공통 이동 전 개인 메모',favorite:true,title:'내 공통 영상'},U4nn7s20ACc:{memo:'삭제 후에도 보존할 메모',favorite:true}}}));});
   await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
   assert.equal(await p.locator('.g-common-practice').count(),1);
+  assert.equal(await p.locator('.g-stage-grid>.g-stage-card').count(),4);
+  assert.equal(await p.locator('.g-solo-practice').count(),1);
+  assert.deepEqual(await p.locator('.g-stage-card>h3').allTextContents(),['01 · 백스윙','02 · 다운스윙','03 · 임팩트','04 · 팔로우·피니시']);
   assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-(document.querySelector('.g-daily-pin')?.getBoundingClientRect().height||0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
   assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),0);
   assert.equal(await p.locator('.g-stage-practice .g-practice-cue:visible').count(),3);
@@ -16,7 +19,7 @@ module.exports=async(browser,base,screenshot)=>{
   assert.equal(await p.locator('.g-stage-links a').count(),4);
   assert.equal(await p.locator('.g-solo-practice .g-solo-steps li').count(),3);
   assert.equal(await p.locator('.g-solo-practice ul li').count(),3);
-  assert(await p.evaluate(()=>{const selectors=['.g-pinned-sequence','.coach-recent-golf','.gq-hub','.g-solo-practice','.gq-records','.g-stage-practice'];return selectors.slice(1).every((s,i)=>document.querySelector(selectors[i]).compareDocumentPosition(document.querySelector(s))&Node.DOCUMENT_POSITION_FOLLOWING);}));
+  assert(await p.evaluate(()=>{const selectors=['.g-pinned-sequence','.coach-recent-golf','.gq-hub','.g-stage-practice','.gq-records'];return selectors.slice(1).every((s,i)=>document.querySelector(selectors[i]).compareDocumentPosition(document.querySelector(s))&Node.DOCUMENT_POSITION_FOLLOWING);}));
   assert.equal(await p.evaluate(()=>GolfQuestions.focus(CoachDesk.read())),null);
   await p.locator('[data-gq-focus="transition"]').click();
   const sections=await p.evaluate(()=>GolfContent.videoSections.map(s=>({id:s.id,groups:s.groups})));

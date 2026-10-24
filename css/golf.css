@@ -350,3 +350,17 @@
 .g-daily-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .g-daily-actions a{display:inline-flex;align-items:center;min-height:44px;padding:7px 10px;border:1px solid var(--golf-line);border-radius:8px;font-size:13px;color:var(--txt);background:var(--card)}
 .g-daily-pin :focus-visible{outline:2px solid var(--golf);outline-offset:3px}
+
+/* Four stages stay together; all practice and checks remain expanded. */
+.g-stage-overview .g-stage-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:10px 0 14px}
+.g-stage-overview .g-stage-links a{min-height:44px;padding:10px 5px;justify-content:center;text-align:left;font-size:13px;line-height:1.4}
+.g-stage-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-items:stretch}
+.g-stage-grid>.g-stage-card{margin:0;min-width:0;padding:16px}
+.g-stage-grid>.g-stage-card>h3{margin:0 0 12px;font-size:17px;color:var(--txt)}
+.g-stage-grid .g-solo-steps{margin:0;padding-left:22px}
+.g-stage-grid .g-solo-steps b{display:inline;margin-right:6px}
+.g-stage-grid .g-solo-steps b:after{content:' · '}
+.g-stage-grid .g-practice-cue,.g-stage-grid .g-solo-cue{font-weight:650;color:var(--golf);font-size:14px;line-height:1.65}
+@media(min-width:760px){.g-stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.g-stage-grid .g-practice-columns{grid-template-columns:minmax(0,1fr);gap:12px}}
+
+@media(min-width:760px){#app:has(.g-stage-overview){max-width:1040px}.g-stage-overview .g-stage-links{grid-template-columns:repeat(4,minmax(0,1fr))}}

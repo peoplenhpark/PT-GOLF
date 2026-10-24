@@ -106,10 +106,10 @@ window.CoachDesk = (() => {
       if(part==='golf')body+=window.GolfHub.dailyPracticePin()+recentGolf()+window.GolfQuestions.selector(s);
       if(current){body+='<section class="coach-current"><p class="coach-meta">'+esc(current.title)+(current.club&&current.club!==current.title?' · '+esc(current.club):'')+' · '+(current.confirmed?'직접 확인한 내 기준':'확인 중인 내 기준')+'</p><h2>'+esc(current.cue)+'</h2><p class="coach-check"><b>무엇으로 확인할까</b>'+esc(current.check)+'</p>'+(current.caution?'<p class="coach-caution"><b>주의</b> '+esc(current.caution)+'</p>':'')+'<div class="coach-actions"><a href="'+route(part,'standards',current.id)+'">기준 수정</a><a href="'+route(part,'standards')+'">다른 기준 선택</a><button class="btn ghost" data-coach-finish>확인 마치기</button></div><details class="coach-fold"><summary>준비·자료 바로 보기</summary><p>'+esc(current.setup)+'</p>'+sourceLink(current)+media(current)+'</details></section>'+resultForm(current);}
       else if(part!=='golf')body+='<section class="coach-current"><h2>오늘 확인할 기준</h2><a class="btn primary" href="'+route(part,'standards')+'">첫 기준 고르기</a></section>';
-      if(part==='golf')body+=window.GolfHub.commonPractice()+window.GolfHub.pinnedPractice()+window.GolfQuestions.topicDetails(s,v.coachTopic);
+      if(part==='golf')body+=window.GolfHub.commonPractice()+window.GolfHub.stagePractice()+window.GolfQuestions.topicDetails(s,v.coachTopic);
       const pending=records.filter(r=>r.question&&!r.answer).slice().reverse();if(pending.length)body+='<section class="coach-questions"><h2>다음 수업 질문 <small>'+pending.length+'개</small></h2>'+(pending.length?pending.slice(0,1).map(r=>recordHtml(r,true)).join('')+(pending.length>1?'<details class="coach-fold"><summary>나머지 질문 '+(pending.length-1)+'개</summary>'+pending.slice(1).map(r=>recordHtml(r,true)).join('')+'</details>':''):'<p class="coach-meta">막힌 점은 결과를 남길 때 질문으로 함께 적을 수 있어요.</p>')+'</section>';
       if(records.length)body+='<details class="coach-fold"><summary>지난 결과·답변 '+records.length+'건</summary>'+records.slice().reverse().map(r=>recordHtml(r,!!r.answer)).join('')+'</details>';
-      if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.recentPractice();
+      if(part==='golf')body+=window.GolfHub.recentPractice();
       if(part==='pt')body+=ptSchedulePlan();
     }else{
       body+='<p class="coach-intro">'+(part==='pt'?'혼자 운동할 때 쓸 기준을 남깁니다. 필요한 동작부터 하나씩 확인하세요.':'클럽과 적용 조건을 구분해, 실제로 확인할 기준을 남깁니다.')+'</p>';
