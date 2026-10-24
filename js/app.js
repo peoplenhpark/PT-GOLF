@@ -272,10 +272,10 @@ const Theme = (() => {
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
   const htRoutineDays = [
-    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
+    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown']},
     {id:'tue',label:'화 · 하체',title:'하체 A · 자세 익히기',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']},
     {id:'wed',label:'수 · 휴식',title:'수요일 · 휴식일',rest:true,ids:[]},
-    {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_pushdown','pt_low_cable_curl']},
+    {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_low_cable_curl']},
     {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legpress','pt_legcurl','pt_legextension','pt_adduction']},
     {id:'sat',label:'토 · 휴식',title:'토요일 · 휴식일',rest:true,ids:[]},
     {id:'sun',label:'일 · 휴식',title:'일요일 · 휴식일',rest:true,ids:[]}
@@ -308,7 +308,7 @@ const Theme = (() => {
     const todayLabel=htRoutineDays.find(d=>d.id===today).label;
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.ids.length===4;
-    const times=lower?['25–35분','35–43분','43–51분','51–56분']:['20–28분','28–35분','35–42분','42–47분','47–52분','52–57분'];
+    const times=lower?['25–35분','35–43분','43–51분','51–56분']:['20–29분','29–38분','38–47분','47–52분','52–57분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
@@ -318,7 +318,7 @@ const Theme = (() => {
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
-      <p class="ht-routine-note">첫 2주: 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
+      <p class="ht-routine-note">${day.ids.length}종목 · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       ${lower?'<p class="ht-routine-note">20–25분: 레그 프레스 준비세트 1–2회</p>':''}
       <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id];return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${item[1]} × 2세트</strong><p>${item[2]}</p></li>`;}).join('')}</ol>
       <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p>`}</div>
@@ -330,7 +330,7 @@ const Theme = (() => {
       <div class="ht-routine-checks"><h3>혼자 할 때 확인 3가지</h3><ol><li>기구와 중량을 혼자 설정했는가?</li><li>어깨 들림·가슴 무너짐·골반 들림 전에 멈췄는가?</li><li>중량·반복·자세 메모 한 줄과 다음 질문을 남겼는가?</li></ol><p class="ht-routine-note">관절 통증이 생기면 해당 운동을 멈춥니다. 각 운동을 누르면 기존 자세 설명·메모로 연결됩니다.</p></div>
       <details class="ht-routine-reference"><summary>분량 조절·참고 자료</summary>
       <p>기본운동은 기존 수업 기록을 바꾸지 않고 주 4회 준비용으로 낮춘 분량입니다. 미리 지치면 반복을 줄이세요. 기구 대기로 늦어지면 마지막 보조운동의 2번째 세트를 줄이고 휴식을 억지로 줄이지 않습니다.</p>
-      <p>3주 차 이후 회복과 시간 여유가 있으면 레그 프레스·레그 컬만 3세트로 늘릴 수 있습니다. 중량 증가와 동시에 하지 않습니다. 코치에게 시작 중량·풀업 보조량과 어깨·종아리·고관절 펴기 운동의 추가 필요성을 확인하세요.</p>
+      <p>각 운동 2세트를 유지하며 2–3주간 시간·자세·회복을 확인합니다. 확보한 시간은 준비세트·휴식·기록에 사용합니다. 코치에게 시작 중량·풀업 보조량과 어깨·종아리·고관절 펴기 운동의 추가 필요성을 확인하세요.</p>
       <p><a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener noreferrer">ACSM 2026 지침</a> · 꾸준한 주 2회 부위 훈련, 매번 실패까지 할 필요 없음. 정확한 시간·세트는 사용자의 조건에 맞춘 제안입니다.</p>
       <p><a href="https://www.youtube.com/watch?v=_Toaey7nA3A" target="_blank" rel="noopener noreferrer">Jeff Nippard · 상체 구성</a> · <a href="https://jeffnippard.com/products/upper-lower-size-and-strength-program" target="_blank" rel="noopener noreferrer">공식 설명</a>의 상·하체 분할 참고. 중·상급자 훈련량은 그대로 적용하지 않습니다.</p>
       <p><a href="https://www.youtube.com/watch?v=_95-vz83X4M" target="_blank" rel="noopener noreferrer">E3 Rehab · 레그 익스텐션</a> · <a href="https://e3rehab.com/how-to-perform-leg-extensions/" target="_blank" rel="noopener noreferrer">제작자 설명문</a>의 기구 설정·반동 없는 동작 참고. 기존 PT 자세·범위를 우선합니다.</p>

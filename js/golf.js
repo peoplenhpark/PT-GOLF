@@ -179,13 +179,15 @@ window.GolfHub = (() => {
     const summary={backswing:'힘 빼고 기울기 유지',downswing:'지지 이동 → 회전',impact:'힘보다 편한 접촉','follow-through':'정한 크기로 편하게'};
     const cards=librarySections.map((section,index)=>{
       const title=String(index+1).padStart(2,'0')+' · '+section.title;
+      const target='g-stage-'+section.id;
+      const related=`<a class="g-link g-stage-videos" href="${groupHref(section.id)}">${e(section.title)} 관련 영상 ›</a>`;
       if(section.id==='backswing'){
         const v=video('2tam4sbJQtM');
-        return v?.soloPractice?soloPractice(v,true).replace('class="g-solo-practice"','class="g-solo-practice g-stage-card"').replace('백스윙 · 혼자 연습 핵심',e(title)):'';
+        return v?.soloPractice?soloPractice(v,true).replace('class="g-solo-practice"','class="g-solo-practice g-stage-card"').replace('백스윙 · 혼자 연습 핵심',e(title)).replace('<section ',`<section id="${target}" tabindex="-1" `).replace('</section>',related+'</section>'):'';
       }
-      return practiceGuide(videoGroups().find(g=>g.id===section.practiceGroup),true,title).replace('class="g-practice-guide"','class="g-practice-guide g-stage-card"');
+      return practiceGuide(videoGroups().find(g=>g.id===section.practiceGroup),true,title).replace('class="g-practice-guide"','class="g-practice-guide g-stage-card"').replace('<section ',`<section id="${target}" tabindex="-1" `).replace('</section>',related+'</section>');
     }).join('');
-    return `<section class="g-stage-practice g-stage-overview" aria-label="스윙 네 구간"><h2>스윙 네 구간 · 연습과 확인</h2><nav class="g-stage-links" aria-label="구간별 영상 자료">${librarySections.map(s=>`<a href="${groupHref(s.id)}"><strong>${e(s.title)} ›</strong><span>${e(summary[s.id])}</span></a>`).join('')}</nav><div class="g-stage-grid">${cards}</div></section>`;
+    return `<section class="g-stage-practice g-stage-overview" aria-label="스윙 네 구간"><h2>스윙 네 구간 · 연습과 확인</h2><nav class="g-stage-links" aria-label="구간별 연습 바로가기">${librarySections.map(s=>`<button type="button" data-g="stage-jump" aria-controls="g-stage-${e(s.id)}"><strong>${e(s.title)} ↓</strong><span>${e(summary[s.id])}</span></button>`).join('')}</nav><div class="g-stage-grid">${cards}</div></section>`;
   }
   function placement(v,compact=false) {
     const g=content.videoGroupFor(v);if(!g)return '';
@@ -488,6 +490,7 @@ window.GolfHub = (() => {
     api.app.addEventListener('click', ev=>{
       const b=ev.target.closest('[data-g]'); if(!b) return;
       ev.preventDefault(); ev.stopPropagation(); const id=b.dataset.id,kind=b.dataset.kind;
+      if(b.dataset.g==='stage-jump'){const target=api.app.querySelector('#'+b.getAttribute('aria-controls'));if(target){target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'instant'});}return;}
       if(b.dataset.g==='memo-jump'){const field=api.app.querySelector('#g-video-memo');field?.focus({preventScroll:true});field?.scrollIntoView({block:'center'});return;}
       if(b.dataset.g==='delete-video')return requestVideoDeletion(id);
       if(b.dataset.g==='favorite-video') {

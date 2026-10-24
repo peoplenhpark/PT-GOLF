@@ -5,7 +5,7 @@ module.exports=async(browser,base)=>{
  page.on('pageerror',e=>errors.push(e.message));
  const selected=()=>page.locator('.ht-routine-days [aria-pressed="true"]').getAttribute('data-ht-day');
  try{
-  const days=['mon','tue','wed','thu','fri','sat','sun'],counts=[6,4,0,6,4,0,0];
+  const days=['mon','tue','wed','thu','fri','sat','sun'],counts=[5,4,0,5,4,0,0];
   for(let i=0;i<7;i++){
    // 00:30 Seoul is still the previous UTC day. Selection must use local time.
    await page.clock.setFixedTime(new Date(`2026-10-${19+i}T00:30:00+09:00`));
