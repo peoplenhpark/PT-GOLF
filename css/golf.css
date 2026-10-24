@@ -364,3 +364,11 @@
 @media(min-width:760px){.g-stage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.g-stage-grid .g-practice-columns{grid-template-columns:minmax(0,1fr);gap:12px}}
 
 @media(min-width:760px){#app:has(.g-stage-overview){max-width:1040px}.g-stage-overview .g-stage-links{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Compact comparison summaries; full practice cards retain their typography. */
+@media(max-width:759px){
+ .g-stage-overview .g-stage-links{gap:6px;margin:8px 0 12px}
+ .g-stage-overview .g-stage-links a{padding:9px 10px;gap:3px;border-radius:9px;min-height:44px}
+ .g-stage-overview .g-stage-links strong{font-size:14px;line-height:1.35}
+ .g-stage-overview .g-stage-links span{font-size:12px;line-height:1.4;color:var(--sub);word-break:keep-all;overflow-wrap:anywhere}
+}

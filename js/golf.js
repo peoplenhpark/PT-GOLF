@@ -176,6 +176,7 @@ window.GolfHub = (() => {
     return `<section class="g-practice-guide" aria-label="${e(g.title)} 연습과 확인">${withTitle?`<h3 class="g-practice-title">${e(title||g.title)}</h3>`:''}${p.compact?`<p class="g-practice-cue"><b>우선할 감각</b> · ${e(p.cue)}</p>${p.scope?`<p class="g-meta">${e(p.scope)}</p>`:''}`:practiceFocus(g)}${body}</section>`;
   }
   function stagePractice() {
+    const summary={backswing:'힘 빼고 기울기 유지',downswing:'지지 이동 → 회전',impact:'힘보다 편한 접촉','follow-through':'정한 크기로 편하게'};
     const cards=librarySections.map((section,index)=>{
       const title=String(index+1).padStart(2,'0')+' · '+section.title;
       if(section.id==='backswing'){
@@ -184,7 +185,7 @@ window.GolfHub = (() => {
       }
       return practiceGuide(videoGroups().find(g=>g.id===section.practiceGroup),true,title).replace('class="g-practice-guide"','class="g-practice-guide g-stage-card"');
     }).join('');
-    return `<section class="g-stage-practice g-stage-overview" aria-label="스윙 네 구간"><h2>스윙 네 구간 · 연습과 확인</h2><nav class="g-stage-links" aria-label="구간별 영상 자료">${librarySections.map(s=>`<a href="${groupHref(s.id)}"><strong>${e(s.title)} ›</strong><span>${e(s.description)}</span></a>`).join('')}</nav><div class="g-stage-grid">${cards}</div></section>`;
+    return `<section class="g-stage-practice g-stage-overview" aria-label="스윙 네 구간"><h2>스윙 네 구간 · 연습과 확인</h2><nav class="g-stage-links" aria-label="구간별 영상 자료">${librarySections.map(s=>`<a href="${groupHref(s.id)}"><strong>${e(s.title)} ›</strong><span>${e(summary[s.id])}</span></a>`).join('')}</nav><div class="g-stage-grid">${cards}</div></section>`;
   }
   function placement(v,compact=false) {
     const g=content.videoGroupFor(v);if(!g)return '';
