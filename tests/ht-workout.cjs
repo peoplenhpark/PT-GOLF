@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const disk=new Map();let fail=false;
+function tab(){const c={Date,console,localStorage:{getItem:k=>disk.get(k)??null,setItem:(k,v)=>{if(fail)throw Error('full');disk.set(k,v)},removeItem:k=>disk.delete(k)},addEventListener:()=>{}};c.window=c;vm.createContext(c);for(const f of ['persistence','ht-workout'])vm.runInContext(fs.readFileSync(path.join(root,'js/'+f+'.js'),'utf8'),c);return c;}
+const plain=x=>JSON.parse(JSON.stringify(x)),t=tab(),w=t.HTWorkout,p=t.Persistence,key=p.KEYS.workouts;
+assert.equal(disk.size,0,'reading does not create records');
+const input={exerciseId:'pt_chestpress',date:'2026-10-22',weight:30,reps:[12,10]};
+const first=w.save(input);assert.equal(w.records(input.exerciseId,'2026-10-24').previous.weight,30);
+assert.equal(w.records(input.exerciseId,'2026-10-24').current,null);
+const today={...input,date:'2026-10-24',weight:32.5,reps:[12,null]};
+const saved=w.save(today);assert.equal(w.records(input.exerciseId,'2026-10-24').previous.date,'2026-10-22');
+assert.deepEqual(plain(w.records(input.exerciseId,'2026-10-24').current.reps),[12,null]);
+assert.deepEqual(plain(w.save(today,saved)),plain(saved),'duplicate submit is idempotent');
+const revised=w.save({...today,reps:[12,11]},saved);assert.equal(JSON.parse(disk.get(key)).entries.length,2);
+assert.equal(w.records(input.exerciseId,'2026-10-24').previous.updated,first.updated);
+for(const invalid of [{weight:-1},{weight:NaN},{weight:1.234},{reps:[0,12]},{reps:[12,2.5]},{reps:[12]},{date:'2026-02-30'},{exerciseId:'__proto__'}])assert.throws(()=>w.save({...today,...invalid},revised),e=>e.code==='INVALID');
+const before=disk.get(key);fail=true;assert.throws(()=>w.save({...today,weight:35},revised),e=>e.code==='WRITE_FAILED');fail=false;assert.equal(disk.get(key),before);
+const left=tab(),right=tab(),base=right.HTWorkout.records(input.exerciseId,today.date).current;
+left.HTWorkout.save({...today,weight:35},base);
+assert.throws(()=>right.HTWorkout.save({...today,reps:[15,13]},base),e=>e.code==='CONFLICT');
+right.HTWorkout.save({...today,exerciseId:'pt_seatedrow'},null);assert.equal(JSON.parse(disk.get(key)).entries.length,3);
+const backup=p.exportBackup();assert.equal(backup.schemaVersion,4);
+disk.delete(key);p.restoreBackup(backup);assert.equal(w.records(input.exerciseId,today.date).current.weight,35);
+const legacy=plain(backup);legacy.schemaVersion=3;delete legacy.stores[key];const kept=disk.get(key);p.restoreBackup(legacy);assert.equal(disk.get(key),kept,'old backups preserve HT records');
+const broken=plain(backup);broken.stores[key].entries[0].reps=[-1,null];assert.throws(()=>p.restoreBackup(broken),e=>e.code==='INVALID_BACKUP');assert.equal(disk.get(key),kept);
+disk.set(key,'broken json');const corrupt=tab();assert.throws(()=>corrupt.HTWorkout.save(today),e=>e.code==='CORRUPT');assert.equal(disk.get(key),'broken json');
+console.log('PASS: HT daily records, cross-day previous result, partial set, idempotent edits, input validation, failure safety, stale-tab conflicts, distinct exercise merging, backup roundtrip and legacy preservation.');

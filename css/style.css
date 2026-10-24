@@ -622,3 +622,14 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-routine-weekday{font-weight:700}
 .ht-routine-days button[aria-current="date"] .ht-routine-weekday{text-decoration:underline;text-underline-offset:3px}
 .ht-routine-days button[aria-current="date"]::after{content:"";position:absolute;top:4px;right:4px;width:4px;height:4px;border-radius:50%;background:var(--ht)}
+
+/* Inline HT actual sets; previous session stays visible while entering today's reps. */
+.ht-workout-log{margin-top:8px;min-width:0}
+.ht-workout-log .ht-log-last{color:var(--txt);font-size:12px;margin:0 0 5px;line-height:1.5}
+.ht-log-fields{display:grid;grid-template-columns:minmax(0,1.1fr) repeat(2,minmax(0,1fr)) 48px;gap:6px;align-items:end}
+.ht-log-fields label{min-width:0;font-size:12px;color:var(--sub);font-weight:500;margin:0;display:block}
+.ht-log-fields input{display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:6px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--txt);font:inherit;font-size:16px;margin:3px 0 0}
+.ht-log-fields button{min-height:44px;padding:6px 2px;border:1px solid var(--ht-line);border-radius:8px;background:var(--ht-bg);color:var(--ht);font:inherit;font-size:13px;cursor:pointer}
+.ht-log-fields button:disabled{opacity:.6;cursor:default}
+.ht-workout-log .ht-log-status{font-size:12px;margin:4px 0 0;line-height:1.5;color:var(--sub)}
+.ht-log-status:empty{display:none}

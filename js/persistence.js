@@ -5,9 +5,10 @@ window.Persistence = (() => {
   const KEYS = Object.freeze({
     overlay: 'ptgolf_overlay_v1', calendar: 'ptgolf_calendar_v1',
     golf: 'ptgolf_learning_v1', drafts: 'ptgolf_drafts_v1', theme: 'ptgolf_theme',
-    deletions: 'ptgolf_deletion_requests_v1', coaching: 'ptgolf_coaching_v1'
+    deletions: 'ptgolf_deletion_requests_v1', coaching: 'ptgolf_coaching_v1', workouts: 'ptgolf_workouts_v1'
   });
-  const V2_KEYS = Object.values(KEYS).filter(key => key !== KEYS.coaching);
+  const V3_KEYS = Object.values(KEYS).filter(key => key !== KEYS.workouts);
+  const V2_KEYS = V3_KEYS.filter(key => key !== KEYS.coaching);
   const V90_KEYS = V2_KEYS.filter(key => key !== KEYS.deletions);
   const JOURNAL = 'ptgolf_restore_journal_v1';
   const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
@@ -187,10 +188,16 @@ window.Persistence = (() => {
   const golfTopicIds=['start','transition','impact'];
   const validGolfQuestions = value => record(value) && (value.focus===null || (record(value.focus) && golfTopicIds.includes(value.focus.topicId) && /^\d{4}-\d{2}-\d{2}$/.test(value.focus.date))) && keyed(value.records) && value.records.every(r=>
     requiredStringFields(r,['id','topicId','part','date','created','club','comfort','consistency','memo','question','answer','focusId']) && !!r.id && r.part==='golf' && golfTopicIds.includes(r.topicId) && (r.focusId===''||golfTopicIds.includes(r.focusId)) && !!r.club.trim() && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && Number.isFinite(Date.parse(r.created)) && ['편했음','힘이 들어감','판단 어려움'].includes(r.comfort) && ['비슷하게 반복됨','들쭉날쭉했음','아직 확인 못 함'].includes(r.consistency) && record(r.snapshot) && requiredStringFields(r.snapshot,['title','cue','check','goal']) && Array.isArray(r.snapshot.videoIds) && r.snapshot.videoIds.every(id=>typeof id==='string') && (!Object.hasOwn(r,'answeredAt')||Number.isFinite(Date.parse(r.answeredAt))));
-  const validators = { [KEYS.coaching]: value=>validCoaching(value)&&(!Object.hasOwn(value,'golfQuestions')||validGolfQuestions(value.golfQuestions)), [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts, [KEYS.deletions]: validDeletions };
+  const validWorkoutDate = date => typeof date==='string' && /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(Date.parse(date+'T00:00:00Z')) && new Date(date+'T00:00:00Z').toISOString().slice(0,10)===date;
+  const validWorkouts = value => record(value) && keyed(value.entries) && value.entries.every(e=>
+    typeof e.exerciseId==='string' && /^pt_[a-z0-9_]+$/.test(e.exerciseId) && validWorkoutDate(e.date) && e.id===e.date+'_'+e.exerciseId &&
+    Number.isFinite(e.weight) && e.weight>=0 && e.weight<=1000 && Math.abs(e.weight*10-Math.round(e.weight*10))<1e-8 &&
+    Array.isArray(e.reps) && e.reps.length===2 && e.reps.every((n,i)=>i===1&&n===null || Number.isInteger(n)&&n>=1&&n<=200) &&
+    typeof e.updated==='string' && Number.isFinite(Date.parse(e.updated)));
+  const validators = { [KEYS.workouts]: validWorkouts, [KEYS.coaching]: value=>validCoaching(value)&&(!Object.hasOwn(value,'golfQuestions')||validGolfQuestions(value.golfQuestions)), [KEYS.overlay]: validOverlay, [KEYS.calendar]: validCalendar, [KEYS.golf]: validGolf, [KEYS.drafts]: validDrafts, [KEYS.deletions]: validDeletions };
   function validateBackup(data) {
-    if (!record(data) || data.format !== 'ptgolf-backup' || ![1, 2, 3].includes(data.schemaVersion) || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
-    const expected = data.schemaVersion === 1 ? V90_KEYS : data.schemaVersion === 2 ? V2_KEYS : Object.values(KEYS);
+    if (!record(data) || data.format !== 'ptgolf-backup' || ![1, 2, 3, 4].includes(data.schemaVersion) || !record(data.stores) || !safe(data.stores)) throw failure('INVALID_BACKUP', '지원하는 PT & GOLF 백업 파일이 아닙니다.');
+    const expected = data.schemaVersion === 1 ? V90_KEYS : data.schemaVersion === 2 ? V2_KEYS : data.schemaVersion === 3 ? V3_KEYS : Object.values(KEYS);
     if (Object.keys(data.stores).length !== expected.length || !expected.every(key => Object.hasOwn(data.stores, key))) throw failure('INVALID_BACKUP', '일부 기록이 빠진 백업입니다. 모든 저장소가 포함되어야 합니다.');
     expected.forEach(key => {
       const value = data.stores[key];
@@ -207,11 +214,11 @@ window.Persistence = (() => {
       if (key === KEYS.theme || raw === null) stores[key] = raw;
       else { try { stores[key] = JSON.parse(raw); } catch { throw failure('CORRUPT', '손상된 기록이 있어 일반 백업 대신 원본 복구 사본이 필요합니다.', key); } }
     }
-    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 3, createdAt: new Date().toISOString(), stores });
+    return validateBackup({ format: 'ptgolf-backup', schemaVersion: 4, createdAt: new Date().toISOString(), stores });
   }
   function recoveryCopy() {
     const rawStores = {}; Object.values(KEYS).forEach(key => { rawStores[key] = rawRead(key); });
-    return { format: 'ptgolf-recovery-copy', schemaVersion: 3, createdAt: new Date().toISOString(), rawStores };
+    return { format: 'ptgolf-recovery-copy', schemaVersion: 4, createdAt: new Date().toISOString(), rawStores };
   }
   function reloadHandles(keys) { handles.forEach(item => { if (keys.includes(item.key)) item.handle.reload(); }); }
   function applyRawStores(rawStores) {
