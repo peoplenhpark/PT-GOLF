@@ -633,3 +633,9 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-log-fields button:disabled{opacity:.6;cursor:default}
 .ht-workout-log .ht-log-status{font-size:12px;margin:4px 0 0;line-height:1.5;color:var(--sub)}
 .ht-log-status:empty{display:none}
+
+/* Completion is derived from today's saved record; forms remain expanded. */
+.ht-completion{margin-left:auto;flex-shrink:0;white-space:nowrap;font-size:11px;line-height:1.6;padding:2px 5px;border:1px solid var(--line);border-radius:6px;color:var(--sub);font-weight:500}
+.ht-completion.is-complete{color:var(--ht);border-color:var(--ht-line);background:var(--ht-bg);font-weight:700}
+.ht-routine-list li.ht-is-complete{border-bottom-color:var(--ht-line)}
+[data-ht-progress]{font-weight:700;color:var(--ht)}

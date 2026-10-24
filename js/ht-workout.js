@@ -24,6 +24,25 @@ window.HTWorkout = (() => {
       if(index<0)data.entries.push(entry);else data.entries[index]=entry;
     }).entries.find(e=>e.id===id);
   }
+  function completion(ids,date=today()){
+    try{const done=new Set(read().entries.filter(e=>e.date===date).map(e=>e.exerciseId));return {known:true,ids:[...new Set(ids)].filter(id=>done.has(id))};}
+    catch{return {known:false,ids:[]};}
+  }
+  function refreshCompletion(){
+    if(typeof document==='undefined')return;
+    const badges=[...document.querySelectorAll('[data-ht-completion]')];
+    const progress=document.querySelector('[data-ht-progress]');
+    if(!progress)return;
+    const result=completion(badges.map(el=>el.dataset.htCompletion));
+    const done=new Set(result.ids);
+    for(const badge of badges){
+      const completed=result.known&&done.has(badge.dataset.htCompletion);
+      badge.textContent=!result.known?'확인 필요':completed?'✓ 완료':'미기록';
+      badge.classList.toggle('is-complete',completed);
+      badge.closest('li')?.classList.toggle('ht-is-complete',completed);
+    }
+    progress.textContent=result.known?`오늘 완료 ${done.size}/${badges.length}`:'완료 상태 확인 필요';
+  }
   function html(exerciseId,name,targetWeight=null){
     const date=today();let current=null,previous=null,error='';
     try{({current,previous}=records(exerciseId,date));}catch(e){error=e.message;}
@@ -46,9 +65,15 @@ window.HTWorkout = (() => {
       const field=name=>form.elements.namedItem(name).value;
       const entry=save({exerciseId:form.dataset.htLog,date:form.dataset.date,weight:Number(field('weight')),reps:[Number(field('reps1')),field('reps2')===''?null:Number(field('reps2'))]},JSON.parse(form.dataset.expected));
       form.dataset.expected=JSON.stringify(entry);
+      refreshCompletion();
       const cleared=AppDrafts.clear(form);
       if(cleared)status.textContent='오늘 기록 저장됨 · 수정 가능';
     }catch(error){status.textContent=error.message;}
   });
-  return {today,records,save,html};
+  if(typeof document!=='undefined'){
+    Persistence.subscribe(event=>{if((event.external||event.restored)&&(event.key===key||event.key===null))refreshCompletion();});
+    window.addEventListener('focus',refreshCompletion);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshCompletion();});
+  }
+  return {today,records,save,html,completion,refreshCompletion};
 })();

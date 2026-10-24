@@ -84,7 +84,7 @@ const Theme = (() => {
     catch(error){app.innerHTML='<div class="scr"><h1>골프 자료를 불러오지 못했습니다</h1><p>연결을 확인한 후 새로고침해 주세요. 저장한 기록은 보존됩니다.</p><button class="btn" data-act="reload">다시 불러오기</button></div>'+tabbar('golf');}
   }
   function render() {
-    renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
+    renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);HTWorkout.refreshCompletion();
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
   }
@@ -267,7 +267,7 @@ const Theme = (() => {
     const previous=htRoutineDate;
     htRoutineToday();
     const section=app.querySelector('#ht-routine');
-    if(section&&previous!==htRoutineDate){section.outerHTML=htRoutineHtml();AppDrafts.bind(app);}
+    if(section&&previous!==htRoutineDate){section.outerHTML=htRoutineHtml();AppDrafts.bind(app);HTWorkout.refreshCompletion();}
   }
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
@@ -318,10 +318,10 @@ const Theme = (() => {
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
-      <p class="ht-routine-note">${day.ids.length}종목 · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
+      <p class="ht-routine-note"><span data-ht-progress title="오늘 저장한 운동 기준 · 일부 세트만 저장해도 포함">오늘 완료 0/${day.ids.length}</span> · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       <p class="ht-routine-note">오늘 ${HTWorkout.today().slice(5).replace('-','/')} 기록 · 이 기기에 저장<br>중량은 두 세트 공통, 풀업은 보조 중량 · 횟수는 세트별${lower?' · 양발 기본':''}</p>
       ${lower?'<p class="ht-routine-note">20–25분: 레그 컬 준비세트 1–2회</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${target!==null?target+'kg · 20회':item[1]} × 2세트</strong><p>${item[2]}</p>${HTWorkout.html(id,item[0],target)}</li>`;}).join('')}</ol>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}<span class="ht-completion" data-ht-completion="${id}">미기록</span></div><strong>${target!==null?target+'kg · 20회':item[1]} × 2세트</strong><p>${item[2]}</p>${HTWorkout.html(id,item[0],target)}</li>`;}).join('')}</ol>
       <p class="ht-routine-note">${lower?'56':'57'}–60분: 기록·정리. 준비세트·휴식·이동 포함이며 일찍 끝나면 종료해도 됩니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
@@ -734,7 +734,7 @@ const Theme = (() => {
       htRoutineToday();
       htRoutineDay=routineButton.dataset.htDay;
       app.querySelector('#ht-routine').outerHTML=htRoutineHtml();
-      AppDrafts.bind(app);
+      AppDrafts.bind(app);HTWorkout.refreshCompletion();
       app.querySelector('.ht-routine-days [data-ht-day="'+htRoutineDay+'"]').focus({preventScroll:true});return;
     }
     if(ev.target.closest('[data-ht-library]')){ev.preventDefault();const title=app.querySelector('#ht-library-title');title?.focus({preventScroll:true});title?.scrollIntoView({block:'start'});return;}
