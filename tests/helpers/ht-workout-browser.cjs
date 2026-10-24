@@ -38,7 +38,8 @@ module.exports=async(browser,base,screenshot)=>{
    assert(await form().locator('input,button').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44&&e.getBoundingClientRect().width>=40)));
   }
   if(screenshot){await page.setViewportSize({width:390,height:844});await form().scrollIntoViewIfNeeded();await page.screenshot({path:screenshot});}
-  await select('tue');
+  for(const day of ['tue','fri']){
+  await select(day);
   assert.deepEqual(await page.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_legpress']);
   assert.equal(await page.locator('#ht-routine-day li>strong').filter({hasText:'20kg · 20회 × 2세트'}).count(),3);
   for(const id of ['pt_legcurl','pt_legextension','pt_legpress']){
@@ -46,6 +47,7 @@ module.exports=async(browser,base,screenshot)=>{
    assert.equal(await page.locator(`[data-ht-log="${id}"] [name=reps1]`).inputValue(),'');
   }
   assert(!(await page.locator('#ht-routine-day').innerText()).includes('원레그'));
+  }
   await select('wed');assert.equal(await page.locator('[data-ht-log]').count(),0);
   const backup=await page.evaluate(()=>Persistence.exportBackup());assert.equal(backup.stores.ptgolf_workouts_v1.entries.length,2);
   await page.evaluate(b=>{localStorage.removeItem(Persistence.KEYS.workouts);Persistence.restoreBackup(b);},backup);
