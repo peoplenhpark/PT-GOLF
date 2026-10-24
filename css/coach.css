@@ -69,3 +69,12 @@
 /* Recent lesson recap replaces the repeated long cue. */
 .coach-lesson-recap{margin:12px 0;display:grid;gap:10px}.coach-lesson-recap>div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:8px}.coach-lesson-recap dt{font-size:14px;font-weight:700;color:var(--golf);line-height:1.65}.coach-lesson-recap dd{margin:0;font-size:15px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}.coach-lesson-links{display:flex;flex-wrap:wrap;column-gap:16px}.coach-lesson-links .coach-source{display:flex;align-items:center;min-height:44px;margin-top:0;padding:4px 0}
 @media(max-width:560px){.coach-lesson-recap>div{grid-template-columns:64px minmax(0,1fr);gap:6px}.coach-lesson-recap dd{font-size:clamp(14px,3.8vw,15px)}}
+
+/* Reference-first golf: no daily selection or completion controls. */
+.gq-reference ul{margin:0;padding-left:20px;line-height:1.7;color:var(--txt);font-size:14px}
+.gq-reference h2{font-size:16px;margin:10px 0 6px}
+.g-question-shortcut{margin:16px 0;padding:14px;border:1px solid var(--golf-line);border-radius:12px;background:var(--card)}
+.g-question-shortcut h2{margin:0 0 8px}.g-question-shortcut a{display:block;min-height:44px;align-content:center;overflow-wrap:anywhere}
+.golf-archive .coach-source{overflow-wrap:anywhere}.golf-archive h3{margin-top:20px}
+
+.coach-desk .g-common-practice{padding:12px 14px}.coach-desk .g-common-practice h2{font-size:14px;margin:0 0 6px}.coach-desk .g-common-sequence{font-size:14px;margin:0 0 8px}
