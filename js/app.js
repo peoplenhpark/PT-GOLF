@@ -217,31 +217,30 @@ const Theme = (() => {
   }
 
   function renderHome() {
-    const parts = Store.getParts();
-    const partCards = parts.map(p => {
-      const list = Store.getByPart(p.id);
-      const cats = Store.getCategories(p.id);
-      return `<a class="part ${p.id}" href="#${p.id}" data-part-open="${p.id}">
-        <div class="ico">${p.icon}</div>
-        <div><div class="nm">${esc(p.label)}</div>
-        <div class="cnt">${p.id === 'golf' ? '영상 · 레슨 · 노트' : `${cats.length}개 부위 · ${list.length}동작`}</div></div>
-      </a>`;
-    }).join('');
-
-    const favs = Store.getFavorites();
-    const favSection = favs.length ? `
-      <div class="sec-t">⭐ 즐겨찾기</div>
-      ${favs.map(e => exRow(e, null)).join('')}` : '';
-
+    const latestPT=Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+    let latestGolf;
+    try{latestGolf=window.GolfHub?.learningSources().lessons.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];}catch{}
+    const personalCount=personalGroups().reduce((n,g)=>n+g.exercises.length,0);
+    const ptRecap=latestPT?'최근 수업 '+latestPT.date+' · '+latestPT.items.length+'종목':'배운 동작과 자세 핵심';
+    const golfTitle=latestGolf&&(window.GolfContent?.lessons.includes(latestGolf)?latestGolf.quickReview?.title:null)||latestGolf?.title;
     app.innerHTML = `
-      <div class="scr">
+      <div class="scr home-simple">
         <div class="hd"><h1>PT노트</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
         <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
-        <div class="parts">${partCards}</div>
+        <nav class="parts home-destinations" aria-label="지금 필요한 운동과 연습">
+          <section class="home-destination pt" aria-label="PT 복습">
+            <a class="part pt" href="#pt/now"><span class="home-part-label">PT</span><div class="home-action"><h2>최근 운동 복습</h2><span aria-hidden="true">›</span></div><p>${esc(ptRecap)}</p></a>
+            <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
+          </section>
+          <section class="home-destination ht" aria-label="HT 개인운동">
+            <a class="part ht" href="#ht"><span class="home-part-label">HT</span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
+          </section>
+          <section class="home-destination golf" aria-label="골프 연습">
+            <a class="part golf" href="#golf/now"><span class="home-part-label">골프</span><div class="home-action"><h2>혼자 연습할 핵심</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
+            <div class="home-links home-lesson">${latestGolf?`<a href="#golf/lessons/${encodeURIComponent(latestGolf.id)}"><small>최근 레슨 · ${esc(latestGolf.date)}</small><span>${esc(golfTitle)} ›</span></a>`:'<a href="#golf/lessons">레슨 모아보기</a>'}</div>
+          </section>
+        </nav>
         ${deletionRequestsHtml()}
-        ${recentSectionHtml()}
-        ${favSection}
-        <div class="local-note">추가·수정·메모는 이 기기에 자동 저장됩니다.</div>
       </div>
       ${tabbar('home')}`;
   }
