@@ -93,3 +93,8 @@
 .coach-recap-links{display:flex;flex-wrap:wrap;gap:0 18px;margin:0 0 10px;border-bottom:1px solid var(--line)}
 .coach-recap-links :is(a,button){display:inline-flex;align-items:center;min-height:44px;padding:5px 0;font:inherit;font-size:13px;font-weight:600;line-height:1.5;color:var(--txt);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .coach-personal,.coach-desk .g-daily-pin,.coach-desk .g-pinned-sequence,.coach-desk .g-common-practice{scroll-margin-top:64px}
+
+/* Keep archive access beside the title on the practice landing pages. */
+.coach-desk .coach-compact-heading{align-items:center;gap:12px}
+.coach-desk .coach-header-link{display:flex;margin:0;flex-shrink:0}
+.coach-desk .coach-compact-heading .coach-header-link a{min-height:44px;padding:0 4px;border:0;border-radius:4px;background:transparent;color:var(--sub);font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px}

@@ -88,7 +88,9 @@ const Theme = (() => {
     if(jumpToday){htRoutineDay=htRoutineToday();delete view.htStart;}
     const jumpRecent=view.name==='coach'&&view.coachTab==='now'&&['pt','golf'].includes(view.part)&&view.coachStart==='recent';
     if(jumpRecent)delete view.coachStart;
-    const jumpSelector=jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
+    const jumpStage=view.name==='coach'&&view.part==='golf'&&view.coachTab==='now'&&['backswing','downswing','impact','follow-through'].includes(view.coachStage)?view.coachStage:null;
+    if(jumpStage)delete view.coachStage;
+    const jumpSelector=jumpStage?'#g-stage-'+jumpStage:jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
@@ -117,18 +119,19 @@ const Theme = (() => {
     }).join('');
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
-    return `<nav class="tabbar">
+    const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간 연습 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}</div>`;
+    return `<nav class="tabbar ${active==='golf'?'tabbar-golf':''}">
       ${t('home', '🏠', '홈')}
       ${t('pt', '🏋️', 'PT')}
       ${t('ht', '🏡', 'HT')}
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
-      <details class="exercise-quicknav">
+      ${active==='golf'?stageNav:`<details class="exercise-quicknav">
         <summary>부위별 운동 <span aria-hidden="true">⌃</span></summary>
         <div class="exercise-quickpanel" aria-label="전체 부위별 운동">${personalMenu}${exerciseGroups}</div>
       </details>
-      <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 <span aria-hidden="true">⌕</span></button>
+      <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 <span aria-hidden="true">⌕</span></button>`}
       <div class="history-controls" aria-label="화면 이동">
         <button type="button" id="history-back" data-history="back" aria-label="이전 화면" title="이전 화면" ${navigation.index <= 0 ? 'disabled' : ''}><span aria-hidden="true">‹</span><span>뒤로</span></button>
         <button type="button" id="history-forward" data-history="forward" aria-label="다음 화면" title="다음 화면" ${navigation.index >= navigation.max ? 'disabled' : ''}><span aria-hidden="true">›</span><span>앞으로</span></button>
@@ -235,7 +238,6 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr home-simple">
         <div class="hd"><h1>PT노트</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
-        <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
         <nav class="parts home-destinations" aria-label="지금 필요한 운동과 연습">
           <section class="home-destination pt" aria-label="PT 복습">
             <a class="part pt" href="#pt/now?start=recent"><span class="home-part-label">PT</span><div class="home-action"><h2>최근 운동 복습</h2><span aria-hidden="true">›</span></div><p>${esc(ptRecap)}</p></a>
@@ -375,7 +377,6 @@ const Theme = (() => {
 
     app.innerHTML = `
       <div class="scr" data-part="${part}">
-        <button class="back" data-nav="home">‹ 홈</button>
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">보관 기록</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
@@ -743,6 +744,8 @@ const Theme = (() => {
     const menu = app.querySelector('.exercise-quicknav[open]');
     if (menu && !menu.contains(ev.target)) menu.open = false;
     if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
+    const stageLink=ev.target.closest('[data-golf-stage]');
+    if(stageLink){const target=app.querySelector('#g-stage-'+stageLink.dataset.golfStage);if(target){ev.preventDefault();target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'instant'});navigation.saveScroll();return;}}
     if(ev.target.closest('[data-ht-basic]')){ev.preventDefault();const basic=app.querySelector('#ht-routine-basic');basic?.focus({preventScroll:true});basic?.scrollIntoView({block:'start'});return;}
     const routineButton=ev.target.closest('[data-ht-day]');
     if(routineButton&&htRoutineDays.some(d=>d.id===routineButton.dataset.htDay)){

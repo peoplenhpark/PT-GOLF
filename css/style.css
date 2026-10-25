@@ -656,3 +656,10 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .home-ht-label{display:flex;align-items:center;justify-content:space-between;gap:8px}.home-ht-label [data-home-ht-today]{font-size:12px;white-space:nowrap}
 
 .ht-routine-start,#ht-routine-basic{scroll-margin-top:64px}.ht-routine-start{display:flex;justify-content:flex-end;margin-top:10px}.ht-routine-start button{font:inherit;font-size:13px;min-height:44px;padding:6px 0;border:0;background:none;color:var(--ht);cursor:pointer}
+
+/* Golf uses the second navigation row for its four practice stages. */
+.golf-stage-nav{grid-column:1/7;grid-row:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0 104px 0 8px;min-width:0}
+.golf-stage-nav a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--txt);font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;touch-action:manipulation}
+.golf-stage-nav a:focus-visible{outline:2px solid var(--golf);outline-offset:2px}
+.golf-stage-nav a:active{background:var(--golf-bg);color:var(--golf)}
+@media(max-width:360px){.golf-stage-nav{margin-right:94px;gap:3px}.golf-stage-nav a{font-size:12px}.tabbar-golf .history-controls{width:84px}}

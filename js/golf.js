@@ -292,7 +292,7 @@ window.GolfHub = (() => {
     return `<nav class="coach-tabs" aria-label="골프 활용"><a href="#golf/now">지금 할 것</a><a href="#golf/standards">보관 기록</a></nav><nav class="g-tabs" aria-label="골프 자료">${[['lessons','레슨'],['notes','감각 노트'],['videos','영상']].map(([id,label]) => `<a href="#golf/${id}" ${selected===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
   }
   function layout(body, selected='videos') {
-    api.app.innerHTML = `<div class="scr g-hub" data-part="golf"><button class="back" data-nav="home">‹ 홈</button><div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${preserveClubLinks(body)}</div>${api.tabbar('golf')}`;
+    api.app.innerHTML = `<div class="scr g-hub" data-part="golf">${current?.golfId?'<button class="back" data-nav="home">‹ 홈</button>':''}<div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${preserveClubLinks(body)}</div>${api.tabbar('golf')}`;
     window.AppDrafts?.bind(api.app);
   }
   function visibleFields(x) {

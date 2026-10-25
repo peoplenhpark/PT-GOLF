@@ -46,7 +46,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('.memo-edit').click();await page.locator('#memo-input').fill('회귀 검사 개인 메모 · 랫풀다운 그립 메모');
   await page.locator('#memo-save').click();await page.reload();await page.locator('.grip-guide').waitFor();
   assert.match(await page.locator('.memo-box').textContent(),/랫풀다운 그립 메모/);
-  await page.goto(base);await page.locator('[data-act=search-focus]').click();await page.locator('#search-input').fill('중립그립');
+  await page.goto(base);await page.locator('[data-act=exercise-search]').click();await page.locator('#search-input').fill('중립그립');
   await page.locator('.search-result').first().waitFor();assert.match(await page.locator('.search-result').first().getAttribute('href'),/pt_latpulldown/);
   assert.match(await page.locator('.search-result').first().textContent(),/손 위치/);
   await page.locator('#search-input').fill('회귀 검사');

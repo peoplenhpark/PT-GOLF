@@ -92,7 +92,7 @@ window.CoachDesk = (() => {
   }
   function personalPTLinks(){
     const groups=api.personalGroups(),total=groups.reduce((n,g)=>n+g.exercises.length,0);
-    return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#pt?cat=all">전체 운동</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>월·화·목·금 · 기본 20분 + 근력 40분 ›</span></a>';
+    return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>월·화·목·금 · 기본 20분 + 근력 40분 ›</span></a>';
   }
   function ptSessionArchive(){return '<section class="coach-session-archive"><h3>PT 수업 기록</h3>'+Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date)).map(s=>'<details class="coach-fold"><summary>'+esc(s.date+' · '+s.title)+'</summary>'+s.items.map(i=>i.exerciseId&&Store.getById(i.exerciseId)?'<a class="coach-source" href="#exercise/'+encodeURIComponent(i.exerciseId)+'">'+esc(i.title)+' ›</a>':'<p>'+esc(i.title)+'</p>').join('')+sessionDetails(s)+'</details>').join('')+'</section>';}
   function archive(part,criteria,records,s,selected){
@@ -102,7 +102,9 @@ window.CoachDesk = (() => {
   }
   function render(v,config){
     api=config;view=v;configure(config);const part=v.part,tab=v.coachTab||'now',s=handle.reload(),all=s.criteria.filter(c=>c.part===part),records=[...s.records.filter(r=>r.part===part),...(part==='golf'?window.GolfQuestions.records(s):[])].sort((a,b)=>a.created.localeCompare(b.created));
-    let body=tabs(part,tab);
+    const compactNow=tab==='now'&&!v.coachRecord;
+    const archiveLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'standards')+'">보관 기록</a></nav>';
+    let body=compactNow?'':tabs(part,tab);
     if(!handle.status().ok)body+='<p class="storage-warning" role="alert">보관 기록을 읽지 못했습니다. 기존 원본은 보존하고 저장을 멈췄습니다.</p>';
     if(tab==='now'&&v.coachRecord){const r=records.find(r=>r.id===v.coachRecord);body+='<section class="coach-selected-record"><h2>기록과 질문</h2>'+(r?recordHtml(r,true):'<p>기록을 찾지 못했습니다.</p>')+'<a class="coach-source" href="'+route(part,'standards')+'">보관 기록으로 돌아가기 ›</a></section>';}else if(tab==='now'){
       if(part==='pt')body+=recentPT();
@@ -113,7 +115,7 @@ window.CoachDesk = (() => {
     }else{
       body+=archive(part,all,records,s,v.coachId);
     }
-    api.app.innerHTML='<div class="scr coach-desk" data-part="'+part+'"><a class="back" href="#home">‹ 홈</a><div class="hd"><h1>'+(part==='pt'?'PT':'골프')+'</h1></div>'+body+'</div>'+api.tabbar(part);window.AppDrafts?.bind(api.app);
+    api.app.innerHTML='<div class="scr coach-desk" data-part="'+part+'">'+(compactNow?'':'<a class="back" href="#home">‹ 홈</a>')+'<div class="hd'+(compactNow?' coach-compact-heading':'')+'"><h1>'+(part==='pt'?'PT':'골프')+'</h1>'+(compactNow?archiveLink:'')+'</div>'+body+'</div>'+api.tabbar(part);window.AppDrafts?.bind(api.app);
   }
   function configure(config){window.GolfQuestions?.bind(config);if(bound===config.app)return;bound=config.app;
     config.app.addEventListener('click',ev=>{

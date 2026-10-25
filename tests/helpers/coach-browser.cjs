@@ -21,7 +21,7 @@ module.exports=async(browser,base)=>{
    else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),3);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
 
   }
-  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
+  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),1);assert.equal(await p.locator('.coach-header-link a').getAttribute('href'),'#pt/standards');assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
   const recentCards=recent.locator('.coach-recent-grid').first();
   assert.equal(await recentCards.locator('a').count(),5);
