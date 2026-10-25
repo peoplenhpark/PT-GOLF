@@ -12,6 +12,14 @@ module.exports=async(browser,base)=>{
    const box=await p.locator('.coach-recent-'+part).boundingBox();assert(box.y>=0&&box.y<150,'recent recap is at viewport top');
    await p.goBack();await p.locator('.home-destinations').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
    await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
+   const exits=p.locator('.coach-recap-links');assert.equal(await exits.locator('a,button').count(),2);
+   await exits.locator('button').click();await p.waitForFunction(part=>document.activeElement?.classList.contains(part==='pt'?'coach-personal':'g-daily-pin'),part);
+   assert.equal(await p.locator('.coach-desk').innerText(),before,'recap exits scroll without replacing practice content');
+   if(part==='pt')assert(await p.locator('.coach-routine-link').isVisible());
+   await exits.locator('a').click();
+   if(part==='pt'){await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.pt-exercise-grid .ex').count(),52);}
+   else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),3);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
+
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
