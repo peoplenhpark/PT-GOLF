@@ -16,7 +16,7 @@ module.exports=async(browser,base)=>{
   const chosen=['pt_tailbone_raise','pt_lunge_ball_rotation','pt_hip_openclose_stretch','pt_openbook','pt_wide_sidelunge_stretch','pt_chestpress','pt_pecdeck','pt_seatedrow','pt_latpulldown','pt_pullup','pt_pushdown','pt_low_cable_curl','pt_legcurl','pt_adduction','pt_legextension','pt_legpress'];
   assert.deepEqual(await p.locator('.personal-exercises .ex').evaluateAll(es=>es.map(e=>e.dataset.open)),chosen);
   assert.deepEqual(await p.locator('.personal-exercise-group').evaluateAll(es=>es.map(e=>e.querySelectorAll('.ex').length)),[5,2,3,2,4]);
-  assert.match(await p.locator('.personal-plan-note').innerText(),/코치와 협의 예정/);
+  assert.match(await p.locator('.personal-plan-note').innerText(),/주 4회 HT 루틴 보기/);
   await p.locator('[data-cat="personal:chest"]').click();assert.equal(await p.locator('.personal-exercises .ex').count(),2);
   await p.locator('.personal-exercises [data-open="pt_chestpress"]').click();await p.locator('.d-title').waitFor();
   await p.locator('#history-back').click();await p.locator('.personal-exercises').waitFor();

@@ -78,3 +78,11 @@
 .golf-archive .coach-source{overflow-wrap:anywhere}.golf-archive h3{margin-top:20px}
 
 .coach-desk .g-common-practice{padding:12px 14px}.coach-desk .g-common-practice h2{font-size:14px;margin:0 0 6px}.coach-desk .g-common-sequence{font-size:14px;margin:0 0 8px}
+
+/* PT: direct exercise references; historical criteria remain in the archive. */
+.coach-personal{margin:18px 0}.coach-personal h2{margin-bottom:10px}.coach-personal h2 small{font-size:13px;color:var(--sub)}
+.coach-personal-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.coach-personal-links a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:44px;padding:7px 4px;border:1px solid var(--line);border-radius:10px;background:var(--card);font-size:14px;text-decoration:none;color:var(--txt)}
+.coach-personal-links small{color:var(--sub)}.coach-reference-links{display:flex;flex-wrap:wrap;gap:0 16px}.coach-reference-links a{display:flex;align-items:center;min-height:44px;font-size:14px}
+.coach-routine-link{display:block;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;margin:8px 0 18px;text-decoration:none;color:var(--txt);font-weight:700}.coach-routine-link span{display:block;margin-top:4px;color:var(--sub);font-size:13px;font-weight:400}
+.pt-archive .coach-source{overflow-wrap:anywhere}.pt-archive h3{margin-top:20px}

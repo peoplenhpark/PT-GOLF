@@ -353,7 +353,7 @@ const Theme = (() => {
 
     const inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
     const rows = isPersonal
-      ? `<section class="personal-exercises"><h2>내 개인운동</h2><p class="personal-plan-note">지정한 종목 모음 · 주 4회 일정은 코치와 협의 예정</p><div class="chips"><button class="chip ${activeCat === 'personal' ? 'on' : ''}" data-cat="personal">전체 ${personalCount}</button>${personal.map(g=>`<button class="chip ${activeCat === 'personal:'+g.key ? 'on' : ''}" data-cat="personal:${g.key}">${g.label} ${g.exercises.length}</button>`).join('')}</div>${personal.filter(g=>activeCat==='personal'||activeCat==='personal:'+g.key).map(g=>`<section class="personal-exercise-group"><h3>${g.label} <small>${g.exercises.length}</small></h3>${g.exercises.length ? `<div class="pt-exercise-grid">${g.exercises.map((e,i)=>exRow(e,i)).join('')}</div>` : '<p class="personal-plan-note">현재 표시할 지정 종목이 없습니다. 전체 운동에서 다른 종목을 찾아보세요.</p>'}</section>`).join('')}</section>`
+      ? `<section class="personal-exercises"><h2>내 개인운동</h2><p class="personal-plan-note">지정한 종목 모음 · <a href="#ht">주 4회 HT 루틴 보기 ›</a></p><div class="chips"><button class="chip ${activeCat === 'personal' ? 'on' : ''}" data-cat="personal">전체 ${personalCount}</button>${personal.map(g=>`<button class="chip ${activeCat === 'personal:'+g.key ? 'on' : ''}" data-cat="personal:${g.key}">${g.label} ${g.exercises.length}</button>`).join('')}</div>${personal.filter(g=>activeCat==='personal'||activeCat==='personal:'+g.key).map(g=>`<section class="personal-exercise-group"><h3>${g.label} <small>${g.exercises.length}</small></h3>${g.exercises.length ? `<div class="pt-exercise-grid">${g.exercises.map((e,i)=>exRow(e,i)).join('')}</div>` : '<p class="personal-plan-note">현재 표시할 지정 종목이 없습니다. 전체 운동에서 다른 종목을 찾아보세요.</p>'}</section>`).join('')}</section>`
       : inCat.length
       ? `<div class="pt-exercise-grid">${inCat.map((e, i) => exRow(e, i, activeCat === 'all')).join('')}</div>`
       : `<div class="empty">아직 표시할 동작이 없어요.<br>숨긴 동작은 홈의 삭제 요청에서 복원할 수 있어요.</div>`;
@@ -363,7 +363,7 @@ const Theme = (() => {
         <button class="back" data-nav="home">‹ 홈</button>
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
-        ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">내 기준</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
+        ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">보관 기록</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
         ${part==='ht'?htRoutineHtml()+'<h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 운동 모아보기</h2>':''}
         ${isPersonal ? `<a class="personal-all-link" href="#pt?cat=all">PT 전체 운동 ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
@@ -635,7 +635,7 @@ const Theme = (() => {
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
-        ${e.part==='pt'?'<nav class="coach-shortcuts"><a href="#pt/standards?source=pt:'+encodeURIComponent(e.id)+'">이 동작으로 내 기준 만들기</a><button class="btn ghost" data-act="memo-top">메모 바로 쓰기</button></nav>':''}
+        ${e.part==='pt'?'<nav class="coach-shortcuts"><button class="btn ghost" data-act="memo-top">메모·질문 남기기</button></nav>':''}
         ${e.part==='pt'?ptSessionHtml(e.id):''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
@@ -995,7 +995,7 @@ const Theme = (() => {
   function setSeg(id,v){document.getElementById(id).value=v;}
   function getSeg(id){return document.getElementById(id).value||'pt';}
 
-  function golfConfig() { return { app, go, toast, exRow, tabbar, refresh: render, confirmDeletion, openDeletionIssue, issueUrl: DeletionFlow.issueUrl }; }
+  function golfConfig() { return { app, go, toast, exRow, tabbar, personalGroups, refresh: render, confirmDeletion, openDeletionIssue, issueUrl: DeletionFlow.issueUrl }; }
   try{window.GolfHub?.configure(golfConfig());}catch(error){console.warn('골프 초기화 실패',error);}
   Store.init().then(()=>{
     Theme.init();view=navigation.read();
