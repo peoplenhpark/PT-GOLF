@@ -4,6 +4,11 @@ module.exports=async(browser,base)=>{
  p.on('pageerror',e=>errors.push(e.message));
  try{
   await p.goto(base+'#golf/now');await p.locator('.g-daily-pin').waitFor();
+  const basic=p.locator('.g-basic-practice-pin');
+  assert.equal(await basic.locator('.g-daily-title').getAttribute('href'),'#golf/videos/shJaPQExonE');
+  assert.equal(await basic.locator('dl>div').count(),2);
+  assert(await p.evaluate(()=>document.querySelector('.g-basic-practice-pin').compareDocumentPosition(document.querySelector('.g-daily-pin'))&Node.DOCUMENT_POSITION_FOLLOWING));
+  assert.equal(await basic.locator('h2').evaluate(el=>getComputedStyle(el).fontSize),await p.locator('.g-daily-pin h2').evaluate(el=>getComputedStyle(el).fontSize));
   assert.equal(await p.locator('.g-daily-pin ol li:visible').count(),3);assert.equal(await p.locator('.g-daily-pin ul li:visible').count(),3);
   assert.equal(await p.locator('.g-daily-pin details').count(),0);
   assert(await p.evaluate(()=>document.querySelector('.g-daily-pin').compareDocumentPosition(document.querySelector('.g-pinned-sequence'))&Node.DOCUMENT_POSITION_FOLLOWING));
@@ -13,7 +18,7 @@ module.exports=async(browser,base)=>{
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }
   const practiceText=await p.locator('.g-daily-pin .g-practice-columns').innerText();
-  await p.locator('.g-daily-title').click();await p.locator('#g-video-memo').waitFor();assert(p.url().includes('hxXJnJRKKcE'));
+  await p.locator('.g-daily-pin .g-daily-title').click();await p.locator('#g-video-memo').waitFor();assert(p.url().includes('hxXJnJRKKcE'));
   assert.equal(await p.locator('.g-daily-detail .g-practice-columns').innerText(),practiceText);
   assert.equal(await p.locator('.g-daily-detail ol li:visible').count(),3);assert.equal(await p.locator('.g-daily-detail ul li:visible').count(),3);
   assert.equal(await p.locator('.g-practical-summary dl>div').count(),1);

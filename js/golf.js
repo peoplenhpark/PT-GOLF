@@ -247,6 +247,12 @@ window.GolfHub = (() => {
     if(!v||(compact&&!clubMatches(v)))return '';
     return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':dailyPracticeContent()}</section>`;
   }
+  function basicPracticePin() {
+    const v=video(content.featuredVideoId);
+    if(!v)return '';
+    const p=practical(v);
+    return `<section class="g-basic-practice-pin" aria-label="기본영상 상시 연습"><p class="g-meta">상단 고정 · 기본영상</p><h2>상시 연습 · 양손의 역할</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(v.practiceCaution)}</p></section>`;
+  }
   function dailyPracticeDetail(v) {
     if(v.id!==content.practicePin?.id)return '';
     return `<section class="g-daily-pin g-daily-detail" aria-label="상시 연습 핵심"><h2>지금 할 것 · 연습 핵심</h2>${dailyPracticeContent()}<a class="g-link" href="#golf/now">지금 할 것에서 보기 ›</a></section>`;
@@ -611,5 +617,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink,searchRecords,questionShortcut,pinnedSequence,pinnedPractice,dailyPracticePin,recentPractice,stagePractice,commonPractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,openLink,searchRecords,questionShortcut,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,recentPractice,stagePractice,commonPractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

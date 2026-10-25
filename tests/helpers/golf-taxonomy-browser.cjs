@@ -8,7 +8,7 @@ module.exports=async(browser,base,screenshot)=>{
   assert.equal(await p.locator('.g-stage-grid>.g-stage-card').count(),4);
   assert.equal(await p.locator('.g-solo-practice').count(),1);
   assert.deepEqual(await p.locator('.g-stage-card>h3').allTextContents(),['01 · 백스윙','02 · 다운스윙','03 · 임팩트','04 · 팔로우·피니시']);
-  assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-(document.querySelector('.g-daily-pin')?.getBoundingClientRect().height||0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
+  assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-[...document.querySelectorAll('.g-daily-pin,.g-basic-practice-pin')].reduce((height,el)=>height+el.getBoundingClientRect().height,0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
   assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),0);
   assert.equal(await p.locator('.g-stage-practice .g-practice-cue:visible').count(),3);
   assert.equal(await p.locator('.g-recent-practice').count(),0);
