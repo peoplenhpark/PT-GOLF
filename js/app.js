@@ -233,7 +233,7 @@ const Theme = (() => {
             <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
           </section>
           <section class="home-destination ht" aria-label="HT 개인운동">
-            <a class="part ht" href="#ht"><span class="home-part-label">HT</span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
+            <a class="part ht" href="#ht"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
           </section>
           <section class="home-destination golf" aria-label="골프 연습">
             <a class="part golf" href="#golf/now"><span class="home-part-label">골프</span><div class="home-action"><h2>혼자 연습할 핵심</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
@@ -261,12 +261,18 @@ const Theme = (() => {
     if(date!==htRoutineDate){htRoutineDate=date;htRoutineDay=id;}
     return id;
   }
+  function homeHtTodayLabel() {
+    const day=htRoutineDays.find(d=>d.id===htRoutineToday());
+    return '오늘 '+day.label.replace(' · ','요일 · ');
+  }
   // Refresh on return after midnight; same-day manual selections stay selected.
   function refreshHtRoutineDate() {
     const previous=htRoutineDate;
     htRoutineToday();
     const section=app.querySelector('#ht-routine');
     if(section&&previous!==htRoutineDate){section.outerHTML=htRoutineHtml();AppDrafts.bind(app);}
+    const homeToday=app.querySelector('[data-home-ht-today]');
+    if(homeToday){homeToday.textContent=homeHtTodayLabel();app.querySelector('.home-simple .date').textContent=Store.todayStr().replace(/-/g,' · ');}
   }
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});

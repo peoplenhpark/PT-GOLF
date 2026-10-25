@@ -652,3 +652,5 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .home-links a{min-height:44px;display:flex;align-items:center;font-size:14px;color:var(--txt);text-decoration:none;word-break:keep-all;overflow-wrap:anywhere}
 .home-lesson a{display:block;width:100%;padding:8px 0}.home-lesson small{display:block;font-size:12px;color:var(--sub);font-weight:500;margin-bottom:2px}.home-lesson span{display:block}
 .home-destination a:focus-visible{outline:2px solid var(--txt);outline-offset:-3px}
+
+.home-ht-label{display:flex;align-items:center;justify-content:space-between;gap:8px}.home-ht-label [data-home-ht-today]{font-size:12px;white-space:nowrap}
