@@ -84,9 +84,15 @@ const Theme = (() => {
     catch(error){app.innerHTML='<div class="scr"><h1>골프 자료를 불러오지 못했습니다</h1><p>연결을 확인한 후 새로고침해 주세요. 저장한 기록은 보존됩니다.</p><button class="btn" data-act="reload">다시 불러오기</button></div>'+tabbar('golf');}
   }
   function render() {
+    const jumpToday=view.name==='part'&&view.part==='ht'&&view.htStart==='today';
+    if(jumpToday){htRoutineDay=htRoutineToday();delete view.htStart;}
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
+    if(jumpToday)requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(view.name!=='part'||view.part!=='ht')return;
+      const target=app.querySelector('#ht-routine-start');target?.focus({preventScroll:true});target?.scrollIntoView({block:'start'});navigation.saveScroll();
+    }));
   }
   function renderStorageStatus(){
     const status=Persistence.getStatus(),errors=status.stores.filter(s=>!s.ok);
@@ -233,7 +239,7 @@ const Theme = (() => {
             <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
           </section>
           <section class="home-destination ht" aria-label="HT 개인운동">
-            <a class="part ht" href="#ht"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
+            <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
           </section>
           <section class="home-destination golf" aria-label="골프 연습">
             <a class="part golf" href="#golf/now"><span class="home-part-label">골프</span><div class="home-action"><h2>혼자 연습할 핵심</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
@@ -318,9 +324,10 @@ const Theme = (() => {
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
-      <div class="ht-routine-basic"><h3>운동일 기본운동 <small>0–20분</small></h3>
+      <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong><p>${cue}</p></li>`).join('')}</ol></div>
+      <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↑</button></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
       <p class="ht-routine-note">${day.ids.length}종목${lower?' · 양발 기본':''} · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
@@ -733,6 +740,7 @@ const Theme = (() => {
     const menu = app.querySelector('.exercise-quicknav[open]');
     if (menu && !menu.contains(ev.target)) menu.open = false;
     if(ev.ctrlKey||ev.metaKey||ev.shiftKey||ev.altKey)return;
+    if(ev.target.closest('[data-ht-basic]')){ev.preventDefault();const basic=app.querySelector('#ht-routine-basic');basic?.focus({preventScroll:true});basic?.scrollIntoView({block:'start'});return;}
     const routineButton=ev.target.closest('[data-ht-day]');
     if(routineButton&&htRoutineDays.some(d=>d.id===routineButton.dataset.htDay)){
       htRoutineToday();
