@@ -49,8 +49,8 @@ assert(s.app.innerHTML.includes('최근 등록 영상이 없습니다'));
 assert(!s.app.innerHTML.includes('아래 주제별 목록에도 표시됩니다'));
 assert(!s.app.innerHTML.includes('메모·레슨·집중 항목은 이 기기에 저장됩니다'));
 assert(!s.app.innerHTML.includes('g-mini-evidence'));
-assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,4);
-assert.equal((s.app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,4);
+assert.equal((s.app.innerHTML.match(/class="g-video-card g-video-mini"/g)||[]).length,5);
+assert.equal((s.app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,5);
 for (const note of seed.exercises.filter(x=>x.part==='golf')) {
   const related = c.relatedFor(note);
   assert(related.length>0&&related.length<=5);

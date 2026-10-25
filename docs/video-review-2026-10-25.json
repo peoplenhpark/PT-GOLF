@@ -1,0 +1,39 @@
+{
+  "id": "shJaPQExonE",
+  "title": "양손 역할 · 왼손은 길잡이, 오른손은 던지는 감각",
+  "source": "https://www.youtube.com/watch?v=shJaPQExonE",
+  "method": "원본 12개 표본 장면·화면 자막·제작자 설명 확인. 전체 10.3초 오디오 자동 전사는 영상 길이를 넘는 불완전 문구를 출력해 내용 근거에서 제외함.",
+  "duplicateReview": "No canonical/alternate ID match in 117 existing videos. Same creator 4DyoF3OQKww representative scenes and text compared: related release topic, different instruction/sequence. Not an exhaustive playback comparison of all videos.",
+  "placement": "User-requested basic video; impact-release subsection; iron",
+  "sampleTimes": [
+    0.3,
+    1.1,
+    1.9,
+    2.7,
+    3.5,
+    4.3,
+    5.1,
+    5.9,
+    6.7,
+    7.5,
+    8.3,
+    9.1
+  ],
+  "frames": [
+    {
+      "src": "media/golf-frames/shJaPQExonE-1.webp",
+      "time": 1.9,
+      "label": "왼팔·클럽 위치와 길잡이 역할 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/shJaPQExonE-2.webp",
+      "time": 6.7,
+      "label": "오른손으로 보내며 클럽 흐름을 잇는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "preserved": "Existing four basic videos, both practice pins, lessons, personal notes and prior deleted-video removal."
+}

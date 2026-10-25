@@ -2,8 +2,9 @@
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   "version": 5,
-  "featuredVideoId": "9YWDNMyTQy4",
+  "featuredVideoId": "shJaPQExonE",
   "featuredVideoIds": [
+    "shJaPQExonE",
     "9YWDNMyTQy4",
     "3kNb6TQN2T0",
     "QsmMamIFMsE",
@@ -3480,49 +3481,6 @@ window.GolfContent = {
       "publishedAt": "2026-09-10T09:00:27.000Z"
     },
     {
-      "id": "lnzbSVSBevs",
-      "title": "골반 회전 · 힙 힌지 유지와 앞으로 밀림 비교",
-      "originalTitle": "하체는 '돌리는 것'이 아니라 '뒤로 접어두는 것'입니다",
-      "channel": "단칼골프",
-      "duration": "0:11",
-      "durationSeconds": 11,
-      "presentation": "original",
-      "topics": [
-        "회전·순서",
-        "준비·축"
-      ],
-      "relatedVideoIds": [
-        "1x_iiruwFTU",
-        "clEQKV7hWrY",
-        "CA-TZ7WQlHY"
-      ],
-      "evidence": "2026-10-12 원본 제목·설명란·영상별 10개 표본 장면과 화면 자막 확인. 전체 음성 전사는 하지 않았습니다.",
-      "summary": "측면 시범에서 엉덩이 각도를 유지하며 골반을 여는 모습과 골반이 앞으로 밀리는 모습을 O·X로 비교합니다.",
-      "points": [
-        "화면은 엉덩이 각도와 힙 힌지를 유지하는 회전을 강조하고 골반 주변을 표시합니다.",
-        "뒤쪽 공간을 유지하는 시범 뒤에 골반이 앞으로 튀어나오는 X 장면을 보여 줍니다.",
-        "설명란은 배치기 교정을 다룹니다. 골반을 고정하거나 뒤로 최대한 밀라는 지시로 바꾸지 않고, 내 스윙의 해당 문제 유무를 확인합니다."
-      ],
-      "moments": [
-        {
-          "s": 2.75,
-          "label": "엉덩이 각도를 유지하며 골반을 여는 시범"
-        },
-        {
-          "s": 8.25,
-          "label": "골반이 앞으로 밀리는 X 비교"
-        }
-      ],
-      "connection": "‘내려오는 순서’에서 골반과 몸통의 공간을 확인하는 보조 자료입니다. 기존 힙 힌지·회전 영상과 함께 비교합니다.",
-      "question": "제 회전에서 골반이 공 쪽으로 밀리나요? 몸을 굳히지 않고 엉덩이 뒤쪽 공간을 유지하는 기준은 무엇인가요?",
-      "observationPractice": {
-        "action": "측면 시범에서 엉덩이 각도를 유지하며 골반을 여는 모습과 골반이 앞으로 밀리는 모습을 O·X로 비교합니다.",
-        "feel": "옆에서 본 골반의 앞뒤 움직임을 비교하고, 편한 회전과 억지로 자세를 고정한 느낌을 구분합니다."
-      },
-      "addedAt": "2026-10-12T03:29:52.373Z",
-      "publishedAt": "2026-10-07T11:15:27.000Z"
-    },
-    {
       "id": "Q_kYNFcYL0o",
       "title": "뒤땅 비교 · 숙임과 다리의 높낮이 리듬",
       "originalTitle": "고생한 이유",
@@ -3536,7 +3494,6 @@ window.GolfContent = {
       ],
       "relatedVideoIds": [
         "clEQKV7hWrY",
-        "lnzbSVSBevs",
         "mGYe7UjYXfo"
       ],
       "evidence": "2026-10-12 원본 제목·설명란·영상별 10개 표본 장면과 화면 자막 확인. 전체 음성 전사는 하지 않았습니다.",
@@ -5393,6 +5350,49 @@ window.GolfContent = {
         "group": "impact-contact",
         "reason": "작은 스윙에서 왼발 쪽으로 이동하고 팔과 클럽이 내려오는 펌프 드릴을 보여 줍니다. 임팩트 소리보다 타점·방향·편안함을 함께 확인합니다."
       }
+    },
+    {
+      "id": "shJaPQExonE",
+      "title": "양손 역할 · 왼손은 길잡이, 오른손은 던지는 감각",
+      "originalTitle": "왼손은 지렛대,오른손은 히팅! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:10",
+      "durationSeconds": 10,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "왼손·왼팔로 클럽의 방향을 안내하고 오른손으로 클럽을 공 쪽으로 보내는 감각을 분리해 보여 주는 짧은 시범입니다.",
+      "points": [
+        "초반에는 왼팔과 클럽의 위치를 멈춰 보여 주며 왼손의 길잡이 역할을 설명합니다.",
+        "중반에는 오른손으로 클럽을 공 쪽으로 보내고 왼손도 흐름을 따라가는 모습을 보여 줍니다.",
+        "마지막에는 두 손의 움직임을 연결한 스윙을 보여 줍니다. 강하게 손목을 꺾거나 퍼올리라는 개인 처방으로 해석하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 1.9,
+          "label": "왼팔·클럽 위치와 길잡이 역할 시범"
+        },
+        {
+          "s": 6.7,
+          "label": "오른손으로 보내며 클럽 흐름을 잇는 시범"
+        }
+      ],
+      "relatedVideoIds": [
+        "4DyoF3OQKww",
+        "4uQe-J5qM2c"
+      ],
+      "evidence": "2026-10-25 · 원본 12개 표본 장면·화면 자막·제작자 설명 확인. 전체 10.3초 오디오 자동 전사는 영상 길이를 넘는 불완전 문구를 출력해 내용 근거에서 제외함.",
+      "connection": "사용자 요청으로 기본영상에 추가. 기존 같은 제작자의 릴리스 방향 비교(4DyoF3OQKww)와 함께 보되, 현재 피칭 레슨의 몸 회전·작은 피니시를 우선합니다.",
+      "question": "제 피칭에서 손목으로 퍼올리지 않으면서 양손이 편하게 따라가는 기준은 무엇인가요?",
+      "observationPractice": {
+        "action": "작은 빈스윙에서 손으로 끝까지 끌지 않고 클럽이 타격 지점을 지나가는 흐름을 관찰합니다.",
+        "feel": "왼손으로 방향을 안내하되 팔을 굳히지 않고, 오른손으로 보내는 느낌이 손목 퍼올림으로 바뀌지 않는지 확인합니다."
+      },
+      "practiceCaution": "현재 피칭 레슨의 몸 회전·명치 높이 작은 피니시가 우선입니다. 영상의 오른손 던지기를 손목으로 퍼올리는 동작으로 바꾸지 않습니다.",
+      "addedAt": "2026-10-25T14:16:35.125488+00:00",
+      "publishedAt": "2026-10-22T23:26:21+00:00"
     }
   ],
   "practicePin": {
@@ -5624,7 +5624,6 @@ window.GolfContent.videoGroups = [
       "zB5hFmVpisI",
       "q1P0eGWA8_s",
       "-8gKh-1h6Hs",
-      "lnzbSVSBevs",
       "clEQKV7hWrY"
     ],
     "practice": {
@@ -5843,7 +5842,8 @@ window.GolfContent.videoGroups = [
       "4DyoF3OQKww",
       "4Eof_tmI0Ag",
       "HGzIDHi2e84",
-      "daQLQ1rAzs0"
+      "daQLQ1rAzs0",
+      "shJaPQExonE"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -6758,12 +6758,6 @@ window.GolfContent.clubReviews = {
     "reviewedAt": "2026-10-19",
     "basis": "unresolved"
   },
-  "lnzbSVSBevs": {
-    "value": "unknown",
-    "reason": "클럽 없이 힙 힌지·골반 움직임을 비교하는 시범입니다. 공통 주제라는 이유만으로 공통 적용으로 확정하지 않습니다.",
-    "reviewedAt": "2026-10-19",
-    "basis": "unresolved"
-  },
   "Q_kYNFcYL0o": {
     "value": "iron",
     "reason": "아이언과 지면의 공으로 뒤땅·숙임·다리 높낮이 리듬을 비교하는 시범입니다.",
@@ -6937,6 +6931,12 @@ window.GolfContent.clubReviews = {
     "reason": "아이언 제목·제작자 설명과 지면 공을 치는 아이언 시범을 확인했습니다.",
     "reviewedAt": "2026-10-23",
     "basis": "source audio/on-screen text and original sampled frames"
+  },
+  "shJaPQExonE": {
+    "value": "iron",
+    "reason": "원본 시범에서 아이언 헤드와 공을 확인했습니다. 드라이버까지 동일 감각을 적용한다는 근거는 없어 아이언 참고로 분류합니다.",
+    "reviewedAt": "2026-10-25",
+    "basis": "source on-screen text, creator description and sampled frames"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

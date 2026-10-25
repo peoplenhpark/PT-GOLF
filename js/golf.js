@@ -335,7 +335,7 @@ window.GolfHub = (() => {
     const requestedGroup=canonicalGroup(view.golfGroup);
     const selectedGroup=videoGroups().some(g=>g.id===requestedGroup)||libraryPages.includes(requestedGroup)?requestedGroup:null;
     const isAllVideos=tab==='videos' && !selectedGroup && !view.golfTopic && !view.golfClub && !(view.golfQuery||'').trim();
-    const featured=isAllVideos ? [...new Set(content.featuredVideoIds || [content.featuredVideoId])].map(video).filter(Boolean) : [];
+    const featured=isAllVideos ? [...new Set([content.featuredVideoId,...(content.featuredVideoIds||[])].filter(Boolean))].map(video).filter(Boolean) : [];
     const featuredIds=new Set(featured.map(v=>v.id));
     const now=Date.now(), weekAgo=now-7*24*60*60*1000;
     const recent=content.recentVideos(now).filter(v=>!isVideoDeleted(v.id));
@@ -347,7 +347,7 @@ window.GolfHub = (() => {
       if(!favoriteOnly&&[null,'all','recent','common'].includes(selectedGroup)&&!view.golfTopic&&!(view.golfQuery||'').trim())body+=dailyPracticePin(true);
       body+=videoGroupNav(favoriteOnly?'favorites':selectedGroup,clubFilters(view,scope));
       if(isAllVideos)body+=window.GolfPractice.lessonBridge(state,'videos');
-      body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">자주 보는 영상</h2><p class="g-meta">기존에 기본 영상으로 지정한 4편</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
+      body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본영상</h2><p class="g-meta">${featured.length}편${featured[0]?.id===content.featuredVideoId?' · 첫 영상 상단 고정':''}</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
     }else {
       if(tab==='notes')body+=pinnedSequence();
       body+=filters(view);

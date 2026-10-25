@@ -1296,22 +1296,6 @@ window.GolfFrames = {
       "height": 640
     }
   ],
-  "lnzbSVSBevs": [
-    {
-      "src": "media/golf-frames/lnzbSVSBevs-1.webp",
-      "time": 2.75,
-      "label": "엉덩이 각도를 유지하며 골반을 여는 시범",
-      "width": 360,
-      "height": 640
-    },
-    {
-      "src": "media/golf-frames/lnzbSVSBevs-2.webp",
-      "time": 8.25,
-      "label": "골반이 앞으로 밀리는 X 비교",
-      "width": 360,
-      "height": 640
-    }
-  ],
   "Q_kYNFcYL0o": [
     {
       "src": "media/golf-frames/Q_kYNFcYL0o-1.webp",
@@ -1884,6 +1868,22 @@ window.GolfFrames = {
       "src": "media/golf-frames/LpMjAU9OnlI-2.webp",
       "time": 31.27,
       "label": "오른팔꿈치와 벨트 고리 위치 확인",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "shJaPQExonE": [
+    {
+      "src": "media/golf-frames/shJaPQExonE-1.webp",
+      "time": 1.9,
+      "label": "왼팔·클럽 위치와 길잡이 역할 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/shJaPQExonE-2.webp",
+      "time": 6.7,
+      "label": "오른손으로 보내며 클럽 흐름을 잇는 시범",
       "width": 240,
       "height": 426
     }

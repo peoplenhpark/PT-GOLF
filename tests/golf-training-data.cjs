@@ -67,13 +67,13 @@ const check=()=>{assert(!/3D|3d|실사형|입체로/.test(app.innerHTML.replace(
 for(const v of c.videos){ctx.window.GolfHub.render({golfTab:'videos',golfId:v.id},api);check();assert(app.innerHTML.includes('https://www.youtube.com/watch?v='+v.id));assert(app.innerHTML.includes('내 적용 메모'));assert(app.innerHTML.includes('class="g-practical-summary"'));assert(app.innerHTML.includes('class="g-source-detail"'));}
 for(const g of c.videoGroups){ctx.window.GolfHub.render({golfTab:'videos',golfGroup:g.id},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,g.videoIds.length);assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,g.videoIds.filter(id=>!c.videos.find(v=>v.id===id).soloPractice).length);}
 assert(!/class="g-mini-detail"[^>]*aria-label=/.test(app.innerHTML),'visible takeaway and evidence stay in the link accessible name');
-ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,4+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
-assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,4+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
-assert.equal(c.featuredVideoId,'9YWDNMyTQy4');
-assert.deepEqual(Array.from(c.featuredVideoIds),['9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk']);
+ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,5+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
+assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,5+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
+assert.equal(c.featuredVideoId,'shJaPQExonE');
+assert.deepEqual(Array.from(c.featuredVideoIds),['shJaPQExonE','9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk']);
 const featuredHtml=app.innerHTML.match(/<section class="g-featured-video"[\s\S]*?<\/section>/)[0];
 assert(featuredHtml.includes('9YWDNMyTQy4')&&featuredHtml.includes('3kNb6TQN2T0')&&featuredHtml.includes('QsmMamIFMsE'));
-assert.equal((featuredHtml.match(/class="g-video-card/g)||[]).length,4);
+assert.equal((featuredHtml.match(/class="g-video-card/g)||[]).length,5);
 assert(app.innerHTML.indexOf('g-video-groups')<app.innerHTML.indexOf('g-featured-video'));
 assert.equal((app.innerHTML.match(/href="#golf\/videos\/9YWDNMyTQy4"/g)||[]).length,1);
 ctx.window.GolfHub.render({golfTab:'videos',golfQuery:'어깨'},api);assert(!app.innerHTML.includes('g-featured-video'));assert(!app.innerHTML.includes('watch?v=9YWDNMyTQy4'));
