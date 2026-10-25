@@ -86,12 +86,15 @@ const Theme = (() => {
   function render() {
     const jumpToday=view.name==='part'&&view.part==='ht'&&view.htStart==='today';
     if(jumpToday){htRoutineDay=htRoutineToday();delete view.htStart;}
+    const jumpRecent=view.name==='coach'&&view.coachTab==='now'&&['pt','golf'].includes(view.part)&&view.coachStart==='recent';
+    if(jumpRecent)delete view.coachStart;
+    const jumpSelector=jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
-    if(jumpToday)requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      if(view.name!=='part'||view.part!=='ht')return;
-      const target=app.querySelector('#ht-routine-start');target?.focus({preventScroll:true});target?.scrollIntoView({block:'start'});navigation.saveScroll();
+    if(jumpSelector)requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(view!==jumpView)return;
+      const target=app.querySelector(jumpSelector);target?.setAttribute('tabindex','-1');target?.focus({preventScroll:true});target?.scrollIntoView({block:'start'});navigation.saveScroll();
     }));
   }
   function renderStorageStatus(){
@@ -235,14 +238,14 @@ const Theme = (() => {
         <input class="search" data-act="search-focus" aria-label="전체 검색" placeholder="🔍 운동·영상·레슨·메모 검색…" readonly>
         <nav class="parts home-destinations" aria-label="지금 필요한 운동과 연습">
           <section class="home-destination pt" aria-label="PT 복습">
-            <a class="part pt" href="#pt/now"><span class="home-part-label">PT</span><div class="home-action"><h2>최근 운동 복습</h2><span aria-hidden="true">›</span></div><p>${esc(ptRecap)}</p></a>
+            <a class="part pt" href="#pt/now?start=recent"><span class="home-part-label">PT</span><div class="home-action"><h2>최근 운동 복습</h2><span aria-hidden="true">›</span></div><p>${esc(ptRecap)}</p></a>
             <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
           </section>
           <section class="home-destination ht" aria-label="HT 개인운동">
             <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>월·화·목·금 · 기본 20분 + 근력 40분</p></a>
           </section>
           <section class="home-destination golf" aria-label="골프 연습">
-            <a class="part golf" href="#golf/now"><span class="home-part-label">골프</span><div class="home-action"><h2>혼자 연습할 핵심</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
+            <a class="part golf" href="#golf/now?start=recent"><span class="home-part-label">골프</span><div class="home-action"><h2>최근 레슨 복습</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
             <div class="home-links home-lesson">${latestGolf?`<a href="#golf/lessons/${encodeURIComponent(latestGolf.id)}"><small>최근 레슨 · ${esc(latestGolf.date)}</small><span>${esc(golfTitle)} ›</span></a>`:'<a href="#golf/lessons">레슨 모아보기</a>'}</div>
           </section>
         </nav>

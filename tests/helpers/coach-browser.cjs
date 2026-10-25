@@ -2,6 +2,17 @@ const assert=require('node:assert/strict');
 module.exports=async(browser,base)=>{
  const context=await browser.newContext({viewport:{width:390,height:844}}),p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
  try{
+  for(const part of ['pt','golf']){
+   await p.goto(base+'#'+part+'/now');await p.locator('.coach-recent-'+part).waitFor();
+   const before=await p.locator('.coach-desk').innerText();
+   await p.goto(base+'#home');await p.locator('.part.'+part).focus();await p.keyboard.press('Enter');
+   await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
+   assert.equal(await p.locator('.coach-desk').innerText(),before,'home jump preserves all existing practice content');
+   assert(!p.url().includes('start=recent'),'one-time entry intent is consumed');
+   const box=await p.locator('.coach-recent-'+part).boundingBox();assert(box.y>=0&&box.y<150,'recent recap is at viewport top');
+   await p.goBack();await p.locator('.home-destinations').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
+   await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
+  }
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
   const recentCards=recent.locator('.coach-recent-grid').first();

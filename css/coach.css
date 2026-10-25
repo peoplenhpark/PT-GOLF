@@ -86,3 +86,5 @@
 .coach-personal-links small{color:var(--sub)}.coach-reference-links{display:flex;flex-wrap:wrap;gap:0 16px}.coach-reference-links a{display:flex;align-items:center;min-height:44px;font-size:14px}
 .coach-routine-link{display:block;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px;margin:8px 0 18px;text-decoration:none;color:var(--txt);font-weight:700}.coach-routine-link span{display:block;margin-top:4px;color:var(--sub);font-size:13px;font-weight:400}
 .pt-archive .coach-source{overflow-wrap:anywhere}.pt-archive h3{margin-top:20px}
+
+.coach-recent-pt,.coach-recent-golf{scroll-margin-top:64px}
