@@ -117,7 +117,7 @@ window.GolfHub = (() => {
     return `<section class="g-practical-summary" aria-label="${e(v.title)} 적용 요약">
       <div class="g-practical-head"><h2>${pinned?'내 적용·레슨 질문':'한눈에 적용'}</h2><span>${e(content.evidenceFor(v).label)}</span></div>
       <dl>${rows.map(([label,text])=>`<div><dt>${e(label)}</dt><dd>${e(text)}</dd></div>`).join('')}</dl>
-      ${pinned?'':`<p class="g-practical-caution">${e(v.backswingGuide?.caution||p.caution)}</p>`}
+      ${pinned?'':`<p class="g-practical-caution">${e(practicePriority(v.id)||v.backswingGuide?.caution||p.caution)}</p>`}
     </section>`;
   }
   function sourceDetail(v) {
@@ -238,9 +238,13 @@ window.GolfHub = (() => {
     if(!s)return '';
     return `<section class="g-solo-practice" aria-label="혼자 연습 · 순서와 확인"><h3>${compact?'백스윙 · 혼자 연습 핵심':'혼자 연습 · 바로 참고'}</h3><p class="g-solo-cue"><b>우선할 감각</b> · ${e(s.cue)}</p><h4>연습 3단계</h4><ol class="g-solo-steps">${s.steps.map(step=>`<li><b>${e(step.title)}</b><span>${e(step.text)}</span></li>`).join('')}</ol><h4>확인 3가지</h4><ul>${s.checks.map(check=>`<li>${e(check)}</li>`).join('')}</ul><small>${e(s.tip)}<br>${e(s.basis)}</small>${compact?`<a class="g-link" href="${href('videos',v.id)}">상단 고정 영상 · 자세한 방법 보기 ›</a>`:''}</section>`;
   }
+  function practicePriority(id) {
+    const latest=lessons()[0];
+    return content.lessons.includes(latest)?latest.videoPriority?.[id]||'':'';
+  }
   function dailyPracticeContent() {
     const pin=content.practicePin;
-    return `<div class="g-practice-columns"><div><h3>우선할 감각 · 연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(pin.basis)}</p>`;
+    return `<div class="g-practice-columns"><div><h3>우선할 감각 · 연습 3단계</h3><ol>${pin.steps.map(x=>`<li>${e(x)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${pin.checks.map(x=>`<li>${e(x)}</li>`).join('')}</ul></div></div><p class="g-meta">${e(practicePriority(pin.id)||pin.basis)}</p>`;
   }
   function dailyPracticePin(compact=false) {
     const pin=content.practicePin,v=pin&&video(pin.id);
@@ -251,7 +255,7 @@ window.GolfHub = (() => {
     const v=video(content.featuredVideoId);
     if(!v)return '';
     const p=practical(v);
-    return `<section class="g-basic-practice-pin" aria-label="기본영상 상시 연습"><p class="g-meta">상단 고정 · 기본영상</p><h2>상시 연습 · 양손의 역할</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(v.practiceCaution)}</p></section>`;
+    return `<section class="g-basic-practice-pin" aria-label="기본영상 상시 연습"><p class="g-meta">상단 고정 · 기본영상</p><h2>상시 연습 · 양손의 역할</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(practicePriority(v.id)||v.practiceCaution)}</p></section>`;
   }
   function dailyPracticeDetail(v) {
     if(v.id!==content.practicePin?.id)return '';
