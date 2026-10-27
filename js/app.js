@@ -304,9 +304,9 @@ const Theme = (() => {
     ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','하체 지지 · 팔로만 휘두르지 않기']
   ];
   const htRoutineStrength = {
-    pt_shoulderpress:['숄더 프레스','횟수·중량 확인','위에서 양손 압박감 확인 · 허리로 밀지 않고 천천히 내리기'],
-    pt_backextension:['백익스텐션','맨몸 · 횟수 확인','엉덩이·뒷벅지부터 · 몸통 일자까지만, 허리 통증 시 중단'],
-    pt_facepull:['페이스풀','10–15회','목을 앞으로 빼거나 반동으로 당기지 않기 · 현재 중량은 재확인'],
+    pt_shoulderpress:['숄더 프레스','횟수·중량 확인','위에서 양손 압박감을 맞추고 천천히 내리기','허리 과하게 꺾기 · 한쪽 어깨 무너짐 주의'],
+    pt_backextension:['백익스텐션','맨몸 · 횟수 확인','엉덩이·뒷벅지로 받치며 몸통 일자까지만','머리 들기 · 허리만 젖히기 · 반동 주의'],
+    pt_facepull:['페이스풀','10–15회','팔·등을 함께 쓰며 얼굴 쪽으로, 팔꿈치는 바깥으로','목 내밀기 · 몸통 반동 주의. 중량 재확인'],
     pt_dbpullover:['덤벨 풀오버','12–15회','골반을 고정하고 손바닥으로 무게를 받치며 천천히 넘기기'],
     pt_chestpress:['체스트 프레스','10–15회','가슴이 유지되고 어깨가 말리지 않는 깊이까지만'],
     pt_seatedrow:['시티드로우','10–15회','뻗고 당길 때 어깨가 들리지 않는 범위'],
@@ -341,14 +341,14 @@ const Theme = (() => {
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
       <p class="ht-routine-note">${day.ids.length}종목${lower?' · 양발 기본':''} · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong><p>${item[2]}</p></li>`;}).join('')}</ol>
-      <p class="ht-routine-note">준비세트·휴식·이동을 포함한 시간입니다. 일찍 끝나면 종료해도 됩니다.</p>`}</div>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong>${item[3]?`<p class="ht-routine-cue"><b>핵심</b> ${esc(item[2])}</p><p class="ht-routine-cue"><b>주의</b> ${esc(item[3])}</p>`:`<p>${esc(item[2])}</p>`}</li>`;}).join('')}</ol>
+      <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 준비·휴식·이동 포함 예시입니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·숄더·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
       <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
       <li><b>증량:</b> 같은 운동 2회 연속 모든 세트를 반복 범위 상단까지 같은 자세·여유로 완료하면 최소 단위로 올립니다. 풀업은 보조량을 줄입니다.</li>
       <li><b>회복:</b> 수·토·일 휴식 또는 가벼운 걷기. PT 수업이 있는 주에는 해당 부위 개인운동을 대체·감량합니다.</li></ul></div>
-      <div class="ht-routine-checks"><h3>혼자 할 때 확인 3가지</h3><ol><li>기구와 중량을 혼자 설정했는가?</li><li>어깨 들림·가슴 무너짐·골반 들림 전에 멈췄는가?</li><li>어려웠던 동작과 다음에 물어볼 점이 분명한가?</li></ol><p class="ht-routine-note">관절 통증이 생기면 해당 운동을 멈춥니다. 각 운동을 누르면 기존 자세 설명·메모로 연결됩니다.</p></div>
+      <div class="ht-routine-checks"><h3>혼자 할 때 확인 3가지</h3><ol><li>기구와 중량을 혼자 설정했는가?</li><li>어깨 들림·가슴 무너짐·골반 들림 전에 멈췄는가?</li><li>어려웠던 동작과 다음에 물어볼 점이 분명한가?</li></ol><p class="ht-routine-note">운동명을 누르면 자세 설명·이미지·3D·메모로 연결됩니다.</p></div>
       <details class="ht-routine-reference"><summary>분량 조절·참고 자료</summary>
       <p>기본운동은 기존 수업 기록을 바꾸지 않고 주 4회 준비용으로 낮춘 분량입니다. 미리 지치면 반복을 줄이세요. 기구 대기로 늦어지면 60분을 맞추려고 휴식이나 자세 확인을 줄이지 않습니다. 시간 배분은 예시이며 실제 소요 시간은 코치와 조정하세요.</p>
       <p>각 운동 2세트를 유지하며 2–3주간 시간·자세·회복을 확인합니다. 확보한 시간은 준비세트·휴식·자세 확인에 사용합니다. 코치에게 숄더프레스·백익스텐션의 시작 중량·반복수와 페이스풀의 현재 자세를 확인하세요. 새 종목은 목표 횟수를 채우기보다 통증 없이 통제하는 범위를 먼저 익힙니다.</p>
