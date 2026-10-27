@@ -46,11 +46,12 @@ const Theme = (() => {
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const partLabel = p => (Store.getParts().find(x => x.id === p) || {}).label || p;
   const partIcon = p => (Store.getParts().find(x => x.id === p) || {}).icon || '';
-  // User-selected exercises (2026-10-16); selection only, not a prescribed routine.
+  // User-selected exercises, including the October26–27 personal-routine additions.
   const personalPT = [
     {key:'basic',label:'기본운동',ids:['pt_tailbone_raise','pt_lunge_ball_rotation','pt_hip_openclose_stretch','pt_openbook','pt_wide_sidelunge_stretch']},
     {key:'chest',label:'가슴',ids:['pt_chestpress','pt_pecdeck']},
-    {key:'back',label:'등',ids:['pt_seatedrow','pt_latpulldown','pt_pullup']},
+    {key:'back',label:'등',ids:['pt_seatedrow','pt_latpulldown','pt_pullup','pt_dbpullover','pt_backextension']},
+    {key:'shoulders',label:'어깨',ids:['pt_shoulderpress','pt_facepull']},
     {key:'arms',label:'팔',ids:['pt_pushdown','pt_low_cable_curl']},
     {key:'legs',label:'다리',ids:['pt_legcurl','pt_adduction','pt_legextension','pt_legpress']}
   ];
@@ -359,11 +360,22 @@ const Theme = (() => {
     pt_sldl:['체중을 먼저 싣고 반대 다리를 뒤로 길게 뻗어 고관절 접기','골반이 열리기 전까지 · 지지대에 매달리지 않기'],
     pt_lunge:['몸통 회전 없이 앉고 앞발로 바닥을 밟아 일어서기','일어날 때 체중이 뒤로 밀리지 않게']
   };
-  function ptDetailSummaryHtml(e) {
+  // HT entries are video references; these summarize existing cues, not new prescriptions.
+  const htDetailNotes = {
+    ht_bulgarian_split_squat:['앞발 위치·상체 기울기를 확인하고 균형이 흔들리면 지지물 활용','안정된 지지물부터 확인 · 영상의 보폭·벤치 높이를 그대로 맞추지 않기'],
+    ht_wide_dumbbell:['덤벨을 양다리 사이에 두고 무릎 굽힘·골반 높이 변화를 비교','2컷·3D는 기본 경로 예시 · 원본의 부분 반복이나 중량을 개인 기준으로 삼지 않기'],
+    ht_upper_form:['선택한 동작의 팔꿈치 경로와 몸통 지지를 교정 장면과 비교','영상 교정을 모든 자세에 일괄 적용하지 않고 개인 PT 코칭 우선'],
+    ht_lower_six:['선택한 동작의 발 위치·기구 지지·무릎과 골반 움직임 확인','6종 연속 수행 루틴이 아님 · 영상의 세트·횟수를 그대로 적용하지 않기'],
+    ht_latpulldown_reference:['몸통을 지지하고 팔꿈치가 아래로 내려오는 경로 비교','영상의 그립·당기는 높이로 기존 PT 기준을 임의 변경하지 않기'],
+    ht_upper_elbows:['선택한 운동의 팔꿈치 방향과 몸통과의 간격 비교','원본의 X·체크를 다른 그립이나 개인 수업 자세까지 확대하지 않기'],
+    ht_chest_six:['선택한 가슴 운동의 지지 자세·중량 이동 경로를 기존 PT와 비교','6종 모두 수행하거나 원본의 부위별 강조를 고립 효과로 단정하지 않기'],
+    ht_squat_comparison:['상체 기울기·보폭·덤벨 위치에 따른 자세 차이 비교','영상만으로 깊이·중량을 정하지 않기 · 기존 PT의 편안한 범위 우선']
+  };
+  function trainingDetailSummaryHtml(e) {
     const basic=htRoutineBasic.find(row=>row[0]===e.id);
-    const pair=htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
+    const pair=e.part==='ht' ? htDetailNotes[e.id] : htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
     if(!pair)return ''; // User-created exercises keep their own descriptions, without invented coaching.
-    return '<section class="pt-detail-summary" aria-label="운동 핵심과 주의">'+htRoutineCueHtml(...pair)+'</section>';
+    return '<section class="training-detail-summary '+e.part+'-detail-summary" aria-label="운동 핵심과 주의">'+htRoutineCueHtml(...pair)+'</section>';
   }
   function htRoutineLink(id,label) {
     return Store.getById(id) ? '<a href="#exercise/'+encodeURIComponent(id)+'">'+esc(label)+' ›</a>' : '<span>'+esc(label)+' · 현재 목록에서 제외됨</span>';
@@ -700,7 +712,7 @@ const Theme = (() => {
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
-        ${e.part==='pt'?ptDetailSummaryHtml(e):''}
+        ${!isGolf?trainingDetailSummaryHtml(e):''}
         ${e.part==='pt'?'<nav class="coach-shortcuts"><button class="btn ghost" data-act="memo-top">메모·질문 남기기</button></nav>':''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
@@ -710,7 +722,7 @@ const Theme = (() => {
         </div>` : ''}
 
         ${e.spec ? `<div class="spec-box ${isGolf ? 'golf' : ''}">
-          <div><div class="k">${e.part==='pt'?'운동 기준':'핵심'}</div><div class="v">${esc(e.spec)}</div></div>
+          <div><div class="k">${isGolf?'핵심':e.part==='ht'?'영상 참고 기준':'운동 기준'}</div><div class="v">${esc(e.spec)}</div></div>
         </div>` : ''}
 
         ${(e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
@@ -732,7 +744,7 @@ const Theme = (() => {
         ${hasMedia ? exerciseVisualHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
         ${cues ? `<div class="block">
-          <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : e.part==='pt' ? '자세 체크' : '운동 중 핵심'}
+          <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '자세 체크'}
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
           ${cues}
           ${c.size ? `<button class="reset-cues" data-act="reset-cues">체크 초기화</button>` : ''}

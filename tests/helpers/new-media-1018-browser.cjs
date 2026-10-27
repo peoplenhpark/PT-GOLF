@@ -27,11 +27,11 @@ module.exports=async(browser,base,screenshotDir)=>{
   }
   await p.reload();await p.locator('.memo-box').waitFor();assert.match(await p.locator('.memo-box').innerText(),/HT 자세 비교 메모/);
   await p.locator('.training-related [data-open=pt_gobletsquat]').click();await p.locator('.training-related [data-open=ht_squat_comparison]').waitFor();
-  await p.goto(base+'#pt?cat=personal');await p.locator('.personal-exercises').waitFor();assert.equal(await p.locator('.personal-exercises .ex').count(),16);
+  await p.goto(base+'#pt?cat=personal');await p.locator('.personal-exercises').waitFor();assert.equal(await p.locator('.personal-exercises .ex').count(),20);
   await p.goto(base+'#exercise/ht_squat_comparison');await p.locator('[data-offline]').waitFor();
   await p.waitForFunction(()=>navigator.serviceWorker.controller);await p.locator('[data-offline]').click();await p.locator('[data-offline-status]').filter({hasText:'오프라인 준비됨'}).waitFor({timeout:60000});
   await ctx.setOffline(true);await p.reload();await p.locator('#training-movement').waitFor();await p.locator('#training-movement').selectOption(variants[2]);await p.locator('.exercise-3d summary').click();await p.frameLocator('.exercise-3d-frame').locator('canvas[data-ready=true]').waitFor();
   await p.waitForFunction(()=>[...document.querySelectorAll('.guide-pair img')].every(i=>i.complete&&i.naturalWidth>0));assert.deepEqual(errors,[]);
-  console.log('PASS: golf3 source pairs + duplicate exclusion; HT3 selections/images/3D/play/rotation, mobile themes, PT links, personal16, memo and offline.');
+  console.log('PASS: golf3 source pairs + duplicate exclusion; HT3 selections/images/3D/play/rotation, mobile themes, PT links, personal20, memo and offline.');
  }finally{await ctx.close();}
 };

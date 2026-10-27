@@ -665,14 +665,14 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .golf-stage-nav a:active{background:var(--golf-bg);color:var(--golf)}
 @media(max-width:360px){.golf-stage-nav{margin-right:94px;gap:3px}.golf-stage-nav a{font-size:12px}.tabbar-golf .history-controls{width:84px}}
 
-/* PT detail: same compact cue/caution as the HT routine; full coaching stays below. */
-.pt-detail-summary{padding:11px 13px;margin:0 0 12px;border:1px solid var(--pt-line);border-radius:12px;background:var(--pt-bg);color:var(--txt)}
-.pt-detail-summary .ht-routine-cue{display:grid;grid-template-columns:30px 1fr;gap:6px;margin:0;font-size:14px;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
-.pt-detail-summary .ht-routine-cue+.ht-routine-cue{margin-top:5px}
+/* PT/HT detail: compact cue/caution first; original movement/feel stays expanded. */
+.training-detail-summary{padding:11px 13px;margin:0 0 12px;border:1px solid var(--pt-line);border-radius:12px;background:var(--pt-bg);color:var(--txt)}
+.training-detail-summary .ht-routine-cue{display:grid;grid-template-columns:30px 1fr;gap:6px;margin:0;font-size:14px;line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.training-detail-summary .ht-routine-cue+.ht-routine-cue{margin-top:5px}
 .pt-detail-history{margin:16px 0;border-top:1px solid var(--line);padding-top:12px}
 .pt-detail-history>summary{cursor:pointer;font-size:14px;font-weight:700;line-height:1.6}
 .pt-detail-history .pt-session-note{margin:12px 0}
 
-.pt-detail-summary .ht-routine-cue b{white-space:nowrap;margin-right:0}
-.scr[data-part="pt"] .spec-box{padding:10px 13px;margin-bottom:14px}
-.scr[data-part="pt"] .spec-box .v{font-size:14px;line-height:1.55;font-weight:600;color:var(--txt)}
+.training-detail-summary .ht-routine-cue b{white-space:nowrap;margin-right:0}
+.scr:is([data-part="pt"],[data-part="ht"]) .spec-box{padding:10px 13px;margin-bottom:14px}
+.scr:is([data-part="pt"],[data-part="ht"]) .spec-box .v{font-size:14px;line-height:1.55;font-weight:600;color:var(--txt)}
