@@ -6,6 +6,7 @@ module.exports=async(browser,base)=>{
   assert.deepEqual(await p.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_dbpullover','#exercise/pt_pullup','#exercise/pt_shoulderpress','#exercise/pt_seatedrow','#exercise/pt_facepull','#exercise/pt_low_cable_curl']);
   await p.locator('#ht-routine-day a[href="#exercise/pt_shoulderpress"]').click();await p.locator('.d-title').waitFor();
   await p.waitForFunction(()=>document.querySelectorAll('.guide-pair img').length===2&&[...document.querySelectorAll('.guide-pair img')].every(i=>i.complete&&i.naturalWidth>0));
+  await p.locator('.pt-detail-history>summary').click();
   assert.match(await p.locator('.pt-session-note').innerText(),/양 손바닥/);
   await p.locator('.exercise-3d summary').click();const f=p.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready=true]').waitFor();assert.equal(await f.locator('canvas').getAttribute('data-kind'),'ptshoulderpress');
   assert.equal(await f.locator('canvas').getAttribute('data-playing'),'true');await f.locator('#play').click();await f.locator('#progress').fill('500');

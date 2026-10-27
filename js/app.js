@@ -323,6 +323,48 @@ const Theme = (() => {
   function htRoutineCueHtml(cue,caution) {
     return `<p class="ht-routine-cue"><b>핵심</b> ${esc(cue)}</p><p class="ht-routine-cue"><b>주의</b> ${esc(caution)}</p>`;
   }
+  // Compact review of existing PT coaching; routine exercises share HT's source above.
+  const ptDetailNotes = {
+    pt_armpulldown:['팔꿈치를 살짝 굽힌 채 큰 원을 그리며 아래로 당기기','손목 꺾기 · 어깨에 힘을 꽉 준 채 당기기 주의'],
+    pt_machinerow:['골반·허리를 고정하고 팔꿈치를 옆구리로 부드럽게 당기기','어깨 들림 · 몸을 뒤로 눕혀 당기기 주의'],
+    pt_seal_row:['경사 벤치에 가슴을 지지하고 당긴 뒤 천천히 내리기','가슴을 패드에서 떼거나 허리를 젖혀 반동 만들지 않기'],
+    pt_armcurl:['팔꿈치를 몸에 붙여 접어 올리고 통제하며 내리기','손목을 꺾어서 들지 않기'],
+    pt_benchpress:['날개뼈를 벤치에 지지하고 가슴을 유지하며 내리고 밀기','어깨가 앞으로 빠지지 않게 · 혼자 한계까지 밀지 않기'],
+    pt_incline_smith_press:['가슴을 들고 손바닥·팔꿈치로 무게를 받으며 천천히 내리기','허리만 꺾거나 통제 범위보다 깊게 내리지 않기'],
+    pt_dumbbell_press:['가슴을 유지하며 양쪽 덤벨을 천천히 받고 나란히 밀기','무게를 떨어뜨렸다 급히 받기 · 과하게 깊이 내리기 주의'],
+    pt_lateralraise:['손끝이 멀어지는 느낌으로 어깨 높이까지 올리기','반동으로 올리지 않기 · 배운 높이보다 억지로 높이지 않기'],
+    pt_uprightrow:['가슴을 패드에 붙이고 팔꿈치를 아래·뒤로 당기기','어깨 으쓱 · 몸 뒤로 젖히기 주의'],
+    pt_vsquat:['고관절을 접으며 엉덩이를 뒤로 보내고 뒤꿈치로 받아 밀기','무릎은 발끝 방향 · 체중이 발가락 쪽으로 넘어가기 전에 올라오기'],
+    pt_squat:['힙힌지로 엉덩이를 살짝 빼고 무릎을 발끝 방향으로 보내기','뒤꿈치 들림 · 무릎 안쪽 모임 주의'],
+    pt_halfsquat:['고관절을 접어 천천히 반만 앉았다 일어나기','뒤꿈치를 붙이고 내 가동 범위까지만'],
+    pt_frontsquat:['팔꿈치를 올려 중량을 받치고 상체를 세워 앉기','팔꿈치가 떨어져 바벨이 흔들리지 않게'],
+    pt_heelsquat:['뒤꿈치만 받치고 앞발을 붙인 채 고관절을 접어 앉기','앞꿈치가 바닥에서 떨어지지 않게'],
+    pt_gobletsquat:['앞에 든 중량으로 균형을 잡고 엉덩이만 뒤로 보내기','중량보다 중심 유지 · 허리가 무너지지 않게'],
+    pt_widesquat:['무릎을 발끝 방향으로 보내며 안쪽 허벅지로 버티기','무릎 무너짐 · 뒤로 넘어가는 느낌이 나면 범위 줄이기'],
+    pt_dumbbell_rdl:['양발로 바닥을 누르며 엉덩이를 뒤로 보내 고관절 접기','허리·골반이 말리기 전에 멈추기'],
+    pt_daily_hamstring:['누워서 수건을 발에 걸고 편 다리를 천천히 당기기','앞꿈치를 몸쪽으로 과하게 당기지 않기'],
+    pt_daily_piriformis:['앞다리를 벤치에 접어 지지하고 상체를 천천히 숙이기','더 강한 자극을 위해 높이·범위를 억지로 늘리지 않기'],
+    pt_plank:['팔꿈치로 지지하고 숨을 내쉬며 배를 조여 일자 유지','허리 통증·어지러움이 있으면 내려와 쉬기'],
+    pt_daily_foam:['폼롤러로 겨드랑이 아래·가슴 바깥·흉추를 천천히 풀기','아픈 부위를 세게 누르며 버티지 않기'],
+    pt_rehab_slr:['골반을 고정한 채 무릎을 편 다리만 천천히 들기','엉덩이가 들썩이거나 허리가 뜨기 전에 범위 줄이기'],
+    pt_rehab_clamshell:['뒤꿈치를 붙이고 엉덩이 힘으로 무릎 열기','손으로 무릎을 밀거나 발 고정이 풀리지 않게'],
+    pt_rehab_sslr:['목부터 뒤꿈치까지 일자로 두고 편 다리를 옆으로 들기','무릎이 굽거나 몸의 정렬이 흐트러지지 않게'],
+    pt_bridge:['발로 지지하고 엉덩이 힘으로 몸통을 들어 올리기','무릎이 안으로 모이지 않게 · 뜨끔한 허리 통증이면 중단'],
+    pt_birddog:['배에 힘을 유지하며 반대 팔·다리를 길게 뻗기','높이 들려고 허리를 꺾지 않기'],
+    pt_deadbug:['배를 조인 채 팔·다리를 같은 속도로 작게 뻗기','허리가 바닥에서 뜨기 직전까지만'],
+    pt_tbalance:['지지 발로 힙힌지하며 반대 다리를 길게 뻗기','다리를 높이 들려다 뒤꿈치·골반이 돌아가지 않게'],
+    pt_stepup:['딛는 발로 밟아 올라가고 천천히 버티며 내려오기','내려올 때 힘을 풀고 떨어지지 않기'],
+    pt_rotationlunge:['살짝 돌리고 엉덩이를 빼며 앉은 뒤 발 전체로 일어나기','앞꿈치로만 밀거나 어깨로 몸을 통째로 돌리지 않기'],
+    pt_bosurotation:['공의 회전 뒤 발바닥 전체로 지지하며 앉기','앞꿈치에만 힘이 실리거나 축발 균형이 풀리지 않게'],
+    pt_sldl:['체중을 먼저 싣고 반대 다리를 뒤로 길게 뻗어 고관절 접기','골반이 열리기 전까지 · 지지대에 매달리지 않기'],
+    pt_lunge:['몸통 회전 없이 앉고 앞발로 바닥을 밟아 일어서기','일어날 때 체중이 뒤로 밀리지 않게']
+  };
+  function ptDetailSummaryHtml(e) {
+    const basic=htRoutineBasic.find(row=>row[0]===e.id);
+    const pair=htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
+    if(!pair)return ''; // User-created exercises keep their own descriptions, without invented coaching.
+    return '<section class="pt-detail-summary" aria-label="운동 핵심과 주의">'+htRoutineCueHtml(...pair)+'</section>';
+  }
   function htRoutineLink(id,label) {
     return Store.getById(id) ? '<a href="#exercise/'+encodeURIComponent(id)+'">'+esc(label)+' ›</a>' : '<span>'+esc(label)+' · 현재 목록에서 제외됨</span>';
   }
@@ -658,8 +700,8 @@ const Theme = (() => {
 
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
+        ${e.part==='pt'?ptDetailSummaryHtml(e):''}
         ${e.part==='pt'?'<nav class="coach-shortcuts"><button class="btn ghost" data-act="memo-top">메모·질문 남기기</button></nav>':''}
-        ${e.part==='pt'?ptSessionHtml(e.id):''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
 
@@ -668,7 +710,7 @@ const Theme = (() => {
         </div>` : ''}
 
         ${e.spec ? `<div class="spec-box ${isGolf ? 'golf' : ''}">
-          <div><div class="k">핵심</div><div class="v">${esc(e.spec)}</div></div>
+          <div><div class="k">${e.part==='pt'?'운동 기준':'핵심'}</div><div class="v">${esc(e.spec)}</div></div>
         </div>` : ''}
 
         ${(e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
@@ -690,7 +732,7 @@ const Theme = (() => {
         ${hasMedia ? exerciseVisualHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
         ${cues ? `<div class="block">
-          <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '운동 중 핵심'}
+          <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : e.part==='pt' ? '자세 체크' : '운동 중 핵심'}
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
           ${cues}
           ${c.size ? `<button class="reset-cues" data-act="reset-cues">체크 초기화</button>` : ''}
@@ -700,6 +742,7 @@ const Theme = (() => {
           <div class="block-h warn">🔥 ${isGolf ? '다음 연습에서 확인할 점' : '잊지 말 것'}</div>${reminders}</div>` : ''}
 
         ${prBlock}
+        ${e.part==='pt' && Store.getExerciseSessions(e.id).length ? '<details class="pt-detail-history"><summary>수업 기록 · '+Store.getExerciseSessions(e.id).length+'회</summary>'+ptSessionHtml(e.id)+'</details>' : ''}
 
         <div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}" style="display:flex">📝 내 메모
