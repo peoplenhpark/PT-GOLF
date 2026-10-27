@@ -75,12 +75,12 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const afterPractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});for(const k of ['lessons','questions','focus','videoNotes'])assert.deepEqual(afterPractice[k],beforePractice[k]);
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,236);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,250);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-setup').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),25);
+  assert.equal(await page.locator('.g-video-mini').count(),27);
   assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['2tam4sbJQtM','UA-HYcmiKTA','MIx8BbSocFI']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).first().click();
   await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),8);
@@ -340,7 +340,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   for(const id of ['BvnGOkOMo68']){await page.goto(base+'#golf/videos/'+id);await page.locator('.g-frame img').first().waitFor();await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));assert(await page.locator('a[href="#golf/group/impact-release"]').count());}
   // Visible library hierarchy, keyboard navigation and readable light/dark menus.
-  await page.goto(base+'#golf/videos');await page.locator('.g-library-cards').waitFor();assert.equal(await page.locator('.g-library-cards>a').count(),4);assert.equal(await page.locator('.g-recent-section .g-video-card').count(),3);assert.equal(await page.locator('.g-featured-video .g-video-card').count(),5);
+  await page.goto(base+'#golf/videos');await page.locator('.g-library-cards').waitFor();assert.equal(await page.locator('.g-library-cards>a').count(),4);assert.equal(await page.locator('.g-recent-section .g-video-card').count(),3);assert.equal(await page.locator('.g-featured-video .g-video-card').count(),6);
   await page.locator('.g-library-cards a[href="#golf/group/downswing"]').click();await page.locator('.g-subsections').waitFor();assert.equal(await page.locator('.g-subsections a').count(),4);
   await page.locator('.g-subsections a[href="#golf/group/downswing-shift"]').focus();await page.keyboard.press('Enter');await page.locator('#g-group-downswing-shift').waitFor();assert.equal(await page.locator('.g-subsections a[aria-current=page]').getAttribute('href'),'#golf/group/downswing-shift');assert.equal(await page.locator('.g-video-groups a[aria-current=location]').getAttribute('href'),'#golf/group/downswing');
   for(const theme of ['light','dark'])for(const width of [320,390,768]){await page.evaluate(theme=>document.documentElement.setAttribute('data-theme',theme),theme);await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.locator('.g-video-groups').evaluate(e=>e.scrollWidth<=e.clientWidth));assert(await page.locator('.g-video-groups a').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)));await page.evaluate(()=>scrollTo(0,1000));const tabs=await page.locator('.g-tabs').boundingBox(),themeButton=await page.locator('#theme-btn').boundingBox();assert(tabs.y>=themeButton.y+themeButton.height&&tabs.y<80,'sticky menu clears theme control');}

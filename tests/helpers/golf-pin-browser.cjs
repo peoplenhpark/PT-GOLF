@@ -5,7 +5,7 @@ module.exports=async(browser,base)=>{
  try{
   await p.goto(base+'#golf/now');await p.locator('.g-daily-pin').waitFor();
   const basic=p.locator('.g-basic-practice-pin');
-  assert.equal(await basic.locator('.g-daily-title').getAttribute('href'),'#golf/videos/shJaPQExonE');
+  assert.equal(await basic.locator('.g-daily-title').getAttribute('href'),'#golf/videos/YUtzwggQMQc');
   assert.equal(await basic.locator('dl>div').count(),2);
   assert(await p.evaluate(()=>document.querySelector('.g-basic-practice-pin').compareDocumentPosition(document.querySelector('.g-daily-pin'))&Node.DOCUMENT_POSITION_FOLLOWING));
   assert.equal(await basic.locator('h2').evaluate(el=>getComputedStyle(el).fontSize),await p.locator('.g-daily-pin h2').evaluate(el=>getComputedStyle(el).fontSize));

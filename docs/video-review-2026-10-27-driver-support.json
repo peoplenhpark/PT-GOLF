@@ -1,0 +1,237 @@
+{
+  "date": "2026-10-27",
+  "purpose": "Driver tension reduction; preferred Hawaii Golf searched first; exactly five new records.",
+  "entries": [
+    {
+      "id": "hxq7Wocl-2o",
+      "source": "https://www.youtube.com/watch?v=hxq7Wocl-2o",
+      "method": "원본 12개 표본 화면·화면 문구와 전체 505.3초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "sampleTimes": [
+        15.15,
+        55.55,
+        95.95,
+        136.35,
+        176.75,
+        217.15,
+        257.55,
+        297.95,
+        338.35,
+        378.75,
+        419.15,
+        459.55
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/hxq7Wocl-2o-1.webp",
+          "time": 176.75,
+          "label": "어깨 힘을 줄인 상태에서 시작",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/hxq7Wocl-2o-2.webp",
+          "time": 217.15,
+          "label": "골반 회전과 상체 연결 빈스윙",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "group": "backswing-setup",
+      "club": "both",
+      "reason": "드라이버 시범과 8:07 이후 드라이버·우드·아이언 모두에 해당한다는 설명을 확인했습니다.",
+      "role": "먼저 보기 · 어깨는 부드럽게, 몸은 흐트러지지 않게. 힘 빼기와 축 무너짐을 구분합니다.",
+      "relatedExisting": [
+        "YUtzwggQMQc",
+        "2tam4sbJQtM"
+      ]
+    },
+    {
+      "id": "r7Sz8xHYc-A",
+      "source": "https://www.youtube.com/watch?v=r7Sz8xHYc-A",
+      "method": "원본 12개 표본 화면·화면 문구와 전체 243.3초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "sampleTimes": [
+        7.29,
+        26.73,
+        46.17,
+        65.61,
+        85.05,
+        104.49,
+        123.93,
+        143.37,
+        162.81,
+        182.25,
+        201.69,
+        221.13
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/r7Sz8xHYc-A-1.webp",
+          "time": 46.17,
+          "label": "오른손 압력과 헤드 움직임 비교",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/r7Sz8xHYc-A-2.webp",
+          "time": 104.49,
+          "label": "엄지·검지 사용을 줄이는 교정 시범",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "group": "downswing-tempo",
+      "club": "both",
+      "reason": "드라이버 헤드로 시범을 보이며 도입부에서 아이언도 같다고 설명합니다. 오른손 엄지·검지의 과한 압력에 관한 공통 참고입니다.",
+      "role": "오른손 점검 · 엄지·검지로 눌러 치는 습관을 살펴봅니다. 손가락을 떼는 시범과 실제 힘 빼기 목적을 구분합니다.",
+      "relatedExisting": [
+        "2UR4UFtx1R0",
+        "YUtzwggQMQc"
+      ]
+    },
+    {
+      "id": "4E9O-VZtjBQ",
+      "source": "https://www.youtube.com/watch?v=4E9O-VZtjBQ",
+      "method": "원본 12개 표본 화면·화면 문구와 전체 224.2초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "sampleTimes": [
+        6.72,
+        24.64,
+        42.56,
+        60.48,
+        78.4,
+        96.32,
+        114.24,
+        132.16,
+        150.08,
+        168.0,
+        185.92,
+        203.84
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/4E9O-VZtjBQ-1.webp",
+          "time": 60.48,
+          "label": "어깨를 내려 긴장 차이 느끼기",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/4E9O-VZtjBQ-2.webp",
+          "time": 132.16,
+          "label": "가벼운 빈스윙과 헤드 무게",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "group": "backswing-setup",
+      "club": "both",
+      "reason": "아이언·드라이버 시범을 함께 사용하며 어깨 이완과 그립·헤드 무게를 다루는 공통 준비 설명입니다.",
+      "role": "시작 전 참고 · 어깨 털기와 작은 빈스윙만 간단히 확인합니다.",
+      "relatedExisting": [
+        "YUtzwggQMQc",
+        "bTA5HW-hU_Y"
+      ]
+    },
+    {
+      "id": "RqTCr_7BEM8",
+      "source": "https://www.youtube.com/watch?v=RqTCr_7BEM8",
+      "method": "원본 12개 표본 화면·화면 문구와 전체 405.7초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "sampleTimes": [
+        12.18,
+        44.66,
+        77.14,
+        109.62,
+        142.1,
+        174.58,
+        207.06,
+        239.54,
+        272.02,
+        304.5,
+        336.98,
+        369.46
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/RqTCr_7BEM8-1.webp",
+          "time": 174.58,
+          "label": "회전하며 팔을 뒤로 당기는 모습",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/RqTCr_7BEM8-2.webp",
+          "time": 239.54,
+          "label": "클럽이 밖으로 이어지는 팔로스루 설명",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "group": "impact-release",
+      "club": "driver",
+      "reason": "드라이버 회전과 팔로스루 시범에서 옆으로 밀림·그립 당김을 비교하는 내용을 확인했습니다.",
+      "role": "필요할 때 비교 · 회전하면서도 팔·그립을 몸 뒤로 끌어당기는지 봅니다. 후반 손목 펴기 드릴은 별도입니다.",
+      "relatedExisting": [
+        "daQLQ1rAzs0",
+        "hxXJnJRKKcE"
+      ]
+    },
+    {
+      "id": "Gy1fb-ulGig",
+      "source": "https://www.youtube.com/watch?v=Gy1fb-ulGig",
+      "method": "원본 12개 표본 화면·화면 문구와 전체 332.8초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "sampleTimes": [
+        9.99,
+        36.63,
+        63.27,
+        89.91,
+        116.55,
+        143.19,
+        169.83,
+        196.47,
+        223.11,
+        249.75,
+        276.39,
+        303.03
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/Gy1fb-ulGig-1.webp",
+          "time": 63.27,
+          "label": "세게 치려는 비교 시범의 마무리",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/Gy1fb-ulGig-2.webp",
+          "time": 169.83,
+          "label": "헤드 흐름을 느끼기 위한 별도 교정 시범",
+          "width": 640,
+          "height": 360
+        }
+      ],
+      "group": "downswing-tempo",
+      "club": "driver",
+      "reason": "드라이버 실제 타구와 몸이 먼저 달려드는 비교 시범을 전체 음성·화면에서 확인했습니다.",
+      "role": "필요할 때 비교 · 공을 세게 치려 몸이 먼저 덤비는 모습을 확인합니다. 오른발 고정 드릴은 바로 적용하지 않습니다.",
+      "relatedExisting": [
+        "V7r2odT_dBE",
+        "oEVbWjzZl0E"
+      ]
+    }
+  ],
+  "duplicateReview": "Canonical and alternate IDs checked against 120 existing records. Related older videos linked instead of duplicated. No assertion of exhaustive frame-level duplicate detection.",
+  "notSelected": [
+    {
+      "id": "IHE1ieOZlD0",
+      "reason": "Full transcript reviewed; primarily backswing coiling with iron demonstration. Less direct for this driver relaxation request."
+    },
+    {
+      "id": "kq2WKfSUjL8",
+      "reason": "Screen sampling: general backswing/head-weight discussion, less direct driver-specific supplement."
+    },
+    {
+      "id": "OPaWytD2OgI",
+      "reason": "Screen sampling: backswing rotation with iron, not needed in this five-video driver selection."
+    }
+  ],
+  "preserved": "YUtzwggQMQc / V7r2odT_dBE / hxXJnJRKKcE top order, 2tam4sbJQtM backswing pin, existing lesson guidance and personal records."
+}

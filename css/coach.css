@@ -2,7 +2,7 @@
 .coach-session-key{padding:12px;border-left:3px solid var(--pt);background:var(--pt-bg)}
 .coach-solo-keys{margin:12px 0}.coach-solo-keys h3{font-size:15px;margin:0 0 6px}.coach-solo-keys ul{padding-left:18px;margin:0;font-size:14px;line-height:1.65}.coach-solo-keys li+li{margin-top:6px}
 .coach-session-details{font-weight:400;color:var(--txt)}.coach-session-details article{padding:10px 0;border-top:1px solid var(--line)}.coach-session-details h3{font-size:15px;line-height:1.6;overflow-wrap:anywhere}.coach-session-details ul{padding-left:20px}.coach-session-details li{font-size:14px;line-height:1.75;margin:8px 0;overflow-wrap:anywhere}.pt-session-links>div{padding:12px;border:1px solid var(--line);border-radius:10px}
-.gq-hub{margin:20px 0}.gq-goal{padding:12px;border-left:3px solid var(--golf);background:var(--golf-bg)}.gq-goal b{display:block;font-size:12px;color:var(--golf)}
+.gq-hub{margin:20px 0}
 .gq-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:12px 0}.gq-choices button{font:inherit;font-size:14px;line-height:1.5;min-height:56px;padding:8px 4px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--txt);cursor:pointer}.gq-choices small{display:block;font-size:11px}.gq-choices [aria-pressed=true]{background:var(--golf-bg);border:2px solid var(--golf);color:var(--golf);font-weight:700}
 .gq-topic{margin:10px 0;border:1px solid var(--line);border-radius:12px;background:var(--card)}.gq-topic>summary{cursor:pointer;padding:14px;font-size:16px;font-weight:700;min-height:48px;line-height:1.6;overflow-wrap:anywhere}.gq-topic>summary small{display:block;font-size:12px;font-weight:500;color:var(--sub);margin-top:4px}.gq-body{padding:0 14px 14px}.gq-body h3{font-size:15px}.gq-body .coach-fold{margin:10px 0}.gq-body form button{margin:4px 8px 4px 0}.gq-frames{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gq-frames a{display:block;text-decoration:none;min-width:0}.gq-frames img{width:100%;height:150px;object-fit:contain;background:var(--bg);border-radius:8px}.gq-frames span{display:block;font-size:12px;padding:8px 0}.gq-focus{font-weight:700}.gq-video-links{padding:14px;margin:16px 0;border:1px solid var(--line);border-radius:12px;background:var(--card)}.gq-video-links h3{font-size:16px}.gq-video-links p{font-size:13px;color:var(--sub)}
 @media(max-width:560px){.gq-choices button{font-size:clamp(13px,3.4vw,14px);word-break:keep-all;overflow-wrap:anywhere}.gq-topic>summary{font-size:clamp(14px,3.6vw,16px)}.gq-body{padding:0 12px 12px}}
@@ -63,7 +63,7 @@
 }
 
 /* v157: selection first; full practice guides and records stay available. */
-.gq-hub .gq-goal{padding:8px 12px;margin:8px 0}.gq-hub .gq-goal b{display:inline;margin-right:8px}
+
 .gq-hub .coach-actions{margin-bottom:0}.gq-records{margin:18px 0}.gq-records [data-gq-form]{scroll-margin-top:16px}
 
 /* Recent lesson recap replaces the repeated long cue. */
@@ -77,7 +77,6 @@
 .g-question-shortcut h2{margin:0 0 8px}.g-question-shortcut a{display:block;min-height:44px;align-content:center;overflow-wrap:anywhere}
 .golf-archive .coach-source{overflow-wrap:anywhere}.golf-archive h3{margin-top:20px}
 
-.coach-desk .g-common-practice{padding:12px 14px}.coach-desk .g-common-practice h2{font-size:14px;margin:0 0 6px}.coach-desk .g-common-sequence{font-size:14px;margin:0 0 8px}
 
 /* PT: direct exercise references; historical criteria remain in the archive. */
 .coach-personal{margin:18px 0}.coach-personal h2{margin-bottom:10px}.coach-personal h2 small{font-size:13px;color:var(--sub)}
@@ -92,7 +91,7 @@
 /* Two lightweight exits from each recent recap; no extra menu or hidden practice. */
 .coach-recap-links{display:flex;flex-wrap:wrap;gap:0 18px;margin:0 0 10px;border-bottom:1px solid var(--line)}
 .coach-recap-links :is(a,button){display:inline-flex;align-items:center;min-height:44px;padding:5px 0;font:inherit;font-size:13px;font-weight:600;line-height:1.5;color:var(--txt);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.coach-personal,.coach-desk .g-basic-practice-pin,.coach-desk .g-daily-pin,.coach-desk .g-pinned-sequence,.coach-desk .g-common-practice{scroll-margin-top:64px}
+.coach-personal,.coach-desk .g-secondary-practice-pin,.coach-desk .g-basic-practice-pin,.coach-desk .g-daily-pin,.coach-desk .g-pinned-sequence{scroll-margin-top:64px}
 
 /* Keep archive access beside the title on the practice landing pages. */
 .coach-desk .coach-compact-heading{align-items:center;gap:12px}

@@ -1,0 +1,39 @@
+{
+  "id": "V7r2odT_dBE",
+  "source": "https://www.youtube.com/watch?v=V7r2odT_dBE",
+  "method": "원본 12개 표본 화면·자막과 전체 288.1초 오디오 자동 전사 대조. 자동 전사 오인식은 문맥과 화면 자막으로 확인 가능한 범위만 요약.",
+  "sampleTimes": [
+    8.64,
+    31.68,
+    54.72,
+    77.76,
+    100.8,
+    123.84,
+    146.88,
+    169.92,
+    192.96,
+    216.0,
+    239.04,
+    262.08
+  ],
+  "frames": [
+    {
+      "src": "media/golf-frames/V7r2odT_dBE-1.webp",
+      "time": 31.68,
+      "label": "백스윙 · 어깨 회전 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/V7r2odT_dBE-2.webp",
+      "time": 123.84,
+      "label": "헤드 하강 이후 골반 이동 연결",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "duplicateReview": "No canonical/alternate ID match in 119 records. No exhaustive duplicate-footage assertion.",
+  "placement": "Second ongoing practice card; driver; multiple stages common group. Basic list remains six.",
+  "preserved": "First YUtzwggQMQc, club-flow hxXJnJRKKcE now third, old backswing pin, unpinned shJaPQExonE and personal records.",
+  "lessonDistinction": "Above-waist relaxation is user lesson guidance. Creator percentages/repetitions and equipment promotion not adopted as personal prescriptions."
+}

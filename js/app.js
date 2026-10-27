@@ -288,10 +288,10 @@ const Theme = (() => {
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
   const htRoutineDays = [
-    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown']},
+    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_dbpullover','pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown']},
     {id:'tue',label:'화 · 하체',title:'하체 A · 양발 기본',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_legpress']},
     {id:'wed',label:'수 · 휴식',title:'수요일 · 휴식일',rest:true,ids:[]},
-    {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_low_cable_curl']},
+    {id:'thu',label:'목 · 상체',title:'상체 B · 보조 풀업',ids:['pt_dbpullover','pt_pullup','pt_chestpress','pt_seatedrow','pt_pecdeck','pt_low_cable_curl']},
     {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_legpress']},
     {id:'sat',label:'토 · 휴식',title:'토요일 · 휴식일',rest:true,ids:[]},
     {id:'sun',label:'일 · 휴식',title:'일요일 · 휴식일',rest:true,ids:[]}
@@ -304,6 +304,7 @@ const Theme = (() => {
     ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','하체 지지 · 팔로만 휘두르지 않기']
   ];
   const htRoutineStrength = {
+    pt_dbpullover:['덤벨 풀오버','12–15회','골반을 고정하고 손바닥으로 무게를 받치며 천천히 넘기기'],
     pt_chestpress:['체스트 프레스','10–15회','가슴이 유지되고 어깨가 말리지 않는 깊이까지만'],
     pt_seatedrow:['시티드로우','10–15회','뻗고 당길 때 어깨가 들리지 않는 범위'],
     pt_latpulldown:['랫풀다운','10–15회','가슴부터 세팅 · 몸을 뒤로 젖혀 당기지 않기'],
@@ -324,10 +325,10 @@ const Theme = (() => {
     const todayLabel=htRoutineDays.find(d=>d.id===today).label;
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.ids.length===4;
-    const times=lower?['25–33분','33–41분','41–46분','46–56분']:['20–29분','29–38분','38–47분','47–52분','52–57분'];
+    const times=lower?['25–33분','33–41분','41–46분','46–56분']:['20–25분','25–33분','33–41분','41–49분','49–54분','54–60분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
-      <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 · 코치 확정 전 검토안</p>
+      <p class="ht-routine-note">기본 20분 + 근력 40분 · 지정 16종목 + 풀오버 · 코치 확정 전 검토안</p>
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
       <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>

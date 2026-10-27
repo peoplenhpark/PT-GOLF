@@ -15,7 +15,7 @@ module.exports=async(browser,base)=>{
   await p.reload();await p.locator('.gq-reference').waitFor();
   const expectedGolf=JSON.parse(saved.ptgolf_learning_v1);delete expectedGolf.practiceRecords;assert.deepEqual(await p.evaluate(()=>JSON.parse(localStorage.getItem(Persistence.KEYS.golf))),expectedGolf);saved.ptgolf_learning_v1=JSON.stringify(expectedGolf);
   assert.deepEqual(await p.evaluate(()=>({lesson:document.querySelector('.coach-recent-golf').textContent,pin:document.querySelector('.g-daily-pin').textContent,stages:document.querySelector('.g-stage-practice').textContent})),original);
-  assert.match(await p.locator('.gq-goal').innerText(),/편한 스윙과 일관성 있는 스윙/);assert.equal(await p.locator('.gq-reference li').count(),3);
+  assert.equal(await p.locator('.gq-goal').count(),0);assert.equal(await p.locator('.gq-reference li').count(),3);
   assert.equal(await p.locator('[data-gq-focus],[data-gq-clear],[data-gq-form=result],[data-coach-form=result],.coach-current,.g-recent-practice,.gq-records').count(),0);
   assert.equal(await p.locator('.g-daily-pin ol li:visible').count(),3);assert.equal(await p.locator('.g-daily-pin ul li:visible').count(),3);
   assert.equal(await p.locator('.g-stage-practice ol li:visible').count(),12);assert.equal(await p.locator('.g-stage-practice ul li:visible').count(),12);

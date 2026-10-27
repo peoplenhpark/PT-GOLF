@@ -2,8 +2,9 @@
  * links는 기존 노트와의 주제 연결이며 개인 레슨에서 검증된 처방이 아니다. */
 window.GolfContent = {
   "version": 5,
-  "featuredVideoId": "shJaPQExonE",
+  "featuredVideoId": "YUtzwggQMQc",
   "featuredVideoIds": [
+    "YUtzwggQMQc",
     "shJaPQExonE",
     "9YWDNMyTQy4",
     "3kNb6TQN2T0",
@@ -346,6 +347,11 @@ window.GolfContent = {
         "golf_driver"
       ],
       "videoIds": [
+        "hxq7Wocl-2o",
+        "r7Sz8xHYc-A",
+        "4E9O-VZtjBQ",
+        "RqTCr_7BEM8",
+        "Gy1fb-ulGig",
         "hxXJnJRKKcE"
       ],
       "topics": [
@@ -401,12 +407,42 @@ window.GolfContent = {
       ],
       "followUpQuestions": [],
       "videoReasons": {
-        "hxXJnJRKKcE": "기존 상시 연습의 클럽 흐름을 참고합니다. 오늘은 허리 위에서 오른손 힘 빼기를 먼저 확인하며, 밀고 당기기 등의 동작을 더하지 않습니다. 코치가 직접 추천한 영상은 아닙니다."
+        "hxXJnJRKKcE": "기존 상시 연습의 클럽 흐름을 참고합니다. 오늘은 허리 위에서 오른손 힘 빼기를 먼저 확인하며, 밀고 당기기 등의 동작을 더하지 않습니다. 코치가 직접 추천한 영상은 아닙니다.",
+        "hxq7Wocl-2o": "먼저 보기 · 어깨는 부드럽게, 몸은 흐트러지지 않게. 힘 빼기와 축 무너짐을 구분합니다.",
+        "r7Sz8xHYc-A": "오른손 점검 · 엄지·검지로 눌러 치는 습관을 살펴봅니다. 손가락을 떼는 시범과 실제 힘 빼기 목적을 구분합니다.",
+        "4E9O-VZtjBQ": "시작 전 참고 · 어깨 털기와 작은 빈스윙만 간단히 확인합니다.",
+        "RqTCr_7BEM8": "필요할 때 비교 · 회전하면서도 팔·그립을 몸 뒤로 끌어당기는지 봅니다. 후반 손목 펴기 드릴은 별도입니다.",
+        "Gy1fb-ulGig": "필요할 때 비교 · 공을 세게 치려 몸이 먼저 덤비는 모습을 확인합니다. 오른발 고정 드릴은 바로 적용하지 않습니다."
       },
-      "videoCaution": "기존 상시 연습 영상을 보조 연결했습니다. 오늘 레슨의 위치·타이밍은 사용자 확인을 기준으로 합니다.",
+      "videoCaution": "허리 위에서 힘 빼기는 사용자 확인 레슨 기준입니다. 영상의 거리 목표·정지 연습·적극적인 손목 조작을 실제 스윙 과제로 한꺼번에 더하지 않습니다.",
       "videoPriority": {
         "shJaPQExonE": "오늘 드라이버 우선 · 허리 위에서 이미 오른손 힘을 뺍니다. 이 영상의 오른손 던지기를 오늘의 추가 과제로 삼지 않습니다.",
         "hxXJnJRKKcE": "오늘 드라이버 우선 · 허리 위에서 이미 오른손 힘을 빼고 클럽의 흐름을 허용합니다. 양손 밀고 당기기 등의 동작을 추가하지 않습니다."
+      },
+      "videoCollection": {
+        "title": "드라이버 힘 빼기 · 보강 5편",
+        "intro": "어깨 긴장부터 확인하고, 막히는 부분에 맞춰 한 편만 참고합니다. 오늘 레슨의 허리 위에서 오른손 힘 빼기를 우선합니다.",
+        "videoIds": [
+          "hxq7Wocl-2o",
+          "r7Sz8xHYc-A",
+          "4E9O-VZtjBQ"
+        ],
+        "groups": [
+          {
+            "title": "필요할 때 · 당김과 서두름 비교",
+            "videoIds": [
+              "RqTCr_7BEM8",
+              "Gy1fb-ulGig"
+            ]
+          },
+          {
+            "title": "기존 상시 연습",
+            "videoIds": [
+              "hxXJnJRKKcE"
+            ]
+          }
+        ],
+        "footer": "앱이 찾아 연결한 참고 자료입니다. 코치가 직접 추천한 영상은 아닙니다."
       }
     }
   ],
@@ -5465,6 +5501,336 @@ window.GolfContent = {
       "practiceCaution": "현재 피칭 레슨의 몸 회전·명치 높이 작은 피니시가 우선입니다. 영상의 오른손 던지기를 손목으로 퍼올리는 동작으로 바꾸지 않습니다.",
       "addedAt": "2026-10-25T14:16:35.125488+00:00",
       "publishedAt": "2026-10-22T23:26:21+00:00"
+    },
+    {
+      "id": "YUtzwggQMQc",
+      "title": "드라이버 힘 빼기 · 속도보다 이완과 헤드 무게부터",
+      "originalTitle": "드라이버 힘 빼고 치는 단계별 훈련법! 따라만 오세요!",
+      "channel": "korean pro golfer Heo",
+      "duration": "1:29",
+      "durationSeconds": 89,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "어깨·팔에 힘을 더해 던지기보다 먼저 긴장을 풀고, 클럽의 무게를 느끼는 단계를 연습하는 드라이버 시범입니다. 처음에는 속도와 거리를 내려고 하지 않는 것을 강조합니다.",
+      "points": [
+        "초반에는 어깨에 힘을 주는 동작과 힘을 빼는 감각을 비교합니다.",
+        "35–65초: 속도를 내려 하지 않고 힘 빼는 감각부터 익힙니다. 처음 거리가 줄어드는 것은 이 단계의 실패로 보지 않습니다.",
+        "65초 이후: 헤드 무게를 느끼며 연결하되, 던지려고 하다가 다시 긴장하는 점을 경계합니다. 현재 레슨에는 첫 단계의 힘 빼기를 우선 연결합니다."
+      ],
+      "moments": [
+        {
+          "s": 16.91,
+          "label": "드라이버 준비 · 힘 빼기 설명"
+        },
+        {
+          "s": 52.51,
+          "label": "속도보다 먼저 힘 빼는 스윙"
+        }
+      ],
+      "relatedVideoIds": [
+        "hxXJnJRKKcE"
+      ],
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·자막과 전체 88.9초 오디오 자동 전사 대조. 자동 전사 일부 표현은 불명확해 요약에서 제외.",
+      "connection": "2026-10-26 드라이버 레슨의 오른손 긴장 완화와 연결하는 보조 영상입니다. 허리 위에서 이미 오른손 힘을 빼는 위치·타이밍은 사용자 레슨 기준이며 이 영상의 직접 지시로 혼합하지 않습니다.",
+      "question": "허리 위에서 오른손 힘을 뺄 때 어깨·팔까지 다시 굳지 않고 헤드 무게를 느끼는지 어떻게 확인할까요?",
+      "observationPractice": {
+        "action": "처음에는 속도·거리보다 어깨와 팔의 긴장을 푸는 데 집중합니다. 현재 레슨대로 다운스윙의 허리 위에서 이미 오른손 힘을 뺍니다.",
+        "feel": "헤드 무게가 느껴지는지, 빨리 치거나 던지려다 오른손·어깨가 다시 굳지 않는지 확인합니다."
+      },
+      "practiceCaution": "허리 위에서 오른손 힘 빼기는 현재 레슨 기준입니다. 영상 후반의 가속을 새 과제로 더하기보다 힘 빼는 첫 단계부터 참고합니다.",
+      "addedAt": "2026-10-26T15:47:54.073238+00:00",
+      "publishedAt": "2026-06-02T09:00:16+00:00"
+    },
+    {
+      "id": "V7r2odT_dBE",
+      "title": "드라이버 연결 · 백스윙에서 헤드 하강·회전까지",
+      "originalTitle": "치는 족족 죽던 드라이버가 갑자기 살아나기 시작했습니다",
+      "channel": "korean pro golfer Heo",
+      "duration": "4:48",
+      "durationSeconds": 288,
+      "presentation": "original",
+      "topics": [
+        "준비·축",
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "드라이버 백스윙의 어깨 회전, 손으로 잡아당기지 않는 헤드 하강, 골반 이동을 단계별로 연결하는 설명입니다. 거리 욕심으로 급해지거나 손에 힘을 더해 당기는 모습을 비교합니다.",
+      "points": [
+        "0:00–0:44: 드라이버 백스윙에서 왼어깨 회전과 오른쪽 지지를 설명합니다. 영상의 체중 비율·반복 횟수·단정적 표현은 개인 처방으로 옮기지 않습니다.",
+        "0:44–2:55: 손목·손에 힘을 줘 당기는 동작과 헤드가 내려오는 흐름을 비교한 뒤 골반 이동을 연결합니다. 처음에는 속도·거리 욕심을 줄이도록 설명합니다.",
+        "3:28 이후: 왼팔을 앞에 둔 별도 시범으로 헤드가 내려와 어깨 쪽으로 이어지는 흐름을 보여 줍니다. 이 드릴과 현재 코치가 정한 오른손 힘 빼기 위치는 구분합니다."
+      ],
+      "moments": [
+        {
+          "s": 31.68,
+          "label": "백스윙 · 어깨 회전 설명"
+        },
+        {
+          "s": 123.84,
+          "label": "헤드 하강 이후 골반 이동 연결"
+        }
+      ],
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "hxXJnJRKKcE"
+      ],
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·자막과 전체 288.1초 오디오 자동 전사 대조. 자동 전사 오인식은 문맥과 화면 자막으로 확인 가능한 범위만 요약.",
+      "connection": "현재 드라이버 레슨의 힘 빼기 다음에 참고할 연결 영상입니다. 허리 위에서 오른손 힘을 빼는 현재 레슨 기준을 먼저 적용하고, 영상의 별도 체중·손목 감각을 한꺼번에 더하지 않습니다.",
+      "question": "허리 위에서 오른손 힘을 뺀 뒤 손잡이를 당기지 않고 헤드 하강과 몸의 움직임을 연결하는 제 기준은 무엇인가요?",
+      "observationPractice": {
+        "action": "현재 레슨대로 허리 위에서 오른손 힘을 뺀 뒤, 손잡이를 급히 당기지 않고 헤드가 내려오는 흐름을 참고합니다.",
+        "feel": "거리 욕심으로 급해지거나 오른손이 다시 굳지 않는지, 백스윙부터 피니시까지 편하게 이어지는지 확인합니다."
+      },
+      "practiceCaution": "허리 위에서 힘 빼기는 사용자 레슨 기준입니다. 영상의 손목 풀기·체중 비율을 별도 과제로 더하지 않고 현재 코칭을 우선합니다.",
+      "addedAt": "2026-10-26T16:05:22.886566+00:00",
+      "publishedAt": "2026-10-25T23:30:35+00:00"
+    },
+    {
+      "id": "hxq7Wocl-2o",
+      "title": "힘 빼기 · 어깨 긴장과 몸의 안정 구분",
+      "topics": [
+        "준비·축",
+        "회전·순서"
+      ],
+      "summary": "어깨를 굳히는 힘과 스윙을 지탱하는 최소한의 힘을 구분합니다. 골반 회전으로 상체 긴장을 풀어보는 빈스윙과 팔의 간격을 설명합니다.",
+      "points": [
+        "1:25–2:10: 어깨가 굳었을 때 회전 대신 몸이 좌우로 흔들리거나 클럽을 잡아당기는 모습을 비교합니다.",
+        "2:54–3:45: 어깨 긴장을 줄이고 골반을 작게 돌려 상체가 따라가는 빈스윙을 보여 줍니다.",
+        "4:23–6:27: 팔이 제멋대로 접히는 것과 최소한의 간격 유지를 구분합니다. 오른팔을 펴려는 감각과 실제로 굽혀지는 동작은 다르다고 설명합니다."
+      ],
+      "moments": [
+        {
+          "s": 176.75,
+          "label": "어깨 힘을 줄인 상태에서 시작"
+        },
+        {
+          "s": 217.15,
+          "label": "골반 회전과 상체 연결 빈스윙"
+        }
+      ],
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "2tam4sbJQtM"
+      ],
+      "connection": "현재 레슨의 오른손 힘 빼기를 준비하는 참고입니다. 기존 몸통 백스윙의 편안함을 먼저 확인합니다.",
+      "question": "제 경우 어깨 긴장을 줄이면서 유지해야 할 팔 간격과 몸의 지지는 어느 정도인가요?",
+      "observationPractice": {
+        "action": "공 없이 어깨를 편하게 두고 작은 몸통 회전을 해 보며, 굳어 있을 때와 움직임을 비교합니다.",
+        "feel": "어깨를 풀어도 몸이 좌우로 무너지지 않는지, 팔을 펴려다가 다시 힘이 들어가지 않는지 확인합니다."
+      },
+      "practiceCaution": "골반 선행·오른팔 펴기는 영상의 교정 감각입니다. 현재 레슨의 시작 순서를 바꾸거나 팔을 뻣뻣하게 고정하지 않습니다.",
+      "originalTitle": "[골프레슨] 드라이버 힘빼면서 견고해야 멀리 칠 수 있습니다",
+      "channel": "하와이골프 [박형준프로]",
+      "duration": "8:25",
+      "durationSeconds": 505,
+      "presentation": "original",
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·화면 문구와 전체 505.3초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "addedAt": "2026-10-26T17:47:17.010003+00:00",
+      "publishedAt": "2020-11-10T22:00:06+00:00",
+      "classificationReview": {
+        "date": "2026-10-27",
+        "status": "classified",
+        "group": "backswing-setup",
+        "reason": "드라이버 시범과 8:07 이후 드라이버·우드·아이언 모두에 해당한다는 설명을 확인했습니다."
+      }
+    },
+    {
+      "id": "r7Sz8xHYc-A",
+      "title": "오른손 힘 빼기 · 엄지·검지로 누르는 습관",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "오른손 엄지·검지로 클럽을 강하게 눌러 치는 습관을 짚고, 두 손가락의 사용을 줄이는 교정 시범을 보여 줍니다.",
+      "points": [
+        "0:10–1:03: 오른손으로 눌러 치는 모습과 엄지·검지를 떼고 천천히 내려오는 시범을 비교합니다.",
+        "1:04–2:45: 그립과 다운스윙에서 두 손가락을 과하게 쓰는지 가까이 보여 줍니다.",
+        "후반의 돌려치기 설명은 별도 방법입니다. 현재 레슨에는 오른손의 불필요한 압력을 알아차리는 부분만 연결합니다."
+      ],
+      "moments": [
+        {
+          "s": 46.17,
+          "label": "오른손 압력과 헤드 움직임 비교"
+        },
+        {
+          "s": 104.49,
+          "label": "엄지·검지 사용을 줄이는 교정 시범"
+        }
+      ],
+      "relatedVideoIds": [
+        "2UR4UFtx1R0",
+        "YUtzwggQMQc"
+      ],
+      "connection": "기존 오른손 검지 접촉 영상에 과한 압력의 비교 시범을 보완합니다. 현재 수업의 오른손 놓기 드릴과 마찬가지로 목적은 실제 스윙의 긴장 완화입니다.",
+      "question": "허리 위에서 오른손 힘을 뺄 때 엄지·검지로 누르는 습관이 남는지 확인해 주세요.",
+      "observationPractice": {
+        "action": "천천히 작은 빈스윙을 하며 허리 위에서 오른손 엄지·검지가 그립을 세게 누르고 있는지 살펴봅니다.",
+        "feel": "공을 치려는 순간 오른손이 다시 조여지지 않는지, 손목을 일부러 돌리지 않고 끝까지 이어지는지 확인합니다."
+      },
+      "practiceCaution": "두 손가락을 떼는 동작은 원본의 교정 시범입니다. 실제 스윙의 고정 그립 규칙이나 적극적인 손목 회전 지시로 옮기지 않습니다.",
+      "originalTitle": "오른손 힘을 빼면 골프 신세계 입니다,강제로 힘빼게 하는법",
+      "channel": "스윙닥터김남기프로",
+      "duration": "4:03",
+      "durationSeconds": 243,
+      "presentation": "original",
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·화면 문구와 전체 243.3초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "addedAt": "2026-10-26T17:47:17.483201+00:00",
+      "publishedAt": "2023-04-23T00:35:08+00:00",
+      "classificationReview": {
+        "date": "2026-10-27",
+        "status": "classified",
+        "group": "downswing-tempo",
+        "reason": "드라이버 헤드로 시범을 보이며 도입부에서 아이언도 같다고 설명합니다. 오른손 엄지·검지의 과한 압력에 관한 공통 참고입니다."
+      }
+    },
+    {
+      "id": "4E9O-VZtjBQ",
+      "title": "준비 긴장 줄이기 · 어깨 털기와 가벼운 빈스윙",
+      "topics": [
+        "준비·축",
+        "팔·타이밍"
+      ],
+      "summary": "어깨를 올렸다 편하게 내리는 동작, 가벼운 빈스윙, 지렛대 백스윙을 소개합니다. 지금은 앞의 두 가지 준비 동작만 참고합니다.",
+      "points": [
+        "0:32–1:16: 어깨를 올렸다 내리고 팔이 자연스럽게 늘어지는 느낌을 설명합니다.",
+        "1:24–2:25: 그립을 과하게 쥐지 않고 클럽을 작게 흔들며 헤드 무게를 느끼는 빈스윙입니다.",
+        "2:25 이후 지렛대·코킹은 별도 방법입니다. 현재 몸통 백스윙에 추가하지 않으며 비거리 증가·즉시 효과 주장은 채택하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 60.48,
+          "label": "어깨를 내려 긴장 차이 느끼기"
+        },
+        {
+          "s": 132.16,
+          "label": "가벼운 빈스윙과 헤드 무게"
+        }
+      ],
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "bTA5HW-hU_Y"
+      ],
+      "connection": "드라이버를 잡기 전 긴장을 줄이는 준비 자료입니다. 실제 다운스윙은 현재 레슨의 허리 위 오른손 이완을 우선합니다.",
+      "question": "어깨를 편하게 내려놓고도 클럽을 안정적으로 잡는 제 그립 압력을 확인해 주세요.",
+      "observationPractice": {
+        "action": "스윙 전에 어깨를 가볍게 털고, 클럽을 놓치지 않을 정도로 잡아 작은 빈스윙을 합니다.",
+        "feel": "어깨가 다시 올라가거나 손이 꽉 조여지지 않는지, 작게 흔들어도 헤드 무게가 느껴지는지 봅니다."
+      },
+      "practiceCaution": "여러 시범을 편집한 해설 영상입니다. 그립 강도 숫자·손목 지렛대와 비거리 약속을 개인 기준으로 삼지 않습니다.",
+      "originalTitle": "골프 힘빼는방법 3가지",
+      "channel": "SwingStory",
+      "duration": "3:44",
+      "durationSeconds": 224,
+      "presentation": "original",
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·화면 문구와 전체 224.2초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "addedAt": "2026-10-26T17:47:17.742823+00:00",
+      "publishedAt": "2026-02-16T01:36:27+00:00",
+      "classificationReview": {
+        "date": "2026-10-27",
+        "status": "classified",
+        "group": "backswing-setup",
+        "reason": "아이언·드라이버 시범을 함께 사용하며 어깨 이완과 그립·헤드 무게를 다루는 공통 준비 설명입니다."
+      }
+    },
+    {
+      "id": "RqTCr_7BEM8",
+      "title": "드라이버 회전 · 팔을 몸 뒤로 당기는 습관 비교",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "몸통을 회전해도 그립을 몸 뒤로 끌어당기면 헤드가 지나가기 어려운 모습을 비교합니다. 지금은 팔을 붙잡는 습관을 알아차리는 자료로 사용합니다.",
+      "points": [
+        "0:57–2:11: 제자리 회전과 몸을 옆으로 미는 동작을 비교합니다.",
+        "2:17–4:22: 팔로스루에서 그립 끝의 방향과 팔이 몸 뒤로 당겨지는 모습을 설명합니다.",
+        "4:30 이후 손목을 적극적으로 펴는 시범은 현재 레슨의 별도 과제로 옮기지 않습니다. 앞부분의 당김·밀림 비교만 우선합니다."
+      ],
+      "moments": [
+        {
+          "s": 174.58,
+          "label": "회전하며 팔을 뒤로 당기는 모습"
+        },
+        {
+          "s": 239.54,
+          "label": "클럽이 밖으로 이어지는 팔로스루 설명"
+        }
+      ],
+      "relatedVideoIds": [
+        "daQLQ1rAzs0",
+        "hxXJnJRKKcE"
+      ],
+      "connection": "기존 그립 당김 영상의 몸통 회전·팔로스루 비교를 보완합니다. 손목을 일부러 돌리거나 풀지 않는 현재 레슨과 구분합니다.",
+      "question": "오른손 힘을 뺀 뒤에도 왼팔로 그립을 끌어당기는지 제 팔로스루를 확인해 주세요.",
+      "observationPractice": {
+        "action": "작은 드라이버 빈스윙을 찍어, 회전하면서 그립을 몸 뒤로 잡아당기는지 원본 비교 장면과 봅니다.",
+        "feel": "팔을 몸에 붙들어 두지 않고 헤드가 지나가는지, 이를 만들려고 손목을 일부러 돌리지 않는지 확인합니다."
+      },
+      "practiceCaution": "후반의 검도처럼 손목 펴기·강하게 던지기는 현재 레슨과 다른 방법입니다. 지금은 관찰용으로만 참고합니다.",
+      "originalTitle": "[골프레슨] 드라이버 가볍게 쳤는데 멀리 갈때는 이것이 되기 때문입니다",
+      "channel": "하와이골프 [박형준프로]",
+      "duration": "6:46",
+      "durationSeconds": 406,
+      "presentation": "original",
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·화면 문구와 전체 405.7초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "addedAt": "2026-10-26T17:47:18.224580+00:00",
+      "publishedAt": "2020-09-18T09:44:39+00:00",
+      "classificationReview": {
+        "date": "2026-10-27",
+        "status": "classified",
+        "group": "impact-release",
+        "reason": "드라이버 회전과 팔로스루 시범에서 옆으로 밀림·그립 당김을 비교하는 내용을 확인했습니다."
+      }
+    },
+    {
+      "id": "Gy1fb-ulGig",
+      "title": "드라이버 전환 · 세게 치려는 서두름 비교",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "공을 세게 치려고 몸과 손이 먼저 달려드는 경우와 헤드의 흐름을 기다리는 감각을 비교합니다. 현재 연습에는 서두름을 알아차리는 부분만 연결합니다.",
+      "points": [
+        "0:57–1:25: 급하게 치려는 시범에서 머리가 앞으로 나가고 피니시가 달라지는 모습을 비교합니다.",
+        "1:54–2:44: 몸을 과하게 왼쪽으로 여는 경우와 헤드가 지나가는 감각을 설명합니다.",
+        "2:49 이후 몸을 잡고 오른발을 붙이는 과장 연습을 제시합니다. 이를 실제 스윙의 정지·체중이동 금지로 받아들이지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 63.27,
+          "label": "세게 치려는 비교 시범의 마무리"
+        },
+        {
+          "s": 169.83,
+          "label": "헤드 흐름을 느끼기 위한 별도 교정 시범"
+        }
+      ],
+      "relatedVideoIds": [
+        "V7r2odT_dBE",
+        "oEVbWjzZl0E"
+      ],
+      "connection": "기존 헤드 하강·회전 연결 자료의 서두름 비교를 보완합니다. 현재 레슨의 자연스러운 피니시를 먼저 유지합니다.",
+      "question": "제 드라이버에서 기다림은 서두름을 줄이는 감각이면 충분한가요? 몸을 멈추지 않는 기준을 알려주세요.",
+      "observationPractice": {
+        "action": "거리 욕심을 줄인 빈스윙에서 몸과 손이 먼저 공 쪽으로 급히 달려드는지 원본의 비교 장면과 봅니다.",
+        "feel": "허리 위에서 오른손 긴장이 풀린 채 끝까지 흐르는지, 기다리려다 몸을 일부러 멈추지 않는지 확인합니다."
+      },
+      "practiceCaution": "오른발을 붙이고 몸을 잡아놓는 것은 영상의 과장 드릴입니다. 현재 스윙의 고정 규칙이나 거리 목표로 적용하지 않습니다.",
+      "originalTitle": "드라이버 레슨 여러 번 받을 필요 없습니다. 이 연습 방법 하나만 제대로 이해하셔도 드라이버는 졸업 가능합니다.",
+      "channel": "장재근프로",
+      "duration": "5:33",
+      "durationSeconds": 333,
+      "presentation": "original",
+      "evidence": "2026-10-27 · 원본 12개 표본 화면·화면 문구와 전체 332.8초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
+      "addedAt": "2026-10-26T17:47:18.752364+00:00",
+      "publishedAt": "2025-01-23T11:00:07+00:00",
+      "classificationReview": {
+        "date": "2026-10-27",
+        "status": "classified",
+        "group": "downswing-tempo",
+        "reason": "드라이버 실제 타구와 몸이 먼저 달려드는 비교 시범을 전체 음성·화면에서 확인했습니다."
+      }
     }
   ],
   "practicePin": {
@@ -5481,6 +5847,11 @@ window.GolfContent = {
       "3번 모두 비슷한 템포·균형으로 편하게 끝나나요?"
     ],
     "basis": "현재 아이언 레슨을 우선합니다. 영상은 클럽 흐름 참고용이며, 양손 밀고 당기기·옆구리 늘리기를 새 과제로 추가하지 않습니다."
+  },
+  "basicPracticeTitle": "상시 연습 · 드라이버 힘 빼기",
+  "secondaryPracticePin": {
+    "id": "V7r2odT_dBE",
+    "title": "상시 연습 · 헤드 하강과 회전 연결"
   }
 };
 
@@ -5583,7 +5954,9 @@ window.GolfContent.videoGroups = [
       "2UR4UFtx1R0",
       "bTA5HW-hU_Y",
       "wwZFeiPAoMU",
-      "4ePhtleqZBA"
+      "4ePhtleqZBA",
+      "hxq7Wocl-2o",
+      "4E9O-VZtjBQ"
     ],
     "practice": {
       "cue": "팔과 어깨의 긴장을 줄이고, 편한 시작 자세를 먼저 만듭니다.",
@@ -5787,7 +6160,10 @@ window.GolfContent.videoGroups = [
       "1x_iiruwFTU",
       "FjWulC87mzM",
       "sKcgYjwimd8",
-      "A_fu4ajV-_I"
+      "A_fu4ajV-_I",
+      "YUtzwggQMQc",
+      "r7Sz8xHYc-A",
+      "Gy1fb-ulGig"
     ],
     "practice": {
       "cue": "내려올 여유는 주되, 일부러 멈추지는 않습니다.",
@@ -5915,7 +6291,8 @@ window.GolfContent.videoGroups = [
       "4Eof_tmI0Ag",
       "HGzIDHi2e84",
       "daQLQ1rAzs0",
-      "shJaPQExonE"
+      "shJaPQExonE",
+      "RqTCr_7BEM8"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -6054,7 +6431,8 @@ window.GolfContent.videoGroups = [
       "CAZ9oUoGRIg",
       "bgI9M3DIuX4",
       "F7HIFtSR7Fo",
-      "TYq-Fge2LSA"
+      "TYq-Fge2LSA",
+      "V7r2odT_dBE"
     ],
     "relatedGroups": []
   },
@@ -7009,6 +7387,48 @@ window.GolfContent.clubReviews = {
     "reason": "원본 시범에서 아이언 헤드와 공을 확인했습니다. 드라이버까지 동일 감각을 적용한다는 근거는 없어 아이언 참고로 분류합니다.",
     "reviewedAt": "2026-10-25",
     "basis": "source on-screen text, creator description and sampled frames"
+  },
+  "YUtzwggQMQc": {
+    "value": "driver",
+    "reason": "제목·원본 시범에서 드라이버 힘 빼기 훈련을 확인했습니다. 아이언까지 같은 단계로 적용한다는 근거는 확인하지 않았습니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen subtitles and full-audio automatic transcript"
+  },
+  "V7r2odT_dBE": {
+    "value": "driver",
+    "reason": "드라이버 시범에서 백스윙·헤드 하강·골반 이동을 연결하는 설명을 확인했습니다. 아이언의 공통 처방으로 확대하지 않습니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen subtitles and full-audio automatic transcript"
+  },
+  "hxq7Wocl-2o": {
+    "value": "both",
+    "reason": "드라이버 시범과 8:07 이후 드라이버·우드·아이언 모두에 해당한다는 설명을 확인했습니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen captions and full-audio automatic transcript"
+  },
+  "r7Sz8xHYc-A": {
+    "value": "both",
+    "reason": "드라이버 헤드로 시범을 보이며 도입부에서 아이언도 같다고 설명합니다. 오른손 엄지·검지의 과한 압력에 관한 공통 참고입니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen captions and full-audio automatic transcript"
+  },
+  "4E9O-VZtjBQ": {
+    "value": "both",
+    "reason": "아이언·드라이버 시범을 함께 사용하며 어깨 이완과 그립·헤드 무게를 다루는 공통 준비 설명입니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen captions and full-audio automatic transcript"
+  },
+  "RqTCr_7BEM8": {
+    "value": "driver",
+    "reason": "드라이버 회전과 팔로스루 시범에서 옆으로 밀림·그립 당김을 비교하는 내용을 확인했습니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen captions and full-audio automatic transcript"
+  },
+  "Gy1fb-ulGig": {
+    "value": "driver",
+    "reason": "드라이버 실제 타구와 몸이 먼저 달려드는 비교 시범을 전체 음성·화면에서 확인했습니다.",
+    "reviewedAt": "2026-10-27",
+    "basis": "sampled frames, on-screen captions and full-audio automatic transcript"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};

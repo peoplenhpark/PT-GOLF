@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);vm.runInContext(read('js/exercise-media.js'),ctx);
 const c=ctx.window.GolfContent,media=ctx.window.ExerciseMedia;
-assert.equal(c.videos.length,118);assert.equal(new Set(c.videos.map(v=>v.id)).size,118);
+assert.equal(c.videos.length,125);assert.equal(new Set(c.videos.map(v=>v.id)).size,125);
 assert.equal(c.videos[0].id,'9YWDNMyTQy4');
 for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
 for(const v of c.videos){
@@ -19,7 +19,7 @@ for(const v of c.videos){
 const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
 const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
 const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
-assert.equal(metadataRows.length,22);assert.equal(reviewedRows.length,96);
+assert.equal(metadataRows.length,22);assert.equal(reviewedRows.length,103);
 assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,22,'metadata comparisons must be title-specific');
 assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,22,'metadata questions must be title-specific');
 for(const {video,practical} of metadataRows){
@@ -30,7 +30,7 @@ for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.q
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,14);assert.equal(new Set(grouped).size,118);assert.equal(grouped.length,118);
+assert.equal(c.videoGroups.length,14);assert.equal(new Set(grouped).size,125);assert.equal(grouped.length,125);
 assert.equal(c.videoSections.length,4);
 assert(c.videoSections.every(s=>s.groups.length===3));
 for(const v of c.videos)assert(c.videoGroupFor(v));
@@ -67,13 +67,13 @@ const check=()=>{assert(!/3D|3d|실사형|입체로/.test(app.innerHTML.replace(
 for(const v of c.videos){ctx.window.GolfHub.render({golfTab:'videos',golfId:v.id},api);check();assert(app.innerHTML.includes('https://www.youtube.com/watch?v='+v.id));assert(app.innerHTML.includes('내 적용 메모'));assert(app.innerHTML.includes('class="g-practical-summary"'));assert(app.innerHTML.includes('class="g-source-detail"'));}
 for(const g of c.videoGroups){ctx.window.GolfHub.render({golfTab:'videos',golfGroup:g.id},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,g.videoIds.length);assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,g.videoIds.filter(id=>!c.videos.find(v=>v.id===id).soloPractice).length);}
 assert(!/class="g-mini-detail"[^>]*aria-label=/.test(app.innerHTML),'visible takeaway and evidence stay in the link accessible name');
-ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,5+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
-assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,5+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
-assert.equal(c.featuredVideoId,'shJaPQExonE');
-assert.deepEqual(Array.from(c.featuredVideoIds),['shJaPQExonE','9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk']);
+ctx.window.GolfHub.render({golfTab:'videos'},api);check();assert.equal((app.innerHTML.match(/class="g-video-card(?: [^"]*)?"/g)||[]).length,6+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
+assert.equal((app.innerHTML.match(/class="g-mini-takeaway"/g)||[]).length,6+Math.min(3,c.recentVideos().filter(v=>!c.featuredVideoIds.includes(v.id)).length));
+assert.equal(c.featuredVideoId,'YUtzwggQMQc');
+assert.deepEqual(Array.from(c.featuredVideoIds),['YUtzwggQMQc','shJaPQExonE','9YWDNMyTQy4','3kNb6TQN2T0','QsmMamIFMsE','EgdcUOkvJKk']);
 const featuredHtml=app.innerHTML.match(/<section class="g-featured-video"[\s\S]*?<\/section>/)[0];
 assert(featuredHtml.includes('9YWDNMyTQy4')&&featuredHtml.includes('3kNb6TQN2T0')&&featuredHtml.includes('QsmMamIFMsE'));
-assert.equal((featuredHtml.match(/class="g-video-card/g)||[]).length,5);
+assert.equal((featuredHtml.match(/class="g-video-card/g)||[]).length,6);
 assert(app.innerHTML.indexOf('g-video-groups')<app.innerHTML.indexOf('g-featured-video'));
 assert.equal((app.innerHTML.match(/href="#golf\/videos\/9YWDNMyTQy4"/g)||[]).length,1);
 ctx.window.GolfHub.render({golfTab:'videos',golfQuery:'어깨'},api);assert(!app.innerHTML.includes('g-featured-video'));assert(!app.innerHTML.includes('watch?v=9YWDNMyTQy4'));
@@ -93,4 +93,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 118 originals, 12 subsections + common + review, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 125 originals, 12 subsections + common + review, no golf 3D UI/cache, 52 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');

@@ -161,9 +161,7 @@ window.GolfHub = (() => {
       (home?'':'<nav class="g-breadcrumb" aria-label="현재 영상 위치"><a href="#golf/videos">영상</a><span aria-hidden="true">›</span><a href="'+(parent?groupHref(parent.id):selected==='favorites'?'#golf/video-favorites':groupHref(selected))+'">'+e(title)+'</a>'+(parent&&parent.id!==selected?'<span aria-hidden="true">›</span><span aria-current="page">'+e(videoGroups().find(g=>g.id===selected)?.title||'')+'</span>':'')+'</nav>')+
       (subgroups.length?'<nav class="g-subsections" aria-label="'+e(parent.title)+' 하위 섹션"><a href="'+groupHref(parent.id)+'" '+(parent.id===selected?'aria-current="page"':'')+'>'+e(parent.title)+' 전체</a>'+subgroups.map((g,i)=>'<a href="'+groupHref(g.id)+'" '+(g.id===selected?'aria-current="page"':'')+'><span class="g-step-number">'+(i+1)+'</span>'+e(g.title)+' <small>'+groupCount([g.id])+'편</small></a>').join('')+'</nav>':'');
   }
-  function commonPractice() {
-    return '<section class="g-common-practice" aria-labelledby="g-common-practice-title"><h2 id="g-common-practice-title">공통 연습 절차</h2><p class="g-common-sequence">같은 조건 → 한 가지에 집중 → 결과 비교</p><details><summary>연습 조건</summary><p>같은 클럽·목표·스윙 크기로 시작하고, 촬영할 때는 각도도 맞춥니다. 한 번에 한 가지만 바꾸고 접촉·방향·편안함 중 해당 항목의 결과를 비교합니다. 반복되는 차이나 해결되지 않는 점은 다음 레슨 질문으로 남깁니다.</p></details></section>';
-  }
+
   function practiceFocus(g) {
     const p=g?.practice;if(!p?.today||!p?.check)return '';
     return `<dl class="g-practice-focus"><div><dt>오늘 할 것</dt><dd>${e(p.today)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.check)}</dd></div></dl>`;
@@ -251,11 +249,17 @@ window.GolfHub = (() => {
     if(!v||(compact&&!clubMatches(v)))return '';
     return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':dailyPracticeContent()}</section>`;
   }
-  function basicPracticePin() {
-    const v=video(content.featuredVideoId);
+  function referencePracticePin(v,title,className,label) {
     if(!v)return '';
     const p=practical(v);
-    return `<section class="g-basic-practice-pin" aria-label="기본영상 상시 연습"><p class="g-meta">상단 고정 · 기본영상</p><h2>상시 연습 · 양손의 역할</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(practicePriority(v.id)||v.practiceCaution)}</p></section>`;
+    return `<section class="${e(className)}" aria-label="${e(title)}"><p class="g-meta">상단 고정 · ${e(label)}</p><h2>${e(title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(practicePriority(v.id)||v.practiceCaution)}</p></section>`;
+  }
+  function basicPracticePin() {
+    return referencePracticePin(video(content.featuredVideoId),content.basicPracticeTitle||'상시 연습 · 기본영상','g-basic-practice-pin','기본영상');
+  }
+  function secondaryPracticePin() {
+    const pin=content.secondaryPracticePin;
+    return pin?referencePracticePin(video(pin.id),pin.title,'g-secondary-practice-pin','드라이버 참고'):'';
   }
   function dailyPracticeDetail(v) {
     if(v.id!==content.practicePin?.id)return '';
@@ -621,5 +625,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink,searchRecords,questionShortcut,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,recentPractice,stagePractice,commonPractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,openLink,searchRecords,questionShortcut,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

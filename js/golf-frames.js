@@ -1887,5 +1887,117 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "YUtzwggQMQc": [
+    {
+      "src": "media/golf-frames/YUtzwggQMQc-1.webp",
+      "time": 16.91,
+      "label": "드라이버 준비 · 힘 빼기 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/YUtzwggQMQc-2.webp",
+      "time": 52.51,
+      "label": "속도보다 먼저 힘 빼는 스윙",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "V7r2odT_dBE": [
+    {
+      "src": "media/golf-frames/V7r2odT_dBE-1.webp",
+      "time": 31.68,
+      "label": "백스윙 · 어깨 회전 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/V7r2odT_dBE-2.webp",
+      "time": 123.84,
+      "label": "헤드 하강 이후 골반 이동 연결",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "hxq7Wocl-2o": [
+    {
+      "src": "media/golf-frames/hxq7Wocl-2o-1.webp",
+      "time": 176.75,
+      "label": "어깨 힘을 줄인 상태에서 시작",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/hxq7Wocl-2o-2.webp",
+      "time": 217.15,
+      "label": "골반 회전과 상체 연결 빈스윙",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "r7Sz8xHYc-A": [
+    {
+      "src": "media/golf-frames/r7Sz8xHYc-A-1.webp",
+      "time": 46.17,
+      "label": "오른손 압력과 헤드 움직임 비교",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/r7Sz8xHYc-A-2.webp",
+      "time": 104.49,
+      "label": "엄지·검지 사용을 줄이는 교정 시범",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "4E9O-VZtjBQ": [
+    {
+      "src": "media/golf-frames/4E9O-VZtjBQ-1.webp",
+      "time": 60.48,
+      "label": "어깨를 내려 긴장 차이 느끼기",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/4E9O-VZtjBQ-2.webp",
+      "time": 132.16,
+      "label": "가벼운 빈스윙과 헤드 무게",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "RqTCr_7BEM8": [
+    {
+      "src": "media/golf-frames/RqTCr_7BEM8-1.webp",
+      "time": 174.58,
+      "label": "회전하며 팔을 뒤로 당기는 모습",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/RqTCr_7BEM8-2.webp",
+      "time": 239.54,
+      "label": "클럽이 밖으로 이어지는 팔로스루 설명",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "Gy1fb-ulGig": [
+    {
+      "src": "media/golf-frames/Gy1fb-ulGig-1.webp",
+      "time": 63.27,
+      "label": "세게 치려는 비교 시범의 마무리",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/Gy1fb-ulGig-2.webp",
+      "time": 169.83,
+      "label": "헤드 흐름을 느끼기 위한 별도 교정 시범",
+      "width": 640,
+      "height": 360
+    }
   ]
 };
