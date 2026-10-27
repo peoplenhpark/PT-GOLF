@@ -65,15 +65,16 @@ window.CoachDesk = (() => {
     // Only source lessons use the prepared recap; personal lesson edits keep their own wording.
     const quick=latest&&window.GolfContent.lessons.includes(latest)?latest.quickReview:null;
     const reviewVideo=quick&&source.videos.find(v=>v.id===quick.videoId);
-    const recap=quick?'<dl class="coach-lesson-recap"><div><dt>할 것</dt><dd>'+esc(quick.action)+'</dd></div><div><dt>확인할 것</dt><dd>'+esc(quick.check)+'</dd></div></dl>':'<p>'+esc(latest?.practiceCue||latest?.correction)+'</p>';
+    const checks=Array.isArray(quick?.checks)&&quick.checks.length===3?quick.checks:null;
+    const recap=quick?'<dl class="coach-lesson-recap'+(checks?' has-checks':'')+'"><div><dt>'+(checks?'우선할 감각':'할 것')+'</dt><dd>'+esc(quick.action)+'</dd></div><div><dt>'+(checks?'확인 3가지':'확인할 것')+'</dt><dd>'+(checks?'<ol>'+checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ol>':esc(quick.check))+'</dd></div></dl>':'<p>'+esc(latest?.practiceCue||latest?.correction)+'</p>';
     const reference=reviewVideo?'<a class="coach-source" href="https://www.youtube.com/watch?v='+encodeURIComponent(reviewVideo.id)+'&amp;t='+Number(quick.videoStart)+'s" target="_blank" rel="noopener noreferrer">'+esc(quick.videoLabel)+'</a>':'';
-    return window.GolfHub.pinnedSequence()+'<section class="coach-recent-golf" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">최근 레슨 · 빠른 복습</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('golf')+(latest?'<p class="coach-meta">레슨 기록'+(quick?' · '+esc(quick.club):latest.practiceClubs?.length?' · '+esc(latest.practiceClubs.join(' · ')):'')+'</p><h3>'+esc(quick?.title||latest.title)+'</h3>'+recap+'<div class="coach-lesson-links"><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(latest.id)+'">레슨 상세 · 복습 자료 보기 ›</a>'+reference+'</div>':'<p>아직 등록된 레슨이 없습니다.</p><a class="coach-source" href="#golf/lessons">레슨 기록 보기 ›</a>')+'</section>';
+    return window.GolfHub.pinnedSequence()+'<section class="coach-recent-golf" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">최근 레슨 · 빠른 복습</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('golf')+(latest?'<p class="coach-meta">'+(checks&&reviewVideo?'레슨 핵심 + 영상 참고':'레슨 기록')+(quick?' · '+esc(quick.club):latest.practiceClubs?.length?' · '+esc(latest.practiceClubs.join(' · ')):'')+'</p><h3>'+esc(quick?.title||latest.title)+'</h3>'+recap+'<div class="coach-lesson-links"><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(latest.id)+'">레슨 상세 · 복습 자료 보기 ›</a>'+reference+'</div>':'<p>아직 등록된 레슨이 없습니다.</p><a class="coach-source" href="#golf/lessons">레슨 기록 보기 ›</a>')+'</section>';
   }
   function recentPT(){
     const sessions=Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date));
     const latest=sessions[0];
     // Display summaries belong to this reviewed session; later sessions use their own source text.
-    const recaps={pt_session_20261016:{
+    const recaps={pt_session_20261027:{solo:["남은 PT는 잘 안 되는 동작의 자세 교정·반복에 집중한다. 혼자 기구를 설정하고, 자세가 무너지는 지점을 알아차리는 것이 우선이다.", "자세가 흐트러지면 세트를 멈추고 중량·범위를 조정한다. 관절 통증·날카로운 통증은 참고 반복하지 말고, 지속·반복되면 의료진에게 상담한다."],items:{}},pt_session_20261016:{
       solo:['잘 되고 재미있는 운동부터. 배운 동작을 매번 모두 할 필요는 없습니다.','완벽한 한 번보다 기본 틀을 유지하며 반복합니다.'],
       items:{
         pt_lunge_ball_rotation:'런지 지지를 유지하며 몸통 회전. 수업에서는 좌우 각 15회.',

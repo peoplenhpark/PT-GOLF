@@ -23,7 +23,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.personal-exercises .ex').count(),2);await p.reload();await p.locator('.personal-exercises').waitFor();
   assert.equal(await p.locator('.personal-exercises .ex').count(),2);
   await p.locator('.personal-all-link').click();await p.locator('.pt-exercise-grid').waitFor();
-  assert.equal(await p.locator('.pt-exercise-grid .ex').count(),52);
+  assert.equal(await p.locator('.pt-exercise-grid .ex').count(),53);
   for(const theme of ['light','dark'])for(const width of [320,390,768]){
    await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);
    await p.locator('.exercise-quicknav summary').click();

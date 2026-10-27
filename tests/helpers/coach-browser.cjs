@@ -17,28 +17,28 @@ module.exports=async(browser,base)=>{
    assert.equal(await p.locator('.coach-desk').innerText(),before,'recap exits scroll without replacing practice content');
    if(part==='pt')assert(await p.locator('.coach-routine-link').isVisible());
    await exits.locator('a').click();
-   if(part==='pt'){await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.pt-exercise-grid .ex').count(),52);}
+   if(part==='pt'){await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.pt-exercise-grid .ex').count(),53);}
    else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),3);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
 
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),1);assert.equal(await p.locator('.coach-header-link a').getAttribute('href'),'#pt/standards');assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
-  const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-16');
+  const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-27');
   const recentCards=recent.locator('.coach-recent-grid').first();
-  assert.equal(await recentCards.locator('a').count(),5);
-  assert.match(await recentCards.locator('[href="#exercise/pt_chestpress"]').innerText(),/가슴이 유지되는 깊이까지만/);
-  assert.match(await recentCards.locator('[href="#exercise/pt_seatedrow"]').innerText(),/어깨가 들리지 않는 범위/);
+  assert.equal(await recentCards.locator('a').count(),3);
+  assert.match(await recentCards.locator('[href="#exercise/pt_chestpress"]').innerText(),/가슴이 유지되고 어깨가 말리지 않는 깊이/);
+  assert.match(await recentCards.locator('[href="#exercise/pt_shoulderpress"]').innerText(),/양 손바닥/);
   assert.equal(await recent.locator('.coach-solo-keys li:visible').count(),2);
   assert.equal(await p.locator('.coach-plan').count(),0);assert.match(await p.locator('.coach-routine-link').innerText(),/기본 20분/);assert.equal(await p.locator('.coach-personal-links a').count(),5);assert.match(await p.locator('.coach-personal h2').innerText(),/16종목/);
   assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),0,'confirmed movements link to their own exercises');
   await recent.locator('.coach-session-details').first().locator('summary').click();
-  assert.match(await recent.locator('.coach-session-details').first().innerText(),/25:32–27:03/);
-  assert.match(await recent.locator('.coach-session-details').first().innerText(),/아래쪽 고정쇠·15kg·언더그립/);
+  assert.match(await recent.locator('.coach-session-details').first().innerText(),/26:08–36:43/);
+  assert.match(await recent.locator('.coach-session-details').first().innerText(),/허리 통증은 참고 반복할 신호가 아니다/);
   assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
   await p.goto(base+'#pt');await p.getByText('PT 수업 기록',{exact:true}).click();await p.locator('.pt-session-note').first().locator(':scope > summary').click();
-  assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),5);
+  assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),3);
   assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
   await p.locator('.pt-session-note').first().locator('.coach-session-details > summary').click();
-  assert.match(await p.locator('.pt-session-note').first().innerText(),/가슴이 유지되는 깊이까지만/);
+  assert.match(await p.locator('.pt-session-note').first().innerText(),/가슴이 유지되고 어깨가 말리지 않는 깊이/);
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();
   const seeded=await p.evaluate(()=>{
    const c=CoachDesk.saveCriterion({part:'pt',sourceKey:'pt:pt_hip_openclose_stretch',title:'고관절 오픈·클로즈',cue:'발 지지와 몸 전체 회전',check:'골반과 가슴이 함께 움직이는지 확인',setup:'준비 원문',caution:'주의 원문',club:'',referenceId:'',confirmed:false});

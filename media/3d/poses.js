@@ -233,6 +233,15 @@ function pose(kind,t,id){
   arms(p,[[-.27,2.13,.08],[.27,2.13,.08]],[[ -1,-1,.3],[1,-1,.3]]);
   legs(p,S.map(s=>[s*.12,.30+.33*q,-.24]));
   p.equipment.push({type:'pullup'});p.target=[0,1.2,0];p.distance=4.5;
+ }else if(kind==='ptshoulderpress'){
+  // Seated machine: fixed feet/pelvis, bilateral rigid levers around rear pivots.
+  // Geometry is illustrative, not the user's measured machine or prescribed range.
+  p=seat();const angle=-.45+.55*q,radius=.55;
+  const pivots=S.map(s=>[s*.40,1.46,-.31]);
+  const grips=pivots.map(a=>add(a,[0,radius*Math.sin(angle),radius*Math.cos(angle)]));
+  arms(p,grips,S.map(s=>[s,-1,.4]));
+  p.equipment=[{type:'seat'},{type:'shoulderpressmachine',pivots}];
+  p.target=[0,.90,.02];p.distance=4.0;
  }else if(kind==='htshoulderpress'){
   p=seat();
   arms(p,S.map(s=>[s*(.43-.16*q),1.20+.39*q,.15]),S.map(s=>[s,-1,.3]));

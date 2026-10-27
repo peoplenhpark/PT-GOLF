@@ -5,7 +5,7 @@ try{
  const params=new URLSearchParams(location.search),id=params.get('exercise'),rootEntry=window.ExerciseMedia[id];
  const variant=params.get('variant');
  const entry=variant?rootEntry?.variants?.find(v=>v.id===variant):(rootEntry?.variants?.[0]||rootEntry);
- if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=198#exercise/'+id);return;}
+ if(['golf_driver','golf_iron7','golf_iron5','golf_ironp'].includes(id)){location.replace('../../index.html?v=200#exercise/'+id);return;}
  if(!entry||!entry.kind||entry.kind==='pushdown')throw Error('Unknown exercise');
  document.title=entry.name+' 3D';
  const P=ExercisePoses,{add,sub,mul,unit,cross,mix}=P;
@@ -128,6 +128,19 @@ try{
    switch(e.type){
     case 'mat':block(equipment,[0,.007,.08],[1.30,.015,2.30],accent);break;
     case 'seat':seatGear();break;
+    case 'shoulderpressmachine':{
+     for(let i=0;i<2;i++){
+      const side=i?1:-1,pivot=e.pivots[i],at=p.wrists[i];
+      beam(equipment,[side*.65,.035,-.50],[side*.65,1.65,-.50],.035);
+      beam(equipment,[side*.65,pivot[1],-.50],pivot,.03);
+      ell(equipment,pivot,[.055,.055,.055],accent);
+      beam(equipment,pivot,at,.026,steel);
+      handle(at);beam(equipment,[side*.65,.035,-.65],[side*.65,.035,.48],.045);
+     }
+     beam(equipment,[-.65,.06,-.50],[.65,.06,-.50],.045);
+     break;
+    }
+
     case 'bench':bench([0,.46,-.15]);break;
     case 'sumodumbbell':{
      const at=mix(p.wrists[0],p.wrists[1],.5);

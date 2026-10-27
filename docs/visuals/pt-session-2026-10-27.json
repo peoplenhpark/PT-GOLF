@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-27",
+  "exercise": "pt_shoulderpress",
+  "method": "Existing repository-native Three.js renderer; no generative image model.",
+  "source": [
+    "사용자 첨부 새로운 노트 (27).txt, 36:56–44:56 (자동 전사, 원음·영상 미확인)",
+    "media/3d/poses.js ptshoulderpress",
+    "media/3d/viewer.js shoulderpressmachine"
+  ],
+  "brief": "등받이·좌석·발바닥 지지. 양손은 좌우 독립 레버의 손잡이를 잡고 위로 민다. 좌우 압박감 균형을 확인하고 같은 경로로 천천히 내린다. 준비/동작에서 몸통·골반·발 위치는 같고 손잡이만 움직인다. 실제 기구 모델·손잡이·좌석·중량은 미확인이므로 예시임을 캡션에 명시한다.",
+  "capture": {
+    "viewport": [
+      800,
+      900
+    ],
+    "canvasHeight": 600,
+    "phase": [
+      0,
+      0.5
+    ],
+    "yaw": 1.05,
+    "pitch": 0.2,
+    "outputs": [
+      "docs/images/guides/pt_shoulderpress-start.webp",
+      "docs/images/guides/pt_shoulderpress-end.webp"
+    ],
+    "conversion": "Rendered PNG -> RGB WebP quality88, no semantic pixel editing."
+  },
+  "safetyReferences": [
+    {
+      "url": "https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/weight-training/art-20045842",
+      "use": "가벼운 무게로 자세를 익히고 통증이 나면 중단. 정확한 개인 중량·각도 처방으로 사용하지 않음."
+    },
+    {
+      "url": "https://www.acefitness.org/resources/everyone/exercise-library/186/seated-shoulder-press/",
+      "use": "머신 숄더프레스의 지지 자세·허리 과신전 방지·통제된 하강 참고. 어깨를 계속 고정하라는 별도 단서는 오늘 레슨에 추가하지 않음."
+    }
+  ],
+  "limits": [
+    "숄더프레스·백익스텐션 중량/횟수 미확인",
+    "정확한 손목·팔꿈치 각도와 눈썹 높이 범위는 개인 처방으로 확정하지 않음",
+    "백익스텐션은 기존 전용 이미지/3D 재사용",
+    "페이스풀은 기존 종목의 목요일 편성; 이번 전사에서 새로운 교정 내용 확정 안 함"
+  ],
+  "userConfirmation": {
+    "date": "2026-10-27",
+    "answer": "1번",
+    "decision": "기본운동20분 유지. 백익스텐션은 화·금 근력운동에 추가, 목요일 체스트프레스→숄더프레스·펙덱플라이→페이스풀. v200 구현과 일치."
+  }
+}

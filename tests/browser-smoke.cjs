@@ -356,6 +356,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);
   await require('./helpers/ht-routine-browser.cjs')(browser,base);
   await require('./helpers/ht-routine-simple-browser.cjs')(browser,base);
+  await require('./helpers/pt-closeout-browser.cjs')(browser,base);
   await require('./helpers/new-media-1018-browser.cjs')(browser,base);
   await require('./helpers/golf-questions-browser.cjs')(browser,base);
   await require('./helpers/golf-pin-browser.cjs')(browser,base);

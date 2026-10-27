@@ -13,13 +13,13 @@ module.exports=async(browser,base)=>{
    return {record:localStorage.getItem(Persistence.KEYS.workouts),draft:localStorage.getItem(Persistence.KEYS.drafts),overlay:localStorage.getItem(Persistence.KEYS.overlay)};
   });
   await p.reload();await p.locator('#ht-routine').waitFor();
-  for(const [day,count] of [['mon',6],['tue',4],['wed',0],['thu',6],['fri',4],['sat',0],['sun',0]]){
+  for(const [day,count] of [['mon',6],['tue',5],['wed',0],['thu',6],['fri',5],['sat',0],['sun',0]]){
    await p.locator(`.ht-routine-days [data-ht-day="${day}"]`).click();
    assert.equal(await p.locator('#ht-routine-day .ht-routine-list>li').count(),count);
    assert.equal(await p.locator('#ht-routine input,#ht-routine form,#ht-routine [data-ht-progress],#ht-routine [data-ht-completion]').count(),0);
    assert(!(await p.locator('#ht-routine').innerText()).includes('지난 기록'));
    if(['tue','fri'].includes(day)){
-    assert.deepEqual(await p.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_legpress']);
+    assert.deepEqual(await p.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_backextension','#exercise/pt_legpress']);
     assert.equal(await p.locator('#ht-routine-day li>strong').filter({hasText:'20kg · 20회 × 2세트'}).count(),3);
     assert.match(await p.locator('#ht-routine-day').innerText(),/양발 기본/);
    }
@@ -37,6 +37,6 @@ module.exports=async(browser,base)=>{
   await p.locator('#ht-routine-day a[href="#exercise/pt_legpress"]').click();await p.locator('.d-title').waitFor();
   await p.goBack();await p.locator('#ht-routine').waitFor();assert.equal(await p.locator('[data-ht-log],[data-ht-completion]').count(),0);
   assert.deepEqual(errors,[]);
-  console.log('PASS: compact HT routine without daily input/history/completion; 6/4 split, Tuesday/Friday targets, basic 20 minutes, exercise links, mobile themes, existing workout records/drafts/memos and backup preserved.');
+  console.log('PASS: compact HT routine without daily input/history/completion; 6/5 split, Tuesday/Friday targets, basic 20 minutes, exercise links, mobile themes, existing workout records/drafts/memos and backup preserved.');
  }finally{await c.close();}
 };

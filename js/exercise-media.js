@@ -1,5 +1,29 @@
 /* Exercise preparation/action images and interactive pose registry. */
 window.ExerciseMedia = {
+  "pt_shoulderpress": {
+  "name": "숄더 프레스 (머신)",
+  "kind": "ptshoulderpress",
+  "captions": [
+    "발·등 지지 · 양손으로 받치기",
+    "양손 균형 확인 · 천천히 복귀"
+  ],
+  "notes": [
+    "발바닥과 엉덩이·등을 지지하고, 허리를 과하게 꺾지 않은 편한 자세로 앉는다.",
+    "가볍게 위로 밀고, 위에서 양 손바닥에 전달되는 압박감이 같은지 잠깐 확인한다."
+  ],
+  "focus": {
+    "muscle": "전면·측면 삼각근 + 삼두근",
+    "move": "양손으로 고르게 밀고, 같은 압박감을 유지하며 천천히 내려온다.",
+    "feel": "위에서 양 손바닥이 같은 힘으로 받치는 느낌. 허리로 밀어 올리지 않는다."
+  },
+  "target": "shoulders",
+  "images": [
+    "docs/images/guides/pt_shoulderpress-start.webp",
+    "docs/images/guides/pt_shoulderpress-end.webp"
+  ],
+  "viewer": "media/3d/viewer.html?exercise=pt_shoulderpress",
+  "visualNote": "머신·좌석·손잡이 경로는 동작 이해용 예시입니다. 실제 기구와 편한 범위는 코치와 확인하세요."
+},
   "pt_pullup": {
     "name": "풀업",
     "kind": "pullup",
@@ -167,7 +191,7 @@ window.ExerciseMedia = {
     "name": "백 익스텐션 (맨몸 · 허리 세우기)",
     "kind": "backextension",
     "captions": [
-      "힙힌지로 더 깊게 숙이기",
+      "지지를 유지하며 힙힌지",
       "엉덩이로 몸 일자"
     ],
     "notes": [

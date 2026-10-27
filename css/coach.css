@@ -97,3 +97,7 @@
 .coach-desk .coach-compact-heading{align-items:center;gap:12px}
 .coach-desk .coach-header-link{display:flex;margin:0;flex-shrink:0}
 .coach-desk .coach-compact-heading .coach-header-link a{min-height:44px;padding:0 4px;border:0;border-radius:4px;background:transparent;color:var(--sub);font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+.coach-lesson-recap ol{margin:0;padding-left:1.2em}.coach-lesson-recap li+li{margin-top:5px}
+
+.coach-lesson-recap.has-checks>div{grid-template-columns:80px minmax(0,1fr)}.coach-lesson-recap.has-checks dt{white-space:nowrap}
