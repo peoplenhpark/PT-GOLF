@@ -13,7 +13,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.exercise-quickpanel section').first().locator('h3').innerText(),'내 개인운동');
   await p.locator('.exercise-quickpanel a[href="#pt?cat=personal"]').click();
   await p.locator('.personal-exercises').waitFor();
-  const chosen=['pt_tailbone_raise','pt_lunge_ball_rotation','pt_hip_openclose_stretch','pt_openbook','pt_wide_sidelunge_stretch','pt_chestpress','pt_pecdeck','pt_seatedrow','pt_latpulldown','pt_pullup','pt_dbpullover','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_legcurl','pt_adduction','pt_legextension','pt_legpress'];
+  const chosen=['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation','pt_chestpress','pt_pecdeck','pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_legcurl','pt_legextension','pt_adduction','pt_legpress'];
   assert.deepEqual(await p.locator('.personal-exercises .ex').evaluateAll(es=>es.map(e=>e.dataset.open)),chosen);
   assert.deepEqual(await p.locator('.personal-exercise-group').evaluateAll(es=>es.map(e=>e.querySelectorAll('.ex').length)),[5,2,5,2,2,4]);
   assert.match(await p.locator('.personal-plan-note').innerText(),/주 4회 HT 루틴 보기/);

@@ -46,14 +46,15 @@ const Theme = (() => {
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const partLabel = p => (Store.getParts().find(x => x.id === p) || {}).label || p;
   const partIcon = p => (Store.getParts().find(x => x.id === p) || {}).icon || '';
-  // User-selected exercises, including the October26–27 personal-routine additions.
+  // User-selected exercises, grouped by body part. Within each group use HT basic order,
+  // then upper A/B order, then lower order; retain each exercise once (2026-10-28).
   const personalPT = [
-    {key:'basic',label:'기본운동',ids:['pt_tailbone_raise','pt_lunge_ball_rotation','pt_hip_openclose_stretch','pt_openbook','pt_wide_sidelunge_stretch']},
+    {key:'basic',label:'기본운동',ids:['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation']},
     {key:'chest',label:'가슴',ids:['pt_chestpress','pt_pecdeck']},
-    {key:'back',label:'등',ids:['pt_seatedrow','pt_latpulldown','pt_pullup','pt_dbpullover','pt_backextension']},
+    {key:'back',label:'등',ids:['pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension']},
     {key:'shoulders',label:'어깨',ids:['pt_shoulderpress','pt_facepull']},
     {key:'arms',label:'팔',ids:['pt_pushdown','pt_low_cable_curl']},
-    {key:'legs',label:'다리',ids:['pt_legcurl','pt_adduction','pt_legextension','pt_legpress']}
+    {key:'legs',label:'다리',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_legpress']}
   ];
   function personalGroups() {
     const byId = new Map(Store.getByPart('pt').map(e => [e.id,e]));
