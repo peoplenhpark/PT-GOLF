@@ -1,0 +1,795 @@
+{
+  "reviewedAt": "2026-10-29",
+  "duplicateReview": "No canonical/alternate ID matches across 126 existing and 14 submitted entries. Related topics linked; no exhaustive same-footage assertion.",
+  "placement": "All 14 are ordinary library entries, not field. Existing field video remains alone.",
+  "clubCounts": {
+    "iron": 6,
+    "driver": 7,
+    "unknown": 1
+  },
+  "titles": "Club/problem + concrete action; original titles preserved. No guaranteed distance/accuracy claims.",
+  "items": [
+    {
+      "id": "bfaLLjZqqCA",
+      "title": "아이언 스윙 재정비 · 작은 스윙부터 4단계",
+      "originalTitle": "망가진 스윙 처음부터 다시 시작하는 단계별 연습방범 #골프 #골프스윙 #골프레슨 #골프연습 #golf",
+      "channel": "정회엽프로[간단스윙]",
+      "source": "https://www.youtube.com/watch?v=bfaLLjZqqCA",
+      "duration": 22,
+      "audioSeconds": 22.151875,
+      "method": "원본 12개 표본 화면·자막 확인. 전체 오디오 전사를 시도했으나 음악의 부정확한 전사는 내용 근거에서 제외",
+      "sampleTimes": [
+        0.66,
+        2.42,
+        4.18,
+        5.94,
+        7.7,
+        9.46,
+        11.22,
+        12.98,
+        14.74,
+        16.5,
+        18.26,
+        20.02
+      ],
+      "primaryGroup": "common",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "작은 어깨 회전 스윙에서 시작해 손목 움직임과 백스윙 크기를 더하고, 마지막에 하나로 연결하는 네 단계 시범입니다.",
+      "points": [
+        "1단계는 손목 사용을 줄이고 어깨 회전으로 작은 스윙을 만듭니다.",
+        "2단계에서 손목 움직임을 더하고, 3단계에서는 왼어깨 회전과 함께 백스윙 크기를 늘립니다.",
+        "4단계에서 앞의 과정을 연결합니다. 화면의 단계별 시범을 확인했으며 음악 구간의 자동 전사 문장은 요약 근거에서 제외했습니다."
+      ],
+      "editorialAction": "작은 어깨 회전 스윙부터 시작해 편한 범위에서 손목 움직임과 스윙 크기를 하나씩 더해 봅니다.",
+      "editorialCheck": "크기를 키울 때 손·어깨가 굳지 않는지, 앞 단계의 편한 흐름이 유지되는지 확인합니다.",
+      "caution": "네 단계는 영상의 구분 연습입니다. 손목을 고정하거나 코킹을 억지로 크게 만드는 처방으로 적용하지 않습니다.",
+      "relatedVideoIds": [
+        "4ePhtleqZBA",
+        "kW1GIWEpRDQ"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/bfaLLjZqqCA-1.webp",
+          "time": 4.18,
+          "label": "작은 어깨 회전 스윙",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/bfaLLjZqqCA-2.webp",
+          "time": 14.74,
+          "label": "백스윙 크기를 더하는 단계",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "6K7-nA-JHyU",
+      "title": "백스윙 3가지 감각 · 그립 누르기·페이스·팔 연결",
+      "originalTitle": "백스윙이 어려운 이유, 클럽을 ‘올리려고’ 하기 때문입니다 #골프 #골프레슨 #골프스윙 #테이크백 #백스윙 #골프연습 #스윙교정 #골프팁 #golf #golfswing",
+      "channel": "play golf",
+      "source": "https://www.youtube.com/watch?v=6K7-nA-JHyU",
+      "duration": 574,
+      "audioSeconds": 573.649,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        17.22,
+        63.14,
+        109.06,
+        154.98,
+        200.9,
+        246.82,
+        292.74,
+        338.66,
+        384.58,
+        430.5,
+        476.42,
+        522.34
+      ],
+      "primaryGroup": "backswing-takeaway",
+      "club": "unknown",
+      "clubReason": "여러 클럽의 편집 장면을 사용하는 일반 백스윙 설명입니다. 같은 교정 감각의 아이언·드라이버 공통 적용 범위는 확정하지 않았습니다.",
+      "summary": "손으로 궤도와 탑 모양을 만들려는 습관을 줄이기 위해 그립을 아래로 누르는 감각, 페이스 방향, 팔과 몸의 연결을 설명합니다.",
+      "points": [
+        "0:50–3:30은 클럽을 통째로 들어 올리는 모습과 그립을 누르며 몸을 회전하는 감각을 비교합니다.",
+        "3:30–6:13은 테이크백에서 손을 말지 않는 페이스 관리 감각을 설명합니다. 반대 방향으로 돌린다는 표현도 실제 강제 회전이 아닌 교정 감각으로 구분합니다.",
+        "6:13 이후는 수건을 이용한 팔·몸 연결을 보여 줍니다. 무조건 안정되거나 비거리가 늘어난다는 단정은 개인 기준으로 채택하지 않습니다."
+      ],
+      "editorialAction": "현재 레슨대로 몸통으로 테이크백하며 팔이 몸 뒤로 따로 빠지지 않는지 먼저 비교합니다. 그립 누르기·페이스 교정은 별도 확인합니다.",
+      "editorialCheck": "팔을 붙이려 옆구리를 조이지 않는지, 손목을 조작하지 않아도 작은 백스윙이 편한지 확인합니다.",
+      "caution": "여러 클럽의 편집 시범이 섞여 적용 범위는 확인 필요로 둡니다. 강하게 누르기·페이스 닫기·수건 고정을 한꺼번에 적용하지 않습니다.",
+      "relatedVideoIds": [
+        "MIx8BbSocFI",
+        "2tam4sbJQtM"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/6K7-nA-JHyU-1.webp",
+          "time": 154.98,
+          "label": "그립을 누르는 감각 설명",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/6K7-nA-JHyU-2.webp",
+          "time": 476.42,
+          "label": "팔과 몸을 연결하는 참고",
+          "width": 640,
+          "height": 360
+        }
+      ]
+    },
+    {
+      "id": "1MHsYLzJbtw",
+      "title": "아이언 궤도 점검 · 벽에 닿지 않는 빈스윙",
+      "originalTitle": "벽 하나만 있으면 집에서 스윙 교정 끝⛳ #골프 #golf #ゴルフ",
+      "channel": "몽땅골프",
+      "source": "https://www.youtube.com/watch?v=1MHsYLzJbtw",
+      "duration": 22,
+      "audioSeconds": 21.5016875,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        0.66,
+        2.42,
+        4.18,
+        5.94,
+        7.7,
+        9.46,
+        11.22,
+        12.98,
+        14.74,
+        16.5,
+        18.26,
+        20.02
+      ],
+      "primaryGroup": "backswing-takeaway",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "벽을 기준으로 테이크백 때 손목을 말거나 다운스윙 때 클럽이 바깥으로 넘어오는 모습을 비교하는 빈스윙 시범입니다.",
+      "points": [
+        "클럽을 짧게 잡고 벽 앞에서 천천히 움직이는 모습을 보여 줍니다.",
+        "손목을 말아 들어가는 테이크백과 바깥으로 덮이는 다운스윙을 벽 접촉으로 비교합니다.",
+        "한 가지 궤도 점검용 드릴이며 모든 스윙을 벽에 맞춰야 한다는 기준은 아닙니다."
+      ],
+      "editorialAction": "공 없이 클럽을 짧게 잡고 천천히 움직이며, 테이크백에서 손목을 말 때와 몸통으로 시작할 때의 궤도를 비교합니다.",
+      "editorialCheck": "손목을 안쪽으로 말지 않았는지, 다운스윙이 바깥으로 넘어오지 않는지 한 가지만 확인합니다.",
+      "caution": "벽이나 주변 물건을 실제로 치지 않는 여유 공간에서 확인합니다. 벽 앞에서 빠르게 휘두르는 연습은 아닙니다.",
+      "relatedVideoIds": [
+        "MIx8BbSocFI"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/1MHsYLzJbtw-1.webp",
+          "time": 5.94,
+          "label": "손목 말림 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/1MHsYLzJbtw-2.webp",
+          "time": 18.26,
+          "label": "벽을 피하며 이어가는 시범",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "o-g_k0svTjo",
+      "title": "아이언 레깅 · 손목 힘 빼고 팔부터 내리기",
+      "originalTitle": "가볍게 툭쳐도 공이 멀리가는 비밀은 레깅입니다 백스윙 탑에서 손목에 힘을 빼고 팔을 내리면 클럽 헤드는 뒤에서 오고 몸통을 회전하면서 임팩합니다",
+      "channel": "파워스윙TV",
+      "source": "https://www.youtube.com/watch?v=o-g_k0svTjo",
+      "duration": 10,
+      "audioSeconds": 9.68275,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        0.3,
+        1.1,
+        1.9,
+        2.7,
+        3.5,
+        4.3,
+        5.1,
+        5.9,
+        6.7,
+        7.5,
+        8.3,
+        9.1
+      ],
+      "primaryGroup": "downswing-path",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "백스윙에서 손목 긴장을 줄이고 팔을 내릴 때 헤드가 뒤따르는 모습을 보여 준 뒤 몸통 회전으로 연결합니다.",
+      "points": [
+        "아이언을 든 측면·정면 시범을 짧게 보여 줍니다.",
+        "손목 힘을 빼고 팔을 내리는 흐름과 뒤따르는 헤드를 설명합니다.",
+        "거리 증가를 보장하는 자료는 아니며 레깅 각도를 강제로 만드는 근거로 삼지 않습니다."
+      ],
+      "editorialAction": "아이언 빈스윙에서 손으로 헤드를 먼저 던질 때와 팔·클럽이 편하게 내려올 때를 작게 비교합니다.",
+      "editorialCheck": "손목 각도를 붙잡으려 힘주지 않는지, 하강 뒤 몸통 회전과 피니시가 막히지 않는지 확인합니다.",
+      "caution": "팔 먼저 내리기는 구분 감각입니다. 몸통을 오래 멈추거나 손목을 억지로 꺾어 유지하지 않습니다.",
+      "relatedVideoIds": [
+        "S3fxUFBzfBo",
+        "z9lAaO2IefM"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/o-g_k0svTjo-1.webp",
+          "time": 5.1,
+          "label": "팔 하강과 뒤따르는 헤드",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/o-g_k0svTjo-2.webp",
+          "time": 7.5,
+          "label": "몸통 회전으로 연결",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "18oA0JBM-fk",
+      "title": "드라이버 훅·슬라이스 · 하체 회전과 헤드 보내기",
+      "originalTitle": "하체를 썼는데도 드라이버가 잘 안된다면 이렇게 해봅시다! #골프 #golf #ゴルフ",
+      "channel": "몽땅골프",
+      "source": "https://www.youtube.com/watch?v=18oA0JBM-fk",
+      "duration": 39,
+      "audioSeconds": 39.2881875,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        1.17,
+        4.29,
+        7.41,
+        10.53,
+        13.65,
+        16.77,
+        19.89,
+        23.01,
+        26.13,
+        29.25,
+        32.37,
+        35.49
+      ],
+      "primaryGroup": "downswing-shift",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "하체를 쓰면서 상체까지 너무 일찍 열어 버리는 경우와, 하체 회전에 헤드 통과를 함께 연결하는 경우를 비교합니다.",
+      "points": [
+        "등이 함께 빨리 열리면 클럽이 몸 앞으로 튀어나오는 모습을 보여 줍니다.",
+        "릴리스를 늦게 붙잡는 경우와 급히 푸는 경우의 구질을 설명합니다.",
+        "등을 타깃 쪽에 둔 느낌에서 하체와 헤드를 연결하는 시범입니다. 훅·슬라이스의 모든 원인을 설명한 것은 아닙니다."
+      ],
+      "editorialAction": "작은 드라이버 리허설에서 하체를 돌리자마자 상체까지 급히 열리는지 먼저 비교합니다.",
+      "editorialCheck": "하체만 빨리 돌리고 헤드를 붙잡지 않는지, 몸과 클럽의 통과가 편하게 이어지는지 확인합니다.",
+      "caution": "등을 남기는 것은 영상의 교정 감각입니다. 상체를 강제로 고정하거나 오른손으로 헤드를 밀지 않습니다.",
+      "relatedVideoIds": [
+        "uEEjRPwQ2Vo",
+        "OqjaiUzNaXE"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/18oA0JBM-fk-1.webp",
+          "time": 7.41,
+          "label": "상체가 함께 빨리 열리는 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/18oA0JBM-fk-2.webp",
+          "time": 26.13,
+          "label": "하체와 헤드 통과 연결",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "3BLL1Hv70j8",
+      "title": "드라이버 정타 · 풀스윙 전에 느린 구간 연습",
+      "originalTitle": "드라이버 잘치려면, 풀스윙보다 느리게 연습해라",
+      "channel": "잔나비골프",
+      "source": "https://www.youtube.com/watch?v=3BLL1Hv70j8",
+      "duration": 120,
+      "audioSeconds": 120.0239375,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조 (영문 구간은 영어로 재전사, 한국어 화면 자막과 비교)",
+      "sampleTimes": [
+        3.6,
+        13.2,
+        22.8,
+        32.4,
+        42.0,
+        51.6,
+        61.2,
+        70.8,
+        80.4,
+        90.0,
+        99.6,
+        109.2
+      ],
+      "primaryGroup": "downswing-tempo",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "처음부터 세게 휘두르기보다 느린 구간 연습으로 클럽 경로·체중이동·페이스 중앙 접촉을 익히는 설명입니다.",
+      "points": [
+        "작은 속도에서 클럽이 몸 옆에서 공 쪽으로 움직이는 경로를 연습합니다.",
+        "팔이 내려오는 움직임과 타깃 쪽 체중이동을 함께 비교합니다.",
+        "후반에는 손목으로 퍼 올리는 동작을 피하고 필요한 만큼 페이스 방향을 맞추는 확인점을 설명합니다."
+      ],
+      "editorialAction": "현재 레슨의 드라이버 조건에서 작은 속도로 클럽 통과와 체중이동을 연결한 뒤 스윙 크기를 늘립니다.",
+      "editorialCheck": "손목으로 공을 퍼 올리지 않는지, 페이스 중앙 접촉과 시작 방향이 작은 스윙에서도 일정한지 확인합니다.",
+      "caution": "드라이버를 아이언처럼 가파르게 찍어 치라는 설명이 아닙니다. 손목을 세게 뒤집어 방향을 맞추지 않습니다.",
+      "relatedVideoIds": [
+        "YUtzwggQMQc"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/3BLL1Hv70j8-1.webp",
+          "time": 51.6,
+          "label": "느린 경로·체중이동 연습",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/3BLL1Hv70j8-2.webp",
+          "time": 109.2,
+          "label": "페이스와 왼팔 안정 확인",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "OqjaiUzNaXE",
+      "title": "드라이버 팔 끌림 · 오른팔을 펴는 타이밍",
+      "originalTitle": "오른팔을 펴야 드라이버가 달라집니다!  #골프 #golf #ゴルフ",
+      "channel": "몽땅골프",
+      "source": "https://www.youtube.com/watch?v=OqjaiUzNaXE",
+      "duration": 65,
+      "audioSeconds": 65.224875,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        1.95,
+        7.15,
+        12.35,
+        17.55,
+        22.75,
+        27.95,
+        33.15,
+        38.35,
+        43.55,
+        48.75,
+        53.95,
+        59.15
+      ],
+      "primaryGroup": "impact-release",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "오른팔꿈치를 오래 끌고 와 릴리스가 늦어지는 경우를 비교하고, 한 손 리허설로 오른팔이 펴지는 시점을 찾습니다.",
+      "points": [
+        "팔꿈치를 끝까지 끌면 릴리스가 늦고, 뒤늦게 손목을 급히 풀면 반대 방향 미스가 날 수 있다고 설명합니다.",
+        "클럽을 짧게 잡고 오른손 한 손으로 팔이 펴지는 동작을 시범합니다.",
+        "손목을 먼저 뒤집는 동작과 팔이 펴지는 동작을 구분합니다."
+      ],
+      "editorialAction": "오른손 한 손의 느린 빈스윙으로 팔을 계속 끌지 않고 펴며 클럽이 통과하는 시점을 비교합니다.",
+      "editorialCheck": "손목을 갑자기 풀어 맞히지 않는지, 오른팔을 뻗으려 어깨에 힘을 더 주지 않는지 확인합니다.",
+      "caution": "현재 레슨의 허리 위 오른손 힘 빼기가 우선입니다. 팔 펴기를 세게 밀거나 팔꿈치를 잠그는 동작으로 바꾸지 않습니다.",
+      "relatedVideoIds": [
+        "18oA0JBM-fk",
+        "daQLQ1rAzs0"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/OqjaiUzNaXE-1.webp",
+          "time": 7.15,
+          "label": "오른팔을 끌고 오는 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/OqjaiUzNaXE-2.webp",
+          "time": 43.55,
+          "label": "한 손으로 팔 펴기 시범",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "k0jhBy7WE8s",
+      "title": "드라이버 힘 빼기 · 공 치기 전 헤드 휘두르기",
+      "originalTitle": "드라이버 힘 빼고 던지는 느낌 찾는 방법           #골프힘빼기 #드라이버잘치는법",
+      "channel": "비가나의 골프랜드",
+      "source": "https://www.youtube.com/watch?v=k0jhBy7WE8s",
+      "duration": 90,
+      "audioSeconds": 89.954125,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        2.7,
+        9.9,
+        17.1,
+        24.3,
+        31.5,
+        38.7,
+        45.9,
+        53.1,
+        60.3,
+        67.5,
+        74.7,
+        81.9
+      ],
+      "primaryGroup": "impact-release",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "공을 치기 전에 클럽을 살짝 들고 헤드가 몸 주변을 막힘없이 지나가는 느낌을 찾는 리허설입니다.",
+      "points": [
+        "어드레스에서 헤드를 조금 들어 몸 주변으로 휘두르는 준비 동작을 보여 줍니다.",
+        "몸이 먼저 급히 나가며 클럽을 붙잡는 느낌과 헤드가 흐르는 느낌을 비교합니다.",
+        "영상의 느슨한 그립·회전량 표현은 개인 처방으로 복제하지 않고 부드러운 움직임만 참고합니다."
+      ],
+      "editorialAction": "공 없이 드라이버 헤드를 조금 들어 천천히 휘둘러 보고, 현재 레슨의 허리 위 오른손 이완과 연결합니다.",
+      "editorialCheck": "몸이 먼저 급히 나가며 헤드를 붙잡지 않는지, 그립을 놓치지 않으면서 손목 긴장을 줄일 수 있는지 확인합니다.",
+      "caution": "힘 빼기는 그립을 놓치는 것이 아닙니다. 주변 공간을 확보하고 작은 속도로 비교합니다.",
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "daQLQ1rAzs0"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/k0jhBy7WE8s-1.webp",
+          "time": 24.3,
+          "label": "헤드를 들어 준비",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/k0jhBy7WE8s-2.webp",
+          "time": 45.9,
+          "label": "몸 주변으로 헤드 흐름 만들기",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "Gbgc0VxJ35s",
+      "title": "드라이버 긴장 풀기 · 왼팔꿈치 잠그지 않기",
+      "originalTitle": "드라이버 힘 빼는 법 힘이 저절로 빠집니다!!",
+      "channel": "동우쌤_베이스골프",
+      "source": "https://www.youtube.com/watch?v=Gbgc0VxJ35s",
+      "duration": 35,
+      "audioSeconds": 35.1318125,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        1.05,
+        3.85,
+        6.65,
+        9.45,
+        12.25,
+        15.05,
+        17.85,
+        20.65,
+        23.45,
+        26.25,
+        29.05,
+        31.85
+      ],
+      "primaryGroup": "backswing-setup",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "어드레스에서 왼팔꿈치를 뻣뻣하게 펴 둔 자세와 조금 여유를 둔 자세의 백스윙 긴장을 비교합니다.",
+      "points": [
+        "왼팔꿈치를 완전히 펴 잠근 자세를 먼저 보여 줍니다.",
+        "팔꿈치를 조금 내려 편한 상태로 백스윙하는 시범과 비교합니다.",
+        "어떤 사람에게나 반드시 효과가 난다는 표현은 옮기지 않고 긴장 차이를 확인하는 참고로 씁니다."
+      ],
+      "editorialAction": "어드레스에서 왼팔을 잠근 경우와 조금 여유를 둔 경우를 느린 백스윙으로 비교합니다.",
+      "editorialCheck": "왼팔 길이를 일부러 줄이지 않아도 어깨 긴장이 덜한지, 손으로만 클럽을 들어 올리지 않는지 확인합니다.",
+      "caution": "팔을 크게 접으라는 뜻이 아닙니다. 현재 코치가 정한 셋업과 편한 팔 상태를 우선합니다.",
+      "relatedVideoIds": [
+        "2tam4sbJQtM",
+        "YUtzwggQMQc"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/Gbgc0VxJ35s-1.webp",
+          "time": 6.65,
+          "label": "뻣뻣한 왼팔 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/Gbgc0VxJ35s-2.webp",
+          "time": 15.05,
+          "label": "팔꿈치에 여유를 둔 준비",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "VqdMTh4REdk",
+      "title": "드라이버 힘 빼기 · 부드러운 하강부터, 속도는 나중에",
+      "originalTitle": "드라이버 힘빼기(둘중하나 선택,욕심금지)",
+      "channel": "바로골프",
+      "source": "https://www.youtube.com/watch?v=VqdMTh4REdk",
+      "duration": 49,
+      "audioSeconds": 49.2263125,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        1.47,
+        5.39,
+        9.31,
+        13.23,
+        17.15,
+        21.07,
+        24.99,
+        28.91,
+        32.83,
+        36.75,
+        40.67,
+        44.59
+      ],
+      "primaryGroup": "downswing-tempo",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "거리와 정확도를 한 번에 잡으려 힘주는 습관 대신, 팔·어깨가 부드럽게 내려가고 헤드가 통과하는 연습을 먼저 제안합니다.",
+      "points": [
+        "부드러운 하강을 시도하다가 거리 욕심 때문에 다시 힘주는 상황을 설명합니다.",
+        "팔·어깨를 옆으로 편하게 내리며 클럽이 지나갈 공간을 만드는 모습을 보여 줍니다.",
+        "비거리 목표를 바로 더하기보다 한 가지 연습 목적을 선택하는 내용입니다."
+      ],
+      "editorialAction": "이번 빈스윙의 목적을 부드러운 하강 하나로 정하고, 거리나 속도 욕심을 줄인 상태에서 통과해 봅니다.",
+      "editorialCheck": "팔을 내리는 순간 오른손이 다시 굳지 않는지, 느리게 해도 끝까지 이어지는지 확인합니다.",
+      "caution": "팔을 옆으로 내린다는 감각을 몸 뒤로 억지로 끌거나 회전을 멈추는 동작으로 만들지 않습니다.",
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "3BLL1Hv70j8"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/VqdMTh4REdk-1.webp",
+          "time": 24.99,
+          "label": "팔·어깨를 부드럽게 내리기",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/VqdMTh4REdk-2.webp",
+          "time": 40.67,
+          "label": "통과할 공간을 만든 리허설",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "ibDVBB6fdZE",
+      "title": "드라이버 하강 · 어깨 힘 대신 클럽 무게 쓰기",
+      "originalTitle": "세게 쳐도 안 나가는 드라이버, 제대로 힘 빼고 멀리 치는 법!",
+      "channel": "korean pro golfer Heo",
+      "source": "https://www.youtube.com/watch?v=ibDVBB6fdZE",
+      "duration": 82,
+      "audioSeconds": 81.52525,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        2.46,
+        9.02,
+        15.58,
+        22.14,
+        28.7,
+        35.26,
+        41.82,
+        48.38,
+        54.94,
+        61.5,
+        68.06,
+        74.62
+      ],
+      "primaryGroup": "downswing-path",
+      "club": "driver",
+      "clubReason": "드라이버을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "팔·어깨 힘으로만 치던 사람이 단순히 힘을 빼면 속도까지 잃는 상황을 설명하고, 도구의 무게로 움직임을 이어가는 감각을 비교합니다.",
+      "points": [
+        "팔·어깨로 억지로 가속하는 모습과 힘을 빼도 움직임이 없는 모습을 구분합니다.",
+        "무거운 공 비유로 무게를 이용하는 감각을 설명합니다.",
+        "마지막에는 실제 클럽을 든 상태에서 무게와 움직임을 연결합니다."
+      ],
+      "editorialAction": "느린 드라이버 빈스윙에서 팔로 잡아당기기보다 클럽 무게가 느껴지는 편한 하강을 비교합니다.",
+      "editorialCheck": "어깨를 강제로 떨어뜨리지 않는지, 힘을 줄여도 클럽이 멈추지 않고 피니시까지 흐르는지 확인합니다.",
+      "caution": "어깨를 아래로 누르거나 무거운 물건을 던지는 연습을 추가하지 않습니다. 비유와 실제 클럽 동작을 구분합니다.",
+      "relatedVideoIds": [
+        "BvnGOkOMo68",
+        "V7r2odT_dBE"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/ibDVBB6fdZE-1.webp",
+          "time": 35.26,
+          "label": "어깨 긴장과 하강 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/ibDVBB6fdZE-2.webp",
+          "time": 68.06,
+          "label": "클럽 무게로 연결하는 시범",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "mnKjK9yTU1Q",
+      "title": "아이언 연결 4단계 · 헤드 무게부터 체중이동까지",
+      "originalTitle": "골프스윙 단 4단계로 쉽게 마스터! 독학골퍼 필수시청! #골프레슨 #골프연습 #골프",
+      "channel": "korean pro golfer Heo",
+      "source": "https://www.youtube.com/watch?v=mnKjK9yTU1Q",
+      "duration": 89,
+      "audioSeconds": 88.769875,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        2.67,
+        9.79,
+        16.91,
+        24.03,
+        31.15,
+        38.27,
+        45.39,
+        52.51,
+        59.63,
+        66.75,
+        73.87,
+        80.99
+      ],
+      "primaryGroup": "common",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "헤드 무게, 백스윙 회전, 왼쪽 지지, 오른발 정리와 체중이동을 네 단계로 연결하는 아이언 시범입니다.",
+      "points": [
+        "작은 타격에서 헤드 무게를 느낀 뒤 왼어깨 회전으로 스윙을 늘립니다.",
+        "중반에는 왼쪽 지지와 브레이크라는 교정 감각을 보여 줍니다.",
+        "마지막에는 오른발을 가볍게 정리하며 체중을 왼쪽으로 보내는 느낌을 설명합니다."
+      ],
+      "editorialAction": "작은 아이언 스윙에서 헤드 무게와 편한 회전부터 비교하고, 지지·체중이동은 현재 레슨 기준과 대조합니다.",
+      "editorialCheck": "스윙을 키워도 손·어깨 긴장이 늘지 않는지, 마무리에서 체중이 오른발에 남지 않는지 확인합니다.",
+      "caution": "영상의 브레이크를 몸을 강제로 멈추라는 지시로 적용하지 않습니다. 현재 레슨과 다른 지지 감각은 코치에게 확인합니다.",
+      "relatedVideoIds": [
+        "bfaLLjZqqCA",
+        "CA-TZ7WQlHY"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/mnKjK9yTU1Q-1.webp",
+          "time": 16.91,
+          "label": "헤드 무게부터 시작",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/mnKjK9yTU1Q-2.webp",
+          "time": 73.87,
+          "label": "오른발 정리와 체중이동",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "6DFYCkg5ChY",
+      "title": "아이언 막힌 팔로우 · 왼어깨 힘 풀어 통과",
+      "originalTitle": "수 천 번 분석 끝에 해결했습니다! 왼쪽 어깨가 막히는 스윙",
+      "channel": "korean pro golfer Heo",
+      "source": "https://www.youtube.com/watch?v=6DFYCkg5ChY",
+      "duration": 87,
+      "audioSeconds": 87.028375,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        2.61,
+        9.57,
+        16.53,
+        23.49,
+        30.45,
+        37.41,
+        44.37,
+        51.33,
+        58.29,
+        65.25,
+        72.21,
+        79.17
+      ],
+      "primaryGroup": "follow-flow",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "제자리 회전과 과한 어깨 긴장으로 클럽을 끌어 올리는 모습을 비교하고, 체중이동과 헤드 통과가 이어지는 팔로우를 설명합니다.",
+      "points": [
+        "초반에는 체중이동 없이 제자리에서 도는 경우를 비교합니다.",
+        "임팩트에서 왼팔을 당겨 올릴 때 어깨가 막히는 느낌과 헤드가 통과하는 모습을 설명합니다.",
+        "골반 이동량과 어깨 높이에 대한 강한 표현은 개인의 필수 자세로 옮기지 않습니다."
+      ],
+      "editorialAction": "작은 아이언 스윙에서 왼팔로 클럽을 끌어 올리지 않고 몸의 이동과 헤드 통과가 이어지는지 비교합니다.",
+      "editorialCheck": "임팩트에서 왼어깨가 굳지 않는지, 팔로우가 막히지 않고 편한 피니시로 이어지는지 확인합니다.",
+      "caution": "골반을 과하게 밀거나 오른어깨를 강제로 낮추지 않습니다. 영상의 이동량보다 현재 레슨의 편한 범위를 우선합니다.",
+      "relatedVideoIds": [
+        "4DyoF3OQKww",
+        "mnKjK9yTU1Q"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/6DFYCkg5ChY-1.webp",
+          "time": 51.33,
+          "label": "어깨 긴장으로 끌어 올리는 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/6DFYCkg5ChY-2.webp",
+          "time": 79.17,
+          "label": "헤드를 놓아 보내는 팔로우",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "kW1GIWEpRDQ",
+      "title": "아이언 스윙 연결 · 테이크백–체중이동–피니시",
+      "originalTitle": "27년간 배운 모든 걸 풀겠습니다 골프 인생이 바뀝니다",
+      "channel": "korean pro golfer Heo",
+      "source": "https://www.youtube.com/watch?v=kW1GIWEpRDQ",
+      "duration": 59,
+      "audioSeconds": 58.9786875,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        1.77,
+        6.49,
+        11.21,
+        15.93,
+        20.65,
+        25.37,
+        30.09,
+        34.81,
+        39.53,
+        44.25,
+        48.97,
+        53.69
+      ],
+      "primaryGroup": "common",
+      "club": "iron",
+      "clubReason": "아이언을 든 시범과 영상 설명을 확인했습니다. 다른 클럽으로 자동 확대하지 않습니다.",
+      "summary": "테이크백의 손·손목 방향에서 백스윙 회전, 왼쪽 이동, 다운스윙과 피니시까지 구간별로 잇는 아이언 설명입니다.",
+      "points": [
+        "초반에는 손을 안쪽으로 말지 않는 테이크백과 손목 방향을 설명합니다.",
+        "백스윙 회전 뒤 왼쪽 이동과 겨드랑이 긴장을 줄이는 다운스윙을 연결합니다.",
+        "후반에는 오른무릎이 왼쪽으로 이어지는 감각과 타깃을 향한 마무리를 보여 줍니다."
+      ],
+      "editorialAction": "현재 레슨의 몸통 테이크백을 먼저 확인하고, 작게 돌아 내려와 피니시까지 한 흐름으로 이어 봅니다.",
+      "editorialCheck": "손목을 억지로 조작하지 않는지, 체중이동 뒤 회전이 막히거나 무릎을 강제로 붙이지 않는지 확인합니다.",
+      "caution": "영상의 세부 관절 위치를 한꺼번에 복제하지 않습니다. 손목·무릎 감각은 내 레슨 기준과 구분해 비교합니다.",
+      "relatedVideoIds": [
+        "mnKjK9yTU1Q",
+        "MIx8BbSocFI"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/kW1GIWEpRDQ-1.webp",
+          "time": 15.93,
+          "label": "테이크백 손목 방향",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/kW1GIWEpRDQ-2.webp",
+          "time": 48.97,
+          "label": "타깃을 향한 피니시",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    }
+  ]
+}

@@ -121,7 +121,8 @@ const Theme = (() => {
     }).join('');
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
-    const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간 연습 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}</div>`;
+    const fieldActive=view.golfTab==='field'||view.golfGroup==='field'||window.GolfContent?.videoGroups.find(g=>g.id==='field')?.videoIds.includes(view.golfId);
+    const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간·실전 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}<a href="#golf/field" ${fieldActive?'aria-current="page"':''}>실전</a></div>`;
     return `<nav class="tabbar ${active==='golf'?'tabbar-golf':''}">
       ${t('home', '🏠', '홈')}
       ${t('pt', '🏋️', 'PT')}

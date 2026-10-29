@@ -1,0 +1,42 @@
+{
+  "id": "z9lAaO2IefM",
+  "originalTitle": "아이언이 안 맞는다면 이 동작을 해보세요",
+  "source": "https://www.youtube.com/watch?v=z9lAaO2IefM",
+  "method": "원본 12개 표본 화면·한글 자막과 전체 8.9초 음성 자동 전사 대조",
+  "audioSeconds": 8.9,
+  "sampleTimes": [
+    0.27,
+    0.99,
+    1.71,
+    2.43,
+    3.15,
+    3.87,
+    4.59,
+    5.31,
+    6.03,
+    6.75,
+    7.47,
+    8.19
+  ],
+  "frames": [
+    {
+      "src": "media/golf-frames/z9lAaO2IefM-1.webp",
+      "time": 2.43,
+      "label": "백스윙에서 잠깐 멈춤",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/z9lAaO2IefM-2.webp",
+      "time": 5.31,
+      "label": "팔·클럽 하강 뒤 회전",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "duplicateReview": "No canonical or alternate ID match in 125 videos. Existing iron lowering/rotation material is related; no exhaustive same-footage claim.",
+  "placement": "Golf 실전 subsection; primary field group; iron. Existing four swing sections unchanged.",
+  "evidence": "Captions and full-audio ASR agree on 멈추고 → 떨어뜨리고 → 회전. Sampled demonstration shows pause near backswing top, arm/club lowering, then rotation.",
+  "editorial": "Small rehearsal and three self-checks are editor guidance, not verbatim source prescriptions.",
+  "lessonPriority": "2026-10-12 lesson says do not force a pause. No new full-swing stopping prescription, force or hold time."
+}

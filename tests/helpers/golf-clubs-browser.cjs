@@ -27,7 +27,7 @@ module.exports=async(browser,base,screenshot)=>{
   await p.locator('[data-g-club=driver]').click();assert.equal(await p.locator('.g-mini-detail').count(),1);
   await p.locator('.g-mini-detail').click();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'클럽 필터 후에도 보존');
   await p.goto(base+'#golf/group/common');await p.locator('.g-club-filters').waitFor();assert.match(await p.locator('#g-group-common').innerText(),/여러 구간 연결/);
-  assert.equal(await p.locator('.g-mini-detail').count(),8);await p.locator('[data-g-club=both]').click();assert.equal(await p.locator('.g-mini-detail').count(),1);
+  assert.equal(await p.locator('.g-mini-detail').count(),11);await p.locator('[data-g-club=both]').click();assert.equal(await p.locator('.g-mini-detail').count(),1);
   for(const theme of ['light','dark'])for(const width of [320,390,768]){
    await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }

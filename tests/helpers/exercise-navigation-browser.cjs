@@ -5,7 +5,7 @@ module.exports=async(browser,base)=>{
  try{
   for(const route of ['home','pt/now','pt/standards','pt','ht','exercise/pt_chestpress','golf/now','golf/videos','golf/group/backswing-top','favorites','calendar','search']){
    await p.goto(base+'#'+route);await p.locator('.tabbar').waitFor();
-   if(route.startsWith('golf/')){assert.equal(await p.locator('.golf-stage-nav a').count(),4);assert.equal(await p.locator('.exercise-search,.exercise-quicknav').count(),0);}else{await p.locator('.exercise-quicknav summary').waitFor();assert(await p.locator('.exercise-search').isVisible(),route+' has global search');}
+   if(route.startsWith('golf/')){assert.equal(await p.locator('.golf-stage-nav a').count(),5);assert.equal(await p.locator('.exercise-search,.exercise-quicknav').count(),0);}else{await p.locator('.exercise-quicknav summary').waitFor();assert(await p.locator('.exercise-search').isVisible(),route+' has global search');}
    assert.equal(await p.locator('.tabbar .tab').count(),6);
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-recent-pt').waitFor();

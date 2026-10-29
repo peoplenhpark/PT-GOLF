@@ -75,12 +75,12 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   const afterPractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});for(const k of ['lessons','questions','focus','videoNotes'])assert.deepEqual(afterPractice[k],beforePractice[k]);
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));
-  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,250);
+  const frameUrls=await page.locator('.g-frame img').evaluateAll(images=>[...new Set(images.map(im=>im.src))]);assert.equal(frameUrls.length,280);
   for(const url of frameUrls){const r=await page.request.get(url);assert(r.ok(),url+' must ship in built site');}
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-setup').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),27);
+  assert.equal(await page.locator('.g-video-mini').count(),30);
   assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['2tam4sbJQtM','UA-HYcmiKTA','MIx8BbSocFI']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).first().click();
   await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),8);
@@ -351,6 +351,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
   await require('./helpers/golf-taxonomy-browser.cjs')(browser,base);
   await require('./helpers/golf-clubs-browser.cjs')(browser,base);
+  await require('./helpers/golf-field-browser.cjs')(browser,base);
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);

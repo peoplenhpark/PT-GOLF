@@ -2998,5 +2998,365 @@
     "source": "https://www.youtube.com/watch?v=Gy1fb-ulGig",
     "method": "Original frame extraction, resize only. 원본 12개 표본 화면·화면 문구와 전체 332.8초 오디오 자동 전사 대조. 자동 전사 오인식과 영상의 효과 단정은 개인 처방 근거에서 제외.",
     "verifiedAt": "2026-10-27"
+  },
+  {
+    "id": "z9lAaO2IefM",
+    "title": "아이언이 안 맞을 때 · 멈춤–하강–회전 리허설",
+    "frames": [
+      {
+        "src": "media/golf-frames/z9lAaO2IefM-1.webp",
+        "time": 2.43,
+        "label": "백스윙에서 잠깐 멈춤",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/z9lAaO2IefM-2.webp",
+        "time": 5.31,
+        "label": "팔·클럽 하강 뒤 회전",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 9,
+    "source": "https://www.youtube.com/watch?v=z9lAaO2IefM",
+    "method": "Original frame extraction, resize only. 원본 12개 표본 화면·한글 자막과 전체 8.9초 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "bfaLLjZqqCA",
+    "title": "아이언 스윙 재정비 · 작은 스윙부터 4단계",
+    "frames": [
+      {
+        "src": "media/golf-frames/bfaLLjZqqCA-1.webp",
+        "time": 4.18,
+        "label": "작은 어깨 회전 스윙",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/bfaLLjZqqCA-2.webp",
+        "time": 14.74,
+        "label": "백스윙 크기를 더하는 단계",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 22,
+    "source": "https://www.youtube.com/watch?v=bfaLLjZqqCA",
+    "method": "원본 12개 표본 화면·자막 확인. 전체 오디오 전사를 시도했으나 음악의 부정확한 전사는 내용 근거에서 제외",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "6K7-nA-JHyU",
+    "title": "백스윙 3가지 감각 · 그립 누르기·페이스·팔 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/6K7-nA-JHyU-1.webp",
+        "time": 154.98,
+        "label": "그립을 누르는 감각 설명",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/6K7-nA-JHyU-2.webp",
+        "time": 476.42,
+        "label": "팔과 몸을 연결하는 참고",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 574,
+    "source": "https://www.youtube.com/watch?v=6K7-nA-JHyU",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "1MHsYLzJbtw",
+    "title": "아이언 궤도 점검 · 벽에 닿지 않는 빈스윙",
+    "frames": [
+      {
+        "src": "media/golf-frames/1MHsYLzJbtw-1.webp",
+        "time": 5.94,
+        "label": "손목 말림 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1MHsYLzJbtw-2.webp",
+        "time": 18.26,
+        "label": "벽을 피하며 이어가는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 22,
+    "source": "https://www.youtube.com/watch?v=1MHsYLzJbtw",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "o-g_k0svTjo",
+    "title": "아이언 레깅 · 손목 힘 빼고 팔부터 내리기",
+    "frames": [
+      {
+        "src": "media/golf-frames/o-g_k0svTjo-1.webp",
+        "time": 5.1,
+        "label": "팔 하강과 뒤따르는 헤드",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/o-g_k0svTjo-2.webp",
+        "time": 7.5,
+        "label": "몸통 회전으로 연결",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 10,
+    "source": "https://www.youtube.com/watch?v=o-g_k0svTjo",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "18oA0JBM-fk",
+    "title": "드라이버 훅·슬라이스 · 하체 회전과 헤드 보내기",
+    "frames": [
+      {
+        "src": "media/golf-frames/18oA0JBM-fk-1.webp",
+        "time": 7.41,
+        "label": "상체가 함께 빨리 열리는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/18oA0JBM-fk-2.webp",
+        "time": 26.13,
+        "label": "하체와 헤드 통과 연결",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 39,
+    "source": "https://www.youtube.com/watch?v=18oA0JBM-fk",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "3BLL1Hv70j8",
+    "title": "드라이버 정타 · 풀스윙 전에 느린 구간 연습",
+    "frames": [
+      {
+        "src": "media/golf-frames/3BLL1Hv70j8-1.webp",
+        "time": 51.6,
+        "label": "느린 경로·체중이동 연습",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/3BLL1Hv70j8-2.webp",
+        "time": 109.2,
+        "label": "페이스와 왼팔 안정 확인",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 120,
+    "source": "https://www.youtube.com/watch?v=3BLL1Hv70j8",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조 (영문 구간은 영어로 재전사, 한국어 화면 자막과 비교)",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "OqjaiUzNaXE",
+    "title": "드라이버 팔 끌림 · 오른팔을 펴는 타이밍",
+    "frames": [
+      {
+        "src": "media/golf-frames/OqjaiUzNaXE-1.webp",
+        "time": 7.15,
+        "label": "오른팔을 끌고 오는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/OqjaiUzNaXE-2.webp",
+        "time": 43.55,
+        "label": "한 손으로 팔 펴기 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 65,
+    "source": "https://www.youtube.com/watch?v=OqjaiUzNaXE",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "k0jhBy7WE8s",
+    "title": "드라이버 힘 빼기 · 공 치기 전 헤드 휘두르기",
+    "frames": [
+      {
+        "src": "media/golf-frames/k0jhBy7WE8s-1.webp",
+        "time": 24.3,
+        "label": "헤드를 들어 준비",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/k0jhBy7WE8s-2.webp",
+        "time": 45.9,
+        "label": "몸 주변으로 헤드 흐름 만들기",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 90,
+    "source": "https://www.youtube.com/watch?v=k0jhBy7WE8s",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "Gbgc0VxJ35s",
+    "title": "드라이버 긴장 풀기 · 왼팔꿈치 잠그지 않기",
+    "frames": [
+      {
+        "src": "media/golf-frames/Gbgc0VxJ35s-1.webp",
+        "time": 6.65,
+        "label": "뻣뻣한 왼팔 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/Gbgc0VxJ35s-2.webp",
+        "time": 15.05,
+        "label": "팔꿈치에 여유를 둔 준비",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 35,
+    "source": "https://www.youtube.com/watch?v=Gbgc0VxJ35s",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "VqdMTh4REdk",
+    "title": "드라이버 힘 빼기 · 부드러운 하강부터, 속도는 나중에",
+    "frames": [
+      {
+        "src": "media/golf-frames/VqdMTh4REdk-1.webp",
+        "time": 24.99,
+        "label": "팔·어깨를 부드럽게 내리기",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/VqdMTh4REdk-2.webp",
+        "time": 40.67,
+        "label": "통과할 공간을 만든 리허설",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 49,
+    "source": "https://www.youtube.com/watch?v=VqdMTh4REdk",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "ibDVBB6fdZE",
+    "title": "드라이버 하강 · 어깨 힘 대신 클럽 무게 쓰기",
+    "frames": [
+      {
+        "src": "media/golf-frames/ibDVBB6fdZE-1.webp",
+        "time": 35.26,
+        "label": "어깨 긴장과 하강 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/ibDVBB6fdZE-2.webp",
+        "time": 68.06,
+        "label": "클럽 무게로 연결하는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 82,
+    "source": "https://www.youtube.com/watch?v=ibDVBB6fdZE",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "mnKjK9yTU1Q",
+    "title": "아이언 연결 4단계 · 헤드 무게부터 체중이동까지",
+    "frames": [
+      {
+        "src": "media/golf-frames/mnKjK9yTU1Q-1.webp",
+        "time": 16.91,
+        "label": "헤드 무게부터 시작",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/mnKjK9yTU1Q-2.webp",
+        "time": 73.87,
+        "label": "오른발 정리와 체중이동",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 89,
+    "source": "https://www.youtube.com/watch?v=mnKjK9yTU1Q",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "6DFYCkg5ChY",
+    "title": "아이언 막힌 팔로우 · 왼어깨 힘 풀어 통과",
+    "frames": [
+      {
+        "src": "media/golf-frames/6DFYCkg5ChY-1.webp",
+        "time": 51.33,
+        "label": "어깨 긴장으로 끌어 올리는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/6DFYCkg5ChY-2.webp",
+        "time": 79.17,
+        "label": "헤드를 놓아 보내는 팔로우",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 87,
+    "source": "https://www.youtube.com/watch?v=6DFYCkg5ChY",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "kW1GIWEpRDQ",
+    "title": "아이언 스윙 연결 · 테이크백–체중이동–피니시",
+    "frames": [
+      {
+        "src": "media/golf-frames/kW1GIWEpRDQ-1.webp",
+        "time": 15.93,
+        "label": "테이크백 손목 방향",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/kW1GIWEpRDQ-2.webp",
+        "time": 48.97,
+        "label": "타깃을 향한 피니시",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 59,
+    "source": "https://www.youtube.com/watch?v=kW1GIWEpRDQ",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-29"
   }
 ]

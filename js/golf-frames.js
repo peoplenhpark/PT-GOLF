@@ -1999,5 +1999,245 @@ window.GolfFrames = {
       "width": 640,
       "height": 360
     }
+  ],
+  "z9lAaO2IefM": [
+    {
+      "src": "media/golf-frames/z9lAaO2IefM-1.webp",
+      "time": 2.43,
+      "label": "백스윙에서 잠깐 멈춤",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/z9lAaO2IefM-2.webp",
+      "time": 5.31,
+      "label": "팔·클럽 하강 뒤 회전",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "bfaLLjZqqCA": [
+    {
+      "src": "media/golf-frames/bfaLLjZqqCA-1.webp",
+      "time": 4.18,
+      "label": "작은 어깨 회전 스윙",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/bfaLLjZqqCA-2.webp",
+      "time": 14.74,
+      "label": "백스윙 크기를 더하는 단계",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "6K7-nA-JHyU": [
+    {
+      "src": "media/golf-frames/6K7-nA-JHyU-1.webp",
+      "time": 154.98,
+      "label": "그립을 누르는 감각 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/6K7-nA-JHyU-2.webp",
+      "time": 476.42,
+      "label": "팔과 몸을 연결하는 참고",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "1MHsYLzJbtw": [
+    {
+      "src": "media/golf-frames/1MHsYLzJbtw-1.webp",
+      "time": 5.94,
+      "label": "손목 말림 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1MHsYLzJbtw-2.webp",
+      "time": 18.26,
+      "label": "벽을 피하며 이어가는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "o-g_k0svTjo": [
+    {
+      "src": "media/golf-frames/o-g_k0svTjo-1.webp",
+      "time": 5.1,
+      "label": "팔 하강과 뒤따르는 헤드",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/o-g_k0svTjo-2.webp",
+      "time": 7.5,
+      "label": "몸통 회전으로 연결",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "18oA0JBM-fk": [
+    {
+      "src": "media/golf-frames/18oA0JBM-fk-1.webp",
+      "time": 7.41,
+      "label": "상체가 함께 빨리 열리는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/18oA0JBM-fk-2.webp",
+      "time": 26.13,
+      "label": "하체와 헤드 통과 연결",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "3BLL1Hv70j8": [
+    {
+      "src": "media/golf-frames/3BLL1Hv70j8-1.webp",
+      "time": 51.6,
+      "label": "느린 경로·체중이동 연습",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/3BLL1Hv70j8-2.webp",
+      "time": 109.2,
+      "label": "페이스와 왼팔 안정 확인",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "OqjaiUzNaXE": [
+    {
+      "src": "media/golf-frames/OqjaiUzNaXE-1.webp",
+      "time": 7.15,
+      "label": "오른팔을 끌고 오는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/OqjaiUzNaXE-2.webp",
+      "time": 43.55,
+      "label": "한 손으로 팔 펴기 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "k0jhBy7WE8s": [
+    {
+      "src": "media/golf-frames/k0jhBy7WE8s-1.webp",
+      "time": 24.3,
+      "label": "헤드를 들어 준비",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/k0jhBy7WE8s-2.webp",
+      "time": 45.9,
+      "label": "몸 주변으로 헤드 흐름 만들기",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "Gbgc0VxJ35s": [
+    {
+      "src": "media/golf-frames/Gbgc0VxJ35s-1.webp",
+      "time": 6.65,
+      "label": "뻣뻣한 왼팔 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/Gbgc0VxJ35s-2.webp",
+      "time": 15.05,
+      "label": "팔꿈치에 여유를 둔 준비",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "VqdMTh4REdk": [
+    {
+      "src": "media/golf-frames/VqdMTh4REdk-1.webp",
+      "time": 24.99,
+      "label": "팔·어깨를 부드럽게 내리기",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/VqdMTh4REdk-2.webp",
+      "time": 40.67,
+      "label": "통과할 공간을 만든 리허설",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ibDVBB6fdZE": [
+    {
+      "src": "media/golf-frames/ibDVBB6fdZE-1.webp",
+      "time": 35.26,
+      "label": "어깨 긴장과 하강 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ibDVBB6fdZE-2.webp",
+      "time": 68.06,
+      "label": "클럽 무게로 연결하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "mnKjK9yTU1Q": [
+    {
+      "src": "media/golf-frames/mnKjK9yTU1Q-1.webp",
+      "time": 16.91,
+      "label": "헤드 무게부터 시작",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/mnKjK9yTU1Q-2.webp",
+      "time": 73.87,
+      "label": "오른발 정리와 체중이동",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "6DFYCkg5ChY": [
+    {
+      "src": "media/golf-frames/6DFYCkg5ChY-1.webp",
+      "time": 51.33,
+      "label": "어깨 긴장으로 끌어 올리는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/6DFYCkg5ChY-2.webp",
+      "time": 79.17,
+      "label": "헤드를 놓아 보내는 팔로우",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "kW1GIWEpRDQ": [
+    {
+      "src": "media/golf-frames/kW1GIWEpRDQ-1.webp",
+      "time": 15.93,
+      "label": "테이크백 손목 방향",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/kW1GIWEpRDQ-2.webp",
+      "time": 48.97,
+      "label": "타깃을 향한 피니시",
+      "width": 240,
+      "height": 426
+    }
   ]
 };
