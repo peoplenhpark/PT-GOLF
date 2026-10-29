@@ -13,7 +13,7 @@ module.exports=async(browser,base)=>{
    await p.goBack();await p.locator('.home-destinations').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
    await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    const exits=p.locator('.coach-recap-links');assert.equal(await exits.locator('a,button').count(),2);
-   await exits.locator('button').click();await p.waitForFunction(part=>document.activeElement?.classList.contains(part==='pt'?'coach-personal':'g-basic-practice-pin'),part);
+   await exits.locator('button').click();await p.waitForFunction(part=>document.activeElement?.classList.contains(part==='pt'?'coach-personal':'g-personal-priority'),part);
    assert.equal(await p.locator('.coach-desk').innerText(),before,'recap exits scroll without replacing practice content');
    if(part==='pt')assert(await p.locator('.coach-routine-link').isVisible());
    await exits.locator('a').click();
