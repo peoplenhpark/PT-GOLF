@@ -109,7 +109,7 @@ window.CoachDesk = (() => {
     if(!handle.status().ok)body+='<p class="storage-warning" role="alert">보관 기록을 읽지 못했습니다. 기존 원본은 보존하고 저장을 멈췄습니다.</p>';
     if(tab==='now'&&v.coachRecord){const r=records.find(r=>r.id===v.coachRecord);body+='<section class="coach-selected-record"><h2>기록과 질문</h2>'+(r?recordHtml(r,true):'<p>기록을 찾지 못했습니다.</p>')+'<a class="coach-source" href="'+route(part,'standards')+'">보관 기록으로 돌아가기 ›</a></section>';}else if(tab==='now'){
       if(part==='pt')body+=recentPT();
-      if(part==='golf')body+=window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+recentGolf()+window.GolfQuestions.selector(s);
+      if(part==='golf')body+=window.GolfHub.personalPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+recentGolf()+window.GolfQuestions.selector(s);
       if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
       if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a><a href="#golf/standards">보관 기록</a></nav>';
       if(part==='pt')body+=personalPTLinks();
@@ -121,7 +121,7 @@ window.CoachDesk = (() => {
   function configure(config){window.GolfQuestions?.bind(config);if(bound===config.app)return;bound=config.app;
     config.app.addEventListener('click',ev=>{
       const button=ev.target.closest('[data-coach-jump]');if(!button)return;
-      const target=button.dataset.coachJump==='personal'?config.app.querySelector('.coach-personal'):config.app.querySelector('.g-basic-practice-pin,.g-daily-pin,.g-pinned-sequence');
+      const target=button.dataset.coachJump==='personal'?config.app.querySelector('.coach-personal'):config.app.querySelector('.g-personal-priority,.g-basic-practice-pin,.g-daily-pin,.g-pinned-sequence');
       if(!target)return;ev.preventDefault();target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});
     });
     config.app.addEventListener('change',ev=>{if(!ev.target.matches('[data-coach-source]'))return;api.go('coach',{part:view.part,coachTab:'standards',coachSource:ev.target.value,coachId:null});});

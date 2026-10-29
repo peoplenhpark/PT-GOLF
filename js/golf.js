@@ -54,6 +54,10 @@ window.GolfHub = (() => {
   const dateLabel = value => Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).format(new Date(value)) : '날짜 미확인';
   const publishedLabel = v => `<time datetime="${e(v.publishedAt||'')}" title="YouTube 공개일 · 한국 시간">공개 ${e(dateLabel(v.publishedAt))}</time>`;
   const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="앱 최초 등록일 · 한국 시간">등록 ${e(dateLabel(v.addedAt))}</time>`;
+  function personalPracticePin() {
+    const pin=content.personalPracticePin;if(!pin)return '';
+    return `<section class="g-personal-priority" aria-labelledby="g-personal-priority-title"><div class="g-personal-priority-head"><h2 id="g-personal-priority-title">${e(pin.dateLabel)} · ${e(pin.club)}</h2><span>${e(pin.label)}</span></div><ol>${pin.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></section>`;
+  }
   function pinnedSequence(){return '<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><ol><li>백스윙(일정구간 낮게 끌고 몸통 회전, 오른쪽 옆구리 밀착 여부 체크)</li><li>골반 회전(체중이동 + 타격자세 만들기)</li><li>임팩트에 집중</li><li>피니시 시에 채가 어깨 위를 넘기도록 힘 빼기(빈스윙으로 체크)</li></ol></section>';}
   function change(fn) {
     if (loadError) { api.toast('저장된 골프 기록을 읽지 못했습니다. 기존 기록을 보호하기 위해 저장을 멈췄습니다.'); return false; }
@@ -364,7 +368,7 @@ window.GolfHub = (() => {
       if(isAllVideos)body+=window.GolfPractice.lessonBridge(state,'videos');
       body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본영상</h2><p class="g-meta">${featured.length}편${featured[0]?.id===content.featuredVideoId?' · 첫 영상 상단 고정':''}</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
     }else {
-      if(tab==='notes')body+=pinnedSequence();
+      if(tab==='notes')body+=personalPracticePin()+pinnedSequence();
       body+=filters(view);
     }
     if (tab==='notes') {
@@ -631,5 +635,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink,searchRecords,questionShortcut,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

@@ -375,3 +375,14 @@
 .g-stage-card[id]{scroll-margin-top:110px}
 .g-stage-card:focus-visible{outline:2px solid var(--golf);outline-offset:3px}
 .g-stage-card>.g-stage-videos{display:flex;align-items:center;min-height:44px;margin-top:8px;font-size:13px}
+
+/* Latest user-selected feeling: persistent priority, separate from source coaching. */
+.g-personal-priority{margin:0 0 16px;padding:14px 16px;border:1px solid #8a7146;border-left:4px solid #f1cf83;border-radius:12px;background:#252117;color:#fff4dc;scroll-margin-top:64px}
+.g-personal-priority-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:5px 12px;margin-bottom:8px}
+:is(.g-hub,.coach-desk) .g-personal-priority h2{margin:0;color:#f2d391;font-size:18px;line-height:1.5}
+.g-personal-priority-head>span{font-size:12px;color:#d8c8aa}
+.g-personal-priority ol{margin:0;padding-left:1.35em;font-size:15px;font-weight:650;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+.g-personal-priority li+li{margin-top:7px}.g-personal-priority li::marker{color:#f1cf83}
+[data-theme="light"] .g-personal-priority{background:#fff8e7;color:#392c16;border-color:#987123}
+[data-theme="light"] :is(.g-hub,.coach-desk) .g-personal-priority h2,[data-theme="light"] .g-personal-priority li::marker{color:#795214}
+[data-theme="light"] .g-personal-priority-head>span{color:#6c5938}
