@@ -386,3 +386,12 @@
 [data-theme="light"] .g-personal-priority{background:#fff8e7;color:#392c16;border-color:#987123}
 [data-theme="light"] :is(.g-hub,.coach-desk) .g-personal-priority h2,[data-theme="light"] .g-personal-priority li::marker{color:#795214}
 [data-theme="light"] .g-personal-priority-head>span{color:#6c5938}
+
+.g-priority-feel{margin:8px 0 12px;font-size:15px;line-height:1.6}
+.g-priority-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.g-priority-columns h3{font-size:14px;margin:0 0 7px;color:inherit}
+.g-priority-columns ol,.g-priority-columns ul{font-size:14px;font-weight:500;margin:0;padding-left:1.35em;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+.g-priority-columns li+li{margin-top:7px}
+.g-personal-priority .g-priority-note{font-size:12px;line-height:1.5;margin:12px 0 7px;color:inherit;opacity:.85}
+.g-personal-priority>a{font-size:13px;color:inherit;text-decoration:underline}
+@media(max-width:600px){.g-priority-columns{grid-template-columns:1fr;gap:13px}}
