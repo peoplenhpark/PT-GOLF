@@ -58,9 +58,14 @@ window.GolfHub = (() => {
     const pin=content.personalPracticePin;if(!pin)return '';
     return `<section class="g-personal-priority g-previous-personal" aria-label="이전 개인 연습 감각"><div class="g-personal-priority-head"><h2>${e(pin.dateLabel)} · ${e(pin.club)} · 내 감각</h2><span>혼자 연습한 기록</span></div><ol>${pin.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></section>`;
   }
+  function lessonPracticeReference(l) {
+    const ref=l?.practiceReference,v=ref&&video(ref.videoId);
+    if(!v||!(l.videoIds||[]).includes(v.id))return '';
+    return `<section class="g-lesson-video-focus" aria-label="10.30 레슨 힘 빼기 보강"><h3>${e(ref.title)}</h3><p class="g-meta">${e(v.channel)} · ${e(ref.range)}</p><p><b>우선할 감각</b> · ${e(ref.cue)}</p><h4>확인 3가지</h4><ul>${ref.checks.map(check=>`<li>${e(check)}</li>`).join('')}</ul><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}&t=${e(ref.start)}s" target="_blank" rel="noopener noreferrer">▶ ${e(ref.range)} 참고</a><a href="${href('videos',v.id)}">영상 상세 ›</a></div><p class="g-meta">${e(ref.scope)}</p></section>`;
+  }
   function personalPracticePin() {
     const l=lesson(content.pinnedLessonId),q=l?.quickReview;if(!q)return previousPersonalPractice();
-    return `<section class="g-personal-priority g-lesson-priority" aria-labelledby="g-personal-priority-title"><div class="g-personal-priority-head"><h2 id="g-personal-priority-title">10.30 · 드라이버 레슨</h2><span>항상 먼저 · 반복 연습</span></div><p class="g-priority-feel"><b>${e(q.action)}</b></p><div class="g-priority-columns"><div><h3>연습 3단계</h3><ol>${q.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${q.checks.map(check=>`<li>${e(check)}</li>`).join('')}</ul></div></div><p class="g-priority-note">이번 개인 레슨의 교정 기준 · ‘0.1초 전’은 직전 이완 감각으로 참고</p><a href="#golf/lessons/${e(l.id)}">레슨 상세 ›</a> · <a href="#golf/notes">이전 내 감각 ›</a></section>`;
+    return `<section class="g-personal-priority g-lesson-priority" aria-labelledby="g-personal-priority-title"><div class="g-personal-priority-head"><h2 id="g-personal-priority-title">10.30 · 드라이버 레슨</h2><span>항상 먼저 · 반복 연습</span></div><p class="g-priority-feel"><b>${e(q.action)}</b></p><div class="g-priority-columns"><div><h3>연습 3단계</h3><ol>${q.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></div><div><h3>확인 3가지</h3><ul>${q.checks.map(check=>`<li>${e(check)}</li>`).join('')}</ul></div></div><p class="g-priority-note">이번 개인 레슨의 교정 기준 · ‘0.1초 전’은 직전 이완 감각으로 참고</p><a href="#golf/lessons/${e(l.id)}">레슨 상세 ›</a> · <a href="#golf/notes">이전 내 감각 ›</a></section>${lessonPracticeReference(l)}`;
   }
   function pinnedSequence(){return '<section class="g-pinned-sequence" aria-labelledby="g-pinned-sequence-title"><div class="g-pinned-sequence-head"><h2 id="g-pinned-sequence-title">스윙 순서</h2><span>고정 · 내 감각</span></div><ol><li>백스윙(일정구간 낮게 끌고 몸통 회전, 오른쪽 옆구리 밀착 여부 체크)</li><li>골반 회전(체중이동 + 타격자세 만들기)</li><li>임팩트에 집중</li><li>피니시 시에 채가 어깨 위를 넘기도록 힘 빼기(빈스윙으로 체크)</li></ol></section>';}
   function change(fn) {
@@ -262,6 +267,14 @@ window.GolfHub = (() => {
     const p=practical(v);
     return `<section class="${e(className)}" aria-label="${e(title)}"><p class="g-meta">상단 고정 · ${e(label)}</p><h2>${e(title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(v.id)}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${href('videos',v.id)}">영상 설명·내 메모 ›</a></div><dl class="g-practice-focus"><div><dt>해볼 것</dt><dd>${e(p.action)}</dd></div><div><dt>확인할 것</dt><dd>${e(p.feel)}</dd></div></dl><p class="g-meta">${e(practicePriority(v.id)||v.practiceCaution)}</p></section>`;
   }
+  function ironRelaxPracticePin() {
+    const pin=content.ironRelaxPracticePin;
+    return pin?referencePracticePin(video(pin.id),pin.title,'g-iron-relax-practice-pin','아이언'):'';
+  }
+  function rightArmPracticePin() {
+    const pin=content.rightArmPracticePin;
+    return pin?referencePracticePin(video(pin.id),pin.title,'g-right-arm-practice-pin','드라이버'):'';
+  }
   function basicPracticePin() {
     return referencePracticePin(video(content.featuredVideoId),content.basicPracticeTitle||'상시 연습 · 기본영상','g-basic-practice-pin','기본영상');
   }
@@ -369,7 +382,7 @@ window.GolfHub = (() => {
       const scope=videos().filter(v=>(selectedGroup!=='recent'||recent.some(r=>r.id===v.id))&&(!favoriteOnly||videoNote(v.id).favorite)&&matches({...v,...state.videoNotes[v.id]},view)).filter(v=>!selectedGroup||['all','recent'].includes(selectedGroup)||(content.videoCollections[selectedGroup]||[]).includes(v.id)||groupIdsFor(selectedGroup).includes(content.videoGroupFor(v)?.id)||(content.videoGroupFor(v)?.id==='common'&&[...(v.sharedSections||[]),...(v.sharedGroups||[])].includes(selectedGroup)));
       if(!favoriteOnly&&[null,'all','recent','common'].includes(selectedGroup)&&!view.golfTopic&&!(view.golfQuery||'').trim())body+=dailyPracticePin(true);
       body+=videoGroupNav(favoriteOnly?'favorites':selectedGroup,clubFilters(view,scope));
-      if(isAllVideos)body+=window.GolfPractice.lessonBridge(state,'videos');
+      if(isAllVideos)body+=ironRelaxPracticePin()+rightArmPracticePin()+window.GolfPractice.lessonBridge(state,'videos');
       body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본영상</h2><p class="g-meta">${featured.length}편${featured[0]?.id===content.featuredVideoId?' · 첫 영상 상단 고정':''}</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
     }else {
       if(tab==='notes')body+=previousPersonalPractice()+pinnedSequence();
@@ -389,7 +402,7 @@ window.GolfHub = (() => {
       const list=videos().filter(clubMatches).filter(v=>(selectedGroup!=='recent'||recent.some(r=>r.id===v.id))&&(!favoriteOnly||videoNote(v.id).favorite)&&matches({...v,...state.videoNotes[v.id]},view));
       body+=favoriteOnly
         ? `<section class="g-video-section g-favorites-section" aria-labelledby="g-favorites-title"><header><h2 id="g-favorites-title">즐겨찾기 <span>${list.length}편</span></h2></header>${list.length?`<div class="g-video-grid">${list.map(compactCard).join('')}</div>`:'<p class="g-muted">영상 상세에서 ☆를 누르면 여기에 모입니다.</p>'}</section>${pendingDeletions()}`
-        : `${isAllVideos?'':selectedGroup==='recent'?`<section class="g-video-section"><header><h2>최근 등록 <span>7일 · ${list.length}편</span></h2></header><p class="g-date-basis">앱 최초 등록일 기준</p><div class="g-video-grid">${list.map(compactCard).join('')||'<p class="g-muted">최근 등록 영상이 없습니다.</p>'}</div></section>`:groupedVideos(list,selectedGroup)}${pendingDeletions()}`;
+        : `${isAllVideos?'':selectedGroup==='recent'?`<section class="g-video-section"><header><h2>최근 등록 <span>7일 · ${list.length}편</span></h2></header><p class="g-date-basis">앱 등록·재등록일 기준</p><div class="g-video-grid">${list.map(compactCard).join('')||'<p class="g-muted">최근 등록 영상이 없습니다.</p>'}</div></section>`:groupedVideos(list,selectedGroup)}${pendingDeletions()}`;
     } else {
       body+=`<div class="g-actions">${button('lesson-new','레슨 기록하기')}</div>`;
       body+=window.GolfPractice.lessonQuestions(lessons());
@@ -639,5 +652,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

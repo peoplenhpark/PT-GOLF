@@ -3718,5 +3718,77 @@
     "source": "https://www.youtube.com/watch?v=1wyW-DDLXpk",
     "method": "원본 12개 표본 화면·한글 자막 확인. 음성 전사에 구체적인 동작 설명이 없어 시범 관찰로 한정",
     "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "3BsYkWFU-WA",
+    "title": "드라이버 스윙에서 힘을 가장 잘 받는 위치 · 오른팔과 채가 겹치는 지점",
+    "frames": [
+      {
+        "src": "media/golf-frames/3BsYkWFU-WA-1.webp",
+        "time": 19.94,
+        "label": "오른팔과 채가 겹치는 구간 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/3BsYkWFU-WA-2.webp",
+        "time": 151.3,
+        "label": "오른쪽 골반과 채가 지나갈 공간",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 178,
+    "source": "https://www.youtube.com/watch?v=3BsYkWFU-WA",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "K_er7krgQwg",
+    "title": "필드 실수 줄이기 · 에이밍·바람·거리별 대응",
+    "frames": [
+      {
+        "src": "media/golf-frames/K_er7krgQwg-1.webp",
+        "time": 13.74,
+        "label": "헤드부터 목표에 맞춘 뒤 몸 정렬",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/K_er7krgQwg-2.webp",
+        "time": 126.41,
+        "label": "앞바람에서 급해지지 않는 준비",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 458,
+    "source": "https://www.youtube.com/watch?v=K_er7krgQwg",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "iD8o1vJSal4",
+    "title": "아이언 힘 빼기 연습 · 툭 내린 뒤 몸 회전으로 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/iD8o1vJSal4-1.webp",
+        "time": 54,
+        "label": "손을 벌려 잡고 내려온 위치 확인",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/iD8o1vJSal4-2.webp",
+        "time": 100.3,
+        "label": "가볍게 내린 뒤 몸 회전으로 연결",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 118,
+    "source": "https://www.youtube.com/watch?v=iD8o1vJSal4",
+    "method": "원본 12개 표본+38/50/54/64/74/80초 추가 화면·자막·전체 음성 자동전사 대조. 54/74초 자막의 부정 표현(밑에 있지 않게)을 확인하여 전사 오류 교정",
+    "verifiedAt": "2026-11-01"
   }
 ]

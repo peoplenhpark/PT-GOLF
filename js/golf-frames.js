@@ -2479,5 +2479,53 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "3BsYkWFU-WA": [
+    {
+      "src": "media/golf-frames/3BsYkWFU-WA-1.webp",
+      "time": 19.94,
+      "label": "오른팔과 채가 겹치는 구간 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/3BsYkWFU-WA-2.webp",
+      "time": 151.3,
+      "label": "오른쪽 골반과 채가 지나갈 공간",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "K_er7krgQwg": [
+    {
+      "src": "media/golf-frames/K_er7krgQwg-1.webp",
+      "time": 13.74,
+      "label": "헤드부터 목표에 맞춘 뒤 몸 정렬",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/K_er7krgQwg-2.webp",
+      "time": 126.41,
+      "label": "앞바람에서 급해지지 않는 준비",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "iD8o1vJSal4": [
+    {
+      "src": "media/golf-frames/iD8o1vJSal4-1.webp",
+      "time": 54,
+      "label": "손을 벌려 잡고 내려온 위치 확인",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/iD8o1vJSal4-2.webp",
+      "time": 100.3,
+      "label": "가볍게 내린 뒤 몸 회전으로 연결",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

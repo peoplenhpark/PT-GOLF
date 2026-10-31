@@ -1,0 +1,73 @@
+{
+  "reviewedAt": "2026-11-01",
+  "duplicateReview": "Requested canonical and alternate-source ID checked against existing157 entries; no duplicate. Existing related videos retained.",
+  "placement": "iD8o1vJSal4: user requested top iron-relaxation reference. Existing pins and lessons preserved.",
+  "clubCounts": {
+    "driver": 0,
+    "iron": 1,
+    "both": 0,
+    "unknown": 0
+  },
+  "reviewLimit": "Full waveform automatic transcription plus 12 sampled frames per video, not frame-by-frame viewing. Unclear ASR omitted; silent demonstration kept observational.",
+  "items": [
+    {
+      "id": "iD8o1vJSal4",
+      "title": "아이언 힘 빼기 연습 · 툭 내린 뒤 몸 회전으로 연결",
+      "originalTitle": "힘빼고 멀리치는게 안되면 이렇게!!",
+      "channel": "하와이골프 [박형준프로]",
+      "source": "https://www.youtube.com/watch?v=iD8o1vJSal4",
+      "duration": 118,
+      "audioSeconds": 118.46825,
+      "method": "원본 12개 표본+38/50/54/64/74/80초 추가 화면·자막·전체 음성 자동전사 대조. 54/74초 자막의 부정 표현(밑에 있지 않게)을 확인하여 전사 오류 교정",
+      "sampleTimes": [
+        3.54,
+        13.22,
+        22.89,
+        32.57,
+        42.24,
+        51.92,
+        61.6,
+        71.27,
+        80.95,
+        90.62,
+        100.3,
+        109.98
+      ],
+      "primaryGroup": "downswing-tempo",
+      "club": "iron",
+      "clubReason": "아이언을 사용한 내려놓기·회전 연결 시범입니다. 드라이버 공통 적용으로 확대하지 않습니다.",
+      "summary": "팔을 가볍게 내리는 동작에서 끝내지 않고 몸 회전으로 이어갑니다. 손을 벌려 잡는 드릴로 내려온 위치와 헤드가 너무 처지는 경우를 비교합니다.",
+      "points": [
+        "0:12–0:40: 힘을 빼고 내려오는 동작과, 내려온 뒤 몸 회전으로 연결하는 동작을 구분합니다.",
+        "0:42–0:58: 손을 벌려 잡고 팔을 가볍게 내리는 연습을 보여 줍니다. 이때 헤드가 손보다 너무 아래로 처지지 않도록 설명합니다.",
+        "1:02–1:24: 헤드가 너무 아래로 처진 경우와 어깨가 들리지 않고 회전하기 편한 경우를 비교합니다.",
+        "1:26 이후: 내려온 동작을 몸 회전과 연결하는 아이언 시범입니다."
+      ],
+      "editorialAction": "손을 벌려 잡은 작은 빈스윙으로 팔을 가볍게 내린 뒤, 멈춰 세우지 않고 몸 회전으로 이어 봅니다.",
+      "editorialCheck": "헤드가 손보다 너무 처지지 않는지, 어깨를 들어 올리지 않고 편하게 회전할 수 있는지 확인합니다.",
+      "caution": "손을 벌리는 것은 감각 확인용 드릴입니다. 채를 놓거나 손목 각도를 힘으로 고정하지 않고, 먼저 작은 빈스윙으로 비교합니다.",
+      "connection": "아이언에서 힘을 빼는 감각과 회전을 연결하는 상시 참고 자료입니다. 현재 드라이버 레슨의 임팩트 직전 이완과 적용 클럽을 구분합니다.",
+      "relatedVideoIds": [
+        "V7r2odT_dBE",
+        "cUPKspR2yGI",
+        "QAsnFGtjpio"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/iD8o1vJSal4-1.webp",
+          "time": 54,
+          "label": "손을 벌려 잡고 내려온 위치 확인",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/iD8o1vJSal4-2.webp",
+          "time": 100.3,
+          "label": "가볍게 내린 뒤 몸 회전으로 연결",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    }
+  ]
+}

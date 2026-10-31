@@ -1,0 +1,133 @@
+{
+  "reviewedAt": "2026-11-01",
+  "duplicateReview": "Both requested canonical IDs and alternate-source IDs checked against existing155 entries; neither present. Existing related entries retained.",
+  "placement": "3BsYkWFU-WA: user requested exact title and top reference; K_er7krgQwg: field collection. Existing pins and lessons preserved.",
+  "clubCounts": {
+    "driver": 1,
+    "iron": 0,
+    "both": 0,
+    "unknown": 1
+  },
+  "reviewLimit": "Full waveform automatic transcription plus 12 sampled frames per video, not frame-by-frame viewing. Unclear ASR omitted; silent demonstration kept observational.",
+  "items": [
+    {
+      "id": "3BsYkWFU-WA",
+      "title": "드라이버 스윙에서 힘을 가장 잘 받는 위치 · 오른팔과 채가 겹치는 지점",
+      "originalTitle": "드라이버 쉽게 멀리치는 방법!!",
+      "channel": "하와이골프 [박형준프로]",
+      "source": "https://www.youtube.com/watch?v=3BsYkWFU-WA",
+      "duration": 178,
+      "audioSeconds": 177.563,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        5.34,
+        19.94,
+        34.53,
+        49.13,
+        63.72,
+        78.32,
+        92.92,
+        107.51,
+        122.11,
+        136.7,
+        151.3,
+        165.9
+      ],
+      "primaryGroup": "downswing-path",
+      "club": "driver",
+      "clubReason": "드라이버와 티 위 공을 사용하며, 오른팔과 샤프트의 관계 및 골반 공간을 설명합니다.",
+      "summary": "오른팔과 채가 겹쳐지는 내려오는 위치를 비교하고, 오른쪽 골반을 뒤로 빼 채가 지나갈 공간을 만드는 방법을 설명합니다.",
+      "points": [
+        "0:15–0:27: 오른팔과 채가 겹치는 구간을 영상에서 힘을 잘 받는 위치로 설명합니다. 제목은 사용자 지정 문구입니다.",
+        "0:50–1:35: 골반이 옆으로 밀려 오른쪽 공간이 없어지는 경우와 회전할 공간을 만드는 경우를 비교합니다.",
+        "1:37–2:02: 머리만 보내는 과장 동작은 교정이 아니며, 오른쪽 골반을 뒤로 빼는 방법을 다시 설명합니다.",
+        "2:05–2:56: 공 주변 장애물을 피하는 시범으로 채가 지나가는 길을 보여 줍니다."
+      ],
+      "editorialAction": "느린 빈스윙에서 오른팔과 채가 겹치는 구간, 오른쪽 골반을 뒤로 뺄 공간을 비교합니다.",
+      "editorialCheck": "몸이 옆으로 밀리지 않는지, 위치를 만들려고 손·어깨에 힘이 더 들어가지 않는지 확인합니다.",
+      "caution": "겹치는 모양은 영상 시점의 참고 기준입니다. 손목 각도나 오른팔을 억지로 고정하지 않고, 장애물 드릴은 먼저 빈스윙으로 경로만 확인합니다.",
+      "connection": "10.30 레슨의 이완은 유지하며 내려오는 길을 확인하는 상시 참고 영상입니다. 특정 위치에서 더 세게 힘주는 지시로 바꾸지 않습니다.",
+      "relatedVideoIds": [
+        "YUtzwggQMQc",
+        "REFteDwojG8",
+        "cUPKspR2yGI"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/3BsYkWFU-WA-1.webp",
+          "time": 19.94,
+          "label": "오른팔과 채가 겹치는 구간 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/3BsYkWFU-WA-2.webp",
+          "time": 151.3,
+          "label": "오른쪽 골반과 채가 지나갈 공간",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "K_er7krgQwg",
+      "title": "필드 실수 줄이기 · 에이밍·바람·거리별 대응",
+      "originalTitle": "\"필드레슨\" 골린이가 꼭 알고 가야할 필드 노하우 레슨!!",
+      "channel": "제이슨골프tv",
+      "source": "https://www.youtube.com/watch?v=K_er7krgQwg",
+      "duration": 458,
+      "audioSeconds": 458.3619375,
+      "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+      "sampleTimes": [
+        13.74,
+        51.3,
+        88.85,
+        126.41,
+        163.96,
+        201.52,
+        239.08,
+        276.63,
+        314.19,
+        351.74,
+        389.3,
+        426.86
+      ],
+      "primaryGroup": "field",
+      "club": "unknown",
+      "clubReason": "드라이버·아이언·우드·웨지·퍼팅과 벙커를 다루는 상황별 모음입니다. 영상 전체를 아이언·드라이버 공통 처방으로 분류하지 않습니다.",
+      "summary": "실전에서 헤드부터 목표에 맞추는 순서, 좁은 홀과 앞바람에서의 스윙 조절, 거리 사이의 클럽 선택 등을 상황별로 보여 줍니다.",
+      "points": [
+        "0:00–0:21: 클럽 헤드를 목표에 먼저 맞춘 뒤 몸을 정렬합니다.",
+        "0:22–0:38: 좁은 홀의 드라이버는 작은 백스윙에서 피니시까지 잇는 리허설을 보여 줍니다.",
+        "1:48–2:17: 앞바람에서 급해지는 스윙을 짚고, 평소보다 여유 있는 속도와 낮은 티를 제안합니다.",
+        "4:33–5:24: 출발 방향 리허설과 파3 티 사용을 설명합니다.",
+        "6:09–6:34: 클럽 사이 거리는 그립을 짧게 잡는 방법을 보여 줍니다.",
+        "나머지는 잔디·퍼팅·우드·벙커·구질별 팁입니다. 딱딱하고 턱 높은 벙커, 슬라이스 교정과 페이드 만들기는 해당 상황에서 별도로 봅니다."
+      ],
+      "editorialAction": "샷 전에 헤드를 목표에 먼저 맞추고 몸을 정렬한 뒤, 현재 상황에 맞는 리허설 하나만 합니다.",
+      "editorialCheck": "목표와 헤드 방향이 맞는지, 좁은 홀이나 바람 때문에 더 세게 쥐거나 급해지지 않았는지 확인합니다.",
+      "caution": "영상의 수치와 벙커·슬라이스·페이드 교정은 상황별 예시입니다. 작은 피니시 레슨이나 모든 클럽에 일괄 적용하지 않습니다.",
+      "connection": "실전에서는 여러 팁을 한 번에 넣기보다 에이밍부터 한 가지씩 참고합니다. 드라이버는 현재 레슨의 어깨 이완·임팩트 직전 힘 빼기를 우선합니다.",
+      "relatedVideoIds": [
+        "z9lAaO2IefM",
+        "3BsYkWFU-WA"
+      ],
+      "frames": [
+        {
+          "src": "media/golf-frames/K_er7krgQwg-1.webp",
+          "time": 13.74,
+          "label": "헤드부터 목표에 맞춘 뒤 몸 정렬",
+          "width": 640,
+          "height": 360
+        },
+        {
+          "src": "media/golf-frames/K_er7krgQwg-2.webp",
+          "time": 126.41,
+          "label": "앞바람에서 급해지지 않는 준비",
+          "width": 640,
+          "height": 360
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "lessonId": "lesson_20261030_driver",
+  "selected": {
+    "videoId": "cUPKspR2yGI",
+    "title": "힘 빼기 보강 · 그립 압력과 헤드 무게",
+    "start": 64,
+    "range": "1:04–2:35",
+    "cue": "작은 빈스윙에서 그립을 과하게 쥐지 않고, 손으로 끌기보다 헤드 무게를 느끼기.",
+    "checks": [
+      "전환할 때 그립을 더 세게 쥐지 않았나?",
+      "손으로 급히 끌지 않고 헤드 무게가 느껴졌나?",
+      "임팩트 직전에도 왼쪽 어깨가 편했나?"
+    ],
+    "scope": "앱이 연결한 보조 자료 · 초반 이완만 참고, 후반 파워·스텝 훈련은 보류."
+  },
+  "basis": "Compared Oct31 18 submitted entries using existing full-audio ASR and sampled-frame reviews; re-read cUPKspR2yGI transcript64–154s. Web fetch unavailable. Third check derives from the users Oct30 lesson, not a direct video quote.",
+  "alternatives": "Hlo7tykj3Ms addresses backswing-top tension; hDOHG3nD3kY illustrates water-skipping with less explicit relaxation instruction; VUAqp9jXh4M is an iron/exaggerated-hinge drill; YUtzwggQMQc is already pinned.",
+  "previousLesson": {
+    "id": "lesson_20261030_driver",
+    "date": "2026-10-30",
+    "title": "드라이버 · 임팩트 직전 한 번 더 힘 빼기",
+    "coach": "",
+    "noteIds": [
+      "golf_driver"
+    ],
+    "videoIds": [],
+    "topics": [
+      "팔·타이밍",
+      "회전·순서"
+    ],
+    "problem": "사용자 전달 레슨: 오른쪽으로 가는 샷에서는 왼팔이 뒤로 넘어가는 타이밍이 늦었고, 왼쪽으로 가는 샷에서는 전체적으로 힘이 들어간 점을 확인했다.",
+    "correction": "왼쪽 어깨 힘을 뺀다. 임팩트까지 힘 빼기에 집중하고, 임팩트 직전에는 한 번 더 힘을 뺀다. 추가 동작은 임팩트 이후로 미룬다는 감각을 연습한다.",
+    "homework": "연습 3단계\n1. 왼쪽 어깨 힘 빼기 → 왼손 한 손으로 왼팔 넘기는 감각 찾기.\n2. 임팩트까지 힘 빼기 → 직전에 한 번 더 이완하기.\n3. 추가 동작은 임팩트 이후로 미룬다는 감각.\n확인 3가지\n1. 임팩트 전까지 왼쪽 어깨가 편했나?\n2. 오른쪽으로 갔다면: 왼팔 넘기는 타이밍 확인 → 왼손 한 손 연습.\n3. 왼쪽으로 갔다면: 몸 전체에 힘이 들어갔는지 확인.",
+    "difference": "10.30 혼자 연습한 채의 무게·몸통 백스윙·골반·물수제비 감각은 감각 노트에 원문 그대로 보존한다. 이번 반복 연습에서는 새 레슨의 왼쪽 어깨 이완과 임팩트 전 힘 빼기를 먼저 본다. 기존 허리 위 오른손 이완 레슨도 보존한다.",
+    "result": "사용자가 매우 인상적이었다고 평가하고 항상 참고하며 연습할 수 있도록 요청했다. 샷별 측정값이나 장기 효과는 제공되지 않았다.",
+    "practiceCue": "왼쪽 어깨는 편하게 · 임팩트 직전 한 번 더 힘 빼기",
+    "practiceClubs": [
+      "드라이버"
+    ],
+    "practicePoints": [
+      "왼쪽 어깨 힘 빼기 → 왼손 한 손으로 왼팔 넘기는 감각 찾기.",
+      "임팩트까지 힘 빼기 → 직전에 한 번 더 이완하기.",
+      "추가 동작은 임팩트 이후로 미룬다는 감각."
+    ],
+    "quickReview": {
+      "club": "드라이버",
+      "title": "임팩트 직전 한 번 더 힘 빼기",
+      "action": "왼쪽 어깨 편하게 · 임팩트 직전 더 힘 빼기",
+      "steps": [
+        "왼쪽 어깨 힘 빼기 → 왼손 한 손으로 왼팔 넘기는 감각 찾기.",
+        "임팩트까지 힘 빼기 → 직전에 한 번 더 이완하기.",
+        "추가 동작은 임팩트 이후로 미룬다는 감각."
+      ],
+      "checks": [
+        "임팩트 전까지 왼쪽 어깨가 편했나?",
+        "오른쪽으로 갔다면: 왼팔 넘기는 타이밍 확인 → 왼손 한 손 연습.",
+        "왼쪽으로 갔다면: 몸 전체에 힘이 들어갔는지 확인."
+      ]
+    },
+    "scope": "사용자가 전달한 이번 드라이버 개인 레슨의 교정 기준이다. 좌우 방향만으로 모든 샷의 원인을 확정하는 일반 진단은 아니다.",
+    "sourceNote": "2026-10-30 사용자 메시지로 전달한 골프 레슨. 첨부 노트(28)는 PT 전사이며 별도 자료다. 골프 원음·시범 영상은 미제공. 왼팔을 뒤로 넘기기의 정확한 경로·시점은 새로 정하지 않았다. 임팩트 이전 0.1초는 사용자 원문으로 보존하되 실측 시간이나 초 단위 실행 목표로 확정하지 않았다.",
+    "evidence": [
+      {
+        "time": "사용자 전달",
+        "text": "오른쪽으로가면 왼팔 뒤로 넘기는게 늦었다. 교정방법은 왼손 한송으로 감각 찾기. 왼쪽 어깨 힘뺘기."
+      },
+      {
+        "time": "사용자 전달",
+        "text": "임팩트 까지는 힘빼는거 주의 / 임팩트 이전 0.1초간 힘 더빼기. / 임팩트이후 모든 추가 동작."
+      },
+      {
+        "time": "사용자 전달",
+        "text": "왼쪽으로 가면 전체적으로 힘들어 갔다."
+      }
+    ],
+    "followUpQuestions": [
+      "왼팔을 뒤로 넘기는 정확한 경로와 타이밍을 다음 수업 시범으로 다시 확인하기."
+    ]
+  }
+}
