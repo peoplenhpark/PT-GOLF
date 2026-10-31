@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-31",
+  "submitted": 18,
+  "firstBatch": 11,
+  "secondBatch": 7,
+  "existing": 3,
+  "new": 15,
+  "firstBatchNew": 8,
+  "secondBatchNew": 7,
+  "totalBefore": 140,
+  "totalAfter": 155,
+  "note": "18 submitted: 15 new entries + 3 existing entries re-registered at user request. Same IDs and private records/pins preserved; total unique155.",
+  "items": [
+    {
+      "id": "shJaPQExonE",
+      "batch": "first",
+      "title": "양손 역할 · 왼손은 길잡이, 오른손은 던지는 감각",
+      "status": "existing-reregistered",
+      "addedAt": "2026-10-31T06:29:13.226367+00:00",
+      "originalAddedAt": "2026-10-25T14:16:35.125488+00:00"
+    },
+    {
+      "id": "YUtzwggQMQc",
+      "batch": "first",
+      "title": "드라이버 힘 빼기 · 속도보다 이완과 헤드 무게부터",
+      "status": "existing-reregistered",
+      "addedAt": "2026-10-31T06:29:13.226367+00:00",
+      "originalAddedAt": "2026-10-26T15:47:54.073238+00:00"
+    },
+    {
+      "id": "Hlo7tykj3Ms",
+      "batch": "first",
+      "title": "드라이버 힘 빼기 · 탑 직전에 급해지지 않기",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:43.877382+00:00"
+    },
+    {
+      "id": "VUAqp9jXh4M",
+      "batch": "first",
+      "title": "헤드 무게 찾기 · 손으로 끌지 말고 헤드 위치 느끼기",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:44.512198+00:00"
+    },
+    {
+      "id": "hDOHG3nD3kY",
+      "batch": "first",
+      "title": "드라이버 물수제비 감각 · 내리찍지 말고 가볍게 통과",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:45.232267+00:00"
+    },
+    {
+      "id": "1Y2xarVlF7c",
+      "batch": "first",
+      "title": "아이언 백스윙 힌지 · 늦게 꺾지 말고 회전 연결",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:45.560545+00:00"
+    },
+    {
+      "id": "4XPYB9teep8",
+      "batch": "first",
+      "title": "드라이버 팔 펴는 시점 · 일찍 풀리는 동작 비교",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:45.932334+00:00"
+    },
+    {
+      "id": "REFteDwojG8",
+      "batch": "first",
+      "title": "다운스윙 손 내리기 · 어깨를 먼저 열지 않기",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:46.312387+00:00"
+    },
+    {
+      "id": "yv4KTSs8Riw",
+      "batch": "first",
+      "title": "헤드 가속을 쉽게 늘려주는 2가지",
+      "status": "existing-reregistered",
+      "addedAt": "2026-10-31T06:29:13.226367+00:00",
+      "originalAddedAt": "2026-09-19T18:25:07+09:00"
+    },
+    {
+      "id": "H5W4lILhgyc",
+      "batch": "first",
+      "title": "테이크백 두 오류 · 손등 돌리지 말고 가슴으로 시작",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:46.627779+00:00"
+    },
+    {
+      "id": "1wyW-DDLXpk",
+      "batch": "first",
+      "title": "드라이버 상향 타격 · 팔꿈치 선행·헤드 통과 관찰",
+      "status": "new-added",
+      "addedAt": "2026-10-31T04:21:46.902438+00:00"
+    },
+    {
+      "id": "1nZ4kVoY6vw",
+      "batch": "second",
+      "title": "드라이버 전환 관찰 · 탑의 여유와 손목 각도",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:06.589503+00:00"
+    },
+    {
+      "id": "6NWRTgb645U",
+      "batch": "second",
+      "title": "팔이 뒤에 갇힐 때 · 오른 골반 앞으로 길 열기",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:07.352903+00:00"
+    },
+    {
+      "id": "ZsLbFO9RYfw",
+      "batch": "second",
+      "title": "드라이버 다운스윙 · 짧은 예비 동작 뒤 한 번에 연결",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:07.594905+00:00"
+    },
+    {
+      "id": "YwtokOzigZM",
+      "batch": "second",
+      "title": "전환 자세 지키기 · 케틀벨이 앞으로 쏠리지 않게",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:07.826359+00:00"
+    },
+    {
+      "id": "0OyyYv1KHYo",
+      "batch": "second",
+      "title": "드라이버 헤드 보내기 · 탑에서 던지는 타이밍 시범",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:08.049689+00:00"
+    },
+    {
+      "id": "QAsnFGtjpio",
+      "batch": "second",
+      "title": "팔만 내리지 않기 · 몸통 회전에 팔이 따라오게",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:08.236755+00:00"
+    },
+    {
+      "id": "cUPKspR2yGI",
+      "batch": "second",
+      "title": "헤드 무게 느끼기 · 그립 압력 낮추고 발 박자로 연결",
+      "status": "new-added",
+      "addedAt": "2026-10-31T03:16:08.432182+00:00"
+    }
+  ],
+  "reregistered": 3,
+  "recentRegistrationTotal": 18
+}

@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
 const ctx={window:{}};vm.createContext(ctx);vm.runInContext(read('js/golf-data.js'),ctx);vm.runInContext(read('js/exercise-media.js'),ctx);
 const c=ctx.window.GolfContent,media=ctx.window.ExerciseMedia;
-assert.equal(c.videos.length,140);assert.equal(new Set(c.videos.map(v=>v.id)).size,140);
+assert.equal(c.videos.length,155);assert.equal(new Set(c.videos.map(v=>v.id)).size,155);
 assert.equal(c.videos[0].id,'9YWDNMyTQy4');
 for(const duration of ['2:00','3:00','3:01','15:53'])assert.equal(c.presentationFor({duration}),'original');
 for(const v of c.videos){
@@ -19,7 +19,7 @@ for(const v of c.videos){
 const practicalRows=Array.from(c.videos,v=>({video:v,practical:c.practicalFor(v)}));
 const metadataRows=practicalRows.filter(x=>x.practical.kind==='metadata');
 const reviewedRows=practicalRows.filter(x=>x.practical.kind!=='metadata');
-assert.equal(metadataRows.length,22);assert.equal(reviewedRows.length,118);
+assert.equal(metadataRows.length,22);assert.equal(reviewedRows.length,133);
 assert.equal(new Set(metadataRows.map(x=>x.practical.feel)).size,22,'metadata comparisons must be title-specific');
 assert.equal(new Set(metadataRows.map(x=>x.practical.check)).size,22,'metadata questions must be title-specific');
 for(const {video,practical} of metadataRows){
@@ -30,7 +30,7 @@ for(const {video,practical} of reviewedRows)assert.equal(practical.check,video.q
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='IsSS-GnQQyY')),611);
 assert.equal(c.durationSeconds(c.videos.find(v=>v.id==='du58mmLNMnQ')),566);
 const grouped=c.videoGroups.flatMap(g=>g.videoIds);
-assert.equal(c.videoGroups.length,15);assert.equal(new Set(grouped).size,140);assert.equal(grouped.length,140);
+assert.equal(c.videoGroups.length,15);assert.equal(new Set(grouped).size,155);assert.equal(grouped.length,155);
 assert.equal(c.videoSections.length,4);
 assert(c.videoSections.every(s=>s.groups.length===3));
 for(const v of c.videos)assert(c.videoGroupFor(v));
@@ -93,4 +93,4 @@ for(const [file,query,suffix] of [
  for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInNewContext(match[1],local);
  assert(url.endsWith(suffix),file+' redirect '+url);
 }
-console.log('PASS: 140 originals, 12 subsections + common + review, no golf 3D UI/cache, 53 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');
+console.log('PASS: 155 originals, 12 subsections + common + review, no golf 3D UI/cache, 53 PT models and HT media match seed/media, 7 old URL redirects, no storage writes.');

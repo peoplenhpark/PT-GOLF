@@ -53,7 +53,7 @@ window.GolfHub = (() => {
   const stamp = () => new Date().toISOString();
   const dateLabel = value => Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).format(new Date(value)) : '날짜 미확인';
   const publishedLabel = v => `<time datetime="${e(v.publishedAt||'')}" title="YouTube 공개일 · 한국 시간">공개 ${e(dateLabel(v.publishedAt))}</time>`;
-  const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="앱 최초 등록일 · 한국 시간">등록 ${e(dateLabel(v.addedAt))}</time>`;
+  const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="${v.originalAddedAt ? `앱 재등록일 · 최초 등록 ${e(dateLabel(v.originalAddedAt))} · 한국 시간` : '앱 최초 등록일 · 한국 시간'}">${v.originalAddedAt ? '재등록' : '등록'} ${e(dateLabel(v.addedAt))}</time>`;
   function previousPersonalPractice() {
     const pin=content.personalPracticePin;if(!pin)return '';
     return `<section class="g-personal-priority g-previous-personal" aria-label="이전 개인 연습 감각"><div class="g-personal-priority-head"><h2>${e(pin.dateLabel)} · ${e(pin.club)} · 내 감각</h2><span>혼자 연습한 기록</span></div><ol>${pin.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></section>`;

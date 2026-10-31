@@ -3358,5 +3358,365 @@
     "source": "https://www.youtube.com/watch?v=kW1GIWEpRDQ",
     "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
     "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "1nZ4kVoY6vw",
+    "title": "드라이버 전환 관찰 · 탑의 여유와 손목 각도",
+    "frames": [
+      {
+        "src": "media/golf-frames/1nZ4kVoY6vw-1.webp",
+        "time": 2.1,
+        "label": "탑에서의 팔·클럽 위치",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1nZ4kVoY6vw-2.webp",
+        "time": 3.4,
+        "label": "다운스윙 손목 각도 관찰",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 5,
+    "source": "https://www.youtube.com/watch?v=1nZ4kVoY6vw",
+    "method": "원본 17개 표본 화면·자막·제목 확인. 전체 음성 자동 전사는 불명확하여 요약 근거에서 제외",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "6NWRTgb645U",
+    "title": "팔이 뒤에 갇힐 때 · 오른 골반 앞으로 길 열기",
+    "frames": [
+      {
+        "src": "media/golf-frames/6NWRTgb645U-1.webp",
+        "time": 5.22,
+        "label": "팔이 골반 뒤에 남는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/6NWRTgb645U-2.webp",
+        "time": 8.73,
+        "label": "오른 골반 앞을 지나는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 18,
+    "source": "https://www.youtube.com/watch?v=6NWRTgb645U",
+    "method": "원본 17개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "ZsLbFO9RYfw",
+    "title": "드라이버 다운스윙 · 짧은 예비 동작 뒤 한 번에 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/ZsLbFO9RYfw-1.webp",
+        "time": 0.95,
+        "label": "짧은 하강 예비 동작",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/ZsLbFO9RYfw-2.webp",
+        "time": 6.15,
+        "label": "전체 스윙의 피니시",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 10,
+    "source": "https://www.youtube.com/watch?v=ZsLbFO9RYfw",
+    "method": "원본 17개 표본 화면 확인. 전체 음성 자동 전사에서 설명 발화가 확인되지 않아 시범 관찰로 한정",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "YwtokOzigZM",
+    "title": "전환 자세 지키기 · 케틀벨이 앞으로 쏠리지 않게",
+    "frames": [
+      {
+        "src": "media/golf-frames/YwtokOzigZM-1.webp",
+        "time": 7.56,
+        "label": "몸의 형태를 유지하는 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/YwtokOzigZM-2.webp",
+        "time": 11.07,
+        "label": "앞으로 쏠리는 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 18,
+    "source": "https://www.youtube.com/watch?v=YwtokOzigZM",
+    "method": "원본 17개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "0OyyYv1KHYo",
+    "title": "드라이버 헤드 보내기 · 탑에서 던지는 타이밍 시범",
+    "frames": [
+      {
+        "src": "media/golf-frames/0OyyYv1KHYo-1.webp",
+        "time": 0.57,
+        "label": "탑에서 타이밍을 지시하는 장면",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/0OyyYv1KHYo-2.webp",
+        "time": 1.35,
+        "label": "헤드가 지나가는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 6,
+    "source": "https://www.youtube.com/watch?v=0OyyYv1KHYo",
+    "method": "원본 17개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "QAsnFGtjpio",
+    "title": "팔만 내리지 않기 · 몸통 회전에 팔이 따라오게",
+    "frames": [
+      {
+        "src": "media/golf-frames/QAsnFGtjpio-1.webp",
+        "time": 28.4,
+        "label": "회전에 팔이 따라오는 측면 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/QAsnFGtjpio-2.webp",
+        "time": 38.8,
+        "label": "팔·몸 연결의 정면 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 80,
+    "source": "https://www.youtube.com/watch?v=QAsnFGtjpio",
+    "method": "원본 17개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "cUPKspR2yGI",
+    "title": "헤드 무게 느끼기 · 그립 압력 낮추고 발 박자로 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/cUPKspR2yGI-1.webp",
+        "time": 71.34,
+        "label": "그립 압력과 헤드 움직임 설명",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/cUPKspR2yGI-2.webp",
+        "time": 645.86,
+        "label": "발 박자를 잇는 드라이버 시범",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 751,
+    "source": "https://www.youtube.com/watch?v=cUPKspR2yGI",
+    "method": "원본 17개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "Hlo7tykj3Ms",
+    "title": "드라이버 힘 빼기 · 탑 직전에 급해지지 않기",
+    "frames": [
+      {
+        "src": "media/golf-frames/Hlo7tykj3Ms-1.webp",
+        "time": 25.52,
+        "label": "탑 직전 급해지는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/Hlo7tykj3Ms-2.webp",
+        "time": 44.54,
+        "label": "탑으로 갈 때 힘을 빼는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 58,
+    "source": "https://www.youtube.com/watch?v=Hlo7tykj3Ms",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "VUAqp9jXh4M",
+    "title": "헤드 무게 찾기 · 손으로 끌지 말고 헤드 위치 느끼기",
+    "frames": [
+      {
+        "src": "media/golf-frames/VUAqp9jXh4M-1.webp",
+        "time": 379.72,
+        "label": "팔 이동과 헤드 움직임을 나눈 드릴",
+        "width": 640,
+        "height": 360
+      },
+      {
+        "src": "media/golf-frames/VUAqp9jXh4M-2.webp",
+        "time": 662.78,
+        "label": "헤드 위치를 느끼는 설명",
+        "width": 640,
+        "height": 360
+      }
+    ],
+    "duration": 863,
+    "source": "https://www.youtube.com/watch?v=VUAqp9jXh4M",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "hDOHG3nD3kY",
+    "title": "드라이버 물수제비 감각 · 내리찍지 말고 가볍게 통과",
+    "frames": [
+      {
+        "src": "media/golf-frames/hDOHG3nD3kY-1.webp",
+        "time": 3.94,
+        "label": "물수제비 팔 동작 비유",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/hDOHG3nD3kY-2.webp",
+        "time": 9.35,
+        "label": "부드럽게 통과하는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 11,
+    "source": "https://www.youtube.com/watch?v=hDOHG3nD3kY",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "1Y2xarVlF7c",
+    "title": "아이언 백스윙 힌지 · 늦게 꺾지 말고 회전 연결",
+    "frames": [
+      {
+        "src": "media/golf-frames/1Y2xarVlF7c-1.webp",
+        "time": 15.84,
+        "label": "손목 세팅 뒤 회전 연결",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1Y2xarVlF7c-2.webp",
+        "time": 24.7,
+        "label": "허벅지 옆 그립 드릴",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 36,
+    "source": "https://www.youtube.com/watch?v=1Y2xarVlF7c",
+    "method": "원본 12개 표본 화면·영문 자막 확인. 전체 음성 한국어/영어 전사는 음악 오인식으로 제외",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "4XPYB9teep8",
+    "title": "드라이버 팔 펴는 시점 · 일찍 풀리는 동작 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/4XPYB9teep8-1.webp",
+        "time": 14.08,
+        "label": "접힌 오른팔 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/4XPYB9teep8-2.webp",
+        "time": 30.8,
+        "label": "팔이 미리 펴지는 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 51,
+    "source": "https://www.youtube.com/watch?v=4XPYB9teep8",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "REFteDwojG8",
+    "title": "다운스윙 손 내리기 · 어깨를 먼저 열지 않기",
+    "frames": [
+      {
+        "src": "media/golf-frames/REFteDwojG8-1.webp",
+        "time": 3.88,
+        "label": "수직 하강 뒤 회전의 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/REFteDwojG8-2.webp",
+        "time": 12.08,
+        "label": "어깨를 먼저 열지 않는 왼팔 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 20,
+    "source": "https://www.youtube.com/watch?v=REFteDwojG8",
+    "method": "원본 12개 표본 화면·한글 자막 확인. 전체 음성 자동 전사는 일부만 인식되어 세부 근거로 쓰지 않음",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "H5W4lILhgyc",
+    "title": "테이크백 두 오류 · 손등 돌리지 말고 가슴으로 시작",
+    "frames": [
+      {
+        "src": "media/golf-frames/H5W4lILhgyc-1.webp",
+        "time": 8.15,
+        "label": "손목 조작으로 닫히는 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/H5W4lILhgyc-2.webp",
+        "time": 35.7,
+        "label": "가슴으로 출발하는 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 42,
+    "source": "https://www.youtube.com/watch?v=H5W4lILhgyc",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-10-31"
+  },
+  {
+    "id": "1wyW-DDLXpk",
+    "title": "드라이버 상향 타격 · 팔꿈치 선행·헤드 통과 관찰",
+    "frames": [
+      {
+        "src": "media/golf-frames/1wyW-DDLXpk-1.webp",
+        "time": 0.78,
+        "label": "팔꿈치가 먼저 내려오는 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/1wyW-DDLXpk-2.webp",
+        "time": 5.95,
+        "label": "헤드 통과 구간 표시",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=1wyW-DDLXpk",
+    "method": "원본 12개 표본 화면·한글 자막 확인. 음성 전사에 구체적인 동작 설명이 없어 시범 관찰로 한정",
+    "verifiedAt": "2026-10-31"
   }
 ]

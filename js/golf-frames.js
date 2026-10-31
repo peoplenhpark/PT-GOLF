@@ -2239,5 +2239,245 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "1nZ4kVoY6vw": [
+    {
+      "src": "media/golf-frames/1nZ4kVoY6vw-1.webp",
+      "time": 2.1,
+      "label": "탑에서의 팔·클럽 위치",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1nZ4kVoY6vw-2.webp",
+      "time": 3.4,
+      "label": "다운스윙 손목 각도 관찰",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "6NWRTgb645U": [
+    {
+      "src": "media/golf-frames/6NWRTgb645U-1.webp",
+      "time": 5.22,
+      "label": "팔이 골반 뒤에 남는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/6NWRTgb645U-2.webp",
+      "time": 8.73,
+      "label": "오른 골반 앞을 지나는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ZsLbFO9RYfw": [
+    {
+      "src": "media/golf-frames/ZsLbFO9RYfw-1.webp",
+      "time": 0.95,
+      "label": "짧은 하강 예비 동작",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ZsLbFO9RYfw-2.webp",
+      "time": 6.15,
+      "label": "전체 스윙의 피니시",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "YwtokOzigZM": [
+    {
+      "src": "media/golf-frames/YwtokOzigZM-1.webp",
+      "time": 7.56,
+      "label": "몸의 형태를 유지하는 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/YwtokOzigZM-2.webp",
+      "time": 11.07,
+      "label": "앞으로 쏠리는 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "0OyyYv1KHYo": [
+    {
+      "src": "media/golf-frames/0OyyYv1KHYo-1.webp",
+      "time": 0.57,
+      "label": "탑에서 타이밍을 지시하는 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/0OyyYv1KHYo-2.webp",
+      "time": 1.35,
+      "label": "헤드가 지나가는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "QAsnFGtjpio": [
+    {
+      "src": "media/golf-frames/QAsnFGtjpio-1.webp",
+      "time": 28.4,
+      "label": "회전에 팔이 따라오는 측면 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/QAsnFGtjpio-2.webp",
+      "time": 38.8,
+      "label": "팔·몸 연결의 정면 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "cUPKspR2yGI": [
+    {
+      "src": "media/golf-frames/cUPKspR2yGI-1.webp",
+      "time": 71.34,
+      "label": "그립 압력과 헤드 움직임 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/cUPKspR2yGI-2.webp",
+      "time": 645.86,
+      "label": "발 박자를 잇는 드라이버 시범",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "Hlo7tykj3Ms": [
+    {
+      "src": "media/golf-frames/Hlo7tykj3Ms-1.webp",
+      "time": 25.52,
+      "label": "탑 직전 급해지는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/Hlo7tykj3Ms-2.webp",
+      "time": 44.54,
+      "label": "탑으로 갈 때 힘을 빼는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "VUAqp9jXh4M": [
+    {
+      "src": "media/golf-frames/VUAqp9jXh4M-1.webp",
+      "time": 379.72,
+      "label": "팔 이동과 헤드 움직임을 나눈 드릴",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/VUAqp9jXh4M-2.webp",
+      "time": 662.78,
+      "label": "헤드 위치를 느끼는 설명",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "hDOHG3nD3kY": [
+    {
+      "src": "media/golf-frames/hDOHG3nD3kY-1.webp",
+      "time": 3.94,
+      "label": "물수제비 팔 동작 비유",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/hDOHG3nD3kY-2.webp",
+      "time": 9.35,
+      "label": "부드럽게 통과하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "1Y2xarVlF7c": [
+    {
+      "src": "media/golf-frames/1Y2xarVlF7c-1.webp",
+      "time": 15.84,
+      "label": "손목 세팅 뒤 회전 연결",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1Y2xarVlF7c-2.webp",
+      "time": 24.7,
+      "label": "허벅지 옆 그립 드릴",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "4XPYB9teep8": [
+    {
+      "src": "media/golf-frames/4XPYB9teep8-1.webp",
+      "time": 14.08,
+      "label": "접힌 오른팔 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/4XPYB9teep8-2.webp",
+      "time": 30.8,
+      "label": "팔이 미리 펴지는 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "REFteDwojG8": [
+    {
+      "src": "media/golf-frames/REFteDwojG8-1.webp",
+      "time": 3.88,
+      "label": "수직 하강 뒤 회전의 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/REFteDwojG8-2.webp",
+      "time": 12.08,
+      "label": "어깨를 먼저 열지 않는 왼팔 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "H5W4lILhgyc": [
+    {
+      "src": "media/golf-frames/H5W4lILhgyc-1.webp",
+      "time": 8.15,
+      "label": "손목 조작으로 닫히는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/H5W4lILhgyc-2.webp",
+      "time": 35.7,
+      "label": "가슴으로 출발하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "1wyW-DDLXpk": [
+    {
+      "src": "media/golf-frames/1wyW-DDLXpk-1.webp",
+      "time": 0.78,
+      "label": "팔꿈치가 먼저 내려오는 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/1wyW-DDLXpk-2.webp",
+      "time": 5.95,
+      "label": "헤드 통과 구간 표시",
+      "width": 240,
+      "height": 426
+    }
   ]
 };
