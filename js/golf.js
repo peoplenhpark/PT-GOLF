@@ -53,7 +53,7 @@ window.GolfHub = (() => {
   const stamp = () => new Date().toISOString();
   const dateLabel = value => Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).format(new Date(value)) : '날짜 미확인';
   const publishedLabel = v => `<time datetime="${e(v.publishedAt||'')}" title="YouTube 공개일 · 한국 시간">공개 ${e(dateLabel(v.publishedAt))}</time>`;
-  const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="${v.originalAddedAt ? `앱 재등록일 · 최초 등록 ${e(dateLabel(v.originalAddedAt))} · 한국 시간` : '앱 최초 등록일 · 한국 시간'}">${v.originalAddedAt ? '재등록' : '등록'} ${e(dateLabel(v.addedAt))}</time>`;
+  const addedLabel = v => `<time datetime="${e(v.addedAt||'')}" title="${v.originalAddedAt ? `앱 재등록일 · 최초 등록 ${e(dateLabel(v.originalAddedAt))} · 한국 시간` : '앱 최초 등록일 · 한국 시간'}">${v.originalAddedAt ? '재등록' : '등록'} ${e(dateLabel(v.addedAt))}</time>${v.submissionCount>1?` · <span class="g-duplicate-count">중복 ${e(v.submissionCount)}회</span>`:''}`;
   function previousPersonalPractice() {
     const pin=content.personalPracticePin;if(!pin)return '';
     return `<section class="g-personal-priority g-previous-personal" aria-label="이전 개인 연습 감각"><div class="g-personal-priority-head"><h2>${e(pin.dateLabel)} · ${e(pin.club)} · 내 감각</h2><span>혼자 연습한 기록</span></div><ol>${pin.steps.map(step=>`<li>${e(step)}</li>`).join('')}</ol></section>`;
@@ -400,6 +400,7 @@ window.GolfHub = (() => {
       if(lessons().length) body+=block('최근 레슨',lessonRow(lessons()[0]));
     } else if(tab==='videos'||favoriteOnly) {
       const list=videos().filter(clubMatches).filter(v=>(selectedGroup!=='recent'||recent.some(r=>r.id===v.id))&&(!favoriteOnly||videoNote(v.id).favorite)&&matches({...v,...state.videoNotes[v.id]},view));
+      if(selectedGroup==='recent')list.sort((a,b)=>(Date.parse(b.addedAt)||0)-(Date.parse(a.addedAt)||0));
       body+=favoriteOnly
         ? `<section class="g-video-section g-favorites-section" aria-labelledby="g-favorites-title"><header><h2 id="g-favorites-title">즐겨찾기 <span>${list.length}편</span></h2></header>${list.length?`<div class="g-video-grid">${list.map(compactCard).join('')}</div>`:'<p class="g-muted">영상 상세에서 ☆를 누르면 여기에 모입니다.</p>'}</section>${pendingDeletions()}`
         : `${isAllVideos?'':selectedGroup==='recent'?`<section class="g-video-section"><header><h2>최근 등록 <span>7일 · ${list.length}편</span></h2></header><p class="g-date-basis">앱 등록·재등록일 기준</p><div class="g-video-grid">${list.map(compactCard).join('')||'<p class="g-muted">최근 등록 영상이 없습니다.</p>'}</div></section>`:groupedVideos(list,selectedGroup)}${pendingDeletions()}`;

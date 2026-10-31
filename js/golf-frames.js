@@ -2527,5 +2527,101 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "UmAVgjIGRWY": [
+    {
+      "src": "media/golf-frames/UmAVgjIGRWY-1.webp",
+      "time": 51.19,
+      "label": "회전을 막는 벽과 왼쪽 지지 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/UmAVgjIGRWY-2.webp",
+      "time": 98.1,
+      "label": "어깨와 손의 교차를 잇는 릴리스",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "F_IdFmPUNhQ": [
+    {
+      "src": "media/golf-frames/F_IdFmPUNhQ-1.webp",
+      "time": 2.52,
+      "label": "몸 뒤로 빠진 테이크백 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/F_IdFmPUNhQ-2.webp",
+      "time": 7.85,
+      "label": "발끝 선과 몸 앞 테이크백 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "fAgc2HsdTAE": [
+    {
+      "src": "media/golf-frames/fAgc2HsdTAE-1.webp",
+      "time": 27.14,
+      "label": "테이크백 이후 코킹 준비",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/fAgc2HsdTAE-2.webp",
+      "time": 44.2,
+      "label": "엄지와 그립 끝 방향 확인",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "7KHcmSqk89U": [
+    {
+      "src": "media/golf-frames/7KHcmSqk89U-1.webp",
+      "time": 2.52,
+      "label": "던지는 느낌을 과장한 시범",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/7KHcmSqk89U-2.webp",
+      "time": 11.05,
+      "label": "과장 감각을 스윙으로 연결",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "L3TE9D9O2mw": [
+    {
+      "src": "media/golf-frames/L3TE9D9O2mw-1.webp",
+      "time": 4.66,
+      "label": "몸통 꼬임과 골반 회전 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/L3TE9D9O2mw-2.webp",
+      "time": 16.46,
+      "label": "클럽이 풀리는 시점의 이미지",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "CLIv_9gmuhA": [
+    {
+      "src": "media/golf-frames/CLIv_9gmuhA-1.webp",
+      "time": 29.68,
+      "label": "상체 기준 앞·옆 방향 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/CLIv_9gmuhA-2.webp",
+      "time": 142.6,
+      "label": "왼 어깨 쪽으로 보내는 레슨 시범",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

@@ -3790,5 +3790,149 @@
     "source": "https://www.youtube.com/watch?v=iD8o1vJSal4",
     "method": "원본 12개 표본+38/50/54/64/74/80초 추가 화면·자막·전체 음성 자동전사 대조. 54/74초 자막의 부정 표현(밑에 있지 않게)을 확인하여 전사 오류 교정",
     "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "UmAVgjIGRWY",
+    "title": "드라이버 던지기 · 회전을 막지 않는 왼쪽 지지와 릴리스",
+    "frames": [
+      {
+        "src": "media/golf-frames/UmAVgjIGRWY-1.webp",
+        "time": 51.19,
+        "label": "회전을 막는 벽과 왼쪽 지지 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/UmAVgjIGRWY-2.webp",
+        "time": 98.1,
+        "label": "어깨와 손의 교차를 잇는 릴리스",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 143,
+    "source": "https://www.youtube.com/watch?v=UmAVgjIGRWY",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "F_IdFmPUNhQ",
+    "title": "아웃인 교정 비교 · 클럽을 몸 뒤로 빼지 않는 테이크백",
+    "frames": [
+      {
+        "src": "media/golf-frames/F_IdFmPUNhQ-1.webp",
+        "time": 2.52,
+        "label": "몸 뒤로 빠진 테이크백 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/F_IdFmPUNhQ-2.webp",
+        "time": 7.85,
+        "label": "발끝 선과 몸 앞 테이크백 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 13,
+    "source": "https://www.youtube.com/watch?v=F_IdFmPUNhQ",
+    "method": "원본12표본 화면·자막 확인. 전체 음성 자동전사는 불명확/음악 오인식으로 근거에서 제외",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "fAgc2HsdTAE",
+    "title": "드라이버 코킹 순서 · 테이크백 후 왼 엄지를 오른 어깨 방향으로",
+    "frames": [
+      {
+        "src": "media/golf-frames/fAgc2HsdTAE-1.webp",
+        "time": 27.14,
+        "label": "테이크백 이후 코킹 준비",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/fAgc2HsdTAE-2.webp",
+        "time": 44.2,
+        "label": "엄지와 그립 끝 방향 확인",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 52,
+    "source": "https://www.youtube.com/watch?v=fAgc2HsdTAE",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "7KHcmSqk89U",
+    "title": "드라이버 던지는 느낌 · 과장 동작과 실제 스윙 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/7KHcmSqk89U-1.webp",
+        "time": 2.52,
+        "label": "던지는 느낌을 과장한 시범",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/7KHcmSqk89U-2.webp",
+        "time": 11.05,
+        "label": "과장 감각을 스윙으로 연결",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 13,
+    "source": "https://www.youtube.com/watch?v=7KHcmSqk89U",
+    "method": "원본12표본 화면·자막 확인. 전체 음성 자동전사는 불명확/음악 오인식으로 근거에서 제외",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "L3TE9D9O2mw",
+    "title": "드라이버 브레이크 감각 · 몸과 클럽의 풀리는 시점 비교",
+    "frames": [
+      {
+        "src": "media/golf-frames/L3TE9D9O2mw-1.webp",
+        "time": 4.66,
+        "label": "몸통 꼬임과 골반 회전 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/L3TE9D9O2mw-2.webp",
+        "time": 16.46,
+        "label": "클럽이 풀리는 시점의 이미지",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 24,
+    "source": "https://www.youtube.com/watch?v=L3TE9D9O2mw",
+    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
+    "verifiedAt": "2026-11-01"
+  },
+  {
+    "id": "CLIv_9gmuhA",
+    "title": "드라이버 던지기 · 명치 앞에 잡지 말고 왼 어깨 쪽으로 보내기",
+    "frames": [
+      {
+        "src": "media/golf-frames/CLIv_9gmuhA-1.webp",
+        "time": 29.68,
+        "label": "상체 기준 앞·옆 방향 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/CLIv_9gmuhA-2.webp",
+        "time": 142.6,
+        "label": "왼 어깨 쪽으로 보내는 레슨 시범",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 153,
+    "source": "https://www.youtube.com/watch?v=CLIv_9gmuhA",
+    "method": "원본12표본 화면·자막·전체 음성 자동전사 대조. 전사의 방향/헤드 오인식은 화면 자막과 시범 기준으로 제한",
+    "verifiedAt": "2026-11-01"
   }
 ]
