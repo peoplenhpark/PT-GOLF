@@ -402,3 +402,24 @@
 .g-lesson-video-focus p{margin:5px 0;font-size:14px}.g-lesson-video-focus ul{margin:0 0 8px;padding-left:1.25em;font-size:14px}.g-lesson-video-focus li+li{margin-top:3px}
 .g-lesson-video-focus .g-meta{font-size:12px;color:inherit;opacity:.85}.g-lesson-video-focus a{color:#bad8ff}
 [data-theme="light"] .g-lesson-video-focus{background:#f1f6fc;color:#20334b;border-color:#9cacbf}[data-theme="light"] .g-lesson-video-focus a{color:#1b518f}
+
+/* Compact source index: no line-clamp, no collapsed coaching, no new records. */
+.g-library-heading .g-key-entry,.g-key-heading .g-key-entry{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:700}
+.g-key-heading{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 12px}
+.g-key-heading h2{margin:0}.g-key-heading small,.g-key-group h3 small{font-size:12px;color:var(--sub);font-weight:500}
+.g-key-search{margin:12px 0 18px}.g-key-search>label{display:block;font-size:13px;color:var(--sub);margin-bottom:5px}
+.g-key-search>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(105px,.55fr) auto;gap:6px}
+.g-key-search :is(input,select){min-width:0;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--txt);font:inherit;font-size:14px}
+.g-key-search .sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.g-key-group{margin:20px 0}.g-key-group h3{padding-bottom:9px;border-bottom:2px solid var(--golf-line)}
+.g-key-group>ol{list-style:none;padding:0;margin:0}.g-key-row{padding:12px 0;border-bottom:1px solid var(--line)}
+.g-key-row-head a{display:inline-block;font-size:14px;line-height:1.5;font-weight:750;color:var(--txt);min-height:24px}
+.g-hub .g-key-text{font-size:14px;line-height:1.55;word-break:normal;overflow-wrap:anywhere;margin:5px 0;color:var(--txt)}
+.g-key-source{display:flex;align-items:center;flex-wrap:wrap;gap:0 10px;font-size:11px;line-height:1.5;color:var(--sub)}
+.g-key-source a{display:inline-flex;align-items:center;min-height:32px;font-size:12px}
+.g-key-page a:focus-visible,.g-key-search :focus-visible{outline:2px solid var(--golf);outline-offset:3px}
+@media(max-width:420px){.g-key-search>div{grid-template-columns:minmax(0,1fr) auto}.g-key-search input{grid-column:1/-1}.g-key-row{padding:10px 0}.g-key-row-head a{font-size:13px}.g-hub .g-key-text{font-size:14px}.g-key-source{gap:0 8px}}
+
+/* Classified source index: always expanded, matching the PDF subgroups. */
+.g-key-subgroup{font-size:14px;line-height:1.5;margin:18px 0 4px;color:var(--txt)}
+.g-key-subgroup small{font-size:12px;color:var(--sub);font-weight:400}

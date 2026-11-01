@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-01",
+  "reviewedVideoCount": 164,
+  "method": "Synthesis of existing 164 reviewed key messages and Oct30 user lesson. Three overlapping themes are practice priorities, not an exhaustive reclassification or efficacy ranking. Club-specific and corrective cues remain separate. No videos or individual summaries removed.",
+  "digest": {
+    "title": "우선 연습 핵심",
+    "intro": "반복되는 감각은 세 가지로 묶었습니다. 오늘은 한 가지만 골라 연습하세요.",
+    "priority": "지금은 힘 빼기부터 · 10.30 드라이버 레슨의 왼쪽 어깨 이완을 우선합니다.",
+    "basis": "등록 영상의 기존 검토와 현재 레슨을 대조한 편집 요약입니다. 영상 수가 많다는 이유로 효과가 검증된 것은 아닙니다.",
+    "groups": [
+      {
+        "id": "relax",
+        "title": "힘을 덜고 헤드 무게 느끼기",
+        "merged": "그립 압력 · 어깨 이완 · 서두름 줄이기",
+        "cue": "작은 빈스윙에서 손으로 급히 끌지 않고 헤드 무게를 느낍니다.",
+        "check": "임팩트 전에도 왼쪽 어깨가 편한가?",
+        "scope": "현재 드라이버 레슨 우선 · 후반 파워 훈련은 제외",
+        "sources": [
+          {
+            "id": "cUPKspR2yGI",
+            "label": "그립 압력과 헤드 무게",
+            "start": 64,
+            "range": "1:04–2:35"
+          },
+          {
+            "id": "YUtzwggQMQc",
+            "label": "속도보다 이완 먼저"
+          }
+        ]
+      },
+      {
+        "id": "start",
+        "title": "몸통과 팔을 함께 출발시키기",
+        "merged": "낮고 넓게 시작 · 몸통 회전 · 편한 팔",
+        "cue": "팔을 편하게 두고, 작은 몸통 회전으로 백스윙을 시작합니다.",
+        "check": "손만 들거나 겨드랑이를 세게 조이지 않았나?",
+        "scope": "기존 아이언 백스윙 레슨 기준",
+        "sources": [
+          {
+            "id": "2tam4sbJQtM",
+            "label": "고정 백스윙 기준"
+          },
+          {
+            "id": "aaOw2sdp-io",
+            "label": "낮고 넓게 몸통으로 시작"
+          }
+        ]
+      },
+      {
+        "id": "flow",
+        "title": "하강부터 통과까지 한 흐름으로",
+        "merged": "급한 당김 줄이기 · 회전 연결 · 편한 마무리",
+        "cue": "팔·클럽이 내려오는 흐름에 회전을 연결하고, 피니시까지 이어갑니다.",
+        "check": "중간에 붙잡거나 멈추지 않고 편하게 마쳤나?",
+        "scope": "클럽별 자료를 골라 참고 · 타격 조건은 서로 구분",
+        "sources": [
+          {
+            "id": "V7r2odT_dBE",
+            "label": "드라이버 하강과 회전"
+          },
+          {
+            "id": "iD8o1vJSal4",
+            "label": "아이언 힘 빼고 연결"
+          }
+        ]
+      }
+    ],
+    "consistency": "일관성은 같은 클럽·목표·스윙 크기에서 타점과 시작 방향이 비슷해지는지로 확인합니다. 기록은 필요 없습니다.",
+    "defer": "손목 각도·강한 스냅·브레이크·비거리 훈련·상황별 교정은 필요할 때 전체 목록에서 찾습니다. 서로 다른 교정 감각은 합치지 않습니다."
+  }
+}
