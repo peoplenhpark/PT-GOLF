@@ -151,5 +151,15 @@
   "lessonTypes": {
     "새로운 노트 (29).txt": "PT 정식 레슨 · 개인운동 전환 자세 복습",
     "새로운 노트 (30).txt": "골프 정식 레슨 · 높은 위치의 왼손 이완은 드라이버"
+  },
+  "deployment": {
+    "date": "2026-11-02",
+    "version": 223,
+    "displayVersion": "3.4",
+    "commit": "4046bdaf7f167391d532035907d466709491bc4d",
+    "workflow": "https://github.com/peoplenhpark/PT-GOLF/actions/runs/41429405180",
+    "verify": "success",
+    "deploy": "success",
+    "publicVerification": "passed: formal PT/golf, driver-only left-hand cue, updated legraise images/3D/HT,164videos,pins3+3,mobile themes"
   }
 }
