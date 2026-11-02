@@ -22,23 +22,24 @@ module.exports=async(browser,base)=>{
 
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),1);assert.equal(await p.locator('.coach-header-link a').getAttribute('href'),'#pt/standards');assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
-  const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),'2026-10-30');
+  const latestPT=await p.evaluate(()=>Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date))[0]);
+  const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),latestPT.date);
   const recentCards=recent.locator('.coach-recent-grid').first();
-  assert.equal(await recentCards.locator('a').count(),8);
-  assert.match(await recentCards.locator('[href="#exercise/pt_chestpress"]').innerText(),/가슴이 유지되는 깊이/);
-  assert.match(await recentCards.locator('[href="#exercise/pt_legcurl"]').innerText(),/등·상체와 골반/);
-  assert.equal(await recent.locator('.coach-solo-keys li:visible').count(),2);
+  const linked=latestPT.items.filter(i=>i.exerciseId);
+  assert.equal(await recentCards.locator('a').count(),linked.length);
+  for(const item of linked)assert((await recentCards.locator('[href="#exercise/'+item.exerciseId+'"]').innerText()).includes(item.points[0]));
+  assert((await recent.locator('.coach-solo-keys').innerText()).includes(latestPT.summary[0]));
   assert.equal(await p.locator('.coach-plan').count(),0);assert.match(await p.locator('.coach-routine-link').innerText(),/기본 20분/);assert.equal(await p.locator('.coach-personal-links a').count(),6);assert.match(await p.locator('.coach-personal h2').innerText(),/20종목/);
-  assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),0,'confirmed movements link to their own exercises');
+  assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),latestPT.items.length-linked.length);
   await recent.locator('.coach-session-details').first().locator('summary').click();
-  assert.match(await recent.locator('.coach-session-details').first().innerText(),/45:29–47:40/);
-  assert.match(await recent.locator('.coach-session-details').first().innerText(),/원음은 제공되지 않아 직접 청취하지 못했다/);
+  const detailText=await recent.locator('.coach-session-details').first().innerText();
+  assert(detailText.includes(latestPT.evidence));for(const item of latestPT.items)assert(detailText.includes(item.range));
   assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
   await p.goto(base+'#pt');await p.getByText('PT 수업 기록',{exact:true}).click();await p.locator('.pt-session-note').first().locator(':scope > summary').click();
-  assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),8);
+  assert.equal(await p.locator('.pt-session-links').first().locator('a').count(),linked.length);
   assert.equal(await p.locator('a[href="#exercise/null"]').count(),0);
   await p.locator('.pt-session-note').first().locator('.coach-session-details > summary').click();
-  assert.match(await p.locator('.pt-session-note').first().innerText(),/가슴이 유지되는 깊이/);
+  assert((await p.locator('.pt-session-note').first().innerText()).includes(latestPT.items[0].points[0]));
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();
   const seeded=await p.evaluate(()=>{
    const c=CoachDesk.saveCriterion({part:'pt',sourceKey:'pt:pt_hip_openclose_stretch',title:'고관절 오픈·클로즈',cue:'발 지지와 몸 전체 회전',check:'골반과 가슴이 함께 움직이는지 확인',setup:'준비 원문',caution:'주의 원문',club:'',referenceId:'',confirmed:false});

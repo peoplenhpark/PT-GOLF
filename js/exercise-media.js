@@ -998,24 +998,25 @@ window.ExerciseMedia = {
     "name": "레그레이즈 (꼬리뼈 컨트롤)",
     "kind": "legraise",
     "captions": [
-      "아랫배 누르고 다리 들기",
-      "무릎 편 채 범위 조절"
+      "무릎 90도 · 발끝 전면",
+      "굽힌 각도 유지 · 작은 골반 말기"
     ],
     "notes": [
-      "머리를 받치고 눕는다 — 목이 꺾이지 않을 정도의 수건·베개",
-      "누르면 뜬다 · 아랫배가 조이며 떨린다 — 허리가 아프면 말아 올린 것"
+      "무릎을 90도로 굽히고 발끝은 몸쪽이 아닌 전면으로 향한다 (11/2 사용자 확인 교정)",
+      "아랫배에 힘이 오는 범위까지만. 목·어깨·허리의 과한 긴장은 피한다."
     ],
     "focus": {
       "muscle": "하복근 — 손바닥이 얹히는 바로 그 자리",
-      "move": "무릎을 편 채, 바닥을 강하게 눌러 시소처럼 다리가 저절로 떠오르게 한다",
-      "feel": "누르면 뜬다 · 아랫배가 조이며 떨린다 — 허리가 아프면 말아 올린 것"
+      "move": "무릎을 90도로 굽히고 발끝을 전면으로 둔 채, 골반을 부드럽게 말아 아랫배에 힘이 오는 범위까지만 올린다",
+      "feel": "더 높이보다 아랫배에 힘이 모이는 느낌. 목·허리·다리에 과한 긴장이 없는지 확인"
     },
     "target": "core",
     "images": [
-      "docs/images/guides/pt_tailbone_raise-start.webp",
-      "docs/images/guides/pt_tailbone_raise-end.webp"
+      "docs/images/guides/pt_tailbone_raise-1102-start.png",
+      "docs/images/guides/pt_tailbone_raise-1102-end.png"
     ],
-    "viewer": "media/3d/viewer.html?exercise=pt_tailbone_raise"
+    "viewer": "media/3d/viewer.html?exercise=pt_tailbone_raise",
+    "visualNote": "11/2 사용자 확인: 무릎 90도·발끝 전면. 골반 움직임의 크기는 이해를 위한 예시이며 개인 목표 각도·높이가 아닙니다."
   },
   "pt_rotationlunge": {
     "name": "로테이션 런지 (로봇 런지)",

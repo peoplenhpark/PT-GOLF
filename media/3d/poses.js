@@ -388,6 +388,16 @@ function pose(kind,t,id){
    const a=.12+.66*q;
    p.knees[0]=add(p.hips[0],[0,.43*Math.sin(a),.43*Math.cos(a)]);
    p.ankles[0]=add(p.knees[0],[0,.425*Math.sin(a),.425*Math.cos(a)]);
+  }else if(kind==='legraise'){
+   // 2026-11-02 user-confirmed knee flexion and toes directed away from the torso.
+   // The small pelvic lift is illustrative, not a prescribed range.
+   p.hip=[0,.145+.025*q,0];p.hips=S.map(s=>[s*.105,p.hip[1],0]);
+   p.up=unit(sub(p.neck,p.hip));p.front=unit(cross(p.right,p.up));
+   p.chest=add(p.hip,mul(p.up,.39));
+   const a=Math.PI/2+.14*q,thigh=[0,Math.sin(a),Math.cos(a)],shin=[0,-Math.cos(a),Math.sin(a)];
+   p.knees=p.hips.map(h=>add(h,mul(thigh,.43)));
+   p.ankles=p.knees.map(k=>add(k,mul(shin,.425)));
+   p.footDirections=[shin.slice(),shin.slice()];
   }else if(kind==='quadset'){
    p.knees[0]=[-.105,.17-.026*q,.425];p.ankles[0]=[-.105,.095,.84];
    p.equipment.push({type:'towel',at:[-.105,.07,.425]});
