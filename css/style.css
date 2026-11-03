@@ -686,3 +686,13 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .exercise-lesson-guide ol>li+li{margin-top:12px}
 .exercise-lesson-guide p{margin:4px 0 0}
 .exercise-lesson-guide small,.exercise-lesson-guide .lesson-guide-source{font-size:12px;color:var(--sub)}
+
+/* Current practice stays open; dated and personal source material remains accessible. */
+.exercise-practice-guide ol>li+li{margin-top:8px}
+.practice-pending{padding:10px 12px;margin:12px 0;background:var(--warn-bg);border-left:3px solid var(--warn-line);border-radius:6px}
+.practice-pending h3{color:var(--warn)}
+.training-prior{margin:14px 0;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:14px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+.training-prior>summary{font-weight:700;cursor:pointer;padding:4px 0}
+.training-prior h3{font-size:14px;margin-top:12px}
+.training-prior ul{padding-left:1.4em}
+.focus-context{font-size:12px;color:var(--sub);margin-bottom:8px}

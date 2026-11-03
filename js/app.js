@@ -373,13 +373,32 @@ const Theme = (() => {
     ht_chest_six:['선택한 가슴 운동의 지지 자세·중량 이동 경로를 기존 PT와 비교','6종 모두 수행하거나 원본의 부위별 강조를 고립 효과로 단정하지 않기'],
     ht_squat_comparison:['상체 기울기·보폭·덤벨 위치에 따른 자세 차이 비교','영상만으로 깊이·중량을 정하지 않기 · 기존 PT의 편안한 범위 우선']
   };
+  function routineCueHtml(id,cue,caution) {
+    const guide=Store.getById(id)?.practiceGuide;
+    return htRoutineCueHtml(guide?.core||cue,guide?.caution||caution);
+  }
+  function priorTrainingHtml(e,cues,reminders,c) {
+    if(!e.practiceGuide)return '';
+    return '<details class="training-prior"><summary>기존 자세 설명·기록</summary><p class="g-meta">이전 감각·변형·분량과 개인 편집을 보존한 기록입니다. 현재 연습은 위 동작 순서와 확인 필요 사항을 먼저 참고하세요.</p>'+
+      (e.steps?.length?'<h3>이전 동작 순서</h3><ul>'+e.steps.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+      (e.prep?.length?'<h3>기존 준비 자세</h3><ul>'+e.prep.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+
+      (cues?'<div class="block"><div class="block-h">기존 자세 체크 <span class="ctr">'+c.size+' / '+e.cues.length+'</span></div>'+cues+(c.size?'<button class="reset-cues" data-act="reset-cues">체크 초기화</button>':'')+'</div>':'')+
+      (reminders?'<div class="block"><div class="block-h">기존 메모·주의</div>'+reminders+'</div>':'')+'</details>';
+  }
   function lessonGuideHtml(e) {
+    const reviewed=e.practiceGuide;
+    if(reviewed){
+      const previous=e.lessonGuide;
+      const steps=previous?previous.steps.map(s=>'<li><h3>'+esc(s.title)+'</h3><small>'+esc(s.origin)+'</small><p>'+esc(s.text)+'</p></li>').join(''):reviewed.steps.map(s=>'<li>'+esc(s)+'</li>').join('');
+      return '<section class="exercise-lesson-guide exercise-practice-guide" aria-label="동작 순서와 확인 3가지"><h2>'+esc(previous?.title||reviewed.title)+'</h2><h3>동작 순서</h3><ol>'+steps+'</ol><h3>확인 3가지</h3><ul class="practice-checks">'+reviewed.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+        (reviewed.pending.length?'<div class="practice-pending" role="note"><h3>확인 필요</h3>'+reviewed.pending.map(x=>'<p>'+esc(x)+'</p>').join('')+'</div>':'')+'<p class="lesson-guide-source">'+esc(reviewed.sourceNote)+'</p></section>';
+    }
     const guide=e.lessonGuide;if(!guide)return '';
     return '<section class="exercise-lesson-guide" aria-label="이번 수업 자세 복습"><h2>'+esc(guide.title)+'</h2><ol>'+guide.steps.map(step=>'<li><h3>'+esc(step.title)+'</h3><small>'+esc(step.origin)+'</small><p>'+esc(step.text)+'</p></li>').join('')+'</ol><h3>확인 3가지</h3><ul>'+guide.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul><p class="lesson-guide-source">'+esc(guide.sourceNote)+'</p></section>';
   }
   function trainingDetailSummaryHtml(e) {
     const basic=htRoutineBasic.find(row=>row[0]===e.id);
-    const pair=e.part==='ht' ? htDetailNotes[e.id] : htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
+    const pair=e.practiceGuide ? [e.practiceGuide.core,e.practiceGuide.caution] : e.part==='ht' ? htDetailNotes[e.id] : htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
     if(!pair)return ''; // User-created exercises keep their own descriptions, without invented coaching.
     return '<section class="training-detail-summary '+e.part+'-detail-summary" aria-label="운동 핵심과 주의">'+htRoutineCueHtml(...pair)+'</section>';
   }
@@ -398,13 +417,13 @@ const Theme = (() => {
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
       <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
-      <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${htRoutineCueHtml(cue,caution)}</li>`).join('')}</ol></div>
+      <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></div>
       <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↑</button></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
       <p class="ht-routine-note">${day.ids.length}종목${lower?' · 양발 기본':''} · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong>${htRoutineCueHtml(item[2],item[3])}</li>`;}).join('')}</ol>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 준비·휴식·이동 포함 예시입니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·숄더·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
@@ -541,6 +560,7 @@ const Theme = (() => {
   const expanded3D = new Set();
   function focusHtml(e) {
     return e.focus ? `<div class="focus-box ${e.part === 'golf' ? 'golf' : ''}">
+      ${e.practiceGuide?'<p class="focus-context">수업·영상의 움직임과 감각 · 범위와 설정은 위 안내 우선</p>':''}
       <div class="focus-muscle">🎯 ${esc(e.focus.muscle)}</div>
       <div class="focus-line"><span class="fk">움직임</span>${esc(e.focus.move)}</div>
       <div class="focus-line"><span class="fk">느낌</span>${esc(e.focus.feel)}</div>
@@ -724,15 +744,15 @@ const Theme = (() => {
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}
 
-        ${(e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
+        ${(!e.practiceGuide && e.steps && e.steps.length) ? `<div class="steps-flow ${isGolf ? 'golf' : ''}">
           ${e.steps.map(s => `<span class="step">${esc(s)}</span>`).join('<span class="sep">›</span>')}
         </div>` : ''}
 
         ${e.spec ? `<div class="spec-box ${isGolf ? 'golf' : ''}">
-          <div><div class="k">${isGolf?'핵심':e.part==='ht'?'영상 참고 기준':'운동 기준'}</div><div class="v">${esc(e.spec)}</div></div>
+          <div><div class="k">${isGolf?'핵심':e.part==='ht'?'영상 참고 기준':e.practiceGuide?'기존 수업 기준 · 기록':'운동 기준'}</div><div class="v">${esc(e.spec)}</div></div>
         </div>` : ''}
 
-        ${(e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
+        ${(!e.practiceGuide && e.prep && e.prep.length) ? `<div class="prep-box ${isGolf ? 'golf' : ''}">
           <div class="prep-h">🧩 ${isGolf ? '준비할 때 느낀 점' : '준비 자세'}</div>
           ${e.prep.map(x => `<div class="prep-line"><span class="pb">·</span><div>${esc(x)}</div></div>`).join('')}
         </div>` : ''}
@@ -750,16 +770,17 @@ const Theme = (() => {
 
         ${hasMedia ? exerciseVisualHtml(e) + '<div class="offline-tools"><button class="btn" data-offline>이 운동 오프라인 준비</button><p data-offline-status role="status">이미지와 3D를 기기에 보관할 수 있습니다.</p></div>' : ''}
 
-        ${cues ? `<div class="block">
+        ${!e.practiceGuide && cues ? `<div class="block">
           <div class="block-h ${isGolf ? 'golf' : ''}">✅ ${isGolf ? '스윙 중 느낀 점' : '자세 체크'}
             <span class="ctr">${c.size} / ${e.cues.length}</span></div>
           ${cues}
           ${c.size ? `<button class="reset-cues" data-act="reset-cues">체크 초기화</button>` : ''}
         </div>` : ''}
 
-        ${reminders ? `<div class="block">
+        ${!e.practiceGuide && reminders ? `<div class="block">
           <div class="block-h warn">🔥 ${isGolf ? '다음 연습에서 확인할 점' : '잊지 말 것'}</div>${reminders}</div>` : ''}
 
+        ${!isGolf?priorTrainingHtml(e,cues,reminders,c):''}
         ${prBlock}
         ${e.part==='pt' && Store.getExerciseSessions(e.id).length ? '<details class="pt-detail-history"><summary>수업 기록 · '+Store.getExerciseSessions(e.id).length+'회</summary>'+ptSessionHtml(e.id)+'</details>' : ''}
 

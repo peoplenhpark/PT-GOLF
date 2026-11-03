@@ -87,6 +87,7 @@ const Store = (() => {
       const merged = saved ? { ...ex, ...saved } : { ...ex };
       // Editorial summaries advance with the seed even when an old full-object override preserves personal fields.
       if (ex.practicalSummary) merged.practicalSummary = { ...ex.practicalSummary };
+      if (ex.practiceGuide) merged.practiceGuide = JSON.parse(JSON.stringify(ex.practiceGuide));
       if (saved && ex.image?.startsWith('docs/images/guides/') && (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) merged.image = ex.image;
       result.push(merged);
     }
@@ -117,7 +118,7 @@ const Store = (() => {
       const focus = ex.focus || {};
       const text = [ex.name, ex.spec, ex.category, focus.muscle || '', focus.move || '', focus.feel || '',
         ...(ex.prep || []), ...(ex.cues || []), ...(ex.reminders || []), ...(ex.steps || []),
-        ...getExerciseSessions(ex.id).flatMap(s=>[s.date,s.item.title,...s.item.points,s.item.uncertainty]), ...gripGuideText(ex), ...Object.values(ex.practicalSummary || {}), ...[ex.sourceVideo,...ex.supplementaryVideos||[]].filter(Boolean).flatMap(v=>[v.title,v.channel,...v.points||[]]), ex.memo || ''].join(' ').toLowerCase();
+        ...getExerciseSessions(ex.id).flatMap(s=>[s.date,s.item.title,...s.item.points,s.item.uncertainty]), ...gripGuideText(ex), ...[ex.practiceGuide?.core,ex.practiceGuide?.caution,...ex.practiceGuide?.steps||[],...ex.practiceGuide?.checks||[],...ex.practiceGuide?.pending||[]].filter(Boolean), ...Object.values(ex.practicalSummary || {}), ...[ex.sourceVideo,...ex.supplementaryVideos||[]].filter(Boolean).flatMap(v=>[v.title,v.channel,...v.points||[]]), ex.memo || ''].join(' ').toLowerCase();
       return terms.every(term => text.includes(term));
     });
   }

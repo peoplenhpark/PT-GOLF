@@ -136,7 +136,10 @@ window.Persistence = (() => {
       /^[A-Za-z0-9_-]{11}$/.test(v.youtubeId) && Number.isFinite(v.durationSeconds) && v.durationSeconds>0 &&
       Number.isFinite(Date.parse(v.registeredAt)) && stringLists(v,['points']);
     const videos=[...(video?[video]:[]),...(Array.isArray(extra)?extra:[])];
-    return (video===undefined || validVideo(video)) &&
+    const guide=value.practiceGuide;
+    const validGuide=guide===undefined || (record(guide) && requiredStringFields(guide,['title','core','caution','sourceNote','reviewedAt']) &&
+      ['steps','checks','pending'].every(k=>Array.isArray(guide[k])&&guide[k].every(s=>typeof s==='string')) && guide.steps.length>=3 && guide.steps.length<=4 && guide.checks.length===3);
+    return validGuide && (video===undefined || validVideo(video)) &&
       (extra===undefined || (Array.isArray(extra) && extra.every(validVideo))) &&
       new Set(videos.map(v=>v.youtubeId)).size===videos.length &&
       (links===undefined || (Array.isArray(links) && links.every(link=>record(link) && requiredStringFields(link,['id','reason']))));
