@@ -314,7 +314,7 @@ const Theme = (() => {
     pt_chestpress:['체스트 프레스','10–15회','팔로 버티며 가슴이 유지되는 깊이까지만 내리기','어깨가 말리거나 가슴이 무너지기 전에 다시 밀기'],
     pt_seatedrow:['시티드로우','10–15회','가슴을 유지하며 내보내고 당기기','어깨가 들리면 범위 줄이기 · 몸을 뒤로 눕혀 당기지 않기'],
     pt_latpulldown:['랫풀다운','10–15회','가슴부터 세팅하고 양팔을 같은 속도로 당기기','상체 반동 · 과하게 내려 어깨가 뜨는 지점 주의'],
-    pt_pullup:['보조 풀업','6–10회','자세를 지킬 보조량으로, 가슴부터 당겨 올라가기','어깨 으쓱 · 몸통 무너짐이 나오면 세트 멈추기'],
+    pt_pullup:['보조 풀업','6–10회','몸통을 지지하고, 팔로 당기며 가슴을 올리기','어깨 으쓱 · 몸통 무너짐이 나오면 세트 멈추기'],
     pt_pecdeck:['펙덱 플라이','12–15회','가슴·어깨 위치를 유지하며 모으고 천천히 열기','가슴이 딸려가거나 팔을 과하게 벌리지 않기'],
     pt_pushdown:['케이블 푸시다운','10–15회','위팔을 몸 옆에 두고 펴기 · 돌아올 때도 천천히','팔꿈치가 앞으로 쏠리거나 몸무게로 누르지 않기'],
     pt_low_cable_curl:['로우 케이블 컬','10–15회','낮은 풀리·언더그립으로 팔꿈치를 접어 당기기','몸통 반동 · 손목 꺾임 · 어깨 말림 주의'],
@@ -373,6 +373,10 @@ const Theme = (() => {
     ht_chest_six:['선택한 가슴 운동의 지지 자세·중량 이동 경로를 기존 PT와 비교','6종 모두 수행하거나 원본의 부위별 강조를 고립 효과로 단정하지 않기'],
     ht_squat_comparison:['상체 기울기·보폭·덤벨 위치에 따른 자세 차이 비교','영상만으로 깊이·중량을 정하지 않기 · 기존 PT의 편안한 범위 우선']
   };
+  function lessonGuideHtml(e) {
+    const guide=e.lessonGuide;if(!guide)return '';
+    return '<section class="exercise-lesson-guide" aria-label="이번 수업 자세 복습"><h2>'+esc(guide.title)+'</h2><ol>'+guide.steps.map(step=>'<li><h3>'+esc(step.title)+'</h3><small>'+esc(step.origin)+'</small><p>'+esc(step.text)+'</p></li>').join('')+'</ol><h3>확인 3가지</h3><ul>'+guide.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul><p class="lesson-guide-source">'+esc(guide.sourceNote)+'</p></section>';
+  }
   function trainingDetailSummaryHtml(e) {
     const basic=htRoutineBasic.find(row=>row[0]===e.id);
     const pair=e.part==='ht' ? htDetailNotes[e.id] : htRoutineStrength[e.id]?.slice(2) || basic?.slice(4) || ptDetailNotes[e.id];
@@ -715,6 +719,7 @@ const Theme = (() => {
         ${isGolf ? '<div class="g-actions"><a class="g-link" href="#golf/notes">스윙 노트 목록</a><button class="g-btn" data-g="jump-related">관련 레슨·영상 바로 보기 ↓</button></div>' : ''}
 
         ${!isGolf?trainingDetailSummaryHtml(e):''}
+        ${!isGolf?lessonGuideHtml(e):''}
         ${e.part==='pt'?'<nav class="coach-shortcuts"><button class="btn ghost" data-act="memo-top">메모·질문 남기기</button></nav>':''}
         ${trainingVideoHtml(e)}
         ${hasMedia ? '' : focusHtml(e)}

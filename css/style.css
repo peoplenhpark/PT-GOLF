@@ -677,3 +677,12 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .training-detail-summary .ht-routine-cue b{white-space:nowrap;margin-right:0}
 .scr:is([data-part="pt"],[data-part="ht"]) .spec-box{padding:10px 13px;margin-bottom:14px}
 .scr:is([data-part="pt"],[data-part="ht"]) .spec-box .v{font-size:14px;line-height:1.55;font-weight:600;color:var(--txt)}
+
+/* Source-labelled lesson detail stays open; earlier images/3D/history follow unchanged. */
+.exercise-lesson-guide{padding:14px;margin:0 0 14px;border:1px solid var(--pt-line);border-radius:12px;background:var(--card);color:var(--txt);font-size:14px;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+.exercise-lesson-guide h2{font-size:17px;margin:0 0 12px}
+.exercise-lesson-guide h3{font-size:14px;margin:0;font-weight:700}
+.exercise-lesson-guide ol,.exercise-lesson-guide ul{padding-left:1.4em;margin:8px 0 12px}
+.exercise-lesson-guide ol>li+li{margin-top:12px}
+.exercise-lesson-guide p{margin:4px 0 0}
+.exercise-lesson-guide small,.exercise-lesson-guide .lesson-guide-source{font-size:12px;color:var(--sub)}
