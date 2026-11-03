@@ -101,3 +101,9 @@
 .coach-lesson-recap ol{margin:0;padding-left:1.2em}.coach-lesson-recap li+li{margin-top:5px}
 
 .coach-lesson-recap.has-checks>div{grid-template-columns:80px minmax(0,1fr)}.coach-lesson-recap.has-checks dt{white-space:nowrap}
+
+/* Combined source lessons: one visible practice card, compact source links. */
+.coach-desk .g-combined-lesson .g-priority-columns h3{font-size:14px;margin:0 0 7px}
+.g-combined-lesson .coach-lesson-links{display:flex;flex-wrap:wrap;gap:8px 14px}
+.g-combined-lesson .coach-lesson-links .coach-source{margin:0;padding:3px 0;font-size:13px;color:inherit}
+.g-combined-lesson #recent-golf-title{line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
