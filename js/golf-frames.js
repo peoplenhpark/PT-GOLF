@@ -1762,16 +1762,16 @@ window.GolfFrames = {
   ],
   "TYq-Fge2LSA": [
     {
-      "src": "media/golf-frames/TYq-Fge2LSA-1.webp",
-      "time": 2.43,
-      "label": "아이언 · 내려오는 구간",
+      "src": "media/golf-frames/kuKUECtB-fg-1.webp",
+      "time": 3.04,
+      "label": "아이언의 내려오기·통과",
       "width": 240,
       "height": 426
     },
     {
-      "src": "media/golf-frames/TYq-Fge2LSA-2.webp",
-      "time": 8.19,
-      "label": "드라이버 · 통과 구간",
+      "src": "media/golf-frames/kuKUECtB-fg-2.webp",
+      "time": 9.35,
+      "label": "드라이버의 내려오기·통과",
       "width": 240,
       "height": 426
     }
@@ -2082,16 +2082,16 @@ window.GolfFrames = {
   ],
   "18oA0JBM-fk": [
     {
-      "src": "media/golf-frames/18oA0JBM-fk-1.webp",
-      "time": 7.41,
-      "label": "상체가 함께 빨리 열리는 비교",
+      "src": "media/golf-frames/kiBBBDaVB7k-1.webp",
+      "time": 4.14,
+      "label": "상체까지 함께 열려 클럽이 앞서는 비교",
       "width": 240,
       "height": 426
     },
     {
-      "src": "media/golf-frames/18oA0JBM-fk-2.webp",
-      "time": 26.13,
-      "label": "하체와 헤드 통과 연결",
+      "src": "media/golf-frames/kiBBBDaVB7k-2.webp",
+      "time": 25.38,
+      "label": "하체 회전과 헤드 보내기를 연결",
       "width": 240,
       "height": 426
     }
@@ -2620,6 +2620,310 @@ window.GolfFrames = {
       "src": "media/golf-frames/CLIv_9gmuhA-2.webp",
       "time": 142.6,
       "label": "왼 어깨 쪽으로 보내는 레슨 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "nlmg8nsjfbk": [
+    {
+      "src": "media/golf-frames/nlmg8nsjfbk-1.webp",
+      "time": 1.23,
+      "label": "오른발 라인을 가리키는 하강 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/nlmg8nsjfbk-2.webp",
+      "time": 4.84,
+      "label": "내려온 클럽을 통과시키는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "LpQxb1pNwFs": [
+    {
+      "src": "media/golf-frames/LpQxb1pNwFs-1.webp",
+      "time": 7.73,
+      "label": "팔을 몸에 붙잡고 회전하는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/LpQxb1pNwFs-2.webp",
+      "time": 16.91,
+      "label": "팔이 몸에서 나가며 헤드가 통과하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "NZJxVXzIlbk": [
+    {
+      "src": "media/golf-frames/NZJxVXzIlbk-1.webp",
+      "time": 6.98,
+      "label": "편하게 내린 손과 팔의 삼각형",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/NZJxVXzIlbk-2.webp",
+      "time": 27.65,
+      "label": "삼각형을 유지하며 턴하는 설명",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "WhLLhf2IoB0": [
+    {
+      "src": "media/golf-frames/WhLLhf2IoB0-1.webp",
+      "time": 4.69,
+      "label": "왼손등이 위로 향하는 비교 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/WhLLhf2IoB0-2.webp",
+      "time": 11.66,
+      "label": "왼손등 방향을 바꾼 내려오기 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "NEtXffKKfAs": [
+    {
+      "src": "media/golf-frames/NEtXffKKfAs-1.webp",
+      "time": 5.43,
+      "label": "탑의 오른손목·손바닥 위치 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/NEtXffKKfAs-2.webp",
+      "time": 16.91,
+      "label": "손목을 돌리지 않고 내려오는 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ZffDcybdQt0": [
+    {
+      "src": "media/golf-frames/ZffDcybdQt0-1.webp",
+      "time": 2.52,
+      "label": "클럽으로 하강 경로를 안내하는 장면",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ZffDcybdQt0-2.webp",
+      "time": 9.98,
+      "label": "안내 아래로 내려 회전하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "jEU9tWAVztI": [
+    {
+      "src": "media/golf-frames/jEU9tWAVztI-1.webp",
+      "time": 8.35,
+      "label": "오른손이 미는 방향 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/jEU9tWAVztI-2.webp",
+      "time": 9.66,
+      "label": "왼손이 당기는 방향 설명",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "m_pq2gWhweQ": [
+    {
+      "src": "media/golf-frames/m_pq2gWhweQ-1.webp",
+      "time": 4.53,
+      "label": "가슴 방향을 클럽으로 확인",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/m_pq2gWhweQ-2.webp",
+      "time": 91.2,
+      "label": "오른발 지지와 몸통 회전 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "gwGJbD6pyH4": [
+    {
+      "src": "media/golf-frames/gwGJbD6pyH4-1.webp",
+      "time": 31.43,
+      "label": "오른쪽으로 과하게 실리는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/gwGJbD6pyH4-2.webp",
+      "time": 97.85,
+      "label": "골반이 옆으로 밀리지 않는 회전 설명",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "G26PLVsWfgc": [
+    {
+      "src": "media/golf-frames/G26PLVsWfgc-1.webp",
+      "time": 5.04,
+      "label": "통과 후 팔의 경로를 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/G26PLVsWfgc-2.webp",
+      "time": 19.97,
+      "label": "귀 위로 이어지는 피니시",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "5XjM1AJKbtg": [
+    {
+      "src": "media/golf-frames/5XjM1AJKbtg-1.webp",
+      "time": 29.53,
+      "label": "왼팔로 아래에서 받치는 감각",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/5XjM1AJKbtg-2.webp",
+      "time": 55.85,
+      "label": "일찍 손목을 꺾는 동작과 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "6mYmhmpLL3s": [
+    {
+      "src": "media/golf-frames/6mYmhmpLL3s-1.webp",
+      "time": 34.53,
+      "label": "준비의 왼쪽 압력 설명",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "src": "media/golf-frames/6mYmhmpLL3s-2.webp",
+      "time": 63.72,
+      "label": "몸과 손이 함께 출발하는 테이크어웨이",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "M5wRO6zlHRA": [
+    {
+      "src": "media/golf-frames/M5wRO6zlHRA-1.webp",
+      "time": 23.46,
+      "label": "몸은 멈추고 손만 돌리는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/M5wRO6zlHRA-2.webp",
+      "time": 65.28,
+      "label": "팔 움직임과 몸통 회전을 함께 연결",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "tHJTXiEVpzM": [
+    {
+      "src": "media/golf-frames/tHJTXiEVpzM-1.webp",
+      "time": 3.96,
+      "label": "어깨를 기다리는 전환 자막",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/tHJTXiEVpzM-2.webp",
+      "time": 6.91,
+      "label": "클럽이 내려와 통과하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "liwvpxER1b0": [
+    {
+      "src": "media/golf-frames/liwvpxER1b0-1.webp",
+      "time": 22.31,
+      "label": "양손 지렛대 역할 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/liwvpxER1b0-2.webp",
+      "time": 50.6,
+      "label": "몸 회전으로 막대가 휘는 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "W__zH8-7nxc": [
+    {
+      "src": "media/golf-frames/W__zH8-7nxc-1.webp",
+      "time": 30.6,
+      "label": "코어 지지와 짧은 골반 전환 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/W__zH8-7nxc-2.webp",
+      "time": 51.97,
+      "label": "팔이 빠져나오며 헤드가 통과하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ktADlkpNn_E": [
+    {
+      "src": "media/golf-frames/ktADlkpNn_E-1.webp",
+      "time": 0.56,
+      "label": "오른어깨가 가로로 나오는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ktADlkpNn_E-2.webp",
+      "time": 3.02,
+      "label": "오른어깨 방향을 바꾼 하강 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "JnqABQUIVVk": [
+    {
+      "src": "media/golf-frames/JnqABQUIVVk-1.webp",
+      "time": 41.24,
+      "label": "오른발 엄지 쪽 지지 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/JnqABQUIVVk-2.webp",
+      "time": 54.19,
+      "label": "상하체 전환 차이와 클럽 하강 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "z3vEI5aGz88": [
+    {
+      "src": "media/golf-frames/z3vEI5aGz88-1.webp",
+      "time": 60.72,
+      "label": "왼쪽이 회전하며 펴지는 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/z3vEI5aGz88-2.webp",
+      "time": 98.2,
+      "label": "왼쪽 지지 뒤 클럽이 나오는 시범",
       "width": 240,
       "height": 426
     }

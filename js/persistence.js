@@ -179,7 +179,8 @@ window.Persistence = (() => {
     value.focus.every(item => stringFields(item, ['text', 'noteId', 'kind', 'sourceId']) && (item.active === undefined || typeof item.active === 'boolean')) &&
     record(value.videoNotes) && Object.values(value.videoNotes).every(item => record(item) &&
       stringFields(item, ['memo', 'status', 'title', 'action', 'feel', 'check']) &&
-      (item.favorite === undefined || typeof item.favorite === 'boolean'));
+      (item.favorite === undefined || typeof item.favorite === 'boolean') &&
+      (item.archived === undefined || typeof item.archived === 'boolean'));
   const validDrafts = value => record(value) && Object.values(value).every(item => record(item) && ['string', 'boolean'].includes(typeof item.value) && typeof item.updated === 'string' && Number.isFinite(Date.parse(item.updated)));
   const validDeletions = value => record(value) && keyed(value.requests) && new Set(value.requests.map(item => item.kind + '/' + item.contentId)).size === value.requests.length && value.requests.every(item =>
     ['exercise', 'video'].includes(item.kind) && typeof item.contentId === 'string' && !!item.contentId &&

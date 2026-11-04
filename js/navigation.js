@@ -13,7 +13,7 @@ window.AppNavigation = (() => {
     if (v.name === 'golf-hub') {
       path = v.golfGroup && v.golfTab==='videos' && !v.golfId ? '#golf/group/'+encode(v.golfGroup) :
         '#golf/'+(v.golfTab || 'lessons')+(v.golfId?'/'+encode(v.golfId):'');
-      for (const key of ['golfQuery','golfTopic','golfClub','cat','sourceKind','sourceId']) if(v[key]) p.set(key,v[key]);
+      for (const key of ['golfQuery','golfTopic','golfClub','golfArchive','cat','sourceKind','sourceId']) if(v[key]) p.set(key,v[key]);
     }
     return path + (p.size ? '?' + p : '');
   }
@@ -33,8 +33,9 @@ window.AppNavigation = (() => {
     if(a==='golf') {
       const v={name:'golf-hub',part:'golf',golfTab:b||'lessons',golfId:c||null,golfGroup:null,golfQuery:'',golfTopic:null,golfClub:null,cat:null,sourceKind:null,sourceId:null};
       if(b==='group') Object.assign(v,{golfTab:'videos',golfId:null,golfGroup:c});
-      for(const k of ['golfQuery','golfTopic','golfClub','cat','sourceKind','sourceId']) if(p.has(k))v[k]=p.get(k);
+      for(const k of ['golfQuery','golfTopic','golfClub','golfArchive','cat','sourceKind','sourceId']) if(p.has(k))v[k]=p.get(k);
       if(!['iron','driver','both','unknown'].includes(v.golfClub))v.golfClub=null;
+      if(v.golfArchive!=='include')delete v.golfArchive;
       return v;
     }
     return {name:'home'};
