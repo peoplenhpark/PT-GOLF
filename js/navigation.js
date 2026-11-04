@@ -35,7 +35,7 @@ window.AppNavigation = (() => {
       if(b==='group') Object.assign(v,{golfTab:'videos',golfId:null,golfGroup:c});
       for(const k of ['golfQuery','golfTopic','golfClub','golfArchive','cat','sourceKind','sourceId']) if(p.has(k))v[k]=p.get(k);
       if(!['iron','driver','both','unknown'].includes(v.golfClub))v.golfClub=null;
-      if(v.golfArchive!=='include')delete v.golfArchive;
+      if(['only','include'].includes(v.golfArchive))v.golfArchive='only';else delete v.golfArchive;
       return v;
     }
     return {name:'home'};

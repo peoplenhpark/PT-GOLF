@@ -430,3 +430,8 @@
 .g-archive-filter{margin:4px 0;font-size:.85rem}
 .g-archive-filter[aria-pressed="true"]{outline:2px solid currentColor;outline-offset:1px}
 .g-archive-badge{display:inline-block;font-size:.75rem;padding:2px 6px;border:1px solid currentColor;border-radius:6px;width:max-content;margin:3px 0}
+
+/* The archived library shows concise messages with one inline restore action. */
+.g-archive-only .g-key-row-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:8px}
+.g-archive-only .g-key-row-head .g-btn{min-height:44px;min-width:48px;padding:6px 10px;font-size:13px;white-space:nowrap}
+.g-archive-only .g-key-row-head a{min-width:0;overflow-wrap:anywhere}
