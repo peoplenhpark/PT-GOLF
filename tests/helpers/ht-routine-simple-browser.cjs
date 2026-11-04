@@ -19,11 +19,19 @@ module.exports=async(browser,base)=>{
    assert.equal(await p.locator('#ht-routine input,#ht-routine form,#ht-routine [data-ht-progress],#ht-routine [data-ht-completion]').count(),0);
    assert(!(await p.locator('#ht-routine').innerText()).includes('지난 기록'));
    if(['tue','fri'].includes(day)){
-    assert.deepEqual(await p.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_backextension','#exercise/pt_lunge','#exercise/pt_legpress']);
+    assert.deepEqual(await p.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_lunge','#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_backextension','#exercise/pt_legpress']);
     assert.equal(await p.locator('#ht-routine-day li>strong').filter({hasText:'20kg · 20회 × 2세트'}).count(),3);
     assert.match(await p.locator('#ht-routine-day').innerText(),/양발 기본/);
+    assert.deepEqual(await p.locator('#ht-routine-day .ht-routine-time').allTextContents(),['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']);
+    assert.deepEqual(await p.locator('#ht-routine-day .ht-routine-rest').allTextContents(),[' · 세트 휴식 120–180초',' · 세트 휴식 90–120초',' · 세트 휴식 90–120초',' · 세트 휴식 60–90초',' · 세트 휴식 90–120초',' · 세트 휴식 120–180초']);
+    assert.match(await p.locator('#ht-routine-day .ht-routine-buffer').innerText(),/65–70분 · 여유 5분/);
+    assert.match(await p.locator('#ht-routine').innerText(),/기본 20분 \+ 근력 50분 · 총 70분/);
     assert.match(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).innerText(),/6kg 케틀벨 · 횟수·세트 확인 필요/);
     assert.equal(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).locator('.ht-routine-cue').count(),2);
+   }else if(['mon','thu'].includes(day)){
+    assert.match(await p.locator('#ht-routine').innerText(),/기본 20분 \+ 근력 40분 · 총 60분/);
+    assert.equal(await p.locator('#ht-routine-day .ht-routine-buffer,#ht-routine-day .ht-routine-rest').count(),0);
+    assert.equal(await p.locator('#ht-routine-day .ht-routine-time').last().innerText(),'54–60분');
    }
   }
   await p.locator('.ht-routine-days [data-ht-day=tue]').click();
