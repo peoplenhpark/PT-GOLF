@@ -119,7 +119,7 @@ window.CoachDesk = (() => {
     let body=compactNow?'':tabs(part,tab);
     if(!handle.status().ok)body+='<p class="storage-warning" role="alert">보관 기록을 읽지 못했습니다. 기존 원본은 보존하고 저장을 멈췄습니다.</p>';
     if(tab==='now'&&v.coachRecord){const r=records.find(r=>r.id===v.coachRecord);body+='<section class="coach-selected-record"><h2>기록과 질문</h2>'+(r?recordHtml(r,true):'<p>기록을 찾지 못했습니다.</p>')+'<a class="coach-source" href="'+route(part,'standards')+'">보관 기록으로 돌아가기 ›</a></section>';}else if(tab==='now'){
-      if(part==='pt')body+=recentPT();
+      if(part==='pt')body+=window.TrainingQuestions.entryLink()+recentPT();
       if(part==='golf'){
         const combined=combinedGolfReview();
         body+=(combined||window.GolfHub.personalPracticePin())+window.GolfHub.ironRelaxPracticePin()+window.GolfHub.rightArmPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+(combined?window.GolfHub.pinnedSequence():recentGolf())+window.GolfQuestions.selector(s);
@@ -127,6 +127,8 @@ window.CoachDesk = (() => {
       if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
       if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a><a href="#golf/standards">보관 기록</a></nav>';
       if(part==='pt')body+=personalPTLinks();
+    }else if(part==='pt'&&tab==='questions'){
+      body+=window.TrainingQuestions.render(v.coachSource);
     }else{
       body+=archive(part,all,records,s,v.coachId);
     }

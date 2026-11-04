@@ -107,3 +107,14 @@
 .g-combined-lesson .coach-lesson-links{display:flex;flex-wrap:wrap;gap:8px 14px}
 .g-combined-lesson .coach-lesson-links .coach-source{margin:0;padding:3px 0;font-size:13px;color:inherit}
 .g-combined-lesson #recent-golf-title{line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+
+/* A compact, read-only sheet for the next coaching session. */
+.training-question-entry{display:flex;justify-content:space-between;gap:12px;align-items:center;min-height:44px;margin:8px 0;padding:8px 12px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--text);font-size:14px;font-weight:700;text-decoration:none}
+.training-question-entry span{font-size:12px;color:var(--sub);font-weight:500}
+.training-question-detail{display:inline-block;min-height:44px;padding:10px 0;font-size:13px;color:var(--pt)}
+.training-questions .training-question-group{margin:18px 0}.training-questions h3{font-size:15px;margin:0 0 6px}
+.training-questions ol{margin:0;padding-left:24px}.training-questions li{padding:8px 6px;border-bottom:1px solid var(--line);scroll-margin-top:72px}
+.training-questions li::marker{color:var(--sub);font-size:12px}.coach-desk .training-questions li p{font-size:14px;line-height:1.6;margin:2px 0 4px}
+.training-question-links{display:flex;flex-wrap:wrap;gap:2px 12px}.training-question-links a{color:var(--pt);font-size:13px;line-height:1.6;min-height:32px;display:inline-flex;align-items:center;overflow-wrap:anywhere}
+.training-question-selected{background:var(--pt-bg);outline:2px solid var(--pt);border-radius:8px;scroll-margin-top:72px}
+.training-question-scope{padding:12px;margin-top:20px;border:1px solid var(--line);border-radius:10px}

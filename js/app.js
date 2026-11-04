@@ -92,7 +92,8 @@ const Theme = (() => {
     if(jumpRecent)delete view.coachStart;
     const jumpStage=view.name==='coach'&&view.part==='golf'&&view.coachTab==='now'&&['backswing','downswing','impact','follow-through'].includes(view.coachStage)?view.coachStage:null;
     if(jumpStage)delete view.coachStage;
-    const jumpSelector=jumpStage?'#g-stage-'+jumpStage:jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
+    const jumpQuestions=view.name==='coach'&&view.part==='pt'&&view.coachTab==='questions'&&view.coachSource;
+    const jumpSelector=jumpQuestions?'.training-question-selected':jumpStage?'#g-stage-'+jumpStage:jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
@@ -391,7 +392,7 @@ const Theme = (() => {
       const previous=e.lessonGuide;
       const steps=previous?previous.steps.map(s=>'<li><h3>'+esc(s.title)+'</h3><small>'+esc(s.origin)+'</small><p>'+esc(s.text)+'</p></li>').join(''):reviewed.steps.map(s=>'<li>'+esc(s)+'</li>').join('');
       return '<section class="exercise-lesson-guide exercise-practice-guide" aria-label="동작 순서와 확인 3가지"><h2>'+esc(previous?.title||reviewed.title)+'</h2><h3>동작 순서</h3><ol>'+steps+'</ol><h3>확인 3가지</h3><ul class="practice-checks">'+reviewed.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
-        (reviewed.pending.length?'<div class="practice-pending" role="note"><h3>확인 필요</h3>'+reviewed.pending.map(x=>'<p>'+esc(x)+'</p>').join('')+'</div>':'')+'<p class="lesson-guide-source">'+esc(reviewed.sourceNote)+'</p></section>';
+        (reviewed.pending.length?'<div class="practice-pending" role="note"><h3>확인 필요</h3>'+reviewed.pending.map(x=>'<p>'+esc(x)+'</p>').join('')+window.TrainingQuestions.detailLink(e.id)+'</div>':'')+'<p class="lesson-guide-source">'+esc(reviewed.sourceNote)+'</p></section>';
     }
     const guide=e.lessonGuide;if(!guide)return '';
     return '<section class="exercise-lesson-guide" aria-label="이번 수업 자세 복습"><h2>'+esc(guide.title)+'</h2><ol>'+guide.steps.map(step=>'<li><h3>'+esc(step.title)+'</h3><small>'+esc(step.origin)+'</small><p>'+esc(step.text)+'</p></li>').join('')+'</ol><h3>확인 3가지</h3><ul>'+guide.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul><p class="lesson-guide-source">'+esc(guide.sourceNote)+'</p></section>';
@@ -413,6 +414,7 @@ const Theme = (() => {
     const times=lower?['20–29분','29–37분','37–43분','43–50분','50–60분']:['20–25분','25–33분','33–41분','41–49분','49–54분','54–60분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
+      ${window.TrainingQuestions.entryLink()}
       <p class="ht-routine-note">기본 20분 + 근력 40분 · 10/30 자세 복습 반영 · 자세 교정·반복 우선</p>
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
       <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>

@@ -1,0 +1,11 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),seed=JSON.parse(fs.readFileSync(path.join(root,'data/seed.json'),'utf8'));let all=structuredClone(seed.exercises);
+const c={window:{},URLSearchParams,Store:{getAll:()=>all}};vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'js/training-questions.js'),'utf8'),c);vm.runInContext(fs.readFileSync(path.join(root,'js/navigation.js'),'utf8'),c);
+const q=c.window.TrainingQuestions,plain=x=>JSON.parse(JSON.stringify(x));let result=q.collect();assert.equal(result.rows.length,16);assert.equal(result.scope.length,4);
+const covered=[...result.rows.flatMap(r=>r.exercises.map(e=>e.id)),...result.scope.map(e=>e.id)];assert.equal(covered.length,new Set(covered).size);assert.deepEqual(covered.sort(),all.filter(e=>e.practiceGuide?.pending.length).map(e=>e.id).sort());
+const nav=c.window.AppNavigation,route={name:'coach',part:'pt',coachTab:'questions',coachSource:'pt_pullup'};assert.deepEqual(plain(nav.fromHash(nav.hashFor(route))),route);
+assert.match(q.render('pt_pullup'),/class="training-question-selected"/);assert.doesNotMatch(q.render(''),/<input|<textarea|<details/);
+all=all.filter(e=>e.id!=='pt_seatedrow');result=q.collect();assert(!result.rows.some(r=>r.exercises.some(e=>e.id==='pt_seatedrow')));assert(result.rows.some(r=>r.exercises.some(e=>e.id==='ht_upper_elbows')),'reference stays available if PT is hidden');
+all.push({id:'future',name:'<script>test</script>',part:'pt',practiceGuide:{pending:['<img onerror=bad>']}});assert.match(q.render(''),/&lt;script&gt;/);assert.match(q.render(''),/&lt;img onerror=bad&gt;/);assert.doesNotMatch(q.render(''),/<script>/);
+all=[];assert.equal(q.entryLink(),'');assert.equal(q.collect().rows.length,0);
+console.log('PASS: coach questions cover unresolved sources once, preserve reference scope, route round trips, hidden references, future unknowns and escaping.');
