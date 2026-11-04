@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 183,
-  "scope": "183 active video records. 19 new unique entries; 5 existing records renewed, including 2 replacement YouTube sources. Stable record IDs preserve personal data. Current sources and key messages match the app.",
+  "count": 185,
+  "scope": "185 active video records, current sources and key messages match the app. Existing stable IDs and personal data preserved.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -2199,6 +2199,54 @@
         105.98,
         117.3,
         128.62
+      ],
+      "reviewedAt": "2026-11-04"
+    },
+    {
+      "id": "UPurwAXyMLw",
+      "source": "https://www.youtube.com/watch?v=UPurwAXyMLw",
+      "channel": "Toptool",
+      "message": "손으로 끝까지 끌지 않고 클럽을 풀어 보낸다. 오른발 앞 시범은 현재 레슨의 높은 위치 왼손 이완과 구분한다.",
+      "basis": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님.",
+      "evidenceKind": "explanation",
+      "duration": 29,
+      "sampleTimes": [
+        0.87,
+        3.25,
+        5.63,
+        8.0,
+        10.38,
+        12.76,
+        15.14,
+        17.52,
+        19.89,
+        22.27,
+        24.65,
+        27.03
+      ],
+      "reviewedAt": "2026-11-04"
+    },
+    {
+      "id": "7vsnmAld3wY",
+      "source": "https://www.youtube.com/watch?v=7vsnmAld3wY",
+      "channel": "성빈프로",
+      "message": "아이언·드라이버의 하강과 헤드 통과를 따로 비교한다. 화면의 궤도·거리 숫자를 개인 기준으로 삼지 않는다.",
+      "basis": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외.",
+      "evidenceKind": "observation",
+      "duration": 9,
+      "sampleTimes": [
+        0.27,
+        1.01,
+        1.75,
+        2.48,
+        3.22,
+        3.96,
+        4.7,
+        5.44,
+        6.17,
+        6.91,
+        7.65,
+        8.39
       ],
       "reviewedAt": "2026-11-04"
     }

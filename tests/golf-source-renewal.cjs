@@ -4,7 +4,7 @@ const saved={lessons:[],questions:[{id:'q',kind:'videos',sourceId:'TYq-Fge2LSA',
 let writes=0;const hidden=new Set(),ctx={window:{},localStorage:{getItem:()=>JSON.stringify(saved),setItem:()=>writes++},Store:{isDeleted:(kind,id)=>hidden.has(id),getByPart:()=>[],getById:()=>null}};
 vm.createContext(ctx);for(const p of ['js/golf-data.js','js/golf-frames.js','js/golf-practice.js','js/golf.js'])vm.runInContext(read(p),ctx);
 const c=ctx.window.GolfContent,a=JSON.parse(read('docs/video-review-2026-11-04-batch.json')),app={innerHTML:'',querySelector:()=>null},api={app,tabbar:()=>''};
-assert.equal(c.videos.length,183);assert.equal(new Set(c.videos.map(c.sourceIdFor)).size,183);
+assert.equal(c.videos.length,185);assert.equal(new Set(c.videos.map(c.sourceIdFor)).size,185);
 for(const id of a.submittedIds){const matches=c.videos.filter(v=>v.id===id||c.sourceIdFor(v)===id||(v.alternateSources||[]).some(s=>s.id===id));assert.equal(matches.length,1,id+' resolves once');}
 for(const [source,id] of Object.entries(a.replacementSources)){
  const v=c.videos.find(v=>v.id===id),prior=a.previousRecords.find(v=>v.id===id);

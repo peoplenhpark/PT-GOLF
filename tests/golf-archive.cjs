@@ -12,8 +12,8 @@ function setup(fail=false){
  return {saved,disk,ctx,render,click,routes,messages,writes:()=>writes};
 }
 const t=setup(),hub=t.ctx.window.GolfHub,c=t.ctx.window.GolfContent;
-let html=t.render({golfTab:'key-messages'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,180);assert(!html.includes('data-video-id="TYq-Fge2LSA"'));
-html=t.render({golfTab:'key-messages',golfArchive:'only',golfClub:'both'});assert(html.includes('data-video-id="TYq-Fge2LSA"'));assert(html.includes('g-archive-badge'));assert(html.includes('golfArchive=only'));
+let html=t.render({golfTab:'key-messages'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,c.videos.length-3);assert(!html.includes('data-video-id="TYq-Fge2LSA"'));
+html=t.render({golfTab:'key-messages',golfArchive:'only',golfClub:'both'});assert(html.includes('data-video-id="TYq-Fge2LSA"'));assert(html.includes('g-archive-badge'));assert(html.includes('golfArchive=only'));assert(html.includes('aria-current="page">보관영상</a>'));
 t.click('archive-filter');assert.equal(t.routes.at(-1)[1].golfArchive,null);assert.equal(t.routes.at(-1)[1].golfClub,null);
 
 html=t.render({golfTab:'key-messages',golfArchive:'only'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,3);assert.equal((html.match(/data-g="restore-archived-video"/g)||[]).length,3);assert(!html.includes('class="g-frame"'));assert(!html.includes('data-video-id="nlmg8nsjfbk"'));

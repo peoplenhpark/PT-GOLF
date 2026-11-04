@@ -1,0 +1,108 @@
+{
+  "submitted": [
+    "UPurwAXyMLw",
+    "UPurwAXyMLw",
+    "7vsnmAld3wY"
+  ],
+  "newRecords": 2,
+  "sameMessageDuplicates": 1,
+  "existingIdDuplicates": 0,
+  "comparison": "7vsnmAld3wY and TYq-Fge2LSA/kuKUECtB-fg share the comparison theme but use distinct wardrobe, background and footage. Retained separately.",
+  "items": [
+    {
+      "id": "UPurwAXyMLw",
+      "title": "드라이버 릴리스 · 오른발 앞에서 더 끌지 말고 풀어 보내기",
+      "group": "impact-release",
+      "club": "driver",
+      "kind": "explanation",
+      "summary": "하체를 열면서도 손으로 클럽을 끝까지 끌고 오는 모습을 비교하고, 양손이 오른발 부근에 왔을 때 클럽을 풀어 보내는 시범입니다.",
+      "points": [
+        "몸을 돌리는 동안 손과 클럽을 계속 붙잡아 끌고 가는지 비교합니다.",
+        "하체가 열리고 양손이 오른발 부근에 왔을 때 클럽이 통과하도록 하는 시범을 봅니다.",
+        "현재 레슨의 높은 위치 왼손 이완과 영상의 오른발 앞 릴리스는 설명하는 시점이 다릅니다. 기존 이완 시점을 늦추는 지시로 바꾸지 않습니다."
+      ],
+      "key": "손으로 끝까지 끌지 않고 클럽을 풀어 보낸다. 오른발 앞 시범은 현재 레슨의 높은 위치 왼손 이완과 구분한다.",
+      "action": "작은 빈스윙에서 손으로 끝까지 끄는 모습과 헤드가 편하게 통과하는 모습을 비교합니다.",
+      "feel": "현재 레슨의 높은 위치 왼손 이완을 유지한 채 헤드가 붙잡히지 않고 나가는 느낌만 참고합니다.",
+      "caution": "오른발까지 힘을 유지했다가 갑자기 손목을 꺾는 동작으로 바꾸지 않습니다. 두 타이밍의 개인 적용은 코치에게 확인합니다.",
+      "question": "높은 위치에서 왼손 힘을 빼는 제 레슨과 오른발 앞 릴리스 시범을 어떻게 구분해 적용하면 될까요?",
+      "related": [
+        "nlmg8nsjfbk",
+        "OqjaiUzNaXE"
+      ],
+      "times": [
+        8,
+        19.89
+      ],
+      "labels": [
+        "끝까지 끌어오는 예",
+        "오른발 부근 · 풀어 보내기"
+      ],
+      "method": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님.",
+      "source": "https://www.youtube.com/watch?v=UPurwAXyMLw",
+      "frames": [
+        {
+          "src": "media/golf-frames/UPurwAXyMLw-1.webp",
+          "time": 8,
+          "label": "끝까지 끌어오는 예",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/UPurwAXyMLw-2.webp",
+          "time": 19.89,
+          "label": "오른발 부근 · 풀어 보내기",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    },
+    {
+      "id": "7vsnmAld3wY",
+      "title": "아이언·드라이버 비교 · 내려오는 궤도와 헤드 통과",
+      "group": "common",
+      "club": "both",
+      "kind": "observation",
+      "summary": "아이언과 드라이버의 정면 스윙을 좌우로 배치해 내려오는 궤도와 임팩트 이후 클럽 흐름을 비교하는 시범입니다.",
+      "points": [
+        "왼쪽 드라이버와 오른쪽 아이언의 표기를 확인하고 각각의 하강·통과 장면을 봅니다.",
+        "초록 영역은 영상의 비교 표시입니다. 화면의 궤도나 재생 시점을 개인에게 맞는 고정 각도로 삼지 않습니다.",
+        "기존 성빈프로 영상과 같은 비교 주제지만 촬영 장면은 다릅니다. 20m 증가나 표시된 거리를 연습 목표로 삼지 않습니다."
+      ],
+      "key": "아이언·드라이버의 하강과 헤드 통과를 따로 비교한다. 화면의 궤도·거리 숫자를 개인 기준으로 삼지 않는다.",
+      "action": "두 클럽의 하강과 통과 장면을 각각 멈춰 보고 현재 연습하는 클럽과 같은 쪽만 비교합니다.",
+      "feel": "두 클럽을 같은 모양으로 억지로 맞추기보다 편하게 내려와 통과하는 흐름의 차이를 관찰합니다.",
+      "caution": "말로 설명한 드릴이 없는 짧은 비교 시범입니다. 표시된 거리와 초록 영역을 개인 처방이나 효과 보장으로 받아들이지 않습니다.",
+      "question": "현재 제 클럽과 레슨에서 이 두 시범의 하강·통과 차이 중 참고할 부분은 무엇인가요?",
+      "related": [
+        "TYq-Fge2LSA"
+      ],
+      "times": [
+        2.48,
+        4.7
+      ],
+      "labels": [
+        "드라이버·아이언 하강 비교",
+        "헤드 통과·마무리 비교"
+      ],
+      "method": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외.",
+      "source": "https://www.youtube.com/watch?v=7vsnmAld3wY",
+      "frames": [
+        {
+          "src": "media/golf-frames/7vsnmAld3wY-1.webp",
+          "time": 2.48,
+          "label": "드라이버·아이언 하강 비교",
+          "width": 240,
+          "height": 426
+        },
+        {
+          "src": "media/golf-frames/7vsnmAld3wY-2.webp",
+          "time": 4.7,
+          "label": "헤드 통과·마무리 비교",
+          "width": 240,
+          "height": 426
+        }
+      ]
+    }
+  ]
+}

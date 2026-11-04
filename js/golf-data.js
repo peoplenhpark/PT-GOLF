@@ -8547,6 +8547,91 @@ window.GolfContent = {
         "회전·순서",
         "팔·타이밍"
       ]
+    },
+    {
+      "id": "UPurwAXyMLw",
+      "title": "드라이버 릴리스 · 오른발 앞에서 더 끌지 말고 풀어 보내기",
+      "originalTitle": "드라이버 비거리 늘리는 꿀팁",
+      "channel": "Toptool",
+      "duration": "0:29",
+      "durationSeconds": 29,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "하체를 열면서도 손으로 클럽을 끝까지 끌고 오는 모습을 비교하고, 양손이 오른발 부근에 왔을 때 클럽을 풀어 보내는 시범입니다.",
+      "points": [
+        "몸을 돌리는 동안 손과 클럽을 계속 붙잡아 끌고 가는지 비교합니다.",
+        "하체가 열리고 양손이 오른발 부근에 왔을 때 클럽이 통과하도록 하는 시범을 봅니다.",
+        "현재 레슨의 높은 위치 왼손 이완과 영상의 오른발 앞 릴리스는 설명하는 시점이 다릅니다. 기존 이완 시점을 늦추는 지시로 바꾸지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 8,
+          "label": "끝까지 끌어오는 예"
+        },
+        {
+          "s": 19.89,
+          "label": "오른발 부근 · 풀어 보내기"
+        }
+      ],
+      "relatedVideoIds": [
+        "nlmg8nsjfbk",
+        "OqjaiUzNaXE"
+      ],
+      "evidence": "2026-11-04 · 원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님.",
+      "connection": "현재 레슨의 적용 클럽과 이완 시점을 유지하고, 관련 영상의 차이만 비교합니다.",
+      "question": "높은 위치에서 왼손 힘을 빼는 제 레슨과 오른발 앞 릴리스 시범을 어떻게 구분해 적용하면 될까요?",
+      "observationPractice": {
+        "action": "작은 빈스윙에서 손으로 끝까지 끄는 모습과 헤드가 편하게 통과하는 모습을 비교합니다.",
+        "feel": "현재 레슨의 높은 위치 왼손 이완을 유지한 채 헤드가 붙잡히지 않고 나가는 느낌만 참고합니다."
+      },
+      "practiceCaution": "오른발까지 힘을 유지했다가 갑자기 손목을 꺾는 동작으로 바꾸지 않습니다. 두 타이밍의 개인 적용은 코치에게 확인합니다.",
+      "addedAt": "2026-11-04T14:50:53.762634+00:00",
+      "publishedAt": "2026-11-03T09:00:19+00:00"
+    },
+    {
+      "id": "7vsnmAld3wY",
+      "title": "아이언·드라이버 비교 · 내려오는 궤도와 헤드 통과",
+      "originalTitle": "✅이거 알아야 20m 늘어요✅",
+      "channel": "성빈프로",
+      "duration": "0:09",
+      "durationSeconds": 9,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "아이언과 드라이버의 정면 스윙을 좌우로 배치해 내려오는 궤도와 임팩트 이후 클럽 흐름을 비교하는 시범입니다.",
+      "points": [
+        "왼쪽 드라이버와 오른쪽 아이언의 표기를 확인하고 각각의 하강·통과 장면을 봅니다.",
+        "초록 영역은 영상의 비교 표시입니다. 화면의 궤도나 재생 시점을 개인에게 맞는 고정 각도로 삼지 않습니다.",
+        "기존 성빈프로 영상과 같은 비교 주제지만 촬영 장면은 다릅니다. 20m 증가나 표시된 거리를 연습 목표로 삼지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 2.48,
+          "label": "드라이버·아이언 하강 비교"
+        },
+        {
+          "s": 4.7,
+          "label": "헤드 통과·마무리 비교"
+        }
+      ],
+      "relatedVideoIds": [
+        "TYq-Fge2LSA"
+      ],
+      "evidence": "2026-11-04 · 원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외.",
+      "connection": "현재 레슨의 적용 클럽과 이완 시점을 유지하고, 관련 영상의 차이만 비교합니다.",
+      "question": "현재 제 클럽과 레슨에서 이 두 시범의 하강·통과 차이 중 참고할 부분은 무엇인가요?",
+      "observationPractice": {
+        "action": "두 클럽의 하강과 통과 장면을 각각 멈춰 보고 현재 연습하는 클럽과 같은 쪽만 비교합니다.",
+        "feel": "두 클럽을 같은 모양으로 억지로 맞추기보다 편하게 내려와 통과하는 흐름의 차이를 관찰합니다."
+      },
+      "practiceCaution": "말로 설명한 드릴이 없는 짧은 비교 시범입니다. 표시된 거리와 초록 영역을 개인 처방이나 효과 보장으로 받아들이지 않습니다.",
+      "addedAt": "2026-11-04T14:50:53.762634+00:00",
+      "publishedAt": "2026-11-03T23:02:09+00:00"
     }
   ],
   "practicePin": {
@@ -9080,7 +9165,8 @@ window.GolfContent.videoGroups = [
       "jEU9tWAVztI",
       "liwvpxER1b0",
       "W__zH8-7nxc",
-      "z3vEI5aGz88"
+      "z3vEI5aGz88",
+      "UPurwAXyMLw"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -9229,7 +9315,8 @@ window.GolfContent.videoGroups = [
       "kW1GIWEpRDQ",
       "cUPKspR2yGI",
       "VUAqp9jXh4M",
-      "6mYmhmpLL3s"
+      "6mYmhmpLL3s",
+      "7vsnmAld3wY"
     ],
     "relatedGroups": []
   },
@@ -10586,6 +10673,18 @@ window.GolfContent.clubReviews = {
     "reason": "원본의 드라이버 명시·시범을 확인.",
     "reviewedAt": "2026-11-04",
     "basis": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님."
+  },
+  "UPurwAXyMLw": {
+    "value": "driver",
+    "reason": "원본 제목·드라이버 시범 확인.",
+    "reviewedAt": "2026-11-04",
+    "basis": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님."
+  },
+  "7vsnmAld3wY": {
+    "value": "both",
+    "reason": "원본의 Driver/Iron 동시 표기와 좌우 비교 시범 확인.",
+    "reviewedAt": "2026-11-04",
+    "basis": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외."
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};
@@ -11345,6 +11444,14 @@ window.GolfContent.keyMessages = {
   "z3vEI5aGz88": {
     "text": "왼쪽으로 계속 돌기만 해 헤드가 남는지 비교한다. 회전과 자연스러운 펴짐을 급정지·무릎 잠금과 구분한다.",
     "kind": "explanation"
+  },
+  "UPurwAXyMLw": {
+    "text": "손으로 끝까지 끌지 않고 클럽을 풀어 보낸다. 오른발 앞 시범은 현재 레슨의 높은 위치 왼손 이완과 구분한다.",
+    "kind": "explanation"
+  },
+  "7vsnmAld3wY": {
+    "text": "아이언·드라이버의 하강과 헤드 통과를 따로 비교한다. 화면의 궤도·거리 숫자를 개인 기준으로 삼지 않는다.",
+    "kind": "observation"
   }
 };
 

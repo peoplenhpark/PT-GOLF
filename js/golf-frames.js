@@ -2927,5 +2927,37 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "UPurwAXyMLw": [
+    {
+      "src": "media/golf-frames/UPurwAXyMLw-1.webp",
+      "time": 8,
+      "label": "끝까지 끌어오는 예",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/UPurwAXyMLw-2.webp",
+      "time": 19.89,
+      "label": "오른발 부근 · 풀어 보내기",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "7vsnmAld3wY": [
+    {
+      "src": "media/golf-frames/7vsnmAld3wY-1.webp",
+      "time": 2.48,
+      "label": "드라이버·아이언 하강 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/7vsnmAld3wY-2.webp",
+      "time": 4.7,
+      "label": "헤드 통과·마무리 비교",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

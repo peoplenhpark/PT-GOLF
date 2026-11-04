@@ -4390,5 +4390,53 @@
     "source": "https://www.youtube.com/watch?v=z3vEI5aGz88",
     "method": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님.",
     "verifiedAt": "2026-11-04"
+  },
+  {
+    "id": "UPurwAXyMLw",
+    "title": "드라이버 릴리스 · 오른발 앞에서 더 끌지 말고 풀어 보내기",
+    "frames": [
+      {
+        "src": "media/golf-frames/UPurwAXyMLw-1.webp",
+        "time": 8,
+        "label": "끝까지 끌어오는 예",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/UPurwAXyMLw-2.webp",
+        "time": 19.89,
+        "label": "오른발 부근 · 풀어 보내기",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 29,
+    "source": "https://www.youtube.com/watch?v=UPurwAXyMLw",
+    "method": "원본 12개 표본 화면·자막과 전체 음성 자동 전사 대조. 전 구간 직접 청취나 프레임별 검토는 아님.",
+    "verifiedAt": "2026-11-04"
+  },
+  {
+    "id": "7vsnmAld3wY",
+    "title": "아이언·드라이버 비교 · 내려오는 궤도와 헤드 통과",
+    "frames": [
+      {
+        "src": "media/golf-frames/7vsnmAld3wY-1.webp",
+        "time": 2.48,
+        "label": "드라이버·아이언 하강 비교",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/7vsnmAld3wY-2.webp",
+        "time": 4.7,
+        "label": "헤드 통과·마무리 비교",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 9,
+    "source": "https://www.youtube.com/watch?v=7vsnmAld3wY",
+    "method": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외.",
+    "verifiedAt": "2026-11-04"
   }
 ]
