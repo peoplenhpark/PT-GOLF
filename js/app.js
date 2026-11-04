@@ -421,11 +421,15 @@ const Theme = (() => {
       ${window.TrainingQuestions.entryLink()}
       <p class="ht-routine-note">${day.rest?'운동일 70분 · 기본운동 20분 포함':'기본 20분 + 근력 50분 · 총 70분'}</p>
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
+      <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↓</button></div>
+      <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-summary ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
+      <section class="ht-routine-summary" id="ht-routine-summary" aria-label="선택한 요일 운동 요약" aria-live="polite">
+      <div class="ht-summary-heading"><h3>${day.id===today?'오늘':'선택'} ${esc(day.label.replace(' · ','요일 · '))}</h3>${day.rest?'':'<span>순서 · 세트 사이 휴식</span>'}</div>
+      ${day.rest?'<p class="ht-routine-note">예정된 근력운동 없이 휴식 · 다른 요일도 선택할 수 있어요.</p>':`<ol>${day.ids.map((id,i)=>`<li data-ht-summary-id="${id}"><span class="ht-summary-number">${i+1}</span><span class="ht-summary-name">${esc(htRoutineStrength[id][0].split(' · ')[0])}</span><span class="ht-summary-rest">${rest[id]}</span></li>`).join('')}</ol>`}
+      </section>
       <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></div>
-      <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↑</button></div>
-      <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–70분</small></h3>
       <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 각 2세트'} · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}

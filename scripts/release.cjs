@@ -8,8 +8,8 @@ const release = JSON.parse(read('release.json'));
 if (!/^\d+$/.test(String(release.version))) throw new Error('release.json version must be numeric');
 const version = String(release.version);
 // Display versions belong to deployments. Local asset/cache revisions never advance them.
-// Keep the pending label for the first release and for retries; after a successful
-// deployment, increment the label by one tenth when preparing the next deployment.
+// Preserve the current display label and prepared asset revision on deployment.
+// User preference (2026-11-04): increment the label only for an explicit version-up request.
 if (typeof release.displayVersion !== 'string' || !/^[1-9]\d*\.\d$/.test(release.displayVersion)) {
   throw new Error('release.json displayVersion must be a deployment label such as 1.0');
 }
