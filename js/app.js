@@ -248,7 +248,7 @@ const Theme = (() => {
             <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
           </section>
           <section class="home-destination ht" aria-label="HT 개인운동">
-            <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>기본 20분 포함 · 월·목 60분 / 화·금 70분</p></a>
+            <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>기본 20분 포함 · 운동일 70분</p></a>
           </section>
           <section class="home-destination golf" aria-label="골프 연습">
             <a class="part golf" href="#golf/now?start=recent"><span class="home-part-label">골프</span><div class="home-action"><h2>최근 레슨 복습</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
@@ -413,25 +413,28 @@ const Theme = (() => {
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.id==='tue'||day.id==='fri';
     const lowerRest={pt_lunge:'120–180초',pt_legcurl:'90–120초',pt_legextension:'90–120초',pt_adduction:'60–90초',pt_backextension:'90–120초',pt_legpress:'120–180초'};
-    const times=lower?['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']:['20–25분','25–33분','33–41분','41–49분','49–54분','54–60분'];
+    const upperRest={pt_dbpullover:'60–90초',pt_chestpress:'90–120초',pt_seatedrow:'90–120초',pt_latpulldown:'90–120초',pt_pullup:'90–120초',pt_shoulderpress:'90–120초',pt_pecdeck:'60–90초',pt_pushdown:'60–90초',pt_facepull:'60–90초',pt_low_cable_curl:'60–90초'};
+    const rest=lower?lowerRest:upperRest;
+    const times=lower?['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']:['20–27분','27–36분','36–45분','45–54분','54–60분','60–65분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       ${window.TrainingQuestions.entryLink()}
-      <p class="ht-routine-note">${day.rest?'월·목 60분 / 화·금 70분 · 기본운동 20분 포함':lower?'기본 20분 + 근력 50분 · 총 70분':'기본 20분 + 근력 40분 · 총 60분'}</p>
+      <p class="ht-routine-note">${day.rest?'운동일 70분 · 기본운동 20분 포함':'기본 20분 + 근력 50분 · 총 70분'}</p>
       <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
       <div class="ht-routine-basic" id="ht-routine-basic" tabindex="-1"><h3>운동일 기본운동 <small>0–20분</small></h3>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></div>
       <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↑</button></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
-      <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>${lower?'20–70분':'20–60분'}</small></h3>
+      <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–70분</small></h3>
       <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 각 2세트'} · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lunge'?item[1]:id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}${lower?'<span class="ht-routine-rest"> · 세트 휴식 '+lowerRest[id]+'</span>':''}</strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
-      ${lower?'<p class="ht-routine-buffer"><b>65–70분 · 여유 5분</b> 추가 휴식·기구 대기에 사용</p><p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지 분량·백익스텐션 반복수는 코치 확인 후 시간도 조정합니다.</p>':''}
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lunge'?item[1]:id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}<span class="ht-routine-rest"> · 세트 휴식 ${rest[id]}</span></strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
+      <p class="ht-routine-buffer"><b>65–70분 · 여유 5분</b> 추가 휴식·기구 대기에 사용</p>
+      ${lower?'<p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지 분량·백익스텐션 반복수는 코치 확인 후 시간도 조정합니다.</p>':''}
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 세트 휴식·기구 설정·이동을 포함한 예시입니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
-      <li><b>휴식:</b> ${lower?'운동별 표시 시간을 시작 기준으로 사용합니다. 숨·자세가 회복되지 않으면 30–60초 더 쉬세요.':'상체 프레스·로우·랫풀다운·풀업은 90–120초, 나머지는 60–90초. 하체는 화·금 운동별 휴식 표시를 따릅니다.'}</li>
+      <li><b>휴식:</b> 운동별 표시 시간을 시작 기준으로 사용합니다. 숨·자세가 회복되지 않으면 30–60초 더 쉬세요.</li>
       <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
       <li><b>증량:</b> 같은 운동 2회 연속 모든 세트를 반복 범위 상단까지 같은 자세·여유로 완료하면 최소 단위로 올립니다. 풀업은 보조량을 줄입니다.</li>
       <li><b>회복:</b> 수·토·일 휴식 또는 가벼운 걷기. PT 수업이 있는 주에는 해당 부위 개인운동을 대체·감량합니다.</li></ul></div>

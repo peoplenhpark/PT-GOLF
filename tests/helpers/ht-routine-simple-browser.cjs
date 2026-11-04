@@ -29,9 +29,11 @@ module.exports=async(browser,base)=>{
     assert.match(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).innerText(),/6kg 케틀벨 · 횟수·세트 확인 필요/);
     assert.equal(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).locator('.ht-routine-cue').count(),2);
    }else if(['mon','thu'].includes(day)){
-    assert.match(await p.locator('#ht-routine').innerText(),/기본 20분 \+ 근력 40분 · 총 60분/);
-    assert.equal(await p.locator('#ht-routine-day .ht-routine-buffer,#ht-routine-day .ht-routine-rest').count(),0);
-    assert.equal(await p.locator('#ht-routine-day .ht-routine-time').last().innerText(),'54–60분');
+    assert.match(await p.locator('#ht-routine').innerText(),/기본 20분 \+ 근력 50분 · 총 70분/);
+    assert.match(await p.locator('#ht-routine-day .ht-routine-buffer').innerText(),/65–70분 · 여유 5분/);
+    assert.deepEqual(await p.locator('#ht-routine-day .ht-routine-rest').allTextContents(),[' · 세트 휴식 60–90초',' · 세트 휴식 90–120초',' · 세트 휴식 90–120초',' · 세트 휴식 90–120초',' · 세트 휴식 60–90초',' · 세트 휴식 60–90초']);
+    assert.deepEqual(await p.locator('#ht-routine-day .ht-routine-time').allTextContents(),['20–27분','27–36분','36–45분','45–54분','54–60분','60–65분']);
+    assert.equal(await p.locator('#ht-routine-day .ht-routine-time').last().innerText(),'60–65분');
    }
   }
   await p.locator('.ht-routine-days [data-ht-day=tue]').click();

@@ -104,7 +104,7 @@ window.CoachDesk = (() => {
   }
   function personalPTLinks(){
     const groups=api.personalGroups(),total=groups.reduce((n,g)=>n+g.exercises.length,0);
-    return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>기본 20분 포함 · 월·목 60분 / 화·금 70분 ›</span></a>';
+    return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>기본 20분 포함 · 운동일 70분 ›</span></a>';
   }
   function ptSessionArchive(){return '<section class="coach-session-archive"><h3>PT 수업 기록</h3>'+Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date)).map(s=>'<details class="coach-fold"><summary>'+esc(s.date+' · '+s.title)+'</summary>'+s.items.map(i=>i.exerciseId&&Store.getById(i.exerciseId)?'<a class="coach-source" href="#exercise/'+encodeURIComponent(i.exerciseId)+'">'+esc(i.title)+' ›</a>':'<p>'+esc(i.title)+'</p>').join('')+sessionDetails(s)+'</details>').join('')+'</section>';}
   function archive(part,criteria,records,s,selected){
