@@ -13,9 +13,9 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.exercise-quickpanel section').first().locator('h3').innerText(),'내 개인운동');
   await p.locator('.exercise-quickpanel a[href="#pt?cat=personal"]').click();
   await p.locator('.personal-exercises').waitFor();
-  const chosen=['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation','pt_chestpress','pt_pecdeck','pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_legcurl','pt_legextension','pt_adduction','pt_legpress'];
+  const chosen=['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation','pt_chestpress','pt_pecdeck','pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_legcurl','pt_legextension','pt_adduction','pt_lunge','pt_legpress'];
   assert.deepEqual(await p.locator('.personal-exercises .ex').evaluateAll(es=>es.map(e=>e.dataset.open)),chosen);
-  assert.deepEqual(await p.locator('.personal-exercise-group').evaluateAll(es=>es.map(e=>e.querySelectorAll('.ex').length)),[5,2,5,2,2,4]);
+  assert.deepEqual(await p.locator('.personal-exercise-group').evaluateAll(es=>es.map(e=>e.querySelectorAll('.ex').length)),[5,2,5,2,2,5]);
   assert.match(await p.locator('.personal-plan-note').innerText(),/주 4회 HT 루틴 보기/);
   await p.locator('[data-cat="personal:chest"]').click();assert.equal(await p.locator('.personal-exercises .ex').count(),2);
   await p.locator('.personal-exercises [data-open="pt_chestpress"]').click();await p.locator('.d-title').waitFor();
@@ -62,7 +62,7 @@ module.exports=async(browser,base)=>{
   await p.evaluate(()=>{Store.upsert({id:'pt_chestpress',name:'내 체스트 프레스',memo:'보존할 개인 메모',favorite:true});Store.requestDeletion('pt_pecdeck');});
   const overlay=await p.evaluate(()=>localStorage.getItem('ptgolf_overlay_v1'));
   await p.goto(base+'#pt?cat=personal');await p.locator('.personal-exercises').waitFor();
-  assert.equal(await p.locator('.personal-exercises .ex').count(),19,'hidden selection is not resurrected');
+  assert.equal(await p.locator('.personal-exercises .ex').count(),20,'hidden selection is not resurrected');
   assert.match(await p.locator('.personal-exercises [data-open=pt_chestpress]').innerText(),/내 체스트 프레스/);
   assert.equal(await p.locator('.personal-exercises [data-open=pt_chestpress] .star').count(),1);
   for(const theme of ['light','dark'])for(const width of [320,390,768]){
@@ -72,7 +72,7 @@ module.exports=async(browser,base)=>{
   }
   assert.equal(await p.evaluate(()=>localStorage.getItem('ptgolf_overlay_v1')),overlay,'selection navigation never rewrites personal edits');
   await p.evaluate(()=>Store.restoreDeleted('pt_pecdeck'));await p.reload();await p.locator('.personal-exercises').waitFor();
-  assert.equal(await p.locator('.personal-exercises .ex').count(),20);
+  assert.equal(await p.locator('.personal-exercises .ex').count(),21);
   // Every exercise in the active weekly personal routine must be discoverable here.
   await p.goto(base+'#ht');await p.locator('#ht-routine').waitFor();
   const routineIds=new Set();

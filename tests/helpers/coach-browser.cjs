@@ -29,7 +29,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await recentCards.locator('a').count(),linked.length);
   for(const item of linked)assert((await recentCards.locator('[href="#exercise/'+item.exerciseId+'"]').innerText()).includes(item.points[0]));
   assert((await recent.locator('.coach-solo-keys').innerText()).includes(latestPT.summary[0]));
-  assert.equal(await p.locator('.coach-plan').count(),0);assert.match(await p.locator('.coach-routine-link').innerText(),/기본 20분/);assert.equal(await p.locator('.coach-personal-links a').count(),6);assert.match(await p.locator('.coach-personal h2').innerText(),/20종목/);
+  assert.equal(await p.locator('.coach-plan').count(),0);assert.match(await p.locator('.coach-routine-link').innerText(),/기본 20분/);assert.equal(await p.locator('.coach-personal-links a').count(),6);assert.match(await p.locator('.coach-personal h2').innerText(),/21종목/);
   assert.equal(await recent.locator('.coach-recent-grid').first().locator(':scope > div').count(),latestPT.items.length-linked.length);
   await recent.locator('.coach-session-details').first().locator('summary').click();
   const detailText=await recent.locator('.coach-session-details').first().innerText();
@@ -76,6 +76,6 @@ module.exports=async(browser,base)=>{
   await p.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await p.reload();await p.locator('.gq-reference').waitFor();assert.equal(await p.locator('.coach-current').count(),0);assert.equal(await p.evaluate(()=>CoachDesk.read().criteria.find(c=>c.part==='golf').cue),'순간 멈춤 후 자연스러운 템포');await context.setOffline(false);
   await p.goto(base+'#pt');await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.coach-fold[open]').count(),0);assert.match(await p.locator('.pt-exercise-grid').innerText(),/풀업/);
   await p.goto(base+'#exercise/pt_pullup');await p.locator('[data-act=memo-top]').click();await p.locator('#memo-input').fill('기존 자유 메모 유지');await p.locator('#memo-save').click();await p.reload();assert.equal(await p.locator('.memo-box').innerText(),'기존 자유 메모 유지');
-  assert.deepEqual(errors,[]);console.log('PASS: reference-first PT/golf, personal 20, archive preservation, answer draft/failure retry, historical snapshot, mobile themes, offline and exercise memo.');
+  assert.deepEqual(errors,[]);console.log('PASS: reference-first PT/golf, personal 21, archive preservation, answer draft/failure retry, historical snapshot, mobile themes, offline and exercise memo.');
  }finally{await context.close();}
 };

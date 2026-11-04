@@ -54,7 +54,7 @@ const Theme = (() => {
     {key:'back',label:'등',ids:['pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension']},
     {key:'shoulders',label:'어깨',ids:['pt_shoulderpress','pt_facepull']},
     {key:'arms',label:'팔',ids:['pt_pushdown','pt_low_cable_curl']},
-    {key:'legs',label:'다리',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_legpress']}
+    {key:'legs',label:'다리',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_lunge','pt_legpress']}
   ];
   function personalGroups() {
     const byId = new Map(Store.getByPart('pt').map(e => [e.id,e]));
@@ -293,10 +293,10 @@ const Theme = (() => {
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
   const htRoutineDays = [
     {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_dbpullover','pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown']},
-    {id:'tue',label:'화 · 하체',title:'하체 A · 양발 기본',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_legpress']},
+    {id:'tue',label:'화 · 하체',title:'하체 A · 머신 양발 기본',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_lunge','pt_legpress']},
     {id:'wed',label:'수 · 휴식',title:'수요일 · 휴식일',rest:true,ids:[]},
     {id:'thu',label:'목 · 상체',title:'상체 B · 어깨 보강',ids:['pt_dbpullover','pt_pullup','pt_shoulderpress','pt_seatedrow','pt_facepull','pt_low_cable_curl']},
-    {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_legpress']},
+    {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_lunge','pt_legpress']},
     {id:'sat',label:'토 · 휴식',title:'토요일 · 휴식일',rest:true,ids:[]},
     {id:'sun',label:'일 · 휴식',title:'일요일 · 휴식일',rest:true,ids:[]}
   ];
@@ -308,6 +308,7 @@ const Theme = (() => {
     ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','런지 지지를 유지하며 공과 몸통 함께 회전','팔로 공만 휘두르거나 하체 지지가 풀리지 않게']
   ];
   const htRoutineStrength = {
+    pt_lunge:['일반 런지 · 앞다리 지지','6kg 케틀벨 · 횟수·세트 확인 필요','앞발로 계단을 밟고 올라가는 느낌','뒤로 중심 남기기·무게에 끌려 떨어지기 피하기'],
     pt_shoulderpress:['숄더 프레스','횟수·중량 확인','위에서 양손 압박감을 맞추고 천천히 내리기','허리 과하게 꺾기 · 한쪽 어깨 무너짐 주의'],
     pt_backextension:['백익스텐션','맨몸 · 횟수 확인','엉덩이·뒷벅지로 받치며 몸통 일자까지만','머리 들기 · 허리만 젖히기 · 반동 주의'],
     pt_facepull:['페이스풀','10–15회','팔·등을 함께 쓰며 얼굴 쪽으로, 팔꿈치는 바깥으로','목 내밀기 · 몸통 반동 주의. 중량 재확인'],
@@ -411,7 +412,7 @@ const Theme = (() => {
     const todayLabel=htRoutineDays.find(d=>d.id===today).label;
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.id==='tue'||day.id==='fri';
-    const times=lower?['20–29분','29–37분','37–43분','43–50분','50–60분']:['20–25분','25–33분','33–41분','41–49분','49–54분','54–60분'];
+    const times=lower?['20–27분','27–34분','34–40분','40–46분','46–53분','53–60분']:['20–25분','25–33분','33–41분','41–49분','49–54분','54–60분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 · 60분 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       ${window.TrainingQuestions.entryLink()}
@@ -423,9 +424,9 @@ const Theme = (() => {
       <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↑</button></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–60분</small></h3>
-      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 양발 기본':''} · 각 2세트 · 좋은 자세로 2–3회 더 할 여유</p>
+      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 각 2세트'} · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lunge'?item[1]:id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}</strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 준비·휴식·이동 포함 예시입니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 체스트·숄더·레그 프레스, 로우, 랫풀다운, 풀업은 90–120초. 나머지는 60–90초.</li>
