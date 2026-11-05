@@ -4733,11 +4733,11 @@ window.GolfContent = {
     },
     {
       "id": "4Eof_tmI0Ag",
-      "title": "클럽별 릴리스 · 드라이버와 아이언의 상체 위치 비교",
-      "originalTitle": "드라이버와 아이언의 차이 정용훈 프로 Golf Drill #golf #드라이버레슨 #아이언다운블로우 #슬라이스교정 #정용훈프로 #jung_yong_hun #골프레슨",
-      "channel": "똑딱이골프",
-      "duration": "0:08",
-      "durationSeconds": 8,
+      "title": "클럽별 릴리스 · 드라이버는 상체 오른쪽, 아이언은 정면",
+      "originalTitle": "드라이버는 상체 남기고, 아이언은 상체 정면에서 던져주세요! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:07",
+      "durationSeconds": 7,
       "presentation": "original",
       "topics": [
         "팔·타이밍",
@@ -4745,39 +4745,44 @@ window.GolfContent = {
       ],
       "relatedVideoIds": [
         "unGNdzyt7kE",
-        "EgdcUOkvJKk"
+        "EgdcUOkvJKk",
+        "7vsnmAld3wY"
       ],
-      "evidence": "2026-10-18 원본 설명·표본 11장·화면 자막 확인. 전체 음성을 직접 청취하지 않음.",
-      "summary": "드라이버와 아이언에서 상체 위치와 클럽을 보내는 시점을 짧게 대비합니다. 서로 다른 클럽의 감각을 같은 지시로 합치지 않고 비교합니다.",
+      "evidence": "2026-11-05 · 원본 12개 표본의 자막·시범 확인.",
+      "summary": "드라이버는 상체를 오른쪽에 남겨 보내고, 아이언은 정면에서 왼발 쪽으로 보내는 두 시범을 비교한다.",
       "points": [
-        "0–4초는 드라이버에서 상체를 오른쪽에 남기며 보내는 시범입니다.",
-        "4–7초는 아이언에서 정면·왼발 쪽으로 보내는 시범입니다. 영상은 공 위치와 던지는 시점을 표시합니다.",
-        "정용훈 프로의 영상을 재편집한 출처 표기가 있습니다. 실제 볼 위치·각도·체중 비율의 개인 처방으로 확정하지 않습니다."
+        "드라이버 장면과 아이언 장면을 차례로 멈춰 상체와 손의 위치를 비교합니다.",
+        "오늘 연습하는 클럽에 맞는 장면 하나를 골라 클럽이 지나가는 느낌을 봅니다.",
+        "영상의 표시점을 실제 볼 위치나 모든 샷의 고정 릴리스 지점으로 삼지 않습니다."
       ],
       "moments": [
         {
-          "s": 2.32,
-          "label": "드라이버 · 상체를 뒤에 남기는 시범"
+          "s": 1.93,
+          "label": "드라이버 · 상체를 오른쪽에 남기는 시범"
         },
         {
-          "s": 5.04,
-          "label": "아이언 · 정면과 왼발 쪽 통과 시범"
+          "s": 5.38,
+          "label": "아이언 · 정면에서 왼발 쪽으로 보내는 시범"
         }
       ],
       "connection": "편한 스윙과 일관성을 위한 보조 비교 자료입니다. 현재 레슨의 과제를 우선합니다.",
-      "question": "제 아이언과 드라이버에서 상체 위치·릴리스 시점을 각각 어떻게 확인해야 할까요?",
+      "question": "제 드라이버와 아이언에서는 상체 위치와 클럽 통과를 어떻게 구분해 보면 좋을까요?",
       "observationPractice": {
-        "action": "먼저 사용할 클럽을 정한 뒤 그 클럽에 해당하는 절반만 봅니다. 상체 위치와 클럽 통과 시점을 한 가지씩 비교합니다.",
-        "feel": "드라이버의 오른쪽에 남는 느낌을 아이언에 그대로 옮기거나, 몸을 강제로 고정하지 않는지 확인합니다."
+        "action": "드라이버 장면과 아이언 장면을 차례로 멈춰 상체와 손의 위치를 비교합니다.",
+        "feel": "오늘 연습하는 클럽에 맞는 장면 하나를 골라 클럽이 지나가는 느낌을 봅니다."
       },
-      "addedAt": "2026-10-18T12:56:51.948573+00:00",
-      "publishedAt": "2026-10-15T09:00:09+00:00",
+      "addedAt": "2026-11-05T03:31:47.083633+00:00",
+      "publishedAt": "2026-10-12T23:15:03+00:00",
       "classificationReview": {
         "date": "2026-10-18",
         "status": "classified",
         "group": "impact-release",
         "reason": "드라이버와 아이언에서 상체 위치와 클럽을 보내는 시점을 짧게 대비합니다. 서로 다른 클럽의 감각을 같은 지시로 합치지 않고 비교합니다."
-      }
+      },
+      "originalAddedAt": "2026-10-18T12:56:51.948573+00:00",
+      "sourceVideoId": "_Cx_jWgM5ec",
+      "submissionCount": 2,
+      "practiceCaution": "영상의 표시점을 실제 볼 위치나 모든 샷의 고정 릴리스 지점으로 삼지 않습니다."
     },
     {
       "id": "WxoZPlRhSvY",
@@ -8630,8 +8635,133 @@ window.GolfContent = {
         "feel": "두 클럽을 같은 모양으로 억지로 맞추기보다 편하게 내려와 통과하는 흐름의 차이를 관찰합니다."
       },
       "practiceCaution": "말로 설명한 드릴이 없는 짧은 비교 시범입니다. 표시된 거리와 초록 영역을 개인 처방이나 효과 보장으로 받아들이지 않습니다.",
-      "addedAt": "2026-11-04T14:50:53.762634+00:00",
-      "publishedAt": "2026-11-03T23:02:09+00:00"
+      "addedAt": "2026-11-05T03:31:47.083633+00:00",
+      "publishedAt": "2026-11-03T23:02:09+00:00",
+      "originalAddedAt": "2026-11-04T14:50:53.762634+00:00",
+      "submissionCount": 2
+    },
+    {
+      "id": "lGgedAC0KCA",
+      "title": "백스윙 탑의 리듬 · ‘슬로 하나, 둘’에서 전환하기",
+      "originalTitle": "프로와 아마의 탑 차이?",
+      "channel": "[투어프로]윤영호",
+      "duration": "0:27",
+      "durationSeconds": 27,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "탑 부근에서 ‘Slow 1·2’를 짚은 뒤 내려오는 시범이다. 숫자는 리듬을 느끼는 구호로 쓴다.",
+      "points": [
+        "처음 스윙과 코치가 손을 안내하는 구간을 이어 봅니다.",
+        "천천히 빈스윙하며 탑에 닿기 직전 손이 먼저 급해지는지 느껴봅니다.",
+        "두 박자를 세려고 탑에서 몸을 굳히거나 실제 정지 시간을 정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 11.88,
+          "label": "탑으로 올라가는 첫 박자"
+        },
+        {
+          "s": 14.09,
+          "label": "탑 부근 두 번째 박자"
+        }
+      ],
+      "relatedVideoIds": [
+        "2tam4sbJQtM"
+      ],
+      "evidence": "2026-11-05 · 원본 12개 표본의 자막·시범 확인.",
+      "question": "제 스윙에서는 탑에 가기 전 어느 구간에서 리듬이 빨라지나요?",
+      "observationPractice": {
+        "action": "처음 스윙과 코치가 손을 안내하는 구간을 이어 봅니다.",
+        "feel": "천천히 빈스윙하며 탑에 닿기 직전 손이 먼저 급해지는지 느껴봅니다."
+      },
+      "practiceCaution": "두 박자를 세려고 탑에서 몸을 굳히거나 실제 정지 시간을 정하지 않습니다.",
+      "addedAt": "2026-11-05T03:31:47.083633+00:00",
+      "publishedAt": "2026-10-12T07:02:40+00:00"
+    },
+    {
+      "id": "kuRoseAIbtw",
+      "title": "다운스윙 오른팔꿈치 · 밀어 넣기 전에 오른손목 움직임 보기",
+      "originalTitle": "팔꿈치넣기 3년이 걸려도 안되는 이유와 방법 #골프 #골프레슨",
+      "channel": "Amateur Golfer Catching Pros PAG tv",
+      "duration": "1:37",
+      "durationSeconds": 97,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "빈손으로 오른손목을 손등 쪽으로 젖혀 보며, 팔꿈치가 안으로 따라오는지 확인한다.",
+      "points": [
+        "채를 내려놓고 오른손목 움직임에 팔꿈치 방향이 어떻게 따라오는지 봅니다.",
+        "팔꿈치를 옆구리에 밀어 넣을 때와 손목 움직임에 따라올 때의 긴장을 비교합니다.",
+        "실제 스윙에서 손목 각을 끝까지 버티거나 팔꿈치를 몸에 누르지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 58.59,
+          "label": "오른손목 방향 설명"
+        },
+        {
+          "s": 90.4,
+          "label": "빈손으로 팔꿈치 반응 확인"
+        }
+      ],
+      "relatedVideoIds": [
+        "3BsYkWFU-WA"
+      ],
+      "evidence": "2026-11-05 · 원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+      "question": "제 다운스윙에서도 팔꿈치를 억지로 밀어 넣고 있는지 봐 주실 수 있나요?",
+      "observationPractice": {
+        "action": "채를 내려놓고 오른손목 움직임에 팔꿈치 방향이 어떻게 따라오는지 봅니다.",
+        "feel": "팔꿈치를 옆구리에 밀어 넣을 때와 손목 움직임에 따라올 때의 긴장을 비교합니다."
+      },
+      "practiceCaution": "실제 스윙에서 손목 각을 끝까지 버티거나 팔꿈치를 몸에 누르지 않습니다.",
+      "addedAt": "2026-11-05T03:31:47.083633+00:00",
+      "publishedAt": "2025-02-15T11:46:41+00:00"
+    },
+    {
+      "id": "HZpD_-B0_0c",
+      "title": "드라이버 릴리스 · 몸에 붙어 내려온 채를 임팩트에서 보내기",
+      "originalTitle": "몸은 돌리려다 멈추고 채는 뿌려지게 #골프 #드라이버스윙",
+      "channel": "쇼츠골프",
+      "duration": "0:16",
+      "durationSeconds": 16,
+      "presentation": "original",
+      "topics": [
+        "회전·순서",
+        "팔·타이밍"
+      ],
+      "summary": "다운스윙 때 몸 가까이 온 클럽이 임팩트를 지나며 몸에서 멀어지는 흐름을 비교한다.",
+      "points": [
+        "느린 재생에서 하강 때와 임팩트 직후의 손·클럽 위치를 차례로 봅니다.",
+        "작은 빈스윙으로 헤드까지 함께 끌고 도는 느낌과 헤드가 지나가는 느낌을 비교합니다.",
+        "영상의 ‘멈춤’은 릴리스를 설명하는 감각입니다. 몸을 급정지하거나 채를 놓는 동작으로 따라 하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 1.79,
+          "label": "다운스윙 · 몸 가까이 오는 클럽"
+        },
+        {
+          "s": 13.6,
+          "label": "임팩트 이후 · 몸과 헤드 사이 간격"
+        }
+      ],
+      "relatedVideoIds": [
+        "UPurwAXyMLw"
+      ],
+      "evidence": "2026-11-05 · 원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+      "question": "드라이버에서 몸을 굳히지 않고 헤드가 지나갔는지 무엇으로 확인할 수 있을까요?",
+      "observationPractice": {
+        "action": "느린 재생에서 하강 때와 임팩트 직후의 손·클럽 위치를 차례로 봅니다.",
+        "feel": "작은 빈스윙으로 헤드까지 함께 끌고 도는 느낌과 헤드가 지나가는 느낌을 비교합니다."
+      },
+      "practiceCaution": "영상의 ‘멈춤’은 릴리스를 설명하는 감각입니다. 몸을 급정지하거나 채를 놓는 동작으로 따라 하지 않습니다.",
+      "addedAt": "2026-11-05T03:31:47.083633+00:00",
+      "publishedAt": "2026-10-13T02:30:15+00:00"
     }
   ],
   "practicePin": {
@@ -8870,7 +9000,8 @@ window.GolfContent.videoGroups = [
       "1Y2xarVlF7c",
       "fAgc2HsdTAE",
       "NEtXffKKfAs",
-      "5XjM1AJKbtg"
+      "5XjM1AJKbtg",
+      "lGgedAC0KCA"
     ],
     "practice": {
       "cue": "탑 높이보다 팔을 조이지 않고 손과 몸 사이 공간을 남깁니다.",
@@ -8973,7 +9104,8 @@ window.GolfContent.videoGroups = [
       "3BsYkWFU-WA",
       "nlmg8nsjfbk",
       "ZffDcybdQt0",
-      "ktADlkpNn_E"
+      "ktADlkpNn_E",
+      "kuRoseAIbtw"
     ],
     "practice": {
       "cue": "팔만 잡아당기지 않고, 회전 속에서 클럽이 내려오게 합니다.",
@@ -9166,7 +9298,8 @@ window.GolfContent.videoGroups = [
       "liwvpxER1b0",
       "W__zH8-7nxc",
       "z3vEI5aGz88",
-      "UPurwAXyMLw"
+      "UPurwAXyMLw",
+      "HZpD_-B0_0c"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -10685,6 +10818,24 @@ window.GolfContent.clubReviews = {
     "reason": "원본의 Driver/Iron 동시 표기와 좌우 비교 시범 확인.",
     "reviewedAt": "2026-11-04",
     "basis": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외."
+  },
+  "lGgedAC0KCA": {
+    "value": "unknown",
+    "reason": "화면에 클럽별 적용 범위가 제시되지 않습니다.",
+    "reviewedAt": "2026-11-05",
+    "basis": "원본 12개 표본의 자막·시범 확인."
+  },
+  "kuRoseAIbtw": {
+    "value": "unknown",
+    "reason": "여러 시범을 제시하지만 클럽별 적용 범위는 특정하지 않습니다.",
+    "reviewedAt": "2026-11-05",
+    "basis": "원본 12개 표본 화면과 전체 음성 자동 전사 대조."
+  },
+  "HZpD_-B0_0c": {
+    "value": "driver",
+    "reason": "원본 제목과 시범에서 드라이버를 명시합니다.",
+    "reviewedAt": "2026-11-05",
+    "basis": "원본 12개 표본 화면과 전체 음성 자동 전사 대조."
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};
@@ -11114,8 +11265,9 @@ window.GolfContent.keyMessages = {
     "kind": "observation"
   },
   "4Eof_tmI0Ag": {
-    "text": "드라이버와 아이언의 상체 위치·헤드 보내는 시점을 비교한다. 두 클럽의 감각을 같은 지시로 합치지 않는다.",
-    "kind": "observation"
+    "text": "드라이버는 상체를 오른쪽에 남겨 보내고, 아이언은 정면에서 왼발 쪽으로 보내는 두 시범을 비교한다.",
+    "kind": "observation",
+    "reviewedAt": "2026-11-05"
   },
   "WxoZPlRhSvY": {
     "text": "몸이 들리며 팔을 당기는 경우, 회전과 손 하강을 연결한다. 무조건 더 숙이거나 땅을 찍는 처방은 아니다.",
@@ -11452,6 +11604,21 @@ window.GolfContent.keyMessages = {
   "7vsnmAld3wY": {
     "text": "아이언·드라이버의 하강과 헤드 통과를 따로 비교한다. 화면의 궤도·거리 숫자를 개인 기준으로 삼지 않는다.",
     "kind": "observation"
+  },
+  "lGgedAC0KCA": {
+    "text": "탑 부근에서 ‘Slow 1·2’를 짚은 뒤 내려오는 시범이다. 숫자는 리듬을 느끼는 구호로 쓴다.",
+    "kind": "observation",
+    "reviewedAt": "2026-11-05"
+  },
+  "kuRoseAIbtw": {
+    "text": "빈손으로 오른손목을 손등 쪽으로 젖혀 보며, 팔꿈치가 안으로 따라오는지 확인한다.",
+    "kind": "explanation",
+    "reviewedAt": "2026-11-05"
+  },
+  "HZpD_-B0_0c": {
+    "text": "다운스윙 때 몸 가까이 온 클럽이 임팩트를 지나며 몸에서 멀어지는 흐름을 비교한다.",
+    "kind": "explanation",
+    "reviewedAt": "2026-11-05"
   }
 };
 

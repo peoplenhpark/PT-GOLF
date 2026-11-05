@@ -1603,17 +1603,17 @@ window.GolfFrames = {
   "4Eof_tmI0Ag": [
     {
       "src": "media/golf-frames/4Eof_tmI0Ag-1.webp",
-      "time": 2.32,
-      "label": "드라이버 · 상체를 뒤에 남기는 시범",
-      "width": 360,
-      "height": 640
+      "time": 1.93,
+      "label": "드라이버 · 상체를 오른쪽에 남기는 시범",
+      "width": 240,
+      "height": 426
     },
     {
       "src": "media/golf-frames/4Eof_tmI0Ag-2.webp",
-      "time": 5.04,
-      "label": "아이언 · 정면과 왼발 쪽 통과 시범",
-      "width": 360,
-      "height": 640
+      "time": 5.38,
+      "label": "아이언 · 정면에서 왼발 쪽으로 보내는 시범",
+      "width": 240,
+      "height": 426
     }
   ],
   "WxoZPlRhSvY": [
@@ -2956,6 +2956,54 @@ window.GolfFrames = {
       "src": "media/golf-frames/7vsnmAld3wY-2.webp",
       "time": 4.7,
       "label": "헤드 통과·마무리 비교",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "lGgedAC0KCA": [
+    {
+      "src": "media/golf-frames/lGgedAC0KCA-1.webp",
+      "time": 11.88,
+      "label": "탑으로 올라가는 첫 박자",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/lGgedAC0KCA-2.webp",
+      "time": 14.09,
+      "label": "탑 부근 두 번째 박자",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "kuRoseAIbtw": [
+    {
+      "src": "media/golf-frames/kuRoseAIbtw-1.webp",
+      "time": 58.59,
+      "label": "오른손목 방향 설명",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/kuRoseAIbtw-2.webp",
+      "time": 90.4,
+      "label": "빈손으로 팔꿈치 반응 확인",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "HZpD_-B0_0c": [
+    {
+      "src": "media/golf-frames/HZpD_-B0_0c-1.webp",
+      "time": 1.79,
+      "label": "다운스윙 · 몸 가까이 오는 클럽",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/HZpD_-B0_0c-2.webp",
+      "time": 13.6,
+      "label": "임팩트 이후 · 몸과 헤드 사이 간격",
       "width": 240,
       "height": 426
     }

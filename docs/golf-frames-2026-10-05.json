@@ -2401,27 +2401,27 @@
   },
   {
     "id": "4Eof_tmI0Ag",
-    "title": "클럽별 릴리스 · 드라이버와 아이언의 상체 위치 비교",
+    "title": "클럽별 릴리스 · 드라이버는 상체 오른쪽, 아이언은 정면",
     "frames": [
       {
         "src": "media/golf-frames/4Eof_tmI0Ag-1.webp",
-        "time": 2.32,
-        "label": "드라이버 · 상체를 뒤에 남기는 시범",
-        "width": 360,
-        "height": 640
+        "time": 1.93,
+        "label": "드라이버 · 상체를 오른쪽에 남기는 시범",
+        "width": 240,
+        "height": 426
       },
       {
         "src": "media/golf-frames/4Eof_tmI0Ag-2.webp",
-        "time": 5.04,
-        "label": "아이언 · 정면과 왼발 쪽 통과 시범",
-        "width": 360,
-        "height": 640
+        "time": 5.38,
+        "label": "아이언 · 정면에서 왼발 쪽으로 보내는 시범",
+        "width": 240,
+        "height": 426
       }
     ],
-    "duration": 8,
-    "source": "https://www.youtube.com/watch?v=4Eof_tmI0Ag",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-18"
+    "duration": 7,
+    "source": "https://www.youtube.com/watch?v=_Cx_jWgM5ec",
+    "method": "원본 12개 표본의 자막·시범 확인.",
+    "verifiedAt": "2026-11-05"
   },
   {
     "id": "WxoZPlRhSvY",
@@ -4438,5 +4438,77 @@
     "source": "https://www.youtube.com/watch?v=7vsnmAld3wY",
     "method": "원본 12개 표본 화면·클럽 표기·시범 기준. 음성 자동 전사에는 유효한 동작 설명이 없어 코칭 근거에서 제외.",
     "verifiedAt": "2026-11-04"
+  },
+  {
+    "id": "lGgedAC0KCA",
+    "title": "백스윙 탑의 리듬 · ‘슬로 하나, 둘’에서 전환하기",
+    "frames": [
+      {
+        "src": "media/golf-frames/lGgedAC0KCA-1.webp",
+        "time": 11.88,
+        "label": "탑으로 올라가는 첫 박자",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/lGgedAC0KCA-2.webp",
+        "time": 14.09,
+        "label": "탑 부근 두 번째 박자",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 27,
+    "source": "https://www.youtube.com/watch?v=lGgedAC0KCA",
+    "method": "원본 12개 표본의 자막·시범 확인.",
+    "verifiedAt": "2026-11-05"
+  },
+  {
+    "id": "kuRoseAIbtw",
+    "title": "다운스윙 오른팔꿈치 · 밀어 넣기 전에 오른손목 움직임 보기",
+    "frames": [
+      {
+        "src": "media/golf-frames/kuRoseAIbtw-1.webp",
+        "time": 58.59,
+        "label": "오른손목 방향 설명",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/kuRoseAIbtw-2.webp",
+        "time": 90.4,
+        "label": "빈손으로 팔꿈치 반응 확인",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 97,
+    "source": "https://www.youtube.com/watch?v=kuRoseAIbtw",
+    "method": "원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+    "verifiedAt": "2026-11-05"
+  },
+  {
+    "id": "HZpD_-B0_0c",
+    "title": "드라이버 릴리스 · 몸에 붙어 내려온 채를 임팩트에서 보내기",
+    "frames": [
+      {
+        "src": "media/golf-frames/HZpD_-B0_0c-1.webp",
+        "time": 1.79,
+        "label": "다운스윙 · 몸 가까이 오는 클럽",
+        "width": 240,
+        "height": 426
+      },
+      {
+        "src": "media/golf-frames/HZpD_-B0_0c-2.webp",
+        "time": 13.6,
+        "label": "임팩트 이후 · 몸과 헤드 사이 간격",
+        "width": 240,
+        "height": 426
+      }
+    ],
+    "duration": 16,
+    "source": "https://www.youtube.com/watch?v=HZpD_-B0_0c",
+    "method": "원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+    "verifiedAt": "2026-11-05"
   }
 ]

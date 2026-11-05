@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 185,
-  "scope": "185 active video records, current sources and key messages match the app. Existing stable IDs and personal data preserved.",
+  "count": 188,
+  "scope": "188 active video records, current sources and key messages match the app.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -1204,11 +1204,27 @@
     },
     {
       "id": "4Eof_tmI0Ag",
-      "source": "https://www.youtube.com/watch?v=4Eof_tmI0Ag",
-      "channel": "똑딱이골프",
-      "message": "드라이버와 아이언의 상체 위치·헤드 보내는 시점을 비교한다. 두 클럽의 감각을 같은 지시로 합치지 않는다.",
-      "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
-      "evidenceKind": "observation"
+      "source": "https://www.youtube.com/watch?v=_Cx_jWgM5ec",
+      "channel": "툭스장인 정용훈",
+      "message": "드라이버는 상체를 오른쪽에 남겨 보내고, 아이언은 정면에서 왼발 쪽으로 보내는 두 시범을 비교한다.",
+      "basis": "원본 12개 표본의 자막·시범 확인.",
+      "evidenceKind": "observation",
+      "duration": 7,
+      "sampleTimes": [
+        0.21,
+        0.78,
+        1.36,
+        1.93,
+        2.51,
+        3.08,
+        3.65,
+        4.23,
+        4.8,
+        5.38,
+        5.95,
+        6.52
+      ],
+      "reviewedAt": "2026-11-05"
     },
     {
       "id": "WxoZPlRhSvY",
@@ -2249,7 +2265,79 @@
         8.39
       ],
       "reviewedAt": "2026-11-04"
+    },
+    {
+      "id": "lGgedAC0KCA",
+      "source": "https://www.youtube.com/watch?v=lGgedAC0KCA",
+      "channel": "[투어프로]윤영호",
+      "message": "탑 부근에서 ‘Slow 1·2’를 짚은 뒤 내려오는 시범이다. 숫자는 리듬을 느끼는 구호로 쓴다.",
+      "basis": "원본 12개 표본의 자막·시범 확인.",
+      "evidenceKind": "observation",
+      "duration": 27,
+      "sampleTimes": [
+        0.81,
+        3.02,
+        5.24,
+        7.45,
+        9.67,
+        11.88,
+        14.09,
+        16.31,
+        18.52,
+        20.74,
+        22.95,
+        25.16
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "kuRoseAIbtw",
+      "source": "https://www.youtube.com/watch?v=kuRoseAIbtw",
+      "channel": "Amateur Golfer Catching Pros PAG tv",
+      "message": "빈손으로 오른손목을 손등 쪽으로 젖혀 보며, 팔꿈치가 안으로 따라오는지 확인한다.",
+      "basis": "원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+      "evidenceKind": "explanation",
+      "duration": 97,
+      "sampleTimes": [
+        2.91,
+        10.86,
+        18.82,
+        26.77,
+        34.73,
+        42.68,
+        50.63,
+        58.59,
+        66.54,
+        74.5,
+        82.45,
+        90.4
+      ],
+      "reviewedAt": "2026-11-05"
+    },
+    {
+      "id": "HZpD_-B0_0c",
+      "source": "https://www.youtube.com/watch?v=HZpD_-B0_0c",
+      "channel": "쇼츠골프",
+      "message": "다운스윙 때 몸 가까이 온 클럽이 임팩트를 지나며 몸에서 멀어지는 흐름을 비교한다.",
+      "basis": "원본 12개 표본 화면과 전체 음성 자동 전사 대조.",
+      "evidenceKind": "explanation",
+      "duration": 16,
+      "sampleTimes": [
+        0.48,
+        1.79,
+        3.1,
+        4.42,
+        5.73,
+        7.04,
+        8.35,
+        9.66,
+        10.98,
+        12.29,
+        13.6,
+        14.91
+      ],
+      "reviewedAt": "2026-11-05"
     }
   ],
-  "updatedAt": "2026-11-04"
+  "updatedAt": "2026-11-05"
 }
