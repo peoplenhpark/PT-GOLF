@@ -49,7 +49,7 @@ window.CoachDesk = (() => {
   function searchRecords(query){const terms=String(query||'').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);if(!terms.length)return [];const s=handle.reload(),matches=text=>terms.every(t=>text.toLocaleLowerCase().includes(t));
     return [...(window.GolfQuestions?.search(query)||[]),...s.criteria.map(c=>({id:c.id,type:'criterion',title:c.title+(c.club?' · '+c.club:''),href:route(c.part,'standards',c.id),excerpt:[c.cue,c.check,c.setup,c.caution].join(' · '),matchedFields:['내 기준']})),...s.records.map(r=>({id:r.id,type:'practice',title:r.date+' · '+r.snapshot.title,href:route(r.part)+'?record='+encodeURIComponent(r.id),excerpt:[r.memo,r.question,r.answer,r.snapshot.cue].filter(Boolean).join(' · '),matchedFields:['결과·질문·답변']}))].filter(r=>matches(r.title+' '+r.excerpt));
   }
-  function tabs(part,tab){return '<nav class="coach-tabs" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part)+'" '+(tab==='now'?'aria-current="page"':'')+'>지금 할 것</a><a href="'+route(part,'standards')+'" '+(tab==='standards'?'aria-current="page"':'')+'>'+'보관 기록'+'</a></nav>';}
+  function tabs(part,tab){return '<nav class="coach-tabs" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part)+'" '+(tab==='now'?'aria-current="page"':'')+'>지금 할 것</a><a href="'+route(part,'standards')+'" '+(tab==='standards'?'aria-current="page"':'')+'>'+'보관 기록'+'</a><a href="'+route(part,'questions')+'" '+(tab==='questions'?'aria-current="page"':'')+'>질문</a></nav>';}
   function sourceLink(c){const src=sources(c.part).find(s=>s.key===c.sourceKey);return src?'<a class="coach-source" href="'+esc(src.href)+'">'+esc(src.group)+' · '+esc(src.title)+' 보기 ›</a>':'<p class="coach-meta">원본이 현재 목록에서 숨겨져 있습니다. 개인 기준과 기록은 보존됩니다.</p>';}
   function media(c){
     if(c.part==='pt'){const id=c.sourceKey.slice(3),m=window.ExerciseMedia?.[id];if(!m||m.pending)return '';return '<div class="coach-mini-shots">'+(m.images||[]).slice(0,2).map((src,i)=>'<a href="#exercise/'+encodeURIComponent(id)+'"><img src="'+esc(src)+'" alt="'+esc(c.title)+' '+(i?'동작':'준비')+'" loading="lazy"><span>'+(i?'동작':'준비')+'</span></a>').join('')+'</div>';}
@@ -115,7 +115,7 @@ window.CoachDesk = (() => {
   function render(v,config){
     api=config;view=v;configure(config);const part=v.part,tab=v.coachTab||'now',s=handle.reload(),all=s.criteria.filter(c=>c.part===part),records=[...s.records.filter(r=>r.part===part),...(part==='golf'?window.GolfQuestions.records(s):[])].sort((a,b)=>a.created.localeCompare(b.created));
     const compactNow=tab==='now'&&!v.coachRecord;
-    const archiveLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'standards')+'">보관 기록</a></nav>';
+    const archiveLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'questions')+'">질문</a><a href="'+route(part,'standards')+'">보관 기록</a></nav>';
     let body=compactNow?'':tabs(part,tab);
     if(!handle.status().ok)body+='<p class="storage-warning" role="alert">보관 기록을 읽지 못했습니다. 기존 원본은 보존하고 저장을 멈췄습니다.</p>';
     if(tab==='now'&&v.coachRecord){const r=records.find(r=>r.id===v.coachRecord);body+='<section class="coach-selected-record"><h2>기록과 질문</h2>'+(r?recordHtml(r,true):'<p>기록을 찾지 못했습니다.</p>')+'<a class="coach-source" href="'+route(part,'standards')+'">보관 기록으로 돌아가기 ›</a></section>';}else if(tab==='now'){
@@ -127,8 +127,8 @@ window.CoachDesk = (() => {
       if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
       if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a><a href="#golf/standards">보관 기록</a></nav>';
       if(part==='pt')body+=personalPTLinks();
-    }else if(part==='pt'&&tab==='questions'){
-      body+=window.TrainingQuestions.render(v.coachSource);
+    }else if(tab==='questions'){
+      body+=part==='pt'?window.TrainingQuestions.render(v.coachSource):window.TrainingQuestions.renderGolf();
     }else{
       body+=archive(part,all,records,s,v.coachId);
     }

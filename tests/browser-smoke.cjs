@@ -11,6 +11,18 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
  await page.addInitScript(()=>{window.__openedDeletionUrls=[];window.open=url=>{window.__openedDeletionUrls.push(String(url));return {};};});
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
  try{
+  for(const width of [320,390,768]){
+    await page.setViewportSize({width,height:844});
+    await page.goto(base+'#golf/now');await page.locator('.coach-header-link a[href="#golf/questions"]').click();
+    await page.locator('#golf-questions-title').waitFor();
+    assert.equal(await page.locator('.training-question-group li').count(),3);
+    assert.equal(await page.locator('a[href="#golf/videos/4Eof_tmI0Ag"]').count(),1);
+    await page.locator('.training-questions a[href="#pt/questions"]').click();
+    await page.locator('#training-questions-title').waitFor();
+    assert.equal(await page.locator('.training-question-group li').count(),16);
+    assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'question lists fit viewport');
+  }
+  await page.setViewportSize({width:390,height:844});
   await page.goto(base);await page.locator('.part.pt').waitFor();
   await page.locator('[data-nav=pt]').click();await page.locator('.coach-tabs').waitFor();assert.match(page.url(),/#pt\/now/);await page.goto(base+'#pt');
   await page.reload();await page.locator('.pt-exercise-grid').waitFor();assert.equal(await page.locator('[data-delete-ex]').count(),0,'exercise lists do not show delete actions');

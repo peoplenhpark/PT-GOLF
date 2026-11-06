@@ -21,7 +21,7 @@ module.exports=async(browser,base)=>{
    else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),3);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
 
   }
-  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),1);assert.equal(await p.locator('.coach-header-link a').getAttribute('href'),'#pt/standards');assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
+  await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),2);assert.equal(await p.locator('.coach-header-link a[href="#pt/standards"]').count(),1);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');
   const latestPT=await p.evaluate(()=>Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date))[0]);
   const recent=p.locator('.coach-recent-pt');assert.equal(await recent.locator('time').innerText(),latestPT.date);
   const recentCards=recent.locator('.coach-recent-grid').first();
