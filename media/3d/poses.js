@@ -247,6 +247,13 @@ function pose(kind,t,id){
   arms(p,S.map(s=>[s*(.43-.16*q),1.20+.39*q,.15]),S.map(s=>[s,-1,.3]));
   p.equipment=[{type:'seat'},{type:'htbackpad'},{type:'dumbbells'}];
   p.target=[0,.97,.05];p.distance=4.1;
+ }else if(kind==='ptlowpulley'){
+  // Dedicated low-pulley long-bench row. Dimensions/grip are illustrative, not a prescription.
+  p=base([0,.56,-.05],.035);
+  legs(p,S.map(s=>[s*.16,.18,.67]),S.map(s=>[s*.05,1,.5]));
+  arms(p,S.map(s=>[s*.085,.89,.49-.36*q]),S.map(s=>[s*.35,-.2,-1]));
+  p.equipment=[{type:'lowpulleymachine',pulley:[0,.24,1.08]}];
+  p.target=[0,.78,.30];p.distance=4.5;
  }else if(kind==='htvrow'){
   p=seat();legs(p,S.map(s=>[s*.15,.20,.68]));
   arms(p,S.map(s=>[s*.095,.91,.50-.35*q]),S.map(s=>[s*.3,-1,-1]));

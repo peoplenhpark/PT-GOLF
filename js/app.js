@@ -51,7 +51,7 @@ const Theme = (() => {
   const personalPT = [
     {key:'basic',label:'기본운동',ids:['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation']},
     {key:'chest',label:'가슴',ids:['pt_chestpress','pt_pecdeck']},
-    {key:'back',label:'등',ids:['pt_dbpullover','pt_seatedrow','pt_latpulldown','pt_pullup','pt_backextension']},
+    {key:'back',label:'등',ids:['pt_dbpullover','pt_seatedrow','pt_lowpulley_row','pt_latpulldown','pt_pullup','pt_backextension']},
     {key:'shoulders',label:'어깨',ids:['pt_shoulderpress','pt_facepull']},
     {key:'arms',label:'팔',ids:['pt_pushdown','pt_low_cable_curl']},
     {key:'legs',label:'다리',ids:['pt_lunge','pt_legcurl','pt_legextension','pt_adduction','pt_legpress']}
@@ -390,10 +390,10 @@ const Theme = (() => {
   function lessonGuideHtml(e) {
     const reviewed=e.practiceGuide;
     if(reviewed){
-      const previous=e.lessonGuide;
+      const previous=reviewed.coachAnswers?.length?null:e.lessonGuide;
       const steps=previous?previous.steps.map(s=>'<li><h3>'+esc(s.title)+'</h3><small>'+esc(s.origin)+'</small><p>'+esc(s.text)+'</p></li>').join(''):reviewed.steps.map(s=>'<li>'+esc(s)+'</li>').join('');
       return '<section class="exercise-lesson-guide exercise-practice-guide" aria-label="동작 순서와 확인 3가지"><h2>'+esc(previous?.title||reviewed.title)+'</h2><h3>동작 순서</h3><ol>'+steps+'</ol><h3>확인 3가지</h3><ul class="practice-checks">'+reviewed.checks.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
-        (reviewed.pending.length?'<div class="practice-pending" role="note"><h3>확인 필요</h3>'+reviewed.pending.map(x=>'<p>'+esc(x)+'</p>').join('')+window.TrainingQuestions.detailLink(e.id)+'</div>':'')+'<p class="lesson-guide-source">'+esc(reviewed.sourceNote)+'</p></section>';
+        window.TrainingQuestions.answersHtml(e)+(reviewed.coachAnswers?.length&&e.lessonGuide?'<details class="training-prior"><summary>'+esc(e.lessonGuide.title)+' · 이전 안내</summary>'+e.lessonGuide.steps.map(s=>'<p>'+esc(s.text)+'</p>').join('')+'</details>':'')+(reviewed.pending.length?'<div class="practice-pending" role="note"><h3>확인 필요</h3>'+reviewed.pending.map(x=>'<p>'+esc(x)+'</p>').join('')+window.TrainingQuestions.detailLink(e.id)+'</div>':'')+'<p class="lesson-guide-source">'+esc(reviewed.sourceNote)+'</p></section>';
     }
     const guide=e.lessonGuide;if(!guide)return '';
     return '<section class="exercise-lesson-guide" aria-label="이번 수업 자세 복습"><h2>'+esc(guide.title)+'</h2><ol>'+guide.steps.map(step=>'<li><h3>'+esc(step.title)+'</h3><small>'+esc(step.origin)+'</small><p>'+esc(step.text)+'</p></li>').join('')+'</ol><h3>확인 3가지</h3><ul>'+guide.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul><p class="lesson-guide-source">'+esc(guide.sourceNote)+'</p></section>';

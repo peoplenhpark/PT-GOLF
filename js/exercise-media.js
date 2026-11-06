@@ -1,5 +1,29 @@
 /* Exercise preparation/action images and interactive pose registry. */
 window.ExerciseMedia = {
+  "pt_lowpulley_row": {
+  "name": "로우 풀리 머신 (롱풀 · 케이블 로우)",
+  "kind": "ptlowpulley",
+  "captions": [
+    "준비 · 발판 지지와 가슴 유지",
+    "당김 · 몸통 반동 없이 부드럽게"
+  ],
+  "notes": [
+    "발판에 발을 지지하고 가슴과 머리 기준선을 유지합니다.",
+    "손잡이를 몸쪽으로 당기고 지지를 유지하며 천천히 내보냅니다."
+  ],
+  "focus": {
+    "muscle": "등 · 팔꿈치 굽힘근 보조",
+    "move": "발판에 발을 지지하고 가슴을 유지하며 아래 케이블 손잡이를 몸쪽으로 부드럽게 당긴다.",
+    "feel": "몸을 뒤로 눕혀 당기기보다 등이 모이며 손잡이가 들어오는 느낌"
+  },
+  "target": "back",
+  "images": [
+    "docs/images/guides/pt_lowpulley_row-start.webp",
+    "docs/images/guides/pt_lowpulley_row-end.webp"
+  ],
+  "viewer": "media/3d/viewer.html?exercise=pt_lowpulley_row",
+  "visualNote": "하단 케이블·롱벤치·발판·중립 손잡이는 동작 이해용 예시입니다. 실제 수업의 기구·그립·중량·각도·범위를 확정하지 않습니다."
+},
   "pt_shoulderpress": {
   "name": "숄더 프레스 (머신)",
   "kind": "ptshoulderpress",

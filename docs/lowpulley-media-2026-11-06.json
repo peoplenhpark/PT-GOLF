@@ -1,0 +1,23 @@
+{
+  "exerciseId": "pt_lowpulley_row",
+  "date": "2026-11-06",
+  "source": "사용자 운동명 확인 + 노트(31) 정규 PT. 기구 실측·원본 시범 영상 없음.",
+  "method": "코드로 구현한 전용 3D를 Chromium/WebGL에서 렌더하고 Pillow로 WebP 변환. AI 생성 이미지나 수업 사진이 아님.",
+  "generationInstructions": "하단 케이블 출구·롱벤치·양발 발판·중립 손잡이 예시. 가슴·골반·발 지지를 유지하고 손잡이가 몸쪽으로 이동. 별도 ptlowpulley 포즈와 lowpulleymachine 기구 사용. 개인 기구·그립·중량·각도·반복 처방으로 표시하지 않음.",
+  "frames": [
+    {
+      "phase": 0,
+      "path": "docs/images/guides/pt_lowpulley_row-start.webp"
+    },
+    {
+      "phase": 0.52,
+      "path": "docs/images/guides/pt_lowpulley_row-end.webp"
+    }
+  ],
+  "viewer": "media/3d/viewer.html?exercise=pt_lowpulley_row",
+  "designFiles": [
+    "media/3d/poses.js",
+    "media/3d/viewer.js",
+    "js/exercise-media.js"
+  ]
+}

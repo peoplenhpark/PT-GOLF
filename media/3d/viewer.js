@@ -240,6 +240,21 @@ try{
     case 'latpull':tower(.73,2.07);cable([0,2.07,.73],mix(p.wrists[0],p.wrists[1],.5));block(equipment,[0,.66,.33],[.55,.10,.14]);break;
     case 'highcable':tower();cable([0,2.05,1.02],mix(p.wrists[0],p.wrists[1],.5));break;
     case 'facecable':tower();for(const a of p.wrists){cable([0,1.50,1.02],a);handle(a,true);}break;
+    case 'lowpulleymachine':{
+     // Long bench, two footplates and a low pulley; no chest pad or high pivot arms.
+     block(equipment,[0,.43,-.15],[.39,.12,1.04]);
+     for(const s of [-1,1]){
+      beam(equipment,[s*.16,.035,-.57],[s*.16,.39,-.57],.03);
+      beam(equipment,[s*.16,.035,.25],[s*.16,.39,.25],.03);
+      block(equipment,[s*.16,.19,.72],[.22,.29,.06],rubber,[0,.92,-.39]);
+     }
+     block(equipment,[0,.68,1.13],[.38,1.28,.17],steel);
+     for(let y=.2;y<1.15;y+=.10)block(equipment,[0,y,1.025],[.26,.065,.09],rubber);
+     const join=add(mix(p.wrists[0],p.wrists[1],.5),[0,-.015,.065]);
+     cable(e.pulley,join);
+     for(const a of p.wrists){beam(equipment,join,add(a,[0,-.045,0]),.016);handle(a,true);}
+     beam(equipment,[-.37,.03,1.14],[.37,.03,1.14],.035);
+     break;}
     case 'hammerrow':for(let i=0;i<2;i++){
      const s=i?1:-1;beam(equipment,[s*.39,.04,.88],[s*.39,1.55,.80],.035);
      beam(equipment,[s*.39,1.48,.80],p.wrists[i],.03);handle(p.wrists[i],true);

@@ -19,7 +19,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
     assert.equal(await page.locator('a[href="#golf/videos/4Eof_tmI0Ag"]').count(),1);
     await page.locator('.training-questions a[href="#pt/questions"]').click();
     await page.locator('#training-questions-title').waitFor();
-    assert.equal(await page.locator('.training-question-group li').count(),16);
+    assert.equal(await page.locator('.training-question-group li').count(),10);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'question lists fit viewport');
   }
   await page.setViewportSize({width:390,height:844});
@@ -119,7 +119,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.goto(base+'#golf/notes/1004');await page.locator('.g-lesson-bridge').waitFor();assert.match(await page.locator('.g-original').textContent(),/양 어깨는 거의 고정/);assert.match(await page.locator('.g-lesson-bridge').textContent(),/현재 레슨/);
   await page.goto(base+'#golf/lessons');await page.locator('[data-g=lesson-new]').click();await page.locator('[data-g-form=lesson]').waitFor();
   await page.locator('#g-date').fill('2026-10-12');await page.locator('#g-title').fill('검증용 두 번째 레슨');await page.locator('input[name=noteIds][value=golf_iron7]').check();await page.locator('#g-correction').fill('검증용 교정');await page.locator('#g-practiceCue').fill('검증용 다음 연습');await page.getByRole('button',{name:'레슨 저장',exact:true}).click();await page.locator('.g-title').waitFor();
-  await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-row').filter({hasText:'검증용 두 번째 레슨'}).waitFor();await page.goto(base+'#golf/now');await page.locator('.coach-recent-golf').waitFor();const latestSeedLesson=await page.evaluate(()=>[...window.GolfContent.lessons].sort((a,b)=>b.date.localeCompare(a.date))[0]);assert.equal(await page.locator('.coach-recent-golf time').first().getAttribute('datetime'),latestSeedLesson.date);if(await page.locator('.g-combined-lesson').count()){assert.equal(await page.locator('.g-combined-lesson h2').innerText(),await page.evaluate(()=>GolfContent.driverLessonReview.title));}else{assert.equal(await page.locator('.coach-recent-golf h3').innerText(),latestSeedLesson.quickReview?.title||latestSeedLesson.title);}assert.equal(await page.locator('.coach-lesson-links a').first().getAttribute('href'),'#golf/lessons/'+latestSeedLesson.id);
+  await page.goto(base+'#golf/lessons');await page.locator('.g-lesson-row').filter({hasText:'검증용 두 번째 레슨'}).waitFor();await page.goto(base+'#golf/now');await page.locator('.coach-recent-golf').waitFor();const latestSeedLesson=await page.evaluate(()=>[...window.GolfContent.lessons].sort((a,b)=>b.date.localeCompare(a.date))[0]);assert.equal(await page.locator('.coach-recent-golf time').first().getAttribute('datetime'),latestSeedLesson.date);if(await page.locator('.g-combined-lesson').count()){assert.equal(await page.locator('.g-combined-lesson h2').innerText(),await page.evaluate(()=>GolfContent.driverLessonReview.title));}else{assert.equal(await page.locator('.g-latest-lesson h2,.coach-recent-golf:not(.g-latest-lesson) h3').innerText(),latestSeedLesson.quickReview?.title||latestSeedLesson.title);}assert.equal(await page.locator('.coach-lesson-links a').first().getAttribute('href'),'#golf/lessons/'+latestSeedLesson.id);
 
   await page.goto(base+'#golf/videos/5glZX2pq15o');await page.locator('[data-g-form=video]').waitFor();
   const originalGolfTitle=await page.locator('.g-title').textContent();
@@ -366,6 +366,8 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/golf-archive-browser.cjs')(browser,base);
   await require('./helpers/golf-field-browser.cjs')(browser,base);
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
+  await require('./helpers/pt-lowpulley-browser.cjs')(browser,base);
+  await require('./helpers/regular-lessons-1106-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);
   await require('./helpers/ht-routine-browser.cjs')(browser,base);

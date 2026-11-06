@@ -33,6 +33,15 @@ globalThis.PTGolfRelease = {
     "release-assets.js"
   ],
   "exercises": {
+    "pt_lowpulley_row": [
+      "docs/images/guides/pt_lowpulley_row-end.webp",
+      "docs/images/guides/pt_lowpulley_row-start.webp",
+      "js/exercise-media.js",
+      "media/3d/poses.js",
+      "media/3d/viewer.html",
+      "media/3d/viewer.js",
+      "samples/pushdown-3d/three.min.js"
+    ],
     "pt_shoulderpress": [
       "docs/images/guides/pt_shoulderpress-end.webp",
       "docs/images/guides/pt_shoulderpress-start.webp",

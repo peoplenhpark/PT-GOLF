@@ -1,0 +1,9 @@
+const assert=require('node:assert/strict'),fs=require('fs'),vm=require('vm'),P=require('../media/3d/poses.js');
+const c={window:{}};vm.runInNewContext(fs.readFileSync('js/exercise-media.js','utf8'),c);const media=c.window.ExerciseMedia.pt_lowpulley_row;
+assert.equal(media.kind,'ptlowpulley');assert.equal(media.images.length,2);assert.notDeepEqual(fs.readFileSync(media.images[0]),fs.readFileSync(media.images[1]));
+const seed=JSON.parse(fs.readFileSync('data/seed.json','utf8'));assert.equal(seed.exercises.filter(e=>e.id==='pt_lowpulley_row').length,1);assert(seed.ptSessions.find(s=>s.id==='pt_session_20261106').items.some(i=>i.exerciseId==='pt_lowpulley_row'));
+const first=P.pose(media.kind,0,'pt_lowpulley_row'),near=(a,b)=>assert(Math.abs(a-b)<1e-8);
+for(let f=0;f<=1000;f++){const p=P.pose(media.kind,f/1000,'pt_lowpulley_row');for(const k of ['hip','chest','head','ankles'])assert.deepEqual(p[k],first[k],k+' fixed support');for(let i=0;i<2;i++){near(P.len(P.sub(p.shoulders[i],p.elbows[i])),.29);near(P.len(P.sub(p.elbows[i],p.wrists[i])),.285);near(P.len(P.sub(p.hips[i],p.knees[i])),.43);near(P.len(P.sub(p.knees[i],p.ankles[i])),.425);}assert.equal(p.equipment[0].type,'lowpulleymachine');assert(p.equipment[0].pulley[1]<p.wrists[0][1]);}
+assert(P.pose(media.kind,.52).wrists[0][2]<first.wrists[0][2]-.3);
+const assets=fs.readFileSync('release-assets.js','utf8');for(const image of media.images)assert(assets.includes(image));
+console.log('PASS: dedicated low-pulley long-bench row, 1001 poses, fixed supports and constant limbs, distinct rendered image pair, session link and offline assets.');
