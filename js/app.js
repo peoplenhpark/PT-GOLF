@@ -292,10 +292,10 @@ const Theme = (() => {
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
   const htRoutineDays = [
-    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_dbpullover','pt_chestpress','pt_seatedrow','pt_latpulldown','pt_pecdeck','pt_pushdown']},
+    {id:'mon',label:'월 · 상체',title:'상체 A · 랫풀다운',ids:['pt_dbpullover','pt_chestpress','pt_seatedrow','pt_lowpulley_row','pt_latpulldown','pt_pecdeck','pt_pushdown']},
     {id:'tue',label:'화 · 하체',title:'하체 A · 머신 양발 기본',ids:['pt_lunge','pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_legpress']},
     {id:'wed',label:'수 · 휴식',title:'수요일 · 휴식일',rest:true,ids:[]},
-    {id:'thu',label:'목 · 상체',title:'상체 B · 어깨 보강',ids:['pt_dbpullover','pt_pullup','pt_shoulderpress','pt_seatedrow','pt_facepull','pt_low_cable_curl']},
+    {id:'thu',label:'목 · 상체',title:'상체 B · 어깨 보강',ids:['pt_dbpullover','pt_pullup','pt_shoulderpress','pt_seatedrow','pt_lowpulley_row','pt_facepull','pt_low_cable_curl']},
     {id:'fri',label:'금 · 하체',title:'하체 B · 같은 자세로 반복',ids:['pt_lunge','pt_legcurl','pt_legextension','pt_adduction','pt_backextension','pt_legpress']},
     {id:'sat',label:'토 · 휴식',title:'토요일 · 휴식일',rest:true,ids:[]},
     {id:'sun',label:'일 · 휴식',title:'일요일 · 휴식일',rest:true,ids:[]}
@@ -314,6 +314,7 @@ const Theme = (() => {
     pt_facepull:['페이스풀','10–15회','팔·등을 함께 쓰며 얼굴 쪽으로, 팔꿈치는 바깥으로','목 내밀기 · 몸통 반동 주의. 중량 재확인'],
     pt_dbpullover:['덤벨 풀오버','7kg · 12–15회','손바닥으로 받치고 날개뼈와 함께 천천히 넘기기','어깨를 눌러 박기 · 불편한 깊이 · 무리한 증량 주의'],
     pt_chestpress:['체스트 프레스','10–15회','팔로 버티며 가슴이 유지되는 깊이까지만 내리기','어깨가 말리거나 가슴이 무너지기 전에 다시 밀기'],
+    pt_lowpulley_row:['로우 풀리 머신','중량·횟수·세트 미지정','발을 지지하고 가슴을 유지하며 부드럽게 당기기','몸통 반동·어깨 으쓱·급하게 당기기 피하기'],
     pt_seatedrow:['시티드로우','10–15회','가슴을 유지하며 내보내고 당기기','어깨가 들리면 범위 줄이기 · 몸을 뒤로 눕혀 당기지 않기'],
     pt_latpulldown:['랫풀다운','10–15회','가슴부터 세팅하고 양팔을 같은 속도로 당기기','상체 반동 · 과하게 내려 어깨가 뜨는 지점 주의'],
     pt_pullup:['보조 풀업','6–10회','몸통을 지지하고, 팔로 당기며 가슴·몸통을 함께 올리기','허리·목 꺾지 않기 · 어깨 으쓱·몸통 무너지면 멈추기'],
@@ -413,9 +414,9 @@ const Theme = (() => {
     const day=htRoutineDays.find(d=>d.id===htRoutineDay)||htRoutineDays[0];
     const lower=day.id==='tue'||day.id==='fri';
     const lowerRest={pt_lunge:'120–180초',pt_legcurl:'90–120초',pt_legextension:'90–120초',pt_adduction:'60–90초',pt_backextension:'90–120초',pt_legpress:'120–180초'};
-    const upperRest={pt_dbpullover:'60–90초',pt_chestpress:'90–120초',pt_seatedrow:'90–120초',pt_latpulldown:'90–120초',pt_pullup:'90–120초',pt_shoulderpress:'90–120초',pt_pecdeck:'60–90초',pt_pushdown:'60–90초',pt_facepull:'60–90초',pt_low_cable_curl:'60–90초'};
+    const upperRest={pt_lowpulley_row:'90–120초',pt_dbpullover:'60–90초',pt_chestpress:'90–120초',pt_seatedrow:'90–120초',pt_latpulldown:'90–120초',pt_pullup:'90–120초',pt_shoulderpress:'90–120초',pt_pecdeck:'60–90초',pt_pushdown:'60–90초',pt_facepull:'60–90초',pt_low_cable_curl:'60–90초'};
     const rest=lower?lowerRest:upperRest;
-    const times=lower?['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']:['20–27분','27–36분','36–45분','45–54분','54–60분','60–65분'];
+    const times=lower?['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']:['20–26분','26–33분','33–40분','40–47분','47–54분','54–60분','60–65분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
       <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
       ${window.TrainingQuestions.entryLink()}
@@ -431,9 +432,9 @@ const Theme = (() => {
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–70분</small></h3>
-      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 각 2세트'} · 좋은 자세로 2–3회 더 할 여유</p>
+      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 기존 종목 각 2세트 · 로우 풀리 분량 미지정'} · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lunge'?item[1]:id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}<span class="ht-routine-rest"> · 세트 휴식 ${rest[id]}</span></strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lowpulley_row'?item[1]:id==='pt_lunge'?item[1]:id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}<span class="ht-routine-rest"> · 세트 휴식 ${rest[id]}</span></strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
       <p class="ht-routine-buffer"><b>65–70분 · 여유 5분</b> 추가 휴식·기구 대기에 사용</p>
       ${lower?'<p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지 분량·백익스텐션 반복수는 코치 확인 후 시간도 조정합니다.</p>':''}
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 세트 휴식·기구 설정·이동을 포함한 예시입니다.</p>`}</div>

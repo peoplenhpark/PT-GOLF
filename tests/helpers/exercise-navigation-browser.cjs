@@ -80,7 +80,7 @@ module.exports=async(browser,base)=>{
    await p.locator('.ht-routine-days [data-ht-day='+day+']').click();
    for(const id of await p.locator('#ht-routine .ht-routine-list a').evaluateAll(es=>es.map(e=>e.hash.split('/')[1])))routineIds.add(id);
   }
-  assert.deepEqual([...routineIds].sort(),chosen.filter(id=>id!=='pt_lowpulley_row').sort(),'existing HT routine remains unchanged; the new personal exercise is available separately');
+  assert.deepEqual([...routineIds].sort(),[...chosen].sort(),'personal catalog covers the full active routine including low-pulley row');
   assert.deepEqual(errors,[]);
   console.log('PASS: global exercise access, all/category counts, search and history, draft preservation, keyboard/outside dismissal and responsive themes.');
  }finally{await context.close();}
