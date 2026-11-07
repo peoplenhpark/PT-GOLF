@@ -530,7 +530,7 @@ window.GolfHub = (() => {
       ${l.videoCollection?.placement==='top'?lessonVideoSection(l):''}
       ${[['발견한 문제',l.problem],['코치의 교정·느껴야 할 감각',l.correction],['연습 방법·숙제',l.homework],['기존 설명과 달라진 점',l.difference],['내 연습 결과',l.result]].filter(([,s])=>s).map(([t,s])=>block(t,paras(s))).join('')}
       <div class="g-actions">${button('lesson-edit','레슨 수정',`data-id="${e(id)}"`)}</div>
-      ${window.GolfPractice.lessonEvidence(l,state)}${block('연결된 스윙 노트',noteLinks(l.noteIds||[]))}${l.videoCollection?.placement==='top'?'':lessonVideoSection(l)}
+      ${window.GolfPractice.leftArmGuide(l)}${window.GolfPractice.lessonEvidence(l,state)}${block('연결된 스윙 노트',noteLinks(l.noteIds||[]))}${l.videoCollection?.placement==='top'?'':lessonVideoSection(l)}
       ${l.videoCaution?paras(l.videoCaution):''}${state.questions.some(q=>q.lessonId===id)?block('이 레슨에서 확인한 질문',questionRows(state.questions.filter(q=>q.lessonId===id))):''}`,'lessons');
   }
   function field(name,label,value='',type='textarea',required=false) {

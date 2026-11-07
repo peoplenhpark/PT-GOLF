@@ -46,7 +46,7 @@ window.TrainingQuestions = (() => {
   function confirmedList(){return Store.getAll().filter(e=>e.part==='pt'&&e.practiceGuide?.coachAnswers?.length).map(e=>'<section class="training-confirmed-exercise"><div class="training-question-links">'+exerciseLink(e)+'</div>'+answersHtml(e)+'</section>').join('');}
   function golfLessonContext(){
     const lesson=window.GolfHub?.learningSources().lessons.find(l=>l.id==='lesson_20261106_relax');
-    return lesson?'<section class="training-confirmed"><h3>11.06 정규 레슨 · 관련 안내</h3><p>'+esc(lesson.practiceCue||lesson.correction)+'</p><p class="coach-meta">오른손 놓기 교정 연습과 기존 드라이버 높은 위치 왼손 이완은 날짜·목적을 구분합니다. 이번 전사에는 아래 세 영상의 직접 검토 답변이 없어 적용 클럽 질문을 확인 필요로 유지합니다.</p><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(lesson.id)+'">정규 레슨과 전사 근거 보기 ›</a><h4>이번 레슨에서 추가로 확인할 것</h4><ul>'+(lesson.followUpQuestions||[]).map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></section>':'';
+    return lesson?'<section class="training-confirmed"><h3>11.06 정규 레슨 · 관련 안내</h3><p>'+esc(lesson.practiceCue||lesson.correction)+'</p>'+window.GolfPractice.leftArmGuide(lesson)+'<p class="coach-meta">오른손 놓기 교정 연습과 기존 드라이버 높은 위치 왼손 이완은 날짜·목적을 구분합니다. 이번 전사에는 아래 세 영상의 직접 검토 답변이 없어 적용 클럽 질문을 확인 필요로 유지합니다.</p><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(lesson.id)+'">정규 레슨과 전사 근거 보기 ›</a><h4>이번 레슨에서 추가로 확인할 것</h4><ul>'+(lesson.followUpQuestions||[]).map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></section>':'';
   }
   function render(source){
     const {rows,scope}=collect();let number=0;

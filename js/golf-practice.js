@@ -54,6 +54,10 @@ window.GolfPractice = (() => {
   function lessonHome(s,list){
     return lessonHero(list[0]);
   }
+  function leftArmGuide(l){
+    const g=l?.leftArmGuide;if(!g)return '';
+    return '<section class="g-left-arm-guide"><h3>'+esc(g.title)+'</h3>'+g.points.map((p,i)=>'<div><h4>'+esc((i+1)+'. '+p.label)+'</h4><p>'+esc(p.text)+'</p><p class="g-meta">녹취 '+esc(p.time)+'</p></div>').join('')+'<p class="g-meta">'+esc(g.caution)+'</p><p class="g-meta">'+esc(g.sourceNote)+'</p></section>';
+  }
   function lessonEvidence(l,s){
     return `${l.scope?`<p class="g-trust-note">${esc(l.scope)}</p>`:''}${l.sourceNote?`<details class="g-lesson-evidence"><summary>레슨 기록의 근거와 확인 범위</summary><p class="g-meta">${esc(l.sourceNote)}</p>${(l.evidence||[]).map(item=>`<p><b>${esc(item.time)}</b><br>${esc(item.text)}</p>`).join('')}</details>`:''}${l.sensationReviews?`<section class="g-section"><h2>이전 감각과 연결</h2>${Object.entries(l.sensationReviews).sort().map(([id,text])=>`<article class="g-question"><a href="#golf/notes/${id}">${notes[id]?.date||id} 감각 원문 ›</a><p>${esc(text)}</p></article>`).join('')}</section>`:''}`;
   }
@@ -68,5 +72,5 @@ window.GolfPractice = (() => {
     return `<section class="g-section"><h2>다음 레슨에 확인할 것</h2>${(l.followUpQuestions||[]).map(q=>`<div class="g-question"><p>${esc(q)}</p></div>`).join('')}<button type="button" class="g-btn" data-g="ask" data-kind="lessons" data-id="${esc(l.id)}">이 레슨에서 질문 남기기</button></section>`;
   }
 
-  return {timeline,questions,configure,notes,lessonHome,lessonEvidence,lessonBridge,lessonQuestions,practiceSource};
+  return {timeline,questions,configure,notes,lessonHome,leftArmGuide,lessonEvidence,lessonBridge,lessonQuestions,practiceSource};
 })();
