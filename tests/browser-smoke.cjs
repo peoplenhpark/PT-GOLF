@@ -141,11 +141,13 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.reload();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안');
   await page.locator('[data-g-form=video] button').click();assert.match(await page.locator('[data-draft-status]').first().textContent(),/저장/);
   assert.equal(await page.locator('.g-delete-video[data-id="5glZX2pq15o"]').count(),1,'video detail has one delete action');await page.locator('.g-delete-video[data-id="5glZX2pq15o"]').click();await page.locator('#confirm:not(.hidden)').waitFor();assert.equal(await page.locator('[data-g-form=video]').count(),1,'video remains visible until confirmation');
-  await page.locator('[data-act=confirm-yes]').click();await page.getByRole('heading',{name:'이 기기에서 삭제 요청한 영상입니다'}).waitFor();
-  const videoDeletion=await page.evaluate(()=>({queue:localStorage.getItem('ptgolf_deletion_requests_v1'),url:window.__openedDeletionUrls.at(-1)}));
-  assert(videoDeletion.queue.includes('5glZX2pq15o'));assert(!videoDeletion.queue.includes('골프 영상 초안'),'private video memo must not enter deletion queue');
-  {const issue=new URL(videoDeletion.url);assert.match(issue.searchParams.get('body'),/content-kind: video/);assert.match(issue.searchParams.get('body'),/content-id: 5glZX2pq15o/);assert(!issue.searchParams.get('body').includes('골프 영상 초안'));}
-  await page.locator('[data-g=restore-video]').first().click();await page.locator('[data-g-form=video]').waitFor();assert.equal(await page.locator('[data-g-form=video] textarea').inputValue(),'골프 영상 초안','restoring a video preserves its memo');
+  await page.locator('[data-act=confirm-yes]').click();
+  await page.goto(base+'#golf/videos/5glZX2pq15o');
+  await page.getByRole('heading',{name:'이 기기에서 삭제한 영상입니다'}).waitFor();
+  const removedVideo=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')));
+  assert(removedVideo.deletedVideoIds.includes('5glZX2pq15o'));
+  assert.equal(removedVideo.videoNotes['5glZX2pq15o'],undefined);
+  assert.equal(await page.locator('[data-g=restore-video]').count(),0);
   await page.goto(base+'#golf/notes');assert.equal(await page.locator('.g-note-summary').count(),4);await page.locator('[data-open]').first().click();await page.locator('.personal-note-label').waitFor();assert.match(await page.locator('.personal-note-label').textContent(),/개인 연습 감각/);
   for(const width of [320,390,768]){
    await page.setViewportSize({width,height:844});await page.goto(base+'#golf/videos');await page.locator('.g-video-grid').first().waitFor();

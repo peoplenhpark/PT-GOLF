@@ -49,14 +49,7 @@ window.CoachDesk = (() => {
   function searchRecords(query){const terms=String(query||'').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);if(!terms.length)return [];const s=handle.reload(),matches=text=>terms.every(t=>text.toLocaleLowerCase().includes(t));
     return [...(window.GolfQuestions?.search(query)||[]),...s.criteria.map(c=>({id:c.id,type:'criterion',title:c.title+(c.club?' · '+c.club:''),href:route(c.part,'standards',c.id),excerpt:[c.cue,c.check,c.setup,c.caution].join(' · '),matchedFields:['내 기준']})),...s.records.map(r=>({id:r.id,type:'practice',title:r.date+' · '+r.snapshot.title,href:route(r.part)+'?record='+encodeURIComponent(r.id),excerpt:[r.memo,r.question,r.answer,r.snapshot.cue].filter(Boolean).join(' · '),matchedFields:['결과·질문·답변']}))].filter(r=>matches(r.title+' '+r.excerpt));
   }
-  function tabs(part,tab){return '<nav class="coach-tabs" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part)+'" '+(tab==='now'?'aria-current="page"':'')+'>지금 할 것</a><a href="'+route(part,'standards')+'" '+(tab==='standards'?'aria-current="page"':'')+'>'+'보관 기록'+'</a><a href="'+route(part,'questions')+'" '+(tab==='questions'?'aria-current="page"':'')+'>질문</a></nav>';}
-  function sourceLink(c){const src=sources(c.part).find(s=>s.key===c.sourceKey);return src?'<a class="coach-source" href="'+esc(src.href)+'">'+esc(src.group)+' · '+esc(src.title)+' 보기 ›</a>':'<p class="coach-meta">원본이 현재 목록에서 숨겨져 있습니다. 개인 기준과 기록은 보존됩니다.</p>';}
-  function media(c){
-    if(c.part==='pt'){const id=c.sourceKey.slice(3),m=window.ExerciseMedia?.[id];if(!m||m.pending)return '';return '<div class="coach-mini-shots">'+(m.images||[]).slice(0,2).map((src,i)=>'<a href="#exercise/'+encodeURIComponent(id)+'"><img src="'+esc(src)+'" alt="'+esc(c.title)+' '+(i?'동작':'준비')+'" loading="lazy"><span>'+(i?'동작':'준비')+'</span></a>').join('')+'</div>';}
-    const v=window.GolfHub?.learningSources().videos.find(v=>v.id===c.referenceId);if(!v)return '';
-    return '<a class="coach-source" href="#golf/videos/'+encodeURIComponent(v.id)+'">대표 영상 · '+esc(v.title)+' ›</a>';
-  }
-  function recordHtml(r,answerable){if(r.topicId)return window.GolfQuestions.recordHtml(r,answerable);return '<article class="coach-record"><p class="coach-meta">'+esc(r.date)+' · '+esc(r.snapshot.title)+(r.snapshot.club?' · '+esc(r.snapshot.club):'')+'</p><strong>'+esc(r.result)+'</strong>'+(r.memo?'<p>'+esc(r.memo)+'</p>':'')+(r.question?'<p><b>질문</b> '+esc(r.question)+'</p>':'')+(r.answer?'<p><b>받은 답변</b> '+esc(r.answer)+'</p>':'')+'<details><summary>당시 기준 보기</summary><p>'+esc(r.snapshot.cue)+'</p><p>확인: '+esc(r.snapshot.check)+'</p></details>'+(answerable&&r.question?'<details class="coach-fold" '+(window.AppDrafts?.has('coach-answer-'+r.id)?'open':'')+'><summary>'+(r.answer?'답변 수정':'수업 답변 남기기')+'</summary><form data-coach-form="answer" data-record="'+esc(r.id)+'" data-draft-key="coach-answer-'+esc(r.id)+'"><label>받은 답변<textarea name="answer" required maxlength="2000">'+esc(r.answer)+'</textarea></label>'+(r.part==='pt'?'':'<label class="coach-checkbox"><input type="checkbox" name="apply">검토한 답변으로 내 기준의 ‘확인 방법’도 수정</label><p class="coach-meta">선택하면 연결된 기준의 확인 방법이 바뀝니다. 과거 기록은 그대로 유지합니다.</p>')+'<button class="btn" type="submit">답변 저장</button></form></details>':'')+'</article>';}
+  function tabs(part,tab){return '<nav class="coach-tabs" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part)+'" '+(tab==='now'?'aria-current="page"':'')+'>지금 할 것</a><a href="'+route(part,'questions')+'" '+(tab==='questions'?'aria-current="page"':'')+'>질문</a></nav>';}
   function recapLinks(part){
     return '<nav class="coach-recap-links" aria-label="'+(part==='pt'?'PT':'골프')+' 연습과 전체 자료">'+(part==='pt'?'<button type="button" data-coach-jump="personal">개인운동·루틴 ↓</button><a href="#pt?cat=all">전체 운동 ›</a>':'<button type="button" data-coach-jump="practice">스윙 구간 연습 ↓</button><a href="#golf/videos">레슨·영상·노트 ›</a>')+'</nav>';
   }
@@ -109,33 +102,24 @@ window.CoachDesk = (() => {
     const groups=api.personalGroups(),total=groups.reduce((n,g)=>n+g.exercises.length,0);
     return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>기본 20분 포함 · 운동일 70분 ›</span></a>';
   }
-  function ptSessionArchive(){return '<section class="coach-session-archive"><h3>PT 수업 기록</h3>'+Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date)).map(s=>'<details class="coach-fold"><summary>'+esc(s.date+' · '+s.title)+'</summary>'+s.items.map(i=>i.exerciseId&&Store.getById(i.exerciseId)?'<a class="coach-source" href="#exercise/'+encodeURIComponent(i.exerciseId)+'">'+esc(i.title)+' ›</a>':'<p>'+esc(i.title)+'</p>').join('')+sessionDetails(s)+'</details>').join('')+'</section>';}
-  function archive(part,criteria,records,s,selected){
-    return '<section class="'+part+'-archive"><h2>보관 기록</h2><p class="coach-meta">이전에 남긴 기준·결과·답변을 확인합니다.</p>'+
-      (criteria.length?'<h3>내 기준</h3>'+criteria.map(c=>'<details class="coach-fold" '+(c.id===selected?'open':'')+'><summary>'+esc(c.title)+(c.club?' · '+esc(c.club):'')+'</summary><p>'+esc(c.cue)+'</p><p>확인: '+esc(c.check)+'</p>'+(c.setup?'<p>'+esc(c.setup)+'</p>':'')+(c.caution?'<p>'+esc(c.caution)+'</p>':'')+sourceLink(c)+media(c)+(s.revisions.some(r=>r.snapshot.id===c.id)?'<details><summary>이전 기준</summary>'+s.revisions.filter(r=>r.snapshot.id===c.id).slice().reverse().map(r=>'<p>'+esc(r.at.slice(0,10))+' · '+esc(r.snapshot.cue)+'</p><p>'+esc(r.snapshot.check)+'</p>').join('')+'</details>':'')+'</details>').join(''):'')+
-      '<h3>결과·질문·답변</h3>'+(records.length?records.slice().reverse().map(r=>'<a class="coach-source" href="#'+part+'/now?record='+encodeURIComponent(r.id)+'">'+esc(r.date+' · '+r.snapshot.title)+' ›</a>').join(''):'<p class="coach-meta">보관된 결과 기록이 없습니다.</p>')+(part==='pt'?ptSessionArchive():'<a class="coach-source" href="#golf/lessons">레슨 기록·질문 보기 ›</a>')+'</section>';
-  }
   function render(v,config){
-    api=config;view=v;configure(config);const part=v.part,tab=v.coachTab||'now',s=handle.reload(),all=s.criteria.filter(c=>c.part===part),records=[...s.records.filter(r=>r.part===part),...(part==='golf'?window.GolfQuestions.records(s):[])].sort((a,b)=>a.created.localeCompare(b.created));
-    const compactNow=tab==='now'&&!v.coachRecord;
-    const archiveLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'questions')+'">질문</a><a href="'+route(part,'standards')+'">보관 기록</a></nav>';
+    api=config;view=v;configure(config);const part=v.part,tab=v.coachTab==='questions'?'questions':'now',s=handle.reload();
+    const compactNow=tab==='now';
+    const questionLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'questions')+'">질문</a></nav>';
     let body=compactNow?'':tabs(part,tab);
-    if(!handle.status().ok)body+='<p class="storage-warning" role="alert">보관 기록을 읽지 못했습니다. 기존 원본은 보존하고 저장을 멈췄습니다.</p>';
-    if(tab==='now'&&v.coachRecord){const r=records.find(r=>r.id===v.coachRecord);body+='<section class="coach-selected-record"><h2>기록과 질문</h2>'+(r?recordHtml(r,true):'<p>기록을 찾지 못했습니다.</p>')+'<a class="coach-source" href="'+route(part,'standards')+'">보관 기록으로 돌아가기 ›</a></section>';}else if(tab==='now'){
+    if(tab==='now'){
       if(part==='pt')body+=window.TrainingQuestions.entryLink()+recentPT();
       if(part==='golf'){
         const combined=combinedGolfReview(),newestFirst=!combined&&window.GolfHub.learningSources().lessons[0]?.id==='lesson_20261106_relax';
         body+=(combined||(newestFirst?recentGolf():window.GolfHub.personalPracticePin()))+window.GolfHub.ironRelaxPracticePin()+window.GolfHub.rightArmPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+(combined||newestFirst?window.GolfHub.pinnedSequence():recentGolf())+window.GolfQuestions.selector(s);
       }
       if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
-      if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a><a href="#golf/standards">보관 기록</a></nav>';
+      if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a></nav>';
       if(part==='pt')body+=personalPTLinks();
     }else if(tab==='questions'){
       body+=part==='pt'?window.TrainingQuestions.render(v.coachSource):window.TrainingQuestions.renderGolf();
-    }else{
-      body+=archive(part,all,records,s,v.coachId);
     }
-    api.app.innerHTML='<div class="scr coach-desk" data-part="'+part+'">'+(compactNow?'':'<a class="back" href="#home">‹ 홈</a>')+'<div class="hd'+(compactNow?' coach-compact-heading':'')+'"><h1>'+(part==='pt'?'PT':'골프')+'</h1>'+(compactNow?archiveLink:'')+'</div>'+body+'</div>'+api.tabbar(part);window.AppDrafts?.bind(api.app);
+    api.app.innerHTML='<div class="scr coach-desk" data-part="'+part+'">'+(compactNow?'':'<a class="back" href="#home">‹ 홈</a>')+'<div class="hd'+(compactNow?' coach-compact-heading':'')+'"><h1>'+(part==='pt'?'PT':'골프')+'</h1>'+(compactNow?questionLink:'')+'</div>'+body+'</div>'+api.tabbar(part);window.AppDrafts?.bind(api.app);
   }
   function configure(config){window.GolfQuestions?.bind(config);if(bound===config.app)return;bound=config.app;
     config.app.addEventListener('click',ev=>{

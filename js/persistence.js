@@ -14,6 +14,7 @@ window.Persistence = (() => {
   const SNAPSHOT = 'ptgolf_restore_snapshot_v1';
   const listeners = new Set();
   const handles = new Set();
+  let coachingRetired = false;
   const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
   const clone = value => value === undefined ? undefined : JSON.parse(JSON.stringify(value));
   function failure(code, message, key) {
@@ -56,7 +57,7 @@ window.Persistence = (() => {
       }
       return result;
     }
-    if (path === '/deleted' && [base, local, remote].every(value => Array.isArray(value) && value.every(item => typeof item === 'string'))) {
+    if (['/deleted', '/deletedVideoIds'].includes(path) && [base, local, remote].every(value => Array.isArray(value) && value.every(item => typeof item === 'string'))) {
       return [...new Set([...remote, ...local, ...base])].filter(id => merge(base.includes(id), local.includes(id), remote.includes(id), path + '/' + id));
     }
     if (keyed(local) && keyed(remote) && (keyed(base) || base === undefined)) {
@@ -83,6 +84,7 @@ window.Persistence = (() => {
     const valid = value => validate(value) && (!registered || registered(value));
     let state = clone(defaults()), raw = null, error = null;
     function decode(text) {
+      if (coachingRetired && key === KEYS.coaching) return clone(defaults());
       if (text === null) return validateValue(clone(defaults()), valid, key);
       let value; try { value = JSON.parse(text); } catch { throw failure('CORRUPT', '저장된 기록을 읽지 못했습니다. 원본을 보존하고 덮어쓰기를 중지했습니다.', key); }
       return validateValue(value, valid, key);
@@ -93,6 +95,7 @@ window.Persistence = (() => {
       return clone(state);
     }
     function commit(next) {
+      if (coachingRetired && key === KEYS.coaching) throw failure('RETIRED', '보관 기록 기능이 종료되었습니다.', key);
       assertReady(); if (error) throw error;
       validateValue(next, valid, key);
       const latestRaw = rawRead(key), latest = decode(latestRaw);
@@ -175,6 +178,7 @@ window.Persistence = (() => {
     (item.comfort===undefined || ['미확인','편안함','비슷함','힘이 들어감'].includes(item.comfort))));
   const validGolf = value => record(value) && validPractice(value.practice) && validPracticeRecords(value.practiceRecords) && ['lessons', 'questions', 'focus'].every(key => keyed(value[key])) &&
     value.lessons.every(item => typeof item.date === 'string' && stringLists(item, ['noteIds', 'videoIds', 'topics'])) &&
+    (value.deletedVideoIds === undefined || (Array.isArray(value.deletedVideoIds) && value.deletedVideoIds.every(id => typeof id === 'string'))) &&
     value.questions.every(item => stringFields(item, ['text', 'kind', 'sourceId', 'lessonId'])) &&
     value.focus.every(item => stringFields(item, ['text', 'noteId', 'kind', 'sourceId']) && (item.active === undefined || typeof item.active === 'boolean')) &&
     record(value.videoNotes) && Object.values(value.videoNotes).every(item => record(item) &&
@@ -226,7 +230,38 @@ window.Persistence = (() => {
   }
   function reloadHandles(keys) { handles.forEach(item => { if (keys.includes(item.key)) item.handle.reload(); }); }
   function applyRawStores(rawStores) {
-    for (const key of Object.values(KEYS)) if (Object.hasOwn(rawStores, key)) rawWrite(key, rawStores[key]);
+    for (const key of Object.values(KEYS)) {
+      if (!Object.hasOwn(rawStores, key)) continue;
+      if (coachingRetired && key === KEYS.coaching) {
+        rawWrite(key, null);
+        continue;
+      }
+      if (key === KEYS.golf) {
+        let current;
+        try { current = JSON.parse(rawRead(key) || 'null'); } catch { current = null; }
+        if (current?.deletedVideoIds?.length) {
+          const next = JSON.parse(rawStores[key] || 'null') || {lessons: [], questions: [], focus: [], videoNotes: {}};
+          next.deletedVideoIds = [...new Set([...(next.deletedVideoIds || []), ...current.deletedVideoIds])];
+          for (const id of next.deletedVideoIds) delete next.videoNotes[id];
+          rawWrite(key, JSON.stringify(next));
+          continue;
+        }
+      }
+      rawWrite(key, rawStores[key]);
+    }
+  }
+  function retireCoaching() {
+    coachingRetired = true;
+    rawWrite(KEYS.coaching, null);
+    for (const key of [JOURNAL, SNAPSHOT]) {
+      const raw = rawRead(key);
+      if (raw === null) continue;
+      const snapshot = JSON.parse(raw);
+      if (snapshot.before?.[KEYS.coaching] == null) continue;
+      snapshot.before[KEYS.coaching] = null;
+      rawWrite(key, JSON.stringify(snapshot));
+    }
+    reloadHandles([KEYS.coaching]);
   }
   function recoverRestore() {
     const text = rawRead(JOURNAL); if (text === null) return false;
@@ -259,8 +294,11 @@ window.Persistence = (() => {
     return { available, restorePending: pending, stores: [...handles].map(({ key, handle }) => ({ key, ...handle.status() })) };
   }
   if (typeof window.addEventListener === 'function') window.addEventListener('storage', event => {
+    if (coachingRetired && event.key === KEYS.coaching && event.newValue !== null) {
+      try { rawWrite(KEYS.coaching, null); } catch { /* The retired data remains inaccessible. */ }
+    }
     if (Object.values(KEYS).includes(event.key) || event.key === JOURNAL || event.key === null) emit({ key: event.key, external: true });
   });
-  return { KEYS, open, equal, validators, validTrainingContent, exportBackup, validateBackup, restoreBackup, recoverRestore, recoveryCopy, getStatus,
+  return { KEYS, open, equal, retireCoaching, validators, validTrainingContent, exportBackup, validateBackup, restoreBackup, recoverRestore, recoveryCopy, getStatus,
     subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); } };
 })();

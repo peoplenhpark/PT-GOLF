@@ -22,7 +22,8 @@ window.AppNavigation = (() => {
     const p = new URLSearchParams(query || '');
     let parts; try { parts=raw.slice(1).split('/').map(decodeURIComponent); } catch { return {name:'home'}; }
     const [a,b,c] = parts;
-    if(['pt','golf'].includes(a)&&['now','standards'].includes(b))return {name:'coach',part:a,coachTab:b,coachId:p.get('criterion'),coachSource:p.get('source'),coachRecord:p.get('record'),coachTopic:p.get('topic'),...(b==='now'&&p.get('start')==='recent'?{coachStart:'recent'}:{}),...(a==='golf'&&b==='now'&&['backswing','downswing','impact','follow-through'].includes(p.get('stage'))?{coachStage:p.get('stage')}:{})};
+    if(['pt','golf'].includes(a)&&b==='standards')return {name:'coach',part:a,coachTab:'now'};
+    if(['pt','golf'].includes(a)&&b==='now')return {name:'coach',part:a,coachTab:b,coachId:p.get('criterion'),coachSource:p.get('source'),coachRecord:p.get('record'),coachTopic:p.get('topic'),...(b==='now'&&p.get('start')==='recent'?{coachStart:'recent'}:{}),...(a==='golf'&&b==='now'&&['backswing','downswing','impact','follow-through'].includes(p.get('stage'))?{coachStage:p.get('stage')}:{})};
     if(['pt','golf'].includes(a)&&b==='questions')return {name:'coach',part:a,coachTab:'questions',coachSource:p.get('source')};
     if(a==='golf'&&!b)return {name:'coach',part:'golf',coachTab:'now'};
     if(a==='exercise' && b) return {name:'detail',id:b};

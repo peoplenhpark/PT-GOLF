@@ -14,7 +14,7 @@ window.GolfHub = (() => {
   } catch { state = empty(); loadError = true; }
   const e = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const uid = () => 'g_' + crypto.randomUUID();
-  const isVideoDeleted = id => !!Store.isDeleted?.('video',id);
+  const isVideoDeleted = id => (state.deletedVideoIds || []).includes(id) || !!Store.isDeleted?.('video',id);
   const videoNote = id => state.videoNotes[id] || {};
   const isArchived = id => videoNote(id).archived ?? (content.archivedVideoIds||[]).includes(id);
   const allVideos = () => content.videos.filter(v=>!isVideoDeleted(v.id));
@@ -106,7 +106,7 @@ window.GolfHub = (() => {
   function href(kind,id) { return kind === 'notes' ? '#exercise/' + encodeURIComponent(id) : '#golf/' + kind + '/' + encodeURIComponent(id); }
   const link = (kind,id,label) => `<a class="g-link" href="${href(kind,id)}">${e(label || sourceTitle(kind,id))} ›</a>`;
   const button = (action,label,attrs='') => `<button type="button" class="g-btn" data-g="${action}" ${attrs}>${e(label)}</button>`;
-  const deleteButton = v => `<button type="button" class="g-delete-video" data-g="delete-video" data-id="${e(v.id)}" aria-label="${e(v.title)} · 삭제 요청">삭제 요청</button>`;
+  const deleteButton = v => `<button type="button" class="g-delete-video" data-g="delete-video" data-id="${e(v.id)}" aria-label="${e(v.title)} · 삭제">삭제</button>`;
   const favoriteButton = v => {
     const favorite=!!videoNote(v.id).favorite;
     return `<button type="button" class="icon-btn fav ${favorite?'on':''}" data-g="favorite-video" data-id="${e(v.id)}" title="즐겨찾기" aria-label="${e(v.title)} · ${favorite?'즐겨찾기 해제':'즐겨찾기 추가'}" aria-pressed="${favorite}">${favorite?'★':'☆'}</button>`;
@@ -119,14 +119,14 @@ window.GolfHub = (() => {
   }
   function requestVideoDeletion(id) {
     const v=video(id); if(!v)return;
-    if(!api.confirmDeletion||!Store.requestDeletion){api.toast('삭제 요청 기능을 준비하지 못했습니다. 다시 불러온 뒤 시도해 주세요.');return;}
     const item={kind:'video',contentId:v.id,title:v.title};
     api.confirmDeletion(item,()=>{
-      let request;
-      try { request=Store.requestDeletion(item); }
-      catch(error){api.toast(error.message||'삭제 요청을 저장하지 못했습니다.');return;}
-      api.refresh();
-      api.openDeletionIssue?.(request);
+      if (!change(next => {
+        next.deletedVideoIds = [...new Set([...(next.deletedVideoIds || []), v.id])];
+        delete next.videoNotes[v.id];
+      })) return;
+      api.toast('이 기기에서 영상을 삭제했습니다.');
+      go('videos');
     });
   }
   const chips = ts => `<div class="g-tags">${ts.map(t=>`<a href="#golf/topic/${encodeURIComponent(t)}" class="g-topic">${e(t)}</a>`).join('')}</div>`;
@@ -335,11 +335,8 @@ window.GolfHub = (() => {
   }
   function savedQuestionsHtml() {
     const questions = allQuestions().slice().reverse();
-    const stored = window.CoachDesk?.read();
-    const older = [...(stored?.records || []).filter(r => r.part === 'golf'), ...(stored?.golfQuestions?.records || [])].filter(r => r.question);
-    const history = older.map(r => `<div class="g-question"><p>${e(r.question)}</p><a class="g-link" href="#golf/now?record=${encodeURIComponent(r.id)}">${r.answer?'답변 보기':'기록 보기'} ›</a></div>`).join('');
     return block('내 골프 질문', '<a class="g-link" href="#golf/question-edit">질문 남기기 ›</a>' +
-      (questionRows(questions) + history || '<p class="g-muted">저장한 질문이 여기에 표시됩니다.</p>'));
+      (questionRows(questions) || '<p class="g-muted">저장한 질문이 여기에 표시됩니다.</p>'));
   }
   function questionRows(list) {
     return list.map(q => `<div class="g-question"><p>${e(q.text)}</p><div class="g-meta">${q.sourceId&&source(q.kind,q.sourceId)?link(q.kind,q.sourceId,'질문 출처 보기'):''}${q.lessonId?link('lessons',q.lessonId,'답변 레슨'):''}</div>${q.lessonId?'':button('question-edit','질문 수정',`data-id="${e(q.id)}"`)}</div>`).join('');
@@ -352,7 +349,7 @@ window.GolfHub = (() => {
   }
   function tabs(selected) {
     const archive=current?.golfArchive==='only';
-    return `<nav class="coach-tabs" aria-label="골프 활용"><a href="#golf/now">지금 할 것</a><a href="#golf/standards">보관 기록</a></nav><nav class="g-tabs" aria-label="골프 자료">${[['lessons','레슨'],['notes','감각 노트'],['videos',archive?'보관영상':'영상']].map(([id,label]) => `<a href="${id==='videos'&&archive?'#golf/key-messages?golfArchive=only':'#golf/'+id}" ${selected===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
+    return `<nav class="coach-tabs" aria-label="골프 활용"><a href="#golf/now">지금 할 것</a></nav><nav class="g-tabs" aria-label="골프 자료">${[['lessons','레슨'],['notes','감각 노트'],['videos',archive?'보관영상':'영상']].map(([id,label]) => `<a href="${id==='videos'&&archive?'#golf/key-messages?golfArchive=only':'#golf/'+id}" ${selected===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
   }
   function layout(body, selected='videos') {
     api.app.innerHTML = `<div class="scr g-hub" data-part="golf">${current?.golfId?'<button class="back" data-nav="home">‹ 홈</button>':''}<div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${preserveClubLinks(body)}</div>${api.tabbar('golf')}`;
@@ -492,6 +489,7 @@ window.GolfHub = (() => {
   }
   function videoDetail(id) {
     const v=video(id);
+    if (!v && (state.deletedVideoIds || []).includes(id)) return layout('<h2>이 기기에서 삭제한 영상입니다</h2><a class="g-link" href="#golf/videos">영상 목록</a>','videos');
     if(!v) return layout(isVideoDeleted(id)?`<h2>이 기기에서 삭제 요청한 영상입니다</h2><p>메모는 보존되어 있습니다. 요청을 취소하면 이 기기에서 다시 볼 수 있습니다.</p><div class="g-actions">${button('restore-video','이 기기에 복원',`data-id="${e(id)}"`)}<a class="g-link" href="#golf/videos">영상 목록</a></div>${pendingDeletions()}`:'<p>찾을 수 없는 영상입니다.</p>','videos');
     id=v.id; // Resolve a source/alternate URL to the existing personal-record key.
     const n=state.videoNotes[id]||{};
@@ -653,6 +651,7 @@ window.GolfHub = (() => {
         return;
       }
       if(b.dataset.g==='restore-video') {
+        if ((state.deletedVideoIds || []).includes(id)) return;
         try { Store.restoreDeleted(id,'video'); api.toast('이 기기에 영상을 복원했습니다.'); api.refresh(); }
         catch(error){api.toast(error.message||'영상을 복원하지 못했습니다.');}
         return;

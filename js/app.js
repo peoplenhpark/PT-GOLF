@@ -131,6 +131,7 @@ const Theme = (() => {
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
+      <a class="tab global-questions" href="#${active==='pt'||active==='ht'?'pt':'golf'}/questions"><span class="ti" aria-hidden="true">❔</span>질문</a>
       ${active==='golf'?stageNav:`<details class="exercise-quicknav">
         <summary>부위별 운동 <span aria-hidden="true">⌃</span></summary>
         <div class="exercise-quickpanel" aria-label="전체 부위별 운동">${personalMenu}${exerciseGroups}</div>
@@ -176,6 +177,10 @@ const Theme = (() => {
   }
 
   function confirmDeletion(item, onConfirm) {
+    if (item.kind === 'video') {
+      askConfirm(`「${item.title}」을 이 기기에서 삭제할까요? 영상 메모와 즐겨찾기도 함께 삭제됩니다.`, onConfirm, '삭제');
+      return;
+    }
     const localOnly = item.source === 'local' || (item.kind === 'exercise' && item.contentId.startsWith('usr_'));
     const next = localOnly
       ? '이 기기에서 숨깁니다. 개인 추가 동작은 배포 원본에 없으므로 중앙 요청은 만들지 않습니다.'
@@ -485,7 +490,7 @@ const Theme = (() => {
       <div class="scr" data-part="${part}">
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
-        ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a><a href="#pt/standards">보관 기록</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
+        ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
         ${part==='ht'?htRoutineHtml()+'<h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 운동 모아보기</h2>':''}
         ${isPersonal ? `<a class="personal-all-link" href="#pt?cat=all">PT 전체 운동 ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
@@ -1125,6 +1130,7 @@ const Theme = (() => {
   function getSeg(id){return document.getElementById(id).value||'pt';}
 
   function golfConfig() { return { app, go, toast, exRow, tabbar, personalGroups, refresh: render, confirmDeletion, openDeletionIssue, issueUrl: DeletionFlow.issueUrl }; }
+  try{Persistence.retireCoaching();}catch(error){console.warn('보관 기록 정리 실패',error);}
   try{window.GolfHub?.configure(golfConfig());}catch(error){console.warn('골프 초기화 실패',error);}
   Store.init().then(()=>{
     Theme.init();view=navigation.read();

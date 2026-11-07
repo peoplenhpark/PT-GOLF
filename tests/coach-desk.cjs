@@ -14,5 +14,12 @@ const malformed=plain(backup);malformed.stores[key].records[0].snapshot.part='go
 const left=tab(),right=tab();left.CoachDesk.saveCriterion({...seed,cue:'별도 기준'});right.CoachDesk.saveRecord({id:'r2',part:'pt',criterionId:a.id,result:'도움 됨',memo:'다른 탭',question:''});assert.equal(JSON.parse(disk.get(key)).criteria.length,2);assert.equal(JSON.parse(disk.get(key)).records.length,2);
 const u=tab(),v=tab(),criterion=u.CoachDesk.read().criteria[0];u.CoachDesk.saveCriterion({...criterion,cue:'한 탭의 수정'});assert.throws(()=>v.CoachDesk.saveCriterion({...criterion,cue:'동시 수정'}),e=>e.code==='CONFLICT');
 disk.set(key,'invalid');const broken=tab();assert.throws(()=>broken.CoachDesk.saveCriterion(seed),e=>e.code==='CORRUPT');assert.equal(disk.get(key),'invalid');
-for(const p of ['pt','golf']){const view={name:'coach',part:p,coachTab:'standards',coachSource:'pt:a',coachId:null};assert.equal(t.AppNavigation.fromHash(t.AppNavigation.hashFor(view)).coachSource,'pt:a');}
+for(const p of ['pt','golf']){const view={name:'coach',part:p,coachTab:'standards',coachSource:'pt:a',coachId:null};assert.equal(t.AppNavigation.fromHash(t.AppNavigation.hashFor(view)).coachTab,'now');}
+disk.set(key,before);
+const retired=tab();
+retired.Persistence.retireCoaching();
+assert.equal(disk.has(key),false);
+retired.Persistence.restoreBackup(backup);
+assert.equal(disk.has(key),false);
+assert.throws(()=>retired.CoachDesk.saveCriterion(seed),e=>e.code==='RETIRED');
 console.log('PASS: compact criteria, immutable result snapshots, answer revisions, duplicate-submit protection, failure/corruption safety, multi-tab merges/conflicts, legacy backup preservation and route round trips.');

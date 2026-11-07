@@ -5,9 +5,6 @@ module.exports=async(browser,base)=>{
   await p.goto(base+'#golf/now');await p.locator('.gq-reference').waitFor();
   const original=await p.evaluate(()=>({lesson:document.querySelector('.coach-recent-golf').textContent,pin:document.querySelector('.g-daily-pin').textContent,stages:document.querySelector('.g-stage-practice').textContent}));
   const saved=await p.evaluate(()=>{
-   const cr=CoachDesk.saveCriterion({part:'golf',sourceKey:'note:golf_iron7',title:'내 옛 아이언 기준',club:'7번 아이언',cue:'보존할 기준',check:'타점 비교',setup:'준비 기록',caution:'주의 기록',referenceId:'2tam4sbJQtM',confirmed:true});
-   CoachDesk.saveRecord({id:'old-coach',part:'golf',criterionId:cr.id,result:'판단 어려움',memo:'보존할 과거 결과',question:'과거 기준 질문'});
-   GolfQuestions.choose('start');GolfQuestions.save({id:'old-gq',topicId:'impact',club:'P 아이언',comfort:'편했음',consistency:'들쭉날쭉했음',memo:'보존할 질문별 결과',question:'과거 임팩트 질문'});
    Persistence.open(Persistence.KEYS.golf,{defaults:()=>({lessons:[],questions:[],focus:[],videoNotes:{}})}).update(s=>{s.lessons||=[];s.questions||=[];s.focus||=[];s.videoNotes||={};s.practice={sourceKind:'sensation',selected:'1001',club:'7번 아이언'};s.questions.push({id:'old-question',kind:'lessons',sourceId:'lesson_20261005_first',text:'보존할 원본 질문',created:'2026-10-05T01:00:00Z'});s.practiceRecords=[{id:'old-five',date:'2026-10-05',created:'2026-10-05T01:00:00Z',club:'7번 아이언',method:'cue',cueId:'1001',cueDate:'10/1',cueText:'밟고, 버티고, 톡',contact:3,direction:4,distance:'대체로 적정',feel:'비슷함',measure:'타감으로 판단'}];s.videoNotes['2tam4sbJQtM']={memo:'보존할 영상 메모',favorite:true};});
    Persistence.open(Persistence.KEYS.drafts).update(s=>{s['gq-result-start||memo']={value:'기존 입력 초안',updated:new Date().toISOString()};});
    return Object.fromEntries([Persistence.KEYS.coaching,Persistence.KEYS.golf,Persistence.KEYS.drafts].map(k=>[k,localStorage.getItem(k)]));
@@ -21,10 +18,8 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.g-stage-practice ol li:visible').count(),12);assert.equal(await p.locator('.g-stage-practice ul li:visible').count(),12);
   for(const stage of ['backswing','downswing','impact','follow-through']){await p.locator('[aria-controls="g-stage-'+stage+'"]').click();assert(await p.locator('#g-stage-'+stage).evaluate(e=>e===document.activeElement));assert.equal(await p.locator('#g-stage-'+stage+' .g-stage-videos').getAttribute('href'),'#golf/group/'+stage);}
   for(const route of ['standards','today','now?topic=start','videos/2tam4sbJQtM']){await p.goto(base+'#golf/'+route);await p.locator('.coach-desk,.g-hub').first().waitFor();assert.equal(await p.locator('[data-coach-form=criterion],[data-g-form=practice],[data-gq-form=result]').count(),0);}
-  await p.goto(base+'#golf/standards');await p.locator('.golf-archive .coach-fold>summary').first().click();assert.match(await p.locator('.golf-archive').innerText(),/보존할 기준/);assert.equal(await p.locator('.golf-archive [data-coach-use]').count(),0);
-  await p.locator('a[href="#golf/now?record=old-coach"]').click();await p.locator('.coach-selected-record').waitFor();assert.match(await p.locator('.coach-selected-record').innerText(),/보존할 과거 결과/);
+  await p.goto(base+'#golf/standards');await p.locator('.gq-reference').waitFor();assert.equal(await p.locator('.golf-archive').count(),0);
   await p.goto(base+'#golf/today');await p.locator('.gq-reference').waitFor();assert.match(p.url(),/#golf\/now/);
-  await p.goto(base+'#search?q='+encodeURIComponent('보존할 질문별 결과'));await p.locator('.search-result').filter({hasText:'보존할 질문별 결과'}).click();await p.locator('.coach-selected-record').waitFor();assert.match(await p.locator('.coach-selected-record').innerText(),/과거 임팩트 질문/);
   assert.deepEqual(await p.evaluate(keys=>Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)])),Object.keys(saved)),saved,'viewing new UI must not rewrite saved criteria, results, focus, drafts or video notes');
   const backup=await p.evaluate(()=>Persistence.exportBackup());assert.equal(backup.stores.ptgolf_learning_v1.practiceRecords,undefined);await p.evaluate(b=>Persistence.restoreBackup(b),backup);
   assert.deepEqual(await p.evaluate(keys=>Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)])),Object.keys(saved)),saved);
@@ -38,7 +33,6 @@ module.exports=async(browser,base)=>{
   await p.goto(base+'#golf/now');await p.locator('.g-question-shortcut summary').click();assert.match(await p.locator('.g-question-shortcut').innerText(),/작은 피니시/);
   assert.equal(await p.evaluate(()=>localStorage.getItem(Persistence.KEYS.coaching)),saved.ptgolf_coaching_v1);
   // Past answers remain editable and searchable even though daily entry is gone.
-  await p.goto(base+'#golf/now?record=old-gq');await p.locator('.coach-selected-record summary').filter({hasText:'수업 답변 남기기'}).click();const answer=p.locator('[data-gq-form=answer]');await answer.locator('textarea').fill('받은 답변 보존');await answer.locator('button').click();await p.goto(base+'#golf/now?record=old-gq');await p.locator('.coach-selected-record').waitFor();assert.match(await p.locator('.coach-selected-record').innerText(),/받은 답변 보존/);
   for(const route of ['now','standards','today'])for(const theme of ['light','dark'])for(const width of [320,390,768]){await p.goto(base+'#golf/'+route);await p.locator('.coach-tabs').waitFor();await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await p.goto(base+'#golf/now');await p.waitForFunction(()=>!!navigator.serviceWorker.controller);await c.setOffline(true);await p.reload();await p.locator('.gq-reference').waitFor();assert.equal(await p.locator('[data-gq-focus]').count(),0);await c.setOffline(false);
   const failed=await browser.newContext({serviceWorkers:'block'}),fp=await failed.newPage();
