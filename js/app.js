@@ -468,7 +468,13 @@ const Theme = (() => {
     const chips = personalChip + `<button class="chip ${activeCat === 'all' ? 'on' : ''}" data-cat="all">전체 ${list.length}</button>` + cats.map(c =>
       `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c).split(' · ').join('<br>')}</button>`).join('');
 
-    const inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
+    let inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
+    if (part === 'pt' && !isPersonal && activeCat !== 'all') {
+      const categoryIds = new Set(inCat.map(exercise => exercise.id));
+      const selected = personal.flatMap(group => group.exercises).filter(exercise => categoryIds.has(exercise.id));
+      const selectedIds = new Set(selected.map(exercise => exercise.id));
+      inCat = [...selected, ...inCat.filter(exercise => !selectedIds.has(exercise.id))];
+    }
     const rows = isPersonal
       ? `<section class="personal-exercises"><h2>내 개인운동</h2><p class="personal-plan-note">지정한 종목 모음 · <a href="#ht">주 4회 HT 루틴 보기 ›</a></p><div class="chips"><button class="chip ${activeCat === 'personal' ? 'on' : ''}" data-cat="personal">전체 ${personalCount}</button>${personal.map(g=>`<button class="chip ${activeCat === 'personal:'+g.key ? 'on' : ''}" data-cat="personal:${g.key}">${g.label} ${g.exercises.length}</button>`).join('')}</div>${personal.filter(g=>activeCat==='personal'||activeCat==='personal:'+g.key).map(g=>`<section class="personal-exercise-group"><h3>${g.label} <small>${g.exercises.length}</small></h3>${g.exercises.length ? `<div class="pt-exercise-grid">${g.exercises.map((e,i)=>exRow(e,i)).join('')}</div>` : '<p class="personal-plan-note">현재 표시할 지정 종목이 없습니다. 전체 운동에서 다른 종목을 찾아보세요.</p>'}</section>`).join('')}</section>`
       : inCat.length
