@@ -44,6 +44,22 @@ window.GolfContent = {
       "팔·타이밍"
     ]
   },
+  "starterQuestions": [
+    {
+      "id": "g_seed_driver_hip",
+      "kind": "general",
+      "sourceId": "",
+      "text": "드라이버는 왼쪽 골반을 먼저 잡아 놓고 다운스윙을 시작하나요?",
+      "created": "2026-11-07T00:00:00+09:00"
+    },
+    {
+      "id": "g_seed_iron_release",
+      "kind": "general",
+      "sourceId": "",
+      "text": "아이언도 다운스윙 시작 후 어깨와 허리 사이 높이에서 채를 뿌려 주는 게 맞나요?",
+      "created": "2026-11-07T00:00:00+09:00"
+    }
+  ],
   "lessons": [
     {
       "id": "lesson_20261106_relax",

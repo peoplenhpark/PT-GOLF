@@ -123,7 +123,7 @@ const Theme = (() => {
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
     const fieldActive=view.golfTab==='field'||view.golfGroup==='field'||window.GolfContent?.videoGroups.find(g=>g.id==='field')?.videoIds.includes(view.golfId);
-    const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간·실전·영상 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}<a href="#golf/field" ${fieldActive?'aria-current="page"':''}>실전</a><a href="#golf/key-messages" title="분류별 영상 제목·핵심 메시지" ${view.golfTab==='key-messages'?'aria-current="page"':''}>영상</a></div>`;
+    const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간·실전·영상 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}<a href="#golf/field" ${fieldActive?'aria-current="page"':''}>실전</a><a href="#golf/key-messages" title="분류별 영상 제목·핵심 메시지" ${view.golfTab==='key-messages'?'aria-current="page"':''}>영상</a><a href="#golf/question-edit" aria-label="골프 질문 남기기">질문+</a></div>`;
     return `<nav class="tabbar ${active==='golf'?'tabbar-golf':''}">
       ${t('home', '🏠', '홈')}
       ${t('pt', '🏋️', 'PT')}
