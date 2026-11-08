@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 191,
-  "scope": "191 active video records, current sources and key messages match the app.",
+  "count": 193,
+  "scope": "193 active video records, current sources and key messages match the app.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -2395,6 +2395,34 @@
         11,
         13,
         15
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "o-CKjTv5u2c",
+      "source": "https://www.youtube.com/watch?v=o-CKjTv5u2c",
+      "channel": "이용성프로 [스윙레시피]",
+      "message": "왼발을 디디며 몸의 힘을 짧게 쓰고, 부드러운 팔로 헤드를 통과시킵니다.",
+      "basis": "원본 자막 및 드릴 화면 확인",
+      "evidenceKind": "observation",
+      "duration": 861,
+      "sampleTimes": [
+        178,
+        667
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "H812yJ69XOA",
+      "source": "https://www.youtube.com/watch?v=H812yJ69XOA",
+      "channel": "잭팟골프",
+      "message": "왼손 하프스윙으로 왼팔 힘을 풀고, 헤드가 무게로 떨어졌다 돌아 올라오는 감각을 익힙니다.",
+      "basis": "원본 자막 및 드릴 화면 확인 · 아이언 적용은 사용자 지정",
+      "evidenceKind": "observation",
+      "duration": 49,
+      "sampleTimes": [
+        37,
+        43
       ],
       "reviewedAt": "2026-11-08"
     }

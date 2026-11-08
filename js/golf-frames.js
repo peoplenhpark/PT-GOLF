@@ -3055,5 +3055,37 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "o-CKjTv5u2c": [
+    {
+      "src": "media/golf-frames/o-CKjTv5u2c-1.webp",
+      "time": 178,
+      "label": "힘의 압축 · 왼발 디디기 드릴",
+      "width": 240,
+      "height": 134
+    },
+    {
+      "src": "media/golf-frames/o-CKjTv5u2c-2.webp",
+      "time": 667,
+      "label": "힘 빼기 · 팔꿈치 접고 펴기",
+      "width": 240,
+      "height": 134
+    }
+  ],
+  "H812yJ69XOA": [
+    {
+      "src": "media/golf-frames/H812yJ69XOA-1.webp",
+      "time": 37,
+      "label": "왼손 하프스윙 · 작은 스윙 범위",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/H812yJ69XOA-2.webp",
+      "time": 43,
+      "label": "왼팔 힘 풀기 · 헤드 무게 느끼기",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

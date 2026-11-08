@@ -9006,6 +9006,105 @@ window.GolfContent = {
       "addedAt": "2026-11-08T07:37:03.189262+00:00",
       "publishedAt": "2026-11-05T00:00:00Z",
       "question": "제 드라이버에서 둘에 해당하는 구간을 지나며 전환을 서두르는지 봐주세요."
+    },
+    {
+      "id": "o-CKjTv5u2c",
+      "title": "드라이버 클럽 스피드 훈련 · 힘의 압축과 힘 빼기",
+      "originalTitle": "힘 빼고 가볍게 휘둘렀는데 볼스피드 70m/s가 찍히는 비결은 바로 이겁니다",
+      "channel": "이용성프로 [스윙레시피]",
+      "duration": "14:21",
+      "durationSeconds": 861,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "왼발을 디디며 몸의 힘을 짧게 쓰고, 부드러운 팔로 헤드를 통과시킵니다.",
+      "points": [
+        "클럽을 어깨에 가로로 대고 백스윙한 뒤 왼발을 디디며 하체부터 전환합니다.",
+        "백스윙에서 팔과 손목을 부드럽게 두고 클럽이 따라 올라오게 합니다.",
+        "팔꿈치를 몸 가까이에 둔 작은 빈스윙에서 헤드가 떨어졌다 다시 올라오는 느낌을 확인합니다."
+      ],
+      "moments": [
+        {
+          "s": 60,
+          "label": "힘의 압축 설명"
+        },
+        {
+          "s": 170,
+          "label": "왼발 디디기 드릴"
+        },
+        {
+          "s": 516,
+          "label": "힘 빼기 설명"
+        },
+        {
+          "s": 654,
+          "label": "팔꿈치 힘 빼기 드릴"
+        }
+      ],
+      "question": "왼발을 디딘 뒤 팔과 헤드가 자연스럽게 따라오는가?",
+      "observationPractice": {
+        "action": "왼발 디디기와 작은 팔꿈치 빈스윙을 각각 해본 뒤 두 동작을 이어봅니다.",
+        "feel": "왼발을 디딘 뒤 헤드가 뒤따라 통과하는 느낌을 살핍니다."
+      },
+      "practiceCaution": "영상의 45도는 몸의 힘을 짧게 쓰는 설명입니다. 각도를 맞추려 몸의 회전을 끊지 않습니다.",
+      "evidence": "원본 자막 및 드릴 화면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-11-07",
+      "chapters": [
+        {
+          "title": "힘의 압축",
+          "start": 60,
+          "summary": "클럽을 어깨에 가로로 대고 백스윙합니다. 왼발 뒤꿈치가 살짝 들렸다가 지면을 디디면 하체가 전환을 시작하고 팔과 헤드가 따라옵니다. 몸의 힘을 짧고 빠르게 쓰는 감각을 확인합니다."
+        },
+        {
+          "title": "힘 빼는 방법",
+          "start": 516,
+          "summary": "백스윙에서 클럽을 들어 올려 붙잡는 힘을 줄입니다. 팔꿈치를 몸 가까이에 둔 작은 빈스윙에서 팔꿈치를 부드럽게 접고 펴며 헤드가 떨어졌다 다시 올라오는 느낌을 익힙니다."
+        }
+      ]
+    },
+    {
+      "id": "H812yJ69XOA",
+      "title": "아이언 힘 빼기 · 왼손 하프스윙",
+      "originalTitle": "힘빼는 연습 드릴!!! 왼손스윙 #골프레슨 #힘빼기 #힘조절",
+      "channel": "잭팟골프",
+      "duration": "0:49",
+      "durationSeconds": 49,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "왼손 하프스윙으로 왼팔 힘을 풀고, 헤드가 무게로 떨어졌다 돌아 올라오는 감각을 익힙니다.",
+      "points": [
+        "왼손만으로 하프스윙 크기의 빈스윙을 좌우로 반복합니다.",
+        "헤드를 억지로 내리지 않고 무게로 툭 떨어지는 느낌을 살핍니다.",
+        "임팩트 구간에서 왼팔을 펴서 밀려는 힘을 줄이고 헤드가 반대편으로 돌아 올라오게 둡니다."
+      ],
+      "moments": [
+        {
+          "s": 15,
+          "label": "헤드 무게 설명"
+        },
+        {
+          "s": 37,
+          "label": "왼손 하프스윙 시범"
+        },
+        {
+          "s": 43,
+          "label": "왼팔 힘 풀기"
+        }
+      ],
+      "question": "공을 맞히는 구간에서 왼팔로 밀지 않아도 헤드가 통과하는가?",
+      "observationPractice": {
+        "action": "공 없이 왼손만으로 작은 하프스윙을 좌우로 반복합니다.",
+        "feel": "왼팔 긴장이 줄고 헤드가 무게로 떨어졌다 반대편으로 돌아 올라오는지 느낍니다."
+      },
+      "practiceCaution": "작은 빈스윙으로 시작하고 왼팔을 억지로 펴서 공을 밀지 않습니다.",
+      "evidence": "원본 자막 및 드릴 화면 확인 · 아이언 적용은 사용자 지정",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2025-08-21"
     }
   ],
   "practicePin": {
@@ -9399,7 +9498,8 @@ window.GolfContent.videoGroups = [
       "1nZ4kVoY6vw",
       "Hlo7tykj3Ms",
       "iD8o1vJSal4",
-      "tHJTXiEVpzM"
+      "tHJTXiEVpzM",
+      "o-CKjTv5u2c"
     ],
     "practice": {
       "cue": "내려올 여유는 주되, 일부러 멈추지는 않습니다.",
@@ -9545,7 +9645,8 @@ window.GolfContent.videoGroups = [
       "W__zH8-7nxc",
       "z3vEI5aGz88",
       "UPurwAXyMLw",
-      "HZpD_-B0_0c"
+      "HZpD_-B0_0c",
+      "H812yJ69XOA"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -11100,6 +11201,18 @@ window.GolfContent.clubReviews = {
     "reason": "원본 제목과 시범에서 드라이버를 명시합니다.",
     "reviewedAt": "2026-11-05",
     "basis": "원본 12개 표본 화면과 전체 음성 자동 전사 대조."
+  },
+  "o-CKjTv5u2c": {
+    "value": "driver",
+    "reason": "드라이버 스피드 훈련을 설명하고 시범을 보입니다.",
+    "reviewedAt": "2026-11-08",
+    "basis": "원본 자막 및 드릴 화면 확인"
+  },
+  "H812yJ69XOA": {
+    "value": "iron",
+    "reason": "사용자가 아이언 힘 빼기 연습으로 지정한 왼손 하프스윙입니다.",
+    "reviewedAt": "2026-11-08",
+    "basis": "원본 자막 및 드릴 화면 확인 · 아이언 적용은 사용자 지정"
   }
 };
 window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value:"unknown",reason:"클럽 적용 범위를 확인한 근거가 아직 없습니다. 시범 클럽이나 제목만으로 공통 적용을 추정하지 않습니다."};
@@ -11895,6 +12008,14 @@ window.GolfContent.keyMessages = {
     "text": "다운스윙 때 몸 가까이 온 클럽이 임팩트를 지나며 몸에서 멀어지는 흐름을 비교한다.",
     "kind": "explanation",
     "reviewedAt": "2026-11-05"
+  },
+  "o-CKjTv5u2c": {
+    "text": "왼발을 디디며 몸의 힘을 짧게 쓰고, 부드러운 팔로 헤드를 통과시킵니다.",
+    "kind": "observation"
+  },
+  "H812yJ69XOA": {
+    "text": "왼손 하프스윙으로 왼팔 힘을 풀고, 헤드가 무게로 떨어졌다 돌아 올라오는 감각을 익힙니다.",
+    "kind": "observation"
   }
 };
 
