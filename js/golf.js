@@ -227,23 +227,30 @@ window.GolfHub = (() => {
     const shared=g.id==='common'?librarySections.filter(s=>(v.sharedSections||[]).includes(s.id)):[];
     return `<p class="g-placement"><a href="${groupHref(g.id)}">${e(s?s.title+' / '+g.title:g.title)}</a>${clubBadge(v)}${metadata?'<span>주제는 제목 기준 임시 분류</span>':''}</p>${compact?'':`<p class="g-club-note">적용 근거 · ${e(club.reason)}</p>`}${shared.length?`<nav class="g-related-groups" aria-label="이 여러 구간 영상의 관련 구간">${shared.map(s=>`<a href="${groupHref(s.id)}">${e(s.title)} ↗</a>`).join('')}</nav>`:''}${v.classificationReview?.status==='user-decision'?`<p class="g-review-memo"><b>검토 완료 · 사용자 판단 대기</b> ${e(compact?(v.classificationReview.shortReason||v.classificationReview.reason):v.classificationReview.reason)}</p>`:''}`;
   }
+  const leftArmSteps=[
+    {id:'H812yJ69XOA',title:'왼손 하프스윙',check:'왼팔로 밀지 않아도 헤드가 무게로 툭 내려오는지.'},
+    {id:'gWcMsUxtyFU',title:'양손 L-to-L 하프스윙',check:'오른손을 다시 얹어도 왼팔이 굳지 않고 헤드가 지나가는지.'},
+    {id:'o-CKjTv5u2c',title:'드라이버에 연결',check:'작은 빈스윙에서 팔꿈치가 부드럽게 접히고 펴지는지.'}
+  ];
+  function leftArmFocusCards(items) {
+    return leftArmSteps.map((step,index)=>{
+      const v=items.find(item=>item.id===step.id);
+      if(!v)return '';
+      const chapter=v.chapters?.find(chapter=>chapter.title==='힘 빼는 방법');
+      const playback=chapter?` <a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${chapter.start}s" target="_blank" rel="noopener noreferrer">8:36 힘 빼기부터 보기 ↗</a>`:'';
+      return `<div><h3>${index+1}. ${e(step.title)}</h3><p class="g-meta"><strong>확인</strong> · ${e(step.check)}</p>${playback}${compactCard(v)}</div>`;
+    }).join('');
+  }
+  function leftArmFocusNow() {
+    const cards=leftArmFocusCards(videos());
+    return cards?block(leftArmFocusTitle,`<p class="g-meta">공 없이 왼손 → 양손 → 드라이버 순서로 작게 휘둘러 보세요.</p><div class="g-video-grid">${cards}</div>${leftArmFocusLink()}`):'';
+  }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
     if(selected==='left-arm-relax'){
       const items=collection.map(id=>list.find(v=>v.id===id)).filter(Boolean);
-      const steps=[
-        {id:'H812yJ69XOA',title:'왼손 하프스윙',check:'왼팔로 밀지 않아도 헤드가 무게로 툭 내려오는지.'},
-        {id:'gWcMsUxtyFU',title:'양손 L-to-L 하프스윙',check:'오른손을 다시 얹어도 왼팔이 굳지 않고 헤드가 지나가는지.'},
-        {id:'o-CKjTv5u2c',title:'드라이버에 연결',check:'작은 빈스윙에서 팔꿈치가 부드럽게 접히고 펴지는지.'}
-      ];
-      const featured=steps.map((step,index)=>{
-        const v=items.find(item=>item.id===step.id);
-        if(!v)return '';
-        const chapter=v.chapters?.find(chapter=>chapter.title==='힘 빼는 방법');
-        const playback=chapter?` <a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${chapter.start}s" target="_blank" rel="noopener noreferrer">8:36 힘 빼기부터 보기 ↗</a>`:'';
-        return `<div><h3>${index+1}. ${e(step.title)}</h3><p class="g-meta"><strong>확인</strong> · ${e(step.check)}</p>${playback}${compactCard(v)}</div>`;
-      }).join('');
-      const rest=items.filter(v=>!steps.some(step=>step.id===v.id));
+      const featured=leftArmFocusCards(items);
+      const rest=items.filter(v=>!leftArmSteps.some(step=>step.id===v.id));
       return `<section class="g-video-section" aria-labelledby="g-left-arm-title"><header><h2 id="g-left-arm-title">${leftArmFocusTitle} <span>임시 특별 모음 · ${items.length}편</span></h2></header>${featured?`<h3>지금 먼저 볼 영상</h3><p class="g-meta">공 없이 왼손 → 양손 → 드라이버 순서로 작게 휘둘러 보세요.</p><div class="g-video-grid">${featured}</div>`:''}${rest.length?`<details class="g-supplement"${featured?'':' open'}><summary>참고 영상 ${rest.length}편 펼치기</summary><div class="g-video-grid">${rest.map(compactCard).join('')}</div></details>`:''}${items.length?'':'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>'}</section>`;
     }
     const shared=sectionFor(selected)?list.filter(v=>content.videoGroupFor(v)?.id==='common'&&[...(v.sharedSections||[]),...(v.sharedGroups||[])].includes(selected)):[];
@@ -768,5 +775,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,leftArmFocusLink,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,leftArmFocusNow,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();
