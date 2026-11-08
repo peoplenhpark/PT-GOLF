@@ -8892,6 +8892,120 @@ window.GolfContent = {
       "practiceCaution": "영상의 ‘멈춤’은 릴리스를 설명하는 감각입니다. 몸을 급정지하거나 채를 놓는 동작으로 따라 하지 않습니다.",
       "addedAt": "2026-11-05T03:31:47.083633+00:00",
       "publishedAt": "2026-10-13T02:30:15+00:00"
+    },
+    {
+      "id": "NRnKLEgrhJo",
+      "title": "드라이버 원포인트 · 손 하강과 어깨의 움직임",
+      "originalTitle": "손 떨어뜨리라는 말 코치한테 물어봤다 #golf #골프 #golftips",
+      "channel": "공맞는순간",
+      "duration": "0:17",
+      "durationSeconds": 17,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "팔만 아래로 떨어뜨리는 예에 X를 표시하고, 왼팔 움직임을 시범 보이며 어깨를 열지 말라는 화면 자막을 제시합니다.",
+      "points": [
+        "팔만 아래로 떨어뜨리는 예에 X를 표시하고, 왼팔 움직임을 시범 보이며 어깨를 열지 말라는 화면 자막을 제시합니다.",
+        "내려오며 어깨가 먼저 열리는지 확인합니다.",
+        "어깨를 고정하는 처방이나 정확한 릴리스 높이로 확대하지 않습니다. 사용자에게 맞는 감각 후보입니다."
+      ],
+      "moments": [
+        {
+          "s": 5,
+          "label": "팔만 떨어뜨리는 동작의 비교"
+        },
+        {
+          "s": 11,
+          "label": "어깨를 열지 않는다는 화면 안내"
+        }
+      ],
+      "observationPractice": {
+        "action": "빈스윙에서 팔을 아래로 억지로 당기는 느낌과 영상의 시범을 비교합니다.",
+        "feel": "내려오며 어깨가 먼저 열리는지 확인합니다."
+      },
+      "practiceCaution": "어깨를 고정하는 처방이나 정확한 릴리스 높이로 확대하지 않습니다. 사용자에게 맞는 감각 후보입니다.",
+      "evidence": "2026-11-08 · 원본 표본 화면과 화면 자막 · 음성 자동 자막 요청 제한",
+      "addedAt": "2026-11-08T07:40:26.217322+00:00",
+      "publishedAt": "2026-11-04T00:00:00Z",
+      "question": "제 드라이버에서 어깨가 먼저 열리는지, 손을 억지로 내리지 않고 하강을 연결하려면 무엇을 확인하면 될까요?"
+    },
+    {
+      "id": "Brf6plIsBW8",
+      "title": "백스윙 탑에서 전환하는 시범",
+      "originalTitle": "백스윙을하면 반드시 멈추었다가친다 #RG 스윙",
+      "channel": " RG스윙",
+      "duration": "0:05",
+      "durationSeconds": 5,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "탑에서 급히 내려오지 않는 전환을 관찰합니다.",
+      "points": [
+        "탑에서 급히 내려오지 않는 전환을 관찰합니다.",
+        "탑 부근의 여유와 이어지는 하강을 봅니다.",
+        "제목은 멈춤을 강조합니다. 정지 시간은 표본에서 확인되지 않으며 실제 샷에서 멈추려고 몸을 굳히지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 1.1,
+          "label": "백스윙 탑 부근"
+        },
+        {
+          "s": 1.35,
+          "label": "다운스윙으로 전환"
+        }
+      ],
+      "observationPractice": {
+        "action": "탑 부근에서 다운스윙으로 이어지는 흐름을 봅니다.",
+        "feel": "탑 부근의 여유와 이어지는 하강을 봅니다."
+      },
+      "practiceCaution": "제목은 멈춤을 강조합니다. 정지 시간은 표본에서 확인되지 않으며 실제 샷에서 멈추려고 몸을 굳히지 않습니다.",
+      "evidence": "2026-11-08 · 원본 표본 화면과 한국어 자동 자막",
+      "addedAt": "2026-11-08T07:40:25.828074+00:00",
+      "publishedAt": "2026-11-05T00:00:00Z",
+      "question": "제 백스윙에서 서두르는지, 몸을 굳히지 않고 탑에서 하강으로 잇는 감각은 어떤지 봐주세요."
+    },
+    {
+      "id": "ap6K-ftKPQs",
+      "title": "드라이버 실전 · 하나, 둘, 임팩트",
+      "originalTitle": "리듬만 따라해도 성공한다",
+      "channel": "골프매니아",
+      "duration": "0:10",
+      "durationSeconds": 10,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍",
+        "회전·순서"
+      ],
+      "summary": "아마추어의 다섯 카운트와 프로의 “하나, 둘, 임팩트”를 드라이버 시범으로 비교합니다. 샷 전에 급하게 전환하는지 점검하는 짧은 리듬 리허설입니다.",
+      "points": [
+        "3.1초부터 아마추어 비교 시범에 다섯 카운트를 붙입니다.",
+        "6.8초부터 프로 비교 시범은 “하나, 둘, 임팩트”로 이어집니다.",
+        "둘에서 탑 부근을 지나며 급히 내려치지 않는 느낌을 참고합니다."
+      ],
+      "moments": [
+        {
+          "s": 4.2,
+          "label": "아마추어 비교 · 백스윙에서 전환"
+        },
+        {
+          "s": 7.4,
+          "label": "프로 비교 · 둘 카운트에서 탑 부근"
+        }
+      ],
+      "evidence": "2026-11-08 · 공개 영상 표본 장면과 한국어 자동 자막 대조",
+      "observationPractice": {
+        "action": "샷 전 빈스윙 한 번에 “하나, 둘, 임팩트”를 붙여 봅니다.",
+        "feel": "둘에서 서두르지 않고 임팩트로 이어지는지 느껴 봅니다."
+      },
+      "practiceCaution": "카운트는 리듬을 떠올리는 말입니다. 탑에서 일부러 멈추거나 정해진 박자를 맞추려 힘주지 않습니다.",
+      "addedAt": "2026-11-08T07:37:03.189262+00:00",
+      "publishedAt": "2026-11-05T00:00:00Z",
+      "question": "제 드라이버에서 둘에 해당하는 구간을 지나며 전환을 서두르는지 봐주세요."
     }
   ],
   "practicePin": {
@@ -9204,6 +9318,7 @@ window.GolfContent.videoGroups = [
     "title": "팔·클럽 하강과 회전",
     "description": "팔만 잡아당기는지, 몸 회전 속에서 클럽이 내려오는지 비교합니다.",
     "videoIds": [
+      "NRnKLEgrhJo",
       "S3fxUFBzfBo",
       "Aj1UEMYPxBg",
       "RSbjGWhzEnQ",
@@ -9267,6 +9382,7 @@ window.GolfContent.videoGroups = [
     "title": "서두름 줄이기·템포",
     "description": "헤드 무게가 내려올 여유를 주되 실제 스윙을 일부러 멈추지 않습니다.",
     "videoIds": [
+      "Brf6plIsBW8",
       "oEVbWjzZl0E",
       "jg52OubK_L0",
       "ldkU0D_Ylms",
@@ -9596,7 +9712,8 @@ window.GolfContent.videoGroups = [
     "description": "샷 전에 필요한 한 가지를 짧게 확인합니다.",
     "videoIds": [
       "z9lAaO2IefM",
-      "K_er7krgQwg"
+      "K_er7krgQwg",
+      "ap6K-ftKPQs"
     ],
     "relatedGroups": [
       "downswing-path"
@@ -9850,6 +9967,23 @@ window.GolfContent.relatedFor = (note, options = {}) => {
 // Explicit application reviews; titles, personal edits and multi-stage membership never infer a club.
 window.GolfContent.clubLabels = {iron:"아이언",driver:"드라이버",both:"공통 적용",unknown:"확인 필요"};
 window.GolfContent.clubReviews = {
+  "NRnKLEgrhJo": {
+    "value": "driver",
+    "reason": "사용자가 드라이버 참고로 지정했고, 시범에서 큰 드라이버형 헤드를 확인했습니다.",
+    "reviewedAt": "2026-11-08",
+    "basis": "원본 표본 화면과 화면 자막 · 음성 자동 자막 요청 제한"
+  },
+  "Brf6plIsBW8": {
+    "value": "unknown",
+    "reason": "표본 화면과 짧은 자막에서 적용 클럽 범위를 확정하지 못했습니다.",
+    "reviewedAt": "2026-11-08",
+    "basis": "원본 표본 화면과 한국어 자동 자막"
+  },
+  "ap6K-ftKPQs": {
+    "value": "driver",
+    "reason": "두 비교 장면에서 드라이버로 보이는 큰 헤드와 티 위 공을 확인했습니다.",
+    "reviewedAt": "2026-11-08"
+  },
   "9YWDNMyTQy4": {
     "value": "iron",
     "reason": "원본 화면에 7번 아이언을 명시한 내려놓기 시범. 다른 클럽으로 적용 범위를 넓히지 않습니다.",
@@ -10972,6 +11106,18 @@ window.GolfContent.clubFor = v => window.GolfContent.clubReviews[v.id] || {value
 
 // Compact source summaries. Separate from personal coaching, edits and legacy detail records.
 window.GolfContent.keyMessages = {
+  "NRnKLEgrhJo": {
+    "text": "내려오며 어깨가 먼저 열리는지 확인합니다.",
+    "kind": "observation"
+  },
+  "Brf6plIsBW8": {
+    "text": "탑 부근의 여유와 이어지는 하강을 봅니다.",
+    "kind": "observation"
+  },
+  "ap6K-ftKPQs": {
+    "text": "샷 전 하나, 둘, 임팩트. 둘에서 급히 치러 가지 않고 이어지는 리듬을 한 번 확인합니다.",
+    "kind": "observation"
+  },
   "9YWDNMyTQy4": {
     "text": "팔을 위로 당기는 경우와 클럽을 아래로 내려놓는 시범을 비교한다. 짧은 하강 동작에서 전체 스윙으로 잇는다.",
     "kind": "observation",

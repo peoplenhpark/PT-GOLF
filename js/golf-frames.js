@@ -1,5 +1,53 @@
 /* Two verified source frames per video; timestamps in seconds. */
 window.GolfFrames = {
+  "NRnKLEgrhJo": [
+    {
+      "src": "media/golf-frames/NRnKLEgrhJo-1.webp",
+      "time": 5,
+      "label": "팔만 떨어뜨리는 동작의 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/NRnKLEgrhJo-2.webp",
+      "time": 11,
+      "label": "어깨를 열지 않는다는 화면 안내",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "Brf6plIsBW8": [
+    {
+      "src": "media/golf-frames/Brf6plIsBW8-1.webp",
+      "time": 1.1,
+      "label": "백스윙 탑 부근",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/Brf6plIsBW8-2.webp",
+      "time": 1.35,
+      "label": "다운스윙으로 전환",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "ap6K-ftKPQs": [
+    {
+      "src": "media/golf-frames/ap6K-ftKPQs-1.webp",
+      "time": 4.2,
+      "label": "아마추어 비교 · 백스윙에서 전환",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/ap6K-ftKPQs-2.webp",
+      "time": 7.4,
+      "label": "프로 비교 · 둘 카운트에서 탑 부근",
+      "width": 240,
+      "height": 426
+    }
+  ],
   "9YWDNMyTQy4": [
     {
       "src": "media/golf-frames/9YWDNMyTQy4-1.webp",
