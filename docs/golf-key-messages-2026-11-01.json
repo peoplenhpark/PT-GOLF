@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 193,
-  "scope": "193 active video records, current sources and key messages match the app.",
+  "count": 198,
+  "scope": "198 active video records, current sources and key messages match the app.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -2423,6 +2423,76 @@
       "sampleTimes": [
         37,
         43
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "gWcMsUxtyFU",
+      "source": "https://www.youtube.com/watch?v=gWcMsUxtyFU",
+      "channel": "툭스장인 정용훈",
+      "message": "작은 L-to-L 스윙으로 범위를 줄여 팔이 굳는 구간을 확인합니다.",
+      "basis": "원본 화면 문구와 시범 장면 확인",
+      "evidenceKind": "observation",
+      "duration": 11,
+      "sampleTimes": [
+        0.8,
+        8.8
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "-04WtoVgVhY",
+      "source": "https://www.youtube.com/watch?v=-04WtoVgVhY",
+      "channel": "툭스장인 정용훈",
+      "message": "반복 시범에서 클럽을 보낸 뒤 힘을 푸는 타이밍을 관찰합니다.",
+      "basis": "원본 화면 문구와 시범 장면 확인",
+      "evidenceKind": "observation",
+      "duration": 11,
+      "sampleTimes": [
+        0.8,
+        5.3
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "yRQ85tpYjWY",
+      "source": "https://www.youtube.com/watch?v=yRQ85tpYjWY",
+      "channel": "툭스장인 정용훈",
+      "message": "왼팔이 위로 들리는 사례와 왼팔을 아래로 두는 시범을 비교합니다.",
+      "basis": "원본 화면 문구와 시범 장면 확인",
+      "evidenceKind": "observation",
+      "duration": 12,
+      "sampleTimes": [
+        5.8,
+        9.6
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "V3Qngex6xSo",
+      "source": "https://www.youtube.com/watch?v=V3Qngex6xSo",
+      "channel": "툭스장인 정용훈",
+      "message": "그립 끝이 몸을 향하는 사례와 공 쪽을 향하는 시범의 왼어깨를 비교합니다.",
+      "basis": "원본 화면 문구와 시범 장면 확인",
+      "evidenceKind": "observation",
+      "duration": 8,
+      "sampleTimes": [
+        3.8,
+        6.4
+      ],
+      "reviewedAt": "2026-11-08"
+    },
+    {
+      "id": "P4tx1-B5XDA",
+      "source": "https://www.youtube.com/watch?v=P4tx1-B5XDA",
+      "channel": "툭스장인 정용훈",
+      "message": "손목을 굳히지 않고 헤드가 통과해 피니시로 이어지는 스윙을 관찰합니다.",
+      "basis": "원본 화면 문구와 시범 장면 확인",
+      "evidenceKind": "observation",
+      "duration": 5,
+      "sampleTimes": [
+        0.8,
+        4
       ],
       "reviewedAt": "2026-11-08"
     }

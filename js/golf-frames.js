@@ -3087,5 +3087,85 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "gWcMsUxtyFU": [
+    {
+      "src": "media/golf-frames/gWcMsUxtyFU-1.webp",
+      "time": 0.8,
+      "label": "백스윙 쪽 L자",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/gWcMsUxtyFU-2.webp",
+      "time": 8.8,
+      "label": "헤드가 지나가는 작은 스윙",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "-04WtoVgVhY": [
+    {
+      "src": "media/golf-frames/-04WtoVgVhY-1.webp",
+      "time": 0.8,
+      "label": "헤드가 지나가기 전",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/-04WtoVgVhY-2.webp",
+      "time": 5.3,
+      "label": "클럽이 돌아 올라간 피니시",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "yRQ85tpYjWY": [
+    {
+      "src": "media/golf-frames/yRQ85tpYjWY-1.webp",
+      "time": 5.8,
+      "label": "왼팔과 왼어깨가 들리는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/yRQ85tpYjWY-2.webp",
+      "time": 9.6,
+      "label": "왼팔은 아래, 오른팔은 위 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "V3Qngex6xSo": [
+    {
+      "src": "media/golf-frames/V3Qngex6xSo-1.webp",
+      "time": 3.8,
+      "label": "그립 끝이 몸 쪽을 향하는 비교",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/V3Qngex6xSo-2.webp",
+      "time": 6.4,
+      "label": "그립 끝이 공 쪽을 향하는 시범",
+      "width": 240,
+      "height": 426
+    }
+  ],
+  "P4tx1-B5XDA": [
+    {
+      "src": "media/golf-frames/P4tx1-B5XDA-1.webp",
+      "time": 0.8,
+      "label": "헤드가 내려오는 구간",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/P4tx1-B5XDA-2.webp",
+      "time": 4,
+      "label": "헤드가 통과한 뒤 피니시",
+      "width": 240,
+      "height": 426
+    }
   ]
 };

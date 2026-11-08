@@ -111,7 +111,7 @@ window.CoachDesk = (() => {
       if(part==='pt')body+=window.TrainingQuestions.entryLink()+recentPT();
       if(part==='golf'){
         const combined=combinedGolfReview(),newestFirst=!combined&&window.GolfHub.learningSources().lessons[0]?.id==='lesson_20261106_relax';
-        body+=(combined||(newestFirst?recentGolf():window.GolfHub.personalPracticePin()))+window.GolfHub.ironRelaxPracticePin()+window.GolfHub.rightArmPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+(combined||newestFirst?window.GolfHub.pinnedSequence():recentGolf())+window.GolfQuestions.selector(s);
+        body+=window.GolfHub.leftArmFocusLink()+(combined||(newestFirst?recentGolf():window.GolfHub.personalPracticePin()))+window.GolfHub.ironRelaxPracticePin()+window.GolfHub.rightArmPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+(combined||newestFirst?window.GolfHub.pinnedSequence():recentGolf())+window.GolfQuestions.selector(s);
       }
       if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
       if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a></nav>';

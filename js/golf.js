@@ -180,9 +180,13 @@ window.GolfHub = (() => {
   const sectionFor = id => librarySections.find(section=>section.id===id||section.groups.includes(id));
   const groupIdsFor = id => librarySections.find(section=>section.id===id)?.groups || [id];
   const groupCount = ids => listedVideos().filter(v=>clubMatches(v)&&videoGroups().some(g=>ids.includes(g.id)&&g.videoIds.includes(v.id))).length;
+  const leftArmFocusTitle = '왼팔 힘 빼기';
+  function leftArmFocusLink() {
+    return `<div class="g-actions"><a class="g-link" href="${groupHref('left-arm-relax')}">특별 연습 · ${leftArmFocusTitle} ›</a></div>`;
+  }
   function videoGroupNav(selected,clubControls='') {
     const parent=sectionFor(selected),home=!selected;
-    const title=parent?.title||({all:'전체 영상',recent:'최근 등록',favorites:'즐겨찾기',common:'여러 구간 연결',review:'미분류 · 사용자 판단',shots:'실전 샷',wood:'우드','short-game':'어프로치','pro-swings':'스윙 시범'}[selected])||'영상 모아보기';
+    const title=parent?.title||({'left-arm-relax':leftArmFocusTitle,all:'전체 영상',recent:'최근 등록',favorites:'즐겨찾기',common:'여러 구간 연결',review:'미분류 · 사용자 판단',shots:'실전 샷',wood:'우드','short-game':'어프로치','pro-swings':'스윙 시범'}[selected])||'영상 모아보기';
     const subgroups=parent&&parent.groups.length>1?parent.groups.map(id=>videoGroups().find(g=>g.id===id)).filter(Boolean):[];
     return '<div class="g-library-heading"><h2>영상 모아보기</h2><p>현재 레슨을 기준으로 필요한 자료를 골라 보세요.</p></div>'+
       clubControls+'<nav class="g-video-shortcuts" aria-label="연결·미분류 영상">'+['common','review'].map(id=>groupCount([id])?'<a href="'+groupHref(id)+'" '+(selected===id?'aria-current="page"':'')+'>'+(id==='common'?'여러 구간 연결':'미분류')+' '+groupCount([id])+'편</a>':'').join('')+'</nav>'+
@@ -225,6 +229,10 @@ window.GolfHub = (() => {
   }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
+    if(selected==='left-arm-relax'){
+      const items=collection.map(id=>list.find(v=>v.id===id)).filter(Boolean);
+      return `<section class="g-video-section" aria-labelledby="g-left-arm-title"><header><h2 id="g-left-arm-title">${leftArmFocusTitle} <span>임시 특별 모음 · ${items.length}편</span></h2></header><p class="g-meta">왼손 하프스윙과 왼팔꿈치 긴장 점검부터 보고, 드라이버 클럽 스피드 훈련은 8:36 힘 빼기 구간을 참고하세요.</p>${items.length?`<div class="g-video-grid">${items.map(compactCard).join('')}</div>`:'<p class="g-muted">조건에 맞는 영상이 없습니다.</p>'}</section>`;
+    }
     const shared=sectionFor(selected)?list.filter(v=>content.videoGroupFor(v)?.id==='common'&&[...(v.sharedSections||[]),...(v.sharedGroups||[])].includes(selected)):[];
     const sharedLinks=shared.length?`<aside class="g-shared-references" aria-label="여러 구간 영상 연결"><h2>여러 구간 연결</h2><p class="g-meta">이 구간과 다른 구간을 함께 다루는 자료입니다.</p><nav class="g-related-groups" aria-label="관련 구간 연결 영상">${shared.map(v=>`<a href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a>`).join('')}<a href="${groupHref('common')}">여러 구간 모음 보기 ›</a></nav></aside>`:'';
     const groupsHtml=videoGroups().filter(g=>!selected||collection||['all','recent'].includes(selected)||groupIdsFor(selected).includes(g.id)).map(g=>{
@@ -408,6 +416,7 @@ window.GolfHub = (() => {
     if(tab==='videos'||favoriteOnly){
       const scope=listedVideos().filter(v=>(selectedGroup!=='recent'||recent.some(r=>r.id===v.id))&&(!favoriteOnly||videoNote(v.id).favorite)&&matches({...v,...state.videoNotes[v.id]},view)).filter(v=>!selectedGroup||['all','recent'].includes(selectedGroup)||(content.videoCollections[selectedGroup]||[]).includes(v.id)||groupIdsFor(selectedGroup).includes(content.videoGroupFor(v)?.id)||(content.videoGroupFor(v)?.id==='common'&&[...(v.sharedSections||[]),...(v.sharedGroups||[])].includes(selectedGroup)));
       if(!favoriteOnly&&[null,'all','recent','common'].includes(selectedGroup)&&!view.golfTopic&&!(view.golfQuery||'').trim())body+=dailyPracticePin(true);
+      if(isAllVideos)body+=leftArmFocusLink();
       body+=videoGroupNav(favoriteOnly?'favorites':selectedGroup,clubFilters(view,scope));
       if(isAllVideos)body+=ironRelaxPracticePin()+rightArmPracticePin()+window.GolfPractice.lessonBridge(state,'videos');
       body+=filters(view)+recentSection+(featured.length?`<section class="g-featured-video" aria-labelledby="g-featured-title"><h2 id="g-featured-title">기본영상</h2><p class="g-meta">${featured.length}편${featured[0]?.id===content.featuredVideoId?' · 첫 영상 상단 고정':''}</p><div class="g-video-grid">${featured.map(compactCard).join('')}</div></section>`:'');
@@ -746,5 +755,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,leftArmFocusLink,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

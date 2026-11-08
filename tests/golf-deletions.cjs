@@ -65,7 +65,7 @@ const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p
   click('restore-video','9YWDNMyTQy4');
   assert(saved().deletedVideoIds.includes('9YWDNMyTQy4'));
   assert.equal(store.getDeletionRequests('video').length,0);
-  assert.equal(c.videos.length,193,'source objects remain intact until a later approved release');
+  assert.equal(c.videos.length,198,'source objects remain intact until a later approved release');
   const visible=c.videos.find(v=>!saved().deletedVideoIds.includes(v.id));
   const issueCount=issues.length;
   render({golfTab:'videos',golfId:visible.id});rejectWrite=true;click('delete-video',visible.id);confirmations.at(-1).callback();

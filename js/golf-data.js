@@ -9105,6 +9105,191 @@ window.GolfContent = {
       "evidence": "원본 자막 및 드릴 화면 확인 · 아이언 적용은 사용자 지정",
       "addedAt": "2026-11-08",
       "publishedAt": "2025-08-21"
+    },
+    {
+      "id": "gWcMsUxtyFU",
+      "title": "왼팔 힘 빼기 · L-to-L 하프스윙",
+      "originalTitle": "풀스윙 100번 보다 엘투엘 10번이 더 좋습니다! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:11",
+      "durationSeconds": 11,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "작은 L-to-L 스윙으로 범위를 줄여 팔이 굳는 구간을 확인합니다.",
+      "points": [
+        "하프스윙 크기로 천천히 왕복해 봅니다.",
+        "작은 스윙에서 왼팔 긴장이 어디서 올라오는지 살핍니다.",
+        "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "백스윙 쪽 L자"
+        },
+        {
+          "s": 8,
+          "label": "헤드가 지나가는 작은 스윙"
+        }
+      ],
+      "question": "이 시범에서 제 왼팔 힘 빼기 연습에 적용할 감각은 무엇인가요?",
+      "observationPractice": {
+        "action": "하프스윙 크기로 천천히 왕복해 봅니다.",
+        "feel": "작은 스윙에서 왼팔 긴장이 어디서 올라오는지 살핍니다."
+      },
+      "practiceCaution": "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다.",
+      "evidence": "원본 화면 문구와 시범 장면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-10-28"
+    },
+    {
+      "id": "-04WtoVgVhY",
+      "title": "릴리스 · 던져주고 힘 빼는 타이밍",
+      "originalTitle": "던져주고 힘 빼면서 툭툭 끝! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:11",
+      "durationSeconds": 11,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "반복 시범에서 클럽을 보낸 뒤 힘을 푸는 타이밍을 관찰합니다.",
+      "points": [
+        "짧은 빈스윙으로 헤드를 보낸 뒤 피니시까지 이어 봅니다.",
+        "헤드가 지나간 뒤에도 팔에 힘이 남는지 살핍니다.",
+        "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "헤드가 지나가기 전"
+        },
+        {
+          "s": 5,
+          "label": "클럽이 돌아 올라간 피니시"
+        }
+      ],
+      "question": "이 시범에서 제 왼팔 힘 빼기 연습에 적용할 감각은 무엇인가요?",
+      "observationPractice": {
+        "action": "짧은 빈스윙으로 헤드를 보낸 뒤 피니시까지 이어 봅니다.",
+        "feel": "헤드가 지나간 뒤에도 팔에 힘이 남는지 살핍니다."
+      },
+      "practiceCaution": "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다.",
+      "evidence": "원본 화면 문구와 시범 장면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-11-03"
+    },
+    {
+      "id": "yRQ85tpYjWY",
+      "title": "왼팔이 들리는 동작 비교",
+      "originalTitle": "탑볼이 났던 진짜 이유는 왼팔 때문입니다! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:12",
+      "durationSeconds": 12,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "왼팔이 위로 들리는 사례와 왼팔을 아래로 두는 시범을 비교합니다.",
+      "points": [
+        "영상의 두 자세를 비교한 뒤 작은 빈스윙을 해봅니다.",
+        "왼팔을 들어 올리려 할 때 왼어깨도 따라 올라가는지 봅니다.",
+        "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 5,
+          "label": "왼팔과 왼어깨가 들리는 비교"
+        },
+        {
+          "s": 9,
+          "label": "왼팔은 아래, 오른팔은 위 시범"
+        }
+      ],
+      "question": "이 시범에서 제 왼팔 힘 빼기 연습에 적용할 감각은 무엇인가요?",
+      "observationPractice": {
+        "action": "영상의 두 자세를 비교한 뒤 작은 빈스윙을 해봅니다.",
+        "feel": "왼팔을 들어 올리려 할 때 왼어깨도 따라 올라가는지 봅니다."
+      },
+      "practiceCaution": "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다.",
+      "evidence": "원본 화면 문구와 시범 장면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-10-26"
+    },
+    {
+      "id": "V3Qngex6xSo",
+      "title": "다운스윙 · 그립 끝과 왼어깨 비교",
+      "originalTitle": "왼쪽어깨는 이것 때문에 올라갑니다! #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:08",
+      "durationSeconds": 8,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "그립 끝이 몸을 향하는 사례와 공 쪽을 향하는 시범의 왼어깨를 비교합니다.",
+      "points": [
+        "느린 빈스윙에서 그립 끝과 왼어깨 위치를 함께 봅니다.",
+        "어깨가 급히 들리는 동작이 있는지 살핍니다.",
+        "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 3,
+          "label": "그립 끝이 몸 쪽을 향하는 비교"
+        },
+        {
+          "s": 6,
+          "label": "그립 끝이 공 쪽을 향하는 시범"
+        }
+      ],
+      "question": "이 시범에서 제 왼팔 힘 빼기 연습에 적용할 감각은 무엇인가요?",
+      "observationPractice": {
+        "action": "느린 빈스윙에서 그립 끝과 왼어깨 위치를 함께 봅니다.",
+        "feel": "어깨가 급히 들리는 동작이 있는지 살핍니다."
+      },
+      "practiceCaution": "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다.",
+      "evidence": "원본 화면 문구와 시범 장면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-11-06"
+    },
+    {
+      "id": "P4tx1-B5XDA",
+      "title": "릴리스 · 손목을 부드럽게 쓰는 스윙",
+      "originalTitle": "손목이 굳으면 -20m 부드러우면 +20m #golf #golfswing #golflesson #golftips #골프 #골프스윙 #골프레슨 #골프팁",
+      "channel": "툭스장인 정용훈",
+      "duration": "0:05",
+      "durationSeconds": 5,
+      "presentation": "original",
+      "topics": [
+        "팔·타이밍"
+      ],
+      "summary": "손목을 굳히지 않고 헤드가 통과해 피니시로 이어지는 스윙을 관찰합니다.",
+      "points": [
+        "작은 빈스윙에서 손목을 가볍게 두고 끝까지 이어 봅니다.",
+        "왼팔과 함께 손목도 굳어 헤드가 막히는지 살핍니다.",
+        "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다."
+      ],
+      "moments": [
+        {
+          "s": 0,
+          "label": "헤드가 내려오는 구간"
+        },
+        {
+          "s": 4,
+          "label": "헤드가 통과한 뒤 피니시"
+        }
+      ],
+      "question": "이 시범에서 제 왼팔 힘 빼기 연습에 적용할 감각은 무엇인가요?",
+      "observationPractice": {
+        "action": "작은 빈스윙에서 손목을 가볍게 두고 끝까지 이어 봅니다.",
+        "feel": "왼팔과 함께 손목도 굳어 헤드가 막히는지 살핍니다."
+      },
+      "practiceCaution": "천천히 비교하고 손목이나 팔꿈치를 억지로 고정하지 않습니다.",
+      "evidence": "원본 화면 문구와 시범 장면 확인",
+      "addedAt": "2026-11-08",
+      "publishedAt": "2026-11-01"
     }
   ],
   "practicePin": {
@@ -9222,6 +9407,21 @@ window.GolfContent.groupAliases = {
   "stages": "all"
 };
 window.GolfContent.videoCollections = {
+  "left-arm-relax": [
+    "H812yJ69XOA",
+    "Gbgc0VxJ35s",
+    "iD8o1vJSal4",
+    "o-CKjTv5u2c",
+    "hxq7Wocl-2o",
+    "YUtzwggQMQc",
+    "VqdMTh4REdk",
+    "LpQxb1pNwFs",
+    "gWcMsUxtyFU",
+    "-04WtoVgVhY",
+    "yRQ85tpYjWY",
+    "V3Qngex6xSo",
+    "P4tx1-B5XDA"
+  ],
   "shots": [
     "Fk_3CjorpVA",
     "te5CN12g0Mc"
@@ -9449,7 +9649,9 @@ window.GolfContent.videoGroups = [
       "nlmg8nsjfbk",
       "ZffDcybdQt0",
       "ktADlkpNn_E",
-      "kuRoseAIbtw"
+      "kuRoseAIbtw",
+      "yRQ85tpYjWY",
+      "V3Qngex6xSo"
     ],
     "practice": {
       "cue": "팔만 잡아당기지 않고, 회전 속에서 클럽이 내려오게 합니다.",
@@ -9499,7 +9701,8 @@ window.GolfContent.videoGroups = [
       "Hlo7tykj3Ms",
       "iD8o1vJSal4",
       "tHJTXiEVpzM",
-      "o-CKjTv5u2c"
+      "o-CKjTv5u2c",
+      "gWcMsUxtyFU"
     ],
     "practice": {
       "cue": "내려올 여유는 주되, 일부러 멈추지는 않습니다.",
@@ -9646,7 +9849,9 @@ window.GolfContent.videoGroups = [
       "z3vEI5aGz88",
       "UPurwAXyMLw",
       "HZpD_-B0_0c",
-      "H812yJ69XOA"
+      "H812yJ69XOA",
+      "-04WtoVgVhY",
+      "P4tx1-B5XDA"
     ],
     "practice": {
       "cue": "손으로 끝까지 끌지 않고, 회전 속에서 헤드가 통과하게 합니다.",
@@ -12015,6 +12220,26 @@ window.GolfContent.keyMessages = {
   },
   "H812yJ69XOA": {
     "text": "왼손 하프스윙으로 왼팔 힘을 풀고, 헤드가 무게로 떨어졌다 돌아 올라오는 감각을 익힙니다.",
+    "kind": "observation"
+  },
+  "gWcMsUxtyFU": {
+    "text": "작은 L-to-L 스윙으로 범위를 줄여 팔이 굳는 구간을 확인합니다.",
+    "kind": "observation"
+  },
+  "-04WtoVgVhY": {
+    "text": "반복 시범에서 클럽을 보낸 뒤 힘을 푸는 타이밍을 관찰합니다.",
+    "kind": "observation"
+  },
+  "yRQ85tpYjWY": {
+    "text": "왼팔이 위로 들리는 사례와 왼팔을 아래로 두는 시범을 비교합니다.",
+    "kind": "observation"
+  },
+  "V3Qngex6xSo": {
+    "text": "그립 끝이 몸을 향하는 사례와 공 쪽을 향하는 시범의 왼어깨를 비교합니다.",
+    "kind": "observation"
+  },
+  "P4tx1-B5XDA": {
+    "text": "손목을 굳히지 않고 헤드가 통과해 피니시로 이어지는 스윙을 관찰합니다.",
     "kind": "observation"
   }
 };
