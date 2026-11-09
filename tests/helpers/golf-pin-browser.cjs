@@ -10,7 +10,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await combined.locator('details').count(),0);
   assert.deepEqual(await combined.locator('time').allTextContents(),['2026-11-06']);
   assert.match(await combined.locator('h2').innerText(),/몸통으로 시작하고 힘 빼고 통과/);
-  assert(await combined.evaluate(el=>el===el.parentElement.querySelector(':scope>section')));
+  assert(await combined.evaluate(el=>el===el.parentElement.querySelector(':scope>section:not(.g-left-arm-pin)')));
   assert.equal(await p.locator('.coach-recent-golf').count(),1);assert.equal(await p.locator('.g-lesson-priority,.g-lesson-video-focus').count(),0);
   for(const href of ['#golf/lessons/lesson_20261102_release','#golf/lessons/lesson_20261030_driver','#golf/lessons/lesson_20261106_relax'])assert.equal(await combined.locator('a[href="'+href+'"]').count(),1);
   const basic=p.locator('.g-basic-practice-pin');
