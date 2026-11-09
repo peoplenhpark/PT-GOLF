@@ -779,8 +779,6 @@ globalThis.PTGolfRelease = {
     "media/golf-frames/G6VjK_afBng-2.webp",
     "media/golf-frames/Gbgc0VxJ35s-1.webp",
     "media/golf-frames/Gbgc0VxJ35s-2.webp",
-    "media/golf-frames/GqiR-zrXoGM-1.webp",
-    "media/golf-frames/GqiR-zrXoGM-2.webp",
     "media/golf-frames/Gy1fb-ulGig-1.webp",
     "media/golf-frames/Gy1fb-ulGig-2.webp",
     "media/golf-frames/H5W4lILhgyc-1.webp",

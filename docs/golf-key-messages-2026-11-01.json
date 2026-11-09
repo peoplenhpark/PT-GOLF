@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 199,
-  "scope": "199 active video records, current sources and key messages match the app.",
+  "count": 198,
+  "scope": "198 active video records, current sources and key messages match the app.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -2495,20 +2495,6 @@
         4
       ],
       "reviewedAt": "2026-11-08"
-    },
-    {
-      "id": "GqiR-zrXoGM",
-      "source": "https://www.youtube.com/watch?v=GqiR-zrXoGM",
-      "channel": "20초골프",
-      "message": "백스윙부터 피니시까지 천천히 이어 보며 스윙 순서와 연결 동작을 익힙니다.",
-      "basis": "원본 한국어 자막과 스윙 시범 확인 · 화면 표기 시범 출처 Instagram @mion_golf",
-      "evidenceKind": "observation",
-      "duration": 10,
-      "sampleTimes": [
-        1,
-        9
-      ],
-      "reviewedAt": "2026-11-09"
     }
   ],
   "updatedAt": "2026-11-05"

@@ -9290,51 +9290,6 @@ window.GolfContent = {
       "evidence": "원본 화면 문구와 시범 장면 확인",
       "addedAt": "2026-11-08",
       "publishedAt": "2026-11-01"
-    },
-    {
-      "id": "GqiR-zrXoGM",
-      "title": "스윙 순서 · 백스윙부터 피니시까지 천천히",
-      "originalTitle": "골프 스윙은 순서가 중요합니다! 처음부터 끝까지 천천히 시퀀스를 반복하며 익혀보세요. 올바른 동작이 자연스러운 스윙을 만듭니다.",
-      "channel": "20초골프",
-      "duration": "0:10",
-      "durationSeconds": 10,
-      "presentation": "original",
-      "topics": [
-        "회전·순서"
-      ],
-      "summary": "백스윙부터 피니시까지 천천히 이어 보며 스윙 순서와 연결 동작을 익힙니다.",
-      "points": [
-        "공 없이 백스윙, 다운스윙, 임팩트, 피니시 순으로 천천히 이어 봅니다.",
-        "전환이나 임팩트에서 갑자기 서두르는 구간이 있는지 살핍니다.",
-        "속도를 올리기 전에 각 구간이 부드럽게 이어지는지 확인합니다."
-      ],
-      "moments": [
-        {
-          "s": 1,
-          "label": "테이크백"
-        },
-        {
-          "s": 3,
-          "label": "백스윙에서 전환"
-        },
-        {
-          "s": 6,
-          "label": "임팩트"
-        },
-        {
-          "s": 9,
-          "label": "피니시"
-        }
-      ],
-      "question": "천천히 이어 할 때 제가 가장 자주 서두르는 구간은 어디인가요?",
-      "observationPractice": {
-        "action": "공 없이 백스윙, 다운스윙, 임팩트, 피니시 순으로 천천히 이어 봅니다.",
-        "feel": "전환이나 임팩트에서 갑자기 서두르는 구간이 있는지 살핍니다."
-      },
-      "practiceCaution": "속도를 올리기 전에 각 구간이 부드럽게 이어지는지 확인합니다.",
-      "evidence": "원본 한국어 자막과 스윙 시범 확인 · 화면 표기 시범 출처 Instagram @mion_golf",
-      "addedAt": "2026-11-09",
-      "publishedAt": "2026-11-09"
     }
   ],
   "practicePin": {
@@ -9747,8 +9702,7 @@ window.GolfContent.videoGroups = [
       "iD8o1vJSal4",
       "tHJTXiEVpzM",
       "o-CKjTv5u2c",
-      "gWcMsUxtyFU",
-      "GqiR-zrXoGM"
+      "gWcMsUxtyFU"
     ],
     "practice": {
       "cue": "내려올 여유는 주되, 일부러 멈추지는 않습니다.",
@@ -12286,10 +12240,6 @@ window.GolfContent.keyMessages = {
   },
   "P4tx1-B5XDA": {
     "text": "손목을 굳히지 않고 헤드가 통과해 피니시로 이어지는 스윙을 관찰합니다.",
-    "kind": "observation"
-  },
-  "GqiR-zrXoGM": {
-    "text": "백스윙부터 피니시까지 천천히 이어 보며 스윙 순서와 연결 동작을 익힙니다.",
     "kind": "observation"
   }
 };
