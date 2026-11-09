@@ -232,18 +232,19 @@ window.GolfHub = (() => {
     {id:'gWcMsUxtyFU',title:'양손 L-to-L 하프스윙',check:'오른손을 다시 얹어도 왼팔이 굳지 않고 헤드가 지나가는지.'},
     {id:'o-CKjTv5u2c',title:'드라이버에 연결',check:'작은 빈스윙에서 팔꿈치가 부드럽게 접히고 펴지는지.'}
   ];
-  function leftArmFocusCards(items) {
+  function leftArmFocusCards(items, compact=false) {
     return leftArmSteps.map((step,index)=>{
       const v=items.find(item=>item.id===step.id);
       if(!v)return '';
       const chapter=v.chapters?.find(chapter=>chapter.title==='힘 빼는 방법');
       const playback=chapter?` <a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${chapter.start}s" target="_blank" rel="noopener noreferrer">8:36 힘 빼기부터 보기 ↗</a>`:'';
+      if(compact)return `<li><a href="${href('videos',v.id)}"><strong>${index+1}. ${e(step.title)}</strong></a>${playback}<p class="g-meta">${e(step.check)}</p></li>`;
       return `<div><h3>${index+1}. ${e(step.title)}</h3><p class="g-meta"><strong>확인</strong> · ${e(step.check)}</p>${playback}${compactCard(v)}</div>`;
     }).join('');
   }
   function leftArmFocusNow() {
-    const cards=leftArmFocusCards(videos());
-    return cards?block(leftArmFocusTitle,`<p class="g-meta">공 없이 왼손 → 양손 → 드라이버 순서로 작게 휘둘러 보세요.</p><div class="g-video-grid">${cards}</div>${leftArmFocusLink()}`):'';
+    const rows=leftArmFocusCards(videos(),true);
+    return rows?block(leftArmFocusTitle,`<ol class="g-left-arm-now" style="list-style:none;padding:0">${rows}</ol>${leftArmFocusLink()}`):'';
   }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
