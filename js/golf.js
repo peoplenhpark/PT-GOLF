@@ -244,7 +244,7 @@ window.GolfHub = (() => {
   }
   function leftArmFocusNow() {
     const rows=leftArmFocusCards(videos(),true);
-    return rows?block(leftArmFocusTitle,`<ol class="g-left-arm-now" style="list-style:none;padding:0">${rows}</ol>${leftArmFocusLink()}`):'';
+    return rows?`<section class="g-section g-left-arm-pin" aria-labelledby="g-left-arm-now-title"><h2 id="g-left-arm-now-title">${leftArmFocusTitle}</h2><ol class="g-left-arm-now" style="list-style:none;padding:0">${rows}</ol>${leftArmFocusLink()}</section>`:'';
   }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
