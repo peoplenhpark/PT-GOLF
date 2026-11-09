@@ -3167,5 +3167,21 @@ window.GolfFrames = {
       "width": 240,
       "height": 426
     }
+  ],
+  "GqiR-zrXoGM": [
+    {
+      "src": "media/golf-frames/GqiR-zrXoGM-1.webp",
+      "time": 1,
+      "label": "테이크백 · 스윙 시작",
+      "width": 240,
+      "height": 426
+    },
+    {
+      "src": "media/golf-frames/GqiR-zrXoGM-2.webp",
+      "time": 9,
+      "label": "피니시 · 스윙 마무리",
+      "width": 240,
+      "height": 426
+    }
   ]
 };
