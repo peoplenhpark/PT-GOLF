@@ -471,6 +471,18 @@ window.GolfHub = (() => {
     }
     layout(body,favoriteOnly?'videos':tab);
   }
+  function keyMessageLinks(v, core) {
+    const chapters = v.chapters || [];
+    const verified = chapters.length ? chapters.map(({start,title})=>({s:start,label:title})) : core?.moments || [];
+    const related = verified.length ? verified : v.moments.filter(m=>m.s>0);
+    const links = related.map(({s,label})=>{
+      const seconds = Math.floor(s);
+      const time = Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');
+      const title = label.replace(/^\d+:\d+\s*·\s*/, '');
+      return `<a href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${s}s" target="_blank" rel="noopener noreferrer">${time} ${e(title)} ↗</a>`;
+    }).join('');
+    return `<div class="g-key-source"><span>${verified.length?'핵심 구간':'핵심 시점 확인 필요'}${!verified.length&&links?' · 관련 장면':''}</span>${links}</div>`;
+  }
   function keyMessagePage(view) {
     const only=view.golfArchive==='only';
     const sections=[...librarySections.map(s=>({id:s.id,title:s.title,groups:s.groups})),
@@ -483,7 +495,7 @@ window.GolfHub = (() => {
     const list=scope.filter(clubMatches);
     const row=v=>{
       const core=content.keyMessages?.[v.id];
-      return `<li class="g-key-row" data-video-id="${e(v.id)}"><div class="g-key-row-head"><a href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a>${only?button('restore-archived-video','복원',`data-id="${e(v.id)}" aria-label="${e(videoTitle(v))} · 다시 연습 목록으로 복원"`):''}</div><p class="g-key-text">${e(core?.text||'내용 확인 필요 · 아직 핵심을 확정하지 않았습니다.')}</p><div class="g-key-source">${archiveBadge(v)}<span>${e(content.clubLabels[content.clubFor(v).value])} · ${core?.kind==='explanation'?'설명 요약':'시범·자막 요약'}</span><a href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}" target="_blank" rel="noopener noreferrer" aria-label="${e(videoTitle(v))} · 출처 ${e(v.channel)} · YouTube 새 탭">출처: ${e(v.channel)} ↗</a></div></li>`;
+      return `<li class="g-key-row" data-video-id="${e(v.id)}"><div class="g-key-row-head"><a href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a>${only?button('restore-archived-video','복원',`data-id="${e(v.id)}" aria-label="${e(videoTitle(v))} · 다시 연습 목록으로 복원"`):''}</div><p class="g-key-text">${e(core?.text||'내용 확인 필요 · 아직 핵심을 확정하지 않았습니다.')}</p>${keyMessageLinks(v,core)}<div class="g-key-source">${archiveBadge(v)}<span>${e(content.clubLabels[content.clubFor(v).value])} · ${core?.kind==='explanation'?'설명 요약':'시범·자막 요약'}</span><a href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}" target="_blank" rel="noopener noreferrer" aria-label="${e(videoTitle(v))} · 출처 ${e(v.channel)} · YouTube 새 탭">출처: ${e(v.channel)} ↗</a></div></li>`;
     };
     const groups=sections.map(section=>{
       const items=list.filter(v=>sectionOf(v)?.id===section.id);
@@ -497,7 +509,7 @@ window.GolfHub = (() => {
       }).join('');
       return items.length?`<section class="g-key-group" aria-labelledby="g-key-${e(section.id)}"><h3 id="g-key-${e(section.id)}">${e(section.title)} <small>${items.length}편</small></h3>${subgroups}</section>`:'';
     }).join('');
-    layout(`<section class="g-key-page${only?' g-archive-only':''}" aria-labelledby="g-key-title"><header class="g-key-heading"><h2 id="g-key-title" tabindex="-1">${only?'보관영상':'전체 영상 핵심'} <small>${list.length} / ${listedVideos().length}편</small></h2>${only?'':'<a class="g-key-entry" href="#golf/group/all">영상 카드 ›</a>'}</header><p class="g-meta">제목은 상세 · 출처는 원본</p>${clubFilters({...view,cat:selected},scope).replace(/<p class="g-club-help">.*?<\/p>/,'')}<form class="g-key-search" data-g-form="key-search"><label for="g-key-q">제목·핵심·채널 검색</label><div><input id="g-key-q" name="q" data-no-draft value="${e(view.golfQuery||'')}" placeholder="예: 힘 빼기, 왼어깨"><label class="sr-only" for="g-key-section">스윙 구간</label><select id="g-key-section" name="section" data-no-draft><option value="">모든 구간</option>${sections.map(s=>`<option value="${e(s.id)}" ${selected===s.id?'selected':''}>${e(s.title)}</option>`).join('')}</select><button class="g-btn">찾기</button></div></form>${groups||(only&&!allVideos().some(v=>isArchived(v.id))?'<p class="g-muted" role="status">보관한 영상이 없습니다. 습득한 영상 상세에서 보관하면 여기에 모입니다.</p>':'<p class="g-muted" role="status">조건에 맞는 영상이 없습니다. 검색어나 클럽·구간 필터를 바꿔 보세요.</p>')}</section>`,'videos');
+    layout(`<section class="g-key-page${only?' g-archive-only':''}" aria-labelledby="g-key-title"><header class="g-key-heading"><h2 id="g-key-title" tabindex="-1">${only?'보관영상':'전체 영상 핵심'} <small>${list.length} / ${listedVideos().length}편</small></h2>${only?'':'<a class="g-key-entry" href="#golf/group/all">영상 카드 ›</a>'}</header><p class="g-meta">제목은 상세 · 재생 시각은 해당 구간 · 출처는 원본</p>${clubFilters({...view,cat:selected},scope).replace(/<p class="g-club-help">.*?<\/p>/,'')}<form class="g-key-search" data-g-form="key-search"><label for="g-key-q">제목·핵심·채널 검색</label><div><input id="g-key-q" name="q" data-no-draft value="${e(view.golfQuery||'')}" placeholder="예: 힘 빼기, 왼어깨"><label class="sr-only" for="g-key-section">스윙 구간</label><select id="g-key-section" name="section" data-no-draft><option value="">모든 구간</option>${sections.map(s=>`<option value="${e(s.id)}" ${selected===s.id?'selected':''}>${e(s.title)}</option>`).join('')}</select><button class="g-btn">찾기</button></div></form>${groups||(only&&!allVideos().some(v=>isArchived(v.id))?'<p class="g-muted" role="status">보관한 영상이 없습니다. 습득한 영상 상세에서 보관하면 여기에 모입니다.</p>':'<p class="g-muted" role="status">조건에 맞는 영상이 없습니다. 검색어나 클럽·구간 필터를 바꿔 보세요.</p>')}</section>`,'videos');
   }
   function fieldPage() {
     const group=content.videoGroups.find(g=>g.id==='field');
