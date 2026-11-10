@@ -15,14 +15,23 @@ assert(html.includes('내 제목 &lt;개인&gt;'));assert(!html.includes('나만
 for(const v of g.videos){assert(html.includes('href="#golf/videos/'+v.id+'"'));assert(html.includes('href="https://www.youtube.com/watch?v='+g.sourceIdFor(v)+'"'));}
 const renderedRows = new Map(Array.from(html.matchAll(/<li class="g-key-row" data-video-id="([^"]+)">([\s\S]*?)<\/li>/g),match=>[match[1],match[2]]));
 for(const v of g.videos){
-  const moments=v.chapters?.length?v.chapters.map(chapter=>chapter.start):m[v.id].moments?.map(moment=>moment.s);
+  const moments=v.chapters?.length
+    ? v.chapters.map(chapter=>({s:chapter.start,label:chapter.title}))
+    : m[v.id].moments;
   const duration=v.durationSeconds??v.duration.split(':').reduce((total,part)=>total*60+Number(part),0);
   assert(moments?.length,v.id+' has a key moment');
   const row=renderedRows.get(v.id);
   assert(row?.includes('핵심 구간'),v.id);
-  for(const time of moments){
+  const links=Array.from(row.matchAll(/<a href="(https:\/\/www\.youtube\.com\/watch\?[^"]*&amp;t=[^"]+)"[^>]*>([^<]*)<\/a>/g));
+  assert.equal(links.length,moments.length,v.id+' renders one shortcut per key moment');
+  for(const [index,{s:time,label}] of moments.entries()){
+    assert(typeof label==='string'&&label.trim(),v.id+' has a key moment label');
     assert(Number.isFinite(time)&&time>=0&&time<duration,v.id+' has an in-range timestamp');
-    assert(row.includes('watch?v='+g.sourceIdFor(v)+'&amp;t='+time+'s'),v.id+' links to its timestamp');
+    const [,url,text]=links[index];
+    assert.equal(url,'https://www.youtube.com/watch?v='+g.sourceIdFor(v)+'&amp;t='+time+'s',v.id+' links to the current source and timestamp');
+    const seconds=Math.floor(time);
+    const display=Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');
+    assert(text.startsWith(display+' '),v.id+' displays the linked time');
   }
 }
 for(const club of Object.keys(g.clubLabels)){html=render({golfClub:club});assert.equal((html.match(/class="g-key-row"/g)||[]).length,g.videos.filter(v=>g.clubFor(v).value===club).length);}
