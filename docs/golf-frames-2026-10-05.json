@@ -264,30 +264,6 @@
     "verifiedAt": "2026-10-05"
   },
   {
-    "id": "UA-HYcmiKTA",
-    "title": "티샷 에이밍과 셋업",
-    "frames": [
-      {
-        "src": "media/golf-frames/UA-HYcmiKTA-1.webp",
-        "time": 400.26,
-        "label": "장면 1",
-        "width": 360,
-        "height": 202
-      },
-      {
-        "src": "media/golf-frames/UA-HYcmiKTA-2.webp",
-        "time": 648.04,
-        "label": "장면 2",
-        "width": 360,
-        "height": 202
-      }
-    ],
-    "duration": 953,
-    "source": "https://www.youtube.com/watch?v=UA-HYcmiKTA",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-05"
-  },
-  {
     "id": "CA-TZ7WQlHY",
     "title": "체중이동 때 힘을 주고 빼는 순서",
     "frames": [
@@ -1364,30 +1340,6 @@
     ],
     "duration": 8,
     "source": "https://www.youtube.com/watch?v=2CplOC4flsA",
-    "method": "Original video frame extraction; resize only; both frames visually reviewed.",
-    "verifiedAt": "2026-10-07"
-  },
-  {
-    "id": "Fk_3CjorpVA",
-    "title": "어프로치 · 공 위치와 탄도 비교",
-    "frames": [
-      {
-        "src": "media/golf-frames/Fk_3CjorpVA-1.webp",
-        "time": 4.55,
-        "label": "오른발 쪽 공 위치",
-        "width": 240,
-        "height": 426
-      },
-      {
-        "src": "media/golf-frames/Fk_3CjorpVA-2.webp",
-        "time": 8.06,
-        "label": "왼발 쪽 공 위치",
-        "width": 240,
-        "height": 426
-      }
-    ],
-    "duration": 13,
-    "source": "https://www.youtube.com/watch?v=Fk_3CjorpVA",
     "method": "Original video frame extraction; resize only; both frames visually reviewed.",
     "verifiedAt": "2026-10-07"
   },
@@ -3692,30 +3644,6 @@
     ],
     "duration": 178,
     "source": "https://www.youtube.com/watch?v=3BsYkWFU-WA",
-    "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
-    "verifiedAt": "2026-11-01"
-  },
-  {
-    "id": "K_er7krgQwg",
-    "title": "필드 실수 줄이기 · 에이밍·바람·거리별 대응",
-    "frames": [
-      {
-        "src": "media/golf-frames/K_er7krgQwg-1.webp",
-        "time": 13.74,
-        "label": "헤드부터 목표에 맞춘 뒤 몸 정렬",
-        "width": 640,
-        "height": 360
-      },
-      {
-        "src": "media/golf-frames/K_er7krgQwg-2.webp",
-        "time": 126.41,
-        "label": "앞바람에서 급해지지 않는 준비",
-        "width": 640,
-        "height": 360
-      }
-    ],
-    "duration": 458,
-    "source": "https://www.youtube.com/watch?v=K_er7krgQwg",
     "method": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
     "verifiedAt": "2026-11-01"
   },

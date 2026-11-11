@@ -224,22 +224,6 @@ window.GolfFrames = {
       "height": 640
     }
   ],
-  "UA-HYcmiKTA": [
-    {
-      "src": "media/golf-frames/UA-HYcmiKTA-1.webp",
-      "time": 400.26,
-      "label": "장면 1",
-      "width": 360,
-      "height": 202
-    },
-    {
-      "src": "media/golf-frames/UA-HYcmiKTA-2.webp",
-      "time": 648.04,
-      "label": "장면 2",
-      "width": 360,
-      "height": 202
-    }
-  ],
   "CA-TZ7WQlHY": [
     {
       "src": "media/golf-frames/CA-TZ7WQlHY-1.webp",
@@ -956,22 +940,6 @@ window.GolfFrames = {
       "src": "media/golf-frames/2CplOC4flsA-2.webp",
       "time": 6.4,
       "label": "팔꿈치와 회전",
-      "width": 240,
-      "height": 426
-    }
-  ],
-  "Fk_3CjorpVA": [
-    {
-      "src": "media/golf-frames/Fk_3CjorpVA-1.webp",
-      "time": 4.55,
-      "label": "오른발 쪽 공 위치",
-      "width": 240,
-      "height": 426
-    },
-    {
-      "src": "media/golf-frames/Fk_3CjorpVA-2.webp",
-      "time": 8.06,
-      "label": "왼발 쪽 공 위치",
       "width": 240,
       "height": 426
     }
@@ -2542,22 +2510,6 @@ window.GolfFrames = {
       "label": "오른쪽 골반과 채가 지나갈 공간",
       "width": 240,
       "height": 426
-    }
-  ],
-  "K_er7krgQwg": [
-    {
-      "src": "media/golf-frames/K_er7krgQwg-1.webp",
-      "time": 13.74,
-      "label": "헤드부터 목표에 맞춘 뒤 몸 정렬",
-      "width": 640,
-      "height": 360
-    },
-    {
-      "src": "media/golf-frames/K_er7krgQwg-2.webp",
-      "time": 126.41,
-      "label": "앞바람에서 급해지지 않는 준비",
-      "width": 640,
-      "height": 360
     }
   ],
   "iD8o1vJSal4": [

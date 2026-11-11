@@ -1,7 +1,7 @@
 {
   "date": "2026-11-01",
-  "count": 198,
-  "scope": "198 active video records, current sources and key messages match the app.",
+  "count": 195,
+  "scope": "195 active video records, current sources and key messages match the app.",
   "corrections": [
     "jlqT_vNRcSI visible captions concern LEFT arm internal rotation and LEFT elbow direction, not right arm. The new summary corrects this; legacy wording also corrected."
   ],
@@ -163,14 +163,6 @@
       "source": "https://www.youtube.com/watch?v=ULOLFCC-ly8",
       "channel": "깡프로",
       "message": "끝까지 붙잡고 끄는 긴장을 줄여 내 리듬을 찾는다. ‘놓기’는 클럽을 놓으라는 뜻이 아니다.",
-      "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
-      "evidenceKind": "explanation"
-    },
-    {
-      "id": "UA-HYcmiKTA",
-      "source": "https://www.youtube.com/watch?v=UA-HYcmiKTA",
-      "channel": "백현범프로[백점골프]",
-      "message": "출발 방향을 정하고 페이스부터 맞춘 뒤 몸을 평행 정렬한다. 목표와 몸의 정렬선을 구분한다.",
       "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
       "evidenceKind": "explanation"
     },
@@ -855,14 +847,6 @@
       "source": "https://www.youtube.com/watch?v=2CplOC4flsA",
       "channel": "PuttingASMR",
       "message": "다운스윙 전환의 손목 힌지·오른팔꿈치·몸통 연결을 비교한다. 팔꿈치를 강제로 고정하는 지침은 아니다.",
-      "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
-      "evidenceKind": "observation"
-    },
-    {
-      "id": "Fk_3CjorpVA",
-      "source": "https://www.youtube.com/watch?v=Fk_3CjorpVA",
-      "channel": "GOLF ZZAL",
-      "message": "어프로치 공 위치를 바꾸며 구름과 탄도 차이를 보여 준다. 클럽·라이 조건을 구분해 참고한다.",
       "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
       "evidenceKind": "observation"
     },
@@ -1647,14 +1631,6 @@
       "source": "https://www.youtube.com/watch?v=3BsYkWFU-WA",
       "channel": "하와이골프 [박형준프로]",
       "message": "오른팔·채가 겹쳐 내려오는 위치와 오른골반 뒤쪽 공간을 비교한다. 겹치는 모양을 힘으로 고정하지 않는다.",
-      "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
-      "evidenceKind": "observation"
-    },
-    {
-      "id": "K_er7krgQwg",
-      "source": "https://www.youtube.com/watch?v=K_er7krgQwg",
-      "channel": "제이슨골프tv",
-      "message": "페이스부터 정렬하고 바람·좁은 홀·거리 사이에서 샷을 조절한다. 여러 상황의 팁을 한 가지 처방으로 합치지 않는다.",
       "basis": "Existing reviewed summary, points and scopeReview; no new full playback claimed",
       "evidenceKind": "observation"
     },

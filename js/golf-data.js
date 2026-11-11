@@ -1184,59 +1184,6 @@ window.GolfContent = {
       "addedAt": "2026-09-15T00:43:52+09:00"
     },
     {
-      "id": "UA-HYcmiKTA",
-      "title": "티샷 에이밍과 셋업",
-      "originalTitle": "티샷 OB 나는 진짜 이유: 에이밍 (99% 여기서 틀립니다) [실전필드레슨]",
-      "channel": "백현범프로[백점골프]",
-      "duration": "15:53",
-      "durationSeconds": 953,
-      "topics": [
-        "준비·축",
-        "회전·순서"
-      ],
-      "evidence": "원본 재생 길이·자동자막 확인 · 에이밍은 원영상과 편집 설명으로 제공",
-      "summary": "구질과 코스를 보고 출발 방향을 정한 뒤, 클럽페이스 → 가상의 T자 → 몸의 평행 정렬 순서로 셋업하는 필드 레슨입니다. 티 높이와 안전한 그린 공략도 함께 정리했습니다.",
-      "points": [
-        "공 뒤에서 출발 방향과 공이 내려올 구역을 함께 상상하기. 영상 속 페이드 예시와 내 코스 상황은 구분하기.",
-        "클럽페이스를 먼저 맞추고, 가상의 T자를 기준으로 스탠스를 넓히기.",
-        "공의 목표선과 몸의 정렬선은 기차 레일처럼 평행하게 확인하기.",
-        "공 앞 약 20cm의 가까운 기준을 활용하는 연습. 옆에서 생기는 시각적 착시 때문에 정렬을 바꾸지 않기.",
-        "높고 낮은 샷은 티 높이·공 위치·그립·기울기를 함께 조정하는 예시로 이해하기.",
-        "파3에서는 핀 거리뿐 아니라 그린 초입과 넓은 여유 구역을 확인하기."
-      ],
-      "moments": [
-        {
-          "s": 65,
-          "label": "1:05 · 공 뒤에서 보기"
-        },
-        {
-          "s": 145,
-          "label": "2:25 · 두 개의 평행선"
-        },
-        {
-          "s": 235,
-          "label": "3:55 · 가까운 기준"
-        },
-        {
-          "s": 370,
-          "label": "6:10 · 탄도와 셋업"
-        },
-        {
-          "s": 625,
-          "label": "10:25 · 그린 여유"
-        }
-      ],
-      "connection": "드라이버의 준비 자세와 연결됩니다. 원영상에서 정렬 순서를 확인하고, 체중이동 영상과 손목·임팩트 레슨으로 이어서 살펴보세요.",
-      "question": "제 구질과 자주 가는 코스에서는 티 위치와 출발 방향을 어떻게 정하면 좋을까요? 몸과 클럽이 평행하게 정렬되는지도 확인하고 싶어요.",
-      "relatedVideoIds": [
-        "CA-TZ7WQlHY",
-        "du58mmLNMnQ"
-      ],
-      "presentation": "original",
-      "publishedAt": "2026-04-20T03:00:48-07:00",
-      "addedAt": "2026-09-15T00:43:52+09:00"
-    },
-    {
       "id": "CA-TZ7WQlHY",
       "title": "체중이동 때 힘을 주고 빼는 순서",
       "originalTitle": "'체중이동'하면서 어디에 힘을 주고, 어디에 힘을 빼야할까?🤔",
@@ -1278,7 +1225,6 @@ window.GolfContent = {
       "connection": "기존 체중이동·회전 순서 노트와 연결됩니다. 에이밍으로 출발 방향을 정한 뒤 이 전환 연습을 보고, 손목·임팩트 레슨으로 이어가세요.",
       "question": "제 전환에서는 손과 어깨에 힘이 너무 많이 들어가나요? 왼발 지지가 생기는 시점과 골반 회전의 타이밍을 확인하고 싶어요.",
       "relatedVideoIds": [
-        "UA-HYcmiKTA",
         "du58mmLNMnQ",
         "ULOLFCC-ly8"
       ],
@@ -2057,7 +2003,6 @@ window.GolfContent = {
       "connection": "같은 주제의 영상과 클럽별 스윙 노트를 함께 보며 내 연습에서 확인할 점을 기록하세요.",
       "question": "이 영상의 동작을 제 스윙과 비교하면 어떤 점을 먼저 확인하면 좋을까요?",
       "relatedVideoIds": [
-        "UA-HYcmiKTA",
         "bfMsJtV61hM"
       ],
       "publishedAt": "2026-04-13T20:46:11-07:00",
@@ -2944,43 +2889,6 @@ window.GolfContent = {
         "feel": "같은 각도의 내 스윙에서 전환 · 오른손 힌지와 팔꿈치·몸통 연결에 해당하는 구간을 비교하고, 현재 레슨 과제와 다른 느낌은 별도로 기록하세요."
       },
       "publishedAt": "2026-09-30T08:55:38.000Z",
-      "addedAt": "2026-10-06T16:52:43.139Z"
-    },
-    {
-      "id": "Fk_3CjorpVA",
-      "title": "어프로치 · 공 위치와 탄도 비교",
-      "originalTitle": "어프로치로 10타 줄이는 방법",
-      "channel": "GOLF ZZAL",
-      "duration": "0:13",
-      "durationSeconds": 13,
-      "presentation": "original",
-      "topics": [
-        "팔·타이밍"
-      ],
-      "evidence": "2026-10-07 원본 제목·설명란·10개 표본 장면과 화면 문구 확인. 전체 음성 전사는 하지 않았습니다.",
-      "summary": "공을 가운데, 오른발 쪽, 왼발 쪽에 두는 시범으로 어프로치의 구름과 높이 차이를 설명합니다.",
-      "points": [
-        "공 위치를 발과 함께 보여 주는 근접 장면을 확인했습니다.",
-        "러닝 어프로치와 높이 띄우는 시범을 구별합니다.",
-        "제목의 10타 감소는 개인 효과가 아니며 클럽·라이에 따른 적용은 따로 확인합니다."
-      ],
-      "moments": [
-        {
-          "s": 4.55,
-          "label": "오른발 쪽 공 위치"
-        },
-        {
-          "s": 8.06,
-          "label": "왼발 쪽 공 위치"
-        }
-      ],
-      "connection": "첫 레슨의 오른팔 힘 빼기·몸통으로 넓게 시작을 우선하고, 이 영상에서 보이는 차이는 추가 질문으로 기록합니다.",
-      "question": "제 웨지와 연습장 조건에서 공 위치를 바꿀 때 탄도와 구름을 어떻게 비교하면 좋을까요?",
-      "observationPractice": {
-        "action": "공을 가운데, 오른발 쪽, 왼발 쪽에 두는 시범으로 어프로치의 구름과 높이 차이를 설명합니다.",
-        "feel": "같은 각도의 내 스윙에서 어프로치 · 공 위치와 탄도 비교에 해당하는 구간을 비교하고, 현재 레슨 과제와 다른 느낌은 별도로 기록하세요."
-      },
-      "publishedAt": "2026-06-19T14:36:52.000Z",
       "addedAt": "2026-10-06T16:52:43.139Z"
     },
     {
@@ -5210,7 +5118,6 @@ window.GolfContent = {
       ],
       "relatedVideoIds": [
         "bgI9M3DIuX4",
-        "Fk_3CjorpVA",
         "dBsZdo7VEAA"
       ],
       "evidence": "2026-10-19 전체 오디오 10분 16초를 자동 전사하고 기존 자막·원본 화면과 대조했습니다. 레슨과 연습도구 소개를 구분했습니다.",
@@ -7500,52 +7407,6 @@ window.GolfContent = {
       "publishedAt": "2026-10-26T05:48:46+00:00"
     },
     {
-      "id": "K_er7krgQwg",
-      "title": "필드 실수 줄이기 · 에이밍·바람·거리별 대응",
-      "originalTitle": "\"필드레슨\" 골린이가 꼭 알고 가야할 필드 노하우 레슨!!",
-      "channel": "제이슨골프tv",
-      "duration": "7:38",
-      "durationSeconds": 458,
-      "presentation": "original",
-      "topics": [
-        "회전·순서",
-        "팔·타이밍"
-      ],
-      "summary": "실전에서 헤드부터 목표에 맞추는 순서, 좁은 홀과 앞바람에서의 스윙 조절, 거리 사이의 클럽 선택 등을 상황별로 보여 줍니다.",
-      "points": [
-        "0:00–0:21: 클럽 헤드를 목표에 먼저 맞춘 뒤 몸을 정렬합니다.",
-        "0:22–0:38: 좁은 홀의 드라이버는 작은 백스윙에서 피니시까지 잇는 리허설을 보여 줍니다.",
-        "1:48–2:17: 앞바람에서 급해지는 스윙을 짚고, 평소보다 여유 있는 속도와 낮은 티를 제안합니다.",
-        "4:33–5:24: 출발 방향 리허설과 파3 티 사용을 설명합니다.",
-        "6:09–6:34: 클럽 사이 거리는 그립을 짧게 잡는 방법을 보여 줍니다.",
-        "나머지는 잔디·퍼팅·우드·벙커·구질별 팁입니다. 딱딱하고 턱 높은 벙커, 슬라이스 교정과 페이드 만들기는 해당 상황에서 별도로 봅니다."
-      ],
-      "moments": [
-        {
-          "s": 13.74,
-          "label": "헤드부터 목표에 맞춘 뒤 몸 정렬"
-        },
-        {
-          "s": 126.41,
-          "label": "앞바람에서 급해지지 않는 준비"
-        }
-      ],
-      "relatedVideoIds": [
-        "z9lAaO2IefM",
-        "3BsYkWFU-WA"
-      ],
-      "evidence": "2026-11-01 · 원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조",
-      "connection": "실전에서는 여러 팁을 한 번에 넣기보다 에이밍부터 한 가지씩 참고합니다. 드라이버는 현재 레슨의 어깨 이완·임팩트 직전 힘 빼기를 우선합니다.",
-      "question": "현재 레슨을 유지하면서 이 영상의 감각 중 제게 필요한 부분과 적용하지 않을 부분을 구분해 주세요.",
-      "observationPractice": {
-        "action": "샷 전에 헤드를 목표에 먼저 맞추고 몸을 정렬한 뒤, 현재 상황에 맞는 리허설 하나만 합니다.",
-        "feel": "목표와 헤드 방향이 맞는지, 좁은 홀이나 바람 때문에 더 세게 쥐거나 급해지지 않았는지 확인합니다."
-      },
-      "practiceCaution": "영상의 수치와 벙커·슬라이스·페이드 교정은 상황별 예시입니다. 작은 피니시 레슨이나 모든 클럽에 일괄 적용하지 않습니다.",
-      "addedAt": "2026-10-31T15:57:01.055037+00:00",
-      "publishedAt": "2026-10-30T05:20:23+00:00"
-    },
-    {
       "id": "iD8o1vJSal4",
       "title": "아이언 힘 빼기 연습 · 툭 내린 뒤 몸 회전으로 연결",
       "originalTitle": "힘빼고 멀리치는게 안되면 이렇게!!",
@@ -9423,12 +9284,9 @@ window.GolfContent.videoCollections = {
     "P4tx1-B5XDA"
   ],
   "shots": [
-    "Fk_3CjorpVA",
     "te5CN12g0Mc"
   ],
-  "short-game": [
-    "Fk_3CjorpVA"
-  ],
+  "short-game": [],
   "wood": [
     "te5CN12g0Mc"
   ],
@@ -9447,7 +9305,6 @@ window.GolfContent.videoGroups = [
     "description": "팔과 어깨의 긴장을 줄이고, 편한 시작 자세를 먼저 만듭니다.",
     "videoIds": [
       "2tam4sbJQtM",
-      "UA-HYcmiKTA",
       "MIx8BbSocFI",
       "zT6zJCJ59js",
       "2UR4UFtx1R0",
@@ -9740,7 +9597,6 @@ window.GolfContent.videoGroups = [
       "mGYe7UjYXfo",
       "Q_kYNFcYL0o",
       "qQbCq_QXB0A",
-      "Fk_3CjorpVA",
       "ThwbClowjjU",
       "hjWtaLgNEO0",
       "LpMjAU9OnlI"
@@ -10018,7 +9874,6 @@ window.GolfContent.videoGroups = [
     "description": "샷 전에 필요한 한 가지를 짧게 확인합니다.",
     "videoIds": [
       "z9lAaO2IefM",
-      "K_er7krgQwg",
       "ap6K-ftKPQs"
     ],
     "relatedGroups": [
@@ -10031,7 +9886,7 @@ window.GolfContent.videoGroupFor = v => window.GolfContent.videoGroups.find(g=>g
 
 // Evidence labels describe what was reviewed, never whether a cue is right for a person.
 const golfObservationIds = new Set(['bfMsJtV61hM','-h77kU-fpjg']);
-const golfSourceContentIds = new Set(['jg52OubK_L0','lb2CrZl0FrA','En79wtGEzs4','EgdcUOkvJKk','Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','UA-HYcmiKTA','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
+const golfSourceContentIds = new Set(['jg52OubK_L0','lb2CrZl0FrA','En79wtGEzs4','EgdcUOkvJKk','Aj1UEMYPxBg','xUgGGs2Rh3w','S3fxUFBzfBo','IsSS-GnQQyY','ULOLFCC-ly8','CA-TZ7WQlHY','du58mmLNMnQ','0EgzSDUsKvg','uvgnUl93Twg','RSbjGWhzEnQ','4uQe-J5qM2c','t_9sQjrS2o4','ldkU0D_Ylms','M-ryH3IhUXI']);
 const golfEvidenceKind = v => (v.scopeReview || v.observationPractice || golfObservationIds.has(v.id)) ? 'observation' : golfSourceContentIds.has(v.id) ? 'source' : 'metadata';
 window.GolfContent.evidenceFor = v => {
   const kind = golfEvidenceKind(v);
@@ -10174,10 +10029,6 @@ const golfReviewedPractice = {
   'ULOLFCC-ly8': {
     action:'작고 느린 스윙에서 긴장을 거의 뺀 상태와 강하게 준 상태를 비교해 편안한 중간 감각을 찾습니다.',
     feel:'그립과 손목 구조는 유지하면서 불필요한 긴장만 줄고 몸과 클럽의 흐름은 이어지는지 살펴봅니다.'
-  },
-  'UA-HYcmiKTA': {
-    action:'공 뒤에서 출발 방향과 내려올 구역을 정한 뒤 클럽페이스를 먼저 맞추고 가상의 T자에 스탠스를 둡니다.',
-    feel:'클럽페이스는 목표를 향하고 몸의 정렬선은 기차 레일처럼 평행하게 놓이는지 확인합니다.'
   },
   'CA-TZ7WQlHY': {
     action:'전환에서 큰 회전을 서두르지 않고 왼발로 작게 시프트한 뒤 지지가 생기면 골반 회전을 연결합니다.',
@@ -10414,12 +10265,6 @@ window.GolfContent.clubReviews = {
   "ULOLFCC-ly8": {
     "value": "iron",
     "reason": "지면의 공과 아이언으로 힘의 크기를 비교하는 레슨 장면을 확인했습니다.",
-    "reviewedAt": "2026-10-19",
-    "basis": "source-explanation-or-demonstration"
-  },
-  "UA-HYcmiKTA": {
-    "value": "driver",
-    "reason": "티잉 구역에서 드라이버를 놓고 방향과 셋업을 설명하는 레슨 장면을 확인했습니다.",
     "reviewedAt": "2026-10-19",
     "basis": "source-explanation-or-demonstration"
   },
@@ -10662,12 +10507,6 @@ window.GolfContent.clubReviews = {
     "reason": "원본 화면에 드라이버 스윙을 명시하고 티샷·큰 헤드의 전환 동작을 보여 줍니다.",
     "reviewedAt": "2026-10-19",
     "basis": "source-explanation-or-demonstration"
-  },
-  "Fk_3CjorpVA": {
-    "value": "unknown",
-    "reason": "웨지 어프로치의 공 위치·탄도 비교입니다. 현재 아이언 풀스윙·드라이버·공통 적용 중 하나로 억지 편성하지 않습니다.",
-    "reviewedAt": "2026-10-19",
-    "basis": "unresolved"
   },
   "g2AXYPKdCik": {
     "value": "iron",
@@ -11215,12 +11054,6 @@ window.GolfContent.clubReviews = {
     "reviewedAt": "2026-11-01",
     "basis": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조"
   },
-  "K_er7krgQwg": {
-    "value": "unknown",
-    "reason": "드라이버·아이언·우드·웨지·퍼팅과 벙커를 다루는 상황별 모음입니다. 영상 전체를 아이언·드라이버 공통 처방으로 분류하지 않습니다.",
-    "reviewedAt": "2026-11-01",
-    "basis": "원본 12개 표본 화면·화면 자막과 전체 음성 자동 전사 대조"
-  },
   "iD8o1vJSal4": {
     "value": "iron",
     "reason": "아이언을 사용한 내려놓기·회전 연결 시범입니다. 드라이버 공통 적용으로 확대하지 않습니다.",
@@ -11498,11 +11331,6 @@ window.GolfContent.keyMessages = {
     "text": "끝까지 붙잡고 끄는 긴장을 줄여 내 리듬을 찾는다. ‘놓기’는 클럽을 놓으라는 뜻이 아니다.",
     "kind": "explanation"
   },
-  "UA-HYcmiKTA": {
-    "moments": [{"s": 65, "label": "공 뒤에서 방향 보기"}, {"s": 145, "label": "목표선과 몸의 평행선"}],
-    "text": "출발 방향을 정하고 페이스부터 맞춘 뒤 몸을 평행 정렬한다. 목표와 몸의 정렬선을 구분한다.",
-    "kind": "explanation"
-  },
   "CA-TZ7WQlHY": {
     "moments": [{"s": 30, "label": "왼발 지지와 골반 회전"}],
     "text": "전환에서 회전을 서두르지 않고 왼발 지지 후 골반 회전을 연결한다. 기다림을 강제 정지로 만들지 않는다.",
@@ -11744,11 +11572,6 @@ window.GolfContent.keyMessages = {
   "2CplOC4flsA": {
     "moments": [{"s":4.24,"label":"전환과 손목"},{"s":6.4,"label":"팔꿈치와 회전"}],
     "text": "다운스윙 전환의 손목 힌지·오른팔꿈치·몸통 연결을 비교한다. 팔꿈치를 강제로 고정하는 지침은 아니다.",
-    "kind": "observation"
-  },
-  "Fk_3CjorpVA": {
-    "moments": [{"s":4.55,"label":"오른발 쪽 공 위치"},{"s":8.06,"label":"왼발 쪽 공 위치"}],
-    "text": "어프로치 공 위치를 바꾸며 구름과 탄도 차이를 보여 준다. 클럽·라이 조건을 구분해 참고한다.",
     "kind": "observation"
   },
   "g2AXYPKdCik": {
@@ -12240,11 +12063,6 @@ window.GolfContent.keyMessages = {
   "3BsYkWFU-WA": {
     "moments": [{"s":19.94,"label":"오른팔과 채가 겹치는 구간 비교"},{"s":151.3,"label":"오른쪽 골반과 채가 지나갈 공간"}],
     "text": "오른팔·채가 겹쳐 내려오는 위치와 오른골반 뒤쪽 공간을 비교한다. 겹치는 모양을 힘으로 고정하지 않는다.",
-    "kind": "observation"
-  },
-  "K_er7krgQwg": {
-    "moments": [{"s":13.74,"label":"헤드부터 목표에 맞춘 뒤 몸 정렬"},{"s":126.41,"label":"앞바람에서 급해지지 않는 준비"}],
-    "text": "페이스부터 정렬하고 바람·좁은 홀·거리 사이에서 샷을 조절한다. 여러 상황의 팁을 한 가지 처방으로 합치지 않는다.",
     "kind": "observation"
   },
   "iD8o1vJSal4": {

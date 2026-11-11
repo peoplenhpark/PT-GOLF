@@ -35,7 +35,7 @@ for(const v of g.videos){
   }
 }
 for(const club of Object.keys(g.clubLabels)){html=render({golfClub:club});assert.equal((html.match(/class="g-key-row"/g)||[]).length,g.videos.filter(v=>g.clubFor(v).value===club).length);}
-html=render({cat:'field'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,3);
+html=render({cat:'field'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,2);
 html=render({golfQuery:'왼팔꿈치가 바닥'});assert(html.includes('data-video-id="jlqT_vNRcSI"'));
 html=render({golfQuery:'존재하지않는문구123'});assert(html.includes('조건에 맞는 영상이 없습니다'));
 hidden.add('2tam4sbJQtM');html=render();assert(!html.includes('data-video-id="2tam4sbJQtM"'));assert.equal((html.match(/class="g-key-row"/g)||[]).length,g.videos.length-1);assert.equal(writes,0);
