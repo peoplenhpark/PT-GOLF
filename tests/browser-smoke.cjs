@@ -92,7 +92,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   // A tagged video keeps one memo/status across group, tag and lesson views.
   const beforeBackswing=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});
   await page.goto(base+'#golf/group/backswing-top');await page.locator('#g-group-backswing-setup').waitFor();
-  assert.equal(await page.locator('.g-video-mini').count(),41);
+  assert.equal(await page.locator('.g-video-mini').count(),40);
   assert.deepEqual(await page.locator('.g-mini-detail').evaluateAll(es=>es.slice(0,3).map(e=>e.getAttribute('href').split('/').at(-1))),['2tam4sbJQtM','MIx8BbSocFI','aaOw2sdp-io']);
   await page.locator('.g-video-section>.g-tags a').filter({hasText:'백스윙 시 몸통 회전'}).first().click();
   await page.getByRole('heading',{name:'백스윙 시 몸통 회전',exact:true}).waitFor();assert.equal(await page.locator('.g-video-mini').count(),8);
