@@ -13,8 +13,8 @@ module.exports=async(browser,base,screenshot)=>{
   assert.equal(await p.locator('.g-solo-practice').count(),1);
   assert.deepEqual(await p.locator('.g-stage-card>h3').allTextContents(),['01 · 백스윙','02 · 다운스윙','03 · 임팩트','04 · 팔로우·피니시']);
   const focus=p.locator('.g-left-arm-pin');
-  assert.deepEqual(await focus.locator('li > a:first-child').evaluateAll(links=>links.map(link=>link.hash)),['#golf/videos/H812yJ69XOA','#golf/videos/gWcMsUxtyFU','#golf/videos/o-CKjTv5u2c']);
-  assert(await focus.evaluate(el=>el.getBoundingClientRect().bottom<=innerHeight && (el.compareDocumentPosition(document.querySelector('.coach-recent-golf'))&Node.DOCUMENT_POSITION_FOLLOWING)!==0));
+  assert.deepEqual(await focus.locator('li > a:first-child').evaluateAll(links=>links.map(link=>link.hash)),['#golf/videos/2tam4sbJQtM','#golf/videos/H812yJ69XOA','#golf/videos/oEVbWjzZl0E','#golf/videos/NRnKLEgrhJo','#golf/videos/LpQxb1pNwFs']);
+  assert(await focus.evaluate(el=>el.getBoundingClientRect().top<innerHeight && (el.compareDocumentPosition(document.querySelector('.coach-recent-golf'))&Node.DOCUMENT_POSITION_FOLLOWING)!==0));
   assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-[...document.querySelectorAll('.g-left-arm-pin,.g-personal-priority,.g-daily-pin,.g-basic-practice-pin,.g-secondary-practice-pin,.g-right-arm-practice-pin,.g-iron-relax-practice-pin,.g-lesson-video-focus')].reduce((height,el)=>height+el.getBoundingClientRect().height,0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
   assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),0);
   assert.equal(await p.locator('.g-stage-practice .g-practice-cue:visible').count(),3);

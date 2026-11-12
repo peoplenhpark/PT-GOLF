@@ -242,9 +242,18 @@ window.GolfHub = (() => {
       return `<div><h3>${index+1}. ${e(step.title)}</h3><p class="g-meta"><strong>확인</strong> · ${e(step.check)}</p>${playback}${compactCard(v)}</div>`;
     }).join('');
   }
-  function leftArmFocusNow() {
-    const rows=leftArmFocusCards(videos(),true);
-    return rows?`<section class="g-section g-left-arm-pin" aria-labelledby="g-left-arm-now-title"><h2 id="g-left-arm-now-title">${leftArmFocusTitle}</h2><ol class="g-left-arm-now" style="list-style:none;padding:0">${rows}</ol>${leftArmFocusLink()}</section>`:'';
+  function finalLessonPracticeNow() {
+    const plan=content.finalLessonPractice;
+    const source=lesson(plan.lessonId);
+    if(!source)return '';
+    const rows=plan.steps.map((step,index)=>{
+      const v=activeVideo(step.videoId);
+      if(!v)return '';
+      const seconds=Math.floor(step.start);
+      const time=Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');
+      return `<li data-criterion="${step.criterion+1}"><a href="${href('videos',v.id)}"><strong>${index+1}. ${e(step.title)}</strong></a><p class="g-meta">${e(step.check)}</p><a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${step.start}s" target="_blank" rel="noopener noreferrer">${time} · ${e(videoTitle(v))} ↗</a>${step.note?`<p class="g-meta">${e(step.note)}</p>`:''}</li>`;
+    }).join('');
+    return `<section class="g-section g-left-arm-pin g-final-lesson-practice" aria-labelledby="g-final-practice-title"><h2 id="g-final-practice-title">11.11 마지막 레슨 · 연습 순서와 추천 영상</h2><p class="g-meta">백스윙 → 일찍 왼손 이완 → 편안한 하강 → 임팩트 → 넓은 통과. 한 번에 한 가지씩 확인하세요.</p><ol class="g-final-practice-steps" style="list-style:none;padding:0">${rows}</ol><a class="g-link" href="${href('lessons',source.id)}">마지막 레슨의 다섯 가지 기준 보기 ›</a>${leftArmFocusLink()}</section>`;
   }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
@@ -789,5 +798,5 @@ window.GolfHub = (() => {
     let id;try{id=m[2]?decodeURIComponent(m[2]):null;}catch{return false;}
     go(m[1],id,{golfQuery:'',golfTopic:null,cat:null,__historyMode:historyMode});return true;
   }
-  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,leftArmFocusNow,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
+  return {configure,render,related,savedQuestionsHtml,openLink,searchRecords,questionShortcut,personalPracticePin,pinnedSequence,pinnedPractice,dailyPracticePin,ironRelaxPracticePin,rightArmPracticePin,finalLessonPracticeNow,basicPracticePin,secondaryPracticePin,recentPractice,stagePractice,learningSources:()=>({lessons:lessons(),notes:notes(),videos:videos().map(displayVideo),practice:window.GolfPractice.practiceSource(state)})};
 })();

@@ -12461,3 +12461,47 @@ window.GolfContent.driverLessonReview = {
   ],
   "note": "현재 연습은 11.11 사용자 확인 다섯 가지를 우선합니다. 과거 레슨은 아래에서 근거로 확인합니다. 왼어깨 유지·큰 외회전은 사용자 현장 이해이며, 고정 각도나 강한 버티기를 추가하지 않습니다."
 };
+
+window.GolfContent.finalLessonPractice = {
+  "lessonId": "lesson_20261111_final",
+  "steps": [
+    {
+      "criterion": 0,
+      "videoId": "2tam4sbJQtM",
+      "start": 45.6,
+      "title": "가볍게 시작하고 충분히 회전",
+      "check": "손·팔로 번쩍 들지 않고 몸통 회전을 이어갔나?"
+    },
+    {
+      "criterion": 3,
+      "videoId": "H812yJ69XOA",
+      "start": 37,
+      "title": "왼손 빈스윙으로 일찍 힘 빼기",
+      "check": "공을 맞히기 훨씬 전에 왼손 긴장을 풀었나?",
+      "note": "영상은 왼손 이완 연습. 이완 시점은 11.11 레슨 기준."
+    },
+    {
+      "criterion": 1,
+      "videoId": "oEVbWjzZl0E",
+      "start": 38.72,
+      "title": "채가 이끄는 편안한 다운스윙",
+      "check": "팔로 끌거나 버티지 않고 채가 내려오는 흐름을 따랐나?"
+    },
+    {
+      "criterion": 2,
+      "videoId": "NRnKLEgrhJo",
+      "start": 11,
+      "title": "덤비지 않고 왼쪽 어깨 흐름 점검",
+      "check": "공에 달려들며 왼쪽 어깨가 무너지지 않았나?",
+      "note": "영상은 어깨가 먼저 열리는 비교. 왼어깨 유지 자체는 사용자 확인 코칭."
+    },
+    {
+      "criterion": 4,
+      "videoId": "LpQxb1pNwFs",
+      "start": 16.91,
+      "title": "채를 따라 자연스럽고 넓게 넘기기",
+      "check": "왼팔을 붙잡지 않고 채 흐름에 순응하며 넓게 외회전했나?",
+      "note": "영상은 팔·헤드 통과 참고. 큰 외회전은 사용자 확인 감각."
+    }
+  ]
+};

@@ -34,6 +34,14 @@ for(const v of g.videos){
     assert(text.startsWith(display+' '),v.id+' displays the linked time');
   }
 }
+const plan=g.finalLessonPractice;
+assert(g.lessons.some(lesson=>lesson.id===plan.lessonId));
+assert.deepEqual(Array.from(plan.steps,step=>step.criterion).sort(),[0,1,2,3,4]);
+for(const step of plan.steps){
+  const video=g.videos.find(video=>video.id===step.videoId);
+  assert(video,step.videoId+' practice source exists');
+  assert(m[video.id].moments?.some(moment=>moment.s===step.start),video.id+' practice link reuses a reviewed key moment');
+}
 for(const club of Object.keys(g.clubLabels)){html=render({golfClub:club});assert.equal((html.match(/class="g-key-row"/g)||[]).length,g.videos.filter(v=>g.clubFor(v).value===club).length);}
 html=render({cat:'field'});assert.equal((html.match(/class="g-key-row"/g)||[]).length,2);
 html=render({golfQuery:'왼팔꿈치가 바닥'});assert(html.includes('data-video-id="jlqT_vNRcSI"'));
