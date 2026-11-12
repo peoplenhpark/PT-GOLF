@@ -25,6 +25,7 @@ globalThis.PTGolfRelease = {
     "js/navigation.js",
     "js/offline.js",
     "js/persistence.js",
+    "js/pt-videos.js",
     "js/search.js",
     "js/store.js",
     "js/training-questions.js",
@@ -40,6 +41,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_lowpulley_row-1.jpg",
+      "media/pt-reference/pt_lowpulley_row-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_shoulderpress": [
@@ -49,6 +52,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_shoulderpress-1.jpg",
+      "media/pt-reference/pt_shoulderpress-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_pullup": [
@@ -59,6 +64,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_pullup-1.jpg",
+      "media/pt-reference/pt_pullup-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_seatedrow": [
@@ -69,6 +76,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_seatedrow-1.jpg",
+      "media/pt-reference/pt_seatedrow-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_latpulldown": [
@@ -79,6 +88,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_latpulldown-1.jpg",
+      "media/pt-reference/pt_latpulldown-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_armpulldown": [
@@ -89,6 +100,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_armpulldown-1.jpg",
+      "media/pt-reference/pt_armpulldown-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_dbpullover": [
@@ -99,6 +112,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_dbpullover-1.jpg",
+      "media/pt-reference/pt_dbpullover-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_machinerow": [
@@ -109,6 +124,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_machinerow-1.jpg",
+      "media/pt-reference/pt_machinerow-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_seal_row": [
@@ -118,6 +135,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_seal_row-1.jpg",
+      "media/pt-reference/pt_seal_row-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_backextension": [
@@ -128,6 +147,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_backextension-1.jpg",
+      "media/pt-reference/pt_backextension-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_armcurl": [
@@ -138,6 +159,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_armcurl-1.jpg",
+      "media/pt-reference/pt_armcurl-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_benchpress": [
@@ -148,6 +171,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_benchpress-1.jpg",
+      "media/pt-reference/pt_benchpress-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_chestpress": [
@@ -158,6 +183,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_chestpress-1.jpg",
+      "media/pt-reference/pt_chestpress-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_pecdeck": [
@@ -168,6 +195,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_pecdeck-1.jpg",
+      "media/pt-reference/pt_pecdeck-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_facepull": [
@@ -178,6 +207,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_facepull-1.jpg",
+      "media/pt-reference/pt_facepull-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_lateralraise": [
@@ -188,6 +219,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_lateralraise-1.jpg",
+      "media/pt-reference/pt_lateralraise-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_uprightrow": [
@@ -197,6 +230,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_uprightrow-1.jpg",
+      "media/pt-reference/pt_uprightrow-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_vsquat": [
@@ -207,6 +242,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_vsquat-1.jpg",
+      "media/pt-reference/pt_vsquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_squat": [
@@ -217,6 +254,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_squat-1.jpg",
+      "media/pt-reference/pt_squat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_halfsquat": [
@@ -227,6 +266,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_halfsquat-1.jpg",
+      "media/pt-reference/pt_halfsquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_frontsquat": [
@@ -237,6 +278,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_frontsquat-1.jpg",
+      "media/pt-reference/pt_frontsquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_heelsquat": [
@@ -246,6 +289,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_heelsquat-1.jpg",
+      "media/pt-reference/pt_heelsquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_gobletsquat": [
@@ -256,6 +301,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_gobletsquat-1.jpg",
+      "media/pt-reference/pt_gobletsquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_widesquat": [
@@ -266,6 +313,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_widesquat-1.jpg",
+      "media/pt-reference/pt_widesquat-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_dumbbell_rdl": [
@@ -285,6 +334,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_legcurl-1.jpg",
+      "media/pt-reference/pt_legcurl-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_adduction": [
@@ -295,6 +346,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_adduction-1.jpg",
+      "media/pt-reference/pt_adduction-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_legextension": [
@@ -305,6 +358,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_legextension-1.jpg",
+      "media/pt-reference/pt_legextension-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_legpress": [
@@ -315,6 +370,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_legpress-1.jpg",
+      "media/pt-reference/pt_legpress-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_wide_sidelunge_stretch": [
@@ -324,6 +381,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_wide_sidelunge_stretch-1.jpg",
+      "media/pt-reference/pt_wide_sidelunge_stretch-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_hip_openclose_stretch": [
@@ -333,6 +392,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_hip_openclose_stretch-1.jpg",
+      "media/pt-reference/pt_hip_openclose_stretch-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_daily_hamstring": [
@@ -343,6 +404,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_daily_hamstring-1.jpg",
+      "media/pt-reference/pt_daily_hamstring-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_daily_piriformis": [
@@ -353,6 +416,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_daily_piriformis-1.jpg",
+      "media/pt-reference/pt_daily_piriformis-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_plank": [
@@ -363,6 +428,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_plank-1.jpg",
+      "media/pt-reference/pt_plank-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_daily_foam": [
@@ -373,6 +440,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_daily_foam-1.jpg",
+      "media/pt-reference/pt_daily_foam-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_openbook": [
@@ -383,6 +452,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_openbook-1.jpg",
+      "media/pt-reference/pt_openbook-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_rehab_slr": [
@@ -393,6 +464,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_rehab_slr-1.jpg",
+      "media/pt-reference/pt_rehab_slr-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_rehab_clamshell": [
@@ -403,6 +476,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_rehab_clamshell-1.jpg",
+      "media/pt-reference/pt_rehab_clamshell-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_rehab_sslr": [
@@ -413,6 +488,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_rehab_sslr-1.jpg",
+      "media/pt-reference/pt_rehab_sslr-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_bridge": [
@@ -423,6 +500,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_bridge-1.jpg",
+      "media/pt-reference/pt_bridge-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_birddog": [
@@ -433,6 +512,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_birddog-1.jpg",
+      "media/pt-reference/pt_birddog-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_deadbug": [
@@ -443,6 +524,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_deadbug-1.jpg",
+      "media/pt-reference/pt_deadbug-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_tbalance": [
@@ -453,6 +536,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_tbalance-1.jpg",
+      "media/pt-reference/pt_tbalance-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_stepup": [
@@ -463,6 +548,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_stepup-1.jpg",
+      "media/pt-reference/pt_stepup-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_tailbone_raise": [
@@ -472,6 +559,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_tailbone_raise-1.jpg",
+      "media/pt-reference/pt_tailbone_raise-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_rotationlunge": [
@@ -502,10 +591,14 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_sldl-1.jpg",
+      "media/pt-reference/pt_sldl-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_pushdown": [
       "docs/images/37_pushdown.svg",
+      "media/pt-reference/pt_pushdown-1.jpg",
+      "media/pt-reference/pt_pushdown-2.jpg",
       "samples/pushdown-3d/combined-end.png",
       "samples/pushdown-3d/combined-start.png",
       "samples/pushdown-3d/pushdown.js",
@@ -519,6 +612,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_dumbbell_press-1.jpg",
+      "media/pt-reference/pt_dumbbell_press-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_incline_smith_press": [
@@ -528,6 +623,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_incline_smith_press-1.jpg",
+      "media/pt-reference/pt_incline_smith_press-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "ht_bulgarian_split_squat": [
@@ -593,6 +690,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_lunge-1.jpg",
+      "media/pt-reference/pt_lunge-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "ht_latpulldown_reference": [
@@ -645,6 +744,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_lunge_ball_rotation-1.jpg",
+      "media/pt-reference/pt_lunge_ball_rotation-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_low_cable_curl": [
@@ -654,6 +755,8 @@ globalThis.PTGolfRelease = {
       "media/3d/poses.js",
       "media/3d/viewer.html",
       "media/3d/viewer.js",
+      "media/pt-reference/pt_low_cable_curl-1.jpg",
+      "media/pt-reference/pt_low_cable_curl-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "ht_squat_comparison": [

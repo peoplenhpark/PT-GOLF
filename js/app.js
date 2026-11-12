@@ -704,17 +704,27 @@ const Theme = (() => {
   });
   function openExerciseLink(){const next=AppNavigation.fromHash(location.hash);go(next.name,{...next,__historyMode:'replace'});return true;}
 
+  function trainingVideos(e) {
+    const reference=e?.part==='pt'?window.PTReferenceVideos?.[e.id]:null;
+    return [e?.sourceVideo,...e?.supplementaryVideos||[],reference?.youtubeId?reference:null]
+      .filter((v,i,all)=>v && /^[A-Za-z0-9_-]{11}$/.test(v.youtubeId) && all.findIndex(x=>x?.youtubeId===v.youtubeId)===i);
+  }
   function trainingVideoHtml(e) {
-    const videos=[e.sourceVideo,...e.supplementaryVideos||[]].filter(v=>v && /^[A-Za-z0-9_-]{11}$/.test(v.youtubeId));
-    return videos.map((video,i)=>{
-      const url='https://www.youtube.com/shorts/'+video.youtubeId;
-      return '<section class="training-video" aria-label="'+(i?'보강 운동 영상':'원본 운동 영상')+'"><h2>▶ '+(i?'보강 영상':'원본 영상')+'</h2><h3>'+esc(video.title)+'</h3>'+
+    const reference=e.part==='pt'?window.PTReferenceVideos?.[e.id]:null;
+    const pending=reference?.pending?'<section class="training-video pt-reference-pending"><h2>▶ 참고 영상 · 확인 필요</h2><p>'+esc(reference.reason)+'</p></section>':'';
+    return trainingVideos(e).map((video,i)=>{
+      const ref=video.reference, url=ref?'https://www.youtube.com/watch?v='+video.youtubeId:'https://www.youtube.com/shorts/'+video.youtubeId;
+      const time=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+      return '<section class="training-video'+(ref?' pt-reference-video':'')+'" aria-label="'+(ref?'PT 참고 영상':i?'보강 운동 영상':'원본 운동 영상')+'"><h2>▶ '+(ref?'참고 영상 · 3분 이내':i?'보강 영상':'원본 영상')+'</h2><h3>'+esc(video.title)+'</h3>'+
         '<p class="training-meta">'+esc(video.channel)+' · '+esc(video.durationSeconds)+'초 · 공개 '+esc(video.publishedAt)+'</p>'+
+        (ref?'<p class="training-meta">조회 '+Number(video.viewCount||0).toLocaleString('ko-KR')+'회 · 댓글 '+(Number.isFinite(video.commentCount)?Number(video.commentCount).toLocaleString('ko-KR')+'개':'수 미확인')+' · '+esc(video.verifiedAt)+' 확인</p>':'')+
+        (video.moments?.length?'<div class="pt-video-moments">'+video.moments.map(m=>'<a class="btn primary pt-video-moment" href="'+esc(m.url)+'" target="_blank" rel="noopener noreferrer" data-start="'+m.s+'">'+time(m.s)+' '+esc(m.label)+' ↗</a>').join('')+'</div>':'')+
+        (video.frames?.length?'<div class="pt-video-frames">'+video.frames.map(f=>'<figure><img src="'+esc(f.src)+'" alt="'+esc(f.alt)+'" loading="lazy"><figcaption>원본 '+time(f.seconds)+'</figcaption></figure>').join('')+'</div>':'')+
         '<div class="training-player"><button class="btn primary" data-act="training-play" data-video="'+video.youtubeId+'">영상 재생</button></div>'+
-        '<a class="btn ghost" href="'+url+'" target="_blank" rel="noopener noreferrer">YouTube에서 보기 ↗</a>'+
+        '<a class="btn ghost" href="'+url+'" target="_blank" rel="noopener noreferrer">YouTube에서 '+(ref?'전체 ':'')+'보기 ↗</a>'+
         (video.points?.length?'<ul>'+video.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>':'')+
-        '<details class="training-evidence"><summary>출처와 확인 범위</summary><p>'+esc(video.evidence)+'</p><p>확인 '+esc(video.verifiedAt)+' · 앱 등록 '+esc(video.registeredAt.slice(0,10))+'</p></details></section>';
-    }).join('');
+        '<details class="training-evidence"><summary>출처와 확인 범위'+(ref?' · 댓글 참고':'')+'</summary><p>'+esc(video.evidence)+'</p>'+(ref?'<p>공개 댓글 '+video.commentsReviewed+'개 표본 확인. '+esc(video.commentSummary)+'</p>':'')+'<p>확인 '+esc(video.verifiedAt)+' · 앱 등록 '+esc(video.registeredAt.slice(0,10))+'</p></details></section>';
+    }).join('')+pending;
   }
   function relatedTrainingHtml(e) {
     const related=Store.getRelatedExercises(e.id);
@@ -992,7 +1002,7 @@ const Theme = (() => {
       case 'recovery-copy':{const blob=new Blob([JSON.stringify(Persistence.recoveryCopy(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='ptgolf-recovery-'+Store.todayStr()+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);break;}
       case 'recover-restore':askConfirm('중단된 복원 이전의 기록으로 되돌릴까요?',()=>{Persistence.recoverRestore();Store.reload();renderPreserving();toast('이전 기록을 복구했습니다.');},'복구');break;
       case 'training-play': {
-        const exercise=Store.getById(view.id),video=[exercise?.sourceVideo,...exercise?.supplementaryVideos||[]].find(v=>v?.youtubeId===btn?.dataset.video),host=btn?.closest('.training-player');
+        const exercise=Store.getById(view.id),video=trainingVideos(exercise).find(v=>v?.youtubeId===btn?.dataset.video),host=btn?.closest('.training-player');
         if(!host || !/^[A-Za-z0-9_-]{11}$/.test(video?.youtubeId||''))break;
         const frame=document.createElement('iframe');
         frame.title=video.title;frame.src='https://www.youtube-nocookie.com/embed/'+video.youtubeId+'?autoplay=1&playsinline=1';

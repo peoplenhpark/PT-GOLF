@@ -369,6 +369,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/golf-field-browser.cjs')(browser,base);
   await require('./helpers/golf-compact-browser.cjs')(browser,base);
   await require('./helpers/pt-lowpulley-browser.cjs')(browser,base);
+  await require('./helpers/pt-reference-videos-browser.cjs')(browser,base);
   await require('./helpers/regular-lessons-1106-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);

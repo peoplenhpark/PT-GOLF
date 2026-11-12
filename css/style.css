@@ -713,3 +713,12 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-summary-rest{color:var(--sub);white-space:nowrap;font-variant-numeric:tabular-nums}
 
 .global-questions{text-decoration:none}
+
+/* Short PT references keep source frames and moment links readable on phones. */
+.pt-video-moments{display:grid;gap:8px;margin:12px 0}
+.pt-video-moment{white-space:normal;text-align:left;line-height:1.5;overflow-wrap:anywhere}
+.pt-video-frames{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}
+.pt-video-frames figure{margin:0;min-width:0}
+.pt-video-frames img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:8px}
+.pt-video-frames figcaption{font-size:.75rem;color:var(--muted);margin-top:4px}
+.pt-reference-video h3{overflow-wrap:anywhere}

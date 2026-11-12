@@ -27,7 +27,7 @@ const runtimeFiles = ['index.html', ...fs.readdirSync(path.join(root, 'js')).fil
   'media/3d/viewer.html', 'media/3d/viewer.js', 'samples/pushdown-3d/index.html', 'samples/pushdown-3d/viewer.html',
   ...fs.readdirSync(path.join(root, 'media/golf3d')).filter(f=>f.endsWith('.html')).map(f=>'media/golf3d/'+f)];
 for (const file of process.argv.includes('--manifest-only') ? [] : runtimeFiles) {
-  const code = read(file).replace(/([?&]v=)\d+/g, '$1' + version)
+  const code = read(file).replace(/(\.(?:js|css|html|json|webp|png|jpg|svg)[?&]v=)\d+/g, '$1' + version)
     .replace(/(ASSET_VER\s*=\s*)'\d+'/g, '$1' + "'" + version + "'");
   output(file, code);
 }
@@ -54,6 +54,8 @@ if (missingMedia.length || orphanMedia.length) {
   throw new Error('PT/HT seed/media mismatch; missing media: ' + (missingMedia.join(', ') || 'none') +
     '; orphan media: ' + (orphanMedia.join(', ') || 'none'));
 }
+vm.runInNewContext(read('js/pt-videos.js'), ctx);
+require('./pt-video-validation.cjs')(seed,ctx.window.PTReferenceVideos);
 const exercises = {};
 for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
   if (media.pending) {
@@ -75,6 +77,7 @@ for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
     const viewer=clean(entry.viewer);
     return [...entry.images.map(clean),viewer,...htmlAssets(viewer)];
   });
+  mediaAssets.push(...(ctx.window.PTReferenceVideos[id]?.frames||[]).map(f=>clean(f.src)));
   const legacyImage = seed.exercises.find(e=>e.id===id)?.image;
   exercises[id] = [...new Set([...mediaAssets, ...(legacyImage ? [clean(legacyImage)] : [])])].sort();
 }

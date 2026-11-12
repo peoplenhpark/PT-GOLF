@@ -1,0 +1,618 @@
+{
+  "date": "2026-11-13",
+  "environment": "로컬 배포 빌드에서 운동 상세의 실제 바로가기 클릭 → YouTube 본편 video_id·currentTime 대조. 광고가 끝난 본편만 확인.",
+  "results": [
+    {
+      "exerciseId": "pt_lowpulley_row",
+      "sourceId": "vwHG9Jfu4sw",
+      "displayedSeconds": 60,
+      "url": "https://www.youtube.com/watch?v=vwHG9Jfu4sw&t=60s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=vwHG9Jfu4sw&t=60s",
+        "time": 60,
+        "videoId": "vwHG9Jfu4sw"
+      }
+    },
+    {
+      "exerciseId": "pt_armpulldown",
+      "sourceId": "G9uNaXGTJ4w",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=G9uNaXGTJ4w&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=G9uNaXGTJ4w&t=2s",
+        "time": 2,
+        "videoId": "G9uNaXGTJ4w"
+      }
+    },
+    {
+      "exerciseId": "pt_latpulldown",
+      "sourceId": "mUfNdKgsgHI",
+      "displayedSeconds": 30,
+      "url": "https://www.youtube.com/watch?v=mUfNdKgsgHI&t=30s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=mUfNdKgsgHI&t=30s",
+        "time": 30.009898,
+        "videoId": "mUfNdKgsgHI"
+      }
+    },
+    {
+      "exerciseId": "pt_seatedrow",
+      "sourceId": "zUx50dExgxA",
+      "displayedSeconds": 4,
+      "url": "https://www.youtube.com/watch?v=zUx50dExgxA&t=4s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=zUx50dExgxA&t=4s",
+        "time": 4.001161,
+        "videoId": "zUx50dExgxA"
+      }
+    },
+    {
+      "exerciseId": "pt_pullup",
+      "sourceId": "D_4IlBjqjpw",
+      "displayedSeconds": 9,
+      "url": "https://www.youtube.com/watch?v=D_4IlBjqjpw&t=9s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=D_4IlBjqjpw&t=9s",
+        "time": 9,
+        "videoId": "D_4IlBjqjpw"
+      }
+    },
+    {
+      "exerciseId": "pt_dbpullover",
+      "sourceId": "ffu7B93d63o",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=ffu7B93d63o&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=ffu7B93d63o&t=3s",
+        "time": 3.001869,
+        "videoId": "ffu7B93d63o"
+      }
+    },
+    {
+      "exerciseId": "pt_backextension",
+      "sourceId": "RaIXjcndM94",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=RaIXjcndM94&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=RaIXjcndM94&t=3s",
+        "time": 3.00504,
+        "videoId": "RaIXjcndM94"
+      }
+    },
+    {
+      "exerciseId": "pt_armcurl",
+      "sourceId": "WcAYy5UrFUI",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=WcAYy5UrFUI&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=WcAYy5UrFUI&t=2s",
+        "time": 2.002837,
+        "videoId": "WcAYy5UrFUI"
+      }
+    },
+    {
+      "exerciseId": "pt_seal_row",
+      "sourceId": "0-DXJiceG-0",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=0-DXJiceG-0&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=0-DXJiceG-0&t=2s",
+        "time": 2.004113,
+        "videoId": "0-DXJiceG-0"
+      }
+    },
+    {
+      "exerciseId": "pt_incline_smith_press",
+      "sourceId": "8urE8Z8AMQ4",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=8urE8Z8AMQ4&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=8urE8Z8AMQ4&t=2s",
+        "time": 2.01676,
+        "videoId": "8urE8Z8AMQ4"
+      }
+    },
+    {
+      "exerciseId": "pt_dumbbell_press",
+      "sourceId": "YQ2s_Y7g5Qk",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=YQ2s_Y7g5Qk&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=YQ2s_Y7g5Qk&t=2s",
+        "time": 2,
+        "videoId": "YQ2s_Y7g5Qk"
+      }
+    },
+    {
+      "exerciseId": "pt_pecdeck",
+      "sourceId": "eGjt4lk6g34",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=eGjt4lk6g34&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=eGjt4lk6g34&t=3s",
+        "time": 3,
+        "videoId": "eGjt4lk6g34"
+      }
+    },
+    {
+      "exerciseId": "pt_facepull",
+      "sourceId": "5ZC4LagfDQ4",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=5ZC4LagfDQ4&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=5ZC4LagfDQ4&t=3s",
+        "time": 3,
+        "videoId": "5ZC4LagfDQ4"
+      }
+    },
+    {
+      "exerciseId": "pt_lateralraise",
+      "sourceId": "XPPfnSEATJA",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=XPPfnSEATJA&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=XPPfnSEATJA&t=3s",
+        "time": 3,
+        "videoId": "XPPfnSEATJA"
+      }
+    },
+    {
+      "exerciseId": "pt_uprightrow",
+      "sourceId": "3gjKjIyQuic",
+      "displayedSeconds": 40,
+      "url": "https://www.youtube.com/watch?v=3gjKjIyQuic&t=40s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=3gjKjIyQuic&t=40s",
+        "time": 40.015682,
+        "videoId": "3gjKjIyQuic"
+      }
+    },
+    {
+      "exerciseId": "pt_vsquat",
+      "sourceId": "j6bEZhsOyVc",
+      "displayedSeconds": 16,
+      "url": "https://www.youtube.com/watch?v=j6bEZhsOyVc&t=16s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=j6bEZhsOyVc&t=16s",
+        "time": 16,
+        "videoId": "j6bEZhsOyVc"
+      }
+    },
+    {
+      "exerciseId": "pt_squat",
+      "sourceId": "P-yaD24bUE8",
+      "displayedSeconds": 37,
+      "url": "https://www.youtube.com/watch?v=P-yaD24bUE8&t=37s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=P-yaD24bUE8&t=37s",
+        "time": 37.001505,
+        "videoId": "P-yaD24bUE8"
+      }
+    },
+    {
+      "exerciseId": "pt_pushdown",
+      "sourceId": "LXkCrxn3caQ",
+      "displayedSeconds": 3,
+      "url": "https://www.youtube.com/watch?v=LXkCrxn3caQ&t=3s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=LXkCrxn3caQ&t=3s",
+        "time": 3,
+        "videoId": "LXkCrxn3caQ"
+      }
+    },
+    {
+      "exerciseId": "pt_chestpress",
+      "sourceId": "sqNwDkUU_Ps",
+      "displayedSeconds": 30,
+      "url": "https://www.youtube.com/watch?v=sqNwDkUU_Ps&t=30s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=sqNwDkUU_Ps&t=30s",
+        "time": 30,
+        "videoId": "sqNwDkUU_Ps"
+      }
+    },
+    {
+      "exerciseId": "pt_halfsquat",
+      "sourceId": "jtZciPEaYzo",
+      "displayedSeconds": 49,
+      "url": "https://www.youtube.com/watch?v=jtZciPEaYzo&t=49s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=jtZciPEaYzo&t=49s",
+        "time": 49.011399,
+        "videoId": "jtZciPEaYzo"
+      }
+    },
+    {
+      "exerciseId": "pt_frontsquat",
+      "sourceId": "uYumuL_G_V0",
+      "displayedSeconds": 13,
+      "url": "https://www.youtube.com/watch?v=uYumuL_G_V0&t=13s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=uYumuL_G_V0&t=13s",
+        "time": 13.216556,
+        "videoId": "uYumuL_G_V0"
+      }
+    },
+    {
+      "exerciseId": "pt_heelsquat",
+      "sourceId": "8Dfizux70y4",
+      "displayedSeconds": 5,
+      "url": "https://www.youtube.com/watch?v=8Dfizux70y4&t=5s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=8Dfizux70y4&t=5s",
+        "time": 5.007047,
+        "videoId": "8Dfizux70y4"
+      }
+    },
+    {
+      "exerciseId": "pt_gobletsquat",
+      "sourceId": "f-Vf2yRRqOg",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=f-Vf2yRRqOg&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=f-Vf2yRRqOg&t=2s",
+        "time": 2.010182,
+        "videoId": "f-Vf2yRRqOg"
+      }
+    },
+    {
+      "exerciseId": "pt_widesquat",
+      "sourceId": "d8AkcODKBH0",
+      "displayedSeconds": 19,
+      "url": "https://www.youtube.com/watch?v=d8AkcODKBH0&t=19s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=d8AkcODKBH0&t=19s",
+        "time": 19,
+        "videoId": "d8AkcODKBH0"
+      }
+    },
+    {
+      "exerciseId": "pt_legcurl",
+      "sourceId": "LhGnj6xjCmY",
+      "displayedSeconds": 35,
+      "url": "https://www.youtube.com/watch?v=LhGnj6xjCmY&t=35s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=LhGnj6xjCmY&t=35s",
+        "time": 35,
+        "videoId": "LhGnj6xjCmY"
+      }
+    },
+    {
+      "exerciseId": "pt_legextension",
+      "sourceId": "4ZDm5EbiFI8",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=4ZDm5EbiFI8&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=4ZDm5EbiFI8&t=2s",
+        "time": 2.106299,
+        "videoId": "4ZDm5EbiFI8"
+      }
+    },
+    {
+      "exerciseId": "pt_adduction",
+      "sourceId": "MLBm7i341Rw",
+      "displayedSeconds": 81,
+      "url": "https://www.youtube.com/watch?v=MLBm7i341Rw&t=81s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=MLBm7i341Rw&t=81s",
+        "time": 81.002427,
+        "videoId": "MLBm7i341Rw"
+      }
+    },
+    {
+      "exerciseId": "pt_legpress",
+      "sourceId": "UT1U-iGl2Uc",
+      "displayedSeconds": 5,
+      "url": "https://www.youtube.com/watch?v=UT1U-iGl2Uc&t=5s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=UT1U-iGl2Uc&t=5s",
+        "time": 5.014109,
+        "videoId": "UT1U-iGl2Uc"
+      }
+    },
+    {
+      "exerciseId": "pt_daily_hamstring",
+      "sourceId": "Il1L75v6gq0",
+      "displayedSeconds": 19,
+      "url": "https://www.youtube.com/watch?v=Il1L75v6gq0&t=19s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=Il1L75v6gq0&t=19s",
+        "time": 19,
+        "videoId": "Il1L75v6gq0"
+      }
+    },
+    {
+      "exerciseId": "pt_daily_piriformis",
+      "sourceId": "KU12qLivgK0",
+      "displayedSeconds": 6,
+      "url": "https://www.youtube.com/watch?v=KU12qLivgK0&t=6s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=KU12qLivgK0&t=6s",
+        "time": 6,
+        "videoId": "KU12qLivgK0"
+      }
+    },
+    {
+      "exerciseId": "pt_plank",
+      "sourceId": "3QZlgJ40LfU",
+      "displayedSeconds": 10,
+      "url": "https://www.youtube.com/watch?v=3QZlgJ40LfU&t=10s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=3QZlgJ40LfU&t=10s",
+        "time": 10.013276,
+        "videoId": "3QZlgJ40LfU"
+      }
+    },
+    {
+      "exerciseId": "pt_daily_foam",
+      "sourceId": "ubMr7L29uHs",
+      "displayedSeconds": 14,
+      "url": "https://www.youtube.com/watch?v=ubMr7L29uHs&t=14s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=ubMr7L29uHs&t=14s",
+        "time": 14.013875,
+        "videoId": "ubMr7L29uHs"
+      }
+    },
+    {
+      "exerciseId": "pt_openbook",
+      "sourceId": "EHZJns1bXPM",
+      "displayedSeconds": 5,
+      "url": "https://www.youtube.com/watch?v=EHZJns1bXPM&t=5s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=EHZJns1bXPM&t=5s",
+        "time": 5.010473,
+        "videoId": "EHZJns1bXPM"
+      }
+    },
+    {
+      "exerciseId": "pt_rehab_slr",
+      "sourceId": "U4L_6JEv9Jg",
+      "displayedSeconds": 8,
+      "url": "https://www.youtube.com/watch?v=U4L_6JEv9Jg&t=8s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=U4L_6JEv9Jg&t=8s",
+        "time": 8.009803,
+        "videoId": "U4L_6JEv9Jg"
+      }
+    },
+    {
+      "exerciseId": "pt_rehab_clamshell",
+      "sourceId": "DAAjOdwZdks",
+      "displayedSeconds": 7,
+      "url": "https://www.youtube.com/watch?v=DAAjOdwZdks&t=7s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=DAAjOdwZdks&t=7s",
+        "time": 7,
+        "videoId": "DAAjOdwZdks"
+      }
+    },
+    {
+      "exerciseId": "pt_rehab_sslr",
+      "sourceId": "g9FtnmsIYgI",
+      "displayedSeconds": 7,
+      "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI&t=7s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI&t=7s",
+        "time": 7.002151,
+        "videoId": "g9FtnmsIYgI"
+      }
+    },
+    {
+      "exerciseId": "pt_wide_sidelunge_stretch",
+      "sourceId": "qKWOrxghSYY",
+      "displayedSeconds": 8,
+      "url": "https://www.youtube.com/watch?v=qKWOrxghSYY&t=8s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=qKWOrxghSYY&t=8s",
+        "time": 8.001268,
+        "videoId": "qKWOrxghSYY"
+      }
+    },
+    {
+      "exerciseId": "pt_bridge",
+      "sourceId": "vOvRFsGMMqo",
+      "displayedSeconds": 44,
+      "url": "https://www.youtube.com/watch?v=vOvRFsGMMqo&t=44s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=vOvRFsGMMqo&t=44s",
+        "time": 44.016559,
+        "videoId": "vOvRFsGMMqo"
+      }
+    },
+    {
+      "exerciseId": "pt_hip_openclose_stretch",
+      "sourceId": "DZ-OdbcfvaE",
+      "displayedSeconds": 25,
+      "url": "https://www.youtube.com/watch?v=DZ-OdbcfvaE&t=25s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=DZ-OdbcfvaE&t=25s",
+        "time": 25.005426,
+        "videoId": "DZ-OdbcfvaE"
+      }
+    },
+    {
+      "exerciseId": "pt_birddog",
+      "sourceId": "xEDnlOxeJH4",
+      "displayedSeconds": 67,
+      "url": "https://www.youtube.com/watch?v=xEDnlOxeJH4&t=67s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=xEDnlOxeJH4&t=67s",
+        "time": 67,
+        "videoId": "xEDnlOxeJH4"
+      }
+    },
+    {
+      "exerciseId": "pt_deadbug",
+      "sourceId": "o4GKiEoYClI",
+      "displayedSeconds": 16,
+      "url": "https://www.youtube.com/watch?v=o4GKiEoYClI&t=16s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=o4GKiEoYClI&t=16s",
+        "time": 16.015283,
+        "videoId": "o4GKiEoYClI"
+      }
+    },
+    {
+      "exerciseId": "pt_benchpress",
+      "sourceId": "SCVCLChPQFY",
+      "displayedSeconds": 27,
+      "url": "https://www.youtube.com/watch?v=SCVCLChPQFY&t=27s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=SCVCLChPQFY&t=27s",
+        "time": 27.019259,
+        "videoId": "SCVCLChPQFY"
+      }
+    },
+    {
+      "exerciseId": "pt_tbalance",
+      "sourceId": "8RdQZwNPzaM",
+      "displayedSeconds": 21,
+      "url": "https://www.youtube.com/watch?v=8RdQZwNPzaM&t=21s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=8RdQZwNPzaM&t=21s",
+        "time": 21,
+        "videoId": "8RdQZwNPzaM"
+      }
+    },
+    {
+      "exerciseId": "pt_stepup",
+      "sourceId": "FPpNxUgQ9PY",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=FPpNxUgQ9PY&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=FPpNxUgQ9PY&t=2s",
+        "time": 2.016533,
+        "videoId": "FPpNxUgQ9PY"
+      }
+    },
+    {
+      "exerciseId": "pt_tailbone_raise",
+      "sourceId": "4RqGXT-kBnk",
+      "displayedSeconds": 8,
+      "url": "https://www.youtube.com/watch?v=4RqGXT-kBnk&t=8s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=4RqGXT-kBnk&t=8s",
+        "time": 8.009033,
+        "videoId": "4RqGXT-kBnk"
+      }
+    },
+    {
+      "exerciseId": "pt_sldl",
+      "sourceId": "Iok3nSFXLUU",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=Iok3nSFXLUU&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=Iok3nSFXLUU&t=2s",
+        "time": 2.011608,
+        "videoId": "Iok3nSFXLUU"
+      }
+    },
+    {
+      "exerciseId": "pt_lunge",
+      "sourceId": "SGHnCftrZkA",
+      "displayedSeconds": 72,
+      "url": "https://www.youtube.com/watch?v=SGHnCftrZkA&t=72s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=SGHnCftrZkA&t=72s",
+        "time": 72,
+        "videoId": "SGHnCftrZkA"
+      }
+    },
+    {
+      "exerciseId": "pt_lunge_ball_rotation",
+      "sourceId": "MnnMy4pbEMk",
+      "displayedSeconds": 6,
+      "url": "https://www.youtube.com/watch?v=MnnMy4pbEMk&t=6s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=MnnMy4pbEMk&t=6s",
+        "time": 6,
+        "videoId": "MnnMy4pbEMk"
+      }
+    },
+    {
+      "exerciseId": "pt_low_cable_curl",
+      "sourceId": "gh0nP1TdGgI",
+      "displayedSeconds": 2,
+      "url": "https://www.youtube.com/watch?v=gh0nP1TdGgI&t=2s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=gh0nP1TdGgI&t=2s",
+        "time": 2,
+        "videoId": "gh0nP1TdGgI"
+      }
+    },
+    {
+      "exerciseId": "pt_shoulderpress",
+      "sourceId": "TnhIyp4kmO8",
+      "displayedSeconds": 11,
+      "url": "https://www.youtube.com/watch?v=TnhIyp4kmO8&t=11s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=TnhIyp4kmO8&t=11s",
+        "time": 11,
+        "videoId": "TnhIyp4kmO8"
+      }
+    },
+    {
+      "exerciseId": "pt_machinerow",
+      "sourceId": "9Yx32m7dTsI",
+      "displayedSeconds": 24,
+      "url": "https://www.youtube.com/watch?v=9Yx32m7dTsI&t=24s",
+      "passed": true,
+      "actual": {
+        "url": "https://www.youtube.com/watch?v=9Yx32m7dTsI&t=24s",
+        "time": 24.010791,
+        "videoId": "9Yx32m7dTsI"
+      }
+    }
+  ]
+}
