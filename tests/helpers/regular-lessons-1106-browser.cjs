@@ -13,7 +13,7 @@ module.exports=async(browser,base)=>{
   assert.match(guide,/가슴을 들고/);assert.match(guide,/질문·답변 완료/);
   assert.equal(await page.locator('.exercise-practice-guide > details.training-prior').count(),1,'earlier lesson guide remains accessible');
   await page.goto(base+'#golf/now');await page.locator('.coach-recent-golf').waitFor();
-  assert.match(await page.locator('.coach-recent-golf').innerText(),/2026-11-06/);
+  assert.equal(await page.locator('.coach-recent-golf time').first().getAttribute('datetime'),'2026-11-11');
   for(const hash of ['#golf/questions','#golf/videos/lGgedAC0KCA','#golf/videos/kuRoseAIbtw','#golf/videos/4Eof_tmI0Ag']){
    await page.goto(base+hash);await page.locator('.training-confirmed').waitFor();
    const text=await page.locator('.training-confirmed').innerText();assert.match(text,/직접 검토 답변/);assert.match(text,/왼손 이완/);
