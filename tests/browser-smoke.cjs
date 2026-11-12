@@ -83,7 +83,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await page.locator('.g-sensation-dates a[href="#golf/notes/0930"]').click();assert.match(await page.locator('.g-original').textContent(),/수지 낙하중요/);
   await page.locator('.g-sensation-dates a[href="#golf/notes/1001"]').click();assert.match(await page.locator('.g-original').textContent(),/밟고/);assert.equal(await page.locator('[data-practice=adopt]').count(),0);
   const beforePractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});
-  await page.goto(base+'#golf/today');await page.locator('.gq-reference').waitFor();assert.equal(await page.locator('[data-g-form=practice]').count(),0);assert.match(page.url(),/#golf\/now/);
+  await page.goto(base+'#golf/today');await page.locator('.g-final-lesson-practice').waitFor();assert.equal(await page.locator('[data-g-form=practice]').count(),0);assert.match(page.url(),/#golf\/now/);
   const afterPractice=await page.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1'))||{lessons:[],questions:[],focus:[],videoNotes:{}});for(const k of ['lessons','questions','focus','videoNotes'])assert.deepEqual(afterPractice[k],beforePractice[k]);
   await page.goto(base+'#golf/group/all');await page.locator('.g-frame').first().waitFor();
   assert(await page.locator('.g-video-card').evaluateAll(cards=>cards.every(c=>c.querySelectorAll('.g-frame img').length===2)));

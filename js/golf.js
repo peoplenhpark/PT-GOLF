@@ -251,9 +251,10 @@ window.GolfHub = (() => {
       if(!v)return '';
       const seconds=Math.floor(step.start);
       const time=Math.floor(seconds/60)+':'+String(seconds%60).padStart(2,'0');
-      return `<li data-criterion="${step.criterion+1}"><a href="${href('videos',v.id)}"><strong>${index+1}. ${e(step.title)}</strong></a><p class="g-meta">${e(step.check)}</p><a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${step.start}s" target="_blank" rel="noopener noreferrer">${time} · ${e(videoTitle(v))} ↗</a>${step.note?`<p class="g-meta">${e(step.note)}</p>`:''}</li>`;
+      const stage={0:'backswing',1:'downswing',2:'impact',4:'follow-through'}[step.criterion];
+      return `<li data-criterion="${step.criterion+1}"${stage?` id="g-stage-${stage}" tabindex="-1"`:''}><a href="${href('videos',v.id)}"><strong>${index+1}. ${e(step.title)}</strong></a><p class="g-meta">${e(step.check)}</p><a class="g-link" href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}&amp;t=${step.start}s" target="_blank" rel="noopener noreferrer">${time} · ${e(videoTitle(v))} ↗</a>${step.note?`<p class="g-meta">${e(step.note)}</p>`:''}</li>`;
     }).join('');
-    return `<section class="g-section g-left-arm-pin g-final-lesson-practice" aria-labelledby="g-final-practice-title"><h2 id="g-final-practice-title">11.11 마지막 레슨 · 연습 순서와 추천 영상</h2><p class="g-meta">백스윙 → 일찍 왼손 이완 → 편안한 하강 → 임팩트 → 넓은 통과. 한 번에 한 가지씩 확인하세요.</p><ol class="g-final-practice-steps" style="list-style:none;padding:0">${rows}</ol><a class="g-link" href="${href('lessons',source.id)}">마지막 레슨의 다섯 가지 기준 보기 ›</a>${leftArmFocusLink()}</section>`;
+    return `<section class="g-section g-left-arm-pin g-final-lesson-practice g-stage-overview" aria-labelledby="g-final-practice-title"><h2 id="g-final-practice-title">11.11 마지막 레슨 · 연습 순서와 추천 영상</h2><p class="g-meta">백스윙 → 일찍 왼손 이완 → 편안한 하강 → 임팩트 → 넓은 통과. 한 번에 한 가지씩 확인하세요.</p><ol class="g-final-practice-steps" style="list-style:none;padding:0">${rows}</ol><a class="g-link" href="${href('lessons',source.id)}">마지막 레슨의 다섯 가지 기준 보기 ›</a></section>`;
   }
   function groupedVideos(list,selected) {
     const collection=content.videoCollections[selected];
@@ -314,7 +315,7 @@ window.GolfHub = (() => {
   function dailyPracticePin(compact=false) {
     const pin=content.practicePin,v=pin&&activeVideo(pin.id);
     if(!v||(compact&&!clubMatches(v)))return '';
-    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'연습 핵심 보기':'영상 설명·내 메모'} ›</a></div>${compact?'':dailyPracticeContent()}</section>`;
+    return `<section class="g-daily-pin" aria-label="상시 연습 고정 영상"><p class="g-meta">상단 고정 · 드라이버 참고</p><h2>${e(pin.title)}</h2><a class="g-daily-title" href="${href('videos',v.id)}">${e(videoTitle(v))} ›</a><div class="g-daily-actions"><a href="https://www.youtube.com/watch?v=${e(content.sourceIdFor(v))}" target="_blank" rel="noopener noreferrer">▶ 원본 보기 · ${e(v.duration)}</a><a href="${compact?'#golf/now':href('videos',v.id)}">${compact?'현재 연습 순서':'영상 설명·내 메모'} ›</a></div>${compact?'':dailyPracticeContent()}</section>`;
   }
   function referencePracticePin(v,title,className,label) {
     if(!v||isArchived(v.id))return '';

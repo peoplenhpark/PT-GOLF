@@ -51,7 +51,7 @@ window.CoachDesk = (() => {
   }
   function tabs(part,tab){return '<nav class="coach-tabs" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part)+'" '+(tab==='now'?'aria-current="page"':'')+'>지금 할 것</a><a href="'+route(part,'questions')+'" '+(tab==='questions'?'aria-current="page"':'')+'>질문</a></nav>';}
   function recapLinks(part){
-    return '<nav class="coach-recap-links" aria-label="'+(part==='pt'?'PT':'골프')+' 연습과 전체 자료">'+(part==='pt'?'<button type="button" data-coach-jump="personal">개인운동·루틴 ↓</button><a href="#pt?cat=all">전체 운동 ›</a>':'<button type="button" data-coach-jump="practice">스윙 구간 연습 ↓</button><a href="#golf/videos">레슨·영상·노트 ›</a>')+'</nav>';
+    return '<nav class="coach-recap-links" aria-label="'+(part==='pt'?'PT':'골프')+' 연습과 전체 자료">'+(part==='pt'?'<button type="button" data-coach-jump="personal">개인운동·루틴 ↓</button><a href="#pt?cat=all">전체 운동 ›</a>':'<button type="button" data-coach-jump="practice">연습 순서로 이동 ↓</button><a href="#golf/videos">레슨·영상·노트 ›</a>')+'</nav>';
   }
   function combinedGolfReview(){
     const review=window.GolfContent.driverLessonReview,source=window.GolfHub.learningSources();
@@ -61,8 +61,7 @@ window.CoachDesk = (() => {
     const latest=source.lessons.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
     if(latest?.id!==review.lessonIds[0]||lessons.some(l=>!l||!window.GolfContent.lessons.includes(l)))return '';
     const dateLabel=l=>l.date.slice(5).replace('-','.');
-    const refs=lessons.flatMap(l=>l.practiceReference?[l.practiceReference]:[]).filter((ref,i,all)=>source.videos.some(v=>v.id===ref.videoId)&&all.findIndex(x=>x.videoId===ref.videoId)===i);
-    return '<section class="coach-recent-golf g-personal-priority g-combined-lesson" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">'+esc(review.title)+'</h2></div><p class="coach-meta">정식 레슨 · '+lessons.map(l=>'<time datetime="'+esc(l.date)+'">'+esc(dateLabel(l))+'</time>').join(' · ')+'</p>'+recapLinks('golf')+'<div class="g-priority-columns"><div><h3>연습 '+review.steps.length+'가지</h3><ol>'+review.steps.map(step=>'<li>'+esc(step)+'</li>').join('')+'</ol></div><div><h3>확인 '+review.checks.length+'가지</h3><ul>'+review.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul></div></div><p class="g-priority-note">'+esc(review.note)+'</p><nav class="coach-lesson-links" aria-label="날짜별 원본 레슨과 보강 영상">'+lessons.map(l=>'<a class="coach-source" href="#golf/lessons/'+encodeURIComponent(l.id)+'">'+esc(dateLabel(l))+' 원본 레슨 ›</a>').join('')+refs.map(ref=>'<a class="coach-source" href="#golf/videos/'+encodeURIComponent(ref.videoId)+'">보강 영상 · 그립 압력과 헤드 무게 ›</a>').join('')+'</nav></section>';
+    return '<section class="coach-recent-golf g-personal-priority g-combined-lesson" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">'+esc(review.title)+'</h2></div><p class="coach-meta">정식 레슨 · '+'<time datetime="'+esc(latest.date)+'">'+esc(dateLabel(latest))+'</time>'+'</p>'+recapLinks('golf')+'<details class="g-final-coaching-details"><summary>마지막 레슨의 다섯 가지와 과거 코칭 근거</summary><div class="g-priority-columns"><div><h3>연습 '+review.steps.length+'가지</h3><ol>'+review.steps.map(step=>'<li>'+esc(step)+'</li>').join('')+'</ol></div><div><h3>확인 '+review.checks.length+'가지</h3><ul>'+review.checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ul></div></div><p class="g-priority-note">'+esc(review.note)+'</p><nav class="coach-lesson-links" aria-label="마지막 레슨과 과거 코칭 근거">'+lessons.map(l=>'<a class="coach-source" href="#golf/lessons/'+encodeURIComponent(l.id)+'">'+esc(dateLabel(l))+' 원본 레슨 ›</a>').join('')+'</nav></details></section>';
   }
   function recentGolf(){
     const source=window.GolfHub.learningSources(),latest=source.lessons.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
@@ -75,7 +74,7 @@ window.CoachDesk = (() => {
     }
     const recap=latest?.id===window.GolfContent.pinnedLessonId?'':quick?'<dl class="coach-lesson-recap'+(checks?' has-checks':'')+'"><div><dt>'+(checks?'우선할 감각':'할 것')+'</dt><dd>'+esc(quick.action)+'</dd></div><div><dt>'+(checks?'확인 3가지':'확인할 것')+'</dt><dd>'+(checks?'<ol>'+checks.map(check=>'<li>'+esc(check)+'</li>').join('')+'</ol>':esc(quick.check))+'</dd></div></dl>':'<p>'+esc(latest?.practiceCue||latest?.correction)+'</p>';
     const reference=reviewVideo?'<a class="coach-source" href="https://www.youtube.com/watch?v='+encodeURIComponent(window.GolfContent.sourceIdFor(reviewVideo))+'&amp;t='+Number(quick.videoStart)+'s" target="_blank" rel="noopener noreferrer">'+esc(quick.videoLabel)+'</a>':'';
-    return (latest?.id==='lesson_20261106_relax'?'':window.GolfHub.pinnedSequence())+'<section class="coach-recent-golf" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">최근 레슨 · 빠른 복습</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('golf')+(latest?'<p class="coach-meta">'+(checks&&reviewVideo?'레슨 핵심 + 영상 참고':'레슨 기록')+(quick?' · '+esc(quick.club):latest.practiceClubs?.length?' · '+esc(latest.practiceClubs.join(' · ')):'')+'</p><h3>'+esc(quick?.title||latest.title)+'</h3>'+recap+'<div class="coach-lesson-links"><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(latest.id)+'">레슨 상세 · 복습 자료 보기 ›</a>'+reference+'</div>':'<p>아직 등록된 레슨이 없습니다.</p><a class="coach-source" href="#golf/lessons">레슨 기록 보기 ›</a>')+'</section>';
+    return '<section class="coach-recent-golf" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">최근 레슨 · 빠른 복습</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('golf')+(latest?'<p class="coach-meta">'+(checks&&reviewVideo?'레슨 핵심 + 영상 참고':'레슨 기록')+(quick?' · '+esc(quick.club):latest.practiceClubs?.length?' · '+esc(latest.practiceClubs.join(' · ')):'')+'</p><h3>'+esc(quick?.title||latest.title)+'</h3>'+recap+'<div class="coach-lesson-links"><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(latest.id)+'">레슨 상세 · 복습 자료 보기 ›</a>'+reference+'</div>':'<p>아직 등록된 레슨이 없습니다.</p><a class="coach-source" href="#golf/lessons">레슨 기록 보기 ›</a>')+'</section>';
   }
   function recentPT(){
     const sessions=Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date));
@@ -110,10 +109,8 @@ window.CoachDesk = (() => {
     if(tab==='now'){
       if(part==='pt')body+=window.TrainingQuestions.entryLink()+recentPT();
       if(part==='golf'){
-        const combined=combinedGolfReview(),newestFirst=!combined&&window.GolfHub.learningSources().lessons[0]?.id==='lesson_20261106_relax';
-        body+=window.GolfHub.finalLessonPracticeNow()+(combined||(newestFirst?recentGolf():window.GolfHub.personalPracticePin()))+window.GolfHub.ironRelaxPracticePin()+window.GolfHub.rightArmPracticePin()+window.GolfHub.basicPracticePin()+window.GolfHub.secondaryPracticePin()+window.GolfHub.dailyPracticePin()+(combined||newestFirst?window.GolfHub.pinnedSequence():recentGolf())+window.GolfQuestions.selector(s);
+        body+=window.GolfHub.finalLessonPracticeNow()+(combinedGolfReview()||recentGolf())+window.GolfHub.questionShortcut();
       }
-      if(part==='golf')body+=window.GolfHub.stagePractice()+window.GolfHub.questionShortcut()+(v.coachTopic?window.GolfQuestions.topicDetails(s,v.coachTopic):'');
       if(part==='golf')body+='<nav class="coach-library" aria-label="골프 자료"><a href="#golf/lessons">레슨</a><a href="#golf/videos">영상</a><a href="#golf/notes">감각 노트</a></nav>';
       if(part==='pt')body+=personalPTLinks();
     }else if(tab==='questions'){

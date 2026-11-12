@@ -3,36 +3,24 @@ module.exports=async(browser,base,screenshot)=>{
  const context=await browser.newContext({viewport:{width:390,height:844}}),p=await context.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
  try{
   await p.addInitScript(()=>{if(!localStorage.getItem('ptgolf_learning_v1'))localStorage.setItem('ptgolf_learning_v1',JSON.stringify({lessons:[],questions:[],focus:[],videoNotes:{dBsZdo7VEAA:{memo:'공통 이동 전 개인 메모',favorite:true,title:'내 공통 영상'},U4nn7s20ACc:{memo:'삭제 후에도 보존할 메모',favorite:true}}}));});
-  await p.goto(base+'#golf/now');await p.locator('.g-stage-practice').waitFor();
-  assert.equal(await p.locator('.g-common-practice').count(),0);
-  assert.equal(await p.locator('.coach-recent-golf ol li:visible').count(),5);
-  assert.equal(await p.locator('.coach-recent-golf ul li:visible').count(),5);
-  assert.equal(await p.locator('.coach-recent-golf details').count(),0);
-  assert(await p.locator('.g-personal-priority').evaluate(el=>!!(el.compareDocumentPosition(document.querySelector('.g-basic-practice-pin'))&Node.DOCUMENT_POSITION_FOLLOWING)));
-  assert.equal(await p.locator('.g-stage-grid>.g-stage-card').count(),4);
-  assert.equal(await p.locator('.g-solo-practice').count(),1);
-  assert.deepEqual(await p.locator('.g-stage-card>h3').allTextContents(),['01 · 백스윙','02 · 다운스윙','03 · 임팩트','04 · 팔로우·피니시']);
-  const focus=p.locator('.g-left-arm-pin');
+  await p.goto(base+'#golf/now');await p.locator('.g-final-lesson-practice').waitFor();
+  const focus=p.locator('.g-final-lesson-practice');
   assert.deepEqual(await focus.locator('li > a:first-child').evaluateAll(links=>links.map(link=>link.hash)),['#golf/videos/2tam4sbJQtM','#golf/videos/H812yJ69XOA','#golf/videos/oEVbWjzZl0E','#golf/videos/NRnKLEgrhJo','#golf/videos/LpQxb1pNwFs']);
-  assert(await focus.evaluate(el=>el.getBoundingClientRect().top<innerHeight && (el.compareDocumentPosition(document.querySelector('.coach-recent-golf'))&Node.DOCUMENT_POSITION_FOLLOWING)!==0));
-  assert(await p.locator('#gq-title').evaluate(e=>e.getBoundingClientRect().top+scrollY-[...document.querySelectorAll('.g-left-arm-pin,.g-personal-priority,.g-daily-pin,.g-basic-practice-pin,.g-secondary-practice-pin,.g-right-arm-practice-pin,.g-iron-relax-practice-pin,.g-lesson-video-focus')].reduce((height,el)=>height+el.getBoundingClientRect().height,0)<1200),'apart from the explicitly requested top pin, today selection stays before long practice material');
-  assert.equal(await p.locator('.g-solo-practice .g-practice-focus:visible, .g-stage-practice .g-practice-focus:visible').count(),0);
-  assert.equal(await p.locator('.g-stage-practice .g-practice-cue:visible').count(),3);
-  assert.equal(await p.locator('.g-recent-practice').count(),0);
-  assert.equal(await p.locator('details.g-practice-guide').count(),0);
-  assert.equal(await p.locator('.g-stage-practice .g-practice-columns ol li:visible').count(),9);
-  assert.equal(await p.locator('.g-stage-practice .g-practice-columns ul li:visible').count(),9);
-  assert.equal(await p.locator('.g-stage-links button').count(),4);
+  assert.equal(await p.locator('.g-daily-pin,.g-basic-practice-pin,.g-secondary-practice-pin,.g-right-arm-practice-pin,.g-iron-relax-practice-pin,.g-pinned-sequence,.g-stage-practice,.gq-hub').count(),0);
+  const evidence=p.locator('.g-final-coaching-details');
+  assert.equal(await evidence.getAttribute('open'),null);
+  assert.equal(await evidence.locator('ol li:visible, ul li:visible').count(),0);
+  assert.equal(await focus.locator('a[href*="&t="]').count(),5);
+  assert.equal(await p.locator('.coach-recent-golf').count(),1);
   for(const id of ['backswing','downswing','impact','follow-through']){
-   const before=await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})}));
-   await p.locator('[aria-controls="g-stage-'+id+'"]').click();
-   assert(await p.locator('#g-stage-'+id).evaluate(el=>el===document.activeElement));
-   assert.deepEqual(await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})})),before);
-   assert.equal(await p.locator('#g-stage-'+id+' .g-stage-videos').getAttribute('href'),'#golf/group/'+id);
+    const before=await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})}));
+    await p.locator('[data-golf-stage="'+id+'"]').click();
+    assert(await p.locator('#g-stage-'+id).evaluate(el=>el===document.activeElement));
+    assert.deepEqual(await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})})),before);
   }
-  assert.equal(await p.locator('.g-solo-practice .g-solo-steps li').count(),3);
-  assert.equal(await p.locator('.g-solo-practice ul li').count(),3);
-  assert(await p.evaluate(()=>{const selectors=['.coach-recent-golf','.g-pinned-sequence','.gq-hub','.g-stage-practice','.g-question-shortcut'];return selectors.slice(1).every((s,i)=>document.querySelector(selectors[i]).compareDocumentPosition(document.querySelector(s))&Node.DOCUMENT_POSITION_FOLLOWING);}));
+  await evidence.locator('summary').click();
+  assert.equal(await evidence.locator('ol li:visible').count(),5);
+  assert.equal(await evidence.locator('ul li:visible').count(),5);
   assert.equal(await p.evaluate(()=>GolfQuestions.focus(CoachDesk.read())),null);
   const sections=await p.evaluate(()=>GolfContent.videoSections.map(s=>({id:s.id,groups:s.groups})));
   for(const section of sections){
@@ -75,8 +63,8 @@ module.exports=async(browser,base,screenshot)=>{
   assert.equal(await p.evaluate(()=>JSON.parse(localStorage.getItem('ptgolf_learning_v1')).videoNotes.U4nn7s20ACc.memo),'삭제 후에도 보존할 메모');
   await p.goto(base+'#golf/video-favorites');await p.locator('#g-favorites-title').waitFor();assert.equal(await p.locator('a[href="#golf/videos/U4nn7s20ACc"]').count(),0);
   await p.goto(base+'#golf/videos/2tam4sbJQtM');await p.locator('#g-video-memo').waitFor();await p.locator('#g-video-memo').fill('네 구간 재편 후에도 보존할 메모');await p.locator('[data-g-form=video] button').click();
-  await p.locator('[data-g=favorite-video]').click();await p.goto(base+'#golf/now');await p.locator('.g-stage-links').waitFor();assert.equal(await p.evaluate(()=>GolfQuestions.focus(CoachDesk.read())),null);
-  await p.locator('.g-solo-practice>.g-link[href="#golf/videos/2tam4sbJQtM"]').click();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'네 구간 재편 후에도 보존할 메모');assert.equal(await p.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');
+  await p.locator('[data-g=favorite-video]').click();await p.goto(base+'#golf/now');await p.locator('.g-final-lesson-practice').waitFor();assert.equal(await p.evaluate(()=>GolfQuestions.focus(CoachDesk.read())),null);
+  await p.locator('.g-final-lesson-practice a[href="#golf/videos/2tam4sbJQtM"]').click();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'네 구간 재편 후에도 보존할 메모');assert.equal(await p.locator('[data-g=favorite-video]').getAttribute('aria-pressed'),'true');
   await p.reload();await p.locator('#g-video-memo').waitFor();assert.equal(await p.locator('#g-video-memo').inputValue(),'네 구간 재편 후에도 보존할 메모');
   await p.goto(base+'#golf/group/backswing-top');await p.locator('#g-group-backswing-setup').waitFor();assert.equal(await p.locator('.g-mini-detail').first().getAttribute('href'),'#golf/videos/2tam4sbJQtM');
   if(screenshot){await p.setViewportSize({width:390,height:844});await p.evaluate(()=>document.documentElement.setAttribute('data-theme','light'));await p.screenshot({path:screenshot});}

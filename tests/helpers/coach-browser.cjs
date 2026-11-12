@@ -9,7 +9,7 @@ module.exports=async(browser,base)=>{
    await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    assert.equal(await p.locator('.coach-desk').innerText(),before,'home jump preserves all existing practice content');
    assert(!p.url().includes('start=recent'),'one-time entry intent is consumed');
-   const box=await p.locator('.coach-recent-'+part).boundingBox();assert(box.y>=0&&box.y<150,'recent recap is at viewport top');
+   const box=await p.locator('.coach-recent-'+part).boundingBox();assert(box.y>=0&&box.y<(part==='pt'?150:844),'recap anchor is visible after the home jump');
    await p.goBack();await p.locator('.home-destinations').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
    await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    const exits=p.locator('.coach-recap-links');assert.equal(await exits.locator('a,button').count(),2);
@@ -49,7 +49,7 @@ module.exports=async(browser,base)=>{
   for(const part of ['pt','golf'])for(const tab of ['now','standards'])for(const theme of ['light','dark'])for(const width of [320,390,768]){await p.goto(base+'#'+part+'/'+tab);await p.locator('.coach-tabs').waitFor();await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await p.setViewportSize({width:390,height:844});await p.goto(base+'#pt/now');await p.evaluate(()=>document.documentElement.setAttribute('data-theme','dark'));if(process.env.PTGOLF_SCREENSHOT_DIR)await p.screenshot({path:process.env.PTGOLF_SCREENSHOT_DIR+'/compact-pt.png',fullPage:true});
   await p.goto(base+'#golf/now');if(process.env.PTGOLF_SCREENSHOT_DIR)await p.screenshot({path:process.env.PTGOLF_SCREENSHOT_DIR+'/compact-golf.png',fullPage:true});
-  await p.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await p.reload();await p.locator('.gq-reference').waitFor();assert.equal(await p.locator('.coach-current').count(),0);assert.equal(await p.evaluate(()=>localStorage.getItem(Persistence.KEYS.coaching)),null);await context.setOffline(false);
+  await p.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await p.reload();await p.locator('.g-final-lesson-practice').waitFor();assert.equal(await p.locator('.coach-current').count(),0);assert.equal(await p.evaluate(()=>localStorage.getItem(Persistence.KEYS.coaching)),null);await context.setOffline(false);
   await p.goto(base+'#pt');await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.coach-fold[open]').count(),0);assert.match(await p.locator('.pt-exercise-grid').innerText(),/풀업/);
   await p.goto(base+'#exercise/pt_pullup');await p.locator('[data-act=memo-top]').click();await p.locator('#memo-input').fill('기존 자유 메모 유지');await p.locator('#memo-save').click();await p.reload();assert.equal(await p.locator('.memo-box').innerText(),'기존 자유 메모 유지');
   assert.deepEqual(errors,[]);console.log('PASS: reference-first PT/golf, personal 22, retired archive and storage cleanup, mobile themes, offline and exercise memo.');
