@@ -5,3 +5,5 @@ const g=c.window.HTGuide,plain=x=>JSON.parse(JSON.stringify(x)),review=g.review(
 const search=c.window.AppSearch;assert(search.records('민아링','ht').some(r=>r.id==='pt_pullup'));assert(search.records('레그프레스','ht').some(r=>r.id==='pt_legpress'));assert(!search.records('민아링','ht').some(r=>r.type==='video'));
 const e=active.find(e=>e.id==='pt_pullup');e.name='내 풀업';e.memo='개인 기록';e.favorite=true;assert.equal(g.review().groups[1].items.find(i=>i.exercise.id===e.id).exercise.name,'내 풀업');assert(search.records('개인 기록','ht').some(r=>r.id===e.id));active.splice(active.findIndex(e=>e.id==='pt_pecdeck'),1);assert(!g.review().groups.flatMap(g=>g.items).some(i=>i.exercise.id==='pt_pecdeck'));
 console.log('PASS: HT62 unified library, deduplicated 3/7/4 final coaching, reference-video search and preserved IDs/personal edits/hidden items.');
+
+const ref=g.referenceHtml();assert(ref.includes('RGdsQNrhIIY'));assert(ref.includes('t=180s'));assert(ref.includes('상시 참고'));assert(!ids.includes('RGdsQNrhIIY'));assert.equal((ref.match(/<img /g)||[]).length,2);

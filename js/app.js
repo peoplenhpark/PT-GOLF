@@ -493,7 +493,7 @@ const Theme = (() => {
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
-        ${part==='ht'?htRoutineHtml()+'<details class="coach-fold ht-coaching-reference"><summary>마지막 PT 통합 기준 · 기본·상체·하체</summary>'+HTGuide.html(true)+'</details><nav class="ht-material-links"><a href="#pt/now">통합 기준 크게 보기</a><a href="#pt/questions">운동 확인 사항</a><a href="#search?scope=ht">HT 자료 검색</a></nav><h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 전체 운동 자료</h2>':''}
+        ${part==='ht'?htRoutineHtml()+HTGuide.referenceHtml()+'<details class="coach-fold ht-coaching-reference"><summary>마지막 PT 통합 기준 · 기본·상체·하체</summary>'+HTGuide.html(true)+'</details><nav class="ht-material-links"><a href="#pt/now">통합 기준 크게 보기</a><a href="#pt/questions">운동 확인 사항</a><a href="#search?scope=ht">HT 자료 검색</a></nav><h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 전체 운동 자료</h2>':''}
         ${isPersonal ? `<a class="personal-all-link" href="#${part}?cat=all">${part==='ht'?'HT 전체 자료':'PT 전체 운동'} ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>

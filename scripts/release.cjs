@@ -83,7 +83,7 @@ for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
   exercises[id] = [...new Set([...mediaAssets, ...(legacyImage ? [clean(legacyImage)] : [])])].sort();
 }
 const shell = [...new Set(['index.html', 'data/seed.json', 'manifest.webmanifest', 'icon.svg', 'icon-maskable.svg',
-  'release-assets.js', ...htmlAssets('index.html')])].sort();
+  'release-assets.js', 'media/pt-reference/ht-always-abs-1.jpg', 'media/pt-reference/ht-always-abs-2.jpg', ...htmlAssets('index.html')])].sort();
 vm.runInNewContext(read('js/golf-frames.js'),ctx);
 const gallery=[...new Set(Object.values(ctx.window.GolfFrames).flat().map(frame=>clean(frame.src)))].sort();
 const all = new Set([...shell, ...Object.values(exercises).flat(), ...gallery]);

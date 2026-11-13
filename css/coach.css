@@ -128,3 +128,5 @@
 .ht-coaching-reference{margin:20px 0}.coach-personal>summary h2{display:inline;font-size:16px;margin:0}
 .coach-personal[open] .coach-personal-links{margin-top:14px}
 .home-destination.ht{border-color:var(--ht-line,var(--line))}
+
+.ht-always-reference{margin:16px 0;border-radius:10px}.ht-always-reference p{font-size:14px;line-height:1.65;font-weight:400}.ht-always-reference a{display:inline-block;min-height:44px;padding:10px 12px;box-sizing:border-box;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:8px;text-decoration:underline;line-height:1.5}.ht-always-reference .pt-video-frames{margin:12px 0}

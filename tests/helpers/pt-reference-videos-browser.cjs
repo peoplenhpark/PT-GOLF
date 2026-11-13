@@ -20,7 +20,7 @@ module.exports=async(browser,base)=>{
    await p.locator('.pt-video-frames').scrollIntoViewIfNeeded();await p.waitForFunction(()=>[...document.querySelectorAll('.pt-video-frames img')].every(i=>i.complete&&i.naturalWidth>0));
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'PT reference fits viewport');
   }
-  await p.locator('.pt-reference-video [data-act=training-play]').click();assert.match(await p.locator('.pt-reference-video iframe').getAttribute('src'),/embed\/vwHG9Jfu4sw\?autoplay=1&playsinline=1/);
+  await p.locator('.pt-reference-video [data-act=training-play]').click();assert.match(await p.locator('.pt-reference-video iframe').getAttribute('src'),/embed\/guLhRDd8VTA\?autoplay=1&playsinline=1/);
   await p.goto(base+'#exercise/ht_squat_comparison');await p.locator('.training-video').first().waitFor();assert.equal(await p.locator('.pt-reference-video').count(),0);
   await p.locator('.memo-edit').click();await p.locator('#memo-input').fill('PT 참고 영상 개인 메모 보존');await p.locator('#memo-save').click();await p.reload();await p.locator('.memo-box').waitFor();assert.match(await p.locator('.memo-box').innerText(),/개인 메모 보존/);
   assert.deepEqual(errors,[]);console.log('PASS: PT51 references/3 pending, moment links, source pairs, mobile themes, playback and HT/personal memo preservation.');

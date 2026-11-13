@@ -2,7 +2,7 @@
 globalThis.PTGolfRelease = {
   "version": "238",
   "displayVersion": "4.4",
-  "revision": "6c5eec07c8bb5f62",
+  "revision": "e154f4727b860a60",
   "shell": [
     "css/coach.css",
     "css/golf.css",
@@ -33,6 +33,8 @@ globalThis.PTGolfRelease = {
     "js/training-questions.js",
     "js/update.js",
     "manifest.webmanifest",
+    "media/pt-reference/ht-always-abs-1.jpg",
+    "media/pt-reference/ht-always-abs-2.jpg",
     "release-assets.js"
   ],
   "exercises": {

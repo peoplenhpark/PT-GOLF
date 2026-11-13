@@ -1,0 +1,922 @@
+{
+  "reviewDate": "2026-11-13",
+  "status": "preview-not-deployed",
+  "replaced": [
+    {
+      "exerciseId": "pt_adduction",
+      "previousId": "MLBm7i341Rw",
+      "youtubeId": "JbKtKZwlGVA",
+      "duration": 104,
+      "moment": 52,
+      "label": "이너타이 닫는 동작",
+      "views": 159779,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        20,
+        52
+      ]
+    },
+    {
+      "exerciseId": "pt_armpulldown",
+      "previousId": "G9uNaXGTJ4w",
+      "youtubeId": "M21eot_DO28",
+      "duration": 67,
+      "moment": 33,
+      "label": "암풀다운 팔과 몸통 지지",
+      "views": 3562839,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        13,
+        33
+      ]
+    },
+    {
+      "exerciseId": "pt_benchpress",
+      "previousId": "SCVCLChPQFY",
+      "youtubeId": "FN4zDtiy3Gg",
+      "duration": 178,
+      "moment": 142,
+      "label": "플랫 바벨 벤치프레스 연습",
+      "views": 41592,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        35,
+        142
+      ]
+    },
+    {
+      "exerciseId": "pt_birddog",
+      "previousId": "xEDnlOxeJH4",
+      "youtubeId": "SfjFnlwBwgE",
+      "duration": 68,
+      "moment": 34,
+      "label": "교차 팔·다리와 몸통 정렬",
+      "views": 76764,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        13,
+        34
+      ]
+    },
+    {
+      "exerciseId": "pt_bridge",
+      "previousId": "vOvRFsGMMqo",
+      "youtubeId": "6uBH_PAFORg",
+      "duration": 14,
+      "moment": 7,
+      "label": "바닥 힙 브릿지 시범",
+      "views": 14896,
+      "commentsReviewed": 2,
+      "reviewedSourceFrames": [
+        2,
+        7
+      ]
+    },
+    {
+      "exerciseId": "pt_chestpress",
+      "previousId": "sqNwDkUU_Ps",
+      "youtubeId": "6Y7zjxzmYDc",
+      "duration": 147,
+      "moment": 73,
+      "label": "가슴 프레스 머신 시범",
+      "views": 44860,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        73,
+        117
+      ]
+    },
+    {
+      "exerciseId": "pt_daily_foam",
+      "previousId": "ubMr7L29uHs",
+      "youtubeId": "QWceyd-D1l4",
+      "duration": 41,
+      "moment": 20,
+      "label": "겨드랑이 아래 광배근 이완",
+      "views": 87,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        8,
+        20
+      ]
+    },
+    {
+      "exerciseId": "pt_daily_hamstring",
+      "previousId": "Il1L75v6gq0",
+      "youtubeId": "A26vlN6nRls",
+      "duration": 30,
+      "moment": 6,
+      "label": "누워서 수건으로 햄스트링 늘리기",
+      "views": 392,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        6,
+        15
+      ]
+    },
+    {
+      "exerciseId": "pt_deadbug",
+      "previousId": "o4GKiEoYClI",
+      "youtubeId": "dhQhEwg1fpU",
+      "duration": 78,
+      "moment": 62,
+      "label": "교차 팔·다리 데드버그",
+      "views": 98418,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        39,
+        62
+      ]
+    },
+    {
+      "exerciseId": "pt_dumbbell_press",
+      "previousId": "YQ2s_Y7g5Qk",
+      "youtubeId": "4CzMB7o7nUc",
+      "duration": 112,
+      "moment": 56,
+      "label": "플랫 덤벨 벤치프레스",
+      "views": 3226,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        56,
+        89
+      ]
+    },
+    {
+      "exerciseId": "pt_frontsquat",
+      "previousId": "uYumuL_G_V0",
+      "youtubeId": "3QKMdIcdVSE",
+      "duration": 103,
+      "moment": 51,
+      "label": "프론트 랙과 스쿼트 시범",
+      "views": 628,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        20,
+        51
+      ]
+    },
+    {
+      "exerciseId": "pt_gobletsquat",
+      "previousId": "f-Vf2yRRqOg",
+      "youtubeId": "lI6Z6VIhOR4",
+      "duration": 163,
+      "moment": 81,
+      "label": "덤벨 고블릿 스쿼트",
+      "views": 267236,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        32,
+        81
+      ]
+    },
+    {
+      "exerciseId": "pt_halfsquat",
+      "previousId": "jtZciPEaYzo",
+      "youtubeId": "1r02CmjfLV0",
+      "duration": 25,
+      "moment": 12,
+      "label": "맨몸 하프 스쿼트",
+      "views": 1271,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        5,
+        12
+      ]
+    },
+    {
+      "exerciseId": "pt_hip_openclose_stretch",
+      "previousId": "DZ-OdbcfvaE",
+      "youtubeId": "FXKyF57gPqk",
+      "duration": 21,
+      "moment": 10,
+      "label": "손 지지 힙 에어플레인 시범",
+      "views": 1173,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        4,
+        10
+      ]
+    },
+    {
+      "exerciseId": "pt_incline_smith_press",
+      "previousId": "8urE8Z8AMQ4",
+      "youtubeId": "hCAl9AxpjpE",
+      "duration": 98,
+      "moment": 49,
+      "label": "인클라인 스미스 프레스",
+      "views": 150,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        19,
+        49
+      ]
+    },
+    {
+      "exerciseId": "pt_lateralraise",
+      "previousId": "XPPfnSEATJA",
+      "youtubeId": "u_XiJWkPkj4",
+      "duration": 162,
+      "moment": 81,
+      "label": "덤벨 사이드 레터럴 레이즈",
+      "views": 122640,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        32,
+        81
+      ]
+    },
+    {
+      "exerciseId": "pt_latpulldown",
+      "previousId": "mUfNdKgsgHI",
+      "youtubeId": "v4sLq6Glqco",
+      "duration": 137,
+      "moment": 68,
+      "label": "랫풀다운 가슴·팔꿈치 위치",
+      "views": 14070,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        68,
+        90
+      ]
+    },
+    {
+      "exerciseId": "pt_legcurl",
+      "previousId": "LhGnj6xjCmY",
+      "youtubeId": "VQefaBdz73w",
+      "duration": 120,
+      "moment": 96,
+      "label": "라잉 레그컬 시범",
+      "views": 20642,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        70,
+        96
+      ]
+    },
+    {
+      "exerciseId": "pt_legextension",
+      "previousId": "4ZDm5EbiFI8",
+      "youtubeId": "nh1KdxTIDrQ",
+      "duration": 163,
+      "moment": 81,
+      "label": "레그 익스텐션 세팅과 움직임",
+      "views": 30302,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        81,
+        130
+      ]
+    },
+    {
+      "exerciseId": "pt_legpress",
+      "previousId": "UT1U-iGl2Uc",
+      "youtubeId": "NSbazsNwEzA",
+      "duration": 12,
+      "moment": 6,
+      "label": "와이드 레그프레스 시범",
+      "views": 11,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        2,
+        6
+      ]
+    },
+    {
+      "exerciseId": "pt_low_cable_curl",
+      "previousId": "gh0nP1TdGgI",
+      "youtubeId": "AfnswGHUKuA",
+      "duration": 77,
+      "moment": 38,
+      "label": "로우 케이블 바 컬",
+      "views": 216,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        15,
+        38
+      ]
+    },
+    {
+      "exerciseId": "pt_lowpulley_row",
+      "previousId": "vwHG9Jfu4sw",
+      "youtubeId": "guLhRDd8VTA",
+      "duration": 155,
+      "moment": 31,
+      "label": "중립 손잡이와 발판 준비",
+      "views": 101131,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        31,
+        95
+      ]
+    },
+    {
+      "exerciseId": "pt_lunge",
+      "previousId": "SGHnCftrZkA",
+      "youtubeId": "WN67hTIW5hQ",
+      "duration": 156,
+      "moment": 78,
+      "label": "제자리 런지 지지 설명",
+      "views": 72,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        31,
+        78
+      ]
+    },
+    {
+      "exerciseId": "pt_machinerow",
+      "previousId": "9Yx32m7dTsI",
+      "youtubeId": "z3TG7AqfkuI",
+      "duration": 94,
+      "moment": 75,
+      "label": "가슴 지지 로우 머신 시범",
+      "views": 6120,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        72,
+        75
+      ]
+    },
+    {
+      "exerciseId": "pt_openbook",
+      "previousId": "EHZJns1bXPM",
+      "youtubeId": "4t6k6momV94",
+      "duration": 57,
+      "moment": 28,
+      "label": "옆으로 누운 오픈북 스트레칭",
+      "views": 26624,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        28,
+        45
+      ]
+    },
+    {
+      "exerciseId": "pt_pecdeck",
+      "previousId": "eGjt4lk6g34",
+      "youtubeId": "seLeycoyaoI",
+      "duration": 89,
+      "moment": 71,
+      "label": "손잡이형 펙덱플라이 설명",
+      "views": 13303,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        44,
+        71
+      ]
+    },
+    {
+      "exerciseId": "pt_pushdown",
+      "previousId": "LXkCrxn3caQ",
+      "youtubeId": "Pd0Igl0d_8o",
+      "duration": 90,
+      "moment": 45,
+      "label": "바 케이블 푸시다운",
+      "views": 1448,
+      "commentsReviewed": 2,
+      "reviewedSourceFrames": [
+        45,
+        72
+      ]
+    },
+    {
+      "exerciseId": "pt_rehab_clamshell",
+      "previousId": "DAAjOdwZdks",
+      "youtubeId": "gsWjrPiP23Q",
+      "duration": 76,
+      "moment": 38,
+      "label": "발을 모은 클램쉘",
+      "views": 4417,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        25,
+        38
+      ]
+    },
+    {
+      "exerciseId": "pt_rehab_slr",
+      "previousId": "U4L_6JEv9Jg",
+      "youtubeId": "dJfOFw7LMo8",
+      "duration": 77,
+      "moment": 38,
+      "label": "누워서 무릎 편 다리 들기",
+      "views": 1434,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        38,
+        61
+      ]
+    },
+    {
+      "exerciseId": "pt_rehab_sslr",
+      "previousId": "g9FtnmsIYgI",
+      "youtubeId": "WkhiE94PjWc",
+      "duration": 55,
+      "moment": 27,
+      "label": "옆으로 누운 다리 벌리기",
+      "views": 1098,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        11,
+        27
+      ]
+    },
+    {
+      "exerciseId": "pt_seal_row",
+      "previousId": "0-DXJiceG-0",
+      "youtubeId": "Z9wgUxPC-m4",
+      "duration": 43,
+      "moment": 8,
+      "label": "인클라인 벤치 지지 덤벨 로우",
+      "views": 15249,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        5,
+        8
+      ]
+    },
+    {
+      "exerciseId": "pt_seatedrow",
+      "previousId": "zUx50dExgxA",
+      "youtubeId": "6w_FEaIN90Y",
+      "duration": 149,
+      "moment": 119,
+      "label": "가슴 지지 시티드로우 머신",
+      "views": 5803,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        29,
+        119
+      ]
+    },
+    {
+      "exerciseId": "pt_squat",
+      "previousId": "P-yaD24bUE8",
+      "youtubeId": "7CzGy5nDINQ",
+      "duration": 127,
+      "moment": 63,
+      "label": "맨몸 스쿼트 호흡과 시범",
+      "views": 4613,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        25,
+        63
+      ]
+    },
+    {
+      "exerciseId": "pt_stepup",
+      "previousId": "FPpNxUgQ9PY",
+      "youtubeId": "X-4i6lp6UUE",
+      "duration": 29,
+      "moment": 14,
+      "label": "발판에 올라서는 스텝업",
+      "views": 11080,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        14,
+        23
+      ]
+    },
+    {
+      "exerciseId": "pt_tbalance",
+      "previousId": "8RdQZwNPzaM",
+      "youtubeId": "Ra_-tHZf2pg",
+      "duration": 67,
+      "moment": 13,
+      "label": "몸통과 뒷다리를 길게 티밸런스",
+      "views": 443,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        13,
+        33
+      ]
+    },
+    {
+      "exerciseId": "pt_uprightrow",
+      "previousId": "3gjKjIyQuic",
+      "youtubeId": "kSTb21l2guM",
+      "duration": 119,
+      "moment": 59,
+      "label": "디와이 로우 가슴 지지",
+      "views": 1127,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        59,
+        95
+      ]
+    },
+    {
+      "exerciseId": "pt_vsquat",
+      "previousId": "j6bEZhsOyVc",
+      "youtubeId": "6LHCEly1j1w",
+      "duration": 79,
+      "moment": 39,
+      "label": "브이 스쿼트 머신 시범",
+      "views": 20271,
+      "commentsReviewed": 1,
+      "reviewedSourceFrames": [
+        15,
+        39
+      ]
+    },
+    {
+      "exerciseId": "pt_wide_sidelunge_stretch",
+      "previousId": "qKWOrxghSYY",
+      "youtubeId": "a6zxuXIdK7g",
+      "duration": 54,
+      "moment": 10,
+      "label": "옆으로 앉는 사이드런지",
+      "views": 44,
+      "commentsReviewed": 0,
+      "reviewedSourceFrames": [
+        10,
+        27
+      ]
+    },
+    {
+      "exerciseId": "pt_widesquat",
+      "previousId": "d8AkcODKBH0",
+      "youtubeId": "XbwKqETmdrc",
+      "duration": 42,
+      "moment": 21,
+      "label": "맨몸 와이드 스쿼트",
+      "views": 34920,
+      "commentsReviewed": 5,
+      "reviewedSourceFrames": [
+        8,
+        21
+      ]
+    }
+  ],
+  "englishFallbackPT": [
+    "pt_dbpullover",
+    "pt_backextension",
+    "pt_armcurl",
+    "pt_facepull",
+    "pt_heelsquat",
+    "pt_daily_piriformis",
+    "pt_plank",
+    "pt_tailbone_raise",
+    "pt_sldl",
+    "pt_lunge_ball_rotation",
+    "pt_shoulderpress"
+  ],
+  "fallbackReason": "3분 이내 한국어 검색 후보에서 수업 기구·그립·지지·가동범위를 충분히 일치시키지 못한 항목은 사용자 승인대로 기존 영어 원본 유지. HT 다종목 원본4개도 범위 불일치로 유지.",
+  "sourceScope": "원본 표본 프레임 대조; 전체 연속 시청 검증 아님. 실제 시점 바로가기는 별도 플레이어 점검 결과 참고.",
+  "playerChecks": [
+    {
+      "exerciseId": "pt_benchpress",
+      "id": "FN4zDtiy3Gg",
+      "time": 142,
+      "url": "https://www.youtube.com/watch?v=FN4zDtiy3Gg&t=142s",
+      "expected": 142,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_armpulldown",
+      "id": "M21eot_DO28",
+      "time": 33,
+      "url": "https://www.youtube.com/watch?v=M21eot_DO28&t=33s",
+      "expected": 33,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_adduction",
+      "id": "JbKtKZwlGVA",
+      "time": 52.018946,
+      "url": "https://www.youtube.com/watch?v=JbKtKZwlGVA&t=52s",
+      "expected": 52,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_birddog",
+      "id": "SfjFnlwBwgE",
+      "time": 34.019809,
+      "url": "https://www.youtube.com/watch?v=SfjFnlwBwgE&t=34s",
+      "expected": 34,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_bridge",
+      "id": "6uBH_PAFORg",
+      "time": 7.004534,
+      "url": "https://www.youtube.com/watch?v=6uBH_PAFORg&t=7s",
+      "expected": 7,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_chestpress",
+      "id": "6Y7zjxzmYDc",
+      "time": 73.013688,
+      "url": "https://www.youtube.com/watch?v=6Y7zjxzmYDc&t=73s",
+      "expected": 73,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_daily_foam",
+      "id": "QWceyd-D1l4",
+      "time": 20.018118,
+      "url": "https://www.youtube.com/watch?v=QWceyd-D1l4&t=20s",
+      "expected": 20,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_daily_hamstring",
+      "id": "A26vlN6nRls",
+      "time": 6.009571,
+      "url": "https://www.youtube.com/watch?v=A26vlN6nRls&t=6s",
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_deadbug",
+      "id": "dhQhEwg1fpU",
+      "time": 62.007218,
+      "url": "https://www.youtube.com/watch?v=dhQhEwg1fpU&t=62s",
+      "expected": 62,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_dumbbell_press",
+      "id": "4CzMB7o7nUc",
+      "time": 56.00964,
+      "url": "https://www.youtube.com/watch?v=4CzMB7o7nUc&t=56s",
+      "expected": 56,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_frontsquat",
+      "id": "3QKMdIcdVSE",
+      "time": 51.010886,
+      "url": "https://www.youtube.com/watch?v=3QKMdIcdVSE&t=51s",
+      "expected": 51,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_halfsquat",
+      "id": "1r02CmjfLV0",
+      "time": 12.002851,
+      "url": "https://www.youtube.com/watch?v=1r02CmjfLV0&t=12s",
+      "expected": 12,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_hip_openclose_stretch",
+      "id": "FXKyF57gPqk",
+      "time": 10.009146,
+      "url": "https://www.youtube.com/watch?v=FXKyF57gPqk&t=10s",
+      "expected": 10,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_gobletsquat",
+      "id": "lI6Z6VIhOR4",
+      "time": 81.019086,
+      "url": "https://www.youtube.com/watch?v=lI6Z6VIhOR4&t=81s",
+      "expected": 81,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_lateralraise",
+      "id": "u_XiJWkPkj4",
+      "time": 81,
+      "url": "https://www.youtube.com/watch?v=u_XiJWkPkj4&t=81s",
+      "expected": 81,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_latpulldown",
+      "id": "v4sLq6Glqco",
+      "time": 68,
+      "url": "https://www.youtube.com/watch?v=v4sLq6Glqco&t=68s",
+      "expected": 68,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_legcurl",
+      "id": "VQefaBdz73w",
+      "time": 96.008147,
+      "url": "https://www.youtube.com/watch?v=VQefaBdz73w&t=96s",
+      "expected": 96,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_incline_smith_press",
+      "id": "hCAl9AxpjpE",
+      "time": 49.013541,
+      "url": "https://www.youtube.com/watch?v=hCAl9AxpjpE&t=49s",
+      "expected": 49,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_legextension",
+      "id": "nh1KdxTIDrQ",
+      "time": 81.016691,
+      "url": "https://www.youtube.com/watch?v=nh1KdxTIDrQ&t=81s",
+      "expected": 81,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_legpress",
+      "id": "NSbazsNwEzA",
+      "time": 6,
+      "url": "https://www.youtube.com/watch?v=NSbazsNwEzA&t=6s",
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_lowpulley_row",
+      "id": "guLhRDd8VTA",
+      "time": 31.02,
+      "url": "https://www.youtube.com/watch?v=guLhRDd8VTA&t=31s",
+      "expected": 31,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_low_cable_curl",
+      "id": "AfnswGHUKuA",
+      "time": 38,
+      "url": "https://www.youtube.com/watch?v=AfnswGHUKuA&t=38s",
+      "expected": 38,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_lunge",
+      "id": "WN67hTIW5hQ",
+      "time": 78.009917,
+      "url": "https://www.youtube.com/watch?v=WN67hTIW5hQ&t=78s",
+      "expected": 78,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_openbook",
+      "id": "4t6k6momV94",
+      "time": 28.008953,
+      "url": "https://www.youtube.com/watch?v=4t6k6momV94&t=28s",
+      "expected": 28,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_machinerow",
+      "id": "z3TG7AqfkuI",
+      "time": 75,
+      "url": "https://www.youtube.com/watch?v=z3TG7AqfkuI&t=75s",
+      "expected": 75,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_pecdeck",
+      "id": "seLeycoyaoI",
+      "time": 71.840441,
+      "url": "https://www.youtube.com/watch?v=seLeycoyaoI&t=71s",
+      "expected": 71,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_pushdown",
+      "id": "Pd0Igl0d_8o",
+      "time": 45.018789,
+      "url": "https://www.youtube.com/watch?v=Pd0Igl0d_8o&t=45s",
+      "expected": 45,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_rehab_clamshell",
+      "id": "gsWjrPiP23Q",
+      "time": 38.008143,
+      "url": "https://www.youtube.com/watch?v=gsWjrPiP23Q&t=38s",
+      "expected": 38,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_rehab_sslr",
+      "id": "WkhiE94PjWc",
+      "time": 27.015792,
+      "url": "https://www.youtube.com/watch?v=WkhiE94PjWc&t=27s",
+      "expected": 27,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_rehab_slr",
+      "id": "dJfOFw7LMo8",
+      "time": 38.02,
+      "url": "https://www.youtube.com/watch?v=dJfOFw7LMo8&t=38s",
+      "expected": 38,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_seal_row",
+      "id": "Z9wgUxPC-m4",
+      "time": 8,
+      "url": "https://www.youtube.com/watch?v=Z9wgUxPC-m4&t=8s",
+      "expected": 8,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_seatedrow",
+      "id": "6w_FEaIN90Y",
+      "time": 119.018346,
+      "url": "https://www.youtube.com/watch?v=6w_FEaIN90Y&t=119s",
+      "expected": 119,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_squat",
+      "id": "7CzGy5nDINQ",
+      "time": 63,
+      "url": "https://www.youtube.com/watch?v=7CzGy5nDINQ&t=63s",
+      "expected": 63,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_stepup",
+      "id": "X-4i6lp6UUE",
+      "time": 14.017688,
+      "url": "https://www.youtube.com/watch?v=X-4i6lp6UUE&t=14s",
+      "expected": 14,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_tbalance",
+      "id": "Ra_-tHZf2pg",
+      "time": 13.013735,
+      "url": "https://www.youtube.com/watch?v=Ra_-tHZf2pg&t=13s",
+      "expected": 13,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_vsquat",
+      "id": "6LHCEly1j1w",
+      "time": 39.003037,
+      "url": "https://www.youtube.com/watch?v=6LHCEly1j1w&t=39s",
+      "expected": 39,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_uprightrow",
+      "id": "kSTb21l2guM",
+      "time": 59.006935,
+      "url": "https://www.youtube.com/watch?v=kSTb21l2guM&t=59s",
+      "expected": 59,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_wide_sidelunge_stretch",
+      "id": "a6zxuXIdK7g",
+      "time": 10.016336,
+      "url": "https://www.youtube.com/watch?v=a6zxuXIdK7g&t=10s",
+      "expected": 10,
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_widesquat",
+      "id": "XbwKqETmdrc",
+      "time": 21.009813,
+      "url": "https://www.youtube.com/watch?v=XbwKqETmdrc&t=21s",
+      "expected": 21,
+      "passed": true
+    }
+  ],
+  "htAlwaysReference": {
+    "youtubeId": "RGdsQNrhIIY",
+    "durationSeconds": 482,
+    "dailyRoutine": false,
+    "momentSeconds": 180,
+    "mobileWidths": [
+      320,
+      390,
+      430
+    ],
+    "actualPlayer": {
+      "id": "RGdsQNrhIIY",
+      "time": 180.006552
+    }
+  },
+  "fallbackDetails": {
+    "pt_dbpullover": "무릎90도 유지·골반 고정 단일 덤벨 풀오버와 일반 풀오버/교차 데드버그의 차이를 해소하지 못함.",
+    "pt_backextension": "검토한 한국어 후보가 앉는 머신 또는 바닥 동작으로 45도 벤치와 다름.",
+    "pt_armcurl": "짧은 검색 후보가 고중량 시범·이지바/반동·일반 비교 중심으로 수업의 바벨컬 시범과 일치 확인 부족.",
+    "pt_facepull": "검토한 한국어 후보가 앉거나 등받이에 지지하는 변형으로 기존 서서 하는 로프 시범 유지.",
+    "pt_heelsquat": "뒤꿈치 받침 조건과 맨몸/수업 지지의 일치 확인 부족.",
+    "pt_daily_piriformis": "벤치 위 앞다리와 뒤로 뻗은 뒷다리 지지 형태가 확인되는 3분 이내 한국어 원본 미확보.",
+    "pt_plank": "검색 후보에서 수업의 기본 팔꿈치 플랭크 설명 적합성 확인 부족.",
+    "pt_tailbone_raise": "검토 후보는 다리를 높게 펴며 들어 올려 무릎90도 고정·작은 골반 말기의 수업 범위와 다름.",
+    "pt_sldl": "손 지지·덤벨·수평 골반 유지 조건이 모두 확인되는 한국어 원본 미확보.",
+    "pt_lunge_ball_rotation": "검색 후보가 이동 런지/사이드 런지 등으로 정지 런지+볼 회전과 다름.",
+    "pt_shoulderpress": "검토 후보 머신의 등받이 각도·궤적이 인클라인 성격으로 기존 원본과의 적합성 확정 부족.",
+    "ht_lower_six": "한국어 후보의 4종목·8종목 묶음이나 3분 초과 원본을 기존 6종목 원본 대신 연결하지 않음.",
+    "ht_chest_six": "벤치 없는 덤벨 등 다른 종목 묶음을 기존 6동작 원본으로 대체하지 않음.",
+    "ht_latpulldown_reference": "기존 원본의 적용 범위·2컷과 같은 설명을 확인하지 못해 유지. 개별 PT 랫풀다운은 한국어로 교체.",
+    "ht_upper_elbows": "기존 여러 상체 동작/팔꿈치 지지 범위 전체를 다루는 같은 짧은 한국어 원본 미확보."
+  },
+  "validation": {
+    "nodeTestFiles": 43,
+    "syntaxChecks": 25,
+    "fullBrowserSmoke": "passed",
+    "realYouTubeMoments": "39/39 passed",
+    "htAlwaysMobileThemes": "320/390/430 light/dark passed",
+    "version": "4.4/v238",
+    "deployed": false
+  }
+}

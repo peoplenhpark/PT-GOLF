@@ -101,14 +101,14 @@ window.PTReferenceVideos = {
     ]
   },
   "pt_seatedrow": {
-    "youtubeId": "zUx50dExgxA",
-    "title": "Seated Row Machine (Overhand Grip)",
-    "channel": "My PT Hub",
-    "durationSeconds": 20,
-    "publishedAt": "2015-06-12",
+    "youtubeId": "6w_FEaIN90Y",
+    "title": "시티드로우 머신사용법",
+    "channel": "웨이빗사무용",
+    "durationSeconds": 149,
+    "publishedAt": "2025-11-12",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 35778,
+    "viewCount": 5803,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -117,136 +117,148 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 4,
-        "label": "가슴 지지·오버그립 로우",
-        "url": "https://www.youtube.com/watch?v=zUx50dExgxA&t=4s"
+        "s": 119,
+        "label": "가슴 지지 시티드로우 머신",
+        "url": "https://www.youtube.com/watch?v=6w_FEaIN90Y&t=119s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_seatedrow-1.jpg",
-        "seconds": 4,
-        "alt": "가슴 지지·오버그립 로우 (원본 4초)"
+        "seconds": 29,
+        "alt": "가슴 지지 시티드로우 머신 (원본 29초)"
       },
       {
         "src": "media/pt-reference/pt_seatedrow-2.jpg",
-        "seconds": 10,
-        "alt": "가슴 지지·오버그립 로우 (원본 10초)"
+        "seconds": 119,
+        "alt": "가슴 지지 시티드로우 머신 (원본 119초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_lowpulley_row": {
-    "youtubeId": "vwHG9Jfu4sw",
-    "title": "How to do the SEATED CABLE ROW! | 2 Minute Tutorial",
-    "channel": "Max Euceda",
-    "durationSeconds": 120,
-    "publishedAt": "2021-09-02",
+    "youtubeId": "guLhRDd8VTA",
+    "title": "[케이블시티드로우] 헬린이 필수 시청 !!!",
+    "channel": "탄단지혜 TanDanJihye",
+    "durationSeconds": 155,
+    "publishedAt": "2022-02-22",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 696287,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "영상 길이에 대한 농담이 대부분으로, 자세 품질을 판단할 독립 근거로 쓰지 않았다.",
+    "viewCount": 101131,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "발판·긴 벤치·중립 손잡이 케이블 로우. 반동을 쓰지 않는 수업 자세를 우선한다."
     ],
     "moments": [
       {
-        "s": 60,
-        "label": "몸통을 세운 케이블 로우",
-        "url": "https://www.youtube.com/watch?v=vwHG9Jfu4sw&t=60s"
+        "s": 31,
+        "label": "중립 손잡이와 발판 준비",
+        "url": "https://www.youtube.com/watch?v=guLhRDd8VTA&t=31s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_lowpulley_row-1.jpg",
-        "seconds": 60,
-        "alt": "몸통을 세운 케이블 로우 (원본 60초)"
+        "seconds": 31,
+        "alt": "중립 손잡이와 발판 준비 (원본 31초)"
       },
       {
         "src": "media/pt-reference/pt_lowpulley_row-2.jpg",
-        "seconds": 96,
-        "alt": "몸통을 세운 케이블 로우 (원본 96초)"
+        "seconds": 95,
+        "alt": "중립 손잡이와 발판 준비 (원본 95초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_latpulldown": {
-    "youtubeId": "mUfNdKgsgHI",
-    "title": "The Lat Pull Down - Gym Shorts (How To)",
-    "channel": "Barbell Logic",
-    "durationSeconds": 61,
-    "publishedAt": "2021-05-21",
+    "youtubeId": "v4sLq6Glqco",
+    "title": "[렛풀다운] 헬린이 필수 시청/기구 사용법/자세설명",
+    "channel": "탄단지혜 TanDanJihye",
+    "durationSeconds": 137,
+    "publishedAt": "2022-02-21",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 6931,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "그립·기구·반복 수 질문과 일반 반응이 섞여 있어 자세 검증은 원본 시범을 우선했다.",
+    "viewCount": 14070,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "일자바와 오버그립 동작을 참고한다. 영상의 다른 그립은 별도 변형이며 수업의 발·골반 설정을 유지한다."
     ],
     "moments": [
       {
-        "s": 30,
-        "label": "오버그립 랫풀다운 시범",
-        "url": "https://www.youtube.com/watch?v=mUfNdKgsgHI&t=30s"
+        "s": 68,
+        "label": "랫풀다운 가슴·팔꿈치 위치",
+        "url": "https://www.youtube.com/watch?v=v4sLq6Glqco&t=68s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_latpulldown-1.jpg",
-        "seconds": 30,
-        "alt": "오버그립 랫풀다운 시범 (원본 30초)"
+        "seconds": 68,
+        "alt": "랫풀다운 가슴·팔꿈치 위치 (원본 68초)"
       },
       {
         "src": "media/pt-reference/pt_latpulldown-2.jpg",
-        "seconds": 48,
-        "alt": "오버그립 랫풀다운 시범 (원본 48초)"
+        "seconds": 90,
+        "alt": "랫풀다운 가슴·팔꿈치 위치 (원본 90초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_armpulldown": {
-    "youtubeId": "G9uNaXGTJ4w",
-    "title": "Straight Arm Pulldown",
-    "channel": "Renaissance Periodization",
-    "durationSeconds": 12,
-    "publishedAt": "2019-10-02",
+    "youtubeId": "M21eot_DO28",
+    "title": "암 풀 다운 꿀띱",
+    "channel": "노익스강",
+    "durationSeconds": 67,
+    "publishedAt": "2026-05-02",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 953071,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "짧고 간결한 시범이라는 반응이 많았다. 효과에 관한 개인 경험은 자세의 정답 근거로 쓰지 않았다.",
+    "viewCount": 3562839,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "양손 일자바 케이블 풀다운. 몸통 반동 없이 팔 각도와 광배 움직임을 참고한다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "팔 각도를 유지해 바 내리기",
-        "url": "https://www.youtube.com/watch?v=G9uNaXGTJ4w&t=2s"
+        "s": 33,
+        "label": "암풀다운 팔과 몸통 지지",
+        "url": "https://www.youtube.com/watch?v=M21eot_DO28&t=33s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_armpulldown-1.jpg",
-        "seconds": 2,
-        "alt": "팔 각도를 유지해 바 내리기 (원본 2초)"
+        "seconds": 13,
+        "alt": "암풀다운 팔과 몸통 지지 (원본 13초)"
       },
       {
         "src": "media/pt-reference/pt_armpulldown-2.jpg",
-        "seconds": 6,
-        "alt": "팔 각도를 유지해 바 내리기 (원본 6초)"
+        "seconds": 33,
+        "alt": "암풀다운 팔과 몸통 지지 (원본 33초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_dbpullover": {
     "youtubeId": "ffu7B93d63o",
@@ -286,78 +298,86 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_machinerow": {
-    "youtubeId": "9Yx32m7dTsI",
-    "title": "Iso-Lateral Low Row (Hammer Strength)",
-    "channel": "Double G's Wellness",
-    "durationSeconds": 121,
-    "publishedAt": "2023-03-01",
+    "youtubeId": "z3TG7AqfkuI",
+    "title": "해머스트렝스 하이로우&로우로우사용법",
+    "channel": "보디빌딩 최코치",
+    "durationSeconds": 94,
+    "publishedAt": "2025-05-24",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 97851,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "좌석 높이 조절과 팔 길이에 관한 질문이 있어 개인 기구 설정을 수업 기준으로 유지한다.",
+    "viewCount": 6120,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
-      "플레이트 로드 로우와 가슴 지지 시범. 손잡이·좌석 구조의 세부 차이는 수업 기구 설정을 따른다."
+      "플레이트 로드 로우와 가슴 지지 시범. 손잡이·좌석 구조의 세부 차이는 수업 기구 설정을 따른다.",
+      "1:15 로우로우 구간만 참고한다. 앞부분 하이로우는 이 종목의 대체 동작이 아니다."
     ],
     "moments": [
       {
-        "s": 24,
-        "label": "가슴 패드에 기대어 로우",
-        "url": "https://www.youtube.com/watch?v=9Yx32m7dTsI&t=24s"
+        "s": 75,
+        "label": "가슴 지지 로우 머신 시범",
+        "url": "https://www.youtube.com/watch?v=z3TG7AqfkuI&t=75s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_machinerow-1.jpg",
-        "seconds": 24,
-        "alt": "가슴 패드에 기대어 로우 (원본 24초)"
+        "seconds": 72,
+        "alt": "가슴 지지 로우 머신 시범 (원본 72초)"
       },
       {
         "src": "media/pt-reference/pt_machinerow-2.jpg",
-        "seconds": 96,
-        "alt": "가슴 패드에 기대어 로우 (원본 96초)"
+        "seconds": 75,
+        "alt": "가슴 지지 로우 머신 시범 (원본 75초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_seal_row": {
-    "youtubeId": "0-DXJiceG-0",
-    "title": "Chest Supported Incline Dumbbell Row - OPEX Exercise Library",
-    "channel": "OPEX Fitness",
-    "durationSeconds": 14,
-    "publishedAt": "2020-12-11",
+    "youtubeId": "Z9wgUxPC-m4",
+    "title": "장관장의 운동교실 등상부 운동 원픽!! 인클라인 덤벨 로우!!",
+    "channel": "Woosung JangㅣWNBF PRO BODYBUILDER",
+    "durationSeconds": 43,
+    "publishedAt": "2023-01-18",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 288470,
-    "commentCount": 3,
-    "commentsReviewed": 3,
-    "commentSummary": "벤치 각도 질문이 있어 영상의 각도를 개인 설정으로 확정하지 않았다.",
+    "viewCount": 15249,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
-      "수업의 인클라인 벤치 지지 형태에 맞춘 시범. 평평한 벤치의 실로우와 구분한다."
+      "수업의 인클라인 벤치 지지 형태에 맞춘 시범. 평평한 벤치의 실로우와 구분한다.",
+      "핵심 링크는 벤치 지지 시범이다. 뒤쪽 서서 설명하는 장면을 별도 운동으로 추가하지 않는다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "인클라인 가슴 지지 덤벨 로우",
-        "url": "https://www.youtube.com/watch?v=0-DXJiceG-0&t=2s"
+        "s": 8,
+        "label": "인클라인 벤치 지지 덤벨 로우",
+        "url": "https://www.youtube.com/watch?v=Z9wgUxPC-m4&t=8s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_seal_row-1.jpg",
-        "seconds": 2,
-        "alt": "인클라인 가슴 지지 덤벨 로우 (원본 2초)"
+        "seconds": 5,
+        "alt": "인클라인 벤치 지지 덤벨 로우 (원본 5초)"
       },
       {
         "src": "media/pt-reference/pt_seal_row-2.jpg",
-        "seconds": 7,
-        "alt": "인클라인 가슴 지지 덤벨 로우 (원본 7초)"
+        "seconds": 8,
+        "alt": "인클라인 벤치 지지 덤벨 로우 (원본 8초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_backextension": {
     "youtubeId": "RaIXjcndM94",
@@ -434,226 +454,244 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_pushdown": {
-    "youtubeId": "LXkCrxn3caQ",
-    "title": "How To Do A Tricep Pushdown",
-    "channel": "PureGym",
-    "durationSeconds": 16,
-    "publishedAt": "2020-11-26",
+    "youtubeId": "Pd0Igl0d_8o",
+    "title": "삼두운동  [케이블 푸쉬다운]  세팅법 & 주의사항 (처음 멘트 실수 케이블 푸쉬다운입니다^^)",
+    "channel": "아유짐 트로이",
+    "durationSeconds": 90,
+    "publishedAt": "2025-01-08",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 718751,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 1448,
+    "commentCount": 2,
+    "commentsReviewed": 2,
+    "commentSummary": "공개 댓글 표본 2개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "위쪽 케이블과 일자바의 양손 푸시다운. 돌아오는 범위는 수업에서 배운 가슴 앞 기준을 따른다."
     ],
     "moments": [
       {
-        "s": 3,
-        "label": "일자바 삼두 푸시다운",
-        "url": "https://www.youtube.com/watch?v=LXkCrxn3caQ&t=3s"
+        "s": 45,
+        "label": "바 케이블 푸시다운",
+        "url": "https://www.youtube.com/watch?v=Pd0Igl0d_8o&t=45s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_pushdown-1.jpg",
-        "seconds": 3,
-        "alt": "일자바 삼두 푸시다운 (원본 3초)"
+        "seconds": 45,
+        "alt": "바 케이블 푸시다운 (원본 45초)"
       },
       {
         "src": "media/pt-reference/pt_pushdown-2.jpg",
-        "seconds": 12,
-        "alt": "일자바 삼두 푸시다운 (원본 12초)"
+        "seconds": 72,
+        "alt": "바 케이블 푸시다운 (원본 72초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_benchpress": {
-    "youtubeId": "SCVCLChPQFY",
-    "title": "The Bench Press",
-    "channel": "CrossFit",
-    "durationSeconds": 55,
-    "publishedAt": "2019-05-03",
+    "youtubeId": "FN4zDtiy3Gg",
+    "title": "벤치프레스, 초보자를 위한 완벽정리 ( 효과, 자세, 주의사항, 연습방법)",
+    "channel": "보통트레이너",
+    "durationSeconds": 178,
+    "publishedAt": "2022-02-09",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 954694,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "측면 시야 부족과 전완 정렬에 관한 이견이 있어, 영상은 기본 동작 참고로 한정했다.",
+    "viewCount": 41592,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "평벤치 바벨 시범. 영상의 그립·발 위치는 예시이며 수업에서 확인한 설정과 중량을 유지한다."
     ],
     "moments": [
       {
-        "s": 27,
-        "label": "평벤치 바벨 내리기·밀기",
-        "url": "https://www.youtube.com/watch?v=SCVCLChPQFY&t=27s"
+        "s": 142,
+        "label": "플랫 바벨 벤치프레스 연습",
+        "url": "https://www.youtube.com/watch?v=FN4zDtiy3Gg&t=142s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_benchpress-1.jpg",
-        "seconds": 27,
-        "alt": "평벤치 바벨 내리기·밀기 (원본 27초)"
+        "seconds": 35,
+        "alt": "플랫 바벨 벤치프레스 연습 (원본 35초)"
       },
       {
         "src": "media/pt-reference/pt_benchpress-2.jpg",
-        "seconds": 44,
-        "alt": "평벤치 바벨 내리기·밀기 (원본 44초)"
+        "seconds": 142,
+        "alt": "플랫 바벨 벤치프레스 연습 (원본 142초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_incline_smith_press": {
-    "youtubeId": "8urE8Z8AMQ4",
-    "title": "Smith Machine Incline Press",
-    "channel": "Renaissance Periodization",
-    "durationSeconds": 13,
-    "publishedAt": "2019-10-21",
+    "youtubeId": "hCAl9AxpjpE",
+    "title": "가슴운동 인클라인 스미스머신 밴치프레스 동작, 설명 KNPT",
+    "channel": "김기웅PT이야기",
+    "durationSeconds": 98,
+    "publishedAt": "2018-12-10",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 523630,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "기구 선호와 반복 속도에 대한 논쟁이 있어 효과·속도를 댓글로 확정하지 않았다.",
+    "viewCount": 150,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "경사 벤치와 스미스 레일을 사용하는 시범. 개인 벤치 각도·그립·깊이는 수업 기준이다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "스미스 인클라인 프레스",
-        "url": "https://www.youtube.com/watch?v=8urE8Z8AMQ4&t=2s"
+        "s": 49,
+        "label": "인클라인 스미스 프레스",
+        "url": "https://www.youtube.com/watch?v=hCAl9AxpjpE&t=49s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_incline_smith_press-1.jpg",
-        "seconds": 2,
-        "alt": "스미스 인클라인 프레스 (원본 2초)"
+        "seconds": 19,
+        "alt": "인클라인 스미스 프레스 (원본 19초)"
       },
       {
         "src": "media/pt-reference/pt_incline_smith_press-2.jpg",
-        "seconds": 6,
-        "alt": "스미스 인클라인 프레스 (원본 6초)"
+        "seconds": 49,
+        "alt": "인클라인 스미스 프레스 (원본 49초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_dumbbell_press": {
-    "youtubeId": "YQ2s_Y7g5Qk",
-    "title": "Flat Dumbbell Bench Press",
-    "channel": "Renaissance Periodization",
-    "durationSeconds": 10,
-    "publishedAt": "2019-10-21",
+    "youtubeId": "4CzMB7o7nUc",
+    "title": "[덤벨 벤치프레스] 운동 자세 영상",
+    "channel": "Planfit",
+    "durationSeconds": 112,
+    "publishedAt": "2021-12-26",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1048441,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "더 긴 설명 요청과 깊이에 관한 반응이 있어 수업의 개인 깊이를 우선한다.",
+    "viewCount": 3226,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "평벤치에 누워 양손 덤벨을 미는 시범. 영상의 깊이를 강제로 따라 하지 않고 수업의 범위를 유지한다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "평벤치 양손 덤벨 프레스",
-        "url": "https://www.youtube.com/watch?v=YQ2s_Y7g5Qk&t=2s"
+        "s": 56,
+        "label": "플랫 덤벨 벤치프레스",
+        "url": "https://www.youtube.com/watch?v=4CzMB7o7nUc&t=56s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_dumbbell_press-1.jpg",
-        "seconds": 2,
-        "alt": "평벤치 양손 덤벨 프레스 (원본 2초)"
+        "seconds": 56,
+        "alt": "플랫 덤벨 벤치프레스 (원본 56초)"
       },
       {
         "src": "media/pt-reference/pt_dumbbell_press-2.jpg",
-        "seconds": 5,
-        "alt": "평벤치 양손 덤벨 프레스 (원본 5초)"
+        "seconds": 89,
+        "alt": "플랫 덤벨 벤치프레스 (원본 89초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_chestpress": {
-    "youtubeId": "sqNwDkUU_Ps",
-    "title": "How To Use The Chest Press Machine",
-    "channel": "PureGym",
-    "durationSeconds": 60,
-    "publishedAt": "2022-01-06",
+    "youtubeId": "6Y7zjxzmYDc",
+    "title": "초보 가슴운동 체스트 프레스 머신 기구 사용법",
+    "channel": "메꿀다이어트짐 피트니스 PT 망포점",
+    "durationSeconds": 147,
+    "publishedAt": "2022-07-04",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 714952,
-    "commentCount": 1,
-    "commentsReviewed": 1,
-    "commentSummary": "감사 반응 1건으로 품질을 단정하지 않았다.",
+    "viewCount": 44860,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "앉는 수평 체스트프레스 머신 시범. 좌석 높이와 어깨 위치는 수업의 기구 설정을 우선한다."
     ],
     "moments": [
       {
-        "s": 30,
-        "label": "앉아서 가슴 앞으로 밀기",
-        "url": "https://www.youtube.com/watch?v=sqNwDkUU_Ps&t=30s"
+        "s": 73,
+        "label": "가슴 프레스 머신 시범",
+        "url": "https://www.youtube.com/watch?v=6Y7zjxzmYDc&t=73s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_chestpress-1.jpg",
-        "seconds": 30,
-        "alt": "앉아서 가슴 앞으로 밀기 (원본 30초)"
+        "seconds": 73,
+        "alt": "가슴 프레스 머신 시범 (원본 73초)"
       },
       {
         "src": "media/pt-reference/pt_chestpress-2.jpg",
-        "seconds": 48,
-        "alt": "앉아서 가슴 앞으로 밀기 (원본 48초)"
+        "seconds": 117,
+        "alt": "가슴 프레스 머신 시범 (원본 117초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_pecdeck": {
-    "youtubeId": "eGjt4lk6g34",
-    "title": "How To Use The Chest Fly Machine",
-    "channel": "PureGym",
-    "durationSeconds": 15,
-    "publishedAt": "2022-05-30",
+    "youtubeId": "seLeycoyaoI",
+    "title": "잘하고 있다고 착각하는 펙덱플라이 자세 3가지",
+    "channel": "이웃짐 근육이",
+    "durationSeconds": 89,
+    "publishedAt": "2024-11-11",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 992076,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 13303,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "팔꿈치 패드형이 아닌 손잡이형 플라이 머신. 수업의 가슴·어깨 정렬과 가동범위를 우선한다."
     ],
     "moments": [
       {
-        "s": 3,
-        "label": "손잡이형 펙덱 모으기",
-        "url": "https://www.youtube.com/watch?v=eGjt4lk6g34&t=3s"
+        "s": 71,
+        "label": "손잡이형 펙덱플라이 설명",
+        "url": "https://www.youtube.com/watch?v=seLeycoyaoI&t=71s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_pecdeck-1.jpg",
-        "seconds": 3,
-        "alt": "손잡이형 펙덱 모으기 (원본 3초)"
+        "seconds": 44,
+        "alt": "손잡이형 펙덱플라이 설명 (원본 44초)"
       },
       {
         "src": "media/pt-reference/pt_pecdeck-2.jpg",
-        "seconds": 7,
-        "alt": "손잡이형 펙덱 모으기 (원본 7초)"
+        "seconds": 71,
+        "alt": "손잡이형 펙덱플라이 설명 (원본 71초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_facepull": {
     "youtubeId": "5ZC4LagfDQ4",
@@ -693,162 +731,174 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_lateralraise": {
-    "youtubeId": "XPPfnSEATJA",
-    "title": "How to do a Dumbbell Lateral Raise",
-    "channel": "National Academy of Sports Medicine (NASM)",
-    "durationSeconds": 18,
-    "publishedAt": "2018-11-09",
+    "youtubeId": "u_XiJWkPkj4",
+    "title": "사이드 레터럴 레이즈 3가지만 지키면 무조건 자극옵니다. (승모근 피로 없음) 어깨운동.",
+    "channel": "키다리형",
+    "durationSeconds": 162,
+    "publishedAt": "2021-09-12",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1632576,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "간결하다는 반응과 높이·자세에 관한 이견이 함께 있었다.",
+    "viewCount": 122640,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "양손 덤벨 사이드 레이즈. 수업에서 배운 어깨 높이와 옆으로 뻗는 감각을 유지한다."
     ],
     "moments": [
       {
-        "s": 3,
-        "label": "덤벨을 옆으로 들기",
-        "url": "https://www.youtube.com/watch?v=XPPfnSEATJA&t=3s"
+        "s": 81,
+        "label": "덤벨 사이드 레터럴 레이즈",
+        "url": "https://www.youtube.com/watch?v=u_XiJWkPkj4&t=81s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_lateralraise-1.jpg",
-        "seconds": 3,
-        "alt": "덤벨을 옆으로 들기 (원본 3초)"
+        "seconds": 32,
+        "alt": "덤벨 사이드 레터럴 레이즈 (원본 32초)"
       },
       {
         "src": "media/pt-reference/pt_lateralraise-2.jpg",
-        "seconds": 9,
-        "alt": "덤벨을 옆으로 들기 (원본 9초)"
+        "seconds": 81,
+        "alt": "덤벨 사이드 레터럴 레이즈 (원본 81초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_uprightrow": {
-    "youtubeId": "3gjKjIyQuic",
-    "title": "How to: Hammer Strength  ISO Lateral D.Y. Row",
-    "channel": "Victory Gym and Athletic Club",
-    "durationSeconds": 80,
-    "publishedAt": "2022-01-05",
+    "youtubeId": "kSTb21l2guM",
+    "title": "[해머스트렝스] ISO 디와이 로우",
+    "channel": "비전휘트니스",
+    "durationSeconds": 119,
+    "publishedAt": "2026-02-11",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 18429,
-    "commentCount": 2,
-    "commentsReviewed": 2,
-    "commentSummary": "설명이 명확하고 가슴 패드 위로 어깨를 말지 않는다는 반응이 있었다.",
+    "viewCount": 1127,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "수업의 Hammer Strength D.Y. 로우 기구·언더그립에 맞춘 시범. 바벨 업라이트로우와 다르다."
     ],
     "moments": [
       {
-        "s": 40,
-        "label": "D.Y. 로우 언더그립",
-        "url": "https://www.youtube.com/watch?v=3gjKjIyQuic&t=40s"
+        "s": 59,
+        "label": "디와이 로우 가슴 지지",
+        "url": "https://www.youtube.com/watch?v=kSTb21l2guM&t=59s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_uprightrow-1.jpg",
-        "seconds": 40,
-        "alt": "D.Y. 로우 언더그립 (원본 40초)"
+        "seconds": 59,
+        "alt": "디와이 로우 가슴 지지 (원본 59초)"
       },
       {
         "src": "media/pt-reference/pt_uprightrow-2.jpg",
-        "seconds": 64,
-        "alt": "D.Y. 로우 언더그립 (원본 64초)"
+        "seconds": 95,
+        "alt": "디와이 로우 가슴 지지 (원본 95초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_vsquat": {
-    "youtubeId": "j6bEZhsOyVc",
-    "title": "V-Squat | Hammer Strength Plate Loaded",
-    "channel": "Life Fitness / Hammer Strength",
-    "durationSeconds": 33,
-    "publishedAt": "2025-05-09",
+    "youtubeId": "6LHCEly1j1w",
+    "title": "브이스쿼트 머신 사용법 / v squat",
+    "channel": "헌트피트니스",
+    "durationSeconds": 79,
+    "publishedAt": "2024-06-18",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 9722,
+    "viewCount": 20271,
     "commentCount": 1,
     "commentsReviewed": 1,
-    "commentSummary": "기구에 대한 부정 반응 1건으로 동작 적합성을 단정하지 않았다.",
+    "commentSummary": "공개 댓글 표본 1개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "제조사 Hammer Strength V스쿼트 시범. 개인 발 간격·깊이와 엉덩이를 뒤로 빼는 수업 코칭을 따른다."
     ],
     "moments": [
       {
-        "s": 16,
-        "label": "V스쿼트 어깨 패드 자세",
-        "url": "https://www.youtube.com/watch?v=j6bEZhsOyVc&t=16s"
+        "s": 39,
+        "label": "브이 스쿼트 머신 시범",
+        "url": "https://www.youtube.com/watch?v=6LHCEly1j1w&t=39s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_vsquat-1.jpg",
-        "seconds": 16,
-        "alt": "V스쿼트 어깨 패드 자세 (원본 16초)"
+        "seconds": 15,
+        "alt": "브이 스쿼트 머신 시범 (원본 15초)"
       },
       {
         "src": "media/pt-reference/pt_vsquat-2.jpg",
-        "seconds": 20,
-        "alt": "V스쿼트 어깨 패드 자세 (원본 20초)"
+        "seconds": 39,
+        "alt": "브이 스쿼트 머신 시범 (원본 39초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_squat": {
-    "youtubeId": "P-yaD24bUE8",
-    "title": "Bodyweight Squat Tutorial - Proper Form and Technique",
-    "channel": "Runna",
-    "durationSeconds": 47,
-    "publishedAt": "2024-05-29",
+    "youtubeId": "7CzGy5nDINQ",
+    "title": "맨몸 스쿼트 (무릎 부상 예방하는 법)",
+    "channel": "채코치의 운동생활",
+    "durationSeconds": 127,
+    "publishedAt": "2025-02-12",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 192633,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "검색 유입 경로 관련 댓글이 대부분이라 자세 평가 근거로 쓰지 않았다.",
+    "viewCount": 4613,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "맨몸 스쿼트 기본 시범. 수업에서 확인한 발 간격과 내려가는 범위를 우선한다."
     ],
     "moments": [
       {
-        "s": 37,
-        "label": "맨몸 스쿼트 앉기",
-        "url": "https://www.youtube.com/watch?v=P-yaD24bUE8&t=37s"
+        "s": 63,
+        "label": "맨몸 스쿼트 호흡과 시범",
+        "url": "https://www.youtube.com/watch?v=7CzGy5nDINQ&t=63s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_squat-1.jpg",
-        "seconds": 37,
-        "alt": "맨몸 스쿼트 앉기 (원본 37초)"
+        "seconds": 25,
+        "alt": "맨몸 스쿼트 호흡과 시범 (원본 25초)"
       },
       {
         "src": "media/pt-reference/pt_squat-2.jpg",
-        "seconds": 33,
-        "alt": "맨몸 스쿼트 앉기 (원본 33초)"
+        "seconds": 63,
+        "alt": "맨몸 스쿼트 호흡과 시범 (원본 63초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_halfsquat": {
-    "youtubeId": "jtZciPEaYzo",
-    "title": "How to do a Half-Squat without Dumbbells: Health e-University",
-    "channel": "Health e-University",
-    "durationSeconds": 99,
-    "publishedAt": "2016-10-20",
+    "youtubeId": "1r02CmjfLV0",
+    "title": "[온핏 운동 - 홈트] 하프 스쿼트",
+    "channel": "셀바스온핏",
+    "durationSeconds": 25,
+    "publishedAt": "2021-08-10",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 108380,
+    "viewCount": 1271,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -857,62 +907,68 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 49,
-        "label": "반 범위로 앉는 하프 스쿼트",
-        "url": "https://www.youtube.com/watch?v=jtZciPEaYzo&t=49s"
+        "s": 12,
+        "label": "맨몸 하프 스쿼트",
+        "url": "https://www.youtube.com/watch?v=1r02CmjfLV0&t=12s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_halfsquat-1.jpg",
-        "seconds": 49,
-        "alt": "반 범위로 앉는 하프 스쿼트 (원본 49초)"
+        "seconds": 5,
+        "alt": "맨몸 하프 스쿼트 (원본 5초)"
       },
       {
         "src": "media/pt-reference/pt_halfsquat-2.jpg",
-        "seconds": 79,
-        "alt": "반 범위로 앉는 하프 스쿼트 (원본 79초)"
+        "seconds": 12,
+        "alt": "맨몸 하프 스쿼트 (원본 12초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_frontsquat": {
-    "youtubeId": "uYumuL_G_V0",
-    "title": "The Front Squat",
-    "channel": "CrossFit",
-    "durationSeconds": 66,
-    "publishedAt": "2019-01-27",
+    "youtubeId": "3QKMdIcdVSE",
+    "title": "'프론트 스쿼트(Front squat) 하체 운동' 방법 / 노은동 PT샵👍 '트레이닝센터 바른'",
+    "channel": "트레이닝센터바른",
+    "durationSeconds": 103,
+    "publishedAt": "2025-10-12",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 2069553,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "팔꿈치 높이와 손목 가동성 질문이 많아 개인 랙 자세는 수업 코칭을 유지한다.",
+    "viewCount": 628,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "프런트 랙 바벨 스쿼트 시범. 개인 손목 가동범위와 깊이를 수업 기준으로 맞춘다."
     ],
     "moments": [
       {
-        "s": 13,
-        "label": "앞쪽 바벨·높은 팔꿈치",
-        "url": "https://www.youtube.com/watch?v=uYumuL_G_V0&t=13s"
+        "s": 51,
+        "label": "프론트 랙과 스쿼트 시범",
+        "url": "https://www.youtube.com/watch?v=3QKMdIcdVSE&t=51s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_frontsquat-1.jpg",
-        "seconds": 13,
-        "alt": "앞쪽 바벨·높은 팔꿈치 (원본 13초)"
+        "seconds": 20,
+        "alt": "프론트 랙과 스쿼트 시범 (원본 20초)"
       },
       {
         "src": "media/pt-reference/pt_frontsquat-2.jpg",
-        "seconds": 33,
-        "alt": "앞쪽 바벨·높은 팔꿈치 (원본 33초)"
+        "seconds": 51,
+        "alt": "프론트 랙과 스쿼트 시범 (원본 51초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_heelsquat": {
     "youtubeId": "8Dfizux70y4",
@@ -952,266 +1008,287 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_gobletsquat": {
-    "youtubeId": "f-Vf2yRRqOg",
-    "title": "Goblet Squat",
-    "channel": "Marcus Filly",
-    "durationSeconds": 13,
-    "publishedAt": "2018-04-09",
+    "youtubeId": "lI6Z6VIhOR4",
+    "title": "3분이면 끝!👊  고블릿 스쿼트 자세 제대로 하는 법 - 덤벨 운동 언니에게 배워봐!",
+    "channel": "빅씨스 Bigsis",
+    "durationSeconds": 163,
+    "publishedAt": "2021-03-08",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 464677,
-    "commentCount": 1,
-    "commentsReviewed": 1,
-    "commentSummary": "동작 설명을 더 요청하는 댓글이 있어 기본 시범 참고로 한정한다.",
+    "viewCount": 267236,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "덤벨 하나를 세워 가슴 앞에서 받치는 시범. 수업의 발 간격과 범위를 유지한다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "가슴 앞 한 덤벨 고블릿 스쿼트",
-        "url": "https://www.youtube.com/watch?v=f-Vf2yRRqOg&t=2s"
+        "s": 81,
+        "label": "덤벨 고블릿 스쿼트",
+        "url": "https://www.youtube.com/watch?v=lI6Z6VIhOR4&t=81s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_gobletsquat-1.jpg",
-        "seconds": 2,
-        "alt": "가슴 앞 한 덤벨 고블릿 스쿼트 (원본 2초)"
+        "seconds": 32,
+        "alt": "덤벨 고블릿 스쿼트 (원본 32초)"
       },
       {
         "src": "media/pt-reference/pt_gobletsquat-2.jpg",
-        "seconds": 6,
-        "alt": "가슴 앞 한 덤벨 고블릿 스쿼트 (원본 6초)"
+        "seconds": 81,
+        "alt": "덤벨 고블릿 스쿼트 (원본 81초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_widesquat": {
-    "youtubeId": "d8AkcODKBH0",
-    "title": "HOW TO: SUMO SQUAT BODYWEIGHT IN 1 MIN",
-    "channel": "DOP Strength",
-    "durationSeconds": 39,
-    "publishedAt": "2020-06-09",
+    "youtubeId": "XbwKqETmdrc",
+    "title": "와이드 스쿼트 하나로 하체 운동을 한번에!",
+    "channel": "유어홈짐",
+    "durationSeconds": 42,
+    "publishedAt": "2017-01-10",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1451,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 34920,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "맨몸 와이드·스모 스쿼트 시범. 무릎과 발끝 방향을 맞추고 수업에서 정한 깊이까지만 한다."
     ],
     "moments": [
       {
-        "s": 19,
-        "label": "넓은 발 간격 스쿼트",
-        "url": "https://www.youtube.com/watch?v=d8AkcODKBH0&t=19s"
+        "s": 21,
+        "label": "맨몸 와이드 스쿼트",
+        "url": "https://www.youtube.com/watch?v=XbwKqETmdrc&t=21s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_widesquat-1.jpg",
-        "seconds": 19,
-        "alt": "넓은 발 간격 스쿼트 (원본 19초)"
+        "seconds": 8,
+        "alt": "맨몸 와이드 스쿼트 (원본 8초)"
       },
       {
         "src": "media/pt-reference/pt_widesquat-2.jpg",
-        "seconds": 31,
-        "alt": "넓은 발 간격 스쿼트 (원본 31초)"
+        "seconds": 21,
+        "alt": "맨몸 와이드 스쿼트 (원본 21초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_legcurl": {
-    "youtubeId": "LhGnj6xjCmY",
-    "title": "Lying hamstring curl with weight machine",
-    "channel": "Drugs.com",
-    "durationSeconds": 70,
-    "publishedAt": "2018-03-27",
+    "youtubeId": "VQefaBdz73w",
+    "title": "[라잉레그컬] 헬린이 필수 시청/기구 사용법/자세설명",
+    "channel": "탄단지혜 TanDanJihye",
+    "durationSeconds": 120,
+    "publishedAt": "2022-02-21",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 8849,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 20642,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "앉는 기구가 아닌 라잉 레그컬 시범. 패드 위치와 중량은 수업 기구 기준을 따른다.",
       "11.13 마지막 수업 기준: 처음 만든 골반·상체 지지를 접을 때와 내려올 때 모두 유지한다. 반복 사이 힘을 풀었다 다시 잡지 않는다."
     ],
     "moments": [
       {
-        "s": 35,
-        "label": "엎드린 레그컬",
-        "url": "https://www.youtube.com/watch?v=LhGnj6xjCmY&t=35s"
+        "s": 96,
+        "label": "라잉 레그컬 시범",
+        "url": "https://www.youtube.com/watch?v=VQefaBdz73w&t=96s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_legcurl-1.jpg",
-        "seconds": 35,
-        "alt": "엎드린 레그컬 (원본 35초)"
+        "seconds": 70,
+        "alt": "라잉 레그컬 시범 (원본 70초)"
       },
       {
         "src": "media/pt-reference/pt_legcurl-2.jpg",
-        "seconds": 56,
-        "alt": "엎드린 레그컬 (원본 56초)"
+        "seconds": 96,
+        "alt": "라잉 레그컬 시범 (원본 96초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_adduction": {
-    "youtubeId": "MLBm7i341Rw",
-    "title": "How to PROPERLY Use The Adductor Machine (STOP THIS NOW)",
-    "channel": "Colossus Fitness",
-    "durationSeconds": 163,
-    "publishedAt": "2025-02-24",
+    "youtubeId": "JbKtKZwlGVA",
+    "title": "하체운동, 허벅지 안쪽살 [어덕션] 헬스초보 운동기구 사용법 / 헬린이를 위한 머신 완벽 가이드! 원포인트 레슨!",
+    "channel": "몸트TV",
+    "durationSeconds": 104,
+    "publishedAt": "2019-04-29",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 70022,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "홍보·농담이 대부분이라 자세 평가 근거로 쓰지 않았다.",
+    "viewCount": 159779,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "다리를 안쪽으로 모으는 내전 머신 시범. 바깥으로 벌리는 외전 운동과 구분하며 개인 범위를 유지한다.",
       "11.13 마지막 수업에서는 조금 기대는 개인 자세로 골반·허리 지지를 끝까지 유지하도록 교정받았다. 영상의 상체 각도를 억지로 따라 하지 않는다."
     ],
     "moments": [
       {
-        "s": 81,
-        "label": "이너타이 머신 다리 모으기",
-        "url": "https://www.youtube.com/watch?v=MLBm7i341Rw&t=81s"
+        "s": 52,
+        "label": "이너타이 닫는 동작",
+        "url": "https://www.youtube.com/watch?v=JbKtKZwlGVA&t=52s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_adduction-1.jpg",
-        "seconds": 81,
-        "alt": "이너타이 머신 다리 모으기 (원본 81초)"
+        "seconds": 20,
+        "alt": "이너타이 닫는 동작 (원본 20초)"
       },
       {
         "src": "media/pt-reference/pt_adduction-2.jpg",
-        "seconds": 100,
-        "alt": "이너타이 머신 다리 모으기 (원본 100초)"
+        "seconds": 52,
+        "alt": "이너타이 닫는 동작 (원본 52초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_legextension": {
-    "youtubeId": "4ZDm5EbiFI8",
-    "title": "How To Do A Leg Extension",
-    "channel": "PureGym",
-    "durationSeconds": 14,
-    "publishedAt": "2022-02-01",
+    "youtubeId": "nh1KdxTIDrQ",
+    "title": "초보자 하체운동 레그익스텐션 기구 사용법",
+    "channel": "메꿀다이어트짐 피트니스 PT 망포점",
+    "durationSeconds": 163,
+    "publishedAt": "2022-07-10",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 835712,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 30302,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "시티드 레그익스텐션 기구 시범. 수업의 무릎 축·발목 패드·중량을 유지한다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "앉아서 무릎 펴기",
-        "url": "https://www.youtube.com/watch?v=4ZDm5EbiFI8&t=2s"
+        "s": 81,
+        "label": "레그 익스텐션 세팅과 움직임",
+        "url": "https://www.youtube.com/watch?v=nh1KdxTIDrQ&t=81s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_legextension-1.jpg",
-        "seconds": 2,
-        "alt": "앉아서 무릎 펴기 (원본 2초)"
+        "seconds": 81,
+        "alt": "레그 익스텐션 세팅과 움직임 (원본 81초)"
       },
       {
         "src": "media/pt-reference/pt_legextension-2.jpg",
-        "seconds": 11,
-        "alt": "앉아서 무릎 펴기 (원본 11초)"
+        "seconds": 130,
+        "alt": "레그 익스텐션 세팅과 움직임 (원본 130초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_legpress": {
-    "youtubeId": "UT1U-iGl2Uc",
-    "title": "High Wide Stance Leg Press",
-    "channel": "Deanna Lorea",
-    "durationSeconds": 28,
-    "publishedAt": "2021-09-12",
+    "youtubeId": "NSbazsNwEzA",
+    "title": "54-3. 와이드 레그프레스 - 뒤꿈치 간격이 어깨끝 너비, 발모양 밖으로 열어주고, 무릎 열린 상태로 최대한 당겼다가, 열린상태 유지하면서, 밀 수 있는 구간까지 밀기",
+    "channel": "자세 교정 PT",
+    "durationSeconds": 12,
+    "publishedAt": "2026-02-22",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 20372,
-    "commentCount": 1,
-    "commentsReviewed": 1,
-    "commentSummary": "개인 외형에 관한 댓글로 자세 평가 근거로 쓰지 않았다.",
+    "viewCount": 11,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "경사 레그프레스에서 높은·넓은 발 위치 시범. 수업의 골반 고정과 개인 깊이 기준을 우선한다.",
       "11.13 마지막 수업의 한 칸 낮춘 등받이·원판 두 장은 사용자의 수업 기구 설정이다. 원판 kg·좌우 기준은 미확인이므로 영상의 중량·등받이 칸 번호로 대체하지 않는다."
     ],
     "moments": [
       {
-        "s": 5,
-        "label": "높고 넓은 발 위치 레그프레스",
-        "url": "https://www.youtube.com/watch?v=UT1U-iGl2Uc&t=5s"
+        "s": 6,
+        "label": "와이드 레그프레스 시범",
+        "url": "https://www.youtube.com/watch?v=NSbazsNwEzA&t=6s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_legpress-1.jpg",
-        "seconds": 5,
-        "alt": "높고 넓은 발 위치 레그프레스 (원본 5초)"
+        "seconds": 2,
+        "alt": "와이드 레그프레스 시범 (원본 2초)"
       },
       {
         "src": "media/pt-reference/pt_legpress-2.jpg",
-        "seconds": 22,
-        "alt": "높고 넓은 발 위치 레그프레스 (원본 22초)"
+        "seconds": 6,
+        "alt": "와이드 레그프레스 시범 (원본 6초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_daily_hamstring": {
-    "youtubeId": "Il1L75v6gq0",
-    "title": "Hamstring Stretch with a Strap, Supine - Ask Doctor Jo",
-    "channel": "AskDoctorJo",
-    "durationSeconds": 39,
-    "publishedAt": "2017-03-29",
+    "youtubeId": "A26vlN6nRls",
+    "title": "햄스트링 스트레칭 (수건 이용)",
+    "channel": "인제대학교 백병원 스포츠의학연구소",
+    "durationSeconds": 30,
+    "publishedAt": "2022-12-13",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 192512,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "허리 부담이 적다는 경험과 무릎 뒤 불편·종아리 당김 질문이 함께 있었다.",
+    "viewCount": 392,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "누운 자세에서 스트랩으로 편 다리를 보조한다. 수업의 골반 정렬과 편안한 범위를 유지한다."
     ],
     "moments": [
       {
-        "s": 19,
-        "label": "누워 무릎을 편 스트랩 스트레칭",
-        "url": "https://www.youtube.com/watch?v=Il1L75v6gq0&t=19s"
+        "s": 6,
+        "label": "누워서 수건으로 햄스트링 늘리기",
+        "url": "https://www.youtube.com/watch?v=A26vlN6nRls&t=6s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_daily_hamstring-1.jpg",
-        "seconds": 19,
-        "alt": "누워 무릎을 편 스트랩 스트레칭 (원본 19초)"
+        "seconds": 6,
+        "alt": "누워서 수건으로 햄스트링 늘리기 (원본 6초)"
       },
       {
         "src": "media/pt-reference/pt_daily_hamstring-2.jpg",
-        "seconds": 31,
-        "alt": "누워 무릎을 편 스트랩 스트레칭 (원본 31초)"
+        "seconds": 15,
+        "alt": "누워서 수건으로 햄스트링 늘리기 (원본 15초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_daily_piriformis": {
     "youtubeId": "KU12qLivgK0",
@@ -1288,14 +1365,14 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_daily_foam": {
-    "youtubeId": "ubMr7L29uHs",
-    "title": "Lat Release (Foam Roller)",
-    "channel": "Integrated Strength",
-    "durationSeconds": 72,
-    "publishedAt": "2020-04-12",
+    "youtubeId": "QWceyd-D1l4",
+    "title": "광배근 폼롤러 근막이완",
+    "channel": "Re:work Healthcare Official",
+    "durationSeconds": 41,
+    "publishedAt": "2026-04-17",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 74,
+    "viewCount": 87,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -1304,74 +1381,80 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 14,
-        "label": "겨드랑이 아래 광배 폼롤러",
-        "url": "https://www.youtube.com/watch?v=ubMr7L29uHs&t=14s"
+        "s": 20,
+        "label": "겨드랑이 아래 광배근 이완",
+        "url": "https://www.youtube.com/watch?v=QWceyd-D1l4&t=20s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_daily_foam-1.jpg",
-        "seconds": 14,
-        "alt": "겨드랑이 아래 광배 폼롤러 (원본 14초)"
+        "seconds": 8,
+        "alt": "겨드랑이 아래 광배근 이완 (원본 8초)"
       },
       {
         "src": "media/pt-reference/pt_daily_foam-2.jpg",
-        "seconds": 36,
-        "alt": "겨드랑이 아래 광배 폼롤러 (원본 36초)"
+        "seconds": 20,
+        "alt": "겨드랑이 아래 광배근 이완 (원본 20초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_openbook": {
-    "youtubeId": "EHZJns1bXPM",
-    "title": "Side Lying Thoracic Rotation",
-    "channel": "The Active Life",
-    "durationSeconds": 26,
-    "publishedAt": "2020-11-10",
+    "youtubeId": "4t6k6momV94",
+    "title": "등 통증, 옆구리 통증 완화에 효과적인 오픈북 스트레칭",
+    "channel": "콕선생님 (콕통증의학과)",
+    "durationSeconds": 57,
+    "publishedAt": "2019-05-06",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 238364,
-    "commentCount": 6,
-    "commentsReviewed": 6,
-    "commentSummary": "설명이 도움이 됐다는 개인 반응이 있었다. 효과의 검증 자료로 간주하지 않았다.",
+    "viewCount": 26624,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "무릎을 지지한 옆누운 오픈북. 수업대로 골반을 고정하고 팔·시선을 함께 돌린다.",
       "11.13 마지막 수업 기준: 무릎을 직각으로 준비하고 머리부터 골반까지 길게 정렬한다. 영상의 받침 높이를 개인 설정으로 그대로 적용하지 않는다."
     ],
     "moments": [
       {
-        "s": 5,
-        "label": "옆으로 누운 흉추 열기",
-        "url": "https://www.youtube.com/watch?v=EHZJns1bXPM&t=5s"
+        "s": 28,
+        "label": "옆으로 누운 오픈북 스트레칭",
+        "url": "https://www.youtube.com/watch?v=4t6k6momV94&t=28s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_openbook-1.jpg",
-        "seconds": 5,
-        "alt": "옆으로 누운 흉추 열기 (원본 5초)"
+        "seconds": 28,
+        "alt": "옆으로 누운 오픈북 스트레칭 (원본 28초)"
       },
       {
         "src": "media/pt-reference/pt_openbook-2.jpg",
-        "seconds": 13,
-        "alt": "옆으로 누운 흉추 열기 (원본 13초)"
+        "seconds": 45,
+        "alt": "옆으로 누운 오픈북 스트레칭 (원본 45초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_rehab_slr": {
-    "youtubeId": "U4L_6JEv9Jg",
-    "title": "Straight Leg Raises",
-    "channel": "Baptist Health",
-    "durationSeconds": 42,
-    "publishedAt": "2020-07-22",
+    "youtubeId": "dJfOFw7LMo8",
+    "title": "#체크포인트 SLR 운동, 무릎재활운동",
+    "channel": "포인트병원",
+    "durationSeconds": 77,
+    "publishedAt": "2024-08-13",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1277054,
-    "commentCount": null,
+    "viewCount": 1434,
+    "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
@@ -1379,73 +1462,80 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 8,
-        "label": "누워 편 다리 들어 올리기",
-        "url": "https://www.youtube.com/watch?v=U4L_6JEv9Jg&t=8s"
+        "s": 38,
+        "label": "누워서 무릎 편 다리 들기",
+        "url": "https://www.youtube.com/watch?v=dJfOFw7LMo8&t=38s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_rehab_slr-1.jpg",
-        "seconds": 8,
-        "alt": "누워 편 다리 들어 올리기 (원본 8초)"
+        "seconds": 38,
+        "alt": "누워서 무릎 편 다리 들기 (원본 38초)"
       },
       {
         "src": "media/pt-reference/pt_rehab_slr-2.jpg",
-        "seconds": 21,
-        "alt": "누워 편 다리 들어 올리기 (원본 21초)"
+        "seconds": 61,
+        "alt": "누워서 무릎 편 다리 들기 (원본 61초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_rehab_clamshell": {
-    "youtubeId": "DAAjOdwZdks",
-    "title": "Side Lying Clam Shell",
-    "channel": "Baptist Health",
-    "durationSeconds": 39,
-    "publishedAt": "2020-07-22",
+    "youtubeId": "gsWjrPiP23Q",
+    "title": "[척추나한의원 헬스] 클램쉘 운동",
+    "channel": "청추나한의원",
+    "durationSeconds": 76,
+    "publishedAt": "2021-12-29",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 636978,
-    "commentCount": null,
+    "viewCount": 4417,
+    "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
-      "옆으로 누워 무릎을 굽힌 클램쉘. 영상 후반의 밴드는 추가 변형이므로 수업의 맨몸 범위를 우선한다."
+      "옆으로 누워 무릎을 굽힌 클램쉘. 영상 후반의 밴드는 추가 변형이므로 수업의 맨몸 범위를 우선한다.",
+      "후반 밴드 응용은 선택하지 않고 맨몸 기본 시범을 참고한다."
     ],
     "moments": [
       {
-        "s": 7,
-        "label": "발을 붙인 클램쉘",
-        "url": "https://www.youtube.com/watch?v=DAAjOdwZdks&t=7s"
+        "s": 38,
+        "label": "발을 모은 클램쉘",
+        "url": "https://www.youtube.com/watch?v=gsWjrPiP23Q&t=38s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_rehab_clamshell-1.jpg",
-        "seconds": 7,
-        "alt": "발을 붙인 클램쉘 (원본 7초)"
+        "seconds": 25,
+        "alt": "발을 모은 클램쉘 (원본 25초)"
       },
       {
         "src": "media/pt-reference/pt_rehab_clamshell-2.jpg",
-        "seconds": 19,
-        "alt": "발을 붙인 클램쉘 (원본 19초)"
+        "seconds": 38,
+        "alt": "발을 모은 클램쉘 (원본 38초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_rehab_sslr": {
-    "youtubeId": "g9FtnmsIYgI",
-    "title": "Side Lying Hip Abduction",
-    "channel": "Baptist Health",
-    "durationSeconds": 39,
-    "publishedAt": "2020-07-22",
+    "youtubeId": "WkhiE94PjWc",
+    "title": "'사이드 라잉 힙 어브덕션, Side Lying Hip Abduction' 엉덩이 운동 방법 / 대전 유성구 PT샵👍 '트레이닝센터 바른'",
+    "channel": "트레이닝센터바른",
+    "durationSeconds": 55,
+    "publishedAt": "2026-04-13",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 793272,
-    "commentCount": null,
+    "viewCount": 1098,
+    "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
@@ -1453,35 +1543,38 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 7,
-        "label": "옆으로 누워 편 다리 들기",
-        "url": "https://www.youtube.com/watch?v=g9FtnmsIYgI&t=7s"
+        "s": 27,
+        "label": "옆으로 누운 다리 벌리기",
+        "url": "https://www.youtube.com/watch?v=WkhiE94PjWc&t=27s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_rehab_sslr-1.jpg",
-        "seconds": 7,
-        "alt": "옆으로 누워 편 다리 들기 (원본 7초)"
+        "seconds": 11,
+        "alt": "옆으로 누운 다리 벌리기 (원본 11초)"
       },
       {
         "src": "media/pt-reference/pt_rehab_sslr-2.jpg",
-        "seconds": 19,
-        "alt": "옆으로 누워 편 다리 들기 (원본 19초)"
+        "seconds": 27,
+        "alt": "옆으로 누운 다리 벌리기 (원본 27초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_wide_sidelunge_stretch": {
-    "youtubeId": "qKWOrxghSYY",
-    "title": "Adductor Side-Lunges",
-    "channel": "Fit Again Sports Therapy",
-    "durationSeconds": 40,
-    "publishedAt": "2018-08-08",
+    "youtubeId": "a6zxuXIdK7g",
+    "title": "맨몸운동 - 사이드런지",
+    "channel": "BML wellness lab.",
+    "durationSeconds": 54,
+    "publishedAt": "2020-11-26",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 3875,
+    "viewCount": 44,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -1490,35 +1583,38 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 8,
-        "label": "옆으로 체중을 옮기는 내전근 스트레칭",
-        "url": "https://www.youtube.com/watch?v=qKWOrxghSYY&t=8s"
+        "s": 10,
+        "label": "옆으로 앉는 사이드런지",
+        "url": "https://www.youtube.com/watch?v=a6zxuXIdK7g&t=10s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_wide_sidelunge_stretch-1.jpg",
-        "seconds": 8,
-        "alt": "옆으로 체중을 옮기는 내전근 스트레칭 (원본 8초)"
+        "seconds": 10,
+        "alt": "옆으로 앉는 사이드런지 (원본 10초)"
       },
       {
         "src": "media/pt-reference/pt_wide_sidelunge_stretch-2.jpg",
-        "seconds": 12,
-        "alt": "옆으로 체중을 옮기는 내전근 스트레칭 (원본 12초)"
+        "seconds": 27,
+        "alt": "옆으로 앉는 사이드런지 (원본 27초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_hip_openclose_stretch": {
-    "youtubeId": "DZ-OdbcfvaE",
-    "title": "Hand Supported Hip Airplanes",
-    "channel": "Bullett Performance Training",
-    "durationSeconds": 50,
-    "publishedAt": "2021-02-11",
+    "youtubeId": "FXKyF57gPqk",
+    "title": "[벨짐] 기능운동 | 어시스트 힙 에어플레인 (Assist Hip Air Plane)",
+    "channel": "벨짐",
+    "durationSeconds": 21,
+    "publishedAt": "2025-03-31",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 9551,
+    "viewCount": 1173,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -1528,210 +1624,229 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 25,
-        "label": "손 지지 힙 에어플레인 열고 닫기",
-        "url": "https://www.youtube.com/watch?v=DZ-OdbcfvaE&t=25s"
+        "s": 10,
+        "label": "손 지지 힙 에어플레인 시범",
+        "url": "https://www.youtube.com/watch?v=FXKyF57gPqk&t=10s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_hip_openclose_stretch-1.jpg",
-        "seconds": 25,
-        "alt": "손 지지 힙 에어플레인 열고 닫기 (원본 25초)"
+        "seconds": 4,
+        "alt": "손 지지 힙 에어플레인 시범 (원본 4초)"
       },
       {
         "src": "media/pt-reference/pt_hip_openclose_stretch-2.jpg",
-        "seconds": 40,
-        "alt": "손 지지 힙 에어플레인 열고 닫기 (원본 40초)"
+        "seconds": 10,
+        "alt": "손 지지 힙 에어플레인 시범 (원본 10초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_bridge": {
-    "youtubeId": "vOvRFsGMMqo",
-    "title": "Strengthening the core: Glute Bridge",
-    "channel": "UCLA Health",
-    "durationSeconds": 88,
-    "publishedAt": "2024-01-30",
+    "youtubeId": "6uBH_PAFORg",
+    "title": "[허리 통증 재활운동:엉덩이 운동] 글루트 브릿지 운동(교각운동) Glute Bridge exercise",
+    "channel": "Movement Prep.",
+    "durationSeconds": 14,
+    "publishedAt": "2021-05-20",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 130541,
-    "commentCount": 7,
-    "commentsReviewed": 7,
-    "commentSummary": "허리 정렬·무릎과 뒤꿈치 불편에 관한 질문이 있어 개인 가동범위는 수업 기준을 유지한다.",
+    "viewCount": 14896,
+    "commentCount": 2,
+    "commentsReviewed": 2,
+    "commentSummary": "공개 댓글 표본 2개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "맨몸 바닥 브릿지 시범. 수업의 복부·골반 정렬과 허리 과신전 없는 범위를 유지한다."
     ],
     "moments": [
       {
-        "s": 44,
-        "label": "누워 엉덩이를 드는 브릿지",
-        "url": "https://www.youtube.com/watch?v=vOvRFsGMMqo&t=44s"
+        "s": 7,
+        "label": "바닥 힙 브릿지 시범",
+        "url": "https://www.youtube.com/watch?v=6uBH_PAFORg&t=7s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_bridge-1.jpg",
-        "seconds": 44,
-        "alt": "누워 엉덩이를 드는 브릿지 (원본 44초)"
+        "seconds": 2,
+        "alt": "바닥 힙 브릿지 시범 (원본 2초)"
       },
       {
         "src": "media/pt-reference/pt_bridge-2.jpg",
-        "seconds": 70,
-        "alt": "누워 엉덩이를 드는 브릿지 (원본 70초)"
+        "seconds": 7,
+        "alt": "바닥 힙 브릿지 시범 (원본 7초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_birddog": {
-    "youtubeId": "xEDnlOxeJH4",
-    "title": "How to Do the Bird Dog Exercise: A Guide from Physical Therapists",
-    "channel": "Hinge Health",
-    "durationSeconds": 84,
-    "publishedAt": "2025-04-11",
+    "youtubeId": "SfjFnlwBwgE",
+    "title": "필수 코어 운동! 버드독 제대로 하는 법 (Bird dog)",
+    "channel": "라이프에이드",
+    "durationSeconds": 68,
+    "publishedAt": "2021-01-23",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 302652,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "간결하다는 반응과 통증·발 위치 질문이 함께 있었다. 치료 효과를 확정하지 않았다.",
+    "viewCount": 76764,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "바닥 버드독 시범. 수업의 골반 수평과 허리 고정을 우선한다."
     ],
     "moments": [
       {
-        "s": 67,
-        "label": "네발기기에서 반대 팔·다리 뻗기",
-        "url": "https://www.youtube.com/watch?v=xEDnlOxeJH4&t=67s"
+        "s": 34,
+        "label": "교차 팔·다리와 몸통 정렬",
+        "url": "https://www.youtube.com/watch?v=SfjFnlwBwgE&t=34s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_birddog-1.jpg",
-        "seconds": 67,
-        "alt": "네발기기에서 반대 팔·다리 뻗기 (원본 67초)"
+        "seconds": 13,
+        "alt": "교차 팔·다리와 몸통 정렬 (원본 13초)"
       },
       {
         "src": "media/pt-reference/pt_birddog-2.jpg",
-        "seconds": 60,
-        "alt": "네발기기에서 반대 팔·다리 뻗기 (원본 60초)"
+        "seconds": 34,
+        "alt": "교차 팔·다리와 몸통 정렬 (원본 34초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_deadbug": {
-    "youtubeId": "o4GKiEoYClI",
-    "title": "Dead Bug Exercise For Core Stability  | Pursuit Physical Therapy",
-    "channel": "Pursuit Physical Therapy",
-    "durationSeconds": 20,
-    "publishedAt": "2021-08-18",
+    "youtubeId": "dhQhEwg1fpU",
+    "title": "데드 버그 코어 운동 제대로 하는 법 [#core exercise]",
+    "channel": "라이프에이드",
+    "durationSeconds": 78,
+    "publishedAt": "2021-02-01",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1401371,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "공개 댓글의 개인 반응을 보조 자료로만 참고했다. 자세 적합성은 원본 시범과 수업 기록으로 판단했다.",
+    "viewCount": 98418,
+    "commentCount": 5,
+    "commentsReviewed": 5,
+    "commentSummary": "공개 댓글 표본 5개를 보조 자료로 참고했다. 댓글의 개인 경험·조회수를 수업 자세의 적합성이나 효과의 검증으로 간주하지 않는다.",
     "points": [
       "교차 팔·다리 데드버그 시범. 수업에서 정한 약 40% 가동범위를 유지하며 영상의 끝 범위를 따라 늘리지 않는다."
     ],
     "moments": [
       {
-        "s": 16,
-        "label": "반대 팔·다리를 뻗는 데드버그",
-        "url": "https://www.youtube.com/watch?v=o4GKiEoYClI&t=16s"
+        "s": 62,
+        "label": "교차 팔·다리 데드버그",
+        "url": "https://www.youtube.com/watch?v=dhQhEwg1fpU&t=62s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_deadbug-1.jpg",
-        "seconds": 16,
-        "alt": "반대 팔·다리를 뻗는 데드버그 (원본 16초)"
+        "seconds": 39,
+        "alt": "교차 팔·다리 데드버그 (원본 39초)"
       },
       {
         "src": "media/pt-reference/pt_deadbug-2.jpg",
-        "seconds": 14,
-        "alt": "반대 팔·다리를 뻗는 데드버그 (원본 14초)"
+        "seconds": 62,
+        "alt": "교차 팔·다리 데드버그 (원본 62초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_tbalance": {
-    "youtubeId": "8RdQZwNPzaM",
-    "title": "T Balance Exercise",
-    "channel": "Integrated Health",
-    "durationSeconds": 43,
-    "publishedAt": "2015-10-26",
+    "youtubeId": "Ra_-tHZf2pg",
+    "title": "탄력 있는 뒤태를 만들어주는 '티 밸런스 동작'",
+    "channel": "울산MBC",
+    "durationSeconds": 67,
+    "publishedAt": "2023-07-24",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 23678,
-    "commentCount": 2,
-    "commentsReviewed": 2,
-    "commentSummary": "이모지 반응뿐이라 자세 평가 근거로 쓰지 않았다.",
+    "viewCount": 443,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "지지 다리로 버티고 반대 다리를 뒤로 뻗는 시범. 영상은 손을 허리에 두며 수업의 팔 뒤로 뻗기·골반 수평을 유지한다."
     ],
     "moments": [
       {
-        "s": 21,
-        "label": "한발 힌지 T밸런스",
-        "url": "https://www.youtube.com/watch?v=8RdQZwNPzaM&t=21s"
+        "s": 13,
+        "label": "몸통과 뒷다리를 길게 티밸런스",
+        "url": "https://www.youtube.com/watch?v=Ra_-tHZf2pg&t=13s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_tbalance-1.jpg",
-        "seconds": 21,
-        "alt": "한발 힌지 T밸런스 (원본 21초)"
+        "seconds": 13,
+        "alt": "몸통과 뒷다리를 길게 티밸런스 (원본 13초)"
       },
       {
         "src": "media/pt-reference/pt_tbalance-2.jpg",
-        "seconds": 34,
-        "alt": "한발 힌지 T밸런스 (원본 34초)"
+        "seconds": 33,
+        "alt": "몸통과 뒷다리를 길게 티밸런스 (원본 33초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_stepup": {
-    "youtubeId": "FPpNxUgQ9PY",
-    "title": "Bodyweight step up",
-    "channel": "Strength Rising",
-    "durationSeconds": 11,
-    "publishedAt": "2016-07-20",
+    "youtubeId": "X-4i6lp6UUE",
+    "title": "[잘 걷게 해주는 운동] 05 스텝업 앞뒤",
+    "channel": "헬스조선 Health Chosun",
+    "durationSeconds": 29,
+    "publishedAt": "2018-01-25",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 8560,
+    "viewCount": 11080,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
-      "맨몸 스텝업 시범. 영상의 박스 높이는 예시이며 수업에서 배운 높이와 천천히 내려오기를 따른다."
+      "맨몸 스텝업 시범. 영상의 박스 높이는 예시이며 수업에서 배운 높이와 천천히 내려오기를 따른다.",
+      "영상의 무릎 들기·횟수·세트 예시는 개인 수업 분량이 아니다. 발판 올라서기와 내려오기를 참고한다."
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "발을 올려 디디는 스텝업",
-        "url": "https://www.youtube.com/watch?v=FPpNxUgQ9PY&t=2s"
+        "s": 14,
+        "label": "발판에 올라서는 스텝업",
+        "url": "https://www.youtube.com/watch?v=X-4i6lp6UUE&t=14s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_stepup-1.jpg",
-        "seconds": 2,
-        "alt": "발을 올려 디디는 스텝업 (원본 2초)"
+        "seconds": 14,
+        "alt": "발판에 올라서는 스텝업 (원본 14초)"
       },
       {
         "src": "media/pt-reference/pt_stepup-2.jpg",
-        "seconds": 5,
-        "alt": "발을 올려 디디는 스텝업 (원본 5초)"
+        "seconds": 23,
+        "alt": "발판에 올라서는 스텝업 (원본 23초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_tailbone_raise": {
     "youtubeId": "4RqGXT-kBnk",
@@ -1809,41 +1924,44 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_lunge": {
-    "youtubeId": "SGHnCftrZkA",
-    "title": "Beginner's Guide: Split Squat",
-    "channel": "SilverSneakers",
-    "durationSeconds": 145,
-    "publishedAt": "2017-05-30",
+    "youtubeId": "WN67hTIW5hQ",
+    "title": "혼자 운동 하기_기초 제자리 런지 연습(맨몸)",
+    "channel": "무브먼트 리빌드 현",
+    "durationSeconds": 156,
+    "publishedAt": "2025-04-19",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 1507100,
-    "commentCount": 8,
-    "commentsReviewed": 8,
-    "commentSummary": "설명이 좋다는 반응과 일반 농담이 섞여 있었다.",
+    "viewCount": 72,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
       "제자리 런지·스플릿 스쿼트 기본 시범. 영상은 맨몸과 지지 도구 예시이며 11.13 수업의 8kg 케틀벨·앞다리 지지와 허리 정렬을 유지한다."
     ],
     "moments": [
       {
-        "s": 72,
-        "label": "발을 고정한 스플릿 스쿼트",
-        "url": "https://www.youtube.com/watch?v=SGHnCftrZkA&t=72s"
+        "s": 78,
+        "label": "제자리 런지 지지 설명",
+        "url": "https://www.youtube.com/watch?v=WN67hTIW5hQ&t=78s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_lunge-1.jpg",
-        "seconds": 72,
-        "alt": "발을 고정한 스플릿 스쿼트 (원본 72초)"
+        "seconds": 31,
+        "alt": "제자리 런지 지지 설명 (원본 31초)"
       },
       {
         "src": "media/pt-reference/pt_lunge-2.jpg",
-        "seconds": 116,
-        "alt": "발을 고정한 스플릿 스쿼트 (원본 116초)"
+        "seconds": 78,
+        "alt": "제자리 런지 지지 설명 (원본 78초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_lunge_ball_rotation": {
     "youtubeId": "MnnMy4pbEMk",
@@ -1883,14 +2001,14 @@ window.PTReferenceVideos = {
     "reference": true
   },
   "pt_low_cable_curl": {
-    "youtubeId": "gh0nP1TdGgI",
-    "title": "Standing Low Cable Bicep Curl",
-    "channel": "Performance Personal Training",
-    "durationSeconds": 14,
-    "publishedAt": "2018-01-14",
+    "youtubeId": "AfnswGHUKuA",
+    "title": "케이블운동, 이두운동,팔운동, 케이블 컬(Cablel curl)[건디ROY]",
+    "channel": "건디ROY",
+    "durationSeconds": 77,
+    "publishedAt": "2021-07-12",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 958,
+    "viewCount": 216,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -1899,25 +2017,28 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "로우 케이블 언더그립 컬",
-        "url": "https://www.youtube.com/watch?v=gh0nP1TdGgI&t=2s"
+        "s": 38,
+        "label": "로우 케이블 바 컬",
+        "url": "https://www.youtube.com/watch?v=AfnswGHUKuA&t=38s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_low_cable_curl-1.jpg",
-        "seconds": 2,
-        "alt": "로우 케이블 언더그립 컬 (원본 2초)"
+        "seconds": 15,
+        "alt": "로우 케이블 바 컬 (원본 15초)"
       },
       {
         "src": "media/pt-reference/pt_low_cable_curl-2.jpg",
-        "seconds": 7,
-        "alt": "로우 케이블 언더그립 컬 (원본 7초)"
+        "seconds": 38,
+        "alt": "로우 케이블 바 컬 (원본 38초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본과 한국어 화면 안내(또는 한국어 채널의 시범), 길이·공개 메타데이터·확보 가능한 댓글 표본을 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이며 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T23:50:24+09:00",
+    "language": "ko",
+    "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_shoulderpress": {
     "youtubeId": "TnhIyp4kmO8",
