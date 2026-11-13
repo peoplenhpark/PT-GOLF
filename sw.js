@@ -1,8 +1,8 @@
 /* App shell stays small; selected exercise media is prepared explicitly. */
 importScripts('./release-assets.js');
 const RELEASE = globalThis.PTGolfRelease;
-const CACHE = 'ptgolf-v' + RELEASE.version;
-const OWN_CACHE = /^ptgolf-v\d+$/;
+const CACHE = 'ptgolf-v' + RELEASE.version + (RELEASE.revision ? '-'+RELEASE.revision : '');
+const OWN_CACHE = /^ptgolf-v\d+(?:-[a-f0-9]{16})?$/;
 const BASE = new URL('./', self.location.href);
 const TIMEOUT_MS = 4000;
 const KNOWN_FILES = new Set([...RELEASE.shell, ...Object.values(RELEASE.exercises).flat(), ...(RELEASE.gallery||[])]);
@@ -85,7 +85,7 @@ self.addEventListener('activate', event => {
     for (const key of ownKeys) for (const id of await preparedIds(await caches.open(key))) ids.add(id);
     const result = ids.size ? await prepareExercises([...ids]) : { ok: true };
     // Keep an old own cache if network failed during migration; fetch fallback remains current-only.
-    const retained = result.ok ? null : ownKeys.sort((a,b)=>Number(b.slice(8))-Number(a.slice(8)))[0];
+    const retained = result.ok ? null : ownKeys[ownKeys.length-1];
     await Promise.all(ownKeys.filter(key=>key!==retained).map(key=>caches.delete(key)));
     await self.clients.claim();
   })());

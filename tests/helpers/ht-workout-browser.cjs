@@ -52,7 +52,7 @@ module.exports=async(browser,base,screenshot)=>{
   await select(day);
   assert.equal(await page.locator('[data-ht-progress]').innerText(),'오늘 완료 0/4','count only exercises in the selected routine');
   assert.deepEqual(await page.locator('#ht-routine-day li>div>a').evaluateAll(es=>es.map(e=>e.hash)),['#exercise/pt_legcurl','#exercise/pt_legextension','#exercise/pt_adduction','#exercise/pt_legpress']);
-  assert.equal(await page.locator('#ht-routine-day li>strong').filter({hasText:'20kg · 20회 × 2세트'}).count(),3);
+  assert.equal(await page.locator('#ht-routine-day li>strong').filter({hasText:'20kg · 20회 × 2세트'}).count(),2);
   for(const id of ['pt_legcurl','pt_legextension','pt_legpress']){
    assert.equal(await page.locator(`[data-ht-log="${id}"] [name=weight]`).inputValue(),'20');
    assert.equal(await page.locator(`[data-ht-log="${id}"] [name=reps1]`).inputValue(),'');

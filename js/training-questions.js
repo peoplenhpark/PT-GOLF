@@ -8,8 +8,8 @@ window.TrainingQuestions = (() => {
     [0,'pt_shoulderpress','받침 자세는 답변받았습니다. 제 정확한 하강 끝점과 현재 중량·횟수·세트를 확인해 주세요.'],
     [0,'pt_facepull','손잡이 높이·몸통 기울기·팔꿈치 경로와 현재 중량을 함께 잡아 주실 수 있나요?'],
     [0,'pt_pullup','가슴·팔꿈치 자세는 답변받았습니다. 설정 55의 단위와 실제 보조량은 얼마인가요?'],
-    [0,'pt_lunge','화·금에 추가한 런지는 6kg 케틀벨을 몇 개·어디에 들고, 좌우 몇 회·몇 세트 하나요?'],
-    [0,'pt_legpress','제 발판에서 발 전체를 지지하려면 발 위치를 어떻게 잡아야 하나요?'],
+    [0,'pt_lunge','화·금에 추가한 런지는 11.13에 확인한 8kg 케틀벨을 몇 개·어디에 들고, 좌우 몇 회·몇 세트 하나요?'],
+    [0,'pt_legpress','11.13 레그프레스 원판 두 장은 한 장이 몇 kg이고 양쪽 합계인가요? 제 발판 위치와 등받이 칸도 확인해 주세요.'],
     [0,'pt_legextension','양발 기준으로 패드를 어디에 맞추고, 무릎을 어디까지 펴면 되나요?'],
     [0,'pt_adduction','시작할 때 다리를 얼마나 벌리고, 현재 중량은 얼마로 하면 되나요?'],
     [0,'pt_latpulldown','제 기구에서 발 지지·몸통 기울기·당김 끝점과 그립은 어디까지인가요?',['ht_latpulldown_reference']],
@@ -37,7 +37,7 @@ window.TrainingQuestions = (() => {
     return {rows,scope};
   }
   const exerciseLink=e=>'<a href="#exercise/'+encodeURIComponent(e.id)+'">'+esc(e.name)+' ›</a>';
-  function entryLink(){const n=collect().rows.length;return n?'<a class="training-question-entry" href="#pt/questions">다음 PT 질문 <span>'+n+'개 모아보기 ›</span></a>':'';}
+  function entryLink(){const n=collect().rows.length;return n?'<a class="training-question-entry" href="#pt/questions">PT 확인 사항 <span>'+n+'개 모아보기 ›</span></a>':'';}
   function detailLink(id){return '<a class="training-question-detail" href="#pt/questions?source='+encodeURIComponent(id)+'">코치에게 물어볼 항목 모아보기 ›</a>';}
   function answersHtml(exercise){
     const answers=exercise.practiceGuide?.coachAnswers||[];
@@ -50,7 +50,7 @@ window.TrainingQuestions = (() => {
   }
   function render(source){
     const {rows,scope}=collect();let number=0;
-    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">PT·HT 질문</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">다음 PT·HT · 코치에게 질문</h2><p class="coach-meta">현재 루틴의 미확인 지지·범위·중량부터 확인하세요. 전체 '+rows.length+'개 · 운동명은 상세로 연결됩니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
+    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">PT·HT 질문</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">PT·HT · 확인이 필요한 사항</h2><p class="coach-meta">정규 PT는 11.13 마지막 수업으로 종료했습니다. 이후 혼자 운동하며 남은 지지·범위·중량을 확인할 목록입니다. 전체 '+rows.length+'개 · 운동명은 상세로 연결됩니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
       const items=rows.filter(r=>r.group===group);if(!items.length)return '';
       const start=number+1;
       return '<section class="training-question-group"><h3>'+label+'</h3>'+(group===2?'<p class="coach-meta">보조 운동은 필요할 때만 확인 · 기존 루틴에 자동 추가하지 않습니다.</p>':'')+'<ol start="'+start+'">'+items.map(r=>{number++;return '<li'+(r.exercises.some(e=>e.id===source)?' class="training-question-selected" tabindex="-1"':'')+'><div class="training-question-links">'+r.exercises.map(exerciseLink).join('')+'</div><p>'+esc(r.text)+'</p></li>';}).join('')+'</ol></section>';

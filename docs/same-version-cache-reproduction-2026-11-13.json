@@ -1,0 +1,25 @@
+{
+  "environment": "격리된 390px 모바일 브라우저에서 이전 ab936fc 앱과 오프라인 저장을 재현. 실제 사용자 기기에 접속한 검사가 아님.",
+  "before": {
+    "waitingLeaksNew": false,
+    "staleImage": true,
+    "keys": [
+      "ptgolf-v237",
+      "unrelated-app"
+    ],
+    "revision": null,
+    "memoFavoriteDraftAndUnrelatedDataPreserved": true
+  },
+  "after": {
+    "waitingLeaksNew": false,
+    "staleImage": false,
+    "keys": [
+      "unrelated-app",
+      "ptgolf-v237-467dacc2942098a2"
+    ],
+    "revision": "467dacc2942098a2",
+    "offlineNewVideosAndImages": true,
+    "memoFavoriteDraftAndUnrelatedDataPreserved": true
+  },
+  "finalRegression": "정규화된 내용 해시 빌드에서도 CI 회귀 검사 및 전체 브라우저 검사 통과"
+}

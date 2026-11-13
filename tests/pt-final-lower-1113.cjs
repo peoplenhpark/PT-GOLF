@@ -1,0 +1,8 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const d=JSON.parse(fs.readFileSync('data/seed.json','utf8')),s=d.ptSessions.find(s=>s.id==='pt_session_20261113'),by=Object.fromEntries(d.exercises.map(e=>[e.id,e]));
+assert(s.finalLesson);assert.equal(s.date,'2026-11-13');assert.equal(s.items.filter(i=>i.exerciseId).length,6);assert.equal(s.items.find(i=>i.title.startsWith('레그레이즈')).exerciseId,null);
+for(const id of ['pt_openbook','pt_lunge','pt_hip_openclose_stretch','pt_legcurl','pt_legpress','pt_adduction']){const g=by[id].practiceGuide;assert(g.coachAnswers.some(a=>a.date==='2026-11-13'));assert(g.sourceNote.includes('노트 (34)'));assert(g.steps.length>=3);assert.equal(g.checks.length,3);}
+assert(by.pt_lunge.spec.includes('8kg'));assert(by.pt_legpress.spec.includes('kg·좌우'));assert(by.pt_lunge.practiceGuide.pending.some(x=>x.includes('횟수')));assert(by.pt_legpress.practiceGuide.pending.some(x=>x.includes('한 장')));
+const c={window:{},Store:{getAll:()=>d.exercises}};vm.createContext(c);vm.runInContext(fs.readFileSync('js/training-questions.js','utf8'),c);const html=c.window.TrainingQuestions.render('pt_lunge');assert(html.includes('11.13 마지막 수업으로 종료'));assert(html.includes('8kg'));assert(!html.includes('런지는 6kg'));
+const refs={window:{}};vm.runInNewContext(fs.readFileSync('js/pt-videos.js','utf8'),refs);assert(refs.window.PTReferenceVideos.pt_lunge.points.join().includes('8kg'));assert(d.ptSessions.some(s=>s.id==='pt_session_20261106'));
+console.log('PASS: final PT lower lesson source/ranges, six linked exercises, uncertain leg-raise, shared dated answers, 8kg update and unconverted two-plate setting.');
