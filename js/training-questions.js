@@ -37,8 +37,8 @@ window.TrainingQuestions = (() => {
     return {rows,scope};
   }
   const exerciseLink=e=>'<a href="#exercise/'+encodeURIComponent(e.id)+'">'+esc(e.name)+' ›</a>';
-  function entryLink(){const n=collect().rows.length;return n?'<a class="training-question-entry" href="#pt/questions">PT 확인 사항 <span>'+n+'개 모아보기 ›</span></a>':'';}
-  function detailLink(id){return '<a class="training-question-detail" href="#pt/questions?source='+encodeURIComponent(id)+'">코치에게 물어볼 항목 모아보기 ›</a>';}
+  function entryLink(){const n=collect().rows.length;return n?'<a class="training-question-entry" href="#pt/questions">HT 확인 사항 <span>'+n+'개 모아보기 ›</span></a>':'';}
+  function detailLink(id){return '<a class="training-question-detail" href="#pt/questions?source='+encodeURIComponent(id)+'">HT 운동 확인 사항 모아보기 ›</a>';}
   function answersHtml(exercise){
     const answers=exercise.practiceGuide?.coachAnswers||[];
     return answers.length?'<section class="training-confirmed"><h3>'+ (exercise.practiceGuide?.questionStatus==='answered'?'질문·답변 완료':'확인된 답변')+'</h3>'+answers.map(a=>'<article><h4>'+esc(a.question)+'</h4><p>'+esc(a.answer)+'</p><p class="coach-meta">'+esc(a.date+' · '+a.source)+'</p></article>').join('')+'</section>':'';
@@ -50,7 +50,7 @@ window.TrainingQuestions = (() => {
   }
   function render(source){
     const {rows,scope}=collect();let number=0;
-    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">PT·HT 질문</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">PT·HT · 확인이 필요한 사항</h2><p class="coach-meta">정규 PT는 11.13 마지막 수업으로 종료했습니다. 이후 혼자 운동하며 남은 지지·범위·중량을 확인할 목록입니다. 전체 '+rows.length+'개 · 운동명은 상세로 연결됩니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
+    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">HT 운동 확인</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">HT 운동 · 확인이 필요한 사항</h2><p class="coach-meta">정규 PT는 11.13 마지막 수업으로 종료했습니다. 이후 혼자 운동하며 남은 지지·범위·중량을 확인할 목록입니다. 전체 '+rows.length+'개 · 운동명은 상세로 연결됩니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
       const items=rows.filter(r=>r.group===group);if(!items.length)return '';
       const start=number+1;
       return '<section class="training-question-group"><h3>'+label+'</h3>'+(group===2?'<p class="coach-meta">보조 운동은 필요할 때만 확인 · 기존 루틴에 자동 추가하지 않습니다.</p>':'')+'<ol start="'+start+'">'+items.map(r=>{number++;return '<li'+(r.exercises.some(e=>e.id===source)?' class="training-question-selected" tabindex="-1"':'')+'><div class="training-question-links">'+r.exercises.map(exerciseLink).join('')+'</div><p>'+esc(r.text)+'</p></li>';}).join('')+'</ol></section>';
@@ -62,7 +62,7 @@ window.TrainingQuestions = (() => {
       ['kuRoseAIbtw','오른손목·팔꿈치 연결','이 동작은 어떤 클럽에 적용하고, 제 스윙에서는 무엇을 확인하면 될까요?'],
       ['4Eof_tmI0Ag','클럽별 감각 비교','정용훈 프로 영상의 감각 중 아이언과 드라이버에 각각 어떤 것을 적용하면 될까요?']
     ];
-    return '<section class="training-questions" aria-labelledby="golf-questions-title"><h2 id="golf-questions-title">다음 골프 · 코치에게 질문</h2><p class="coach-meta">영상의 적용 클럽·범위를 확인할 질문 3개입니다. 주제를 누르면 해당 영상으로 연결됩니다.</p><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions">PT·HT 질문</a><a href="#golf/questions" aria-current="page">골프 질문</a></nav>'+(window.GolfHub?.savedQuestionsHtml()||'')+'<section class="training-question-group"><ol>'+questions.map(([id,title,text])=>'<li><div class="training-question-links"><a href="#golf/videos/'+encodeURIComponent(id)+'">'+esc(title)+' ›</a></div><p>'+esc(text)+'</p></li>').join('')+'</ol></section>'+golfLessonContext()+'<p class="coach-meta">11.02 사용자 확인 기준: 드라이버 전환 직후, 허리보다 훨씬 높은 위치에서 왼손 힘 빼기. 영상 적용은 이 기준과 구분해 확인합니다.</p></section>';
+    return '<section class="training-questions" aria-labelledby="golf-questions-title"><h2 id="golf-questions-title">다음 골프 · 코치에게 질문</h2><p class="coach-meta">영상의 적용 클럽·범위를 확인할 질문 3개입니다. 주제를 누르면 해당 영상으로 연결됩니다.</p><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions">HT 운동 확인</a><a href="#golf/questions" aria-current="page">골프 질문</a></nav>'+(window.GolfHub?.savedQuestionsHtml()||'')+'<section class="training-question-group"><ol>'+questions.map(([id,title,text])=>'<li><div class="training-question-links"><a href="#golf/videos/'+encodeURIComponent(id)+'">'+esc(title)+' ›</a></div><p>'+esc(text)+'</p></li>').join('')+'</ol></section>'+golfLessonContext()+'<p class="coach-meta">11.02 사용자 확인 기준: 드라이버 전환 직후, 허리보다 훨씬 높은 위치에서 왼손 힘 빼기. 영상 적용은 이 기준과 구분해 확인합니다.</p></section>';
   }
   return {collect,entryLink,detailLink,render,renderGolf,answersHtml,golfLessonContext};
 })();

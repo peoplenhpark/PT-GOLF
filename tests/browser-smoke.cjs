@@ -372,6 +372,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   await require('./helpers/pt-reference-videos-browser.cjs')(browser,base);
   await require('./helpers/same-version-cache-browser.cjs')(browser);
   await require('./helpers/pt-final-lower-1113-browser.cjs')(browser,base);
+  await require('./helpers/ht-centered-guide-browser.cjs')(browser,base);
   await require('./helpers/regular-lessons-1106-browser.cjs')(browser,base);
   await require('./helpers/coach-browser.cjs')(browser,base);
   await require('./helpers/exercise-navigation-browser.cjs')(browser,base);

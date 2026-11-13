@@ -12,7 +12,7 @@ module.exports=async(browser,base)=>{
   await p.goto(base+'#pt/now');await p.locator('.coach-recent-pt').waitFor();
   await p.locator('.exercise-quicknav summary').click();
   assert.equal(await p.locator('.exercise-quickpanel section').first().locator('h3').innerText(),'내 개인운동');
-  await p.locator('.exercise-quickpanel a[href="#pt?cat=personal"]').click();
+  await p.locator('.exercise-quickpanel a[href="#ht?cat=personal&start=library"]').click();
   await p.locator('.personal-exercises').waitFor();
   const chosen=['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation','pt_chestpress','pt_pecdeck','pt_dbpullover','pt_seatedrow','pt_lowpulley_row','pt_latpulldown','pt_pullup','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_lunge','pt_legcurl','pt_legextension','pt_adduction','pt_legpress'];
   assert.deepEqual(await p.locator('.personal-exercises .ex').evaluateAll(es=>es.map(e=>e.dataset.open)),chosen);
@@ -24,7 +24,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('.personal-exercises .ex').count(),2);await p.reload();await p.locator('.personal-exercises').waitFor();
   assert.equal(await p.locator('.personal-exercises .ex').count(),2);
   await p.locator('.personal-all-link').click();await p.locator('.pt-exercise-grid').waitFor();
-  assert.equal(await p.locator('.pt-exercise-grid .ex').count(),54);
+  assert.equal(await p.locator('.pt-exercise-grid .ex').count(),62);
   for(const theme of ['light','dark'])for(const width of [320,390,768]){
    await p.setViewportSize({width,height:844});await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);
    await p.locator('.exercise-quicknav summary').click();
@@ -39,15 +39,15 @@ module.exports=async(browser,base)=>{
   await p.setViewportSize({width:390,height:844});
   for(const part of ['pt','ht']){
    await p.locator('.exercise-quicknav summary').click();
-   await p.locator('.exercise-quickpanel a[href="#'+part+'?cat=all"]').click();await p.locator('.pt-exercise-grid').waitFor();
-   const expected=await p.evaluate(part=>Store.getByPart(part).length,part);
+   await p.locator('.exercise-quickpanel a[href="#'+part+'?cat=all'+(part==='ht'?'&start=library':'')+'"]').click();await p.locator('.pt-exercise-grid').waitFor();
+   const expected=await p.evaluate(part=>(part==='ht'?HTGuide.library():Store.getByPart(part)).length,part);
    assert.equal(await p.locator('.pt-exercise-grid .ex').count(),expected);
    assert.equal(await p.locator('.chips .on').getAttribute('data-cat'),'all');
-   const cats=await p.evaluate(part=>Store.getCategories(part),part);
+   const cats=await p.evaluate(part=>part==='ht'?HTGuide.categories():Store.getCategories(part),part);
    for(const cat of cats){
     await p.locator('.exercise-quicknav summary').click();
-    await p.locator('.exercise-quickpanel a[href="#'+part+'?cat='+encodeURIComponent(cat)+'"]').click();
-    assert.equal(await p.locator('.pt-exercise-grid .ex').count(),await p.evaluate(({part,cat})=>Store.getByPart(part).filter(e=>e.category===cat).length,{part,cat}));
+    await p.locator('.exercise-quickpanel a[href="#'+part+'?cat='+encodeURIComponent(cat)+(part==='ht'?'&start=library':'')+'"]').click();
+    assert.equal(await p.locator('.pt-exercise-grid .ex').count(),await p.evaluate(({part,cat})=>(part==='ht'?HTGuide.library():Store.getByPart(part)).filter(e=>e.category===cat).length,{part,cat}));
    }
   }
   await p.locator('.exercise-quicknav summary').click();await p.locator('.hd h1').click();

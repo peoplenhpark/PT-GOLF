@@ -76,30 +76,13 @@ window.CoachDesk = (() => {
     const reference=reviewVideo?'<a class="coach-source" href="https://www.youtube.com/watch?v='+encodeURIComponent(window.GolfContent.sourceIdFor(reviewVideo))+'&amp;t='+Number(quick.videoStart)+'s" target="_blank" rel="noopener noreferrer">'+esc(quick.videoLabel)+'</a>':'';
     return '<section class="coach-recent-golf" aria-labelledby="recent-golf-title"><div class="coach-recent-heading"><h2 id="recent-golf-title">최근 레슨 · 빠른 복습</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('golf')+(latest?'<p class="coach-meta">'+(checks&&reviewVideo?'레슨 핵심 + 영상 참고':'레슨 기록')+(quick?' · '+esc(quick.club):latest.practiceClubs?.length?' · '+esc(latest.practiceClubs.join(' · ')):'')+'</p><h3>'+esc(quick?.title||latest.title)+'</h3>'+recap+'<div class="coach-lesson-links"><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(latest.id)+'">레슨 상세 · 복습 자료 보기 ›</a>'+reference+'</div>':'<p>아직 등록된 레슨이 없습니다.</p><a class="coach-source" href="#golf/lessons">레슨 기록 보기 ›</a>')+'</section>';
   }
-  function recentPT(){
-    const sessions=Store.getPTSessions().slice().sort((a,b)=>b.date.localeCompare(a.date));
-    const latest=sessions[0];
-    // Display summaries belong to this reviewed session; later sessions use their own source text.
-    const recaps={pt_session_20261030:{solo:["목표 부위에 힘이 오는 범위까지만. 더 높이·더 깊이·더 무겁게보다 몸의 지지와 돌아오는 동작의 통제를 먼저 확인한다.", "불편한 관절을 억지로 누르거나 자세가 무너진 채 반복하지 않는다. 잘 안 되는 동작을 남은 PT에서 다시 보여 주며 교정한다."],items:{}},pt_session_20261027:{solo:["남은 PT는 잘 안 되는 동작의 자세 교정·반복에 집중한다. 혼자 기구를 설정하고, 자세가 무너지는 지점을 알아차리는 것이 우선이다.", "자세가 흐트러지면 세트를 멈추고 중량·범위를 조정한다. 관절 통증·날카로운 통증은 참고 반복하지 말고, 지속·반복되면 의료진에게 상담한다."],items:{}},pt_session_20261016:{
-      solo:['잘 되고 재미있는 운동부터. 배운 동작을 매번 모두 할 필요는 없습니다.','완벽한 한 번보다 기본 틀을 유지하며 반복합니다.'],
-      items:{
-        pt_lunge_ball_rotation:'런지 지지를 유지하며 몸통 회전. 수업에서는 좌우 각 15회.',
-        pt_hip_openclose_stretch:'먼저 닫고, 발바닥을 밀며 열기. 목만 돌리지 않고 몸통·골반 함께.',
-        pt_seatedrow:'어깨가 들리지 않는 범위로 내보내고 당기기. 어깨가 올라가면 범위 줄이기.',
-        pt_chestpress:'팔로 버티며 가슴이 유지되는 깊이까지만. 어깨가 말리거나 가슴이 무너지기 전에 밀기.',
-        pt_low_cable_curl:'손목이 꺾이거나 어깨가 말리지 않게. 아래쪽 고정쇠·언더그립(수업 15kg).'
-      }
-    }};
-    const cards=s=>s.items.map(i=>{const ex=i.exerciseId&&Store.getById(i.exerciseId),cue=recaps[s.id]?.items[i.exerciseId]||i.points?.[0]||i.title;return ex?'<a href="#exercise/'+encodeURIComponent(ex.id)+'"><strong>'+esc(ex.name)+'</strong><span>'+esc(cue)+'</span><small>동작·지도 보기 ›</small></a>':'<div><strong>'+esc(i.title)+'</strong><span>'+esc(i.points?.[0]||'')+'</span><small>명칭 확인 대기 · 아래 수업 정리 참고</small></div>';}).join('');
-    const solo=latest&&(recaps[latest.id]?.solo||latest.summary?.slice(0,latest.finalLesson?3:1));
-    return '<section class="coach-recent-pt" aria-labelledby="recent-pt-title"><div class="coach-recent-heading"><h2 id="recent-pt-title">'+(latest?.finalLesson?'마지막 PT 수업 · 하체 복습':'최근 수업 · 빠른 복습')+'</h2>'+(latest?'<time datetime="'+esc(latest.date)+'">'+esc(latest.date)+'</time>':'')+'</div>'+recapLinks('pt')+(latest?(solo?.length?'<aside class="coach-session-key coach-solo-keys"><h3>혼자 운동할 때</h3><ul>'+solo.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></aside>':'')+'<div class="coach-recent-grid">'+cards(latest)+'</div>'+sessionDetails(latest):'<p>등록된 PT 수업 기록이 아직 없습니다.</p>')+'</section>';
-  }
+  function recentPT(){return window.HTGuide.html();}
   function sessionDetails(s){
     return '<details class="coach-fold coach-session-details"><summary>수업 정리 · 지도 내용과 확인할 점</summary>'+(s.summary?.length?'<h3>혼자 운동할 때</h3><ul>'+s.summary.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':'')+s.items.map(i=>'<article><h3>'+esc(i.title)+'</h3><p class="coach-meta">'+esc(i.range)+(i.exerciseId?'':' · 동작 명칭 확인 대기')+'</p><ul>'+i.points.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul><p class="coach-meta">'+esc(i.uncertainty)+'</p></article>').join('')+'<p class="coach-meta">'+esc(s.source)+'</p><p class="coach-meta">'+esc(s.evidence)+'</p></details>';
   }
   function personalPTLinks(){
     const groups=api.personalGroups(),total=groups.reduce((n,g)=>n+g.exercises.length,0);
-    return '<section class="coach-personal"><h2>내 개인운동 <small>'+total+'종목</small></h2><nav class="coach-personal-links" aria-label="개인운동 부위">'+groups.map(g=>'<a href="#pt?cat='+encodeURIComponent('personal:'+g.key)+'">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#pt?cat=personal">지정 종목 전체</a><a href="#search?scope=pt">운동 검색</a></div></section><a class="coach-routine-link" href="#ht">주 4회 HT 루틴 <span>기본 20분 포함 · 운동일 70분 ›</span></a>';
+    return '<details class="coach-personal coach-fold"><summary><h2>HT 개인운동 자료 <small>'+total+'종목</small></h2></summary><nav class="coach-personal-links" aria-label="HT 개인운동 부위">'+groups.map(g=>'<a href="#ht?cat='+encodeURIComponent('personal:'+g.key)+'&amp;start=library">'+esc(g.label)+' <small>'+g.exercises.length+'</small></a>').join('')+'</nav><div class="coach-reference-links"><a href="#ht?cat=personal&amp;start=library">지정 종목 전체</a><a href="#search?scope=ht">HT 운동·영상 검색</a><a href="#pt?cat=all">이전 PT 수업 기록</a></div></details>';
   }
   function render(v,config){
     api=config;view=v;configure(config);const part=v.part,tab=v.coachTab==='questions'?'questions':'now',s=handle.reload();
@@ -107,7 +90,7 @@ window.CoachDesk = (() => {
     const questionLink='<nav class="coach-tabs coach-header-link" aria-label="'+(part==='pt'?'PT':'골프')+' 활용"><a href="'+route(part,'questions')+'">질문</a></nav>';
     let body=compactNow?'':tabs(part,tab);
     if(tab==='now'){
-      if(part==='pt')body+=window.TrainingQuestions.entryLink()+recentPT();
+      if(part==='pt')body+=recentPT();
       if(part==='golf'){
         body+=window.GolfHub.finalLessonPracticeNow()+(combinedGolfReview()||recentGolf())+window.GolfHub.questionShortcut();
       }
@@ -122,7 +105,7 @@ window.CoachDesk = (() => {
     config.app.addEventListener('click',ev=>{
       const button=ev.target.closest('[data-coach-jump]');if(!button)return;
       const target=button.dataset.coachJump==='personal'?config.app.querySelector('.coach-personal'):config.app.querySelector('.g-stage-overview');
-      if(!target)return;ev.preventDefault();target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});
+      if(!target)return;ev.preventDefault();if(target.tagName==='DETAILS')target.open=true;target.setAttribute('tabindex','-1');target.focus({preventScroll:true});target.scrollIntoView({block:'start'});
     });
     config.app.addEventListener('change',ev=>{if(!ev.target.matches('[data-coach-source]'))return;api.go('coach',{part:view.part,coachTab:'standards',coachSource:ev.target.value,coachId:null});});
     config.app.addEventListener('click',ev=>{if(ev.target.closest('[data-coach-finish]')){try{finish(view.part);api.refresh();api.toast('내 기준과 기록은 보존하고 이번 확인을 마쳤습니다.');}catch(error){api.toast(error.message);}return;}const b=ev.target.closest('[data-coach-use]');if(!b)return;try{activate(view.part,b.dataset.coachUse);api.go('coach',{part:view.part,coachTab:'now',coachId:null,coachSource:null,coachRecord:null});}catch(error){api.toast(error.message);}});

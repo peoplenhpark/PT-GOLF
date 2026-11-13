@@ -4,7 +4,7 @@ window.AppNavigation = (() => {
   function hashFor(v) {
     let path = '#home';
     const p = new URLSearchParams();
-    if (v.name === 'part') { path = '#' + v.part; if(v.cat) p.set('cat',v.cat); if(v.part==='ht'&&v.htStart==='today')p.set('start','today'); }
+    if (v.name === 'part') { path = '#' + v.part; if(v.cat) p.set('cat',v.cat); if(v.part==='ht'&&['today','library'].includes(v.htStart))p.set('start',v.htStart); }
     if(v.name==='coach'){path='#'+v.part+'/'+(v.coachTab||'now');if(v.coachId)p.set('criterion',v.coachId);if(v.coachSource)p.set('source',v.coachSource);if(v.coachRecord)p.set('record',v.coachRecord);if(v.coachTopic)p.set('topic',v.coachTopic);if(v.coachTab==='now'&&v.coachStart==='recent')p.set('start','recent');if(v.part==='golf'&&v.coachTab==='now'&&['backswing','downswing','impact','follow-through'].includes(v.coachStage))p.set('stage',v.coachStage);}
     if (v.name === 'detail') path = '#exercise/' + encode(v.id);
     if (v.name === 'favorites') path = '#favorites';
@@ -27,7 +27,7 @@ window.AppNavigation = (() => {
     if(['pt','golf'].includes(a)&&b==='questions')return {name:'coach',part:a,coachTab:'questions',coachSource:p.get('source')};
     if(a==='golf'&&!b)return {name:'coach',part:'golf',coachTab:'now'};
     if(a==='exercise' && b) return {name:'detail',id:b};
-    if(a==='pt'||a==='ht') return {name:'part',part:a,cat:p.get('cat'),...(a==='ht'&&p.get('start')==='today'?{htStart:'today'}:{})};
+    if(a==='pt'||a==='ht') return {name:'part',part:a,cat:p.get('cat'),...(a==='ht'&&['today','library'].includes(p.get('start'))?{htStart:p.get('start')}:{})};
     if(a==='favorites') return {name:'favorites'};
     if(a==='calendar') return {name:'calendar',calYear:p.has('year')?Number(p.get('year')):undefined,calMonth:p.has('month')?Number(p.get('month')):undefined};
     if(a==='search') return {name:'search',q:p.get('q')||'',scope:p.get('scope')||'all'};

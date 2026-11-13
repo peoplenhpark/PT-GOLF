@@ -87,13 +87,15 @@ const Theme = (() => {
   }
   function render() {
     const jumpToday=view.name==='part'&&view.part==='ht'&&view.htStart==='today';
+    const jumpLibrary=view.name==='part'&&view.part==='ht'&&view.htStart==='library';
+    if(jumpLibrary)delete view.htStart;
     if(jumpToday){htRoutineDay=htRoutineToday();delete view.htStart;}
     const jumpRecent=view.name==='coach'&&view.coachTab==='now'&&['pt','golf'].includes(view.part)&&view.coachStart==='recent';
     if(jumpRecent)delete view.coachStart;
     const jumpStage=view.name==='coach'&&view.part==='golf'&&view.coachTab==='now'&&['backswing','downswing','impact','follow-through'].includes(view.coachStage)?view.coachStage:null;
     if(jumpStage)delete view.coachStage;
     const jumpQuestions=view.name==='coach'&&view.part==='pt'&&view.coachTab==='questions'&&view.coachSource;
-    const jumpSelector=jumpQuestions?'.training-question-selected':jumpStage?'#g-stage-'+jumpStage:jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
+    const jumpSelector=jumpQuestions?'.training-question-selected':jumpStage?'#g-stage-'+jumpStage:jumpLibrary?'#ht-library-title':jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
@@ -113,12 +115,12 @@ const Theme = (() => {
   function saveError(error){toast(error.code==='CONFLICT'?'다른 탭에서 같은 기록이 변경됐습니다. 입력 내용을 보관하고 다시 확인해 주세요.':error.code==='CORRUPT'?'저장된 기록을 읽지 못해 원본을 보호하고 있습니다.':'저장하지 못했습니다. 입력 내용은 그대로 두었습니다.');}
   function tabbar(active) {
     const personal = personalGroups();
-    const personalLink = (cat,label,count) => `<a href="#pt?cat=${encodeURIComponent(cat)}"${view.name === 'part' && view.part === 'pt' && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
+    const personalLink = (cat,label,count) => `<a href="#ht?cat=${encodeURIComponent(cat)}&amp;start=library"${view.name === 'part' && view.part === 'ht' && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
     const personalMenu = `<section class="exercise-personal-menu"><h3>내 개인운동</h3><div class="exercise-quicklinks">${personalLink('personal','지정 종목 전체',personal.reduce((n,g)=>n+g.exercises.length,0))}${personal.map(g=>personalLink('personal:'+g.key,g.label,g.exercises.length)).join('')}</div></section>`;
-    const exerciseGroups = ['pt', 'ht'].map(part => {
-      const list = Store.getByPart(part);
-      const link = (cat, label, count) => `<a href="#${part}?cat=${encodeURIComponent(cat)}"${view.name === 'part' && view.part === part && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
-      return `<section><h3>${part.toUpperCase()} 전체 운동</h3><div class="exercise-quicklinks">${link('all', '전체', list.length)}${Store.getCategories(part).map(cat => link(cat, cat, list.filter(e => e.category === cat).length)).join('')}</div></section>`;
+    const exerciseGroups = ['ht', 'pt'].map(part => {
+      const list = part==='ht'?HTGuide.library():Store.getByPart(part);
+      const link = (cat, label, count) => `<a href="#${part}?cat=${encodeURIComponent(cat)}${part==='ht'?'&amp;start=library':''}"${view.name === 'part' && view.part === part && view.cat === cat ? ' aria-current="page"' : ''}>${esc(label)} <small>${count}</small></a>`;
+      return `<section><h3>${part==='ht'?'HT 전체 운동 자료':'PT 수업 원본 운동'}</h3><div class="exercise-quicklinks">${link('all', '전체', list.length)}${(part==='ht'?HTGuide.categories():Store.getCategories(part)).map(cat => link(cat, cat, list.filter(e => e.category === cat).length)).join('')}</div></section>`;
     }).join('');
     const t = (key, ti, label) =>
       `<button class="tab ${active === key ? 'on' : ''}" data-nav="${key}"><span class="ti">${ti}</span>${label}</button>`;
@@ -126,8 +128,8 @@ const Theme = (() => {
     const stageNav=`<div class="golf-stage-nav" role="group" aria-label="스윙 네 구간·실전·영상 바로가기">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}<a href="#golf/field" ${fieldActive?'aria-current="page"':''}>실전</a><a href="#golf/key-messages" title="분류별 영상 제목·핵심 메시지" ${view.golfTab==='key-messages'?'aria-current="page"':''}>영상</a><a href="#golf/question-edit" aria-label="골프 질문 남기기">질문+</a></div>`;
     return `<nav class="tabbar ${active==='golf'?'tabbar-golf':''}">
       ${t('home', '🏠', '홈')}
-      ${t('pt', '🏋️', 'PT')}
       ${t('ht', '🏡', 'HT')}
+      ${t('pt', '🏋️', 'PT 기준')}
       ${t('golf', '⛳', '골프')}
       ${t('favorites', '⭐', '즐겨찾기')}
       ${t('calendar', '🗓️', '캘린더')}
@@ -246,14 +248,14 @@ const Theme = (() => {
     const golfTitle=latestGolf&&(window.GolfContent?.lessons.includes(latestGolf)?latestGolf.quickReview?.title:null)||latestGolf?.title;
     app.innerHTML = `
       <div class="scr home-simple">
-        <div class="hd"><h1>PT노트</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
+        <div class="hd"><h1>HT 운동노트</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
         <nav class="parts home-destinations" aria-label="지금 필요한 운동과 연습">
-          <section class="home-destination pt" aria-label="PT 복습">
-            <a class="part pt" href="#pt/now?start=recent"><span class="home-part-label">PT</span><div class="home-action"><h2>최근 운동 복습</h2><span aria-hidden="true">›</span></div><p>${esc(ptRecap)}</p></a>
-            <div class="home-links"><a href="#pt?cat=personal">개인운동 ${personalCount}종목</a><a href="#pt?cat=all">전체 운동</a></div>
-          </section>
           <section class="home-destination ht" aria-label="HT 개인운동">
-            <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>개인운동 루틴</h2><span aria-hidden="true">›</span></div><p>기본 20분 포함 · 운동일 70분</p></a>
+            <a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>오늘 HT 운동</h2><span aria-hidden="true">›</span></div><p>기본 20분 포함 · 운동일 70분</p></a>
+            <div class="home-links"><a href="#ht?cat=personal&amp;start=library">내 개인운동 ${personalCount}종목</a><a href="#ht?cat=all&amp;start=library">전체 운동 자료</a></div>
+          </section>
+          <section class="home-destination pt" aria-label="PT 복습">
+            <a class="part pt" href="#pt/now?start=recent"><span class="home-part-label">PT</span><div class="home-action"><h2>마지막 PT 통합 기준</h2><span aria-hidden="true">›</span></div><p>11.06 상체 · 11.13 하체 · HT에 적용</p></a>
           </section>
           <section class="home-destination golf" aria-label="골프 연습">
             <a class="part golf" href="#golf/now?start=recent"><span class="home-part-label">골프</span><div class="home-action"><h2>최근 레슨 복습</h2><span aria-hidden="true">›</span></div><p>편한 스윙과 일관성</p></a>
@@ -462,19 +464,19 @@ const Theme = (() => {
 
   function renderPart(part) {
     if(part==='golf'){view={...view,name:'golf-hub',golfTab:'lessons',golfId:null};return renderGolf();}
-    const list = Store.getByPart(part);
-    const cats = Store.getCategories(part);
-    const activeCat = view.cat === 'all' || cats.includes(view.cat) || (part === 'pt' && personalCat(view.cat)) ? view.cat : (cats[0] || null);
+    const list = part==='ht'?HTGuide.library():Store.getByPart(part);
+    const cats = part==='ht'?HTGuide.categories():Store.getCategories(part);
+    const activeCat = view.cat === 'all' || cats.includes(view.cat) || (['pt','ht'].includes(part) && personalCat(view.cat)) ? view.cat : (part==='ht'?'all':cats[0] || null);
     view.cat = activeCat;
-    const personal = personalGroups(), isPersonal = part === 'pt' && personalCat(activeCat);
+    const personal = personalGroups(), isPersonal = ['pt','ht'].includes(part) && personalCat(activeCat);
     const personalCount = personal.reduce((n,g)=>n+g.exercises.length,0);
-    const personalChip = part === 'pt' ? `<button class="chip ${isPersonal ? 'on' : ''}" data-cat="personal">내 개인운동 ${personalCount}</button>` : '';
+    const personalChip = ['pt','ht'].includes(part) ? `<button class="chip ${isPersonal ? 'on' : ''}" data-cat="personal">내 개인운동 ${personalCount}</button>` : '';
 
     const chips = personalChip + `<button class="chip ${activeCat === 'all' ? 'on' : ''}" data-cat="all">전체 ${list.length}</button>` + cats.map(c =>
       `<button class="chip ${c === activeCat ? 'on' : ''}" data-cat="${esc(c)}">${esc(c).split(' · ').join('<br>')}</button>`).join('');
 
     let inCat = activeCat === 'all' ? list : list.filter(e => e.category === activeCat);
-    if (part === 'pt' && !isPersonal && activeCat !== 'all') {
+    if (['pt','ht'].includes(part) && !isPersonal) {
       const categoryIds = new Set(inCat.map(exercise => exercise.id));
       const selected = personal.flatMap(group => group.exercises).filter(exercise => categoryIds.has(exercise.id));
       const selectedIds = new Set(selected.map(exercise => exercise.id));
@@ -491,8 +493,8 @@ const Theme = (() => {
         <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
-        ${part==='ht'?htRoutineHtml()+'<h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 운동 모아보기</h2>':''}
-        ${isPersonal ? `<a class="personal-all-link" href="#pt?cat=all">PT 전체 운동 ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
+        ${part==='ht'?htRoutineHtml()+'<details class="coach-fold ht-coaching-reference"><summary>마지막 PT 통합 기준 · 기본·상체·하체</summary>'+HTGuide.html(true)+'</details><nav class="ht-material-links"><a href="#pt/now">통합 기준 크게 보기</a><a href="#pt/questions">운동 확인 사항</a><a href="#search?scope=ht">HT 자료 검색</a></nav><h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 전체 운동 자료</h2>':''}
+        ${isPersonal ? `<a class="personal-all-link" href="#${part}?cat=all">${part==='ht'?'HT 전체 자료':'PT 전체 운동'} ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
         ${rows}
       </div>
       ${tabbar(part)}`;
@@ -567,7 +569,7 @@ const Theme = (() => {
 
   function searchResultsHtml(q) {
     if(!(q||'').trim())return '<div class="empty">운동·영상·레슨·내 메모를 한 번에 검색하세요.<br>여러 단어는 모두 포함된 결과를 찾습니다.</div>';
-    const all=AppSearch.records(q),res=all.filter(r=>!view.scope||view.scope==='all'||r.type===view.scope);
+    const all=AppSearch.records(q),res=all.filter(r=>AppSearch.matchesScope(r,view.scope||'all'));
     return '<p class="sec-t" role="status">검색 결과 '+res.length+'개 · 전체 '+all.length+'개</p>'+res.map(r=>
       '<a class="search-result" href="'+esc(r.href)+'"><span class="tag">'+esc(AppSearch.labels[r.type]||r.type)+'</span><strong>'+esc(r.title)+'</strong><p>'+esc((r.excerpt||'').slice(0,180))+'</p><small>일치: '+esc((r.matchedFields||[]).join(' · '))+'</small></a>').join('')+(res.length?'':'<p class="empty">다른 검색어나 범위를 선택해 주세요.</p>');
   }
@@ -761,7 +763,7 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr" data-part="${e.part}">
         <button class="back" data-back>‹ ${esc(e.category || partLabel(e.part))}</button>
-        <h1 class="d-title">${esc(e.name)}</h1>${isGolf ? '<div class="personal-note-label"><strong>개인 연습 감각 · 확인 전</strong><p>혼자 연습하며 느낀 기록입니다. 정답으로 단정하지 않고 레슨 및 원본 영상과 비교해 확인하세요.</p></div>' : ''}
+        <h1 class="d-title">${esc(e.name)}</h1>${!isGolf?'<nav class="training-context-links" aria-label="HT에서 활용"><a href="#ht?start=today">HT 루틴</a><a href="#ht?cat=all&amp;start=library">전체 운동 자료</a><a href="#pt/now">마지막 PT 기준</a></nav>':''}${isGolf ? '<div class="personal-note-label"><strong>개인 연습 감각 · 확인 전</strong><p>혼자 연습하며 느낀 기록입니다. 정답으로 단정하지 않고 레슨 및 원본 영상과 비교해 확인하세요.</p></div>' : ''}
         <div class="d-tags">
           <button class="tag cat link ${isGolf ? 'golf' : ''}" data-catnav="${esc(e.part)}::${esc(e.category || '')}">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')} ›</button>
           ${e.updated ? `<span class="tag">갱신 ${esc(e.updated.slice(5).replace('-', '/'))}</span>` : ''}
@@ -831,7 +833,7 @@ const Theme = (() => {
           <button class="del-btn" data-act="delete">🗑 이 동작 삭제 요청</button>
         </div>
       </div>
-      ${tabbar(e.part)}`;
+      ${tabbar(isGolf?'golf':'ht')}`;
     if(hasMedia){bindExerciseMedia(id);AppOffline.bind(app,id);}
   }
 
