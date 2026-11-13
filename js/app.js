@@ -763,7 +763,7 @@ const Theme = (() => {
     app.innerHTML = `
       <div class="scr" data-part="${e.part}">
         <button class="back" data-back>‹ ${esc(e.category || partLabel(e.part))}</button>
-        <h1 class="d-title">${esc(e.name)}</h1>${!isGolf?'<nav class="training-context-links" aria-label="HT에서 활용"><a href="#ht?start=today">HT 루틴</a><a href="#ht?cat=all&amp;start=library">전체 운동 자료</a><a href="#pt/now">마지막 PT 기준</a></nav>':''}${isGolf ? '<div class="personal-note-label"><strong>개인 연습 감각 · 확인 전</strong><p>혼자 연습하며 느낀 기록입니다. 정답으로 단정하지 않고 레슨 및 원본 영상과 비교해 확인하세요.</p></div>' : ''}
+        <h1 class="d-title">${esc(e.name)}</h1>${!isGolf?'<nav class="training-context-links" aria-label="HT에서 활용"><a href="#ht">HT 루틴</a><a href="#ht?cat=all&amp;start=library">전체 운동 자료</a><a href="#pt/now">마지막 PT 기준</a></nav>':''}${isGolf ? '<div class="personal-note-label"><strong>개인 연습 감각 · 확인 전</strong><p>혼자 연습하며 느낀 기록입니다. 정답으로 단정하지 않고 레슨 및 원본 영상과 비교해 확인하세요.</p></div>' : ''}
         <div class="d-tags">
           <button class="tag cat link ${isGolf ? 'golf' : ''}" data-catnav="${esc(e.part)}::${esc(e.category || '')}">${partIcon(e.part)} ${esc(partLabel(e.part))} · ${esc(e.category || '')} ›</button>
           ${e.updated ? `<span class="tag">갱신 ${esc(e.updated.slice(5).replace('-', '/'))}</span>` : ''}
