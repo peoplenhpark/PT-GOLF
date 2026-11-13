@@ -3,7 +3,10 @@ module.exports=function validatePTVideos(seed,refs){
  const active=seed.exercises.filter(e=>e.part==='pt'&&!(seed.removedExerciseIds||[]).includes(e.id));
  assert.deepEqual(Object.keys(refs).sort(),active.map(e=>e.id).sort(),'all active PT exercises need a matched video or explicit pending reason');
  for(const e of active){
-  const v=refs[e.id];
+  const primary=refs[e.id];
+  const videos=[primary,...primary.additionalVideos||[]];
+  assert.equal(new Set(videos.map(v=>v.youtubeId)).size,videos.length,e.id+' duplicate sources');
+  for(const v of videos){
   if(v.pending){assert.equal(v.pending,true);assert(v.reason?.trim()&&v.checkedAt,'pending reason/date required');continue;}
   assert(/^[A-Za-z0-9_-]{11}$/.test(v.youtubeId),e.id+' source ID');
   assert(Number.isInteger(v.durationSeconds)&&v.durationSeconds>0&&v.durationSeconds<=180,e.id+' video must be <=180s');
@@ -20,6 +23,7 @@ module.exports=function validatePTVideos(seed,refs){
   }
   assert.equal(v.frames?.length,2,e.id+' two source frames');
   for(const f of v.frames){assert(f.src.startsWith('media/pt-reference/'+e.id+'-'));assert(f.alt?.trim());assert(Number.isInteger(f.seconds)&&f.seconds>=0&&f.seconds<v.durationSeconds);}
+  }
  }
  return active.length;
 };

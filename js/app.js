@@ -706,7 +706,7 @@ const Theme = (() => {
 
   function trainingVideos(e) {
     const reference=e?.part==='pt'?window.PTReferenceVideos?.[e.id]:null;
-    return [e?.sourceVideo,...e?.supplementaryVideos||[],reference?.youtubeId?reference:null]
+    return [e?.sourceVideo,...e?.supplementaryVideos||[],reference?.youtubeId?reference:null,...reference?.additionalVideos||[]]
       .filter((v,i,all)=>v && /^[A-Za-z0-9_-]{11}$/.test(v.youtubeId) && all.findIndex(x=>x?.youtubeId===v.youtubeId)===i);
   }
   function trainingVideoHtml(e) {
@@ -715,7 +715,7 @@ const Theme = (() => {
     return trainingVideos(e).map((video,i)=>{
       const ref=video.reference, url=ref?'https://www.youtube.com/watch?v='+video.youtubeId:'https://www.youtube.com/shorts/'+video.youtubeId;
       const time=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
-      return '<section class="training-video'+(ref?' pt-reference-video':'')+'" aria-label="'+(ref?'PT 참고 영상':i?'보강 운동 영상':'원본 운동 영상')+'"><h2>▶ '+(ref?'참고 영상 · 3분 이내':i?'보강 영상':'원본 영상')+'</h2><h3>'+esc(video.title)+'</h3>'+
+      return '<section class="training-video'+(ref?' pt-reference-video':'')+'" data-reference-video="'+(ref?video.youtubeId:'')+'" aria-label="'+(ref?'PT 참고 영상':i?'보강 운동 영상':'원본 운동 영상')+'"><h2>▶ '+(ref?(video.additional?'추가 참고 영상 · 3분 이내':'참고 영상 · 3분 이내'):i?'보강 영상':'원본 영상')+'</h2><h3>'+esc(video.title)+'</h3>'+
         '<p class="training-meta">'+esc(video.channel)+' · '+esc(video.durationSeconds)+'초 · 공개 '+esc(video.publishedAt)+'</p>'+
         (ref?'<p class="training-meta">조회 '+Number(video.viewCount||0).toLocaleString('ko-KR')+'회 · 댓글 '+(Number.isFinite(video.commentCount)?Number(video.commentCount).toLocaleString('ko-KR')+'개':'수 미확인')+' · '+esc(video.verifiedAt)+' 확인</p>':'')+
         (video.moments?.length?'<div class="pt-video-moments">'+video.moments.map(m=>'<a class="btn primary pt-video-moment" href="'+esc(m.url)+'" target="_blank" rel="noopener noreferrer" data-start="'+m.s+'">'+time(m.s)+' '+esc(m.label)+' ↗</a>').join('')+'</div>':'')+

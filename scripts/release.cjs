@@ -77,7 +77,7 @@ for (const [id, media] of Object.entries(ctx.window.ExerciseMedia)) {
     const viewer=clean(entry.viewer);
     return [...entry.images.map(clean),viewer,...htmlAssets(viewer)];
   });
-  mediaAssets.push(...(ctx.window.PTReferenceVideos[id]?.frames||[]).map(f=>clean(f.src)));
+  mediaAssets.push(...[ctx.window.PTReferenceVideos[id],...ctx.window.PTReferenceVideos[id]?.additionalVideos||[]].flatMap(v=>v?.frames||[]).map(f=>clean(f.src)));
   const legacyImage = seed.exercises.find(e=>e.id===id)?.image;
   exercises[id] = [...new Set([...mediaAssets, ...(legacyImage ? [clean(legacyImage)] : [])])].sort();
 }

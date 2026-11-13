@@ -47,7 +47,58 @@ window.PTReferenceVideos = {
     ],
     "evidence": "사용자 지정 교체(2026-11-13). 원본 시범의 표본 프레임과 화면 자막을 대조했다. 오버그립 영상과 수업의 언더그립 코칭을 구분하며 코치 직접 추천으로 표시하지 않는다. 전체 음성·모든 반복을 연속 시청한 검증은 아니다.",
     "reference": true,
-    "replacedAt": "2026-11-13T01:11:16.936246+00:00"
+    "replacedAt": "2026-11-13T01:11:16.936246+00:00",
+    "additionalVideos": [
+      {
+        "youtubeId": "HpFzt4_EHko",
+        "title": "아주 쉬운 어시스트 풀업 사용법 #헬린이 #헬스초보 #등운동 #풀업 #어시스트풀업",
+        "channel": "정이누",
+        "durationSeconds": 60,
+        "publishedAt": "2024-03-20",
+        "verifiedAt": "2026-11-13",
+        "registeredAt": "2026-11-13T03:35:18.914226+00:00",
+        "viewCount": 209326,
+        "commentCount": 8,
+        "commentsReviewed": 8,
+        "commentSummary": "설명이 유용하다는 반응과 보조 중량 비율이 초보자에게 낮다는 이견을 확인했다. 영상의 체중 비율을 개인 중량 처방으로 적용하지 않는다.",
+        "points": [
+          "사용자 지정 추가 영상. 손잡이·엄지 방향, 몸통 정렬, 당기고 내려오는 시범을 기존 민아링 영상과 함께 참고한다.",
+          "시범의 손잡이·그립은 수업에서 확인한 언더그립과 구분한다. 보조 중량 55와 개인 가동범위는 기존 수업 코칭을 유지하고 영상의 체중 비율로 바꾸지 않는다."
+        ],
+        "moments": [
+          {
+            "s": 15,
+            "label": "손잡이와 엄지 방향",
+            "url": "https://www.youtube.com/watch?v=HpFzt4_EHko&t=15s"
+          },
+          {
+            "s": 25,
+            "label": "몸통 정렬과 당기기",
+            "url": "https://www.youtube.com/watch?v=HpFzt4_EHko&t=25s"
+          },
+          {
+            "s": 40,
+            "label": "등 수축과 내려오기",
+            "url": "https://www.youtube.com/watch?v=HpFzt4_EHko&t=40s"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/pt-reference/pt_pullup-HpFzt4_EHko-1.jpg",
+            "seconds": 25,
+            "alt": "몸통 정렬 준비 · 원본 25초"
+          },
+          {
+            "src": "media/pt-reference/pt_pullup-HpFzt4_EHko-2.jpg",
+            "seconds": 35,
+            "alt": "풀업 당기기 · 원본 35초"
+          }
+        ],
+        "evidence": "사용자 지정 추가(2026-11-13). 원본 시범의 표본 프레임과 화면 자막을 대조했다. 수업 코칭·코치 직접 추천과 구분하며 영상 전체 음성을 연속 검증한 것은 아니다.",
+        "reference": true,
+        "additional": true
+      }
+    ]
   },
   "pt_seatedrow": {
     "youtubeId": "zUx50dExgxA",

@@ -66,6 +66,8 @@ globalThis.PTGolfRelease = {
       "media/3d/viewer.js",
       "media/pt-reference/pt_pullup-1.jpg",
       "media/pt-reference/pt_pullup-2.jpg",
+      "media/pt-reference/pt_pullup-HpFzt4_EHko-1.jpg",
+      "media/pt-reference/pt_pullup-HpFzt4_EHko-2.jpg",
       "samples/pushdown-3d/three.min.js"
     ],
     "pt_seatedrow": [

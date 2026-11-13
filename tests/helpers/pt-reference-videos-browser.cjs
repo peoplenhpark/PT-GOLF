@@ -7,10 +7,13 @@ module.exports=async(browser,base)=>{
   for(const [id,v] of Object.entries(refs)){
    await p.goto(base+'#exercise/'+id);await p.locator('.d-title').waitFor();
    if(v.pending){assert.equal(await p.locator('.pt-reference-pending').count(),1);assert.equal(await p.locator('.pt-video-moment').count(),0);continue;}
-   const section=p.locator('.pt-reference-video');assert.equal(await section.count(),1);
+   const videos=[v,...v.additionalVideos||[]];assert.equal(await p.locator('.pt-reference-video').count(),videos.length);
+   for(const video of videos){
+   const section=p.locator('[data-reference-video="'+video.youtubeId+'"]');
    assert.equal(await section.locator('.pt-video-frames img').count(),2);
-   const links=section.locator('.pt-video-moment');assert.equal(await links.count(),v.moments.length);
-   for(const [i,m] of v.moments.entries()){assert.equal(await links.nth(i).getAttribute('href'),m.url);assert.equal(await links.nth(i).getAttribute('data-start'),String(m.s));}
+   const links=section.locator('.pt-video-moment');assert.equal(await links.count(),video.moments.length);
+   for(const [i,m] of video.moments.entries()){assert.equal(await links.nth(i).getAttribute('href'),m.url);assert.equal(await links.nth(i).getAttribute('data-start'),String(m.s));}
+   }
   }
   for(const width of [320,390,768])for(const theme of ['light','dark']){
    await p.setViewportSize({width,height:844});await p.goto(base+'#exercise/pt_lowpulley_row');await p.locator('.pt-reference-video').waitFor();await p.evaluate(t=>document.documentElement.setAttribute('data-theme',t),theme);

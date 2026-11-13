@@ -7,6 +7,9 @@ for(const change of [v=>{delete v.moments;},v=>{v.durationSeconds=181;},v=>{dele
  const copy=structuredClone(refs);change(copy[sample]);assert.throws(()=>validate(seed,copy));
 }
 const manifest={};vm.runInNewContext(fs.readFileSync('release-assets.js','utf8'),manifest);
-for(const [id,v] of Object.entries(refs))for(const f of v.frames||[]){assert(fs.existsSync(f.src));assert(manifest.PTGolfRelease.exercises[id].includes(f.src));}
+for(const [id,v] of Object.entries(refs))for(const f of [v,...v.additionalVideos||[]].flatMap(x=>x.frames||[])){assert(fs.existsSync(f.src));assert(manifest.PTGolfRelease.exercises[id].includes(f.src));}
 assert(manifest.PTGolfRelease.shell.includes('js/pt-videos.js'));
 console.log('PASS: PT54 coverage, <=180s, scoped coaching, source frames, core links, stale/mismatched link rejection and offline assets.');
+
+assert.equal(refs.pt_pullup.youtubeId,'um8J524Y5gg');assert.equal(refs.pt_pullup.additionalVideos[0].youtubeId,'HpFzt4_EHko');
+const badExtra=structuredClone(refs);badExtra.pt_pullup.additionalVideos[0].moments[0].s++;assert.throws(()=>validate(seed,badExtra));
