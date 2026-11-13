@@ -110,5 +110,10 @@ async function test(name, fn) { await fn(); count++; }
     const next = setup(t.storage), reopened = editor(); next.mount(reopened.box); next.drafts.bind(reopened.box, 'scope');
     assert.equal(reopened.field.value, 'durable draft');
   });
+  await test('a first-visit tab notices subsequent worker updates', async()=>{
+    const t=setup();t.context.navigator.serviceWorker.controller=null;t.loadUpdate();
+    await Promise.resolve();await Promise.resolve();t.swEvents.controllerchange();assert.equal(t.reloads(),0,'first claim does not reload');
+    t.swEvents.controllerchange();assert.equal(t.reloads(),1,'a later update must reload a safely idle first-visit tab');
+  });
   console.log(`PASS: ${count} draft/update safety scenarios; isolated form and storage doubles.`);
 })().catch(error => { console.error(error); process.exitCode = 1; });

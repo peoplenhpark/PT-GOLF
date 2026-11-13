@@ -9,8 +9,8 @@ window.AppUpdate = (() => {
   }
   function init(toast) {
     if(!('serviceWorker' in navigator)||!location.protocol.startsWith('http'))return;
-    const controlled=!!navigator.serviceWorker.controller;
-    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!controlled)return;changed=true;if(!safe())toast('최신 버전이 준비됐습니다. 작성 내용을 저장한 뒤 적용합니다.');apply();});
+    let controlled=!!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!controlled){controlled=true;return;}changed=true;if(!safe())toast('최신 버전이 준비됐습니다. 작성 내용을 저장한 뒤 적용합니다.');apply();});
     navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(reg=>{
       registration=reg;
       const ready=()=>{waiting=reg.waiting;if(waiting){if(!safe())toast('업데이트 준비됨 · 작성 내용을 먼저 저장하세요');apply();}};
