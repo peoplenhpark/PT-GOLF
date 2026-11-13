@@ -1,41 +1,53 @@
 /* PT reference videos: source demonstration match reviewed 2026-11-13. */
 window.PTReferenceVideos = {
   "pt_pullup": {
-    "youtubeId": "D_4IlBjqjpw",
-    "title": "Machine Assisted Chin Up",
-    "channel": "Erik Rokisky | Founder of SquatWedgiez",
-    "durationSeconds": 47,
-    "publishedAt": "2021-04-10",
+    "youtubeId": "um8J524Y5gg",
+    "title": "알고 나면 쉬운 어시스트 풀업 #풀업",
+    "channel": "민아링minaring",
+    "durationSeconds": 97,
+    "publishedAt": "2026-02-22",
     "verifiedAt": "2026-11-13",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 19816,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 82973,
+    "commentCount": 8,
+    "commentsReviewed": 8,
+    "commentSummary": "설명이 자세하고 기구에서 내려오는 방법이 유용했다는 반응을 확인했다. 개인 경험 댓글을 자세의 정답이나 효과의 검증 자료로 간주하지 않는다.",
     "points": [
-      "무릎 패드 보조와 언더그립 시범. 수업의 보조 중량과 몸통 정렬은 기존 코칭을 따른다."
+      "사용자가 지정한 어시스트 풀업 영상. 보조 중량 설정, 무릎 패드 사용, 어깨 위치와 몸통을 유지한 당기기, 발판으로 내려오는 순서를 참고한다.",
+      "영상은 넓은 오버그립 시범이다. 수업에서 확인한 언더그립·보조 중량 55·몸통 정렬은 기존 코칭을 유지하며 영상의 그립이나 중량으로 바꾸지 않는다."
     ],
     "moments": [
       {
-        "s": 9,
-        "label": "어시스트 머신 언더그립 당기기",
-        "url": "https://www.youtube.com/watch?v=D_4IlBjqjpw&t=9s"
+        "s": 30,
+        "label": "어깨 위치 잡기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=30s"
+      },
+      {
+        "s": 54,
+        "label": "몸통을 유지하며 당기기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=54s"
+      },
+      {
+        "s": 80,
+        "label": "발판으로 내려오기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=80s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_pullup-1.jpg",
-        "seconds": 9,
-        "alt": "어시스트 머신 언더그립 당기기 (원본 9초)"
+        "seconds": 30,
+        "alt": "어깨 위치 준비 · 원본 30초"
       },
       {
         "src": "media/pt-reference/pt_pullup-2.jpg",
-        "seconds": 23,
-        "alt": "어시스트 머신 언더그립 당기기 (원본 23초)"
+        "seconds": 54,
+        "alt": "풀업 당기기 시범 · 원본 54초"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "사용자 지정 교체(2026-11-13). 원본 시범의 표본 프레임과 화면 자막을 대조했다. 오버그립 영상과 수업의 언더그립 코칭을 구분하며 코치 직접 추천으로 표시하지 않는다. 전체 음성·모든 반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T01:11:16.936246+00:00"
   },
   "pt_seatedrow": {
     "youtubeId": "zUx50dExgxA",

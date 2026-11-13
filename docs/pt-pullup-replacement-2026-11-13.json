@@ -1,0 +1,108 @@
+{
+  "requestedBy": "user",
+  "date": "2026-11-13",
+  "previousSourceId": "D_4IlBjqjpw",
+  "current": {
+    "youtubeId": "um8J524Y5gg",
+    "title": "알고 나면 쉬운 어시스트 풀업 #풀업",
+    "channel": "민아링minaring",
+    "durationSeconds": 97,
+    "publishedAt": "2026-02-22",
+    "verifiedAt": "2026-11-13",
+    "registeredAt": "2026-11-13T09:00:00+09:00",
+    "viewCount": 82973,
+    "commentCount": 8,
+    "commentsReviewed": 8,
+    "commentSummary": "설명이 자세하고 기구에서 내려오는 방법이 유용했다는 반응을 확인했다. 개인 경험 댓글을 자세의 정답이나 효과의 검증 자료로 간주하지 않는다.",
+    "points": [
+      "사용자가 지정한 어시스트 풀업 영상. 보조 중량 설정, 무릎 패드 사용, 어깨 위치와 몸통을 유지한 당기기, 발판으로 내려오는 순서를 참고한다.",
+      "영상은 넓은 오버그립 시범이다. 수업에서 확인한 언더그립·보조 중량 55·몸통 정렬은 기존 코칭을 유지하며 영상의 그립이나 중량으로 바꾸지 않는다."
+    ],
+    "moments": [
+      {
+        "s": 30,
+        "label": "어깨 위치 잡기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=30s"
+      },
+      {
+        "s": 54,
+        "label": "몸통을 유지하며 당기기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=54s"
+      },
+      {
+        "s": 80,
+        "label": "발판으로 내려오기",
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=80s"
+      }
+    ],
+    "frames": [
+      {
+        "src": "media/pt-reference/pt_pullup-1.jpg",
+        "seconds": 30,
+        "alt": "어깨 위치 준비 · 원본 30초"
+      },
+      {
+        "src": "media/pt-reference/pt_pullup-2.jpg",
+        "seconds": 54,
+        "alt": "풀업 당기기 시범 · 원본 54초"
+      }
+    ],
+    "evidence": "사용자 지정 교체(2026-11-13). 원본 시범의 표본 프레임과 화면 자막을 대조했다. 오버그립 영상과 수업의 언더그립 코칭을 구분하며 코치 직접 추천으로 표시하지 않는다. 전체 음성·모든 반복을 연속 시청한 검증은 아니다.",
+    "reference": true,
+    "replacedAt": "2026-11-13T01:11:16.936246+00:00"
+  },
+  "scope": "풀업 참고 영상·원본 이미지·핵심 링크 교체. 기존 운동ID·수업 언더그립·중량·메모·즐겨찾기 보존.",
+  "playbackVerification": {
+    "environment": "로컬 _site 미리보기의 운동 상세에서 직접 링크 클릭 → 실제 YouTube 본편 video_id·currentTime 대조",
+    "results": [
+      {
+        "exerciseId": "pt_pullup",
+        "sourceId": "um8J524Y5gg",
+        "displayedSeconds": 30,
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=30s",
+        "passed": true,
+        "actual": {
+          "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=30s",
+          "time": 30.006549,
+          "videoId": "um8J524Y5gg"
+        }
+      },
+      {
+        "exerciseId": "pt_pullup",
+        "sourceId": "um8J524Y5gg",
+        "displayedSeconds": 54,
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=54s",
+        "passed": true,
+        "actual": {
+          "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=54s",
+          "time": 54.02,
+          "videoId": "um8J524Y5gg"
+        }
+      },
+      {
+        "exerciseId": "pt_pullup",
+        "sourceId": "um8J524Y5gg",
+        "displayedSeconds": 80,
+        "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=80s",
+        "passed": true,
+        "actual": {
+          "url": "https://www.youtube.com/watch?v=um8J524Y5gg&t=80s",
+          "time": 80.018735,
+          "videoId": "um8J524Y5gg"
+        }
+      }
+    ],
+    "mobileWidths": [
+      320,
+      390,
+      768
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "nodeValidation": "passed",
+    "scopePreserved": "seed.json·release.json 변경 없음",
+    "deployment": "사용자 배포 요청: 표시 4.3 / 자산 v237 유지. GitHub Actions 검증 후 배포."
+  }
+}
