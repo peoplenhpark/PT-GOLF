@@ -1,0 +1,519 @@
+{
+  "date": "2026-11-14",
+  "status": "deployment-ready",
+  "version": "4.4/v238",
+  "searchedItems": 15,
+  "queryCount": 40,
+  "actualSourceCandidatesReviewed": 30,
+  "replaced": [
+    {
+      "exerciseId": "pt_armcurl",
+      "part": "pt",
+      "previousId": "WcAYy5UrFUI",
+      "youtubeId": "xHPzFlCCJsM",
+      "duration": 63,
+      "moment": 31,
+      "frameSeconds": [
+        12,
+        31
+      ],
+      "views": 232,
+      "commentsReviewed": 0
+    },
+    {
+      "exerciseId": "pt_backextension",
+      "part": "pt",
+      "previousId": "RaIXjcndM94",
+      "youtubeId": "XPVnisOgX9c",
+      "duration": 80,
+      "moment": 38,
+      "frameSeconds": [
+        38,
+        47
+      ],
+      "views": 62,
+      "commentsReviewed": 0
+    },
+    {
+      "exerciseId": "pt_facepull",
+      "part": "pt",
+      "previousId": "5ZC4LagfDQ4",
+      "youtubeId": "T9hmnzSrQmM",
+      "duration": 25,
+      "moment": 12,
+      "frameSeconds": [
+        5,
+        12
+      ],
+      "views": 809,
+      "commentsReviewed": 0
+    },
+    {
+      "exerciseId": "pt_daily_piriformis",
+      "part": "pt",
+      "previousId": "KU12qLivgK0",
+      "youtubeId": "ZcOyrPytCLQ",
+      "duration": 63,
+      "moment": 31,
+      "frameSeconds": [
+        31,
+        44
+      ],
+      "views": 4768,
+      "commentsReviewed": 1
+    },
+    {
+      "exerciseId": "pt_plank",
+      "part": "pt",
+      "previousId": "3QZlgJ40LfU",
+      "youtubeId": "OSm3kd9irnc",
+      "duration": 92,
+      "moment": 18,
+      "frameSeconds": [
+        18,
+        46
+      ],
+      "views": 3471,
+      "commentsReviewed": 0
+    },
+    {
+      "exerciseId": "pt_tailbone_raise",
+      "part": "pt",
+      "previousId": "4RqGXT-kBnk",
+      "youtubeId": "Hy3O410H4wk",
+      "duration": 65,
+      "moment": 34,
+      "frameSeconds": [
+        28,
+        35
+      ],
+      "views": 5235,
+      "commentsReviewed": 1
+    },
+    {
+      "exerciseId": "pt_shoulderpress",
+      "part": "pt",
+      "previousId": "TnhIyp4kmO8",
+      "youtubeId": "E9I-dG6lv5E",
+      "duration": 20,
+      "moment": 16,
+      "frameSeconds": [
+        13,
+        16
+      ],
+      "views": 115,
+      "commentsReviewed": 0
+    },
+    {
+      "exerciseId": "ht_latpulldown_reference",
+      "part": "ht",
+      "previousId": "HJika5QHzXY",
+      "youtubeId": "5UPOD0he724",
+      "duration": 58,
+      "moment": 28,
+      "frameSeconds": [
+        46,
+        29
+      ],
+      "views": 1153272,
+      "commentsReviewed": 5
+    }
+  ],
+  "retainedEnglish": [
+    "pt_dbpullover",
+    "pt_heelsquat",
+    "pt_sldl",
+    "pt_lunge_ball_rotation",
+    "ht_lower_six",
+    "ht_upper_elbows",
+    "ht_chest_six"
+  ],
+  "retainedReasons": [
+    "무릎 고정·손바닥으로 받친 단일 덤벨 풀오버와 맞는 한국어 원본 미확보",
+    "뒤꿈치 받침+앞에 든 케틀벨 수업 조건과 다른 후보 제외",
+    "손 지지+덤벨 조건과 다른 맨몸 후보 제외",
+    "정지 런지+볼 회전과 다른 런지 이동/볼 던지기 후보 제외",
+    "원래 포함 동작 구성을 유지하는 3분 이내 한국어 묶음 미확보"
+  ],
+  "sourceReview": "시간별 원본 표본과 한국어 안내 대조. 전체 연속 시청 검증 아님. 댓글 표본은 자세의 증명으로 사용하지 않음.",
+  "validation": {
+    "nodeTestFiles": 43,
+    "syntaxChecks": 25,
+    "fullBrowserSmoke": "passed",
+    "previewPlaybackAndCoreLinks": "8/8 passed",
+    "mobileThemeCases": 48,
+    "legacyHTFullObjectOverride": "new source persists; memo/favorite/custom cues preserved; no read writes"
+  },
+  "playerChecks": [
+    {
+      "exerciseId": "pt_armcurl",
+      "youtubeId": "xHPzFlCCJsM",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "xHPzFlCCJsM",
+        "time": 0.31721
+      },
+      "core": {
+        "id": "xHPzFlCCJsM",
+        "time": 31.017872,
+        "ready": 4
+      },
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_backextension",
+      "youtubeId": "XPVnisOgX9c",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "XPVnisOgX9c",
+        "time": 0.354618
+      },
+      "core": {
+        "id": "XPVnisOgX9c",
+        "time": 38.133048,
+        "ready": 4
+      },
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_facepull",
+      "youtubeId": "T9hmnzSrQmM",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "T9hmnzSrQmM",
+        "time": 0.262775
+      },
+      "passed": true,
+      "initialError": "Error: 본편180초 대기 초과",
+      "core": {
+        "id": "T9hmnzSrQmM",
+        "time": 12
+      },
+      "recheckedInFreshMobileSession": true
+    },
+    {
+      "exerciseId": "pt_daily_piriformis",
+      "youtubeId": "ZcOyrPytCLQ",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "ZcOyrPytCLQ",
+        "time": 0.321659
+      },
+      "passed": true,
+      "initialError": "Error: 본편180초 대기 초과",
+      "core": {
+        "id": "ZcOyrPytCLQ",
+        "time": 31.018732
+      },
+      "recheckedInFreshMobileSession": true
+    },
+    {
+      "exerciseId": "pt_tailbone_raise",
+      "youtubeId": "Hy3O410H4wk",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "Hy3O410H4wk",
+        "time": 0.194152
+      },
+      "core": {
+        "id": "Hy3O410H4wk",
+        "time": 34.491139,
+        "ready": 4
+      },
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_shoulderpress",
+      "youtubeId": "E9I-dG6lv5E",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "E9I-dG6lv5E",
+        "time": 0.170281
+      },
+      "core": {
+        "id": "E9I-dG6lv5E",
+        "time": 16.410094,
+        "ready": 4
+      },
+      "passed": true
+    },
+    {
+      "exerciseId": "ht_latpulldown_reference",
+      "youtubeId": "5UPOD0he724",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "5UPOD0he724",
+        "time": 0.342174
+      },
+      "core": {
+        "id": "5UPOD0he724",
+        "time": 28.014268,
+        "ready": 4
+      },
+      "passed": true
+    },
+    {
+      "exerciseId": "pt_plank",
+      "youtubeId": "OSm3kd9irnc",
+      "ui": [
+        {
+          "width": 320,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 320,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 390,
+          "theme": "dark",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "light",
+          "imagesLoaded": 2
+        },
+        {
+          "width": 430,
+          "theme": "dark",
+          "imagesLoaded": 2
+        }
+      ],
+      "embedded": {
+        "id": "OSm3kd9irnc",
+        "time": 0.223262
+      },
+      "core": {
+        "id": "OSm3kd9irnc",
+        "time": 18.530141,
+        "ready": 4
+      },
+      "passed": true
+    }
+  ]
+}

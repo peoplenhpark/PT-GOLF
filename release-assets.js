@@ -2,7 +2,7 @@
 globalThis.PTGolfRelease = {
   "version": "238",
   "displayVersion": "4.4",
-  "revision": "e154f4727b860a60",
+  "revision": "c07f27a7214959fa",
   "shell": [
     "css/coach.css",
     "css/golf.css",

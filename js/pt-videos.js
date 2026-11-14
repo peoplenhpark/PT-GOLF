@@ -1,4 +1,4 @@
-/* PT reference videos: source demonstration match reviewed 2026-11-13. */
+/* PT reference videos: source demonstration match reviewed 2026-11-14. */
 window.PTReferenceVideos = {
   "pt_pullup": {
     "youtubeId": "um8J524Y5gg",
@@ -380,52 +380,56 @@ window.PTReferenceVideos = {
     "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_backextension": {
-    "youtubeId": "RaIXjcndM94",
-    "title": "45 Degree Back Extension",
-    "channel": "Functional Bodybuilding",
-    "durationSeconds": 16,
-    "publishedAt": "2024-06-20",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "XPVnisOgX9c",
+    "title": "목동PT 피트니스파이 1분PT 하이퍼 백 익스텐션 OX 자세알아보기 올바른자세와 잘못된 자세 by 목동피티 파이tv",
+    "channel": "피트니스파이 tv",
+    "durationSeconds": 80,
+    "publishedAt": "2019-04-04",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 9070,
+    "viewCount": 62,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
-      "맨몸 45도 백익스텐션. 수업대로 몸이 일직선에 닿으면 멈추고 뒤로 과하게 젖히지 않는다."
+      "맨몸 45도 백익스텐션. 수업대로 몸이 일직선에 닿으면 멈추고 뒤로 과하게 젖히지 않는다.",
+      "0:38 올바른 자세(O) 구간을 참고한다. 앞의 잘못된 자세(X)와 뒤의 덤벨 응용은 따라 하지 않고 맨몸 수업 기준을 유지한다."
     ],
     "moments": [
       {
-        "s": 3,
-        "label": "45도 기구에서 고관절 접기",
-        "url": "https://www.youtube.com/watch?v=RaIXjcndM94&t=3s"
+        "s": 38,
+        "label": "올바른 힙힌지 백익스텐션",
+        "url": "https://www.youtube.com/watch?v=XPVnisOgX9c&t=38s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_backextension-1.jpg",
-        "seconds": 3,
-        "alt": "45도 기구에서 고관절 접기 (원본 3초)"
+        "seconds": 38,
+        "alt": "올바른 힙힌지 백익스텐션 (원본 38초)"
       },
       {
         "src": "media/pt-reference/pt_backextension-2.jpg",
-        "seconds": 8,
-        "alt": "45도 기구에서 고관절 접기 (원본 8초)"
+        "seconds": 47,
+        "alt": "올바른 힙힌지 백익스텐션 (원본 47초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_armcurl": {
-    "youtubeId": "WcAYy5UrFUI",
-    "title": "Standing Barbell Curl",
-    "channel": "Central Athlete",
-    "durationSeconds": 17,
-    "publishedAt": "2020-11-09",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "xHPzFlCCJsM",
+    "title": "'바벨 바이셉스 컬, barbell biceps curl' 운동 방법 / 대전 PT샵👍 '트레이닝센터 바른'",
+    "channel": "트레이닝센터바른",
+    "durationSeconds": 63,
+    "publishedAt": "2025-11-25",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 48190,
-    "commentCount": 0,
+    "viewCount": 232,
+    "commentCount": null,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
@@ -433,25 +437,28 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 2,
-        "label": "언더그립 바벨 컬",
-        "url": "https://www.youtube.com/watch?v=WcAYy5UrFUI&t=2s"
+        "s": 31,
+        "label": "바벨 컬 · 어깨가 앞으로 밀리지 않기",
+        "url": "https://www.youtube.com/watch?v=xHPzFlCCJsM&t=31s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_armcurl-1.jpg",
-        "seconds": 2,
-        "alt": "언더그립 바벨 컬 (원본 2초)"
+        "seconds": 12,
+        "alt": "바벨 컬 · 어깨가 앞으로 밀리지 않기 (원본 12초)"
       },
       {
         "src": "media/pt-reference/pt_armcurl-2.jpg",
-        "seconds": 4,
-        "alt": "언더그립 바벨 컬 (원본 4초)"
+        "seconds": 31,
+        "alt": "바벨 컬 · 어깨가 앞으로 밀리지 않기 (원본 31초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_pushdown": {
     "youtubeId": "Pd0Igl0d_8o",
@@ -694,14 +701,14 @@ window.PTReferenceVideos = {
     "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_facepull": {
-    "youtubeId": "5ZC4LagfDQ4",
-    "title": "Cable Rope Face Pull",
-    "channel": "OPEX Fitness",
-    "durationSeconds": 15,
-    "publishedAt": "2021-03-17",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "T9hmnzSrQmM",
+    "title": "ROPE GRIP FACE PULL 로프그립 페이스풀",
+    "channel": "1000파운드클럽",
+    "durationSeconds": 25,
+    "publishedAt": "2022-10-02",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 82598,
+    "viewCount": 809,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -710,25 +717,28 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 3,
-        "label": "로프를 얼굴 쪽으로 당기기",
-        "url": "https://www.youtube.com/watch?v=5ZC4LagfDQ4&t=3s"
+        "s": 12,
+        "label": "서서 로프로 얼굴 쪽 당기기",
+        "url": "https://www.youtube.com/watch?v=T9hmnzSrQmM&t=12s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_facepull-1.jpg",
-        "seconds": 3,
-        "alt": "로프를 얼굴 쪽으로 당기기 (원본 3초)"
+        "seconds": 5,
+        "alt": "서서 로프로 얼굴 쪽 당기기 (원본 5초)"
       },
       {
         "src": "media/pt-reference/pt_facepull-2.jpg",
-        "seconds": 7,
-        "alt": "로프를 얼굴 쪽으로 당기기 (원본 7초)"
+        "seconds": 12,
+        "alt": "서서 로프로 얼굴 쪽 당기기 (원본 12초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_lateralraise": {
     "youtubeId": "u_XiJWkPkj4",
@@ -1291,78 +1301,86 @@ window.PTReferenceVideos = {
     "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_daily_piriformis": {
-    "youtubeId": "KU12qLivgK0",
-    "title": "Elevated Piriformis Stretch on Bench",
-    "channel": "Inspired By Purpose®️ Wellness ",
-    "durationSeconds": 34,
-    "publishedAt": "2019-11-14",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "ZcOyrPytCLQ",
+    "title": "만성허리통증에 좋은 ☆이상근 스트레칭☆",
+    "channel": "완쾌신경과",
+    "durationSeconds": 63,
+    "publishedAt": "2020-07-28",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 272,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 4768,
+    "commentCount": 1,
+    "commentsReviewed": 1,
+    "commentSummary": "공개 댓글 1개를 보조 자료로 참고했다. 개인 경험·효과 주장을 수업 자세의 검증으로 쓰지 않는다.",
     "points": [
-      "벤치를 쓰는 피전 형태 시범. 수업의 앞다리 각도·뒷다리 방향과 천천히 숙이는 범위를 따른다."
+      "벤치를 쓰는 피전 형태 시범. 수업의 앞다리 각도·뒷다리 방향과 천천히 숙이는 범위를 따른다.",
+      "영상은 테이블 지지 예시다. 지지대 높이·숙이는 깊이는 개인 수업의 벤치 설정을 유지하고 허리를 억지로 굽히지 않는다."
     ],
     "moments": [
       {
-        "s": 6,
-        "label": "벤치에 앞다리를 얹은 이상근 스트레칭",
-        "url": "https://www.youtube.com/watch?v=KU12qLivgK0&t=6s"
+        "s": 31,
+        "label": "지지대 위 이상근 스트레칭",
+        "url": "https://www.youtube.com/watch?v=ZcOyrPytCLQ&t=31s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_daily_piriformis-1.jpg",
-        "seconds": 6,
-        "alt": "벤치에 앞다리를 얹은 이상근 스트레칭 (원본 6초)"
+        "seconds": 31,
+        "alt": "지지대 위 이상근 스트레칭 (원본 31초)"
       },
       {
         "src": "media/pt-reference/pt_daily_piriformis-2.jpg",
-        "seconds": 17,
-        "alt": "벤치에 앞다리를 얹은 이상근 스트레칭 (원본 17초)"
+        "seconds": 44,
+        "alt": "지지대 위 이상근 스트레칭 (원본 44초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_plank": {
-    "youtubeId": "3QZlgJ40LfU",
-    "title": "Demonstration of a Forearm Plank",
-    "channel": "Hospital for Special Surgery",
-    "durationSeconds": 24,
-    "publishedAt": "2013-12-10",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "OSm3kd9irnc",
+    "title": "☝하루 1분☝초간단 운동! 플랭크로 전신 근력+코어 힘 기르기!",
+    "channel": "빙그레핏",
+    "durationSeconds": 92,
+    "publishedAt": "2022-10-17",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 42888,
-    "commentCount": 2,
-    "commentsReviewed": 2,
-    "commentSummary": "감사·개인 기대 반응으로 치료 효과나 자세 근거로 쓰지 않았다.",
+    "viewCount": 3471,
+    "commentCount": 0,
+    "commentsReviewed": 0,
+    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
     "points": [
-      "전완 지지 플랭크 시범. 개인 유지 시간과 배·골반 정렬은 수업 기준이다."
+      "전완 지지 플랭크 시범. 개인 유지 시간과 배·골반 정렬은 수업 기준이다.",
+      "0:18 팔꿈치 플랭크 시범을 참고한다. 영상 타이머를 개인 수업 분량으로 복사하지 않는다."
     ],
     "moments": [
       {
-        "s": 10,
-        "label": "팔꿈치 지지 플랭크",
-        "url": "https://www.youtube.com/watch?v=3QZlgJ40LfU&t=10s"
+        "s": 18,
+        "label": "팔꿈치 지지 기본 플랭크",
+        "url": "https://www.youtube.com/watch?v=OSm3kd9irnc&t=18s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_plank-1.jpg",
-        "seconds": 10,
-        "alt": "팔꿈치 지지 플랭크 (원본 10초)"
+        "seconds": 18,
+        "alt": "팔꿈치 지지 기본 플랭크 (원본 18초)"
       },
       {
         "src": "media/pt-reference/pt_plank-2.jpg",
-        "seconds": 19,
-        "alt": "팔꿈치 지지 플랭크 (원본 19초)"
+        "seconds": 46,
+        "alt": "팔꿈치 지지 기본 플랭크 (원본 46초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_daily_foam": {
     "youtubeId": "QWceyd-D1l4",
@@ -1849,42 +1867,46 @@ window.PTReferenceVideos = {
     "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_tailbone_raise": {
-    "youtubeId": "4RqGXT-kBnk",
-    "title": "How to Do: Reverse Crunch",
-    "channel": "Global Fitness Club",
-    "durationSeconds": 41,
-    "publishedAt": "2026-10-10",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "Hy3O410H4wk",
+    "title": "02. 리버스 크런치 - 하복부 운동 핵심!",
+    "channel": "물리치료사 PT용팔이",
+    "durationSeconds": 65,
+    "publishedAt": "2025-10-11",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 22,
-    "commentCount": 0,
-    "commentsReviewed": 0,
-    "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
+    "viewCount": 5235,
+    "commentCount": 1,
+    "commentsReviewed": 1,
+    "commentSummary": "공개 댓글 1개를 보조 자료로 참고했다. 개인 경험·효과 주장을 수업 자세의 검증으로 쓰지 않는다.",
     "points": [
       "리버스 크런치의 작은 골반 들기만 참고한다. 수업대로 무릎 각도를 유지하고 다리를 크게 휘두르거나 뒤로 넘기지 않는다.",
-      "11.13 사용자 확인: 마지막 수업에서도 기존 무릎90도·발끝전면의 꼬리뼈 말아 올리기를 연습했다. 영상의 다리 큰 이동보다 수업에서 배운 작은 골반 들기를 우선한다."
+      "11.13 사용자 확인: 마지막 수업에서도 기존 무릎90도·발끝전면의 꼬리뼈 말아 올리기를 연습했다. 영상의 다리 큰 이동보다 수업에서 배운 작은 골반 들기를 우선한다.",
+      "수업의 무릎90도·발끝 전면·작은 골반 말기를 우선한다. 영상의 무릎 당기는 깊이·머리 받침을 개인 기준으로 변경하지 않는다."
     ],
     "moments": [
       {
-        "s": 8,
-        "label": "무릎을 굽힌 골반 말아 올리기",
-        "url": "https://www.youtube.com/watch?v=4RqGXT-kBnk&t=8s"
+        "s": 34,
+        "label": "꼬리뼈를 천천히 말아 올리기",
+        "url": "https://www.youtube.com/watch?v=Hy3O410H4wk&t=34s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_tailbone_raise-1.jpg",
-        "seconds": 8,
-        "alt": "무릎을 굽힌 골반 말아 올리기 (원본 8초)"
+        "seconds": 28,
+        "alt": "꼬리뼈를 천천히 말아 올리기 (원본 28초)"
       },
       {
         "src": "media/pt-reference/pt_tailbone_raise-2.jpg",
-        "seconds": 20,
-        "alt": "무릎을 굽힌 골반 말아 올리기 (원본 20초)"
+        "seconds": 35,
+        "alt": "꼬리뼈를 천천히 말아 올리기 (원본 35초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_sldl": {
     "youtubeId": "Iok3nSFXLUU",
@@ -2041,14 +2063,14 @@ window.PTReferenceVideos = {
     "languageEvidence": "한국어 채널의 원본 화면 자막·시범 표본을 대조했다. 음성 없는 시범도 포함하며 자동 번역 제목만으로 선정하지 않았다."
   },
   "pt_shoulderpress": {
-    "youtubeId": "TnhIyp4kmO8",
-    "title": "How To Use The Shoulder Press Machine",
-    "channel": "PureGym",
-    "durationSeconds": 55,
-    "publishedAt": "2022-01-06",
-    "verifiedAt": "2026-11-13",
+    "youtubeId": "E9I-dG6lv5E",
+    "title": "매트릭스 숄더프레스 머신 사용법",
+    "channel": "피데스짐",
+    "durationSeconds": 20,
+    "publishedAt": "2026-06-11",
+    "verifiedAt": "2026-11-14",
     "registeredAt": "2026-11-13T09:00:00+09:00",
-    "viewCount": 221072,
+    "viewCount": 115,
     "commentCount": 0,
     "commentsReviewed": 0,
     "commentSummary": "공개 댓글 표본을 확보하지 못해 댓글 평가는 제외했다.",
@@ -2057,25 +2079,28 @@ window.PTReferenceVideos = {
     ],
     "moments": [
       {
-        "s": 11,
-        "label": "머신 숄더프레스",
-        "url": "https://www.youtube.com/watch?v=TnhIyp4kmO8&t=11s"
+        "s": 16,
+        "label": "숄더프레스 머신 시범",
+        "url": "https://www.youtube.com/watch?v=E9I-dG6lv5E&t=16s"
       }
     ],
     "frames": [
       {
         "src": "media/pt-reference/pt_shoulderpress-1.jpg",
-        "seconds": 11,
-        "alt": "머신 숄더프레스 (원본 11초)"
+        "seconds": 13,
+        "alt": "숄더프레스 머신 시범 (원본 13초)"
       },
       {
         "src": "media/pt-reference/pt_shoulderpress-2.jpg",
-        "seconds": 27,
-        "alt": "머신 숄더프레스 (원본 27초)"
+        "seconds": 16,
+        "alt": "숄더프레스 머신 시범 (원본 16초)"
       }
     ],
-    "evidence": "원본의 준비·동작 표본 프레임과 공개 메타데이터를 대조했다. 수업 코치의 직접 추천이 아닌 앱 참고 영상이다. 영상 전체의 모든 설명·반복을 연속 시청한 검증은 아니다.",
-    "reference": true
+    "evidence": "원본 준비·동작 표본 및 한국어 안내, 길이·공개 메타데이터·확보 가능한 댓글을 대조했다. 앱 참고 영상이며 수업 코치의 직접 추천이 아니다. 전체 연속 시청 검증이 아닌 표본 대조이다.",
+    "reference": true,
+    "replacedAt": "2026-11-14T11:28:49+09:00",
+    "language": "ko",
+    "languageEvidence": "원본 한국어 화면 안내와 실제 시범을 대조했다. HT 랫풀다운·리버스 크런치는 한국어 음성 자동 전사를 화면과 추가 대조했다."
   },
   "pt_dumbbell_rdl": {
     "pending": true,

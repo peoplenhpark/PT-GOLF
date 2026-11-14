@@ -48,5 +48,10 @@ async function load(overlay, source = seed) {
   for(const bad of [null,{...plain(official.practiceGuide),steps:['하나']},{...plain(official.practiceGuide),checks:['하나','둘']},{...plain(official.practiceGuide),pending:[3]}]){const invalid=plain(seed);invalid.exercises.find(e=>e.id===official.id).practiceGuide=bad;await assert.rejects(()=>load({overrides:{},deleted:[]},invalid),/형식이 올바르지/);}
   const broken=plain(legacy);broken.overrides.pt_legextension.practiceGuide={steps:'wrong'};const corrupt=await load(broken);assert.equal(corrupt.store.getStatus().overlay.ok,false);assert.throws(()=>corrupt.store.setMemo(official.id,'overwrite'),e=>e.code==='CORRUPT');
   const hidden=await load({overrides:{},deleted:[official.id]});assert.equal(hidden.store.getById(official.id),null);
+  const ht=seed.exercises.find(e=>e.id==='ht_latpulldown_reference'),oldSource={...plain(ht.sourceVideo),youtubeId:'HJika5QHzXY'};
+  const replaced=await load({overrides:{[ht.id]:{...plain(ht),sourceVideo:oldSource,memo:'HT 개인 메모',favorite:true,cues:['내 교정']}},deleted:[]});
+  const beforeRead=replaced.storage.map.get(overlayKey),current=replaced.store.getById(ht.id);
+  assert.equal(current.sourceVideo.youtubeId,'5UPOD0he724');assert.equal(current.sourceVideo.moments[0].s,28);assert.equal(current.memo,'HT 개인 메모');assert.equal(current.favorite,true);assert.deepEqual(plain(current.cues),['내 교정']);assert.equal(replaced.storage.map.get(overlayKey),beforeRead);
+  current.sourceVideo.moments[0].s=0;assert.equal(replaced.store.getById(ht.id).sourceVideo.moments[0].s,28);
   console.log('PASS: training guide schema, search, no-write reads, legacy notes/edits preservation, backup, corruption protection and hidden-exercise behavior.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

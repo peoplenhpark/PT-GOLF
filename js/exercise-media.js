@@ -1611,7 +1611,7 @@ window.ExerciseMedia = {
       "move": "허벅지와 몸통을 지지하며 팔꿈치가 아래로 내려오는 경로를 비교합니다.",
       "feel": "개인 PT에서 배운 지지·움직임과 비교하고 다른 세팅은 보조 자료로 기록합니다."
     },
-    "visualNote": "2컷은 원본 12초·13.35초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
+    "visualNote": "2컷은 새 한국어 원본 46초·29초 장면입니다. 3D는 동작 구조를 설명하는 예시이며 중량·각도·깊이는 개인 처방이 아닙니다.",
     "images": [
       "docs/images/guides/ht_latpulldown_reference_latpull-start.webp",
       "docs/images/guides/ht_latpulldown_reference_latpull-end.webp"

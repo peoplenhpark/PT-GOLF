@@ -88,6 +88,8 @@ const Store = (() => {
       // Editorial summaries advance with the seed even when an old full-object override preserves personal fields.
       if (ex.practicalSummary) merged.practicalSummary = { ...ex.practicalSummary };
       if (ex.practiceGuide) merged.practiceGuide = JSON.parse(JSON.stringify(ex.practiceGuide));
+      // A replaced editorial video must not be frozen by legacy full-object personal edits.
+      if (ex.sourceVideo?.replacedAt) merged.sourceVideo = JSON.parse(JSON.stringify(ex.sourceVideo));
       if (saved && ex.image?.startsWith('docs/images/guides/') && (!saved.image || /^docs\/images\/[^/]+\.svg$/.test(saved.image))) merged.image = ex.image;
       result.push(merged);
     }
