@@ -1,9 +1,9 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),seed=JSON.parse(fs.readFileSync(path.join(root,'data/seed.json'),'utf8'));let all=structuredClone(seed.exercises);
 const c={window:{},URLSearchParams,Store:{getAll:()=>all}};vm.createContext(c);vm.runInContext(fs.readFileSync(path.join(root,'js/training-questions.js'),'utf8'),c);vm.runInContext(fs.readFileSync(path.join(root,'js/navigation.js'),'utf8'),c);
-const q=c.window.TrainingQuestions,plain=x=>JSON.parse(JSON.stringify(x));let result=q.collect();assert.equal(result.rows.length,10);assert.equal(result.scope.length,4);
-assert.deepEqual(plain([0,1,2].map(g=>result.rows.filter(r=>r.group===g).length)),[5,3,2]);
-assert.deepEqual(plain(result.rows.filter(r=>r.group===0).map(r=>r.exercises[0].id)),["pt_backextension","pt_lunge","pt_legpress","pt_legextension","pt_adduction"]);
+const q=c.window.TrainingQuestions,plain=x=>JSON.parse(JSON.stringify(x));let result=q.collect();assert.equal(result.rows.length,8);assert.equal(result.scope.length,4);
+assert.deepEqual(plain([0,1,2].map(g=>result.rows.filter(r=>r.group===g).length)),[3,3,2]);
+assert.deepEqual(plain(result.rows.filter(r=>r.group===0).map(r=>r.exercises[0].id)),["pt_backextension","pt_lunge","pt_legpress"]);
 assert(result.rows.filter(r=>r.group===2).every(r=>['ht_bulgarian_split_squat','ht_wide_dumbbell'].includes(r.exercises[0].id)));
 
 const covered=[...result.rows.flatMap(r=>r.exercises.map(e=>e.id)),...result.scope.map(e=>e.id)];assert.equal(covered.length,new Set(covered).size);assert.deepEqual(covered.sort(),all.filter(e=>e.practiceGuide?.pending.length).map(e=>e.id).sort());

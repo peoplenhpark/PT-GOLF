@@ -41,7 +41,7 @@ async function load(overlay, source = seed) {
   const legacy={overrides:{pt_legextension:{...plain(official),spec:'개인 중량 기록',memo:'개인 메모',favorite:false,cues:['개인 교정 원문'],focus:{muscle:'개인 부위',move:'개인 움직임',feel:'개인 느낌'},practiceGuide:{...plain(official.practiceGuide),core:'이전 편집 요약'}}},deleted:[]};
   const {store,storage}=await load(legacy);const original=storage.map.get(overlayKey);
   let ex=store.getById(official.id);assert.equal(ex.spec,'개인 중량 기록');assert.equal(ex.memo,'개인 메모');assert.equal(ex.favorite,false);assert.deepEqual(plain(ex.cues),['개인 교정 원문']);assert.equal(ex.focus.feel,'개인 느낌');assert.deepEqual(plain(ex.practiceGuide),official.practiceGuide);assert.equal(storage.map.get(overlayKey),original,'viewing makes no storage writes');
-  assert(store.search(official.practiceGuide.pending[0]).some(e=>e.id===official.id),'pending settings searchable');
+  assert(store.search(official.practiceGuide.checks[0]).some(e=>e.id===official.id),'official checks remain searchable after pending questions are resolved');
   ex.practiceGuide.checks[0]='외부 변형';assert.equal(store.getById(official.id).practiceGuide.checks[0],official.practiceGuide.checks[0],'editorial data not mutated by returned object');
   store.setMemo(official.id,'수정된 메모');assert.deepEqual(plain(store.getById(official.id).cues),['개인 교정 원문']);assert.equal(store.getById(official.id).memo,'수정된 메모');
   const exported=store.exportData();store.importData(exported);assert.equal(store.getById(official.id).spec,'개인 중량 기록');

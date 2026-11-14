@@ -4,12 +4,12 @@ window.TrainingQuestions = (() => {
   const groups=['먼저 · 지지·가동범위·중량','이어서 · 기본 자세·그립','필요할 때 · 추가 운동'];
   // Prioritize unresolved setup in the current routine, then technique details and optional additions.
   const questions=[
-    [0,'pt_backextension','패드 높이·반복 기준을 확인해 주세요. 11/2의 7~8분 동작도 백익스텐션이 맞나요?'],
+    [0,'pt_backextension','경사45도 백익스텐션은 확인했습니다. 패드의 정확한 높이와 개인 반복 횟수를 확인해 주세요.'],
     [0,'pt_shoulderpress','받침 자세는 답변받았습니다. 제 정확한 하강 끝점과 현재 중량·횟수·세트를 확인해 주세요.'],
     [0,'pt_facepull','손잡이 높이·몸통 기울기·팔꿈치 경로와 현재 중량을 함께 잡아 주실 수 있나요?'],
     [0,'pt_pullup','가슴·팔꿈치 자세는 답변받았습니다. 설정 55의 단위와 실제 보조량은 얼마인가요?'],
-    [0,'pt_lunge','화·금에 추가한 런지는 11.13에 확인한 8kg 케틀벨을 몇 개·어디에 들고, 좌우 몇 회·몇 세트 하나요?'],
-    [0,'pt_legpress','11.13 레그프레스 원판 두 장은 한 장이 몇 kg이고 양쪽 합계인가요? 제 발판 위치와 등받이 칸도 확인해 주세요.'],
+    [0,'pt_lunge','8kg·좌우 각15회 × 2세트는 확인했습니다. 케틀벨은 몇 개를 어디에 드나요?'],
+    [0,'pt_legpress','각쪽40kg·등받이2칸은 확인했습니다. 제 기구에서 정확한 발판 위치를 확인해 주세요.'],
     [0,'pt_legextension','양발 기준으로 패드를 어디에 맞추고, 무릎을 어디까지 펴면 되나요?'],
     [0,'pt_adduction','시작할 때 다리를 얼마나 벌리고, 현재 중량은 얼마로 하면 되나요?'],
     [0,'pt_latpulldown','제 기구에서 발 지지·몸통 기울기·당김 끝점과 그립은 어디까지인가요?',['ht_latpulldown_reference']],

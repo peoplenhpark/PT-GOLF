@@ -19,7 +19,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
     assert.equal(await page.locator('a[href="#golf/videos/4Eof_tmI0Ag"]').count(),1);
     await page.locator('.training-questions a[href="#pt/questions"]').click();
     await page.locator('#training-questions-title').waitFor();
-    assert.equal(await page.locator('.training-question-group li').count(),10);
+    assert.equal(await page.locator('.training-question-group li').count(),8);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'question lists fit viewport');
   }
   await page.setViewportSize({width:390,height:844});

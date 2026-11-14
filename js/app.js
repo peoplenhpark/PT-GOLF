@@ -315,9 +315,9 @@ const Theme = (() => {
     ['pt_lunge_ball_rotation','런지 자세 공 들고 몸통 회전','16–20분','좌우 각 8–10회','런지 지지를 유지하며 공과 몸통 함께 회전','팔로 공만 휘두르거나 하체 지지가 풀리지 않게']
   ];
   const htRoutineStrength = {
-    pt_lunge:['일반 런지 · 앞다리 지지','8kg 케틀벨 · 개수·드는 위치·횟수·세트 확인 필요','앞발로 계단을 밟고 올라가는 느낌','뒤로 중심 남기기·무게에 끌려 떨어지기 피하기'],
+    pt_lunge:['일반 런지 · 앞다리 지지','8kg · 좌우 각15회 × 2세트 · 개수·드는 위치 확인 필요','앞발로 계단을 밟고 올라가는 느낌','뒤로 중심 남기기·무게에 끌려 떨어지기 피하기'],
     pt_shoulderpress:['숄더 프레스','횟수·중량 확인','위에서 양손 압박감을 맞추고 천천히 내리기','허리 과하게 꺾기 · 한쪽 어깨 무너짐 주의'],
-    pt_backextension:['백익스텐션','맨몸 · 횟수 확인','엉덩이·뒷벅지로 받치며 몸통 일자까지만','머리 들기 · 허리만 젖히기 · 반동 주의'],
+    pt_backextension:['백익스텐션 · 경사45도','맨몸 · 횟수 확인','엉덩이·뒷벅지로 받치며 몸통 일자까지만','머리 들기 · 허리만 젖히기 · 반동 주의'],
     pt_facepull:['페이스풀','10–15회','팔·등을 함께 쓰며 얼굴 쪽으로, 팔꿈치는 바깥으로','목 내밀기 · 몸통 반동 주의. 중량 재확인'],
     pt_dbpullover:['덤벨 풀오버','7kg · 12–15회','손바닥으로 받치고 날개뼈와 함께 천천히 넘기기','어깨를 눌러 박기 · 불편한 깊이 · 무리한 증량 주의'],
     pt_chestpress:['체스트 프레스','10–15회','팔로 버티며 가슴이 유지되는 깊이까지만 내리기','어깨가 말리거나 가슴이 무너지기 전에 다시 밀기'],
@@ -331,7 +331,7 @@ const Theme = (() => {
     pt_legpress:['레그 프레스','15–20회','배운 와이드 스탠스에서 발바닥 전체로 밀기','골반·허리가 뜨기 전까지 · 무릎은 발끝 방향'],
     pt_legcurl:['라잉 레그 컬','10–15회','처음 잡은 골반·상체 지지를 풀지 않고 접고 버티며 내리기','허리·엉덩이 들썩임 · 반동 주의'],
     pt_legextension:['레그 익스텐션','10–15회','양발 함께 · 골반을 잡고 올린 뒤 천천히 내리기','처음부터 세게 차거나 반동으로 올리지 않기'],
-    pt_adduction:['이너타이','12–15회','조금 기대는 개인 자세에서 골반·허리 지지를 끝까지 유지하기','반동으로 튕기거나 아플 만큼 벌리지 않기']
+    pt_adduction:['이너타이','20kg · 12–15회','조금 기대는 개인 자세에서 골반·허리 지지를 끝까지 유지하기','반동으로 튕기거나 아플 만큼 벌리지 않기']
   };
   function htRoutineCueHtml(cue,caution) {
     return `<p class="ht-routine-cue"><b>핵심</b> ${esc(cue)}</p><p class="ht-routine-cue"><b>주의</b> ${esc(caution)}</p>`;
@@ -439,11 +439,11 @@ const Theme = (() => {
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></div>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–70분</small></h3>
-      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 기존 종목 2세트 · 런지 분량 확인':' · 기존 종목 각 2세트 · 로우 풀리 분량 미지정'} · 좋은 자세로 2–3회 더 할 여유</p>
+      <p class="ht-routine-note">${day.ids.length}종목${lower?' · 머신 양발 기본 · 각 종목 2세트 · 런지 좌우 각15회':' · 기존 종목 각 2세트 · 로우 풀리 분량 미지정'} · 좋은 자세로 2–3회 더 할 여유</p>
       ${day.id==='thu'?'<p class="ht-routine-note">체스트프레스 → 숄더프레스 · 펙덱플라이 → 페이스풀</p>':''}
-      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lowpulley_row'?item[1]:id==='pt_lunge'?item[1]:id==='pt_legpress'?'수업 원판 두 장 · kg·좌우 기준 확인 필요 · 기존 20회 × 2세트':id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'맨몸 · 2세트 · 횟수 코치 확인':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}<span class="ht-routine-rest"> · 세트 휴식 ${rest[id]}</span></strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
+      <ol class="ht-routine-list">${day.ids.map((id,i)=>{const item=htRoutineStrength[id],target=lower&&['pt_legcurl','pt_legextension','pt_legpress'].includes(id)?20:null;return `<li><div><span class="ht-routine-time">${times[i]}</span>${htRoutineLink(id,item[0])}</div><strong>${id==='pt_lowpulley_row'?item[1]:id==='pt_lunge'?item[1]:id==='pt_legpress'?'20kg 원판 각쪽2장(40kg씩) · 등받이2칸 · 기존 20회 × 2세트':id==='pt_shoulderpress'?'2세트 · 중량·횟수 코치 확인':id==='pt_backextension'?'경사45도 · 맨몸 · 2세트 · 횟수 확인 필요':(target!==null?target+'kg · 20회':item[1])+' × 2세트'}<span class="ht-routine-rest"> · 세트 휴식 ${rest[id]}</span></strong>${routineCueHtml(id,item[2],item[3])}</li>`;}).join('')}</ol>
       <p class="ht-routine-buffer"><b>65–70분 · 여유 5분</b> 추가 휴식·기구 대기에 사용</p>
-      ${lower?'<p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지 분량·백익스텐션 반복수는 코치 확인 후 시간도 조정합니다.</p>':''}
+      ${lower?'<p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지는 좌우 각15회 × 2세트입니다. 백익스텐션 반복수는 추가 확인 후 시간을 조정합니다.</p>':''}
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 세트 휴식·기구 설정·이동을 포함한 예시입니다.</p>`}</div>
       <div class="ht-routine-rules"><h3>운영 기준</h3><ul>
       <li><b>휴식:</b> 운동별 표시 시간을 시작 기준으로 사용합니다. 숨·자세가 회복되지 않으면 30–60초 더 쉬세요.</li>

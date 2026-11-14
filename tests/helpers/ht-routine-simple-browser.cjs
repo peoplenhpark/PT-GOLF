@@ -26,7 +26,7 @@ module.exports=async(browser,base)=>{
     assert.deepEqual(await p.locator('#ht-routine-day .ht-routine-rest').allTextContents(),[' · 세트 휴식 120–180초',' · 세트 휴식 90–120초',' · 세트 휴식 90–120초',' · 세트 휴식 60–90초',' · 세트 휴식 90–120초',' · 세트 휴식 120–180초']);
     assert.match(await p.locator('#ht-routine-day .ht-routine-buffer').innerText(),/65–70분 · 여유 5분/);
     assert.match(await p.locator('#ht-routine').innerText(),/기본 20분 \+ 근력 50분 · 총 70분/);
-    assert.match(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).innerText(),/8kg 케틀벨 · 개수·드는 위치·횟수·세트 확인 필요/);
+    assert.match(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).innerText(),/8kg · 좌우 각15회 × 2세트 · 개수·드는 위치 확인 필요/);
     assert.equal(await p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lunge"]')}).locator('.ht-routine-cue').count(),2);
    }else if(['mon','thu'].includes(day)){
     const row=p.locator('#ht-routine-day li').filter({has:p.locator('a[href="#exercise/pt_lowpulley_row"]')});assert.equal(await row.count(),1);assert.match(await row.locator('strong').innerText(),/중량·횟수·세트 미지정/);assert(!(await row.locator('strong').innerText()).includes('× 2세트'));assert.equal(await p.locator('#ht-routine-summary li[data-ht-summary-id=pt_lowpulley_row]').count(),1);
