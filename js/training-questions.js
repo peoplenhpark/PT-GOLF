@@ -25,7 +25,9 @@ window.TrainingQuestions = (() => {
   const scopeOnly=['ht_upper_form','ht_lower_six','ht_chest_six','ht_squat_comparison'];
   function collect(){
     const pending=Store.getAll().filter(e=>['pt','ht'].includes(e.part)&&e.practiceGuide?.pending?.length);
-    const byId=new Map(pending.map(e=>[e.id,e])),used=new Set();
+    const deferred=pending.filter(e=>e.practiceGuide.questionStatus==='deferred');
+    const active=pending.filter(e=>e.practiceGuide.questionStatus!=='deferred');
+    const byId=new Map(active.map(e=>[e.id,e])),used=new Set();
     const rows=questions.flatMap(([group,id,text,related=[]])=>{
       if(!byId.has(id))return [];
       const exercises=[id,...related].filter(x=>byId.has(x)).map(x=>byId.get(x));
@@ -33,11 +35,11 @@ window.TrainingQuestions = (() => {
     });
     const scope=scopeOnly.filter(id=>byId.has(id)).map(id=>{used.add(id);return byId.get(id);});
     // New unresolved items stay visible even before an editorial short question is written.
-    pending.filter(e=>!used.has(e.id)).forEach(e=>rows.push({group:3,text:e.practiceGuide.pending.join(' '),exercises:[e]}));
-    return {rows,scope};
+    active.filter(e=>!used.has(e.id)).forEach(e=>rows.push({group:3,text:e.practiceGuide.pending.join(' '),exercises:[e]}));
+    return {rows,scope,deferred};
   }
   const exerciseLink=e=>'<a href="#exercise/'+encodeURIComponent(e.id)+'">'+esc(e.name)+' ›</a>';
-  function entryLink(){const n=collect().rows.length;return n?'<a class="training-question-entry" href="#pt/questions">HT 확인 사항 <span>'+n+'개 모아보기 ›</span></a>':'';}
+  function entryLink(){const {rows,deferred}=collect();return rows.length?'<a class="training-question-entry" href="#pt/questions">HT 확인 사항 <span>'+rows.length+'개 모아보기 ›</span></a>':deferred.length?'<a class="training-question-entry" href="#pt/questions">HT 보류 기록 <span>'+deferred.length+'개 보기 ›</span></a>':'';}
   function detailLink(id){return '<a class="training-question-detail" href="#pt/questions?source='+encodeURIComponent(id)+'">HT 운동 확인 사항 모아보기 ›</a>';}
   function answersHtml(exercise){
     const answers=exercise.practiceGuide?.coachAnswers||[];
@@ -49,12 +51,12 @@ window.TrainingQuestions = (() => {
     return lesson?'<section class="training-confirmed"><h3>11.06 정규 레슨 · 관련 안내</h3><p>'+esc(lesson.practiceCue||lesson.correction)+'</p>'+window.GolfPractice.leftArmGuide(lesson)+'<p class="coach-meta">오른손 놓기 교정 연습과 기존 드라이버 높은 위치 왼손 이완은 날짜·목적을 구분합니다. 이번 전사에는 아래 세 영상의 직접 검토 답변이 없어 적용 클럽 질문을 확인 필요로 유지합니다.</p><a class="coach-source" href="#golf/lessons/'+encodeURIComponent(lesson.id)+'">정규 레슨과 전사 근거 보기 ›</a><h4>이번 레슨에서 추가로 확인할 것</h4><ul>'+(lesson.followUpQuestions||[]).map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></section>':'';
   }
   function render(source){
-    const {rows,scope}=collect();let number=0;
-    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">HT 운동 확인</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">HT 운동 · 확인이 필요한 사항</h2><p class="coach-meta">정규 PT는 11.13 마지막 수업으로 종료했습니다. 이후 혼자 운동하며 남은 지지·범위·중량을 확인할 목록입니다. 전체 '+rows.length+'개 · 운동명은 상세로 연결됩니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
+    const {rows,scope,deferred}=collect();let number=0;
+    return '<section class="training-questions" aria-labelledby="training-questions-title"><nav class="coach-tabs" aria-label="질문 목록"><a href="#pt/questions" aria-current="page">HT 운동 확인</a><a href="#golf/questions">골프 질문</a></nav><h2 id="training-questions-title">HT 운동 · 확인 및 보류 기록</h2><p class="coach-meta">정규 PT는 11.13 마지막 수업으로 종료했습니다. 현재 확인 필요 '+rows.length+'개 · 보류 기록 '+deferred.length+'개. 보류 항목은 사용자 요청으로 당분간 건너뛰며 답변 완료로 처리하지 않습니다.</p>'+[...groups,'우선순위 확인 필요'].map((label,group)=>{
       const items=rows.filter(r=>r.group===group);if(!items.length)return '';
       const start=number+1;
       return '<section class="training-question-group"><h3>'+label+'</h3>'+(group===2?'<p class="coach-meta">보조 운동은 필요할 때만 확인 · 기존 루틴에 자동 추가하지 않습니다.</p>':'')+'<ol start="'+start+'">'+items.map(r=>{number++;return '<li'+(r.exercises.some(e=>e.id===source)?' class="training-question-selected" tabindex="-1"':'')+'><div class="training-question-links">'+r.exercises.map(exerciseLink).join('')+'</div><p>'+esc(r.text)+'</p></li>';}).join('')+'</ol></section>';
-    }).join('')+confirmedList()+(scope.length?'<aside class="training-question-scope'+(scope.some(e=>e.id===source)?' training-question-selected':'')+'"><h3>보조 영상 · 적용 범위 안내</h3><p class="coach-meta">아래는 새 설정 질문이 아닌 적용 범위 안내입니다. 영상 전체를 루틴에 추가하거나 서로 다른 동작의 기준을 섞지 않습니다.</p><div class="training-question-links">'+scope.map(exerciseLink).join('')+'</div></aside>':'')+'</section>';
+    }).join('')+(deferred.length?'<details class="training-deferred'+(deferred.some(e=>e.id===source)?' training-question-selected':'')+'"'+(deferred.some(e=>e.id===source)?' open':'')+'><summary>보류한 확인 사항 '+deferred.length+'개 · 필요할 때만 보기</summary><p class="coach-meta">2026-11-16 사용자 요청으로 기록만 보존합니다. 현재 운동을 위한 필수 확인 목록이 아닙니다.</p><ul>'+deferred.map(e=>'<li>'+exerciseLink(e)+'<p>'+e.practiceGuide.pending.map(esc).join(' ')+'</p></li>').join('')+'</ul></details>':'')+confirmedList()+(scope.length?'<aside class="training-question-scope'+(scope.some(e=>e.id===source)?' training-question-selected':'')+'"><h3>보조 영상 · 적용 범위 안내</h3><p class="coach-meta">아래는 새 설정 질문이 아닌 적용 범위 안내입니다. 영상 전체를 루틴에 추가하거나 서로 다른 동작의 기준을 섞지 않습니다.</p><div class="training-question-links">'+scope.map(exerciseLink).join('')+'</div></aside>':'')+'</section>';
   }
   function renderGolf(){
     const questions=[

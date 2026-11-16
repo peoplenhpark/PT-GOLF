@@ -19,7 +19,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
     assert.equal(await page.locator('a[href="#golf/videos/4Eof_tmI0Ag"]').count(),1);
     await page.locator('.training-questions a[href="#pt/questions"]').click();
     await page.locator('#training-questions-title').waitFor();
-    assert.equal(await page.locator('.training-question-group li').count(),8);
+    assert.equal(await page.locator('.training-question-group li').count(),0);
     assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'question lists fit viewport');
   }
   await page.setViewportSize({width:390,height:844});
@@ -286,9 +286,9 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
    await page.waitForFunction(()=>[...document.querySelectorAll('.guide-shot img')].length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
    await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
    assert.equal(await f.locator('canvas').getAttribute('data-kind'),kind);assert.equal(await f.locator('#speed').inputValue(),'.5');
-   const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
+   const phase=await f.locator('canvas').getAttribute('data-phase');const renderFrame=await(await page.locator('.exercise-3d-frame').elementHandle()).contentFrame();await renderFrame.waitForFunction(old=>document.querySelector('canvas')?.getAttribute('data-phase')!==old,phase,{timeout:5000});
    await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
-   const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
+   const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');await renderFrame.waitForFunction(old=>document.querySelector('canvas')?.getAttribute('data-yaw')!==old,yaw,{timeout:5000});
    for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
    if(process.env.PTGOLF_SCREENSHOT_DIR){await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_lower_'+short+'-3d.png')});await page.screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,'ht_lower_'+short+'-detail.png'),fullPage:true});}
   }
@@ -334,11 +334,11 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
     if(choice)await page.locator('#training-movement').selectOption(choice);
     assert.equal(await page.locator('#memo-input').inputValue(),'PT 보강 비교 메모 '+id);
     await page.waitForFunction(()=>document.querySelectorAll('.guide-shot img').length===2&&[...document.querySelectorAll('.guide-shot img')].every(i=>i.complete&&i.naturalWidth>0));
-    await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();
+    await page.locator('.exercise-3d summary').click();const f=page.frameLocator('.exercise-3d-frame');await f.locator('canvas[data-ready]').waitFor();await f.locator('canvas').scrollIntoViewIfNeeded();
     assert.equal(await f.locator('#speed').inputValue(),'.5');
-    const phase=await f.locator('canvas').getAttribute('data-phase');await page.waitForTimeout(150);assert.notEqual(await f.locator('canvas').getAttribute('data-phase'),phase);
+    const phase=await f.locator('canvas').getAttribute('data-phase');const renderFrame=await(await page.locator('.exercise-3d-frame').elementHandle()).contentFrame();await renderFrame.waitForFunction(old=>document.querySelector('canvas')?.getAttribute('data-phase')!==old,phase,{timeout:5000});
     await f.locator('#progress').fill('500');await f.locator('#progress').dispatchEvent('input');assert.equal(await f.locator('#play').innerText(),'재생');
-    const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');assert.notEqual(await f.locator('canvas').getAttribute('data-yaw'),yaw);
+    const yaw=await f.locator('canvas').getAttribute('data-yaw');await f.locator('canvas').press('ArrowLeft');await renderFrame.waitForFunction(old=>document.querySelector('canvas')?.getAttribute('data-yaw')!==old,yaw,{timeout:5000});
     for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await f.locator('body').evaluate(e=>e.scrollWidth<=innerWidth));}
     if(process.env.PTGOLF_SCREENSHOT_DIR)for(const t of ['0','500']){await f.locator('#progress').fill(t);await f.locator('#progress').dispatchEvent('input');await f.locator('#viewport').screenshot({path:path.join(process.env.PTGOLF_SCREENSHOT_DIR,(choice||id)+'-'+t+'.png')});}
    }
@@ -354,7 +354,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   for(const width of [320,390,768]){await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   for(const id of ['BvnGOkOMo68']){await page.goto(base+'#golf/videos/'+id);await page.locator('.g-frame img').first().waitFor();await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));assert(await page.locator('a[href="#golf/group/impact-release"]').count());}
   // Visible library hierarchy, keyboard navigation and readable light/dark menus.
-  await page.goto(base+'#golf/videos');await page.locator('.g-library-cards').waitFor();assert.equal(await page.locator('.g-library-cards>a').count(),4);assert.equal(await page.locator('.g-recent-section .g-video-card').count(),3);assert.equal(await page.locator('.g-featured-video .g-video-card').count(),6);
+  await page.goto(base+'#golf/videos');await page.locator('.g-library-cards').waitFor();assert.equal(await page.locator('.g-library-cards>a').count(),4);assert.equal(await page.locator('.g-recent-section .g-video-card').count(),await page.evaluate(()=>{const featured=new Set([GolfContent.featuredVideoId,...GolfContent.featuredVideoIds||[]]);return GolfContent.recentVideos().filter(v=>!featured.has(v.id)).slice(0,3).length;}));assert.equal(await page.locator('.g-featured-video .g-video-card').count(),6);
   await page.locator('.g-library-cards a[href="#golf/group/downswing"]').click();await page.locator('.g-subsections').waitFor();assert.equal(await page.locator('.g-subsections a').count(),4);
   await page.locator('.g-subsections a[href="#golf/group/downswing-shift"]').focus();await page.keyboard.press('Enter');await page.locator('#g-group-downswing-shift').waitFor();assert.equal(await page.locator('.g-subsections a[aria-current=page]').getAttribute('href'),'#golf/group/downswing-shift');assert.equal(await page.locator('.g-video-groups a[aria-current=location]').getAttribute('href'),'#golf/group/downswing');
   for(const theme of ['light','dark'])for(const width of [320,390,768]){await page.evaluate(theme=>document.documentElement.setAttribute('data-theme',theme),theme);await page.setViewportSize({width,height:844});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.locator('.g-video-groups').evaluate(e=>e.scrollWidth<=e.clientWidth));assert(await page.locator('.g-video-groups a').evaluateAll(es=>es.every(e=>e.getBoundingClientRect().height>=44)));await page.evaluate(()=>scrollTo(0,1000));const tabs=await page.locator('.g-tabs').boundingBox(),themeButton=await page.locator('#theme-btn').boundingBox();assert(tabs.y>=themeButton.y+themeButton.height&&tabs.y<80,'sticky menu clears theme control');}

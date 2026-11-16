@@ -1,0 +1,7 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const s=JSON.parse(fs.readFileSync('data/seed.json','utf8')),audit=JSON.parse(fs.readFileSync('docs/PT_DEFERRED_CONFIRMATIONS_20261116.json','utf8')),by=Object.fromEntries(s.exercises.map(e=>[e.id,e]));
+for(const old of audit.items){const g=by[old.id].practiceGuide;assert.deepEqual(g.pending,old.questions,'unanswered question text preserved');assert.equal(g.questionStatus,'deferred');assert.equal(g.confirmationHold.date,'2026-11-16');assert.notEqual(g.questionStatus,'answered');}
+const c={window:{},Store:{getAll:()=>s.exercises}};vm.createContext(c);vm.runInContext(fs.readFileSync('js/training-questions.js','utf8'),c);const q=c.window.TrainingQuestions,result=q.collect();assert.equal(result.rows.length,0);assert.equal(result.deferred.length,8);assert.match(q.entryLink(),/보류 기록/);assert.match(q.render(''),/<details class="training-deferred"/);assert(!q.render('').includes('<details class="training-deferred" open'));
+for(const id of ['pt_legextension','pt_adduction'])assert.equal(by[id].practiceGuide.questionStatus,'answered','completed confirmations remain completed');
+const refs={window:{}};vm.runInNewContext(fs.readFileSync('js/pt-videos.js','utf8'),refs);assert(!refs.window.PTReferenceVideos.pt_lunge.points.join().includes('드는 위치는 별도 확인'));
+console.log('PASS: eight deferred questions retained, zero active, folded records available, no false answers, completed confirmations preserved.');
