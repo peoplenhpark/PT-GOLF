@@ -15,13 +15,13 @@ module.exports=async(browser,base)=>{
    assert.equal(await selected(),days[i]);
    assert.deepEqual(await page.locator('#ht-routine-summary li').evaluateAll(es=>es.map(e=>e.dataset.htSummaryId)),await page.locator('#ht-routine-day .ht-routine-list>li>div>a').evaluateAll(es=>es.map(e=>e.hash.split('/').pop())));
    assert.deepEqual(await page.locator('.ht-summary-rest').allTextContents(),(await page.locator('#ht-routine-day .ht-routine-rest').allTextContents()).map(s=>s.replace(' · 세트 휴식 ','')));
-   assert.match(await page.locator('.ht-summary-heading h3').innerText(),new RegExp(['월','화','수','목','금','토','일'][i]+'요일'));
+   assert.match(await page.locator('.ht-summary-heading h3').textContent(),new RegExp(['월','화','수','목','금','토','일'][i]+'요일'));
 
    await page.waitForFunction(()=>{const e=document.querySelector('#ht-routine-start');return e&&e.getBoundingClientRect().top>=0&&e.getBoundingClientRect().top<150;});
    assert.equal(await page.locator('.ht-routine-days button').count(),7);
    assert.equal(await page.locator('.ht-routine-days [aria-current="date"]').getAttribute('data-ht-day'),days[i]);
    assert.equal(await page.locator('#ht-routine-day li').count(),counts[i]);
-   if(!counts[i])assert.match(await page.locator('#ht-routine-summary').innerText(),/휴식/);
+   if(!counts[i])assert.match(await page.locator('#ht-routine-summary').textContent(),/휴식/);
    if(!counts[i])assert.match(await page.locator('#ht-routine-day').innerText(),/휴식일.*예정된 근력운동이 없습니다/s);
    assert.equal(await page.locator('.ht-routine-basic li').count(),5);
    assert(await page.evaluate(()=>document.querySelector('.ht-routine-basic').compareDocumentPosition(document.querySelector('#ht-routine-day')) & Node.DOCUMENT_POSITION_FOLLOWING));
@@ -32,7 +32,7 @@ module.exports=async(browser,base)=>{
    assert.equal(await selected(),days[i]);
    assert.deepEqual(await page.locator('#ht-routine-summary li').evaluateAll(es=>es.map(e=>e.dataset.htSummaryId)),await page.locator('#ht-routine-day .ht-routine-list>li>div>a').evaluateAll(es=>es.map(e=>e.hash.split('/').pop())));
    assert.deepEqual(await page.locator('.ht-summary-rest').allTextContents(),(await page.locator('#ht-routine-day .ht-routine-rest').allTextContents()).map(s=>s.replace(' · 세트 휴식 ','')));
-   assert.match(await page.locator('.ht-summary-heading h3').innerText(),new RegExp(['월','화','수','목','금','토','일'][i]+'요일'));
+   assert.match(await page.locator('.ht-summary-heading h3').textContent(),new RegExp(['월','화','수','목','금','토','일'][i]+'요일'));
 
    assert.equal(await page.locator('#ht-routine-day li').count(),counts[i]);
   }

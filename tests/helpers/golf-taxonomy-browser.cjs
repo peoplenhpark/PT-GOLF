@@ -14,7 +14,7 @@ module.exports=async(browser,base,screenshot)=>{
   assert.equal(await p.locator('.coach-recent-golf').count(),1);
   for(const id of ['backswing','downswing','impact','follow-through']){
     const before=await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})}));
-    await p.locator('[data-golf-stage="'+id+'"]').click();
+    await p.locator('.exercise-quicknav>summary').click();await p.locator('[data-golf-stage="'+id+'"]').click();
     assert(await p.locator('#g-stage-'+id).evaluate(el=>el===document.activeElement));
     assert.deepEqual(await p.evaluate(()=>({url:location.href,history:history.length,storage:JSON.stringify({...localStorage})})),before);
   }

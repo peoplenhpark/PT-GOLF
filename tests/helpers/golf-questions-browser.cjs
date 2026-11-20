@@ -16,7 +16,7 @@ module.exports=async(browser,base)=>{
   assert.equal(await p.locator('[data-gq-focus],[data-gq-clear],[data-gq-form=result],[data-coach-form=result],.coach-current,.g-recent-practice,.gq-records').count(),0);
   assert.equal(await p.locator('.g-final-practice-steps li').count(),5);
   assert.equal(await p.locator('.g-daily-pin,.g-stage-practice').count(),0);
-  for(const stage of ['backswing','downswing','impact','follow-through']){await p.locator('[data-golf-stage="'+stage+'"]').click();assert(await p.locator('#g-stage-'+stage).evaluate(e=>e===document.activeElement));}
+  for(const stage of ['backswing','downswing','impact','follow-through']){await p.locator('.exercise-quicknav>summary').click();await p.locator('[data-golf-stage="'+stage+'"]').click();assert(await p.locator('#g-stage-'+stage).evaluate(e=>e===document.activeElement));}
   for(const route of ['standards','today','now?topic=start','videos/2tam4sbJQtM']){await p.goto(base+'#golf/'+route);await p.locator('.coach-desk,.g-hub').first().waitFor();assert.equal(await p.locator('[data-coach-form=criterion],[data-g-form=practice],[data-gq-form=result]').count(),0);}
   await p.goto(base+'#golf/standards');await p.locator('.g-final-lesson-practice').waitFor();assert.equal(await p.locator('.golf-archive').count(),0);
   await p.goto(base+'#golf/today');await p.locator('.g-final-lesson-practice').waitFor();assert.match(p.url(),/#golf\/now/);

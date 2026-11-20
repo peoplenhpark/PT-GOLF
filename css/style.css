@@ -722,3 +722,27 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .pt-video-frames img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:8px}
 .pt-video-frames figcaption{font-size:.75rem;color:var(--muted);margin-top:4px}
 .pt-reference-video h3{overflow-wrap:anywhere}
+
+/* v239: daily practice first; occasional browsing lives in one menu. */
+.tabbar.tabbar-simple{grid-template-columns:repeat(3,minmax(0,1fr)) 76px;grid-template-rows:64px;height:calc(72px + var(--safe-bot));padding:0 6px calc(8px + var(--safe-bot))}
+.tabbar-simple>.tab{height:64px;font-size:13px}
+.tabbar-simple>.exercise-quicknav{grid-column:3;grid-row:1;margin:0;align-self:center}
+.tabbar-simple>.exercise-quicknav>summary{border:0;background:none;flex-direction:column;gap:3px;height:64px;font-size:13px;color:var(--sub)}
+.tabbar-simple .ti{font-size:21px;line-height:1}
+.tabbar-simple>.history-controls{grid-column:4;grid-row:1;width:76px;height:54px;margin:0;border-left:1px solid var(--line)}
+.tabbar-simple .library-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:10px 0}
+.tabbar-simple .library-tools .tab{min-height:48px;height:auto;flex-direction:row;padding:8px;border:1px solid var(--line);border-radius:10px;color:var(--txt)}
+.tabbar-simple .exercise-search{width:100%;margin:8px 0 0}
+.tabbar-simple .part.pt{padding:8px;background:var(--card);border-radius:10px}
+.scr{padding-bottom:calc(92px + var(--safe-bot))}
+.toast{bottom:calc(84px + var(--safe-bot))}
+.home-simple .home-destinations{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.home-simple .home-destination .part{padding:12px;min-height:130px}
+.home-simple .home-action h2{font-size:18px}
+.home-simple .home-destination p{font-size:12px;overflow-wrap:anywhere}
+.home-simple .home-part-label{font-size:12px;flex-wrap:wrap}
+.ht-routine-summary>summary,.ht-routine-rules>summary,.ht-routine-checks>summary,.ht-materials>summary,.ht-reference-fold>summary{min-height:44px;padding:12px 0;font-weight:700;cursor:pointer}
+.ht-materials{margin-top:18px;border-top:1px solid var(--line)}
+.ht-reference-fold{margin-bottom:14px}
+
+.ht-routine-basic>summary,.g-recent-section>summary{min-height:44px;padding:12px 0;font-weight:700;cursor:pointer}

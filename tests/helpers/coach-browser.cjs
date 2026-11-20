@@ -5,7 +5,7 @@ module.exports=async(browser,base)=>{
   for(const part of ['pt','golf']){
    await p.goto(base+'#'+part+'/now');await p.locator('.coach-recent-'+part).waitFor();
    const content=part==='pt'?'.ht-final-review':'.coach-desk',before=await p.locator(content).innerText();
-   await p.goto(base+'#home');await p.locator('.part.'+part).focus();await p.keyboard.press('Enter');
+   await p.goto(base+'#home');if(part==='pt')await p.locator('.exercise-quicknav>summary').click();await p.locator('.part.'+part).focus();await p.keyboard.press('Enter');
    await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    assert.equal(await p.locator(content).innerText(),before,'home jump preserves all existing practice content');
    assert(!p.url().includes('start=recent'),'one-time entry intent is consumed');

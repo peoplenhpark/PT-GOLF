@@ -5,13 +5,17 @@ module.exports=async(browser,base)=>{
  try{
   for(const route of ['home','pt/now','pt/standards','pt','ht','exercise/pt_chestpress','golf/now','golf/videos','golf/group/backswing-top','favorites','calendar','search']){
    await p.goto(base+'#'+route);await p.locator('.tabbar').waitFor();
-   if(route.startsWith('golf/')){assert.equal(await p.locator('.golf-stage-nav a').count(),7);assert.equal(await p.locator('.exercise-search,.exercise-quicknav').count(),0);}else{await p.locator('.exercise-quicknav summary').waitFor();assert(await p.locator('.exercise-search').isVisible(),route+' has global search');}
-   assert.equal(await p.locator('.tabbar .tab').count(),7);
-   assert(await p.getByRole('link',{name:'질문',exact:true}).last().isVisible());
+   await p.locator('.exercise-quicknav>summary').waitFor();
+   assert.equal(await p.locator('.tabbar>.tab').count(),2);
+   assert.equal(await p.locator('.exercise-quicknav[open]').count(),0);
+   await p.locator('.exercise-quicknav>summary').click();
+   assert(await p.locator('.exercise-search').isVisible(),route+' has library search');
+   assert(await p.locator('.exercise-quickpanel a[href="#pt/questions"]').isVisible());
+   assert(await p.locator('.exercise-quickpanel a[href="#golf/questions"]').isVisible());
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-recent-pt').waitFor();
   await p.locator('.exercise-quicknav summary').click();
-  assert.equal(await p.locator('.exercise-quickpanel section').first().locator('h3').innerText(),'내 개인운동');
+  assert.equal(await p.locator('.exercise-personal-menu').locator('h3').innerText(),'내 개인운동');
   await p.locator('.exercise-quickpanel a[href="#ht?cat=personal&start=library"]').click();
   await p.locator('.personal-exercises').waitFor();
   const chosen=['pt_openbook','pt_tailbone_raise','pt_hip_openclose_stretch','pt_wide_sidelunge_stretch','pt_lunge_ball_rotation','pt_chestpress','pt_pecdeck','pt_dbpullover','pt_seatedrow','pt_lowpulley_row','pt_latpulldown','pt_pullup','pt_backextension','pt_shoulderpress','pt_facepull','pt_pushdown','pt_low_cable_curl','pt_lunge','pt_legcurl','pt_legextension','pt_adduction','pt_legpress'];
@@ -53,7 +57,7 @@ module.exports=async(browser,base)=>{
   await p.locator('.exercise-quicknav summary').click();await p.locator('.hd h1').click();
   assert.equal(await p.locator('.exercise-quicknav').getAttribute('open'),null);
   await p.goto(base+'#exercise/pt_chestpress');await p.locator('.memo-edit').click();await p.locator('#memo-input').fill('운동 검색 이동 중 보존할 초안');
-  await p.locator('.exercise-search').click();await p.locator('#search-input').waitFor();
+  await p.locator('.exercise-quicknav>summary').click();await p.locator('.exercise-search').click();await p.locator('#search-input').waitFor();
   assert(await p.locator('#search-input').evaluate(e=>e===document.activeElement));
   await p.locator('#search-input').fill('체스트 프레스');await p.locator('.search-result').first().waitFor();
   await p.locator('.search-result[href="#exercise/pt_chestpress"]').click();await p.locator('.d-title').waitFor();
