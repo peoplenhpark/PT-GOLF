@@ -746,3 +746,8 @@ button.cal-cell{font:inherit;color:inherit;cursor:pointer;background:var(--card)
 .ht-reference-fold{margin-bottom:14px}
 
 .ht-routine-basic>summary,.g-recent-section>summary{min-height:44px;padding:12px 0;font-weight:700;cursor:pointer}
+
+/* 2026-11-21: show today directly, with no repeated HT entry card. */
+.home-simple>.hd{margin-bottom:12px}.home-simple .ht-routine{margin-top:0}.ht-routine-start:empty{margin:0;padding:0;height:0}.ht-routine-basic>summary small{font-weight:400;color:var(--sub)}.ht-materials{border-top:0;margin-top:12px}
+
+.g-reference-category{display:block;font-size:.78rem;color:var(--muted);margin:8px 12px 0}

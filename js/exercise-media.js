@@ -1,5 +1,157 @@
 /* Exercise preparation/action images and interactive pose registry. */
 window.ExerciseMedia = {
+  "ht_stance_five": {
+  "name": "와이드 고블릿 · 양발 발판",
+  "id": "ht_stance_five_wide",
+  "kind": "htstancewide",
+  "target": "quads",
+  "captions": [
+    "준비 · 와이드 고블릿 · 양발 발판",
+    "동작 · 같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다."
+  ],
+  "notes": [
+    "양쪽 발판 위에 넓게 서서 덤벨 1개를 가슴 앞에 가로로 받칩니다.",
+    "같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다."
+  ],
+  "focus": {
+    "muscle": "허벅지·둔근",
+    "move": "같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다.",
+    "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+  },
+  "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+  "images": [
+    "docs/images/guides/ht_stance_five_wide-start.webp",
+    "docs/images/guides/ht_stance_five_wide-end.webp"
+  ],
+  "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_wide",
+  "variants": [
+    {
+      "id": "ht_stance_five_wide",
+      "name": "와이드 고블릿 · 양발 발판",
+      "kind": "htstancewide",
+      "target": "quads",
+      "captions": [
+        "준비 · 와이드 고블릿 · 양발 발판",
+        "동작 · 같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다."
+      ],
+      "notes": [
+        "양쪽 발판 위에 넓게 서서 덤벨 1개를 가슴 앞에 가로로 받칩니다.",
+        "같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다."
+      ],
+      "focus": {
+        "muscle": "허벅지·둔근",
+        "move": "같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다.",
+        "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+      },
+      "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+      "images": [
+        "docs/images/guides/ht_stance_five_wide-start.webp",
+        "docs/images/guides/ht_stance_five_wide-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_wide"
+    },
+    {
+      "id": "ht_stance_five_standard",
+      "name": "스탠다드 고블릿 · 바닥 지지",
+      "kind": "htstancestandard",
+      "target": "quads",
+      "captions": [
+        "준비 · 스탠다드 고블릿 · 바닥 지지",
+        "동작 · 발바닥 지지를 유지하며 내려앉았다가 일어납니다."
+      ],
+      "notes": [
+        "두 발을 바닥에 어깨너비로 두고 덤벨을 가슴 앞에 받칩니다.",
+        "발바닥 지지를 유지하며 내려앉았다가 일어납니다."
+      ],
+      "focus": {
+        "muscle": "허벅지·둔근",
+        "move": "발바닥 지지를 유지하며 내려앉았다가 일어납니다.",
+        "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+      },
+      "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+      "images": [
+        "docs/images/guides/ht_stance_five_standard-start.webp",
+        "docs/images/guides/ht_stance_five_standard-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_standard"
+    },
+    {
+      "id": "ht_stance_five_narrow",
+      "name": "내로우 고블릿 · 좁은 발 간격",
+      "kind": "htstancenarrow",
+      "target": "quads",
+      "captions": [
+        "준비 · 내로우 고블릿 · 좁은 발 간격",
+        "동작 · 발 간격을 유지하며 무릎과 골반을 굽혔다가 일어납니다."
+      ],
+      "notes": [
+        "바닥에서 두 발 간격을 좁히고 가슴 앞에 덤벨을 받칩니다.",
+        "발 간격을 유지하며 무릎과 골반을 굽혔다가 일어납니다."
+      ],
+      "focus": {
+        "muscle": "허벅지·둔근",
+        "move": "발 간격을 유지하며 무릎과 골반을 굽혔다가 일어납니다.",
+        "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+      },
+      "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+      "images": [
+        "docs/images/guides/ht_stance_five_narrow-start.webp",
+        "docs/images/guides/ht_stance_five_narrow-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_narrow"
+    },
+    {
+      "id": "ht_stance_five_split",
+      "name": "덤벨 스플릿 · 앞뒤 발판 지지",
+      "kind": "htstancesplit",
+      "target": "quads",
+      "captions": [
+        "준비 · 덤벨 스플릿 · 앞뒤 발판 지지",
+        "동작 · 발 위치를 유지하며 양 무릎을 굽혔다가 앞다리로 지지해 일어납니다."
+      ],
+      "notes": [
+        "앞발 전체와 뒷발 앞부분을 각각 발판에 지지하고 양손에 덤벨을 듭니다.",
+        "발 위치를 유지하며 양 무릎을 굽혔다가 앞다리로 지지해 일어납니다."
+      ],
+      "focus": {
+        "muscle": "허벅지·둔근",
+        "move": "발 위치를 유지하며 양 무릎을 굽혔다가 앞다리로 지지해 일어납니다.",
+        "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+      },
+      "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+      "images": [
+        "docs/images/guides/ht_stance_five_split-start.webp",
+        "docs/images/guides/ht_stance_five_split-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_split"
+    },
+    {
+      "id": "ht_stance_five_stiff",
+      "name": "덤벨 스티프레그 데드리프트",
+      "kind": "htstancestiff",
+      "target": "hamstrings",
+      "captions": [
+        "준비 · 덤벨 스티프레그 데드리프트",
+        "동작 · 무릎을 강제로 잠그지 않고 골반을 뒤로 접으며 덤벨을 다리 가까이 낮춥니다."
+      ],
+      "notes": [
+        "바닥에 양발을 두고 양손에 덤벨을 하나씩 듭니다.",
+        "무릎을 강제로 잠그지 않고 골반을 뒤로 접으며 덤벨을 다리 가까이 낮춥니다."
+      ],
+      "focus": {
+        "muscle": "허벅지 뒤쪽·둔근",
+        "move": "무릎을 강제로 잠그지 않고 골반을 뒤로 접으며 덤벨을 다리 가까이 낮춥니다.",
+        "feel": "발 지지와 골반 경로를 원본 시범과 비교합니다."
+      },
+      "visualNote": "원본 시범의 기구·발 지지·덤벨 위치를 설명하는 예시입니다. 발판 높이·발 간격·깊이·중량은 사용자 수업 실측값이나 처방이 아닙니다.",
+      "images": [
+        "docs/images/guides/ht_stance_five_stiff-start.webp",
+        "docs/images/guides/ht_stance_five_stiff-end.webp"
+      ],
+      "viewer": "media/3d/viewer.html?exercise=ht_stance_five&variant=ht_stance_five_stiff"
+    }
+  ]
+},
   "pt_lowpulley_row": {
   "name": "로우 풀리 머신 (롱풀 · 케이블 로우)",
   "kind": "ptlowpulley",

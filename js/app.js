@@ -87,6 +87,7 @@ const Theme = (() => {
   }
   function render() {
     const jumpToday=view.name==='part'&&view.part==='ht'&&view.htStart==='today';
+    if(view.name==='part'&&view.part==='ht'&&(jumpToday||!view.cat&&view.htStart!=='library'))view={name:'home'};
     const jumpLibrary=view.name==='part'&&view.part==='ht'&&view.htStart==='library';
     if(jumpLibrary)view.htLibraryOpen=true;
     if(jumpToday){htRoutineDay=htRoutineToday();delete view.htStart;}
@@ -95,7 +96,7 @@ const Theme = (() => {
     const jumpStage=view.name==='coach'&&view.part==='golf'&&view.coachTab==='now'&&['backswing','downswing','impact','follow-through'].includes(view.coachStage)?view.coachStage:null;
     if(jumpStage)delete view.coachStage;
     const jumpQuestions=view.name==='coach'&&view.part==='pt'&&view.coachTab==='questions'&&view.coachSource;
-    const jumpSelector=jumpQuestions?'.training-question-selected':jumpStage?'#g-stage-'+jumpStage:jumpLibrary?'#ht-library-title':jumpToday?'#ht-routine-start':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
+    const jumpSelector=jumpQuestions?'.training-question-selected':jumpStage?'#g-stage-'+jumpStage:jumpLibrary?'#ht-library-title':jumpToday?'#ht-routine-title':jumpRecent?'.coach-recent-'+view.part:null,jumpView=view;
     renderScreen();renderStorageStatus();navigation.sync(view);AppDrafts.bind(app);
     if(view.name==='detail'&&AppDrafts.has(location.hash)&&!document.getElementById('memo-input'))openMemoEditor();
     navigation.restoreScroll();updateHistoryButtons();window.dispatchEvent(new Event('ptgolf-screen-rendered'));
@@ -131,7 +132,7 @@ const Theme = (() => {
         <summary><span class="ti" aria-hidden="true">☰</span>자료</summary>
         <div class="exercise-quickpanel" aria-label="전체 운동과 골프 자료">
           <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 ⌕</button>
-          <section><h3>골프 자료</h3><div class="exercise-quicklinks">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}</div><div class="exercise-quicklinks"><a href="#golf/lessons">레슨 기록</a><a href="#golf/key-messages">영상 핵심</a><a href="#golf/videos">전체 영상</a><a href="#golf/field">실전 연습</a></div></section>
+          <section><h3>골프 자료</h3><div class="exercise-quicklinks">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}</div><div class="exercise-quicklinks"><a href="#golf/lessons">레슨 기록</a><a href="#golf/key-messages">영상 핵심</a><a href="#golf/videos">전체 영상</a><a href="#golf/field">실전 연습</a><a href="#golf/screen">스크린</a></div></section>
           <section><h3>기록과 도구</h3><div class="exercise-quicklinks"><a class="part pt" href="#pt/now?start=recent">마지막 PT 기준</a><a href="#pt/questions">운동 확인·보류</a><a href="#golf/questions">골프 질문</a></div>
           <div class="library-tools">${t('favorites','⭐','즐겨찾기')}${t('calendar','🗓️','캘린더')}</div>
           </section>
@@ -239,19 +240,10 @@ const Theme = (() => {
   }
 
   function renderHome() {
-    let latestGolf;
-    try{latestGolf=window.GolfHub?.learningSources().lessons.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];}catch{}
-    const golfTitle=latestGolf&&(window.GolfContent?.lessons.includes(latestGolf)?latestGolf.quickReview?.title:null)||latestGolf?.title;
-    app.innerHTML = `
-      <div class="scr home-simple">
-        <div class="hd"><h1>오늘 운동과 연습</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
-        <nav class="parts home-destinations" aria-label="지금 필요한 운동과 연습">
-          <section class="home-destination ht" aria-label="HT 개인운동"><a class="part ht" href="#ht?start=today"><span class="home-part-label home-ht-label"><span>HT</span><span data-home-ht-today>${esc(homeHtTodayLabel())}</span></span><div class="home-action"><h2>오늘 HT</h2><span aria-hidden="true">↓</span></div><p>아래 루틴에서 바로 시작</p></a></section>
-          <section class="home-destination golf" aria-label="골프 연습"><a class="part golf" href="#golf/now?start=recent"><span class="home-part-label">골프</span><div class="home-action"><h2>레슨대로 연습</h2><span aria-hidden="true">›</span></div><p>${esc(golfTitle||'편한 스윙과 일관성')}</p></a></section>
-        </nav>
-        ${htRoutineHtml()}
-        ${deletionRequestsHtml()}
-      </div>${tabbar('home')}`;
+    app.innerHTML = `<div class="scr home-simple" data-part="ht">
+      <div class="hd"><h1>HT 운동</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
+      ${htRoutineHtml()}${deletionRequestsHtml()}
+    </div>${tabbar('home')}`;
   }
 
   function ptSessionItemHtml(item) {
@@ -281,7 +273,7 @@ const Theme = (() => {
     const section=app.querySelector('#ht-routine');
     if(section&&previous!==htRoutineDate){section.outerHTML=htRoutineHtml();AppDrafts.bind(app);}
     const homeToday=app.querySelector('[data-home-ht-today]');
-    if(homeToday){homeToday.textContent=homeHtTodayLabel();app.querySelector('.home-simple .date').textContent=Store.todayStr().replace(/-/g,' · ');}
+    if(homeToday)app.querySelector('.home-simple .date').textContent=Store.todayStr().replace(/-/g,' · ');
   }
   window.addEventListener('focus',refreshHtRoutineDate);
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshHtRoutineDate();});
@@ -412,17 +404,13 @@ const Theme = (() => {
     const rest=lower?lowerRest:upperRest;
     const times=lower?['20–30분','30–37분','37–44분','44–50분','50–56분','56–65분']:['20–26분','26–33분','33–40분','40–47분','47–54분','54–60분','60–65분'];
     return `<section class="ht-routine" id="ht-routine" aria-labelledby="ht-routine-title">
-      <div class="ht-routine-heading"><h2 id="ht-routine-title">주 4일 개인운동</h2><a href="#ht?cat=${encodeURIComponent(view.cat||'all')}" data-ht-library>HT 운동 목록 ↓</a></div>
+      <div class="ht-routine-heading"><h2 id="ht-routine-title" data-home-ht-today>${day.id===today?'오늘':'선택'} ${esc(day.label.replace(' · ','요일 · '))}</h2><a href="#ht?cat=all&amp;start=library">운동 자료 ›</a></div>
       ${window.TrainingQuestions.collect().rows.length?window.TrainingQuestions.entryLink():''}
       <p class="ht-routine-note">${day.rest?'휴식일 · 예정된 근력운동 없음':'기본 20분 + 근력 50분 · 총 70분'}</p>
-      <p class="ht-routine-today">오늘 ${todayLabel}${day.id!==today?' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button>':''}</p>
-      <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"><button type="button" data-ht-basic>기본운동 20분 보기 ↓</button></div>
+      ${day.id!==today?'<p class="ht-routine-today">오늘 '+todayLabel+' <button type="button" data-ht-day="'+today+'">오늘로 돌아가기</button></p>':''}
+      <div class="ht-routine-start" id="ht-routine-start" tabindex="-1"></div>
       <div class="ht-routine-days" role="group" aria-label="운동 요일">${htRoutineDays.map(d=>`<button type="button" data-ht-day="${d.id}" aria-pressed="${d.id===day.id}" aria-controls="ht-routine-summary ht-routine-day" aria-label="${d.label.replace(' · ','요일 · ')}${d.id===today?' · 오늘':''}" ${d.id===today?'aria-current="date"':''}><span class="ht-routine-weekday">${d.label.split(' · ')[0]}</span><span class="ht-routine-kind">${d.label.split(' · ')[1]}</span></button>`).join('')}</div>
-      <details class="ht-routine-summary" id="ht-routine-summary" aria-label="선택한 요일 운동 요약" aria-live="polite"><summary>운동 순서·휴식 한눈에</summary>
-      <div class="ht-summary-heading"><h3>${day.id===today?'오늘':'선택'} ${esc(day.label.replace(' · ','요일 · '))}</h3>${day.rest?'':'<span>순서 · 세트 사이 휴식</span>'}</div>
-      ${day.rest?'<p class="ht-routine-note">예정된 근력운동 없이 휴식 · 다른 요일도 선택할 수 있어요.</p>':`<ol>${day.ids.map((id,i)=>`<li data-ht-summary-id="${id}"><span class="ht-summary-number">${i+1}</span><span class="ht-summary-name">${esc(htRoutineStrength[id][0].split(' · ')[0])}</span><span class="ht-summary-rest">${rest[id]}</span></li>`).join('')}</ol>`}
-      </details>
-      <details class="ht-routine-basic" id="ht-routine-basic" tabindex="-1" ${day.rest?'':'open'}><summary>기본운동 20분</summary><h3>운동일 기본운동 <small>0–20분</small></h3>
+      <details class="ht-routine-basic" id="ht-routine-basic" tabindex="-1" ${day.rest?'':'open'}><summary>기본운동 <small>0–20분</small></summary>
       <p class="ht-routine-note">${day.rest?'선택한 요일은 휴식일입니다. 아래 기본운동은 필요할 때만 가볍게 참고하세요.':'0–3분 가볍게 걷기 → 아래 순서. 본운동 전 준비용 분량입니다.'}</p>
       <ol class="ht-routine-list">${htRoutineBasic.map(([id,name,time,dose,cue,caution])=>`<li><div><span class="ht-routine-time">${time}</span>${htRoutineLink(id,name)}</div><strong>${dose}${id==='pt_tailbone_raise'?'':' × 1세트'}</strong>${routineCueHtml(id,cue,caution)}</li>`).join('')}</ol></details>
       <div id="ht-routine-day" aria-live="polite">${day.rest?`<h3>${day.title}</h3><p class="ht-routine-note">예정된 근력운동이 없습니다. 휴식하거나 가볍게 걸으세요. 다른 요일을 선택하면 해당 운동을 볼 수 있습니다.</p>`:`<h3>${day.title} <small>20–70분</small></h3>
@@ -432,6 +420,10 @@ const Theme = (() => {
       <p class="ht-routine-buffer"><b>65–70분 · 여유 5분</b> 추가 휴식·기구 대기에 사용</p>
       ${lower?'<p class="ht-routine-note">런지를 먼저, 레그 프레스를 마지막에. 런지는 좌우 각15회 × 2세트입니다. 미정 세부 설정은 보류 기록에 보존합니다.</p>':''}
       <p class="ht-routine-note">관절 통증·날카로운 통증이 생기면 해당 운동을 멈추세요. 시간은 세트 휴식·기구 설정·이동을 포함한 예시입니다.</p>`}</div>
+      <details class="ht-routine-summary" id="ht-routine-summary" aria-label="선택한 요일 운동 요약" aria-live="polite"><summary>운동 순서·휴식 한눈에</summary>
+      <div class="ht-summary-heading"><h3>${day.id===today?'오늘':'선택'} ${esc(day.label.replace(' · ','요일 · '))}</h3>${day.rest?'':'<span>순서 · 세트 사이 휴식</span>'}</div>
+      ${day.rest?'<p class="ht-routine-note">예정된 근력운동 없이 휴식 · 다른 요일도 선택할 수 있어요.</p>':`<ol>${day.ids.map((id,i)=>`<li data-ht-summary-id="${id}"><span class="ht-summary-number">${i+1}</span><span class="ht-summary-name">${esc(htRoutineStrength[id][0].split(' · ')[0])}</span><span class="ht-summary-rest">${rest[id]}</span></li>`).join('')}</ol>`}
+      </details>
       <details class="ht-routine-rules"><summary>운영 기준</summary><ul>
       <li><b>휴식:</b> 운동별 표시 시간을 시작 기준으로 사용합니다. 숨·자세가 회복되지 않으면 30–60초 더 쉬세요.</li>
       <li><b>준비:</b> 첫 기구는 가볍게 1–2세트, 다른 패턴도 필요하면 1세트. 본세트에는 포함하지 않습니다.</li>
@@ -477,12 +469,12 @@ const Theme = (() => {
 
     app.innerHTML = `
       <div class="scr" data-part="${part}">
-        <div class="hd"><h1>${partIcon(part)} ${esc(partLabel(part))}</h1>
+        <div class="hd"><h1 ${part==='ht'?'id="ht-library-title" tabindex="-1"':''}>${part==='ht'?'HT 운동 자료':partIcon(part)+' '+esc(partLabel(part))}</h1>
           <button class="hd-search" data-act="search-focus" aria-label="동작 검색">🔍</button></div>
         ${part==='pt'?'<nav class="coach-tabs"><a href="#pt/now">지금 할 것</a></nav><details class="coach-fold"><summary>PT 수업 기록</summary>'+ptSessionHtml()+'</details>':''}
-        ${part==='ht'?htRoutineHtml()+'<details class="ht-materials" '+(view.htLibraryOpen?'open':'')+'><summary>운동 자료·이전 수업 보기</summary><details class="ht-reference-fold"><summary>루틴 외 복근 참고 영상</summary>'+HTGuide.referenceHtml()+'</details>'+'<details class="coach-fold ht-coaching-reference"><summary>마지막 PT 통합 기준 · 기본·상체·하체</summary>'+HTGuide.html(true)+'</details><nav class="ht-material-links"><a href="#pt/now">통합 기준 크게 보기</a><a href="#pt/questions">운동 확인 사항</a><a href="#search?scope=ht">HT 자료 검색</a></nav><h2 class="ht-library-title" id="ht-library-title" tabindex="-1">HT 전체 운동 자료</h2>':''}
+        ${part==='ht'?'<a class="back" href="#ht">‹ 오늘 운동</a><section class="ht-materials">':''}
         ${isPersonal ? `<a class="personal-all-link" href="#${part}?cat=all${part==='ht'?'&amp;start=library':''}">${part==='ht'?'HT 전체 자료':'PT 전체 운동'} ${list.length}개 보기 ›</a>` : cats.length ? `<div class="chips">${chips}</div>` : ''}
-        ${rows}${part==='ht'?'</details>':''}
+        ${rows}${part==='ht'?'</section><details class="ht-reference-fold"><summary>루틴 외 참고 영상</summary>'+HTGuide.referenceHtml()+'</details><details class="coach-fold ht-coaching-reference"><summary>마지막 PT 통합 기준</summary>'+HTGuide.html(true)+'</details>':''}
       </div>
       ${tabbar(part)}`;
   }
@@ -871,7 +863,6 @@ const Theme = (() => {
       AppDrafts.bind(app);
       app.querySelector('.ht-routine-days [data-ht-day="'+htRoutineDay+'"]').focus({preventScroll:true});return;
     }
-    if(ev.target.closest('[data-ht-library]')){ev.preventDefault();const title=app.querySelector('#ht-library-title');if(!title){go('part',{part:'ht',cat:'all',htStart:'library'});return;}app.querySelector('.ht-materials').open=true;title.focus({preventScroll:true});title.scrollIntoView({block:'start'});return;}
     const scopeButton=ev.target.closest('[data-scope]');
     if(scopeButton){view.scope=scopeButton.dataset.scope;navigation.sync(view);render();return;}
     const link=ev.target.closest('a[href^="#"]');

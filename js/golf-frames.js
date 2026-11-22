@@ -3121,3 +3121,729 @@ window.GolfFrames = {
     }
   ]
 };
+
+Object.assign(window.GolfFrames,{
+  "I8qaAlp-O98": [
+    {
+      "src": "media/golf-frames/I8qaAlp-O98-1.webp",
+      "time": 129,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "src": "media/golf-frames/I8qaAlp-O98-2.webp",
+      "time": 262,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "sutlERhhZS8": [
+    {
+      "src": "media/golf-frames/sutlERhhZS8-1.webp",
+      "time": 225,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "src": "media/golf-frames/sutlERhhZS8-2.webp",
+      "time": 353,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "apeli0ui9PA": [
+    {
+      "src": "media/golf-frames/apeli0ui9PA-1.webp",
+      "time": 125,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "src": "media/golf-frames/apeli0ui9PA-2.webp",
+      "time": 929,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "GsDnZDeJGb0": [
+    {
+      "src": "media/golf-frames/GsDnZDeJGb0-1.webp",
+      "time": 4,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/GsDnZDeJGb0-2.webp",
+      "time": 12,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "gcbA-sN3k3U": [
+    {
+      "src": "media/golf-frames/gcbA-sN3k3U-1.webp",
+      "time": 4,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/gcbA-sN3k3U-2.webp",
+      "time": 16,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "9pzX-vfrGCI": [
+    {
+      "src": "media/golf-frames/9pzX-vfrGCI-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/9pzX-vfrGCI-2.webp",
+      "time": 6,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "OoI1WpA6TY4": [
+    {
+      "src": "media/golf-frames/OoI1WpA6TY4-1.webp",
+      "time": 5,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/OoI1WpA6TY4-2.webp",
+      "time": 20,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "r_EZy2BGHtY": [
+    {
+      "src": "media/golf-frames/r_EZy2BGHtY-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/r_EZy2BGHtY-2.webp",
+      "time": 5,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "NoMfGK2tSuY": [
+    {
+      "src": "media/golf-frames/NoMfGK2tSuY-1.webp",
+      "time": 12,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/NoMfGK2tSuY-2.webp",
+      "time": 38,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "R3dwUXhxNWw": [
+    {
+      "src": "media/golf-frames/R3dwUXhxNWw-1.webp",
+      "time": 4,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/R3dwUXhxNWw-2.webp",
+      "time": 17,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "EwCnfWFyh6A": [
+    {
+      "src": "media/golf-frames/EwCnfWFyh6A-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/EwCnfWFyh6A-2.webp",
+      "time": 96,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "we4dVlrvmHs": [
+    {
+      "src": "media/golf-frames/we4dVlrvmHs-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/we4dVlrvmHs-2.webp",
+      "time": 3,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "UeuD7pMJ8E4": [
+    {
+      "src": "media/golf-frames/UeuD7pMJ8E4-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/UeuD7pMJ8E4-2.webp",
+      "time": 104,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "kCF-3y8eteg": [
+    {
+      "src": "media/golf-frames/kCF-3y8eteg-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/kCF-3y8eteg-2.webp",
+      "time": 4,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "w6sc7EW4tf0": [
+    {
+      "src": "media/golf-frames/w6sc7EW4tf0-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/w6sc7EW4tf0-2.webp",
+      "time": 3,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ]
+});
+
+Object.assign(window.GolfFrames,{
+  "SBBqns3SpY8": [
+    {
+      "src": "media/golf-frames/SBBqns3SpY8-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/SBBqns3SpY8-2.webp",
+      "time": 3,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "qvUeIiYjRJY": [
+    {
+      "src": "media/golf-frames/qvUeIiYjRJY-1.webp",
+      "time": 4,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/qvUeIiYjRJY-2.webp",
+      "time": 12,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "hs6G3kXN-k0": [
+    {
+      "src": "media/golf-frames/hs6G3kXN-k0-1.webp",
+      "time": 6,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/hs6G3kXN-k0-2.webp",
+      "time": 20,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "N3Vz5_en9RE": [
+    {
+      "src": "media/golf-frames/N3Vz5_en9RE-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/N3Vz5_en9RE-2.webp",
+      "time": 30,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "O52PKt0CPTk": [
+    {
+      "src": "media/golf-frames/O52PKt0CPTk-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/O52PKt0CPTk-2.webp",
+      "time": 6,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "tv4oZhlxqeM": [
+    {
+      "src": "media/golf-frames/tv4oZhlxqeM-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/tv4oZhlxqeM-2.webp",
+      "time": 5,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "R28aOGiIFBo": [
+    {
+      "src": "media/golf-frames/R28aOGiIFBo-1.webp",
+      "time": 3,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/R28aOGiIFBo-2.webp",
+      "time": 6,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "aYmxQCC2aXE": [
+    {
+      "src": "media/golf-frames/aYmxQCC2aXE-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/aYmxQCC2aXE-2.webp",
+      "time": 4,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "8nCtBMNf9Fs": [
+    {
+      "src": "media/golf-frames/8nCtBMNf9Fs-1.webp",
+      "time": 3,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/8nCtBMNf9Fs-2.webp",
+      "time": 6,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "4SQpy20tQeU": [
+    {
+      "src": "media/golf-frames/4SQpy20tQeU-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/4SQpy20tQeU-2.webp",
+      "time": 8,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "7lSPZEEv0uY": [
+    {
+      "src": "media/golf-frames/7lSPZEEv0uY-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/7lSPZEEv0uY-2.webp",
+      "time": 4,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "RaNWzMAQOCY": [
+    {
+      "src": "media/golf-frames/RaNWzMAQOCY-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/RaNWzMAQOCY-2.webp",
+      "time": 18,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "h_f83jIIMyo": [
+    {
+      "src": "media/golf-frames/h_f83jIIMyo-1.webp",
+      "time": 5,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/h_f83jIIMyo-2.webp",
+      "time": 25,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "60GatQWuaE8": [
+    {
+      "src": "media/golf-frames/60GatQWuaE8-1.webp",
+      "time": 12,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/60GatQWuaE8-2.webp",
+      "time": 30,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "jdQH9uAMsTg": [
+    {
+      "src": "media/golf-frames/jdQH9uAMsTg-1.webp",
+      "time": 260,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 180
+    },
+    {
+      "src": "media/golf-frames/jdQH9uAMsTg-2.webp",
+      "time": 314,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "j16qRQQCIa8": [
+    {
+      "src": "media/golf-frames/j16qRQQCIa8-1.webp",
+      "time": 12,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/j16qRQQCIa8-2.webp",
+      "time": 27,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "pm0ABNRNDvw": [
+    {
+      "src": "media/golf-frames/pm0ABNRNDvw-1.webp",
+      "time": 3,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/pm0ABNRNDvw-2.webp",
+      "time": 9,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "Uh2nNpZ5oyQ": [
+    {
+      "src": "media/golf-frames/Uh2nNpZ5oyQ-1.webp",
+      "time": 3,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/Uh2nNpZ5oyQ-2.webp",
+      "time": 7,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "lDSiAtpkvgY": [
+    {
+      "src": "media/golf-frames/lDSiAtpkvgY-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/lDSiAtpkvgY-2.webp",
+      "time": 12,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "3GNOxszYqLE": [
+    {
+      "src": "media/golf-frames/3GNOxszYqLE-1.webp",
+      "time": 3,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/3GNOxszYqLE-2.webp",
+      "time": 17,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "1avE6xLVk3k": [
+    {
+      "src": "media/golf-frames/1avE6xLVk3k-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/1avE6xLVk3k-2.webp",
+      "time": 9,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "onGb9akYkw0": [
+    {
+      "src": "media/golf-frames/onGb9akYkw0-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/onGb9akYkw0-2.webp",
+      "time": 5,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "B3N7wt_ZOz8": [
+    {
+      "src": "media/golf-frames/B3N7wt_ZOz8-1.webp",
+      "time": 2,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/B3N7wt_ZOz8-2.webp",
+      "time": 4,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "kAoCh9704j8": [
+    {
+      "src": "media/golf-frames/kAoCh9704j8-1.webp",
+      "time": 16,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/kAoCh9704j8-2.webp",
+      "time": 92,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "xnAHLk_e70c": [
+    {
+      "src": "media/golf-frames/xnAHLk_e70c-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/xnAHLk_e70c-2.webp",
+      "time": 5,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "K92Mzs5bMNY": [
+    {
+      "src": "media/golf-frames/K92Mzs5bMNY-1.webp",
+      "time": 7,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/K92Mzs5bMNY-2.webp",
+      "time": 29,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "jVUltlOFhiU": [
+    {
+      "src": "media/golf-frames/jVUltlOFhiU-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/jVUltlOFhiU-2.webp",
+      "time": 6,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "lFMCMnKkleo": [
+    {
+      "src": "media/golf-frames/lFMCMnKkleo-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/lFMCMnKkleo-2.webp",
+      "time": 4,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "FHkvaAvPvc8": [
+    {
+      "src": "media/golf-frames/FHkvaAvPvc8-1.webp",
+      "time": 1,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/FHkvaAvPvc8-2.webp",
+      "time": 3,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ],
+  "uBev0tEuXBE": [
+    {
+      "src": "media/golf-frames/uBev0tEuXBE-1.webp",
+      "time": 4,
+      "label": "설명·준비 장면",
+      "width": 320,
+      "height": 568
+    },
+    {
+      "src": "media/golf-frames/uBev0tEuXBE-2.webp",
+      "time": 14,
+      "label": "핵심 동작·적용 장면",
+      "width": 320,
+      "height": 568
+    }
+  ]
+});

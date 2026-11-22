@@ -35,7 +35,7 @@ window.AppNavigation = (() => {
       const v={name:'golf-hub',part:'golf',golfTab:b||'lessons',golfId:c||null,golfGroup:null,golfQuery:'',golfTopic:null,golfClub:null,cat:null,sourceKind:null,sourceId:null};
       if(b==='group') Object.assign(v,{golfTab:'videos',golfId:null,golfGroup:c});
       for(const k of ['golfQuery','golfTopic','golfClub','golfArchive','cat','sourceKind','sourceId']) if(p.has(k))v[k]=p.get(k);
-      if(!['iron','driver','both','unknown'].includes(v.golfClub))v.golfClub=null;
+      if(!['iron','driver','both','putter','unknown'].includes(v.golfClub))v.golfClub=null;
       if(['only','include'].includes(v.golfArchive))v.golfArchive='only';else delete v.golfArchive;
       return v;
     }

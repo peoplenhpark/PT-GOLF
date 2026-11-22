@@ -230,6 +230,7 @@ try{
     case 'pronebench':bench([0,.49,.03]);break;
     case 'bar':beam(equipment,add(p.wrists[0],[-.15,0,0]),add(p.wrists[1],[.15,0,0]),.016);p.wrists.forEach(a=>handle(a));break;
     case 'dumbbells':p.wrists.forEach(dumbbell);break;
+    case 'stanceplatforms':for(const at of e.centers)block(equipment,at,e.size);break;
     case 'horizontalgoblet':{
      const a=mix(p.wrists[0],p.wrists[1],.5);beam(equipment,add(a,[-.19,0,0]),add(a,[.19,0,0]),.022);
      for(const side of [-1,1]){const o=mesh(equipment,cylinder,rubber);o.position.set(...add(a,[side*.17,0,0]));o.scale.set(.09,.065,.09);o.rotation.z=Math.PI/2;}break;}

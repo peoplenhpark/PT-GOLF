@@ -110,7 +110,7 @@ const norm=s=>s.replace(/\s+/g,' ').trim();
    const cdp=await context.newCDPSession(page);
    await page.locator('.guide-shot img').first().scrollIntoViewIfNeeded();
    const imageBox=await page.locator('.guide-shot img').first().boundingBox();
-   const ix=195,iy=imageBox.y+imageBox.height/2;
+   const ix=240,iy=imageBox.y+imageBox.height/2;
    await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:ix-45,y:iy,id:1},{x:ix+45,y:iy,id:2}]});
    for(let i=1;i<=8;i++){
     await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:ix-45-i*10,y:iy,id:1},{x:ix+45+i*10,y:iy,id:2}]});

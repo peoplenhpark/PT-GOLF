@@ -67,6 +67,18 @@ function pose(kind,t,id){
   arms(p,S.map(s=>add(grip,[s*.055,0,0])),S.map(s=>[s*.5,-1,.2]));
   p.footDirections=S.map(s=>[wide?s*.3:s*.1,0,Math.sqrt(1-(wide?.3:.1)**2)]);
   p.equipment=[{type:'goblet'}];p.target=[0,.80,0];p.distance=3.9;
+ }else if(['htstancewide','htstancestandard','htstancenarrow'].includes(kind)){
+  const wide=kind==='htstancewide',width=wide?.32:kind==='htstancenarrow'?.055:.16,lift=wide?.16:0;
+  p=base([0,.87+lift-.34*q,-.15*q],.06+.25*q);
+  legs(p,S.map(s=>[s*width,.065+lift,0]),S.map(s=>[s*(wide?.6:.05),0,1]));
+  arms(p,S.map(s=>add(p.chest,[s*.14,.09,.20])),S.map(s=>[s,-1,0]));
+  p.footDirections=S.map(s=>[wide?s*.24:0,0,wide?Math.sqrt(1-.24*.24):1]);
+  p.equipment=[{type:'horizontalgoblet'}];if(wide)p.equipment.push({type:'stanceplatforms',centers:S.map(s=>[s*width,.08,0]),size:[.30,.16,.70]});p.target=[0,.88,0];p.distance=4.1;
+ }else if(kind==='htstancesplit'){
+  p=base([0,.92-.24*q,0],.08+.12*q);legs(p,[[-.12,.225,.40],[.12,.27,-.39]],[[0,0,1],[0,0,1]]);
+  arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.035,-.555,.025])),S.map(s=>[s,0,1]));
+  p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
+  p.equipment=[{type:'dumbbells'},{type:'stanceplatforms',centers:[[-.12,.08,.40],[.12,.08,-.39]],size:[.30,.16,.55]}];p.target=[0,.88,.02];p.distance=4.1;
  }else if(['htwidegoblet','htnarrowgoblet'].includes(kind)){
   const wide=kind==='htwidegoblet',width=wide?.29:.12;
   p=base([0,.87-.34*q,-.15*q],.06+.25*q);
@@ -106,7 +118,7 @@ function pose(kind,t,id){
   arms(p,S.map(s=>add(p.hip,[s*.18,.10,.04])),S.map(s=>[s,0,-1]));
   p.footDirections=[[0,0,1],[0,-.55,Math.sqrt(1-.55*.55)]];
   p.target=[0,.72,.02];p.distance=3.9;
- }else if(kind==='htstiffdeadlift'){
+ }else if(['htstiffdeadlift','htstancestiff'].includes(kind)){
   p=base([0,.87-.10*q,-.27*q],.03+.95*q);
   legs(p,S.map(s=>[s*.15,.065,0]));
   arms(p,p.shoulders.map((a,i)=>add(a,[S[i]*.035,-.555,.025])),S.map(s=>[s,0,1]));

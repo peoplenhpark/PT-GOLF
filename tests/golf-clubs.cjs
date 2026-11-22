@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('nod
 const ctx={window:{},URLSearchParams};vm.createContext(ctx);
 for(const file of ['js/golf-data.js','js/navigation.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'..',file),'utf8'),ctx);
 const c=ctx.window.GolfContent,n=ctx.window.AppNavigation;
-assert.deepEqual(Object.keys(c.clubLabels),['iron','driver','both','unknown']);
+assert.deepEqual(Object.keys(c.clubLabels),['iron','driver','both','unknown','putter']);
 for(const [id,review] of Object.entries(c.clubReviews)){assert(c.videos.some(v=>v.id===id));assert(Object.hasOwn(c.clubLabels,review.value));assert(review.reason&&review.reviewedAt);}
 assert.equal(c.clubFor({id:'JoUx0gIzdng',title:'아이언으로 개인 제목 수정'}).value,'driver');
 assert.equal(c.clubFor({id:'CAZ9oUoGRIg'}).value,'iron','reviewed iron demonstration does not imply both clubs');

@@ -5,20 +5,19 @@ module.exports=async(browser,base)=>{
   for(const part of ['pt','golf']){
    await p.goto(base+'#'+part+'/now');await p.locator('.coach-recent-'+part).waitFor();
    const content=part==='pt'?'.ht-final-review':'.coach-desk',before=await p.locator(content).innerText();
-   await p.goto(base+'#home');if(part==='pt')await p.locator('.exercise-quicknav>summary').click();await p.locator('.part.'+part).focus();await p.keyboard.press('Enter');
-   await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
+   await p.goto(base+'#home');if(part==='pt'){await p.locator('.exercise-quicknav>summary').click();await p.locator('.part.pt').click();await p.waitForFunction(()=>document.activeElement?.classList.contains('coach-recent-pt'));}else{await p.locator('.tab[data-nav=golf]').click();await p.locator('.coach-recent-golf').waitFor();}
    assert.equal(await p.locator(content).innerText(),before,'home jump preserves all existing practice content');
    assert(!p.url().includes('start=recent'),'one-time entry intent is consumed');
-   const box=await p.locator('.coach-recent-'+part).boundingBox();assert(box.y>=0&&box.y<(part==='pt'?150:844),'recap anchor is visible after the home jump');
-   await p.goBack();await p.locator('.home-destinations').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
+   const box=await p.locator(part==='pt'?'.coach-recent-pt':'.coach-tabs').boundingBox();assert(box.y>=0&&box.y<(part==='pt'?150:844),'recap anchor is visible after the home jump');
+   await p.goBack();await p.locator('.home-simple').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
    await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    const exits=p.locator('.coach-recap-links');assert.equal(await exits.locator('a,button').count(),2);
    await exits.locator('button').click();await p.waitForFunction(part=>document.activeElement?.classList.contains(part==='pt'?'coach-personal':'g-stage-overview'),part);
    assert.equal(await p.locator(content).innerText(),before,'recap exits scroll without replacing practice content');
    if(part==='pt')assert(await p.locator('.coach-routine-link').isVisible());
    await exits.locator('a').click();
-   if(part==='pt'){await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.pt-exercise-grid .ex').count(),62);}
-   else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),3);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
+   if(part==='pt'){await p.locator('.pt-exercise-grid').waitFor();assert.equal(await p.locator('.pt-exercise-grid .ex').count(),63);}
+   else{await p.locator('.g-tabs').waitFor();assert.equal(await p.locator('.g-tabs a').count(),4);assert.match(await p.locator('.g-tabs').innerText(),/레슨/);}
 
   }
   await p.goto(base+'#pt/now');await p.locator('.coach-tabs').waitFor();assert.equal(await p.locator('.coach-tabs a').count(),1);assert.equal(await p.locator('.coach-header-link a[href="#pt/standards"]').count(),0);assert.equal(await p.locator('.coach-questions').count(),0,'empty question section is omitted');

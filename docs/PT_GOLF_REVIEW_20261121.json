@@ -1,0 +1,2859 @@
+{
+  "date": "2026-11-21",
+  "version": "4.5/v239",
+  "baseCommit": "f233d76fc50d5db18606f99ef804e3508652ef52",
+  "changes": [
+    "오늘 HT 진입 카드 제거·직접 루틴",
+    "HT 자료 화면에서 루틴 중복 제거·구 링크 호환",
+    "HT 발 간격 하체5종 참고 추가: 동작별 원본2컷/전용3D",
+    "스크린 탭4편·퍼터 필터",
+    "사용자 지정 일반/실전 골프 영상 추가"
+  ],
+  "requested": [
+    {
+      "id": "QrglB-YNQd0",
+      "group": "ht",
+      "userLabel": "HT 참고운동"
+    },
+    {
+      "id": "I8qaAlp-O98",
+      "group": "screen",
+      "userLabel": "스크린"
+    },
+    {
+      "id": "sutlERhhZS8",
+      "group": "screen",
+      "userLabel": "스크린"
+    },
+    {
+      "id": "apeli0ui9PA",
+      "group": "screen",
+      "userLabel": "스크린"
+    },
+    {
+      "id": "GsDnZDeJGb0",
+      "group": "screen",
+      "userLabel": "스크린"
+    },
+    {
+      "id": "gcbA-sN3k3U",
+      "group": "driver-relax",
+      "userLabel": "골프 드라이버 힘빼기"
+    },
+    {
+      "id": "9pzX-vfrGCI",
+      "group": "driver-general",
+      "userLabel": "드라이버 일반(채찍)"
+    },
+    {
+      "id": "OoI1WpA6TY4",
+      "group": "iron-press",
+      "userLabel": "아이언 다운스윙(눌러치기)"
+    },
+    {
+      "id": "r_EZy2BGHtY",
+      "group": "iron-press",
+      "userLabel": "아이언 다운스윙(눌러치기)"
+    },
+    {
+      "id": "NoMfGK2tSuY",
+      "group": "iron-general",
+      "userLabel": "아이언 일반"
+    },
+    {
+      "id": "R3dwUXhxNWw",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "EwCnfWFyh6A",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "we4dVlrvmHs",
+      "group": "downswing-general",
+      "userLabel": "다운스윙 일반"
+    },
+    {
+      "id": "UeuD7pMJ8E4",
+      "group": "backswing",
+      "userLabel": "백스윙"
+    },
+    {
+      "id": "kCF-3y8eteg",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "w6sc7EW4tf0",
+      "group": "field",
+      "userLabel": "실전"
+    },
+    {
+      "id": "SBBqns3SpY8",
+      "group": "downswing-general",
+      "userLabel": "다운스윙"
+    },
+    {
+      "id": "qvUeIiYjRJY",
+      "group": "utility",
+      "userLabel": "유틸리티"
+    },
+    {
+      "id": "hs6G3kXN-k0",
+      "group": "downswing-general",
+      "userLabel": "다운스윙"
+    },
+    {
+      "id": "N3Vz5_en9RE",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "O52PKt0CPTk",
+      "group": "approach",
+      "userLabel": "어프로치"
+    },
+    {
+      "id": "tv4oZhlxqeM",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "YD9lLDhvy8c",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "R28aOGiIFBo",
+      "group": "approach",
+      "userLabel": "어프로치"
+    },
+    {
+      "id": "aYmxQCC2aXE",
+      "group": "backswing",
+      "userLabel": "백스윙"
+    },
+    {
+      "id": "8nCtBMNf9Fs",
+      "group": "backswing",
+      "userLabel": "백스윙"
+    },
+    {
+      "id": "4SQpy20tQeU",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "7lSPZEEv0uY",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "RaNWzMAQOCY",
+      "group": "driver-backswing",
+      "userLabel": "드라이버 백스윙"
+    },
+    {
+      "id": "h_f83jIIMyo",
+      "group": "backswing",
+      "userLabel": "백스윙"
+    },
+    {
+      "id": "60GatQWuaE8",
+      "group": "driver-downswing",
+      "userLabel": "드라이버 다운스윙"
+    },
+    {
+      "id": "jdQH9uAMsTg",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "j16qRQQCIa8",
+      "group": "field",
+      "userLabel": "실전"
+    },
+    {
+      "id": "pm0ABNRNDvw",
+      "group": "backswing",
+      "userLabel": "백스윙"
+    },
+    {
+      "id": "Uh2nNpZ5oyQ",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "lDSiAtpkvgY",
+      "group": "field",
+      "userLabel": "실전"
+    },
+    {
+      "id": "3GNOxszYqLE",
+      "group": "field",
+      "userLabel": "실전"
+    },
+    {
+      "id": "1avE6xLVk3k",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "onGb9akYkw0",
+      "group": "driver-general",
+      "userLabel": "드라이버"
+    },
+    {
+      "id": "B3N7wt_ZOz8",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "REFteDwojG8",
+      "group": "downswing-general",
+      "userLabel": "다운스윙"
+    },
+    {
+      "id": "kAoCh9704j8",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "xnAHLk_e70c",
+      "group": "swing-general",
+      "userLabel": "스윙 일반"
+    },
+    {
+      "id": "4DyoF3OQKww",
+      "group": "iron-general",
+      "userLabel": "아이언 일반"
+    },
+    {
+      "id": "K92Mzs5bMNY",
+      "group": "driver-general",
+      "userLabel": "드라이버 일반"
+    },
+    {
+      "id": "jVUltlOFhiU",
+      "group": "driver-demo",
+      "userLabel": "드라이버 시범"
+    },
+    {
+      "userLabel": "스윙 일반",
+      "group": "swing-general",
+      "id": "lFMCMnKkleo"
+    },
+    {
+      "userLabel": "다운스윙 일반",
+      "group": "downswing-general",
+      "id": "FHkvaAvPvc8"
+    },
+    {
+      "userLabel": "드라이버 백스윙",
+      "group": "driver-backswing",
+      "id": "fAgc2HsdTAE"
+    },
+    {
+      "userLabel": "드라이버 시범",
+      "group": "driver-demo",
+      "id": "uBev0tEuXBE"
+    }
+  ],
+  "counts": {
+    "golf": 240,
+    "golfFrames": 480,
+    "pt": 54,
+    "ht": 9,
+    "htLibrary": 63,
+    "personal": 22
+  },
+  "preservation": {
+    "seedIds": [
+      "pt_pullup",
+      "pt_seatedrow",
+      "pt_lowpulley_row",
+      "pt_latpulldown",
+      "pt_armpulldown",
+      "pt_dbpullover",
+      "pt_machinerow",
+      "pt_seal_row",
+      "pt_backextension",
+      "pt_armcurl",
+      "pt_pushdown",
+      "pt_benchpress",
+      "pt_incline_smith_press",
+      "pt_dumbbell_press",
+      "pt_chestpress",
+      "pt_pecdeck",
+      "pt_facepull",
+      "pt_lateralraise",
+      "pt_uprightrow",
+      "pt_vsquat",
+      "pt_squat",
+      "pt_halfsquat",
+      "pt_frontsquat",
+      "pt_heelsquat",
+      "pt_gobletsquat",
+      "pt_widesquat",
+      "pt_dumbbell_rdl",
+      "pt_legcurl",
+      "pt_adduction",
+      "pt_legextension",
+      "pt_legpress",
+      "pt_daily_hamstring",
+      "pt_daily_piriformis",
+      "pt_plank",
+      "pt_daily_foam",
+      "pt_openbook",
+      "pt_rehab_slr",
+      "pt_rehab_clamshell",
+      "pt_rehab_sslr",
+      "pt_wide_sidelunge_stretch",
+      "pt_hip_openclose_stretch",
+      "pt_bridge",
+      "pt_birddog",
+      "pt_deadbug",
+      "pt_tbalance",
+      "pt_stepup",
+      "pt_tailbone_raise",
+      "pt_rotationlunge",
+      "pt_bosurotation",
+      "pt_sldl",
+      "golf_driver",
+      "golf_iron7",
+      "golf_iron5",
+      "golf_ironp",
+      "ht_bulgarian_split_squat",
+      "ht_wide_dumbbell",
+      "ht_upper_form",
+      "ht_lower_six",
+      "pt_lunge",
+      "ht_latpulldown_reference",
+      "ht_upper_elbows",
+      "ht_chest_six",
+      "pt_lunge_ball_rotation",
+      "pt_low_cable_curl",
+      "ht_squat_comparison",
+      "pt_shoulderpress"
+    ],
+    "seedExercisesSHA256": "1545349b75c7b2b2b038b8d3bd6e223082c19770fc317a11c53e17d60acc8338",
+    "ptSessionsSHA256": "75e19e47ec1a189fa45dae8bda2a85dcc3e5479a6e199fd2d3db017a031c4f06",
+    "golfIds": [
+      "9YWDNMyTQy4",
+      "wBlnDaqkGi0",
+      "yv4KTSs8Riw",
+      "4ePhtleqZBA",
+      "bfMsJtV61hM",
+      "-h77kU-fpjg",
+      "Aj1UEMYPxBg",
+      "xUgGGs2Rh3w",
+      "S3fxUFBzfBo",
+      "IsSS-GnQQyY",
+      "ULOLFCC-ly8",
+      "CA-TZ7WQlHY",
+      "du58mmLNMnQ",
+      "0EgzSDUsKvg",
+      "uvgnUl93Twg",
+      "RSbjGWhzEnQ",
+      "aaOw2sdp-io",
+      "5glZX2pq15o",
+      "4uQe-J5qM2c",
+      "Wlbi1o9fb2Q",
+      "A_fu4ajV-_I",
+      "FjWulC87mzM",
+      "dBsZdo7VEAA",
+      "o4KqDhYXlTw",
+      "ThwbClowjjU",
+      "XvPYFd-seNw",
+      "mGYe7UjYXfo",
+      "0lbtJgkzqWM",
+      "28HBEaS-G54",
+      "wwZFeiPAoMU",
+      "t_9sQjrS2o4",
+      "zT6zJCJ59js",
+      "ldkU0D_Ylms",
+      "M-ryH3IhUXI",
+      "3kNb6TQN2T0",
+      "VGya7_OVLYo",
+      "QsmMamIFMsE",
+      "jlqT_vNRcSI",
+      "zB5hFmVpisI",
+      "FnbyQ-UYjMI",
+      "jg52OubK_L0",
+      "lb2CrZl0FrA",
+      "q1P0eGWA8_s",
+      "unGNdzyt7kE",
+      "En79wtGEzs4",
+      "EgdcUOkvJKk",
+      "1lD1Lhk-2Lc",
+      "JhE2A-kCaLI",
+      "2UR4UFtx1R0",
+      "va8Oz-nSxcI",
+      "bTA5HW-hU_Y",
+      "UlRsR8hnZGs",
+      "YD9lLDhvy8c",
+      "0HjpF1MOwAw",
+      "IMjI_VqsQsg",
+      "2CplOC4flsA",
+      "g2AXYPKdCik",
+      "sKcgYjwimd8",
+      "ZBYKvzsKbyU",
+      "5vL6-Dwahsw",
+      "9ELCrrtWqwM",
+      "1x_iiruwFTU",
+      "ZVyCmpxNXa4",
+      "xys5zZWka6M",
+      "XgPPBzZKzNM",
+      "BvnGOkOMo68",
+      "DYtWZFKkKas",
+      "te5CN12g0Mc",
+      "eRSTJTcMFjE",
+      "qVHPT2eU5gY",
+      "qQbCq_QXB0A",
+      "G6VjK_afBng",
+      "Ks-9y9yLols",
+      "rvrwwVdyM68",
+      "eOxiYC684K0",
+      "-8gKh-1h6Hs",
+      "nkfEfaa4CFs",
+      "clEQKV7hWrY",
+      "MIx8BbSocFI",
+      "Q_kYNFcYL0o",
+      "qJRYOqhK-2c",
+      "iX_ZnUodsRQ",
+      "WQbV4r6m2Ww",
+      "x0PzoVHk9gg",
+      "yHVIKXd_Ss8",
+      "T2FBx83DXvg",
+      "NYY2HRNojPc",
+      "WqKgbsWnDxE",
+      "RBJllwVPFEM",
+      "soj_dt1_PAg",
+      "v3CFS-0sO_I",
+      "2tam4sbJQtM",
+      "dtnFgYXYfBE",
+      "aCyFCVz85ss",
+      "3X4O4uMa_Bc",
+      "oEVbWjzZl0E",
+      "4DyoF3OQKww",
+      "j1USTUwFnRI",
+      "4Eof_tmI0Ag",
+      "WxoZPlRhSvY",
+      "CAZ9oUoGRIg",
+      "JoUx0gIzdng",
+      "bgI9M3DIuX4",
+      "SboFZ1M4mIg",
+      "HGzIDHi2e84",
+      "hjWtaLgNEO0",
+      "HkpYH7RoWxw",
+      "F7HIFtSR7Fo",
+      "TYq-Fge2LSA",
+      "uEEjRPwQ2Vo",
+      "daQLQ1rAzs0",
+      "f4in6LXwJfs",
+      "LO9ASFC3I78",
+      "hxXJnJRKKcE",
+      "LpMjAU9OnlI",
+      "shJaPQExonE",
+      "YUtzwggQMQc",
+      "V7r2odT_dBE",
+      "hxq7Wocl-2o",
+      "r7Sz8xHYc-A",
+      "4E9O-VZtjBQ",
+      "RqTCr_7BEM8",
+      "Gy1fb-ulGig",
+      "z9lAaO2IefM",
+      "bfaLLjZqqCA",
+      "6K7-nA-JHyU",
+      "1MHsYLzJbtw",
+      "o-g_k0svTjo",
+      "18oA0JBM-fk",
+      "3BLL1Hv70j8",
+      "OqjaiUzNaXE",
+      "k0jhBy7WE8s",
+      "Gbgc0VxJ35s",
+      "VqdMTh4REdk",
+      "ibDVBB6fdZE",
+      "mnKjK9yTU1Q",
+      "6DFYCkg5ChY",
+      "kW1GIWEpRDQ",
+      "1nZ4kVoY6vw",
+      "6NWRTgb645U",
+      "ZsLbFO9RYfw",
+      "YwtokOzigZM",
+      "0OyyYv1KHYo",
+      "QAsnFGtjpio",
+      "cUPKspR2yGI",
+      "Hlo7tykj3Ms",
+      "VUAqp9jXh4M",
+      "hDOHG3nD3kY",
+      "1Y2xarVlF7c",
+      "4XPYB9teep8",
+      "REFteDwojG8",
+      "H5W4lILhgyc",
+      "1wyW-DDLXpk",
+      "3BsYkWFU-WA",
+      "iD8o1vJSal4",
+      "UmAVgjIGRWY",
+      "F_IdFmPUNhQ",
+      "fAgc2HsdTAE",
+      "7KHcmSqk89U",
+      "L3TE9D9O2mw",
+      "CLIv_9gmuhA",
+      "nlmg8nsjfbk",
+      "LpQxb1pNwFs",
+      "NZJxVXzIlbk",
+      "WhLLhf2IoB0",
+      "NEtXffKKfAs",
+      "ZffDcybdQt0",
+      "jEU9tWAVztI",
+      "m_pq2gWhweQ",
+      "gwGJbD6pyH4",
+      "G26PLVsWfgc",
+      "5XjM1AJKbtg",
+      "6mYmhmpLL3s",
+      "M5wRO6zlHRA",
+      "tHJTXiEVpzM",
+      "liwvpxER1b0",
+      "W__zH8-7nxc",
+      "ktADlkpNn_E",
+      "JnqABQUIVVk",
+      "z3vEI5aGz88",
+      "UPurwAXyMLw",
+      "7vsnmAld3wY",
+      "lGgedAC0KCA",
+      "kuRoseAIbtw",
+      "HZpD_-B0_0c",
+      "NRnKLEgrhJo",
+      "Brf6plIsBW8",
+      "ap6K-ftKPQs",
+      "o-CKjTv5u2c",
+      "H812yJ69XOA",
+      "gWcMsUxtyFU",
+      "-04WtoVgVhY",
+      "yRQ85tpYjWY",
+      "V3Qngex6xSo",
+      "P4tx1-B5XDA"
+    ],
+    "golfVideosSHA256": "ececd444307c1fdbe8fc3257a9457667e04ab750088ec055f2bc92c35a383ff8"
+  },
+  "golf": {
+    "total": 240,
+    "newEntries": [
+      {
+        "id": "I8qaAlp-O98",
+        "group": "screen",
+        "userClassification": "스크린",
+        "title": "스크린 퍼팅 · 남은 거리와 컵수",
+        "moments": [
+          {
+            "s": 37,
+            "label": "남은 거리를 매트 한 칸의 컵수로 보기"
+          },
+          {
+            "s": 129,
+            "label": "공 놓는 위치와 인식 범위"
+          },
+          {
+            "s": 219,
+            "label": "반컵·클럽·격자 단위 구분"
+          },
+          {
+            "s": 262,
+            "label": "10m·네 컵 예시 적용"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/I8qaAlp-O98-1.webp",
+            "time": 129,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 180
+          },
+          {
+            "src": "media/golf-frames/I8qaAlp-O98-2.webp",
+            "time": 262,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 180
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "sutlERhhZS8",
+        "group": "screen",
+        "userClassification": "스크린",
+        "title": "스크린 퍼팅 · 한 칸과 거리별 조준",
+        "moments": [
+          {
+            "s": 64,
+            "label": "공 위치·대각선과 남은 거리의 컵수"
+          },
+          {
+            "s": 225,
+            "label": "반 칸 조준과 절반 컵수"
+          },
+          {
+            "s": 353,
+            "label": "1컵 적게 보고 1m 길게 치는 제안"
+          },
+          {
+            "s": 557,
+            "label": "3m 이내 컵수 조정 제안"
+          },
+          {
+            "s": 642,
+            "label": "실전 코스 적용 예시"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/sutlERhhZS8-1.webp",
+            "time": 225,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 180
+          },
+          {
+            "src": "media/golf-frames/sutlERhhZS8-2.webp",
+            "time": 353,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 180
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "apeli0ui9PA",
+        "group": "screen",
+        "userClassification": "스크린",
+        "title": "스크린 공략 · 평균 거리와 퍼팅 기준",
+        "moments": [
+          {
+            "s": 125,
+            "label": "80% 느낌과 평균 구질·거리 확인"
+          },
+          {
+            "s": 400,
+            "label": "어프로치에서 공 차이 비교"
+          },
+          {
+            "s": 584,
+            "label": "그린 3.1에서 퍼팅 거리감 기준"
+          },
+          {
+            "s": 699,
+            "label": "매트에 거리·컵수 기준 잡기"
+          },
+          {
+            "s": 929,
+            "label": "조준 기준의 거리·컵수를 함께 줄이기"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/apeli0ui9PA-1.webp",
+            "time": 125,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 180
+          },
+          {
+            "src": "media/golf-frames/apeli0ui9PA-2.webp",
+            "time": 929,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 180
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "GsDnZDeJGb0",
+        "group": "screen",
+        "userClassification": "스크린",
+        "title": "스크린 드라이버 · 그립 긴장과 헤드 무게",
+        "moments": [
+          {
+            "s": 0,
+            "label": "그립 긴장과 헤드 무게 안내"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/GsDnZDeJGb0-1.webp",
+            "time": 4,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/GsDnZDeJGb0-2.webp",
+            "time": 12,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "gcbA-sN3k3U",
+        "group": "backswing-setup",
+        "userClassification": "골프 드라이버 힘빼기",
+        "title": "드라이버 힘 빼기 · 헤드 움직임 따라가기",
+        "moments": [
+          {
+            "s": 0,
+            "label": "헤드 무게를 이기지 않는 시범"
+          },
+          {
+            "s": 12,
+            "label": "헤드를 붙잡는 비교와 편한 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/gcbA-sN3k3U-1.webp",
+            "time": 4,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/gcbA-sN3k3U-2.webp",
+            "time": 16,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "9pzX-vfrGCI",
+        "group": "impact-release",
+        "userClassification": "드라이버 일반(채찍)",
+        "title": "드라이버 일반 · 채찍 비유와 헤드 통과",
+        "moments": [
+          {
+            "s": 1,
+            "label": "내려오는 클럽과 채찍 비유"
+          },
+          {
+            "s": 5,
+            "label": "회전 뒤 헤드가 통과하는 장면"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/9pzX-vfrGCI-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/9pzX-vfrGCI-2.webp",
+            "time": 6,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "OoI1WpA6TY4",
+        "group": "downswing-path",
+        "userClassification": "아이언 다운스윙(눌러치기)",
+        "title": "아이언 눌러치기 · 손바닥 방향 드릴",
+        "moments": [
+          {
+            "s": 3,
+            "label": "손바닥을 누르는 방향 안내"
+          },
+          {
+            "s": 16,
+            "label": "일부러 릴리스 회전하지 않는 비교"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/OoI1WpA6TY4-1.webp",
+            "time": 5,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/OoI1WpA6TY4-2.webp",
+            "time": 20,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "r_EZy2BGHtY",
+        "group": "downswing-path",
+        "userClassification": "아이언 다운스윙(눌러치기)",
+        "title": "아이언 눌러치기 · 꺾고 돌리고 누르는 순서",
+        "moments": [
+          {
+            "s": 0,
+            "label": "꺾기·회전과 손바닥 방향"
+          },
+          {
+            "s": 5,
+            "label": "오른손으로 왼손을 누르는 드릴"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/r_EZy2BGHtY-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/r_EZy2BGHtY-2.webp",
+            "time": 5,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "NoMfGK2tSuY",
+        "group": "common",
+        "userClassification": "아이언 일반",
+        "title": "아이언 일반 · 왼손 통과와 준비 자세",
+        "moments": [
+          {
+            "s": 0,
+            "label": "왼손이 빠져나가는 스윙 설명"
+          },
+          {
+            "s": 31,
+            "label": "백스윙과 힙 이동 비교"
+          },
+          {
+            "s": 50,
+            "label": "준비 기울기와 작은 체중 이동"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/NoMfGK2tSuY-1.webp",
+            "time": 12,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/NoMfGK2tSuY-2.webp",
+            "time": 38,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "R3dwUXhxNWw",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 오른어깨와 헤드 뻗기",
+        "moments": [
+          {
+            "s": 3,
+            "label": "작은 스윙에서 오른어깨와 헤드 비교"
+          },
+          {
+            "s": 16,
+            "label": "큰 스윙으로 연결하는 설명"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/R3dwUXhxNWw-1.webp",
+            "time": 4,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/R3dwUXhxNWw-2.webp",
+            "time": 17,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "EwCnfWFyh6A",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 왼팔과 몸통 사이 공간",
+        "moments": [
+          {
+            "s": 0,
+            "label": "왼팔을 몸에 붙인 자세의 비교"
+          },
+          {
+            "s": 90,
+            "label": "왼쪽 겨드랑이 아래 공간 안내"
+          },
+          {
+            "s": 125,
+            "label": "다운스윙 하체 전환 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/EwCnfWFyh6A-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/EwCnfWFyh6A-2.webp",
+            "time": 96,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "we4dVlrvmHs",
+        "group": "downswing-path",
+        "userClassification": "다운스윙 일반",
+        "title": "다운스윙 일반 · 전환과 팔·샤프트 각도",
+        "moments": [
+          {
+            "s": 1,
+            "label": "백스윙에서 전환"
+          },
+          {
+            "s": 3,
+            "label": "오른팔·샤프트 각도 강조"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/we4dVlrvmHs-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/we4dVlrvmHs-2.webp",
+            "time": 3,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "UeuD7pMJ8E4",
+        "group": "backswing-arm",
+        "userClassification": "백스윙",
+        "title": "백스윙 · 테이크어웨이와 페이스 확인",
+        "moments": [
+          {
+            "s": 0,
+            "label": "어깨 회전으로 시작하는 테이크어웨이"
+          },
+          {
+            "s": 64,
+            "label": "중간 위치의 페이스 방향 확인"
+          },
+          {
+            "s": 104,
+            "label": "척추 기울기와 헤드·손 위치 비교"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/UeuD7pMJ8E4-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/UeuD7pMJ8E4-2.webp",
+            "time": 104,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "kCF-3y8eteg",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 부드러운 드라이버 연결",
+        "moments": [
+          {
+            "s": 0,
+            "label": "어드레스에서 탑으로 연결"
+          },
+          {
+            "s": 3,
+            "label": "탑 이후 피니시 흐름"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/kCF-3y8eteg-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/kCF-3y8eteg-2.webp",
+            "time": 4,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "w6sc7EW4tf0",
+        "group": "field",
+        "userClassification": "실전",
+        "title": "실전 · 하나 둘 하나 리듬",
+        "moments": [
+          {
+            "s": 0,
+            "label": "하나·둘로 올라가는 리듬"
+          },
+          {
+            "s": 2,
+            "label": "다음 하나로 이어지는 가속"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/w6sc7EW4tf0-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/w6sc7EW4tf0-2.webp",
+            "time": 3,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "SBBqns3SpY8",
+        "group": "downswing-path",
+        "userClassification": "다운스윙",
+        "title": "다운스윙 · 당기기와 바깥으로 밀기 비교",
+        "moments": [
+          {
+            "s": 0,
+            "label": "당기는 비교와 바깥으로 미는 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/SBBqns3SpY8-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/SBBqns3SpY8-2.webp",
+            "time": 3,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "qvUeIiYjRJY",
+        "group": "common",
+        "userClassification": "유틸리티",
+        "title": "유틸리티 참고 · 원본은 우드 레슨",
+        "moments": [
+          {
+            "s": 2,
+            "label": "손목만 들어 올리지 않는 설명"
+          },
+          {
+            "s": 5,
+            "label": "무릎 리듬과 부드러운 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/qvUeIiYjRJY-1.webp",
+            "time": 4,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/qvUeIiYjRJY-2.webp",
+            "time": 12,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "hs6G3kXN-k0",
+        "group": "downswing-path",
+        "userClassification": "다운스윙",
+        "title": "다운스윙 · 오른손 당김과 팔꿈치 경로",
+        "moments": [
+          {
+            "s": 2,
+            "label": "오른손으로 당기는 비교"
+          },
+          {
+            "s": 12,
+            "label": "손바닥 방향과 팔꿈치 경로"
+          },
+          {
+            "s": 20,
+            "label": "클럽을 잡고 내려오는 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/hs6G3kXN-k0-1.webp",
+            "time": 6,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/hs6G3kXN-k0-2.webp",
+            "time": 20,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "N3Vz5_en9RE",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 샤프트 탄성의 감각 비유",
+        "moments": [
+          {
+            "s": 0,
+            "label": "손목부터 꺾는 비교"
+          },
+          {
+            "s": 24,
+            "label": "채찍처럼 휘두르는 감각"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/N3Vz5_en9RE-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/N3Vz5_en9RE-2.webp",
+            "time": 30,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "O52PKt0CPTk",
+        "group": "impact-release",
+        "userClassification": "어프로치",
+        "title": "어프로치 · 손의 느낌을 옆으로 보내기",
+        "moments": [
+          {
+            "s": 3,
+            "label": "그 느낌을 옆으로 보내는 설명"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/O52PKt0CPTk-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/O52PKt0CPTk-2.webp",
+            "time": 6,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "tv4oZhlxqeM",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 연결과 클럽 무게 드릴",
+        "moments": [
+          {
+            "s": 1,
+            "label": "왼팔·가슴 연결과 클럽 무게"
+          },
+          {
+            "s": 4,
+            "label": "작은 흔들기에서 큰 스윙으로"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/tv4oZhlxqeM-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/tv4oZhlxqeM-2.webp",
+            "time": 5,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "R28aOGiIFBo",
+        "group": "impact-contact",
+        "userClassification": "어프로치",
+        "title": "어프로치 · 피칭 준비와 백스윙 범위",
+        "moments": [
+          {
+            "s": 2,
+            "label": "스탠스·손 위치·백스윙 범위"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/R28aOGiIFBo-1.webp",
+            "time": 3,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/R28aOGiIFBo-2.webp",
+            "time": 6,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "aYmxQCC2aXE",
+        "group": "backswing-arm",
+        "userClassification": "백스윙",
+        "title": "백스윙 · 왼팔 연결과 몸통 회전",
+        "moments": [
+          {
+            "s": 0,
+            "label": "왼팔 연결과 몸통 회전"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/aYmxQCC2aXE-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/aYmxQCC2aXE-2.webp",
+            "time": 4,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "8nCtBMNf9Fs",
+        "group": "backswing-arm",
+        "userClassification": "백스윙",
+        "title": "백스윙 · 아이언의 모으는 시범",
+        "moments": [
+          {
+            "s": 3,
+            "label": "멈추고 모으기 화면 안내"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/8nCtBMNf9Fs-1.webp",
+            "time": 3,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/8nCtBMNf9Fs-2.webp",
+            "time": 6,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "4SQpy20tQeU",
+        "group": "common",
+        "userClassification": "드라이버",
+        "title": "드라이버 · 몸통 백스윙과 지면 밀기",
+        "moments": [
+          {
+            "s": 0,
+            "label": "몸통으로 시작하는 백스윙"
+          },
+          {
+            "s": 5,
+            "label": "탑 정지 후 지면 밀기 드릴"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/4SQpy20tQeU-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/4SQpy20tQeU-2.webp",
+            "time": 8,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "7lSPZEEv0uY",
+        "group": "downswing-path",
+        "userClassification": "드라이버",
+        "title": "드라이버 · 탑 이완과 오른팔꿈치 감각",
+        "moments": [
+          {
+            "s": 0,
+            "label": "탑 이완과 오른팔꿈치 방향 비유"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/7lSPZEEv0uY-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/7lSPZEEv0uY-2.webp",
+            "time": 4,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "RaNWzMAQOCY",
+        "group": "backswing-arm",
+        "userClassification": "드라이버 백스윙",
+        "title": "드라이버 백스윙 · 몸통 회전과 팔 공간",
+        "moments": [
+          {
+            "s": 0,
+            "label": "왼쪽 겨드랑이와 몸통 회전"
+          },
+          {
+            "s": 12,
+            "label": "팔을 내려 넓은 백스윙 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/RaNWzMAQOCY-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/RaNWzMAQOCY-2.webp",
+            "time": 18,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "h_f83jIIMyo",
+        "group": "backswing-arm",
+        "userClassification": "백스윙",
+        "title": "백스윙 · 회전으로 만드는 팔 공간",
+        "moments": [
+          {
+            "s": 1,
+            "label": "팔로만 들어 올리는 비교"
+          },
+          {
+            "s": 16,
+            "label": "세 방향의 왼팔 드릴"
+          },
+          {
+            "s": 32,
+            "label": "억지로 뻗지 않고 회전으로 공간 만들기"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/h_f83jIIMyo-1.webp",
+            "time": 5,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/h_f83jIIMyo-2.webp",
+            "time": 25,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "60GatQWuaE8",
+        "group": "impact-release",
+        "userClassification": "드라이버 다운스윙",
+        "title": "드라이버 다운스윙 · 중간에서 끊는 연습",
+        "moments": [
+          {
+            "s": 5,
+            "label": "위에서 아래로 내려 중간에서 끊기"
+          },
+          {
+            "s": 27,
+            "label": "어드레스에서 같은 드릴"
+          },
+          {
+            "s": 42,
+            "label": "피니시 없이 끊는 샷 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/60GatQWuaE8-1.webp",
+            "time": 12,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/60GatQWuaE8-2.webp",
+            "time": 30,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "jdQH9uAMsTg",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 클럽을 휘두르는 세 드릴",
+        "moments": [
+          {
+            "s": 255,
+            "label": "오른손 쥐불놀이 드릴"
+          },
+          {
+            "s": 283,
+            "label": "왼손 원 그리기"
+          },
+          {
+            "s": 306,
+            "label": "양손 사이드 망치질·임팩트백"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/jdQH9uAMsTg-1.webp",
+            "time": 260,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 180
+          },
+          {
+            "src": "media/golf-frames/jdQH9uAMsTg-2.webp",
+            "time": 314,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 180
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "j16qRQQCIa8",
+        "group": "field",
+        "userClassification": "실전",
+        "title": "실전 · 퀵 슬로우 퀵 리듬",
+        "moments": [
+          {
+            "s": 8,
+            "label": "긴장할 때의 템포 설명"
+          },
+          {
+            "s": 18,
+            "label": "어깨 위 슬로우 구간 확인"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/j16qRQQCIa8-1.webp",
+            "time": 12,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/j16qRQQCIa8-2.webp",
+            "time": 27,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "pm0ABNRNDvw",
+        "group": "backswing-arm",
+        "userClassification": "백스윙",
+        "title": "백스윙 · P3에서 어깨 회전 연결",
+        "moments": [
+          {
+            "s": 1,
+            "label": "왼팔이 지면과 평행한 P3"
+          },
+          {
+            "s": 6,
+            "label": "잠시 확인 후 어깨 회전"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/pm0ABNRNDvw-1.webp",
+            "time": 3,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/pm0ABNRNDvw-2.webp",
+            "time": 9,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "Uh2nNpZ5oyQ",
+        "group": "downswing-path",
+        "userClassification": "드라이버",
+        "title": "드라이버 · 천천히 내려 페이스 확인",
+        "moments": [
+          {
+            "s": 0,
+            "label": "천천히 내려오는 확인"
+          },
+          {
+            "s": 2,
+            "label": "팔꿈치와 왼손등 방향"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/Uh2nNpZ5oyQ-1.webp",
+            "time": 3,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/Uh2nNpZ5oyQ-2.webp",
+            "time": 7,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "lDSiAtpkvgY",
+        "group": "field",
+        "userClassification": "실전",
+        "title": "실전 · 드라이버 셋업 기울기 비교",
+        "moments": [
+          {
+            "s": 0,
+            "label": "공 뒤·공 위 셋업 비교"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/lDSiAtpkvgY-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/lDSiAtpkvgY-2.webp",
+            "time": 12,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "3GNOxszYqLE",
+        "group": "field",
+        "userClassification": "실전",
+        "title": "실전 · 왼발 내리막과 가슴 기울기",
+        "moments": [
+          {
+            "s": 0,
+            "label": "가슴이 들리는 백스윙 비교"
+          },
+          {
+            "s": 9,
+            "label": "경사와 왼쪽 다리·가슴 관계"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/3GNOxszYqLE-1.webp",
+            "time": 3,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/3GNOxszYqLE-2.webp",
+            "time": 17,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "1avE6xLVk3k",
+        "group": "common",
+        "userClassification": "드라이버",
+        "title": "드라이버 · 왼쪽 귀와 공 위치 감각",
+        "moments": [
+          {
+            "s": 7,
+            "label": "왼쪽 귀를 공 뒤에 두는 설명"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/1avE6xLVk3k-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/1avE6xLVk3k-2.webp",
+            "time": 9,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "onGb9akYkw0",
+        "group": "impact-release",
+        "userClassification": "드라이버",
+        "title": "드라이버 · 페이스 펌핑 리허설",
+        "moments": [
+          {
+            "s": 0,
+            "label": "페이스가 내려오는 방향 펌핑"
+          },
+          {
+            "s": 4,
+            "label": "리허설 뒤 스윙"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/onGb9akYkw0-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/onGb9akYkw0-2.webp",
+            "time": 5,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "B3N7wt_ZOz8",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 골반 밀림과 회전 비교",
+        "moments": [
+          {
+            "s": 1,
+            "label": "골반이 밀리는 비교"
+          },
+          {
+            "s": 3,
+            "label": "회전 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/B3N7wt_ZOz8-1.webp",
+            "time": 2,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/B3N7wt_ZOz8-2.webp",
+            "time": 4,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "kAoCh9704j8",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 왼어깨와 오른팔 통과",
+        "moments": [
+          {
+            "s": 13,
+            "label": "왼어깨가 오른팔을 막는 비교"
+          },
+          {
+            "s": 60,
+            "label": "샤프트 수평 부근에서 연결 드릴"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/kAoCh9704j8-1.webp",
+            "time": 16,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/kAoCh9704j8-2.webp",
+            "time": 92,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "xnAHLk_e70c",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 팔과 손목 느낌 연결",
+        "moments": [
+          {
+            "s": 0,
+            "label": "두 방향의 느낌 연결"
+          },
+          {
+            "s": 2,
+            "label": "손목 느낌을 함께 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/xnAHLk_e70c-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/xnAHLk_e70c-2.webp",
+            "time": 5,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "K92Mzs5bMNY",
+        "group": "common",
+        "userClassification": "드라이버 일반",
+        "title": "드라이버 일반 · 명치와 팔의 방향 비유",
+        "moments": [
+          {
+            "s": 3,
+            "label": "명치와 헤드 방향 비유"
+          },
+          {
+            "s": 11,
+            "label": "원반 던지기 비교"
+          },
+          {
+            "s": 28,
+            "label": "뒤에서 버티는 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/K92Mzs5bMNY-1.webp",
+            "time": 7,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/K92Mzs5bMNY-2.webp",
+            "time": 29,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "jVUltlOFhiU",
+        "group": "common",
+        "userClassification": "드라이버 시범",
+        "title": "드라이버 시범 · 부드러운 스윙 흐름",
+        "moments": [
+          {
+            "s": 0,
+            "label": "첫 번째 드라이버 시범"
+          },
+          {
+            "s": 5,
+            "label": "두 번째 드라이버 시범"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/jVUltlOFhiU-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/jVUltlOFhiU-2.webp",
+            "time": 6,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "lFMCMnKkleo",
+        "group": "common",
+        "userClassification": "스윙 일반",
+        "title": "스윙 일반 · 다운스윙 당김 비교",
+        "moments": [
+          {
+            "s": 0,
+            "label": "다운스윙에서 당기는 비교"
+          },
+          {
+            "s": 2,
+            "label": "백스윙에서 만든 흐름 연결"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/lFMCMnKkleo-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/lFMCMnKkleo-2.webp",
+            "time": 4,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "FHkvaAvPvc8",
+        "group": "downswing-path",
+        "userClassification": "다운스윙 일반",
+        "title": "다운스윙 일반 · 팔꿈치와 오른어깨",
+        "moments": [
+          {
+            "s": 0,
+            "label": "팔꿈치 강제 밀착 비교"
+          },
+          {
+            "s": 1,
+            "label": "오른어깨를 아래로 움직이는 감각"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/FHkvaAvPvc8-1.webp",
+            "time": 1,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/FHkvaAvPvc8-2.webp",
+            "time": 3,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      },
+      {
+        "id": "uBev0tEuXBE",
+        "group": "common",
+        "userClassification": "드라이버 시범",
+        "title": "드라이버 시범 · 하체 리드와 팔 통과",
+        "moments": [
+          {
+            "s": 3,
+            "label": "하체 리드와 시선 설명"
+          },
+          {
+            "s": 12,
+            "label": "왼다리와 팔 통과 설명"
+          }
+        ],
+        "frames": [
+          {
+            "src": "media/golf-frames/uBev0tEuXBE-1.webp",
+            "time": 4,
+            "label": "설명·준비 장면",
+            "width": 320,
+            "height": 568
+          },
+          {
+            "src": "media/golf-frames/uBev0tEuXBE-2.webp",
+            "time": 14,
+            "label": "핵심 동작·적용 장면",
+            "width": 320,
+            "height": 568
+          }
+        ],
+        "evidence": "원본 메타데이터·표본 프레임·화면 문구 및 확보된 자동자막/전사 대조. 음악·무의미 자동전사는 제외. 전체 연속 시청 검증은 아님."
+      }
+    ],
+    "reused": [
+      {
+        "id": "YD9lLDhvy8c",
+        "group": "driver-general",
+        "userLabel": "드라이버"
+      },
+      {
+        "id": "REFteDwojG8",
+        "group": "downswing-general",
+        "userLabel": "다운스윙"
+      },
+      {
+        "id": "4DyoF3OQKww",
+        "group": "iron-general",
+        "userLabel": "아이언 일반"
+      },
+      {
+        "userLabel": "드라이버 백스윙",
+        "group": "driver-backswing",
+        "id": "fAgc2HsdTAE"
+      }
+    ]
+  },
+  "ht": [
+    {
+      "key": "wide",
+      "name": "와이드 고블릿 · 양발 발판",
+      "kind": "htstancewide",
+      "time": 2,
+      "frames": [
+        3,
+        4
+      ],
+      "target": "quads",
+      "prep": "양쪽 발판 위에 넓게 서서 덤벨 1개를 가슴 앞에 가로로 받칩니다.",
+      "move": "같은 발판 지지에서 무릎과 골반을 굽혔다가 일어납니다."
+    },
+    {
+      "key": "standard",
+      "name": "스탠다드 고블릿 · 바닥 지지",
+      "kind": "htstancestandard",
+      "time": 14,
+      "frames": [
+        19,
+        18
+      ],
+      "target": "quads",
+      "prep": "두 발을 바닥에 어깨너비로 두고 덤벨을 가슴 앞에 받칩니다.",
+      "move": "발바닥 지지를 유지하며 내려앉았다가 일어납니다."
+    },
+    {
+      "key": "narrow",
+      "name": "내로우 고블릿 · 좁은 발 간격",
+      "kind": "htstancenarrow",
+      "time": 27,
+      "frames": [
+        30,
+        31
+      ],
+      "target": "quads",
+      "prep": "바닥에서 두 발 간격을 좁히고 가슴 앞에 덤벨을 받칩니다.",
+      "move": "발 간격을 유지하며 무릎과 골반을 굽혔다가 일어납니다."
+    },
+    {
+      "key": "split",
+      "name": "덤벨 스플릿 · 앞뒤 발판 지지",
+      "kind": "htstancesplit",
+      "time": 39,
+      "frames": [
+        43,
+        44
+      ],
+      "target": "quads",
+      "prep": "앞발 전체와 뒷발 앞부분을 각각 발판에 지지하고 양손에 덤벨을 듭니다.",
+      "move": "발 위치를 유지하며 양 무릎을 굽혔다가 앞다리로 지지해 일어납니다."
+    },
+    {
+      "key": "stiff",
+      "name": "덤벨 스티프레그 데드리프트",
+      "kind": "htstancestiff",
+      "time": 48,
+      "frames": [
+        52,
+        53
+      ],
+      "target": "hamstrings",
+      "prep": "바닥에 양발을 두고 양손에 덤벨을 하나씩 듭니다.",
+      "move": "무릎을 강제로 잠그지 않고 골반을 뒤로 접으며 덤벨을 다리 가까이 낮춥니다."
+    }
+  ],
+  "reviewLimitations": [
+    "긴 스크린3편은 전체 자동자막·원본 챕터와 표본 프레임 대조. 전체 연속 시청 아님.",
+    "짧은 영상은 원본 화면·표본 프레임 및 원음 자동전사를 대조. 음악·무의미/누락 전사는 코칭 근거에서 제외.",
+    "번역 자막의 외국어 레슨은 한국어 음성 원본으로 분류하지 않음.",
+    "조회수·댓글·제작자 센서 가설을 독립 효과 검증으로 취급하지 않음."
+  ],
+  "playbackChecks": [
+    {
+      "id": "QrglB-YNQd0",
+      "seconds": 2,
+      "displayed": "0:02",
+      "actualPreviewClick": true,
+      "mainVideoIdMatched": true,
+      "playerTimeMatched": true,
+      "playConfirmed": true
+    },
+    {
+      "id": "QrglB-YNQd0",
+      "seconds": 14,
+      "displayed": "0:14",
+      "actualPreviewClick": true,
+      "mainVideoIdMatched": true,
+      "playerTimeMatched": true,
+      "playConfirmed": true
+    },
+    {
+      "id": "QrglB-YNQd0",
+      "seconds": 27,
+      "displayed": "0:27",
+      "actualPreviewClick": true,
+      "mainVideoIdMatched": true,
+      "playerTimeMatched": true,
+      "playConfirmed": true
+    },
+    {
+      "id": "QrglB-YNQd0",
+      "seconds": 39,
+      "displayed": "0:39",
+      "actualPreviewClick": true,
+      "mainVideoIdMatched": true,
+      "playerTimeMatched": true,
+      "playConfirmed": true
+    },
+    {
+      "id": "QrglB-YNQd0",
+      "seconds": 48,
+      "displayed": "0:48",
+      "actualPreviewClick": true,
+      "mainVideoIdMatched": true,
+      "playerTimeMatched": true,
+      "playConfirmed": true
+    }
+  ],
+  "golfPlaybackVerification": {
+    "date": "2026-11-22",
+    "method": "미리보기 전체 영상 핵심에서 105개 링크를 직접 클릭. YouTube 본편 ID와 플레이어 현재 시각을 대조. 광고 표시 중인 항목은 본편 표시 후 재확인.",
+    "checked": 105,
+    "results": [
+      {
+        "id": "NoMfGK2tSuY",
+        "seconds": 31,
+        "displayed": "0:31",
+        "pass": true
+      },
+      {
+        "id": "NoMfGK2tSuY",
+        "seconds": 50,
+        "displayed": "0:50",
+        "pass": true
+      },
+      {
+        "id": "NoMfGK2tSuY",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "R3dwUXhxNWw",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "R3dwUXhxNWw",
+        "seconds": 16,
+        "displayed": "0:16",
+        "pass": true
+      },
+      {
+        "id": "EwCnfWFyh6A",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "EwCnfWFyh6A",
+        "seconds": 90,
+        "displayed": "1:30",
+        "pass": true
+      },
+      {
+        "id": "EwCnfWFyh6A",
+        "seconds": 125,
+        "displayed": "2:05",
+        "pass": true
+      },
+      {
+        "id": "gcbA-sN3k3U",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "gcbA-sN3k3U",
+        "seconds": 12,
+        "displayed": "0:12",
+        "pass": true
+      },
+      {
+        "id": "fAgc2HsdTAE",
+        "seconds": 27.14,
+        "displayed": "0:27",
+        "pass": true
+      },
+      {
+        "id": "fAgc2HsdTAE",
+        "seconds": 44.2,
+        "displayed": "0:44",
+        "pass": true
+      },
+      {
+        "id": "UeuD7pMJ8E4",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "UeuD7pMJ8E4",
+        "seconds": 64,
+        "displayed": "1:04",
+        "pass": true
+      },
+      {
+        "id": "UeuD7pMJ8E4",
+        "seconds": 104,
+        "displayed": "1:44",
+        "pass": true
+      },
+      {
+        "id": "aYmxQCC2aXE",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "8nCtBMNf9Fs",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "RaNWzMAQOCY",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "RaNWzMAQOCY",
+        "seconds": 12,
+        "displayed": "0:12",
+        "pass": true
+      },
+      {
+        "id": "h_f83jIIMyo",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "h_f83jIIMyo",
+        "seconds": 16,
+        "displayed": "0:16",
+        "pass": true
+      },
+      {
+        "id": "h_f83jIIMyo",
+        "seconds": 32,
+        "displayed": "0:32",
+        "pass": true
+      },
+      {
+        "id": "pm0ABNRNDvw",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "pm0ABNRNDvw",
+        "seconds": 6,
+        "displayed": "0:06",
+        "pass": true
+      },
+      {
+        "id": "REFteDwojG8",
+        "seconds": 12.08,
+        "displayed": "0:12",
+        "pass": true
+      },
+      {
+        "id": "REFteDwojG8",
+        "seconds": 3.88,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "OoI1WpA6TY4",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "OoI1WpA6TY4",
+        "seconds": 16,
+        "displayed": "0:16",
+        "pass": true
+      },
+      {
+        "id": "r_EZy2BGHtY",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "r_EZy2BGHtY",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "we4dVlrvmHs",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "we4dVlrvmHs",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "SBBqns3SpY8",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "hs6G3kXN-k0",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "hs6G3kXN-k0",
+        "seconds": 12,
+        "displayed": "0:12",
+        "pass": true
+      },
+      {
+        "id": "hs6G3kXN-k0",
+        "seconds": 20,
+        "displayed": "0:20",
+        "pass": true
+      },
+      {
+        "id": "7lSPZEEv0uY",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "Uh2nNpZ5oyQ",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "Uh2nNpZ5oyQ",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "FHkvaAvPvc8",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "FHkvaAvPvc8",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "R28aOGiIFBo",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "4DyoF3OQKww",
+        "seconds": 6.3,
+        "displayed": "0:06",
+        "pass": true
+      },
+      {
+        "id": "4DyoF3OQKww",
+        "seconds": 1.2,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "9pzX-vfrGCI",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "9pzX-vfrGCI",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "O52PKt0CPTk",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "60GatQWuaE8",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "60GatQWuaE8",
+        "seconds": 27,
+        "displayed": "0:27",
+        "pass": true
+      },
+      {
+        "id": "60GatQWuaE8",
+        "seconds": 42,
+        "displayed": "0:42",
+        "pass": true
+      },
+      {
+        "id": "onGb9akYkw0",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "onGb9akYkw0",
+        "seconds": 4,
+        "displayed": "0:04",
+        "pass": true
+      },
+      {
+        "id": "kCF-3y8eteg",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "kCF-3y8eteg",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "qvUeIiYjRJY",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "qvUeIiYjRJY",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "N3Vz5_en9RE",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "N3Vz5_en9RE",
+        "seconds": 24,
+        "displayed": "0:24",
+        "pass": true
+      },
+      {
+        "id": "tv4oZhlxqeM",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "tv4oZhlxqeM",
+        "seconds": 4,
+        "displayed": "0:04",
+        "pass": true
+      },
+      {
+        "id": "4SQpy20tQeU",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "4SQpy20tQeU",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "jdQH9uAMsTg",
+        "seconds": 255,
+        "displayed": "4:15",
+        "pass": true
+      },
+      {
+        "id": "jdQH9uAMsTg",
+        "seconds": 283,
+        "displayed": "4:43",
+        "pass": true
+      },
+      {
+        "id": "jdQH9uAMsTg",
+        "seconds": 306,
+        "displayed": "5:06",
+        "pass": true
+      },
+      {
+        "id": "1avE6xLVk3k",
+        "seconds": 7,
+        "displayed": "0:07",
+        "pass": true
+      },
+      {
+        "id": "B3N7wt_ZOz8",
+        "seconds": 1,
+        "displayed": "0:01",
+        "pass": true
+      },
+      {
+        "id": "B3N7wt_ZOz8",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "kAoCh9704j8",
+        "seconds": 13,
+        "displayed": "0:13",
+        "pass": true
+      },
+      {
+        "id": "kAoCh9704j8",
+        "seconds": 60,
+        "displayed": "1:00",
+        "pass": true
+      },
+      {
+        "id": "xnAHLk_e70c",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "xnAHLk_e70c",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "K92Mzs5bMNY",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "K92Mzs5bMNY",
+        "seconds": 11,
+        "displayed": "0:11",
+        "pass": true
+      },
+      {
+        "id": "K92Mzs5bMNY",
+        "seconds": 28,
+        "displayed": "0:28",
+        "pass": true
+      },
+      {
+        "id": "jVUltlOFhiU",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "jVUltlOFhiU",
+        "seconds": 5,
+        "displayed": "0:05",
+        "pass": true
+      },
+      {
+        "id": "lFMCMnKkleo",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "lFMCMnKkleo",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "YD9lLDhvy8c",
+        "seconds": 8.4,
+        "displayed": "0:08",
+        "pass": true
+      },
+      {
+        "id": "YD9lLDhvy8c",
+        "seconds": 17.04,
+        "displayed": "0:17",
+        "pass": true
+      },
+      {
+        "id": "uBev0tEuXBE",
+        "seconds": 3,
+        "displayed": "0:03",
+        "pass": true
+      },
+      {
+        "id": "uBev0tEuXBE",
+        "seconds": 12,
+        "displayed": "0:12",
+        "pass": true
+      },
+      {
+        "id": "w6sc7EW4tf0",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "w6sc7EW4tf0",
+        "seconds": 2,
+        "displayed": "0:02",
+        "pass": true
+      },
+      {
+        "id": "j16qRQQCIa8",
+        "seconds": 8,
+        "displayed": "0:08",
+        "pass": true
+      },
+      {
+        "id": "j16qRQQCIa8",
+        "seconds": 18,
+        "displayed": "0:18",
+        "pass": true
+      },
+      {
+        "id": "lDSiAtpkvgY",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "3GNOxszYqLE",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      },
+      {
+        "id": "3GNOxszYqLE",
+        "seconds": 9,
+        "displayed": "0:09",
+        "pass": true
+      },
+      {
+        "id": "I8qaAlp-O98",
+        "seconds": 37,
+        "displayed": "0:37",
+        "pass": true
+      },
+      {
+        "id": "I8qaAlp-O98",
+        "seconds": 129,
+        "displayed": "2:09",
+        "pass": true
+      },
+      {
+        "id": "I8qaAlp-O98",
+        "seconds": 219,
+        "displayed": "3:39",
+        "pass": true
+      },
+      {
+        "id": "I8qaAlp-O98",
+        "seconds": 262,
+        "displayed": "4:22",
+        "pass": true
+      },
+      {
+        "id": "sutlERhhZS8",
+        "seconds": 64,
+        "displayed": "1:04",
+        "pass": true
+      },
+      {
+        "id": "sutlERhhZS8",
+        "seconds": 225,
+        "displayed": "3:45",
+        "pass": true
+      },
+      {
+        "id": "sutlERhhZS8",
+        "seconds": 353,
+        "displayed": "5:53",
+        "pass": true
+      },
+      {
+        "id": "sutlERhhZS8",
+        "seconds": 557,
+        "displayed": "9:17",
+        "pass": true
+      },
+      {
+        "id": "sutlERhhZS8",
+        "seconds": 642,
+        "displayed": "10:42",
+        "pass": true
+      },
+      {
+        "id": "apeli0ui9PA",
+        "seconds": 125,
+        "displayed": "2:05",
+        "pass": true
+      },
+      {
+        "id": "apeli0ui9PA",
+        "seconds": 400,
+        "displayed": "6:40",
+        "pass": true
+      },
+      {
+        "id": "apeli0ui9PA",
+        "seconds": 584,
+        "displayed": "9:44",
+        "pass": true
+      },
+      {
+        "id": "apeli0ui9PA",
+        "seconds": 699,
+        "displayed": "11:39",
+        "pass": true
+      },
+      {
+        "id": "apeli0ui9PA",
+        "seconds": 929,
+        "displayed": "15:29",
+        "pass": true
+      },
+      {
+        "id": "GsDnZDeJGb0",
+        "seconds": 0,
+        "displayed": "0:00",
+        "pass": true
+      }
+    ]
+  },
+  "validation": {
+    "nodeTests": 47,
+    "syntaxChecks": 25,
+    "siteRuntimeFiles": 836,
+    "htVariants": 5,
+    "htPoseSamples": 5005,
+    "golfMomentLinks": 105,
+    "htSourceLinks": 5,
+    "mobileWidths": [
+      320,
+      390,
+      430
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "status": "local-passed",
+    "browser": "전체 본문 검사 통과 후 20개 독립 회귀 모듈 모두 통과. 신규HT5동작 이미지/3D·스크린4 별도 통과. 배포 CI 전체 재검증 예정."
+  }
+}

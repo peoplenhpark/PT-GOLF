@@ -5,9 +5,9 @@ module.exports=async(browser,base,screenshot)=>{
  try{
   await p.goto(base+'#golf/group/all');await p.locator('.g-club-filters').waitFor();
   assert.equal(await p.locator('.g-video-groups>a').count(),4);
-  assert.equal(await p.locator('.g-club-filters a').count(),5);
+  assert.equal(await p.locator('.g-club-filters a').count(),6);
   const counts=await p.evaluate(()=>GolfContent.videos.reduce((o,v)=>{const k=GolfContent.clubFor(v).value;o[k]=(o[k]||0)+1;return o;},{}));
-  for(const club of ['iron','driver','both','unknown']){
+  for(const club of ['iron','driver','both','unknown','putter']){
    await p.locator('[data-g-club="'+club+'"]').click();assert(p.url().endsWith('golfClub='+club));
    await p.locator('.g-club-filters [aria-current=page]').waitFor();
    assert.equal(await p.locator('.g-video-mini').count(),counts[club]);

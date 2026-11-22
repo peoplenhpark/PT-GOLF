@@ -43,7 +43,7 @@ module.exports=async(browser,base)=>{
    assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   }
   assert.deepEqual(await p.evaluate(()=>({record:localStorage.getItem(Persistence.KEYS.workouts),draft:localStorage.getItem(Persistence.KEYS.drafts),overlay:localStorage.getItem(Persistence.KEYS.overlay)})),saved);
-  assert.match(await p.locator('.ht-routine-basic h3').innerText(),/0–20분/);
+  assert.match(await p.locator('.ht-routine-basic>summary').innerText(),/0–20분/);
   const backup=await p.evaluate(()=>Persistence.exportBackup());assert.equal(backup.stores.ptgolf_workouts_v1.entries.length,1);
   await p.evaluate(b=>Persistence.restoreBackup(b),backup);
   assert.equal(await p.evaluate(()=>localStorage.getItem(Persistence.KEYS.workouts)),saved.record);

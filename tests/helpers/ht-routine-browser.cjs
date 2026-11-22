@@ -11,13 +11,13 @@ module.exports=async(browser,base)=>{
    await page.clock.setFixedTime(new Date(`2026-10-${19+i}T00:30:00+09:00`));
    await page.goto(base+'#home');await page.locator('[data-home-ht-today]').waitFor();
    assert.equal(await page.locator('[data-home-ht-today]').innerText(),'오늘 '+['월','화','수','목','금','토','일'][i]+'요일 · '+(['mon','thu'].includes(days[i])?'상체':['tue','fri'].includes(days[i])?'하체':'휴식'));
-   await page.locator('.part.ht').click();await page.locator('#ht-routine').waitFor();
+   await page.locator('.tab[data-nav=home]').click();await page.locator('#ht-routine').waitFor();
    assert.equal(await selected(),days[i]);
    assert.deepEqual(await page.locator('#ht-routine-summary li').evaluateAll(es=>es.map(e=>e.dataset.htSummaryId)),await page.locator('#ht-routine-day .ht-routine-list>li>div>a').evaluateAll(es=>es.map(e=>e.hash.split('/').pop())));
    assert.deepEqual(await page.locator('.ht-summary-rest').allTextContents(),(await page.locator('#ht-routine-day .ht-routine-rest').allTextContents()).map(s=>s.replace(' · 세트 휴식 ','')));
    assert.match(await page.locator('.ht-summary-heading h3').textContent(),new RegExp(['월','화','수','목','금','토','일'][i]+'요일'));
 
-   await page.waitForFunction(()=>{const e=document.querySelector('#ht-routine-start');return e&&e.getBoundingClientRect().top>=0&&e.getBoundingClientRect().top<150;});
+   assert.equal(new URL(page.url()).hash,'#home');if(counts[i])assert((await page.locator('.ht-routine-basic a').first().boundingBox()).y<700,'first exercise is directly visible');
    assert.equal(await page.locator('.ht-routine-days button').count(),7);
    assert.equal(await page.locator('.ht-routine-days [aria-current="date"]').getAttribute('data-ht-day'),days[i]);
    assert.equal(await page.locator('#ht-routine-day li').count(),counts[i]);
@@ -38,18 +38,18 @@ module.exports=async(browser,base)=>{
   }
   assert.equal(await page.evaluate(()=>JSON.stringify(localStorage)),stored,'day selection never writes personal records');
   await page.locator('.ht-routine-days [data-ht-day="mon"]').click();
-  await page.goto(base+'#ht?cat=all');await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'mon');
+  await page.goto(base+'#ht');await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'mon');
   await page.locator('.ht-routine-basic a').first().click();await page.locator('.d-title').waitFor();
   await page.goBack();await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'mon');
   await page.getByRole('button',{name:'오늘로 돌아가기'}).click();assert.equal(await selected(),'sun');
   await page.locator('.ht-routine-days [data-ht-day="thu"]').click();
-  await page.goto(base+'#home');await page.locator('[data-home-ht-today]').waitFor();assert.equal(await page.locator('[data-home-ht-today]').innerText(),'오늘 일요일 · 휴식');
-  await page.locator('.part.ht').click();await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'sun','home card explicitly selects today even after a manual choice');
+  await page.goto(base+'#home');await page.locator('[data-home-ht-today]').waitFor();assert.equal(await page.locator('[data-home-ht-today]').innerText(),'선택 목요일 · 상체');
+  await page.locator('.tab[data-nav=home]').click();await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'sun','home card explicitly selects today even after a manual choice');
   await page.reload();await page.locator('#ht-routine').waitFor();assert.equal(await selected(),'sun');
   // Returning to an open tab after midnight selects the new day.
   await page.clock.setFixedTime(new Date('2026-10-26T00:30:00+09:00'));
   await page.evaluate(()=>window.dispatchEvent(new Event('focus')));assert.equal(await selected(),'mon');
-  await page.locator('[data-ht-basic]').click();await page.waitForFunction(()=>document.activeElement?.id==='ht-routine-basic');assert.equal(await page.locator('.ht-routine-basic li').count(),5);
+  assert(await page.locator('#ht-routine-basic').isVisible());assert.equal(await page.locator('.ht-routine-basic li').count(),5);
   await page.locator('.ht-routine-days [data-ht-day="fri"]').click();
   await page.evaluate(()=>window.dispatchEvent(new Event('focus')));assert.equal(await selected(),'fri');
   for(const theme of ['light','dark'])for(const width of [320,390,768]){
