@@ -130,7 +130,7 @@ const Theme = (() => {
       ${t('golf', '⛳', '골프 연습')}
       <details class="exercise-quicknav">
         <summary><span class="ti" aria-hidden="true">☰</span>자료</summary>
-        <div class="exercise-quickpanel" aria-label="전체 운동과 골프 자료">
+        <div class="exercise-quickpanel" aria-label="전체 운동과 골프 자료">${referenceCollectionEntry()}
           <button class="exercise-search" type="button" data-act="exercise-search">전체 검색 ⌕</button>
           <section><h3>골프 자료</h3><div class="exercise-quicklinks">${[['backswing','백스윙'],['downswing','다운스윙'],['impact','임팩트'],['follow-through','팔로우']].map(([id,label])=>`<a href="#golf/now?stage=${id}" data-golf-stage="${id}">${label}</a>`).join('')}</div><div class="exercise-quicklinks"><a href="#golf/lessons">레슨 기록</a><a href="#golf/key-messages">영상 핵심</a><a href="#golf/videos">전체 영상</a><a href="#golf/field">실전 연습</a><a href="#golf/screen">스크린</a></div></section>
           <section><h3>기록과 도구</h3><div class="exercise-quicklinks"><a class="part pt" href="#pt/now?start=recent">마지막 PT 기준</a><a href="#pt/questions">운동 확인·보류</a><a href="#golf/questions">골프 질문</a></div>
@@ -239,10 +239,14 @@ const Theme = (() => {
       <div id="recent-list">${sel.exercises.map(e => exRow(e, null, true, '🗓️')).join('')}</div>`;
   }
 
+  function referenceCollectionEntry() {
+    const batch=window.GolfContent?.referenceCollection;
+    return batch?'<a class="new-video-entry" href="#golf/added"><span>이번 추가 영상</span><b>'+ (batch.golfIds.length+batch.exerciseIds.length)+'편</b><span aria-hidden="true">›</span></a>':'';
+  }
   function renderHome() {
     app.innerHTML = `<div class="scr home-simple" data-part="ht">
       <div class="hd"><h1>HT 운동</h1><div class="hd-meta"><span class="app-version" aria-label="앱 버전">ver${esc(window.PTGolfRelease?.displayVersion || '1.0')}</span><div class="date">${Store.todayStr().replace(/-/g, ' · ')}</div></div></div>
-      ${htRoutineHtml()}${deletionRequestsHtml()}
+      ${referenceCollectionEntry()}${htRoutineHtml()}${deletionRequestsHtml()}
     </div>${tabbar('home')}`;
   }
 

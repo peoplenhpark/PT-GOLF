@@ -392,6 +392,8 @@ window.GolfHub = (() => {
     return `<nav class="coach-tabs" aria-label="골프 활용"><a href="#golf/now">지금 할 것</a></nav><nav class="g-tabs" aria-label="골프 자료">${[['lessons','레슨'],['notes','감각 노트'],['videos',archive?'보관영상':'영상'],['screen','스크린']].map(([id,label]) => `<a href="${id==='videos'&&archive?'#golf/key-messages?golfArchive=only':'#golf/'+id}" ${selected===id?'aria-current="page"':''}>${label}</a>`).join('')}</nav>`;
   }
   function layout(body, selected='videos') {
+    if(current?.golfTab==='added'){api.app.innerHTML='<div class="scr g-hub batch-screen"><a class="back" href="#home">‹ 오늘 운동</a>'+body+'</div>'+api.tabbar('golf');return;}
+
     api.app.innerHTML = `<div class="scr g-hub" data-part="golf">${current?.golfId?'<button class="back" data-nav="home">‹ 홈</button>':''}<div class="hd"><h1>골프</h1></div>${tabs(selected)}${loadError?'<p role="alert">이 기기의 골프 기록을 불러오지 못했습니다. 새로고침해 다시 확인해 주세요.</p>':''}${preserveClubLinks(body)}</div>${api.tabbar('golf')}`;
     window.AppDrafts?.bind(api.app);
   }
@@ -423,6 +425,7 @@ window.GolfHub = (() => {
     api=config; view={...view,golfClub:Object.hasOwn(content.clubLabels,view.golfClub)?view.golfClub:null,golfArchive:['only','include'].includes(view.golfArchive)?'only':null}; current=view;
     const tab=view.golfTab||'lessons', id=view.golfId;
     if(view.golfArchive==='only'&&!id&&['videos','video-favorites','field','screen'].includes(tab))return keyMessagePage({...view,golfTab:'key-messages',...(tab==='screen'?{cat:'screen'}:{})});
+    if(tab==='added')return addedPage(view);
     if(tab==='screen'||(tab==='videos'&&view.golfGroup==='screen'))return screenPage();
     if(tab==='field'||(tab==='videos'&&view.golfGroup==='field'))return fieldPage();
     if(tab==='key-messages')return keyMessagePage(view);
@@ -522,6 +525,19 @@ window.GolfHub = (() => {
       return items.length?`<section class="g-key-group" aria-labelledby="g-key-${e(section.id)}"><h3 id="g-key-${e(section.id)}">${e(section.title)} <small>${items.length}편</small></h3>${subgroups}</section>`:'';
     }).join('');
     layout(`<section class="g-key-page${only?' g-archive-only':''}" aria-labelledby="g-key-title"><header class="g-key-heading"><h2 id="g-key-title" tabindex="-1">${only?'보관영상':'전체 영상 핵심'} <small>${list.length} / ${listedVideos().length}편</small></h2>${only?'':'<a class="g-key-entry" href="#golf/group/all">영상 카드 ›</a>'}</header><p class="g-meta">제목은 상세 · 재생 시각은 해당 구간 · 출처는 원본</p>${clubFilters({...view,cat:selected},scope).replace(/<p class="g-club-help">.*?<\/p>/,'')}<form class="g-key-search" data-g-form="key-search"><label for="g-key-q">제목·핵심·채널 검색</label><div><input id="g-key-q" name="q" data-no-draft value="${e(view.golfQuery||'')}" placeholder="예: 힘 빼기, 왼어깨"><label class="sr-only" for="g-key-section">스윙 구간</label><select id="g-key-section" name="section" data-no-draft><option value="">모든 구간</option>${sections.map(s=>`<option value="${e(s.id)}" ${selected===s.id?'selected':''}>${e(s.title)}</option>`).join('')}</select><button class="g-btn">찾기</button></div></form>${groups||(only&&!allVideos().some(v=>isArchived(v.id))?'<p class="g-muted" role="status">보관한 영상이 없습니다. 습득한 영상 상세에서 보관하면 여기에 모입니다.</p>':'<p class="g-muted" role="status">조건에 맞는 영상이 없습니다. 검색어나 클럽·구간 필터를 바꿔 보세요.</p>')}</section>`,'videos');
+  }
+  function addedPage(view) {
+    const batch=content.referenceCollection;
+    if(!batch)return layout('<h2>이번 추가 영상</h2><p>모아둔 영상이 없습니다.</p>');
+    const filters=[['','전체'],['driver','드라이버'],['iron','아이언'],['backswing','백스윙'],['downswing','다운스윙'],['general','스윙 일반'],['approach','어프로치'],['field','실전'],['screen','스크린'],['ht','HT']];
+    const filter=filters.find(([id])=>id===view.cat),selected=filter?.[0]||'',label=filter?.[1]||'';
+    const terms=termsFor(view.golfQuery),search=text=>terms.every(t=>text.toLocaleLowerCase('ko').includes(t));
+    const scope=batch.golfIds.map(video).filter(Boolean);
+    const golf=scope.filter(v=>selected!=='ht'&&(!selected|| (content.referenceCategories[v.id]||'').includes(label))&&search([videoTitle(v),v.originalTitle,v.channel,content.referenceCategories[v.id],content.keyMessages[v.id]?.text].join(' ')));
+    const exercises=batch.exerciseIds.map(id=>Store.getById(id)).filter(Boolean).filter(x=>(!selected||selected==='ht')&&search('HT '+x.name+' 발 간격 하체 스쿼트'));
+    const row=v=>'<details class="batch-video" data-video-id="'+e(v.id)+'"><summary><span class="batch-kind">'+e(content.referenceCategories[v.id])+'</span><strong>'+e(videoTitle(v))+'</strong></summary><div class="batch-video-body">'+frames(v)+'<p>'+e(content.keyMessages[v.id]?.text||v.summary)+'</p>'+keyMessageLinks(v,content.keyMessages[v.id])+archiveBadge(v)+'<a class="g-link" href="'+href('videos',v.id)+'">상세·내 메모 ›</a></div></details>';
+    const ht=exercises.map(x=>{const media=window.ExerciseMedia?.[x.id],variant=media?.variants?.[0]||media;return '<details class="batch-video" data-exercise-id="'+e(x.id)+'"><summary><span class="batch-kind">HT 참고운동</span><strong>'+e(x.name)+'</strong></summary><div class="batch-video-body"><div class="g-frame-pair">'+(variant?.images||[]).map((src,i)=>'<div class="g-frame"><img src="'+e(src)+'" alt="'+(i?'동작':'준비')+'" loading="lazy"></div>').join('')+'</div><p>발 간격별 하체 5동작 · 준비·동작 이미지와 전용 3D</p><a class="g-link" href="#exercise/'+e(x.id)+'">5동작·원본 시점·3D 보기 ›</a></div></details>';}).join('');
+    layout('<section class="batch-page" aria-labelledby="batch-title"><h2 id="batch-title">이번 추가 영상 <small>'+ (golf.length+exercises.length)+'편</small></h2><p class="g-meta">11월 21일 요청 묶음 · 골프 '+scope.length+'편 · HT '+batch.exerciseIds.length+'편</p><form class="batch-search" data-g-form="batch-search"><label for="batch-q">이번 영상에서 찾기</label><input id="batch-q" name="q" data-no-draft value="'+e(view.golfQuery||'')+'" placeholder="예: 힘 빼기, 눌러치기"><div><label class="sr-only" for="batch-category">분류</label><select id="batch-category" name="category" data-no-draft>'+filters.map(([id,t])=>'<option value="'+id+'" '+(id===selected?'selected':'')+'>'+t+'</option>').join('')+'</select><button class="g-btn">찾기</button></div></form><p class="g-meta">제목을 누르면 장면과 핵심 시점이 펼쳐집니다.</p>'+ht+golf.map(row).join('')+(!golf.length&&!exercises.length?'<p role="status">조건에 맞는 영상이 없습니다.</p>':'')+'</section>','videos');
   }
   function screenPage() {
     const ids=content.videoGroups.find(g=>g.id==='screen')?.videoIds||[],scope=ids.map(video).filter(v=>v&&listedVideos().some(x=>x.id===v.id)),items=scope.filter(clubMatches);
@@ -750,6 +766,7 @@ window.GolfHub = (() => {
     api.app.addEventListener('submit',ev=>{
       const form=ev.target.closest('[data-g-form]'); if(!form) return;
       ev.preventDefault(); const fd=new FormData(form), text=n=>String(fd.get(n)||'').trim(), all=n=>fd.getAll(n).map(String);
+      if(form.dataset.gForm==='batch-search')return go('added',null,{golfQuery:text('q'),cat:text('category')||null,golfClub:null,golfArchive:null});
       if(form.dataset.gForm==='key-search')return go('key-messages',null,{golfQuery:text('q'),cat:text('section')||null,golfClub:selectedClub()||null,golfArchive:current?.golfArchive||null});
       if(form.dataset.gForm==='search') return api.go('search',{q:text('q'),scope:'all'});
       if(form.dataset.gForm==='video') {

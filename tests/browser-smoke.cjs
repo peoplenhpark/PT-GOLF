@@ -363,6 +363,7 @@ const mime={'.html':'text/html','.js':'application/javascript','.json':'applicat
   assert(await page.locator('.g-breadcrumb').innerText().then(t=>t.includes('우드')));
   for(const id of ["DYtWZFKkKas","te5CN12g0Mc","eRSTJTcMFjE","qVHPT2eU5gY","qQbCq_QXB0A","G6VjK_afBng"]){await page.goto(base+'#golf/videos/'+id);await page.waitForFunction(()=>document.querySelectorAll('.g-frame img').length===2&&[...document.querySelectorAll('.g-frame img')].every(i=>i.complete&&i.naturalWidth>0));}
   await page.goto(base+'#golf/group/recent');await page.locator('.g-video-section').waitFor();assert.equal(await page.locator('.g-video-card').count(),await page.evaluate(()=>window.GolfContent.recentVideos().length));assert.deepEqual(errors,[]);
+  await require('./helpers/reference-collection-browser.cjs')(browser,base);
   await require('./helpers/golf-taxonomy-browser.cjs')(browser,base);
   await require('./helpers/golf-clubs-browser.cjs')(browser,base);
   await require('./helpers/today-simple-browser.cjs')(browser,base);
