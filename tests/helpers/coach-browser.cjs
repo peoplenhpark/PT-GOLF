@@ -8,7 +8,9 @@ module.exports=async(browser,base)=>{
    await p.goto(base+'#home');if(part==='pt'){await p.locator('.exercise-quicknav>summary').click();await p.locator('.part.pt').click();await p.waitForFunction(()=>document.activeElement?.classList.contains('coach-recent-pt'));}else{await p.locator('.tab[data-nav=golf]').click();await p.locator('.coach-recent-golf').waitFor();}
    assert.equal(await p.locator(content).innerText(),before,'home jump preserves all existing practice content');
    assert(!p.url().includes('start=recent'),'one-time entry intent is consumed');
-   const box=await p.locator(part==='pt'?'.coach-recent-pt':'.coach-tabs').boundingBox();assert(box.y>=0&&box.y<(part==='pt'?150:844),'recap anchor is visible after the home jump');
+   const anchor=part==='pt'?'.coach-recent-pt':'.coach-tabs',max=part==='pt'?150:844;
+   await p.waitForFunction(({anchor,max})=>{const box=document.querySelector(anchor)?.getBoundingClientRect();return box&&box.y>=0&&box.y<max;},{anchor,max});
+   const box=await p.locator(anchor).boundingBox();assert(box.y>=0&&box.y<max,'recap anchor is visible after the home jump: '+part+' y='+box.y);
    await p.goBack();await p.locator('.home-simple').waitFor();await p.goForward();await p.locator('.coach-recent-'+part).waitFor();
    await p.goto(base+'#'+part+'/now?start=recent');await p.waitForFunction(part=>document.activeElement?.classList.contains('coach-recent-'+part),part);
    const exits=p.locator('.coach-recap-links');assert.equal(await exits.locator('a,button').count(),2);
