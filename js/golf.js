@@ -763,6 +763,9 @@ window.GolfHub = (() => {
         f.referrerPolicy='strict-origin-when-cross-origin'; document.getElementById('g-player').replaceChildren(f);
       }
     });
+    api.app.addEventListener('change',ev=>{
+      if(ev.target.matches('select#batch-category'))ev.target.closest('form[data-g-form="batch-search"]')?.requestSubmit();
+    });
     api.app.addEventListener('submit',ev=>{
       const form=ev.target.closest('[data-g-form]'); if(!form) return;
       ev.preventDefault(); const fd=new FormData(form), text=n=>String(fd.get(n)||'').trim(), all=n=>fd.getAll(n).map(String);
